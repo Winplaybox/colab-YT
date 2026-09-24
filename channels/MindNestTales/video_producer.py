@@ -18,6 +18,8 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
+import textwrap
+
 # Auto-configure cross-platform FFmpeg
 try:
     import static_ffmpeg
@@ -27,10 +29,82 @@ except Exception:
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
+MORAL_LABELS = {
+    "en": "MORAL",
+    "hi": "सीख",
+    "es": "MORALEJA",
+    "pt": "LIÇÃO",
+    "fr": "MORALE",
+    "de": "LEHRE",
+    "ar": "الحكمة",
+    "ja": "教訓",
+    "ko": "교훈",
+    "vi": "BÀI HỌC",
+    "fil": "ARAL",
+}
+
+def resolve_font_for_language(lang_code):
+    """
+    Returns the appropriate fontfile path for ffmpeg drawtext filter across OS.
+    Handles Indic (Devanagari/Hindi), CJK (Japanese/Korean), Arabic, and Latin scripts.
+    """
+    is_win = sys.platform.startswith("win")
+    
+    font_candidates = []
+    if is_win:
+        win_fonts = os.environ.get("WINDIR", "C:\\Windows") + "\\Fonts\\"
+        if lang_code == "hi":
+            font_candidates = [win_fonts + "Nirmala.ttc", win_fonts + "NirmalaB.ttf", win_fonts + "arialbd.ttf"]
+        elif lang_code == "ja":
+            font_candidates = [win_fonts + "msgothic.ttc", win_fonts + "meiryo.ttc", win_fonts + "arialbd.ttf"]
+        elif lang_code == "ko":
+            font_candidates = [win_fonts + "malgun.ttf", win_fonts + "gulim.ttc", win_fonts + "arialbd.ttf"]
+        elif lang_code == "ar":
+            font_candidates = [win_fonts + "seguiemj.ttf", win_fonts + "arial.ttf"]
+        else:
+            font_candidates = [win_fonts + "segoeuib.ttf", win_fonts + "arialbd.ttf", win_fonts + "calibrib.ttf"]
+    else:
+        # Linux (Colab / GitHub Actions runner)
+        if lang_code == "hi":
+            font_candidates = [
+                "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Bold.ttf",
+                "/usr/share/fonts/opentype/noto/NotoSansDevanagari-Bold.ttf",
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            ]
+        elif lang_code in ("ja", "ko"):
+            font_candidates = [
+                "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+                "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc",
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            ]
+        elif lang_code == "ar":
+            font_candidates = [
+                "/usr/share/fonts/truetype/noto/NotoSansArabic-Bold.ttf",
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            ]
+        else:
+            font_candidates = [
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+                "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf",
+            ]
+            
+    for f in font_candidates:
+        if os.path.exists(f):
+            return f.replace("\\", "/").replace(":", "\\:")
+    return ""
+
 def sanitize_ffmpeg_text(text):
-    """Sanitizes text for safe ffmpeg drawtext filter rendering."""
-    clean = text.replace(":", " -").replace("'", "").replace('"', '').replace("\\", "")
-    clean = "".join([c for c in clean if ord(c) < 65536])
+    """Sanitizes text for safe ffmpeg drawtext filter rendering across all languages without tofu boxes."""
+    clean = text.replace(":", " -").replace("'", "").replace('"', '').replace("\\", "").replace("%", "")
+    def is_emoji_or_symbol(ch):
+        code = ord(ch)
+        # Strip emoji, pictograph, and miscellaneous symbol planes that lack font glyphs
+        if (0x1F000 <= code <= 0x1FFFF) or (0x2600 <= code <= 0x27BF) or (0x2300 <= code <= 0x23FF) or (0x2B50 <= code <= 0x2BFF) or (0x25A0 <= code <= 0x25FF):
+            return True
+        return False
+    clean = "".join(c for c in clean if not is_emoji_or_symbol(c))
+    clean = " ".join(clean.split())
     return clean.strip()
 
 def load_network_config():
@@ -133,35 +207,64 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
             if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
         ]
 
+    # Font resolution for non-Latin script support (Devanagari, CJK, Arabic)
+    font_file = resolve_font_for_language(lang_code)
+    font_arg = f":fontfile='{font_file}'" if font_file else ""
+
     # Clean text for ffmpeg drawtext filter
-    clean_title = sanitize_ffmpeg_text(title)[:36]
-    clean_moral = sanitize_ffmpeg_text(story_data["moral"])[:46]
+    clean_title = sanitize_ffmpeg_text(title)
+    moral_text = translation.get("moral", story_data.get("moral", ""))
+    moral_label = MORAL_LABELS.get(lang_code, "MORAL")
+    clean_moral = sanitize_ffmpeg_text(moral_text)
     clean_handle = sanitize_ffmpeg_text(handle)
 
+    # Wrap moral text to prevent truncation at screen edges
+    wrap_w = 26 if lang_code in ("hi", "ja", "ko", "ar") else 34
+    moral_lines = textwrap.wrap(clean_moral, width=wrap_w)
+    if not moral_lines:
+        moral_lines = [clean_moral]
+    moral_lines = moral_lines[:2]
+
     # Typography & Box Dimensions scaled to resolution
-    box_top_h = int(260 * scale)
-    box_bot_y = int(h - (220 * scale))
-    box_bot_h = int(220 * scale)
+    box_top_h = int(220 * scale)
+    box_bot_h = int(240 * scale)
+    box_bot_y = int(h - box_bot_h)
 
-    f_brand = int(48 * scale)
-    y_brand = int(80 * scale)
+    f_brand = int(44 * scale)
+    y_brand = int(60 * scale)
+    f_title = int(48 * scale)
+    y_title = int(140 * scale)
 
-    f_title = int(50 * scale)
-    y_title = int(160 * scale)
+    f_badge = int(36 * scale)
+    f_moral = int(34 * scale)
+    f_handle = int(30 * scale)
 
-    f_moral = int(36 * scale)
-    y_moral = int(box_bot_y + (60 * scale))
-
-    f_handle = int(34 * scale)
-    y_handle = int(box_bot_y + (130 * scale))
+    if len(moral_lines) > 1:
+        y_badge = int(box_bot_y + (38 * scale))
+        y_moral_1 = int(box_bot_y + (90 * scale))
+        y_moral_2 = int(box_bot_y + (138 * scale))
+        y_handle = int(box_bot_y + (192 * scale))
+        moral_drawtext = (
+            f"drawtext={font_arg}:text='- {moral_label} -':fontsize={f_badge}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_badge},"
+            f"drawtext={font_arg}:text='{moral_lines[0]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_1},"
+            f"drawtext={font_arg}:text='{moral_lines[1]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_2}"
+        )
+    else:
+        y_badge = int(box_bot_y + (50 * scale))
+        y_moral_1 = int(box_bot_y + (110 * scale))
+        y_handle = int(box_bot_y + (182 * scale))
+        moral_drawtext = (
+            f"drawtext={font_arg}:text='- {moral_label} -':fontsize={f_badge}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_badge},"
+            f"drawtext={font_arg}:text='{moral_lines[0]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_1}"
+        )
 
     overlay_filters = (
-        f"drawbox=y=0:h={box_top_h}:color=0x0a0f1d@0.88:t=fill,"
-        f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.88:t=fill,"
-        f"drawtext=text='MINDNEST TALES':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
-        f"drawtext=text='{clean_title}':fontsize={f_title}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_title},"
-        f"drawtext=text='MORAL - {clean_moral}':fontsize={f_moral}:fontcolor=0xfacc15:x=(w-text_w)/2:y={y_moral},"
-        f"drawtext=text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
+        f"drawbox=y=0:h={box_top_h}:color=0x0a0f1d@0.65:t=fill,"
+        f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.65:t=fill,"
+        f"drawtext={font_arg}:text='MINDNEST TALES':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
+        f"drawtext={font_arg}:text='{clean_title}':fontsize={f_title}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_title},"
+        f"{moral_drawtext},"
+        f"drawtext={font_arg}:text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
     )
 
     ffmpeg_inputs = []
