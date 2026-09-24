@@ -13,6 +13,14 @@ downloaded_videos/
 *.m4a
 *.webm
 *.mkv
+*.mp3
+*.wav
+*_concat.txt
+
+# Temporary generated story media
+channels/MindNestTales/stories/assets/
+channels/MindNestTales/stories/thumbnails/
+
 
 # Python / Jupyter
 __pycache__/

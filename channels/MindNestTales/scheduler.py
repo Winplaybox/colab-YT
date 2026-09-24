@@ -30,6 +30,12 @@ except ImportError:
 script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, script_dir)
 from video_producer import produce_story_video, load_story, load_network_config
+try:
+    from sheets_tracker import record_story_status, init_tracking_sheet
+except ImportError:
+    def record_story_status(story_number, lang, status): pass
+    def init_tracking_sheet(): pass
+
 
 def get_channel_youtube_service(lang_code):
     """
@@ -164,6 +170,7 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto
         ch_name = ch["channel_name"]
         print(f"\n[{ch_name} - {lang.upper()}] Starting 8K Shorts production...")
 
+        record_story_status(story_number, lang, "Processing...")
         video_path = os.path.join(work_dir, f"story_{story_number:02d}_{lang}_{quality}.mp4")
         produce_story_video(story, lang, video_path, quality=quality)
 
@@ -186,11 +193,19 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto
                     publish_at=publish_at
                 )
                 results.append({"channel": ch_name, "lang": lang, "status": "UPLOADED", "url": f"https://youtu.be/{vid}"})
+                record_story_status(story_number, lang, f"Uploaded ({vid})")
             except Exception as e:
                 print(f"Upload failed for {ch_name}: {e}")
                 results.append({"channel": ch_name, "lang": lang, "status": "FAILED", "error": str(e)})
+                record_story_status(story_number, lang, f"Failed: {str(e)[:25]}")
         else:
             results.append({"channel": ch_name, "lang": lang, "status": "RENDERED_LOCAL", "path": video_path})
+            record_story_status(story_number, lang, "Rendered Local")
+
+        # Automatically clean up rendered video to keep disk and repository light
+        if os.path.exists(video_path):
+            os.remove(video_path)
+
 
     # Update state tracker
     today_str = datetime.now().strftime("%Y-%m-%d")

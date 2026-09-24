@@ -1,67 +1,138 @@
-# 🚀 Multi-Channel YouTube Automation & Viral Engine (2026 - 2030)
+# 🦁 Multi-Channel YouTube Autonomous Automation Empire (2026 – 2030)
 
-Autonomous, multi-channel video production and scheduling platform designed for Google Colab and GitHub Actions. Built to scale brand-new YouTube channels into multi-million-view empires using mathematical SEO, psychological curiosity hooks, and high-retention 4K/8K rendering.
+Autonomous, multi-channel video production and scheduling platform architected for **Google Colab** and **GitHub Actions**. Designed to scale brand-new YouTube channels into multi-million-view modern media empires using mathematical SEO, psychological curiosity hooks, studio neural dubbing, and high-retention 4K/8K rendering.
 
 ---
 
-## 📂 Multi-Channel Architecture
+## 🌟 Channels in Network
 
-Every channel operates as an independent, modular package inside the `channels/` directory:
+| Channel Network | Target Niche | Channels Count | Formats | Primary Engine |
+|---|---|:---:|---|---|
+| **TigerVlogs-2026** | Indian Street Food & Cultural Exploration | 1 Channel | 16:9 Long-form + 9:16 Shorts | [`channels/TigerVlogs-2026/`](channels/TigerVlogs-2026/) |
+| **MindNest Tales** | 3D Pixar Cute Animal Moral Stories | **11 Localized Channels** | 9:16 8K/4K Ultra-HD Shorts | [`channels/MindNestTales/`](channels/MindNestTales/) |
 
-```text
-colab-YT/
-├── channels/
-│   ├── TigerVlogs-2026/             <-- https://www.youtube.com/@TigerVlogs-2026
-│   │   ├── config.json              <-- Channel branding, slots, release times
-│   │   ├── engine.py                <-- 4K/8K Long-form generator & 9:16 Short remixer
-│   │   ├── scheduler.py             <-- Autonomous daily batch runner
-│   │   ├── youtube_automation_pipeline.ipynb <-- Colab notebook for this channel
-│   │   ├── token.json               <-- Channel OAuth credentials (gitignored)
-│   │   └── youtube_client_secret.json <-- GCP OAuth secret (gitignored)
-│   │
-│   ├── [Next-Channel-2]/            <-- Add new channels in 2 minutes
-│   └── [Next-Channel-3]/
-│
-├── .github/workflows/
-│   └── daily_youtube_scheduler.yml  <-- 100% Zero-Touch Daily Cron Runner (2026 - 2030)
-├── README.md
+---
+
+## 🌍 MindNest Tales — 11 Localized Channels
+
+Every story is rendered in 9:16 portrait 8K/4K Ultra-HD and published natively to its dedicated language channel with studio-quality, non-robotic Pixar storyteller voiceovers:
+
+| # | Channel Name | Handle | Channel ID | YouTube Channel URL | Neural Storyteller Voice |
+|---|---|---|---|---|---|
+| 1 | **Hindi MindNest Tales** | `@HindiMindNestTales` | `UCWx78e5Q1YxB5KX8gKzE7Zg` | [Visit Channel](https://www.youtube.com/channel/UCWx78e5Q1YxB5KX8gKzE7Zg) | `hi-IN-MadhurNeural` |
+| 2 | **English MindNest Tales** | `@EnglishMindNestTales` | `UCs4PpwEc2Bh9NpP2LIlrvBA` | [Visit Channel](https://www.youtube.com/channel/UCs4PpwEc2Bh9NpP2LIlrvBA) | `en-US-GuyNeural` |
+| 3 | **Spanish MindNest Tales** | `@SpanishMindNestTales` | `UCuKQmTmhY96IcJixy28Im-Q` | [Visit Channel](https://www.youtube.com/channel/UCuKQmTmhY96IcJixy28Im-Q) | `es-ES-AlvaroNeural` |
+| 4 | **Portuguese MindNest Tales** | `@PortugueseMindNestTales` | `UCh-rwMK9HcdobcJyInoQ4eg` | [Visit Channel](https://www.youtube.com/channel/UCh-rwMK9HcdobcJyInoQ4eg) | `pt-BR-AntonioNeural` |
+| 5 | **French MindNest Tales** | `@FrenchMindNestTales` | `UCqjkPkII8LzCsFxlOdJFWvw` | [Visit Channel](https://www.youtube.com/channel/UCqjkPkII8LzCsFxlOdJFWvw) | `fr-FR-HenriNeural` |
+| 6 | **German MindNest Tales** | `@GermanMindNestTales` | `UCIbLkitLrWG69bOlk5p6nlQ` | [Visit Channel](https://www.youtube.com/channel/UCIbLkitLrWG69bOlk5p6nlQ) | `de-DE-ConradNeural` |
+| 7 | **Arabic MindNest Tales** | `@ArabicMindNestTales` | `UCVKVxN2aBuCzvL3orAb8-1w` | [Visit Channel](https://www.youtube.com/channel/UCVKVxN2aBuCzvL3orAb8-1w) | `ar-SA-HamedNeural` |
+| 8 | **Japanese MindNest Tales** | `@JapaneseMindNestTales` | `UCmARTtCKtgvzY9oE3dxioMg` | [Visit Channel](https://www.youtube.com/channel/UCmARTtCKtgvzY9oE3dxioMg) | `ja-JP-KeitaNeural` |
+| 9 | **Korean MindNest Tales** | `@KoreanMindNestTales` | `UCA-lZJNlc2IKzSFkr6dL1wQ` | [Visit Channel](https://www.youtube.com/channel/UCA-lZJNlc2IKzSFkr6dL1wQ) | `ko-KR-InJoonNeural` |
+| 10 | **Vietnamese MindNest Tales** | `@VietnameseMindNestTales` | `UCJj4IYOyB_gUAkMUrrhMfWQ` | [Visit Channel](https://www.youtube.com/channel/UCJj4IYOyB_gUAkMUrrhMfWQ) | `vi-VN-NamMinhNeural` |
+| 11 | **Filipino MindNest Tales** | `@FilipinoMindNestTales` | `UCFmsipYu-i8rHjmXwZnuUmA` | [Visit Channel](https://www.youtube.com/channel/UCFmsipYu-i8rHjmXwZnuUmA) | `fil-PH-AngeloNeural` |
+
+---
+
+## 📊 Live Google Sheets Multi-Language Tracker
+
+All 51 stories across the 11 channels are tracked in real-time on Google Sheets:
+
+🔗 **Live Tracker Sheet:** [MindNestTales Track Google Sheet](https://docs.google.com/spreadsheets/d/1TqPmsJ_cbk9rTbMeKvWcCm8FCCVZjOUT6_tMTS4VyiI/edit?gid=0#gid=0)
+
+### Real-Time Pipeline Tracking:
+* **Headers:** `Story #` | `Story Title` | `Playlist` | `Moral` | `HI` | `EN` | `ES` | `PT` | `FR` | `DE` | `AR` | `JA` | `KO` | `VI` | `FIL` | `Last Updated`
+* **When Generation Starts:** Automatically updates cell to `Processing...`
+* **When Upload Completes:** Automatically updates cell to `Uploaded (<Video ID>)` with live YouTube video link!
+
+---
+
+## 🍃 Zero-Asset Bloat Architecture (Feather-Light Repo)
+
+To maintain maximum cloning speed and prevent Git repository bloat:
+* **No Video/Image Bloat:** Rendered videos (`.mp4`), temporary audio files (`.mp3`), and generated scene assets are created in temporary workspaces and **automatically deleted immediately after upload**.
+* **Clean Git Status:** All `.mp4`, `.mp3`, `.wav`, and temporary media directories are strictly ignored via `.gitignore`.
+* **State Persistence:** Only lightweight state progression (`state.json`) and configuration are stored.
+
+---
+
+## 📚 MindNest Tales — 51 Stories Master Roadmap
+
+The stories cycle automatically every single day across 6 thematic playlists:
+
+### 🐆 Playlist 1: Jungle & Wild Animal Tales (Stories 1–12)
+1. **The Cheetah Who Was Always Late** *(Chico the cheetah learns punctuality from Tessa the tortoise)*
+2. **Lion King's Bad Hair Day** *(True leadership comes from kindness, not appearance)*
+3. **The Elephant Who Forgot Nothing (except his manners)** *(Manners make true greatness)*
+4. **Zebra's Identity Crisis** *(Comparison steals joy; embrace your stripes)*
+5. **The Monkey Business Meeting** *(Focus and action overcome endless chatter)*
+6. **Giraffe's Fear of Heights** *(Courage is facing fear despite expectations)*
+7. **The Slowest Sloth Race** *(Consistency and taking time win in the end)*
+8. **Tiger's Stripes Went Missing** *(Your worth is inside, not on the surface)*
+9. **The Hyena Who Couldn't Stop Laughing** *(Respect others; know when to listen)*
+10. **Rhino's Anger Management Class** *(Breathe before you charge)*
+11. **The Wise Old Elephant and the Water Hole** *(Sharing resources saves the tribe)*
+12. **Panda's Bamboo Diet Disaster** *(Moderation leads to a balanced life)*
+
+### 🐕 Playlist 2: Farm & Pet Stories (Stories 13–22)
+13. **The Dog Who Thought He Was a Cat** | 14. **Lazy Cow's Morning Alarm Problem** | 15. **The Rooster Who Lost His Voice** | 16. **Piglet's Mud Bath Obsession** | 17. **The Sheep Who Wanted to Be a Wolf** | 18. **Horse vs Donkey: The Race** | 19. **The Cat Who Was Scared of Mice** | 20. **Goat's Great Escape Plan** | 21. **The Duck Who Couldn't Swim** | 22. **Farmer's Smartest Pet Competition**
+
+### 🐦 Playlist 3: Bird Tales (Stories 23–30)
+23. **The Parrot Who Repeated Everything Wrong** | 24. **Owl's Night Shift Complaints** | 25. **The Peacock's Ego Problem** | 26. **Eagle's Fear of Flying** | 27. **The Pigeon Who Delivered Wrong Messages** | 28. **Crow's Shiny Object Addiction** | 29. **The Flamingo Who Couldn't Balance** | 30. **Woodpecker's Headache Story**
+
+### 🐬 Playlist 4: Ocean & Sea Stories (Stories 31–38)
+31. **The Shy Octopus's Eight Left Feet** | 32. **Dolphin's Talent Show** | 33. **The Turtle Who Was Afraid of His Own Shell** | 34. **Crab's Sideways Walking Problem** | 35. **The Fish Who Forgot Where Home Was** | 36. **Whale's Singing Competition** | 37. **The Jellyfish With No Bones** | 38. **Seahorse Dad's Parenting Struggle**
+
+### 🐜 Playlist 5: Tiny Insect Tales (Stories 39–44)
+39. **The Ant Who Skipped Work** | 40. **Butterfly's Ugly Duckling Phase** | 41. **The Bee Who Was Afraid of Flowers** | 42. **Spider's Web Redesign Fails** | 43. **The Firefly Who Lost His Light** | 44. **Grasshopper's Winter Regret**
+
+### 📖 Playlist 6: Classic Moral Fables (Stories 45–51)
+45. **The Tortoise and the Hare (Comedy Remix)** | 46. **The Thirsty Crow** | 47. **The Fox and the Grapes** | 48. **The Lion and the Mouse** | 49. **The Boy Who Cried Wolf** | 50. **The Ant and the Grasshopper** | 51. **The Monkey and the Crocodile**
+
+---
+
+## ⚡ Autonomous 24/7 GitHub Actions Cloud Crons
+
+Both channel networks feature dedicated, independent daily crons:
+
+### 1. MindNest Tales Daily Scheduler
+* **Workflow:** [`.github/workflows/mindnest_tales_scheduler.yml`](.github/workflows/mindnest_tales_scheduler.yml)
+* **Schedule:** Daily at `04:00 UTC` (**9:30 AM IST**).
+* **Action:** Reads `state.json`, renders the next daily story with smooth `xfade` transitions in 8K/4K across all 11 languages, attaches custom thumbnails, uploads to YouTube, updates the Google Sheet, advances `current_story`, and pushes the state back to GitHub!
+
+### 2. TigerVlogs-2026 Daily Scheduler
+* **Workflow:** [`.github/workflows/tigervlogs_2026_scheduler.yml`](.github/workflows/tigervlogs_2026_scheduler.yml)
+* **Schedule:** Daily at `00:00 UTC` (**5:30 AM IST**).
+* **Action:** Produces and schedules the 3 daily food slots (1:00 PM IST Long-Form, 6:00 PM IST Short, 8:45 PM IST Long-Form) up to December 2030.
+
+---
+
+## 📓 Google Colab 1-Click Command Centers
+
+Run any batch interactively in Google Colab with GPU/CPU acceleration:
+
+1. **MindNest Tales Colab Hub:** Open [`MindNestTales_Automation.ipynb`](MindNestTales_Automation.ipynb) in Colab.
+   - Select Story # (1–51), target language (`all` or single), and quality (`8k` / `4k`).
+   - Click Run to produce, preview, upload, and update Google Sheets!
+2. **TigerVlogs Colab Hub:** Open [`channels/TigerVlogs-2026/youtube_automation_pipeline.ipynb`](channels/TigerVlogs-2026/youtube_automation_pipeline.ipynb).
+
+---
+
+## 🔐 Credentials & Secrets Setup
+
+To enable autonomous cloud uploads without touching your local PC:
+
+1. In GitHub Repository: Go to **Settings -> Secrets and variables -> Actions -> New repository secret**.
+2. Add the following secrets:
+   - `MINDNEST_TOKEN_JSON`: Master OAuth token JSON for MindNest Tales channels.
+   - `MINDNEST_CLIENT_SECRET_JSON`: The Google OAuth client secret.
+   - `TIGERVLOGS_TOKEN_JSON`: OAuth token JSON for TigerVlogs-2026.
+   - `GOOGLE_SHEETS_CREDENTIALS_JSON` *(Optional)*: Service account JSON to update Google Sheets from GitHub Actions.
+
+To authenticate locally and generate your tokens in seconds:
+```bash
+# MindNest Tales (all 11 channels)
+python channels/MindNestTales/authenticate_channels.py master
+
+# TigerVlogs-2026
+python authenticate_youtube.py
 ```
-
----
-
-## ⚡ 100% Zero-Touch Autonomous Cron (GitHub Actions)
-
-The repository includes a perpetual GitHub Actions Cron job (`.github/workflows/daily_youtube_scheduler.yml`) that runs **every single day at 00:00 UTC (5:30 AM IST)**:
-
-1. **Wakes up autonomously** in GitHub's cloud environment.
-2. **Generates the daily 3-video slate**:
-   - **Slot 1 (1:00 PM IST / 07:30 UTC):** 100% Original 16:9 Food Investigation Video (4K UHD, real Wikipedia photography, natural Hinglish speech).
-   - **Slot 2 (6:00 PM IST / 12:30 UTC):** 4K Ultra-Vertical Street Food Short (1.05x audio tempo/pitch, +20% saturation, kinetic banner).
-   - **Slot 3 (8:45 PM IST / 15:15 UTC):** 100% Original 16:9 Food Science Video (4K UHD, Hinglish speech).
-3. **Uploads and schedules** to YouTube Creator Studio with `privacyStatus='private'` and `publishAt`.
-4. **Updates the queue** and commits state back to GitHub.
-
-### Setting Up GitHub Secrets (One-Time Setup):
-To let GitHub Actions upload on your behalf:
-1. Go to your GitHub repository -> **Settings** -> **Secrets and variables** -> **Actions**.
-2. Click **New repository secret**:
-   - `YOUTUBE_TOKEN_JSON`: Paste the entire content of `channels/TigerVlogs-2026/token.json`.
-   - `YOUTUBE_CLIENT_SECRET_JSON`: Paste the entire content of `channels/TigerVlogs-2026/youtube_client_secret.json`.
-
----
-
-## 🎬 4K / 8K Master Visual Quality
-
-To bypass YouTube's heavy AVC1 compression and force YouTube to assign the elite **VP09 / AV01 codec**:
-- **Long-Form Videos:** Rendered at `3840x2160` (4K UHD) with Lanczos filtering and unsharp masking.
-- **Shorts:** Rendered at `2160x3840` (4K Ultra-Vertical).
-- **Encoding Profile:** `libx264 -crf 18 -preset fast -pix_fmt yuv420p` (Master broadcast visual fidelity).
-
----
-
-## ➕ How to Add a New Channel in 2 Minutes
-
-1. Duplicate `channels/TigerVlogs-2026/` to `channels/<YourNewChannelName>/`.
-2. Edit `config.json` with the new channel's name, brand email, and release slots.
-3. Place the new channel's `youtube_client_secret.json` in that folder and run `python authenticate_youtube.py` to generate `token.json`.
-4. Done! The GitHub Actions scheduler and Colab notebooks will automatically detect and run the new channel.
