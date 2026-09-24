@@ -1,0 +1,129 @@
+{
+  "network_name": "MindNest Tales",
+  "style": "3D Pixar/Disney style cute cartoon animals | Comedy + Documentary tone | Classic moral ending",
+  "format": "Portrait 9:16 (1080x1920 / 2160x3840 4K UHD)",
+  "total_stories": 51,
+  "channels": [
+    {
+      "language": "Hindi",
+      "lang_code": "hi",
+      "channel_name": "Hindi MindNest Tales",
+      "handle": "@HindiMindNestTales",
+      "channel_id": "UCWx78e5Q1YxB5KX8gKzE7Zg",
+      "channel_url": "https://www.youtube.com/channel/UCWx78e5Q1YxB5KX8gKzE7Zg",
+      "voice": "hi-IN-MadhurNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "English",
+      "lang_code": "en",
+      "channel_name": "English MindNest Tales",
+      "handle": "@EnglishMindNestTales",
+      "channel_id": "UCs4PpwEc2Bh9NpP2LIlrvBA",
+      "channel_url": "https://www.youtube.com/channel/UCs4PpwEc2Bh9NpP2LIlrvBA",
+      "voice": "en-US-GuyNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "Spanish",
+      "lang_code": "es",
+      "channel_name": "Spanish MindNest Tales",
+      "handle": "@SpanishMindNestTales",
+      "channel_id": "UCuKQmTmhY96IcJixy28Im-Q",
+      "channel_url": "https://www.youtube.com/channel/UCuKQmTmhY96IcJixy28Im-Q",
+      "voice": "es-ES-AlvaroNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "Portuguese",
+      "lang_code": "pt",
+      "channel_name": "Portuguese MindNest Tales",
+      "handle": "@PortugueseMindNestTales",
+      "channel_id": "UCh-rwMK9HcdobcJyInoQ4eg",
+      "channel_url": "https://www.youtube.com/channel/UCh-rwMK9HcdobcJyInoQ4eg",
+      "voice": "pt-BR-AntonioNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "French",
+      "lang_code": "fr",
+      "channel_name": "French MindNest Tales",
+      "handle": "@FrenchMindNestTales",
+      "channel_id": "UCqjkPkII8LzCsFxlOdJFWvw",
+      "channel_url": "https://www.youtube.com/channel/UCqjkPkII8LzCsFxlOdJFWvw",
+      "voice": "fr-FR-HenriNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "German",
+      "lang_code": "de",
+      "channel_name": "German MindNest Tales",
+      "handle": "@GermanMindNestTales",
+      "channel_id": "UCIbLkitLrWG69bOlk5p6nlQ",
+      "channel_url": "https://www.youtube.com/channel/UCIbLkitLrWG69bOlk5p6nlQ",
+      "voice": "de-DE-ConradNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "Arabic",
+      "lang_code": "ar",
+      "channel_name": "Arabic MindNest Tales",
+      "handle": "@ArabicMindNestTales",
+      "channel_id": "UCVKVxN2aBuCzvL3orAb8-1w",
+      "channel_url": "https://www.youtube.com/channel/UCVKVxN2aBuCzvL3orAb8-1w",
+      "voice": "ar-SA-HamedNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "Japanese",
+      "lang_code": "ja",
+      "channel_name": "Japanese MindNest Tales",
+      "handle": "@JapaneseMindNestTales",
+      "channel_id": "UCmARTtCKtgvzY9oE3dxioMg",
+      "channel_url": "https://www.youtube.com/channel/UCmARTtCKtgvzY9oE3dxioMg",
+      "voice": "ja-JP-KeitaNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "Korean",
+      "lang_code": "ko",
+      "channel_name": "Korean MindNest Tales",
+      "handle": "@KoreanMindNestTales",
+      "channel_id": "UCA-lZJNlc2IKzSFkr6dL1wQ",
+      "channel_url": "https://www.youtube.com/channel/UCA-lZJNlc2IKzSFkr6dL1wQ",
+      "voice": "ko-KR-InJoonNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "Vietnamese",
+      "lang_code": "vi",
+      "channel_name": "Vietnamese MindNest Tales",
+      "handle": "@VietnameseMindNestTales",
+      "channel_id": "UCJj4IYOyB_gUAkMUrrhMfWQ",
+      "channel_url": "https://www.youtube.com/channel/UCJj4IYOyB_gUAkMUrrhMfWQ",
+      "voice": "vi-VN-NamMinhNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    },
+    {
+      "language": "Filipino",
+      "lang_code": "fil",
+      "channel_name": "Filipino MindNest Tales",
+      "handle": "@FilipinoMindNestTales",
+      "channel_id": "UCFmsipYu-i8rHjmXwZnuUmA",
+      "channel_url": "https://www.youtube.com/channel/UCFmsipYu-i8rHjmXwZnuUmA",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_rate": "+2%",
+      "voice_pitch": "+0Hz"
+    }
+  ]
+}

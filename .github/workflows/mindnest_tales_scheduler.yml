@@ -1,0 +1,119 @@
+name: MindNest Tales Multi-Language 11-Channel Scheduler
+
+on:
+  schedule:
+    # Dedicated daily cron for MindNest Tales at 04:00 UTC (9:30 AM IST)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      story_number:
+        description: 'Story number to produce and schedule (1 - 51)'
+        required: true
+        default: '1'
+      target_language:
+        description: 'Target language code (all, hi, en, es, pt, fr, de, ar, ja, ko, vi, fil)'
+        required: true
+        default: 'all'
+
+permissions:
+  contents: write
+
+jobs:
+  run-mindnest-batch:
+    name: Generate & Publish MindNest Tales
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install System Dependencies (FFmpeg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 gspread requests pandas static-ffmpeg
+          fi
+
+      - name: Restore MindNest Tales Multi-Channel Credentials
+        env:
+          MINDNEST_TOKEN: ${{ secrets.MINDNEST_TOKEN_JSON }}
+          FALLBACK_TOKEN: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+          TIGER_TOKEN: ${{ secrets.TIGERVLOGS_TOKEN_JSON }}
+          MINDNEST_SECRET: ${{ secrets.MINDNEST_CLIENT_SECRET_JSON }}
+          FALLBACK_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
+          # Language-specific tokens (if configured individually)
+          TOKEN_HI: ${{ secrets.MINDNEST_TOKEN_HI_JSON }}
+          TOKEN_EN: ${{ secrets.MINDNEST_TOKEN_EN_JSON }}
+          TOKEN_ES: ${{ secrets.MINDNEST_TOKEN_ES_JSON }}
+          TOKEN_PT: ${{ secrets.MINDNEST_TOKEN_PT_JSON }}
+          TOKEN_FR: ${{ secrets.MINDNEST_TOKEN_FR_JSON }}
+          TOKEN_DE: ${{ secrets.MINDNEST_TOKEN_DE_JSON }}
+          TOKEN_AR: ${{ secrets.MINDNEST_TOKEN_AR_JSON }}
+          TOKEN_JA: ${{ secrets.MINDNEST_TOKEN_JA_JSON }}
+          TOKEN_KO: ${{ secrets.MINDNEST_TOKEN_KO_JSON }}
+          TOKEN_VI: ${{ secrets.MINDNEST_TOKEN_VI_JSON }}
+          TOKEN_FIL: ${{ secrets.MINDNEST_TOKEN_FIL_JSON }}
+        run: |
+          CHANNEL_DIR="channels/MindNestTales"
+          CREDS_DIR="${CHANNEL_DIR}/credentials"
+          mkdir -p "${CREDS_DIR}"
+
+          # Master fallback token
+          MASTER_TOKEN="${MINDNEST_TOKEN:-${FALLBACK_TOKEN:-$TIGER_TOKEN}}"
+          if [ -n "$MASTER_TOKEN" ]; then
+            printf "%s" "$MASTER_TOKEN" > "${CHANNEL_DIR}/token.json"
+            echo "Master YouTube token installed for MindNest Tales."
+          fi
+
+          # Individual language tokens if present
+          [ -n "$TOKEN_HI" ] && printf "%s" "$TOKEN_HI" > "${CREDS_DIR}/token_hi.json"
+          [ -n "$TOKEN_EN" ] && printf "%s" "$TOKEN_EN" > "${CREDS_DIR}/token_en.json"
+          [ -n "$TOKEN_ES" ] && printf "%s" "$TOKEN_ES" > "${CREDS_DIR}/token_es.json"
+          [ -n "$TOKEN_PT" ] && printf "%s" "$TOKEN_PT" > "${CREDS_DIR}/token_pt.json"
+          [ -n "$TOKEN_FR" ] && printf "%s" "$TOKEN_FR" > "${CREDS_DIR}/token_fr.json"
+          [ -n "$TOKEN_DE" ] && printf "%s" "$TOKEN_DE" > "${CREDS_DIR}/token_de.json"
+          [ -n "$TOKEN_AR" ] && printf "%s" "$TOKEN_AR" > "${CREDS_DIR}/token_ar.json"
+          [ -n "$TOKEN_JA" ] && printf "%s" "$TOKEN_JA" > "${CREDS_DIR}/token_ja.json"
+          [ -n "$TOKEN_KO" ] && printf "%s" "$TOKEN_KO" > "${CREDS_DIR}/token_ko.json"
+          [ -n "$TOKEN_VI" ] && printf "%s" "$TOKEN_VI" > "${CREDS_DIR}/token_vi.json"
+          [ -n "$TOKEN_FIL" ] && printf "%s" "$TOKEN_FIL" > "${CREDS_DIR}/token_fil.json"
+
+          SECRET_DATA="${MINDNEST_SECRET:-$FALLBACK_SECRET}"
+          if [ -n "$SECRET_DATA" ]; then
+            printf "%s" "$SECRET_DATA" > "${CHANNEL_DIR}/youtube_client_secret.json"
+          fi
+
+      - name: Execute MindNest Tales Production & Upload
+        run: |
+          STORY_NUM="${{ github.event.inputs.story_number }}"
+          TARGET_LANG="${{ github.event.inputs.target_language }}"
+
+          STORY_ARG="${STORY_NUM:-1}"
+          LANG_ARG="${TARGET_LANG:-all}"
+
+          echo "🚀 Triggering MindNest Tales: Story #${STORY_ARG} for Language(s): ${LANG_ARG}"
+          python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG"
+
+      - name: Commit State / Logs
+        if: always()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "MindNest Tales Autonomous Bot"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore(MindNestTales): automated release run [skip ci]"
+          git push || echo "Push skipped or no new commits to push."
