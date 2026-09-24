@@ -1,0 +1,19 @@
+# Credentials and secrets
+*client_secret*.json
+youtube_client_secret.json
+token.pickle
+token.json
+cookies.txt
+
+# Downloaded videos and data
+downloaded_videos/
+*.mp4
+*.m4a
+*.webm
+*.mkv
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
