@@ -71,7 +71,7 @@ def authenticate_single_channel(secret_file, lang_code, channel_name=""):
     print("A browser window will open. Sign into Google and select this specific Brand Channel!")
     
     flow = InstalledAppFlow.from_client_secrets_file(secret_file, scopes=SCOPES)
-    credentials = flow.run_local_server(port=0)
+    credentials = flow.run_local_server(port=0, prompt='select_account consent', access_type='offline')
 
     token_json_str = credentials.to_json()
     with open(token_out, "w", encoding="utf-8") as f:
