@@ -57,6 +57,7 @@ jobs:
 
       - name: Restore MindNest Tales Multi-Channel Credentials
         env:
+          MINDNEST_ALL_TOKENS: ${{ secrets.MINDNEST_ALL_TOKENS_JSON }}
           MINDNEST_TOKEN: ${{ secrets.MINDNEST_TOKEN_JSON }}
           MINDNEST_SECRET: ${{ secrets.MINDNEST_CLIENT_SECRET_JSON }}
           FALLBACK_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
@@ -77,7 +78,25 @@ jobs:
           CREDS_DIR="${CHANNEL_DIR}/credentials"
           mkdir -p "${CREDS_DIR}"
 
-          # Master token for MindNest Tales (if all channels under 1 account)
+          # 1. Unpack unified master token bundle if configured
+          if [ -n "$MINDNEST_ALL_TOKENS" ]; then
+            python -c "
+import os, json
+try:
+    data = json.loads(os.environ['MINDNEST_ALL_TOKENS'])
+    for lang, tok in data.items():
+        with open(f'channels/MindNestTales/credentials/token_{lang}.json', 'w') as f:
+            if isinstance(tok, str):
+                f.write(tok)
+            else:
+                json.dump(tok, f)
+    print('✅ Unpacked all-in-one token bundle for channels:', list(data.keys()))
+except Exception as e:
+    print('Notice: Could not unpack MINDNEST_ALL_TOKENS:', e)
+"
+          fi
+
+          # 2. Master token fallback
           if [ -n "$MINDNEST_TOKEN" ]; then
             printf "%s" "$MINDNEST_TOKEN" > "${CHANNEL_DIR}/token.json"
             echo "Master YouTube token installed for MindNest Tales."

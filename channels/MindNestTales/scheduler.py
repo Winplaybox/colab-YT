@@ -94,6 +94,21 @@ def get_channel_youtube_service(lang_code, expected_channel_id=None, expected_na
     
     token_path = os.path.join(creds_dir, f"token_{lang_code}.json")
     
+    # Check if unified all-in-one tokens bundle is provided
+    all_tokens_env = os.environ.get("MINDNEST_ALL_TOKENS_JSON", "").strip()
+    if all_tokens_env and not os.path.exists(token_path):
+        try:
+            tokens_dict = json.loads(all_tokens_env)
+            if lang_code in tokens_dict:
+                tok_val = tokens_dict[lang_code]
+                with open(token_path, "w", encoding="utf-8") as f:
+                    if isinstance(tok_val, str):
+                        f.write(tok_val)
+                    else:
+                        json.dump(tok_val, f)
+        except Exception as e:
+            print(f"Notice: Could not parse MINDNEST_ALL_TOKENS_JSON for {lang_code}: {e}")
+
     # Check Environment Variables (Language specific or Master MindNest token)
     env_keys = [f"MINDNEST_TOKEN_{lang_code.upper()}_JSON", "MINDNEST_TOKEN_JSON"]
     for k in env_keys:
