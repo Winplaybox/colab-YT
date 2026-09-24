@@ -3,6 +3,7 @@ MindNest Tales 3D Animation Video Producer:
 - Generates 11-language native neural narration using Pixar/Disney style storyteller voices
 - Renders 9:16 8K/4K Ultra-HD Portrait Video (4320x7680 / 2160x3840) with 3D Pixar imagery,
   smooth cinematic crossfade (xfade) transitions between clips, cinema bars, and high-retention typography.
+- Standard 2-minute (120-second) cinematic runtime with synchronized narration & audio padding.
 """
 
 import os
@@ -38,15 +39,19 @@ def load_network_config():
         return json.load(f)
 
 def load_story(story_number=1):
-    story_file = os.path.join(script_dir, "stories", f"story_{story_number:02d}_cheetah_late.json")
-    if not os.path.exists(story_file):
-        stories_dir = os.path.join(script_dir, "stories")
-        for f in os.listdir(stories_dir):
-            if f.endswith(".json") and f"story_{story_number:02d}" in f:
-                story_file = os.path.join(stories_dir, f)
-                break
-    with open(story_file, "r", encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        from story_generator import get_or_create_story
+        return get_or_create_story(story_number)
+    except Exception:
+        story_file = os.path.join(script_dir, "stories", f"story_{story_number:02d}_cheetah_late.json")
+        if not os.path.exists(story_file):
+            stories_dir = os.path.join(script_dir, "stories")
+            for f in os.listdir(stories_dir):
+                if f.endswith(".json") and f"story_{story_number:02d}" in f:
+                    story_file = os.path.join(stories_dir, f)
+                    break
+        with open(story_file, "r", encoding="utf-8") as f:
+            return json.load(f)
 
 def get_audio_duration(audio_path):
     """Retrieves audio file duration in seconds using ffprobe."""
@@ -60,7 +65,7 @@ def get_audio_duration(audio_path):
         res = subprocess.run(cmd, capture_output=True, text=True, check=True)
         return float(res.stdout.strip())
     except Exception:
-        return 58.0
+        return 120.0
 
 def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch="+0Hz"):
     """Generates expressive, human-like animated storyteller speech via edge-tts."""
@@ -77,11 +82,12 @@ def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch=
     print(f"Generated Voiceover: {output_audio_path} ({os.path.getsize(output_audio_path)} bytes)")
     return output_audio_path
 
-def produce_story_video(story_data, lang_code, output_video_path, quality="8k"):
+def produce_story_video(story_data, lang_code, output_video_path, quality="8k", target_duration=120.0):
     """
     Renders the complete 9:16 portrait video for a specific language channel.
     - Synchronizes 3D Pixar-style visual scenes with localized neural voiceover.
     - Applies smooth cinematic xfade crossfade transitions between all clips.
+    - Default target runtime: 120.0 seconds (2:00 minutes).
     - Supports '8k' (4320x7680), '4k' (2160x3840), or '1080p' (1080x1920).
     """
     os.makedirs(os.path.dirname(output_video_path) if os.path.dirname(output_video_path) else ".", exist_ok=True)
@@ -111,7 +117,10 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k"):
     # 1. Generate Voiceover in native language
     audio_file = os.path.splitext(output_video_path)[0] + f"_{lang_code}_voice.mp3"
     generate_voiceover(script, voice, audio_file, rate=rate, pitch=pitch)
-    duration = get_audio_duration(audio_file)
+    raw_audio_dur = get_audio_duration(audio_file)
+    
+    # Target duration (default 120 seconds / 2 minutes)
+    duration = target_duration if target_duration else max(raw_audio_dur, 60.0)
 
     # 2. Check for 3D Pixar Scene Assets
     story_no = story_data.get("story_number", 1)
@@ -190,23 +199,28 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k"):
         audio_idx = 1
     else:
         # Fallback Dynamic Cinematic Gradient
-        ffmpeg_inputs.extend(["-f", "lavfi", "-i", f"color=c=0x1a1528:s={w}x{h}:r=30"])
+        ffmpeg_inputs.extend(["-f", "lavfi", "-i", f"color=c=0x1a1528:s={w}x{h}:r=30:d={duration:.2f}"])
         full_filter = f"[0:v]{overlay_filters}[v]"
         audio_idx = 1
+
+    # Ensure audio is padded smoothly to duration
+    audio_filter = f"[{audio_idx}:a]apad=whole_dur={duration:.2f}[a]"
+    final_filter = f"{full_filter};{audio_filter}"
 
     ffmpeg_cmd = [
         "ffmpeg", "-y",
         *ffmpeg_inputs,
         "-i", audio_file,
-        "-filter_complex", full_filter,
-        "-map", "[v]", "-map", f"{audio_idx}:a",
+        "-filter_complex", final_filter,
+        "-map", "[v]", "-map", "[a]",
+        "-t", f"{duration:.2f}",
         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20",
         "-c:a", "aac", "-b:a", "192k",
-        "-shortest", "-pix_fmt", "yuv420p",
+        "-pix_fmt", "yuv420p",
         output_video_path
     ]
 
-    print(f"🎬 Rendering [{lang_code.upper()}] with smooth cinematic transitions at {quality.upper()} ({w}x{h})...")
+    print(f"🎬 Rendering [{lang_code.upper()}] at {quality.upper()} ({w}x{h}) for 2:00 runtime ({duration:.1f}s)...")
     subprocess.run(ffmpeg_cmd, check=True)
 
     if os.path.exists(audio_file):
