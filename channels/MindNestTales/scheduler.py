@@ -118,8 +118,8 @@ def upload_story_to_channel(youtube, video_file, title, description, tags, thumb
 
     return vid
 
-def run_mindnest_release(story_number=1, target_lang=None, publish_at=None, work_dir="/tmp/mindnest_batch"):
-    """Executes production & upload for a specific language or all 11 channels."""
+def run_mindnest_release(story_number=1, target_lang=None, quality="8k", publish_at=None, work_dir="/tmp/mindnest_batch"):
+    """Executes production & upload for a specific language or all 11 channels at 8K/4K."""
     config = load_network_config()
     story = load_story(story_number)
     os.makedirs(work_dir, exist_ok=True)
@@ -137,27 +137,31 @@ def run_mindnest_release(story_number=1, target_lang=None, publish_at=None, work
 
     results = []
     print(f"\n=======================================================")
-    print(f"🚀 RELEASING STORY #{story_number}: '{story['base_title']}'")
+    print(f"🚀 RELEASING STORY #{story_number}: '{story['base_title']}' [{quality.upper()} SHORTS]")
     print(f"Channels in this run: {len(channels_to_process)}")
     print(f"=======================================================")
 
     for ch in channels_to_process:
         lang = ch["lang_code"]
         ch_name = ch["channel_name"]
-        print(f"\n[{ch_name} - {lang.upper()}] Starting production...")
+        print(f"\n[{ch_name} - {lang.upper()}] Starting 8K Shorts production...")
 
-        video_path = os.path.join(work_dir, f"story_{story_number:02d}_{lang}.mp4")
-        produce_story_video(story, lang, video_path)
+        video_path = os.path.join(work_dir, f"story_{story_number:02d}_{lang}_{quality}.mp4")
+        produce_story_video(story, lang, video_path, quality=quality)
 
         # Upload
         translation = story["translations"].get(lang, story["translations"]["en"])
+        title = translation["title"]
+        if "#Shorts" not in title and "#shorts" not in title:
+            title = f"{title} #Shorts"
+
         youtube = get_channel_youtube_service(lang)
         if youtube:
             try:
                 vid = upload_story_to_channel(
                     youtube,
                     video_path,
-                    translation["title"],
+                    title,
                     translation["description"],
                     translation["tags"],
                     thumbnail_path=thumb_path,
@@ -170,9 +174,6 @@ def run_mindnest_release(story_number=1, target_lang=None, publish_at=None, work
         else:
             results.append({"channel": ch_name, "lang": lang, "status": "RENDERED_LOCAL", "path": video_path})
 
-        if os.path.exists(video_path):
-            os.remove(video_path)
-
     print("\n" + "="*60)
     print(f"🎉 BATCH COMPLETE FOR STORY #{story_number}:")
     for r in results:
@@ -183,4 +184,6 @@ def run_mindnest_release(story_number=1, target_lang=None, publish_at=None, work
 if __name__ == "__main__":
     story_no = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     lang = sys.argv[2] if len(sys.argv) > 2 else "all"
-    run_mindnest_release(story_no, lang)
+    quality = sys.argv[3] if len(sys.argv) > 3 else "8k"
+    run_mindnest_release(story_no, lang, quality=quality)
+

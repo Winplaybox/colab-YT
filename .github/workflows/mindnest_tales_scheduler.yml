@@ -14,6 +14,11 @@ on:
         description: 'Target language code (all, hi, en, es, pt, fr, de, ar, ja, ko, vi, fil)'
         required: true
         default: 'all'
+      quality:
+        description: 'Output quality: 8k (4320x7680) or 4k (2160x3840)'
+        required: false
+        default: '8k'
+
 
 permissions:
   contents: write
@@ -102,12 +107,15 @@ jobs:
         run: |
           STORY_NUM="${{ github.event.inputs.story_number }}"
           TARGET_LANG="${{ github.event.inputs.target_language }}"
+          QUALITY="${{ github.event.inputs.quality }}"
 
           STORY_ARG="${STORY_NUM:-1}"
           LANG_ARG="${TARGET_LANG:-all}"
+          QUAL_ARG="${QUALITY:-8k}"
 
-          echo "🚀 Triggering MindNest Tales: Story #${STORY_ARG} for Language(s): ${LANG_ARG}"
-          python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG"
+          echo "🚀 Triggering MindNest Tales: Story #${STORY_ARG} for Language(s): ${LANG_ARG} at ${QUAL_ARG}"
+          python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG" "$QUAL_ARG"
+
 
       - name: Commit State / Logs
         if: always()

@@ -1,9 +1,11 @@
 # Credentials and secrets
 *client_secret*.json
 youtube_client_secret.json
-token.pickle
-token.json
+token*.pickle
+token*.json
+credentials/
 cookies.txt
+
 
 # Downloaded videos and data
 downloaded_videos/

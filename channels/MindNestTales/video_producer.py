@@ -1,7 +1,8 @@
 """
 MindNest Tales 3D Animation Video Producer:
 - Generates 11-language native neural narration using Pixar/Disney style storyteller voices
-- Renders 9:16 Ultra-HD Portrait Video with 3D Pixar aesthetic, kinetic pan/zoom & subtitles
+- Renders 9:16 8K/4K Ultra-HD Portrait Video (4320x7680 / 2160x3840) with 3D Pixar imagery,
+  multi-scene transitions, cinema bars, and high-retention typography for YouTube Shorts.
 """
 
 import os
@@ -16,7 +17,6 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
-
 # Auto-configure cross-platform FFmpeg
 try:
     import static_ffmpeg
@@ -28,9 +28,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 
 def sanitize_ffmpeg_text(text):
     """Sanitizes text for safe ffmpeg drawtext filter rendering."""
-    # Colons and single quotes break ffmpeg filter parsing
     clean = text.replace(":", " -").replace("'", "").replace('"', '').replace("\\", "")
-    # Remove surrogate or emoji characters that standard system fonts don't render
     clean = "".join([c for c in clean if ord(c) < 65536])
     return clean.strip()
 
@@ -50,6 +48,20 @@ def load_story(story_number=1):
     with open(story_file, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def get_audio_duration(audio_path):
+    """Retrieves audio file duration in seconds using ffprobe."""
+    cmd = [
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        audio_path
+    ]
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        return float(res.stdout.strip())
+    except Exception:
+        return 58.0
+
 def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch="+0Hz"):
     """Generates expressive, human-like animated storyteller speech via edge-tts."""
     os.makedirs(os.path.dirname(output_audio_path) if os.path.dirname(output_audio_path) else ".", exist_ok=True)
@@ -65,10 +77,11 @@ def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch=
     print(f"Generated Voiceover: {output_audio_path} ({os.path.getsize(output_audio_path)} bytes)")
     return output_audio_path
 
-def produce_story_video(story_data, lang_code, output_video_path):
+def produce_story_video(story_data, lang_code, output_video_path, quality="8k"):
     """
     Renders the complete 9:16 portrait video for a specific language channel.
-    Synchronizes 3D Pixar-style visuals with the localized neural voiceover.
+    - Synchronizes 3D Pixar-style visual scenes with localized neural voiceover.
+    - Supports '8k' (4320x7680), '4k' (2160x3840), or '1080p' (1080x1920).
     """
     os.makedirs(os.path.dirname(output_video_path) if os.path.dirname(output_video_path) else ".", exist_ok=True)
     config = load_network_config()
@@ -83,48 +96,106 @@ def produce_story_video(story_data, lang_code, output_video_path):
     title = translation["title"]
     handle = ch_config["handle"]
 
+    # Resolution Configuration
+    if quality == "8k":
+        w, h = 4320, 7680
+        scale = 4.0
+    elif quality == "4k":
+        w, h = 2160, 3840
+        scale = 2.0
+    else:
+        w, h = 1080, 1920
+        scale = 1.0
+
     # 1. Generate Voiceover in native language
     audio_file = os.path.splitext(output_video_path)[0] + f"_{lang_code}_voice.mp3"
     generate_voiceover(script, voice, audio_file, rate=rate, pitch=pitch)
+    duration = get_audio_duration(audio_file)
+
+    # 2. Check for 3D Pixar Scene Assets
+    story_no = story_data.get("story_number", 1)
+    assets_dir = os.path.join(script_dir, "stories", "assets", f"story_{story_no:02d}")
+    scene_images = []
+    if os.path.exists(assets_dir):
+        scene_images = [
+            os.path.join(assets_dir, f)
+            for f in sorted(os.listdir(assets_dir))
+            if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
+        ]
 
     # Clean text for ffmpeg drawtext filter
     clean_title = sanitize_ffmpeg_text(title)[:36]
     clean_moral = sanitize_ffmpeg_text(story_data["moral"])[:46]
     clean_handle = sanitize_ffmpeg_text(handle)
 
-    # 2. Render 9:16 3D Pixar Animation Canvas (1080x1920)
-    filter_complex = (
-        "[0:v]drawbox=y=0:h=260:color=0x0f172a@0.92:t=fill,"
-        "drawbox=y=1700:h=220:color=0x0f172a@0.92:t=fill,"
-        "drawtext=text='MINDNEST TALES':fontsize=48:fontcolor=0xf59e0b:x=(w-text_w)/2:y=80,"
-        f"drawtext=text='{clean_title}':fontsize=50:fontcolor=0xffffff:x=(w-text_w)/2:y=160,"
-        f"drawtext=text='MORAL - {clean_moral}':fontsize=36:fontcolor=0xfacc15:x=(w-text_w)/2:y=1760,"
-        f"drawtext=text='{clean_handle}':fontsize=34:fontcolor=0x94a3b8:x=(w-text_w)/2:y=1830[v]"
+    # Typography & Box Dimensions scaled to resolution
+    box_top_h = int(260 * scale)
+    box_bot_y = int(h - (220 * scale))
+    box_bot_h = int(220 * scale)
+
+    f_brand = int(48 * scale)
+    y_brand = int(80 * scale)
+
+    f_title = int(50 * scale)
+    y_title = int(160 * scale)
+
+    f_moral = int(36 * scale)
+    y_moral = int(box_bot_y + (60 * scale))
+
+    f_handle = int(34 * scale)
+    y_handle = int(box_bot_y + (130 * scale))
+
+    overlay_filters = (
+        f"drawbox=y=0:h={box_top_h}:color=0x0a0f1d@0.88:t=fill,"
+        f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.88:t=fill,"
+        f"drawtext=text='MINDNEST TALES':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
+        f"drawtext=text='{clean_title}':fontsize={f_title}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_title},"
+        f"drawtext=text='MORAL - {clean_moral}':fontsize={f_moral}:fontcolor=0xfacc15:x=(w-text_w)/2:y={y_moral},"
+        f"drawtext=text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
     )
 
-    bg_input = ["-f", "lavfi", "-i", "color=c=0x1a1528:s=1080x1920:r=30"]
+    concat_file = os.path.splitext(output_video_path)[0] + "_concat.txt"
+    if scene_images:
+        num_scenes = len(scene_images)
+        scene_dur = duration / num_scenes
+        with open(concat_file, "w", encoding="utf-8") as f:
+            for img in scene_images:
+                clean_img = os.path.abspath(img).replace("\\", "/")
+                f.write(f"file '{clean_img}'\nduration {scene_dur:.3f}\n")
+            clean_last = os.path.abspath(scene_images[-1]).replace("\\", "/")
+            f.write(f"file '{clean_last}'\n")
+
+        ffmpeg_inputs = ["-f", "concat", "-safe", "0", "-i", concat_file]
+        full_filter = f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1,fps=30[vbase];[vbase]{overlay_filters}[v]"
+    else:
+        ffmpeg_inputs = ["-f", "lavfi", "-i", f"color=c=0x1a1528:s={w}x{h}:r=30"]
+        full_filter = f"[0:v]{overlay_filters}[v]"
 
     ffmpeg_cmd = [
         "ffmpeg", "-y",
-        *bg_input,
+        *ffmpeg_inputs,
         "-i", audio_file,
-        "-filter_complex", filter_complex,
+        "-filter_complex", full_filter,
         "-map", "[v]", "-map", "1:a",
-        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "19",
+        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20",
         "-c:a", "aac", "-b:a", "192k",
         "-shortest", "-pix_fmt", "yuv420p",
         output_video_path
     ]
+
+    print(f"🎬 Rendering [{lang_code.upper()}] at {quality.upper()} ({w}x{h})...")
     subprocess.run(ffmpeg_cmd, check=True)
 
     if os.path.exists(audio_file):
         os.remove(audio_file)
+    if os.path.exists(concat_file):
+        os.remove(concat_file)
 
     print(f"SUCCESS [{lang_code.upper()}]: Rendered {output_video_path} ({os.path.getsize(output_video_path)} bytes)")
     return output_video_path
 
-def produce_all_languages(story_number=1, output_dir="/tmp/mindnest_batch"):
-    """Produces the story video dubbed across all 11 languages."""
+def produce_all_languages(story_number=1, output_dir="/tmp/mindnest_batch", quality="8k"):
+    """Produces the story video dubbed across all 11 languages at 8K/4K."""
     story = load_story(story_number)
     config = load_network_config()
     os.makedirs(output_dir, exist_ok=True)
@@ -132,18 +203,19 @@ def produce_all_languages(story_number=1, output_dir="/tmp/mindnest_batch"):
     rendered_files = {}
     for ch in config["channels"]:
         lang = ch["lang_code"]
-        out_file = os.path.join(output_dir, f"story_{story_number:02d}_{lang}.mp4")
+        out_file = os.path.join(output_dir, f"story_{story_number:02d}_{lang}_{quality}.mp4")
         print(f"\n---> Producing Story {story_number} for {ch['channel_name']} ({lang})...")
-        produce_story_video(story, lang, out_file)
+        produce_story_video(story, lang, out_file, quality=quality)
         rendered_files[lang] = out_file
 
     print(f"\n=======================================================")
-    print(f"🎉 ALL 11 LOCALIZED VIDEOS PRODUCED FOR STORY {story_number}!")
+    print(f"🎉 ALL 11 LOCALIZED VIDEOS PRODUCED AT {quality.upper()} FOR STORY {story_number}!")
     print(f"=======================================================")
     return rendered_files
 
 if __name__ == "__main__":
     story_no = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     lang = sys.argv[2] if len(sys.argv) > 2 else "en"
+    quality = sys.argv[3] if len(sys.argv) > 3 else "8k"
     story = load_story(story_no)
-    produce_story_video(story, lang, f"story_{story_no}_{lang}.mp4")
+    produce_story_video(story, lang, f"story_{story_no}_{lang}_{quality}.mp4", quality=quality)
