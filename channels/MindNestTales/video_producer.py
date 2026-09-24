@@ -2,7 +2,7 @@
 MindNest Tales 3D Animation Video Producer:
 - Generates 11-language native neural narration using Pixar/Disney style storyteller voices
 - Renders 9:16 8K/4K Ultra-HD Portrait Video (4320x7680 / 2160x3840) with 3D Pixar imagery,
-  multi-scene transitions, cinema bars, and high-retention typography for YouTube Shorts.
+  smooth cinematic crossfade (xfade) transitions between clips, cinema bars, and high-retention typography.
 """
 
 import os
@@ -81,6 +81,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k"):
     """
     Renders the complete 9:16 portrait video for a specific language channel.
     - Synchronizes 3D Pixar-style visual scenes with localized neural voiceover.
+    - Applies smooth cinematic xfade crossfade transitions between all clips.
     - Supports '8k' (4320x7680), '4k' (2160x3840), or '1080p' (1080x1920).
     """
     os.makedirs(os.path.dirname(output_video_path) if os.path.dirname(output_video_path) else ".", exist_ok=True)
@@ -154,42 +155,62 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k"):
         f"drawtext=text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
     )
 
-    concat_file = os.path.splitext(output_video_path)[0] + "_concat.txt"
-    if scene_images:
+    ffmpeg_inputs = []
+    if len(scene_images) > 1:
+        # Multi-Scene with Smooth Cinematic Crossfade Transitions
         num_scenes = len(scene_images)
-        scene_dur = duration / num_scenes
-        with open(concat_file, "w", encoding="utf-8") as f:
-            for img in scene_images:
-                clean_img = os.path.abspath(img).replace("\\", "/")
-                f.write(f"file '{clean_img}'\nduration {scene_dur:.3f}\n")
-            clean_last = os.path.abspath(scene_images[-1]).replace("\\", "/")
-            f.write(f"file '{clean_last}'\n")
+        fade_dur = 0.5
+        L = (duration + (num_scenes - 1) * fade_dur) / num_scenes
 
-        ffmpeg_inputs = ["-f", "concat", "-safe", "0", "-i", concat_file]
+        scale_parts = []
+        for i, img in enumerate(scene_images):
+            clean_img = os.path.abspath(img).replace("\\", "/")
+            ffmpeg_inputs.extend(["-loop", "1", "-t", f"{L:.3f}", "-i", clean_img])
+            scale_parts.append(
+                f"[{i}:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1,fps=30[s{i}];"
+            )
+
+        prev = "s0"
+        xfade_parts = []
+        for i in range(1, num_scenes):
+            offset = i * (L - fade_dur)
+            out_tag = f"x{i}" if i < num_scenes - 1 else "vbase"
+            xfade_parts.append(
+                f"[{prev}][s{i}]xfade=transition=fade:duration={fade_dur:.2f}:offset={offset:.2f}[{out_tag}];"
+            )
+            prev = out_tag
+
+        full_filter = f"{''.join(scale_parts)}{''.join(xfade_parts)}[vbase]{overlay_filters}[v]"
+        audio_idx = num_scenes
+    elif len(scene_images) == 1:
+        # Single Scene
+        clean_img = os.path.abspath(scene_images[0]).replace("\\", "/")
+        ffmpeg_inputs.extend(["-loop", "1", "-t", f"{duration:.3f}", "-i", clean_img])
         full_filter = f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1,fps=30[vbase];[vbase]{overlay_filters}[v]"
+        audio_idx = 1
     else:
-        ffmpeg_inputs = ["-f", "lavfi", "-i", f"color=c=0x1a1528:s={w}x{h}:r=30"]
+        # Fallback Dynamic Cinematic Gradient
+        ffmpeg_inputs.extend(["-f", "lavfi", "-i", f"color=c=0x1a1528:s={w}x{h}:r=30"])
         full_filter = f"[0:v]{overlay_filters}[v]"
+        audio_idx = 1
 
     ffmpeg_cmd = [
         "ffmpeg", "-y",
         *ffmpeg_inputs,
         "-i", audio_file,
         "-filter_complex", full_filter,
-        "-map", "[v]", "-map", "1:a",
+        "-map", "[v]", "-map", f"{audio_idx}:a",
         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20",
         "-c:a", "aac", "-b:a", "192k",
         "-shortest", "-pix_fmt", "yuv420p",
         output_video_path
     ]
 
-    print(f"🎬 Rendering [{lang_code.upper()}] at {quality.upper()} ({w}x{h})...")
+    print(f"🎬 Rendering [{lang_code.upper()}] with smooth cinematic transitions at {quality.upper()} ({w}x{h})...")
     subprocess.run(ffmpeg_cmd, check=True)
 
     if os.path.exists(audio_file):
         os.remove(audio_file)
-    if os.path.exists(concat_file):
-        os.remove(concat_file)
 
     print(f"SUCCESS [{lang_code.upper()}]: Rendered {output_video_path} ({os.path.getsize(output_video_path)} bytes)")
     return output_video_path

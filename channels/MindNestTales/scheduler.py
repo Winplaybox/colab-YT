@@ -118,8 +118,26 @@ def upload_story_to_channel(youtube, video_file, title, description, tags, thumb
 
     return vid
 
-def run_mindnest_release(story_number=1, target_lang=None, quality="8k", publish_at=None, work_dir="/tmp/mindnest_batch"):
+def load_state():
+    """Loads state.json to determine current story and run history."""
+    state_file = os.path.join(script_dir, "state.json")
+    if os.path.exists(state_file):
+        with open(state_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"current_story": 1, "last_run_date": None, "total_stories": 51, "completed_stories": []}
+
+def save_state(state):
+    """Saves updated state back to state.json."""
+    state_file = os.path.join(script_dir, "state.json")
+    with open(state_file, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2)
+
+def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto_advance=False, publish_at=None, work_dir="/tmp/mindnest_batch"):
     """Executes production & upload for a specific language or all 11 channels at 8K/4K."""
+    state = load_state()
+    if story_number is None:
+        story_number = state.get("current_story", 1)
+
     config = load_network_config()
     story = load_story(story_number)
     os.makedirs(work_dir, exist_ok=True)
@@ -174,6 +192,19 @@ def run_mindnest_release(story_number=1, target_lang=None, quality="8k", publish
         else:
             results.append({"channel": ch_name, "lang": lang, "status": "RENDERED_LOCAL", "path": video_path})
 
+    # Update state tracker
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    state["last_run_date"] = today_str
+    if story_number not in state.get("completed_stories", []):
+        state.setdefault("completed_stories", []).append(story_number)
+
+    if auto_advance:
+        total = state.get("total_stories", 51)
+        next_story = (story_number % total) + 1
+        state["current_story"] = next_story
+        print(f"State updated: Next story in pipeline is Story #{next_story}")
+    save_state(state)
+
     print("\n" + "="*60)
     print(f"🎉 BATCH COMPLETE FOR STORY #{story_number}:")
     for r in results:
@@ -182,8 +213,20 @@ def run_mindnest_release(story_number=1, target_lang=None, quality="8k", publish
     return results
 
 if __name__ == "__main__":
-    story_no = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+    state = load_state()
+    default_story = state.get("current_story", 1)
+
+    story_arg = sys.argv[1] if len(sys.argv) > 1 else "auto"
+    if story_arg == "auto" or not story_arg.isdigit():
+        story_no = default_story
+        auto_adv = True
+    else:
+        story_no = int(story_arg)
+        auto_adv = False
+
     lang = sys.argv[2] if len(sys.argv) > 2 else "all"
     quality = sys.argv[3] if len(sys.argv) > 3 else "8k"
-    run_mindnest_release(story_no, lang, quality=quality)
+
+    run_mindnest_release(story_no, lang, quality=quality, auto_advance=auto_adv)
+
 
