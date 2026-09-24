@@ -18,5 +18,22 @@ Google Colab pipeline to download YouTube videos, re-brand and enhance metadata 
 ## Setup & Authentication
 
 1. **Google Sheets:** Authenticate via `google.colab.auth.authenticate_user()`.
-2. **YouTube Uploads:** Requires a Google Cloud OAuth Client ID (Desktop App) with scope `https://www.googleapis.com/auth/youtube.upload`.
-   - Place `youtube_client_secret.json` or generated `token.pickle` in the notebook root.
+2. **YouTube Uploads:** Requires a Google Cloud OAuth Client ID (Desktop App / Installed) with scope `https://www.googleapis.com/auth/youtube.upload` (configured in GCP Project `n8n-client-483318`).
+
+### How to Authenticate for YouTube:
+
+#### Option A: 1-Click Local Token Generation (Recommended)
+1. Run the local authentication helper:
+   ```bash
+   python authenticate_youtube.py
+   ```
+2. Your browser will open. Sign in to your YouTube channel's Google account and click **Allow**.
+3. A `token.pickle` file will be generated in your project root.
+4. Drag & drop `token.pickle` into the Colab Files panel (left sidebar).
+5. Run the notebook cells; it will automatically authenticate using `token.pickle`.
+
+#### Option B: Upload Client Secret to Colab
+1. Drag & drop `youtube_client_secret.json` (or `client_secret_*.json`) directly into the Colab Files panel.
+2. Run Step 6 cells in the notebook.
+3. If running in Colab, click the authorization link printed in the output, accept permissions, and paste the redirected URL or code back into the cell prompt.
+
