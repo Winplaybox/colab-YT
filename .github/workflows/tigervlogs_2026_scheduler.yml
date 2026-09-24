@@ -14,16 +14,10 @@ on:
 permissions:
   contents: write
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   run-tigervlogs-batch:
     name: Generate & Schedule TigerVlogs-2026
-    # Change to 'self-hosted' for 100% unlimited free private runs on your local machine
-    # Or keep 'ubuntu-latest' to run on GitHub cloud servers
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 60
 
     steps:
@@ -32,19 +26,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python 3.11 (Cloud Runner)
-        if: runner.os != 'Windows'
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install System Dependencies (Linux Cloud)
+      - name: Install System Dependencies (FFmpeg)
         run: |
-          if command -v apt-get >/dev/null 2>&1; then
-            sudo apt-get update && sudo apt-get install -y ffmpeg
-          else
-            echo "Skipping apt-get on self-hosted / Windows environment."
-          fi
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
 
       - name: Install Python Dependencies
         run: |
@@ -71,21 +61,22 @@ jobs:
           if [ -n "$TOKEN_DATA" ]; then
             printf "%s" "$TOKEN_DATA" > "${CHANNEL_DIR}/token.json"
             echo "Successfully restored token.json from GitHub Secrets"
-          elif [ -f "${CHANNEL_DIR}/token.json" ]; then
-            echo "Found existing local token.json on self-hosted runner"
           else
-            echo "::error::token.json not found! Add TIGERVLOGS_TOKEN_JSON to GitHub Secrets."
+            echo "::error::Neither TIGERVLOGS_TOKEN_JSON nor YOUTUBE_TOKEN_JSON was found in GitHub Secrets!"
+            echo "Please go to: Repository Settings -> Secrets and variables -> Actions -> New repository secret"
+            echo "Add 'TIGERVLOGS_TOKEN_JSON' with the contents of your local token.json"
             exit 1
           fi
 
           if [ -n "$SECRET_DATA" ]; then
             printf "%s" "$SECRET_DATA" > "${CHANNEL_DIR}/youtube_client_secret.json"
+            echo "Successfully restored youtube_client_secret.json"
           fi
 
       - name: Execute TigerVlogs-2026 Daily Batch
         run: |
           TARGET_DATE="${{ github.event.inputs.target_date }}"
-          echo "Executing TigerVlogs-2026 Daily Batch Runner..."
+          echo "Executing TigerVlogs-2026 Daily Batch Runner on GitHub Cloud..."
           if [ -n "$TARGET_DATE" ]; then
             python "channels/TigerVlogs-2026/scheduler.py" "$TARGET_DATE"
           else
