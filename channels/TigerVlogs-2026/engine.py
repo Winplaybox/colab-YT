@@ -29,7 +29,7 @@ def fetch_wiki_food_image(wiki_title, output_path='temp_food.jpg'):
     return None
 
 def download_youtube_video(video_url, output_path='downloaded_videos', file_prefix='TigerVlogs_', cookiefile=None):
-    """Downloads highest quality video stream using yt-dlp."""
+    """Downloads highest quality video stream using yt-dlp with safe fallback."""
     os.makedirs(output_path, exist_ok=True)
     ydl_opts = {
         'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
@@ -37,26 +37,32 @@ def download_youtube_video(video_url, output_path='downloaded_videos', file_pref
         'noplaylist': True,
         'verbose': False,
         'quiet': True,
+        'ignoreerrors': True
     }
     if cookiefile and os.path.exists(cookiefile):
         ydl_opts['cookiefile'] = cookiefile
 
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info_dict = ydl.extract_info(video_url, download=True)
-        if 'filepath' not in info_dict:
-            vid = info_dict.get('id')
-            ext = info_dict.get('ext', 'mp4')
-            if vid and ext:
-                info_dict['filepath'] = os.path.join(output_path, f"{file_prefix}{vid}.{ext}")
-        return info_dict
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info_dict = ydl.extract_info(video_url, download=True)
+            if not info_dict:
+                return None
+            if 'filepath' not in info_dict:
+                vid = info_dict.get('id')
+                ext = info_dict.get('ext', 'mp4')
+                if vid and ext:
+                    info_dict['filepath'] = os.path.join(output_path, f"{file_prefix}{vid}.{ext}")
+            return info_dict
+    except Exception as e:
+        print(f"Warning: yt-dlp download failed for {video_url}: {e}")
+        return None
 
 def generate_original_longform_video(
     hook_headline,
     hinglish_script,
     wiki_title,
     output_file,
-    voice="hi-IN-MadhurNeural",
-    quality="4K_8K"
+    voice="hi-IN-MadhurNeural"
 ):
     """
     Renders 100% original 16:9 widescreen video with real food photography and
@@ -116,13 +122,73 @@ def generate_original_longform_video(
     ]
     subprocess.run(ffmpeg_cmd, check=True)
 
-    # Cleanup temp audio & visual
-    if os.path.exists(audio_path):
-        os.remove(audio_path)
-    if os.path.exists(img_path):
-        os.remove(img_path)
+    if os.path.exists(audio_path): os.remove(audio_path)
+    if os.path.exists(img_path): os.remove(img_path)
 
     print(f"SUCCESS: Generated 4K/8K 16:9 Original Video: {output_file} ({os.path.getsize(output_file)} bytes)")
+    return output_file
+
+def generate_original_short(
+    hook_headline,
+    hinglish_script,
+    wiki_title,
+    output_file,
+    voice="hi-IN-MadhurNeural"
+):
+    """
+    Renders 100% original 4K Ultra-Vertical Short (2160x3840) with real food photography
+    and natural Hinglish speech. Guaranteed to bypass any external download requirements.
+    """
+    os.makedirs(os.path.dirname(output_file) if os.path.dirname(output_file) else '.', exist_ok=True)
+    audio_path = os.path.splitext(output_file)[0] + "_voice.mp3"
+    img_path = os.path.splitext(output_file)[0] + "_visual.jpg"
+
+    fetched_img = fetch_wiki_food_image(wiki_title, img_path)
+
+    subprocess.run([
+        "edge-tts",
+        "--voice", voice,
+        "--rate=+2%",
+        "--text", hinglish_script,
+        "--write-media", audio_path
+    ], check=True)
+
+    clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
+
+    if fetched_img and os.path.exists(fetched_img):
+        img_input = ["-loop", "1", "-i", fetched_img]
+        filter_complex = (
+            "[0:v]scale=2160:3840:force_original_aspect_ratio=increase,crop=2160:3840,"
+            "unsharp=3:3:0.8:3:3:0.0,"
+            "drawbox=y=320:h=440:color=0x1e293b@0.95:t=fill,"
+            f"drawtext=text='{clean_hook}':fontsize=104:fontcolor=0xfacc15:x=(w-text_w)/2:y=490,"
+            "drawtext=text='@epicbharat.official':fontsize=76:fontcolor=0x94a3b8:x=(w-text_w)/2:y=3400[v]"
+        )
+    else:
+        img_input = ["-f", "lavfi", "-i", "color=c=0x0a0f1d:s=2160x3840:r=30"]
+        filter_complex = (
+            "[0:v]drawbox=y=320:h=440:color=0x1e293b@0.95:t=fill,"
+            f"drawtext=text='{clean_hook}':fontsize=104:fontcolor=0xfacc15:x=(w-text_w)/2:y=490,"
+            "drawtext=text='@epicbharat.official':fontsize=76:fontcolor=0x94a3b8:x=(w-text_w)/2:y=3400[v]"
+        )
+
+    ffmpeg_cmd = [
+        "ffmpeg", "-y",
+        *img_input,
+        "-i", audio_path,
+        "-filter_complex", filter_complex,
+        "-map", "[v]", "-map", "1:a",
+        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
+        "-c:a", "aac", "-b:a", "192k",
+        "-shortest", "-pix_fmt", "yuv420p",
+        output_file
+    ]
+    subprocess.run(ffmpeg_cmd, check=True)
+
+    if os.path.exists(audio_path): os.remove(audio_path)
+    if os.path.exists(img_path): os.remove(img_path)
+
+    print(f"SUCCESS: Generated 4K Ultra-Vertical Short: {output_file} ({os.path.getsize(output_file)} bytes)")
     return output_file
 
 def remix_street_food_short(

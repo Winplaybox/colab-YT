@@ -11,6 +11,9 @@ on:
         required: false
         default: ''
 
+permissions:
+  contents: write
+
 jobs:
   run-tigervlogs-batch:
     name: Generate & Schedule TigerVlogs-2026
@@ -20,6 +23,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -38,28 +43,43 @@ jobs:
           pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 gspread requests
 
       - name: Restore TigerVlogs-2026 Credentials
+        env:
+          TIGERVLOGS_TOKEN: ${{ secrets.TIGERVLOGS_TOKEN_JSON }}
+          FALLBACK_TOKEN: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+          TIGERVLOGS_SECRET: ${{ secrets.TIGERVLOGS_CLIENT_SECRET_JSON }}
+          FALLBACK_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
         run: |
           CHANNEL_DIR="channels/TigerVlogs-2026"
           mkdir -p "${CHANNEL_DIR}"
-          
-          # Prioritize channel-specific secret, fallback to general secret
-          TOKEN_SECRET="${{ secrets.TIGERVLOGS_TOKEN_JSON || secrets.YOUTUBE_TOKEN_JSON }}"
-          CLIENT_SECRET="${{ secrets.TIGERVLOGS_CLIENT_SECRET_JSON || secrets.YOUTUBE_CLIENT_SECRET_JSON }}"
-          
-          if [ -n "$TOKEN_SECRET" ]; then
-            echo "$TOKEN_SECRET" > "${CHANNEL_DIR}/token.json"
-            echo "Restored token.json for TigerVlogs-2026"
+
+          # Pick the first non-empty token
+          TOKEN_DATA="${TIGERVLOGS_TOKEN:-$FALLBACK_TOKEN}"
+          SECRET_DATA="${TIGERVLOGS_SECRET:-$FALLBACK_SECRET}"
+
+          if [ -n "$TOKEN_DATA" ]; then
+            printf "%s" "$TOKEN_DATA" > "${CHANNEL_DIR}/token.json"
+            echo "Successfully restored token.json for TigerVlogs-2026"
+          else
+            echo "::error::Neither TIGERVLOGS_TOKEN_JSON nor YOUTUBE_TOKEN_JSON was found in GitHub Secrets!"
+            echo "Please go to: Repository Settings -> Secrets and variables -> Actions -> New repository secret"
+            echo "Add 'TIGERVLOGS_TOKEN_JSON' with the contents of your local token.json"
+            exit 1
           fi
-          if [ -n "$CLIENT_SECRET" ]; then
-            echo "$CLIENT_SECRET" > "${CHANNEL_DIR}/youtube_client_secret.json"
-            echo "Restored youtube_client_secret.json for TigerVlogs-2026"
+
+          if [ -n "$SECRET_DATA" ]; then
+            printf "%s" "$SECRET_DATA" > "${CHANNEL_DIR}/youtube_client_secret.json"
+            echo "Successfully restored youtube_client_secret.json for TigerVlogs-2026"
           fi
 
       - name: Execute TigerVlogs-2026 Daily Batch
         run: |
           TARGET_DATE="${{ github.event.inputs.target_date }}"
           echo "Executing TigerVlogs-2026 Daily Batch Runner..."
-          python "channels/TigerVlogs-2026/scheduler.py" ${TARGET_DATE}
+          if [ -n "$TARGET_DATE" ]; then
+            python "channels/TigerVlogs-2026/scheduler.py" "$TARGET_DATE"
+          else
+            python "channels/TigerVlogs-2026/scheduler.py"
+          fi
 
       - name: Commit State / Logs
         if: always()
@@ -67,4 +87,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "TigerVlogs-2026 Autonomous Bot"
           git add -A
-          git diff --staged --quiet || (git commit -m "chore(TigerVlogs-2026): automated daily upload run [skip ci]" && git push)
+          git diff --staged --quiet || git commit -m "chore(TigerVlogs-2026): automated daily upload run [skip ci]"
+          git push || echo "Push skipped or no new commits to push."

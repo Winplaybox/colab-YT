@@ -20,6 +20,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, script_dir)
 from engine import (
     generate_original_longform_video,
+    generate_original_short,
     remix_street_food_short,
     download_youtube_video
 )
@@ -35,19 +36,35 @@ def get_authenticated_youtube_service():
     if not os.path.exists(token_path) and os.path.exists("/content/token.json"):
         token_path = "/content/token.json"
 
-    # Support GitHub Actions Secrets
-    if "YOUTUBE_TOKEN_JSON" in os.environ and not os.path.exists(token_path):
-        with open(token_path, "w", encoding="utf-8") as f:
-            f.write(os.environ["YOUTUBE_TOKEN_JSON"])
+    # Support GitHub Actions Secrets via environment variables
+    for env_key in ["TIGERVLOGS_TOKEN_JSON", "YOUTUBE_TOKEN_JSON"]:
+        if env_key in os.environ and os.environ[env_key].strip() and not os.path.exists(token_path):
+            with open(token_path, "w", encoding="utf-8") as f:
+                f.write(os.environ[env_key].strip())
+            break
 
     if not os.path.exists(token_path):
-        raise FileNotFoundError(f"token.json not found in {script_dir} or environment.")
+        raise FileNotFoundError(
+            f"token.json not found in {script_dir}. "
+            "Please ensure TIGERVLOGS_TOKEN_JSON is added to GitHub Repository Secrets!"
+        )
 
-    creds = Credentials.from_authorized_user_file(token_path)
+    try:
+        creds = Credentials.from_authorized_user_file(token_path)
+    except Exception as e:
+        raise ValueError(
+            f"Failed to parse credentials from {token_path}: {e}. "
+            "Please verify that the full JSON content was pasted into GitHub Secrets."
+        )
+
     if creds.expired and creds.refresh_token:
-        creds.refresh(google.auth.transport.requests.Request())
-        with open(token_path, "w", encoding="utf-8") as f:
-            f.write(creds.to_json())
+        try:
+            creds.refresh(google.auth.transport.requests.Request())
+            with open(token_path, "w", encoding="utf-8") as f:
+                f.write(creds.to_json())
+            print("Access token refreshed automatically.")
+        except Exception as e:
+            print(f"Token refresh warning: {e}")
 
     return build("youtube", "v3", credentials=creds)
 
@@ -60,7 +77,7 @@ def upload_video_to_youtube(
     publish_at=None,
     category_id="22"
 ):
-    """Uploads a video and schedules it for release."""
+    """Uploads a video and schedules it for release with retries."""
     status = {
         "privacyStatus": "private",
         "selfDeclaredMadeForKids": False
@@ -88,14 +105,27 @@ def upload_video_to_youtube(
     if publish_at:
         print(f" -> Scheduled Release: {publish_at}")
 
-    response = insert_request.execute()
-    return response.get("id")
+    for attempt in range(1, 4):
+        try:
+            response = insert_request.execute()
+            vid = response.get("id")
+            print(f"SUCCESS: Video '{title}' uploaded! ID: {vid}")
+            return vid
+        except HttpError as e:
+            print(f"HTTP error on attempt {attempt}: {e}")
+            if attempt == 3: raise
+            time.sleep(3)
+        except Exception as e:
+            print(f"Upload error on attempt {attempt}: {e}")
+            if attempt == 3: raise
+            time.sleep(3)
+    return None
 
 def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
     """
     Executes the 3 daily release slots:
     - Slot 1 (1:00 PM IST / 07:30 UTC): 100% Original 16:9 4K Food Investigation Video
-    - Slot 2 (6:00 PM IST / 12:30 UTC): 4K Ultra-Vertical Street Food Short (from queue)
+    - Slot 2 (6:00 PM IST / 12:30 UTC): 4K Ultra-Vertical Street Food Short (from queue or generated)
     - Slot 3 (8:45 PM IST / 15:15 UTC): 100% Original 16:9 4K Food Science Video
     """
     config = load_config()
@@ -112,7 +142,7 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
 
     results = []
 
-    # --- TOPICAL ARCHIVE FOR ORIGINAL 16:9 INVESTIGATIONS ---
+    # --- TOPICAL ARCHIVE FOR ORIGINAL INVESTIGATIONS ---
     TOPIC_POOL = [
         {
             "hook": "THE TRUTH ABOUT RECYCLED SAMOSA OIL! 😱",
@@ -134,15 +164,21 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
             "script": "Garmiyo me roadside lassi peene se pehle ye jaan lijiye! Kai vendors thick consistency dene ke liye dahi me blotting paper ya industrial thickeners use karte hain. Real dahi lassi natural sweetness aur mild sour taste deti hai, jabki fake lassi me unnatural chemical smell hoti hai. Hamesha trusted dairy se hi fresh lassi lein!",
             "wiki": "Lassi",
             "tags": ["lassi", "summer drink", "street food india", "pure veg", "food science", "epic bharat", "tiger vlogs"]
+        },
+        {
+            "hook": "THE SECRET OF FIRE PANI PURI! 🔥",
+            "title": "The Crazy Science of Fire Pani Puri! 🔥 #FoodScience",
+            "script": "Fire Pani Puri me aag kaise lagti hai? Isme edible clove oil ya pure alcohol ka use hota hai. Aag upar ki taraf jalti hai, isliye puri ka shell thanda rehta hai aur muh nahi jalta! Intense heat spices ke volatile oils ko release karti hai jo instant kick deta hai. Follow Epic Bharat for daily street food science!",
+            "wiki": "Pani_puri",
+            "tags": ["fire pani puri", "pani puri", "food science", "indian street food", "street food india", "epic bharat", "tiger vlogs"]
         }
     ]
 
-    # Select topic based on target date to ensure unique content daily
     day_num = int(target_date_str.replace("-", "")) % len(TOPIC_POOL)
     day_topic_1 = TOPIC_POOL[day_num]
     day_topic_2 = TOPIC_POOL[(day_num + 1) % len(TOPIC_POOL)]
 
-    # --- SLOT 1: Original 16:9 Investigation ---
+    # --- SLOT 1: Original 16:9 Food Investigation ---
     pub_at_1 = f"{target_date_str}T07:30:00.000Z"
     v1_file = os.path.join(batch_dir, f"v1_investigation_{target_date_str}.mp4")
     print(f"\n[Slot 1 - {pub_at_1}] Generating 16:9 Original Investigation...")
@@ -156,26 +192,41 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
 
     v1_desc = f"{day_topic_1['title']}\n\n{day_topic_1['script']}\n\n🌿 100% Pure Vegetarian & Food Science Content.\n📩 Business: {config['brand_email']}\n👉 Subscribe to {config['brand_handle']} for daily truths!"
     vid_1 = upload_video_to_youtube(youtube, v1_file, day_topic_1["title"], v1_desc, day_topic_1["tags"], publish_at=pub_at_1)
-    results.append({"slot": 1, "id": vid_1, "url": f"https://youtu.be/{vid_1}", "time": pub_at_1})
+    if vid_1:
+        results.append({"slot": 1, "id": vid_1, "url": f"https://youtu.be/{vid_1}", "time": pub_at_1})
     if os.path.exists(v1_file): os.remove(v1_file)
 
-    # --- SLOT 2: Remixed Street Food Short (from Google Sheet queue) ---
+    # --- SLOT 2: 4K Ultra-Vertical Street Food Short (From queue or generated fallback) ---
     pub_at_2 = f"{target_date_str}T12:30:00.000Z"
     v2_file = os.path.join(batch_dir, f"v2_streetfood_short_{target_date_str}.mp4")
-    print(f"\n[Slot 2 - {pub_at_2}] Processing Queue Item for 4K Short...")
-    # Queue item: Next pending video from Sheet
+    print(f"\n[Slot 2 - {pub_at_2}] Preparing 4K Ultra-Vertical Short...")
+
     raw_video_url = "https://www.youtube.com/watch?v=ZF58UKMciVc" # Sheermal Wala
     dl_info = download_youtube_video(raw_video_url, output_path=batch_dir)
+
     if dl_info and dl_info.get("filepath") and os.path.exists(dl_info["filepath"]):
         remix_street_food_short(dl_info["filepath"], "AJMER'S CRAZIEST DRY FRUIT SHEERMAL! 👑🔥", v2_file, duration=28)
         if os.path.exists(dl_info["filepath"]): os.remove(dl_info["filepath"])
-        
         v2_title = "Ajmer's Craziest Dry Fruit Sheermal! 🤤🔥 #Shorts"
         v2_desc = f"👑 World-Famous Dry Fruit Sheermal in Ajmer!\n\nLocation: Dargah Bazar, Ajmer, Rajasthan.\n🌿 100% Pure Vegetarian Street Food.\n👉 Subscribe to {config['brand_handle']} for daily street food shorts!"
         v2_tags = ["sheermal", "ajmer street food", "street food india", "dry fruits", "pure veg", "epic bharat", "shorts"]
-        vid_2 = upload_video_to_youtube(youtube, v2_file, v2_title, v2_desc, v2_tags, publish_at=pub_at_2)
+    else:
+        print("Using 100% original 4K Short generator fallback...")
+        generate_original_short(
+            hook_headline="CRAZIEST DRY FRUIT SHEERMAL! 👑🤤",
+            hinglish_script="Ajmer ka ye world famous Dry Fruit Sheermal dekh kar aapke hosh udd jayenge! Isme daale jaate hain dhero kaju, badam, pista aur asli desi ghee! Pure vegetarian royal Indian street food. Subscribe to Epic Bharat for daily street food discoveries!",
+            wiki_title="Sheermal",
+            output_file=v2_file,
+            voice="hi-IN-MadhurNeural"
+        )
+        v2_title = "Ajmer's Royal Dry Fruit Sheermal! 🤤🔥 #Shorts"
+        v2_desc = f"👑 World-Famous Dry Fruit Sheermal in Ajmer!\n\n🌿 100% Pure Vegetarian Street Food.\n👉 Subscribe to {config['brand_handle']} for daily street food shorts!"
+        v2_tags = ["sheermal", "ajmer street food", "street food india", "dry fruits", "pure veg", "epic bharat", "shorts"]
+
+    vid_2 = upload_video_to_youtube(youtube, v2_file, v2_title, v2_desc, v2_tags, publish_at=pub_at_2)
+    if vid_2:
         results.append({"slot": 2, "id": vid_2, "url": f"https://youtu.be/{vid_2}", "time": pub_at_2})
-        if os.path.exists(v2_file): os.remove(v2_file)
+    if os.path.exists(v2_file): os.remove(v2_file)
 
     # --- SLOT 3: Original 16:9 Food Science Video ---
     pub_at_3 = f"{target_date_str}T15:15:00.000Z"
@@ -191,7 +242,8 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
 
     v3_desc = f"{day_topic_2['title']}\n\n{day_topic_2['script']}\n\n🌿 100% Pure Vegetarian & Food Science Content.\n📩 Business: {config['brand_email']}\n👉 Subscribe to {config['brand_handle']} for daily food science!"
     vid_3 = upload_video_to_youtube(youtube, v3_file, day_topic_2["title"], v3_desc, day_topic_2["tags"], publish_at=pub_at_3)
-    results.append({"slot": 3, "id": vid_3, "url": f"https://youtu.be/{vid_3}", "time": pub_at_3})
+    if vid_3:
+        results.append({"slot": 3, "id": vid_3, "url": f"https://youtu.be/{vid_3}", "time": pub_at_3})
     if os.path.exists(v3_file): os.remove(v3_file)
 
     print("\n" + "="*60)
@@ -202,5 +254,5 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
     return results
 
 if __name__ == "__main__":
-    target = sys.argv[1] if len(sys.argv) > 1 else None
+    target = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1].strip() else None
     run_daily_batch(target)
