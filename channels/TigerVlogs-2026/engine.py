@@ -2,6 +2,7 @@
 Engine for TigerVlogs-2026:
 - 100% Original 16:9 Long-Form Videos in 4K/8K Master Quality with Real Food Images & Hinglish Speech
 - Transformative 9:16 Shorts with Audio Pitch/Speed Shift & 4K Ultra-Vertical Canvas
+- Cross-platform FFmpeg auto-resolution (Windows, Linux, Mac, Cloud, Self-Hosted)
 """
 
 import os
@@ -9,6 +10,13 @@ import subprocess
 import requests
 import json
 import yt_dlp
+
+# Auto-configure FFmpeg across all platforms (Windows, Linux, GitHub Runner)
+try:
+    import static_ffmpeg
+    static_ffmpeg.add_paths()
+except Exception:
+    pass
 
 def fetch_wiki_food_image(wiki_title, output_path='temp_food.jpg'):
     """Fetches authentic, high-resolution food photography from Wikipedia/Wikimedia Commons."""
@@ -73,10 +81,8 @@ def generate_original_longform_video(
     audio_path = os.path.splitext(output_file)[0] + "_voice.mp3"
     img_path = os.path.splitext(output_file)[0] + "_visual.jpg"
 
-    # 1. Fetch authentic high-res food image
     fetched_img = fetch_wiki_food_image(wiki_title, img_path)
 
-    # 2. Generate natural human Hinglish voiceover via edge-tts
     subprocess.run([
         "edge-tts",
         "--voice", voice,
@@ -87,7 +93,6 @@ def generate_original_longform_video(
 
     clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
 
-    # 3. High-definition 4K/8K 16:9 ffmpeg render with unsharp mask
     if fetched_img and os.path.exists(fetched_img):
         img_input = ["-loop", "1", "-i", fetched_img]
         filter_complex = (
