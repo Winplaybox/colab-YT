@@ -92,6 +92,21 @@ def resolve_font_for_language(lang_code):
     for f in font_candidates:
         if os.path.exists(f):
             return f.replace("\\", "/").replace(":", "\\:")
+
+    if not is_win:
+        import glob
+        pattern_map = {
+            "hi": "*Devanagari*",
+            "ja": "*CJK*",
+            "ko": "*CJK*",
+            "ar": "*Arabic*"
+        }
+        pat = pattern_map.get(lang_code, "*Noto*")
+        found = glob.glob(f"/usr/share/fonts/**/{pat}", recursive=True)
+        for cand in found:
+            if cand.lower().endswith(('.ttf', '.ttc', '.otf')):
+                return cand.replace("\\", "/").replace(":", "\\:")
+
     return ""
 
 def sanitize_ffmpeg_text(text):

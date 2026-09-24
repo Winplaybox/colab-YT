@@ -44,7 +44,7 @@ jobs:
       - name: Install System Dependencies (FFmpeg & Global Fonts)
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-noto fonts-noto-cjk fonts-noto-core fonts-indic fonts-deva fonts-noto-arabic
+          sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-cjk
 
       - name: Install Python Dependencies
         run: |
