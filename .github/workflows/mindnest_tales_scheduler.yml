@@ -2,8 +2,9 @@ name: MindNest Tales Multi-Language 11-Channel Scheduler
 
 on:
   schedule:
-    # Dedicated daily cron for MindNest Tales at 04:00 UTC (9:30 AM IST)
-    - cron: '0 4 * * *'
+    # Autonomous batch release on Wednesday, Saturday, Sunday at 02:00 UTC (7:30 AM IST)
+    # The engine renders and auto-schedules each video via YouTube publishAt for its target local time!
+    - cron: '0 2 * * 0,3,6'
   workflow_dispatch:
     inputs:
       story_number:
@@ -57,8 +58,6 @@ jobs:
       - name: Restore MindNest Tales Multi-Channel Credentials
         env:
           MINDNEST_TOKEN: ${{ secrets.MINDNEST_TOKEN_JSON }}
-          FALLBACK_TOKEN: ${{ secrets.YOUTUBE_TOKEN_JSON }}
-          TIGER_TOKEN: ${{ secrets.TIGERVLOGS_TOKEN_JSON }}
           MINDNEST_SECRET: ${{ secrets.MINDNEST_CLIENT_SECRET_JSON }}
           FALLBACK_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
           # Language-specific tokens (if configured individually)
@@ -78,10 +77,9 @@ jobs:
           CREDS_DIR="${CHANNEL_DIR}/credentials"
           mkdir -p "${CREDS_DIR}"
 
-          # Master fallback token
-          MASTER_TOKEN="${MINDNEST_TOKEN:-${FALLBACK_TOKEN:-$TIGER_TOKEN}}"
-          if [ -n "$MASTER_TOKEN" ]; then
-            printf "%s" "$MASTER_TOKEN" > "${CHANNEL_DIR}/token.json"
+          # Master token for MindNest Tales (if all channels under 1 account)
+          if [ -n "$MINDNEST_TOKEN" ]; then
+            printf "%s" "$MINDNEST_TOKEN" > "${CHANNEL_DIR}/token.json"
             echo "Master YouTube token installed for MindNest Tales."
           fi
 

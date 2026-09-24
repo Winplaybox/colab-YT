@@ -67,8 +67,22 @@ def main():
     with open(token_out, "w", encoding="utf-8") as f:
         f.write(token_json_str)
 
+    # Inspect authorized channel name
+    channel_title = "Unknown"
+    channel_id = "Unknown"
+    try:
+        from googleapiclient.discovery import build
+        service = build("youtube", "v3", credentials=credentials)
+        ch_resp = service.channels().list(mine=True, part="snippet").execute()
+        if ch_resp.get("items"):
+            channel_title = ch_resp["items"][0]["snippet"]["title"]
+            channel_id = ch_resp["items"][0]["id"]
+    except Exception:
+        pass
+
     print("\n" + "=" * 65)
-    print(f"🎉 SUCCESS! Token saved to: {token_out}")
+    print(f"🎉 SUCCESS! Authorized for Channel: '{channel_title}' (ID: {channel_id})")
+    print(f"Token saved to: {token_out}")
     print("=" * 65)
     print(f"\n📋 TO ENABLE GITHUB ACTIONS CLOUD UPLOAD:")
     print(f"1. Go to your GitHub repository -> Settings -> Secrets and variables -> Actions")

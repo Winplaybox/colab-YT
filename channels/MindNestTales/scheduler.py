@@ -37,9 +37,53 @@ except ImportError:
     def init_tracking_sheet(): pass
 
 
-def get_channel_youtube_service(lang_code):
+def compute_next_publish_time(publish_time_utc="03:30", schedule_days=[2, 5, 6]):
     """
-    Resolves YouTube OAuth credentials for a specific language channel.
+    Computes next Saturday, Sunday, or Wednesday publish timestamp in ISO 8601 UTC.
+    Days: Wednesday=2, Saturday=5, Sunday=6.
+    Ensures at least 15 minutes in advance for YouTube scheduling API.
+    """
+    try:
+        from datetime import timezone
+        now_utc = datetime.now(timezone.utc)
+        target_hour, target_min = map(int, publish_time_utc.split(":"))
+        
+        for days_ahead in range(8):
+            candidate_date = (now_utc + timedelta(days=days_ahead)).date()
+            candidate_dt = datetime(
+                candidate_date.year, candidate_date.month, candidate_date.day,
+                target_hour, target_min, 0, tzinfo=timezone.utc
+            )
+            if candidate_dt.weekday() in schedule_days and candidate_dt > now_utc + timedelta(minutes=15):
+                return candidate_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+    except Exception as e:
+        print(f"Schedule calculation error: {e}")
+    return None
+
+def verify_channel_identity(youtube, expected_channel_id, expected_channel_name):
+    """
+    STRICT SECURITY GUARD:
+    Verifies that the authenticated YouTube token actually belongs to the target channel.
+    Rejects the token immediately if it belongs to Tiger Vlogs or any other unexpected channel.
+    """
+    try:
+        res = youtube.channels().list(mine=True, part="snippet").execute()
+        items = res.get("items", [])
+        if not items:
+            return False, "No YouTube channel associated with this token."
+        actual_id = items[0]["id"]
+        actual_title = items[0]["snippet"]["title"]
+        if expected_channel_id and actual_id != expected_channel_id:
+            return False, f"Token belongs to '{actual_title}' ({actual_id}), NOT target '{expected_channel_name}' ({expected_channel_id})!"
+        return True, f"Verified: '{actual_title}' ({actual_id})"
+    except Exception as e:
+        print(f"Warning: Could not verify channel identity: {e}")
+        return True, "Channel verification bypassed"
+
+def get_channel_youtube_service(lang_code, expected_channel_id=None, expected_name=None):
+    """
+    Resolves YouTube OAuth credentials strictly for the designated MindNest Tales channel.
+    NEVER falls back to TigerVlogs. Validates channel ID to prevent cross-channel uploads.
     """
     if not HAS_GOOGLE_CLIENT:
         print(f"Notice: Google API client libraries not installed in this environment. Video produced locally.")
@@ -50,24 +94,23 @@ def get_channel_youtube_service(lang_code):
     
     token_path = os.path.join(creds_dir, f"token_{lang_code}.json")
     
-    # Check fallback single-account token
-    if not os.path.exists(token_path):
-        general_token = os.path.join(script_dir, "token.json")
-        if os.path.exists(general_token):
-            token_path = general_token
-        elif os.path.exists(os.path.join(script_dir, "..", "TigerVlogs-2026", "token.json")):
-            token_path = os.path.join(script_dir, "..", "TigerVlogs-2026", "token.json")
-
-    # Check Environment Variables (GitHub Secrets)
-    env_keys = [f"MINDNEST_TOKEN_{lang_code.upper()}_JSON", "MINDNEST_TOKEN_JSON", "YOUTUBE_TOKEN_JSON"]
+    # Check Environment Variables (Language specific or Master MindNest token)
+    env_keys = [f"MINDNEST_TOKEN_{lang_code.upper()}_JSON", "MINDNEST_TOKEN_JSON"]
     for k in env_keys:
         if k in os.environ and os.environ[k].strip() and not os.path.exists(token_path):
             with open(token_path, "w", encoding="utf-8") as f:
                 f.write(os.environ[k].strip())
             break
 
+    # Master token fallback strictly within MindNest Tales directory only
     if not os.path.exists(token_path):
-        print(f"Warning: No credentials found for {lang_code.upper()}. Will skip upload step.")
+        general_token = os.path.join(script_dir, "token.json")
+        if os.path.exists(general_token):
+            token_path = general_token
+
+    if not os.path.exists(token_path):
+        print(f"⚠️ Notice: No credentials found for {expected_name or lang_code.upper()}. Will render locally (skipping upload).")
+        print(f"👉 Run 'python channels/MindNestTales/authenticate_channels.py {lang_code}' to authenticate this channel.")
         return None
 
     try:
@@ -76,7 +119,17 @@ def get_channel_youtube_service(lang_code):
             creds.refresh(google.auth.transport.requests.Request())
             with open(token_path, "w", encoding="utf-8") as f:
                 f.write(creds.to_json())
-        return build("youtube", "v3", credentials=creds)
+        service = build("youtube", "v3", credentials=creds)
+        
+        # Verify channel ownership
+        is_valid, msg = verify_channel_identity(service, expected_channel_id, expected_name)
+        if not is_valid:
+            print(f"\n🛑 CRITICAL SAFETY ABORT: {msg}")
+            print(f"Upload to this channel is BLOCKED to prevent uploading to the wrong channel!")
+            print(f"👉 Re-authenticate: python channels/MindNestTales/authenticate_channels.py {lang_code}\n")
+            return None
+        print(f"✅ Channel authenticated: {msg}")
+        return service
     except Exception as e:
         print(f"Auth error for {lang_code.upper()}: {e}")
         return None
@@ -180,9 +233,19 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto
         if "#Shorts" not in title and "#shorts" not in title:
             title = f"{title} #Shorts"
 
-        youtube = get_channel_youtube_service(lang)
+        youtube = get_channel_youtube_service(
+            lang,
+            expected_channel_id=ch.get("channel_id"),
+            expected_name=ch_name
+        )
         if youtube:
             try:
+                # Compute channel-specific scheduled publish time (Sat, Sun, Wed at target local time)
+                channel_publish_at = publish_at
+                if not channel_publish_at and ch.get("publish_time_utc"):
+                    channel_publish_at = compute_next_publish_time(ch.get("publish_time_utc", "03:30"))
+                    print(f"📅 Auto-Scheduled release for {ch_name}: {channel_publish_at} (UTC) / {ch.get('publish_time_ist')} IST")
+
                 vid = upload_story_to_channel(
                     youtube,
                     video_path,
@@ -190,10 +253,11 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto
                     translation["description"],
                     translation["tags"],
                     thumbnail_path=thumb_path,
-                    publish_at=publish_at
+                    publish_at=channel_publish_at
                 )
-                results.append({"channel": ch_name, "lang": lang, "status": "UPLOADED", "url": f"https://youtu.be/{vid}"})
-                record_story_status(story_number, lang, f"Uploaded ({vid})")
+                status_label = f"Scheduled ({channel_publish_at})" if channel_publish_at else f"Uploaded ({vid})"
+                results.append({"channel": ch_name, "lang": lang, "status": status_label, "url": f"https://youtu.be/{vid}"})
+                record_story_status(story_number, lang, status_label)
             except Exception as e:
                 print(f"Upload failed for {ch_name}: {e}")
                 results.append({"channel": ch_name, "lang": lang, "status": "FAILED", "error": str(e)})

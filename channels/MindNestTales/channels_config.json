@@ -3,6 +3,11 @@
   "style": "3D Pixar/Disney style cute cartoon animals | Comedy + Documentary tone | Classic moral ending",
   "format": "Portrait 9:16 (1080x1920 / 2160x3840 4K UHD)",
   "total_stories": 51,
+  "schedule_days": [
+    "Saturday",
+    "Sunday",
+    "Wednesday"
+  ],
   "channels": [
     {
       "language": "Hindi",
@@ -13,7 +18,10 @@
       "channel_url": "https://www.youtube.com/channel/UCWx78e5Q1YxB5KX8gKzE7Zg",
       "voice": "hi-IN-MadhurNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "09:00",
+      "publish_time_utc": "03:30",
+      "secret_token_name": "MINDNEST_TOKEN_HI_JSON"
     },
     {
       "language": "English",
@@ -24,7 +32,10 @@
       "channel_url": "https://www.youtube.com/channel/UCs4PpwEc2Bh9NpP2LIlrvBA",
       "voice": "en-US-GuyNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "18:30",
+      "publish_time_utc": "13:00",
+      "secret_token_name": "MINDNEST_TOKEN_EN_JSON"
     },
     {
       "language": "Spanish",
@@ -35,7 +46,10 @@
       "channel_url": "https://www.youtube.com/channel/UCuKQmTmhY96IcJixy28Im-Q",
       "voice": "es-ES-AlvaroNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "12:30",
+      "publish_time_utc": "07:00",
+      "secret_token_name": "MINDNEST_TOKEN_ES_JSON"
     },
     {
       "language": "Portuguese",
@@ -46,7 +60,10 @@
       "channel_url": "https://www.youtube.com/channel/UCh-rwMK9HcdobcJyInoQ4eg",
       "voice": "pt-BR-AntonioNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "17:30",
+      "publish_time_utc": "12:00",
+      "secret_token_name": "MINDNEST_TOKEN_PT_JSON"
     },
     {
       "language": "French",
@@ -57,7 +74,10 @@
       "channel_url": "https://www.youtube.com/channel/UCqjkPkII8LzCsFxlOdJFWvw",
       "voice": "fr-FR-HenriNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "12:30",
+      "publish_time_utc": "07:00",
+      "secret_token_name": "MINDNEST_TOKEN_FR_JSON"
     },
     {
       "language": "German",
@@ -68,7 +88,10 @@
       "channel_url": "https://www.youtube.com/channel/UCIbLkitLrWG69bOlk5p6nlQ",
       "voice": "de-DE-ConradNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "12:30",
+      "publish_time_utc": "07:00",
+      "secret_token_name": "MINDNEST_TOKEN_DE_JSON"
     },
     {
       "language": "Arabic",
@@ -79,7 +102,10 @@
       "channel_url": "https://www.youtube.com/channel/UCVKVxN2aBuCzvL3orAb8-1w",
       "voice": "ar-SA-HamedNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "11:30",
+      "publish_time_utc": "06:00",
+      "secret_token_name": "MINDNEST_TOKEN_AR_JSON"
     },
     {
       "language": "Japanese",
@@ -90,7 +116,10 @@
       "channel_url": "https://www.youtube.com/channel/UCmARTtCKtgvzY9oE3dxioMg",
       "voice": "ja-JP-KeitaNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "05:30",
+      "publish_time_utc": "00:00",
+      "secret_token_name": "MINDNEST_TOKEN_JA_JSON"
     },
     {
       "language": "Korean",
@@ -101,7 +130,10 @@
       "channel_url": "https://www.youtube.com/channel/UCA-lZJNlc2IKzSFkr6dL1wQ",
       "voice": "ko-KR-InJoonNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "05:30",
+      "publish_time_utc": "00:00",
+      "secret_token_name": "MINDNEST_TOKEN_KO_JSON"
     },
     {
       "language": "Vietnamese",
@@ -112,7 +144,10 @@
       "channel_url": "https://www.youtube.com/channel/UCJj4IYOyB_gUAkMUrrhMfWQ",
       "voice": "vi-VN-NamMinhNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "07:30",
+      "publish_time_utc": "02:00",
+      "secret_token_name": "MINDNEST_TOKEN_VI_JSON"
     },
     {
       "language": "Filipino",
@@ -123,7 +158,10 @@
       "channel_url": "https://www.youtube.com/channel/UCFmsipYu-i8rHjmXwZnuUmA",
       "voice": "fil-PH-AngeloNeural",
       "voice_rate": "+2%",
-      "voice_pitch": "+0Hz"
+      "voice_pitch": "+0Hz",
+      "publish_time_ist": "06:30",
+      "publish_time_utc": "01:00",
+      "secret_token_name": "MINDNEST_TOKEN_FIL_JSON"
     }
   ]
 }
