@@ -1,0 +1,40 @@
+{
+  "channel_id": "TigerVlogs-2026",
+  "channel_name": "TigerVlogs-2026",
+  "channel_url": "https://www.youtube.com/@TigerVlogs-2026",
+  "brand_handle": "@epicbharat.official",
+  "brand_email": "epicbharat.official@gmail.com",
+  "sheet_url": "https://docs.google.com/spreadsheets/d/1HIAHjKWohyHNlAnrV0ac28sfyfH_kqqZXkD_qX8g3DI/edit?gid=867852982#gid=867852982",
+  "target_sheet": "Channel Videos",
+  "default_category_id": "22",
+  "daily_quota_limit": 6,
+  "slots": [
+    {
+      "slot_number": 1,
+      "slot_name": "Slot 1 (Lunch Peak - 1:00 PM IST)",
+      "utc_time": "07:30:00.000Z",
+      "type": "original_longform_investigation",
+      "aspect_ratio": "16:9",
+      "resolution": "3840x2160",
+      "voice": "hi-IN-MadhurNeural"
+    },
+    {
+      "slot_number": 2,
+      "slot_name": "Slot 2 (Evening Craving - 6:00 PM IST)",
+      "utc_time": "12:30:00.000Z",
+      "type": "remixed_street_food_short",
+      "aspect_ratio": "9:16",
+      "resolution": "2160x3840",
+      "source": "google_sheet"
+    },
+    {
+      "slot_number": 3,
+      "slot_name": "Slot 3 (Prime Dinner - 8:45 PM IST)",
+      "utc_time": "15:15:00.000Z",
+      "type": "original_longform_science",
+      "aspect_ratio": "16:9",
+      "resolution": "3840x2160",
+      "voice": "hi-IN-MadhurNeural"
+    }
+  ]
+}

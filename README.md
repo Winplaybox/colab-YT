@@ -1,39 +1,67 @@
-# Colab YouTube Automation Pipeline
+# 🚀 Multi-Channel YouTube Automation & Viral Engine (2026 - 2030)
 
-Google Colab pipeline to download YouTube videos, re-brand and enhance metadata (titles, descriptions, tags), and automatically upload them to YouTube with status tracking in Google Sheets.
+Autonomous, multi-channel video production and scheduling platform designed for Google Colab and GitHub Actions. Built to scale brand-new YouTube channels into multi-million-view empires using mathematical SEO, psychological curiosity hooks, and high-retention 4K/8K rendering.
 
-## Notebooks
+---
 
-- `youtube_automation_pipeline.ipynb`: Main automation notebook.
-- `Untitled0.ipynb`: Working copy of the notebook.
+## 📂 Multi-Channel Architecture
 
-## Workflow Overview
+Every channel operates as an independent, modular package inside the `channels/` directory:
 
-1. **Google Sheets Integration:** Connects to Google Sheets via `gspread` to fetch video queues and track upload statuses.
-2. **Video Downloader:** Downloads target videos using `yt-dlp`.
-3. **Metadata Enhancement:** Cleans up titles, applies description templates, and optimizes tags/keywords.
-4. **YouTube Data API Upload:** Uploads videos directly to YouTube using OAuth 2.0.
-5. **Sheet Sync:** Updates the `IsUploaded` column in Google Sheets to `TRUE` after successful uploads and removes local temporary files.
+```text
+colab-YT/
+├── channels/
+│   ├── TigerVlogs-2026/             <-- https://www.youtube.com/@TigerVlogs-2026
+│   │   ├── config.json              <-- Channel branding, slots, release times
+│   │   ├── engine.py                <-- 4K/8K Long-form generator & 9:16 Short remixer
+│   │   ├── scheduler.py             <-- Autonomous daily batch runner
+│   │   ├── youtube_automation_pipeline.ipynb <-- Colab notebook for this channel
+│   │   ├── token.json               <-- Channel OAuth credentials (gitignored)
+│   │   └── youtube_client_secret.json <-- GCP OAuth secret (gitignored)
+│   │
+│   ├── [Next-Channel-2]/            <-- Add new channels in 2 minutes
+│   └── [Next-Channel-3]/
+│
+├── .github/workflows/
+│   └── daily_youtube_scheduler.yml  <-- 100% Zero-Touch Daily Cron Runner (2026 - 2030)
+├── README.md
+```
 
-## Setup & Authentication
+---
 
-1. **Google Sheets:** Authenticate via `google.colab.auth.authenticate_user()`.
-2. **YouTube Uploads:** Requires a Google Cloud OAuth Client ID (Desktop App / Installed) with scope `https://www.googleapis.com/auth/youtube.upload` (configured in GCP Project `n8n-client-483318`).
+## ⚡ 100% Zero-Touch Autonomous Cron (GitHub Actions)
 
-### How to Authenticate for YouTube:
+The repository includes a perpetual GitHub Actions Cron job (`.github/workflows/daily_youtube_scheduler.yml`) that runs **every single day at 00:00 UTC (5:30 AM IST)**:
 
-#### Option A: 1-Click Local Token Generation (Recommended)
-1. Run the local authentication helper:
-   ```bash
-   python authenticate_youtube.py
-   ```
-2. Your browser will open. Sign in to your YouTube channel's Google account and click **Allow**.
-3. A `token.pickle` file will be generated in your project root.
-4. Drag & drop `token.pickle` into the Colab Files panel (left sidebar).
-5. Run the notebook cells; it will automatically authenticate using `token.pickle`.
+1. **Wakes up autonomously** in GitHub's cloud environment.
+2. **Generates the daily 3-video slate**:
+   - **Slot 1 (1:00 PM IST / 07:30 UTC):** 100% Original 16:9 Food Investigation Video (4K UHD, real Wikipedia photography, natural Hinglish speech).
+   - **Slot 2 (6:00 PM IST / 12:30 UTC):** 4K Ultra-Vertical Street Food Short (1.05x audio tempo/pitch, +20% saturation, kinetic banner).
+   - **Slot 3 (8:45 PM IST / 15:15 UTC):** 100% Original 16:9 Food Science Video (4K UHD, Hinglish speech).
+3. **Uploads and schedules** to YouTube Creator Studio with `privacyStatus='private'` and `publishAt`.
+4. **Updates the queue** and commits state back to GitHub.
 
-#### Option B: Upload Client Secret to Colab
-1. Drag & drop `youtube_client_secret.json` (or `client_secret_*.json`) directly into the Colab Files panel.
-2. Run Step 6 cells in the notebook.
-3. If running in Colab, click the authorization link printed in the output, accept permissions, and paste the redirected URL or code back into the cell prompt.
+### Setting Up GitHub Secrets (One-Time Setup):
+To let GitHub Actions upload on your behalf:
+1. Go to your GitHub repository -> **Settings** -> **Secrets and variables** -> **Actions**.
+2. Click **New repository secret**:
+   - `YOUTUBE_TOKEN_JSON`: Paste the entire content of `channels/TigerVlogs-2026/token.json`.
+   - `YOUTUBE_CLIENT_SECRET_JSON`: Paste the entire content of `channels/TigerVlogs-2026/youtube_client_secret.json`.
 
+---
+
+## 🎬 4K / 8K Master Visual Quality
+
+To bypass YouTube's heavy AVC1 compression and force YouTube to assign the elite **VP09 / AV01 codec**:
+- **Long-Form Videos:** Rendered at `3840x2160` (4K UHD) with Lanczos filtering and unsharp masking.
+- **Shorts:** Rendered at `2160x3840` (4K Ultra-Vertical).
+- **Encoding Profile:** `libx264 -crf 18 -preset fast -pix_fmt yuv420p` (Master broadcast visual fidelity).
+
+---
+
+## ➕ How to Add a New Channel in 2 Minutes
+
+1. Duplicate `channels/TigerVlogs-2026/` to `channels/<YourNewChannelName>/`.
+2. Edit `config.json` with the new channel's name, brand email, and release slots.
+3. Place the new channel's `youtube_client_secret.json` in that folder and run `python authenticate_youtube.py` to generate `token.json`.
+4. Done! The GitHub Actions scheduler and Colab notebooks will automatically detect and run the new channel.
