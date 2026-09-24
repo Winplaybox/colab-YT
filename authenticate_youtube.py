@@ -42,14 +42,17 @@ def main():
     with open('token.pickle', 'wb') as token:
         pickle.dump(credentials, token)
 
+    with open('token.json', 'w', encoding='utf-8') as token:
+        token.write(credentials.to_json())
+
     print("\n" + "=" * 60)
-    print("SUCCESS: 'token.pickle' generated successfully!")
+    print("SUCCESS: 'token.json' and 'token.pickle' generated successfully!")
     print("=" * 60)
     print("Steps for Google Colab:")
     print("1. Open your notebook in Google Colab.")
     print("2. In the left panel, click the folder (Files) icon.")
-    print("3. Drag & drop 'token.pickle' into the files panel.")
-    print("4. Run Step 6 in the notebook. It will load token.pickle automatically!")
+    print("3. Drag & drop 'token.json' (or 'token.pickle') into the files panel.")
+    print("4. Run Step 6 in the notebook. It will load credentials automatically!")
     print("=" * 60)
 
 if __name__ == '__main__':
