@@ -57,7 +57,6 @@ jobs:
 
       - name: Restore MindNest Tales Multi-Channel Credentials
         env:
-          MINDNEST_ALL_TOKENS: ${{ secrets.MINDNEST_ALL_TOKENS_JSON }}
           MINDNEST_TOKEN: ${{ secrets.MINDNEST_TOKEN_JSON }}
           MINDNEST_SECRET: ${{ secrets.MINDNEST_CLIENT_SECRET_JSON }}
           FALLBACK_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
@@ -78,25 +77,7 @@ jobs:
           CREDS_DIR="${CHANNEL_DIR}/credentials"
           mkdir -p "${CREDS_DIR}"
 
-          # 1. Unpack unified master token bundle if configured
-          if [ -n "$MINDNEST_ALL_TOKENS" ]; then
-            python -c "
-import os, json
-try:
-    data = json.loads(os.environ['MINDNEST_ALL_TOKENS'])
-    for lang, tok in data.items():
-        with open(f'channels/MindNestTales/credentials/token_{lang}.json', 'w') as f:
-            if isinstance(tok, str):
-                f.write(tok)
-            else:
-                json.dump(tok, f)
-    print('✅ Unpacked all-in-one token bundle for channels:', list(data.keys()))
-except Exception as e:
-    print('Notice: Could not unpack MINDNEST_ALL_TOKENS:', e)
-"
-          fi
-
-          # 2. Master token fallback
+          # Master token for MindNest Tales
           if [ -n "$MINDNEST_TOKEN" ]; then
             printf "%s" "$MINDNEST_TOKEN" > "${CHANNEL_DIR}/token.json"
             echo "Master YouTube token installed for MindNest Tales."
@@ -121,6 +102,20 @@ except Exception as e:
           fi
 
       - name: Execute MindNest Tales Production & Upload
+        env:
+          MINDNEST_ALL_TOKENS_JSON: ${{ secrets.MINDNEST_ALL_TOKENS_JSON }}
+          MINDNEST_TOKEN_JSON: ${{ secrets.MINDNEST_TOKEN_JSON }}
+          MINDNEST_TOKEN_HI_JSON: ${{ secrets.MINDNEST_TOKEN_HI_JSON }}
+          MINDNEST_TOKEN_EN_JSON: ${{ secrets.MINDNEST_TOKEN_EN_JSON }}
+          MINDNEST_TOKEN_ES_JSON: ${{ secrets.MINDNEST_TOKEN_ES_JSON }}
+          MINDNEST_TOKEN_PT_JSON: ${{ secrets.MINDNEST_TOKEN_PT_JSON }}
+          MINDNEST_TOKEN_FR_JSON: ${{ secrets.MINDNEST_TOKEN_FR_JSON }}
+          MINDNEST_TOKEN_DE_JSON: ${{ secrets.MINDNEST_TOKEN_DE_JSON }}
+          MINDNEST_TOKEN_AR_JSON: ${{ secrets.MINDNEST_TOKEN_AR_JSON }}
+          MINDNEST_TOKEN_JA_JSON: ${{ secrets.MINDNEST_TOKEN_JA_JSON }}
+          MINDNEST_TOKEN_KO_JSON: ${{ secrets.MINDNEST_TOKEN_KO_JSON }}
+          MINDNEST_TOKEN_VI_JSON: ${{ secrets.MINDNEST_TOKEN_VI_JSON }}
+          MINDNEST_TOKEN_FIL_JSON: ${{ secrets.MINDNEST_TOKEN_FIL_JSON }}
         run: |
           STORY_NUM="${{ github.event.inputs.story_number }}"
           TARGET_LANG="${{ github.event.inputs.target_language }}"
@@ -132,7 +127,6 @@ except Exception as e:
 
           echo "🚀 Triggering MindNest Tales: Story #${STORY_ARG} for Language(s): ${LANG_ARG} at ${QUAL_ARG}"
           python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG" "$QUAL_ARG"
-
 
       - name: Commit State / Logs
         if: always()
