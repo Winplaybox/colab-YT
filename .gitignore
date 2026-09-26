@@ -18,9 +18,6 @@ downloaded_videos/
 *.wav
 *_concat.txt
 
-# Temporary generated story media
-channels/MindNestTales/stories/assets/
-channels/MindNestTales/stories/thumbnails/
 
 
 # Python / Jupyter

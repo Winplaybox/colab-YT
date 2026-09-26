@@ -43,13 +43,51 @@ MORAL_LABELS = {
     "fil": "ARAL",
 }
 
+def resolve_brand_font():
+    """Returns font file path for English branding and handles (guaranteed zero tofu boxes)."""
+    fonts_dir = os.path.join(script_dir, "fonts")
+    poppins = os.path.join(fonts_dir, "Poppins-Bold.ttf")
+    if os.path.exists(poppins):
+        return poppins.replace("\\", "/").replace(":", "\\:")
+    
+    is_win = sys.platform.startswith("win")
+    if is_win:
+        win_fonts = os.environ.get("WINDIR", "C:\\Windows") + "\\Fonts\\"
+        for f in [win_fonts + "segoeuib.ttf", win_fonts + "arialbd.ttf", win_fonts + "calibrib.ttf"]:
+            if os.path.exists(f):
+                return f.replace("\\", "/").replace(":", "\\:")
+    else:
+        for f in ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"]:
+            if os.path.exists(f):
+                return f.replace("\\", "/").replace(":", "\\:")
+    return ""
+
 def resolve_font_for_language(lang_code):
     """
     Returns the appropriate fontfile path for ffmpeg drawtext filter across OS.
-    Handles Indic (Devanagari/Hindi), CJK (Japanese/Korean), Arabic, and Latin scripts.
+    Handles Indic (Devanagari/Hindi), CJK (Japanese/Korean), Arabic, Vietnamese, and Latin scripts.
+    Uses bundled repository Google Fonts first for 100% deterministic cross-platform typography.
     """
-    is_win = sys.platform.startswith("win")
+    fonts_dir = os.path.join(script_dir, "fonts")
+    font_map = {
+        "hi": "Poppins-Bold.ttf",       # Native Devanagari + Latin (zero boxes on 3D/English words)
+        "en": "Poppins-Bold.ttf",       # Latin
+        "es": "Poppins-Bold.ttf",       # Latin
+        "pt": "Poppins-Bold.ttf",       # Latin
+        "fr": "Poppins-Bold.ttf",       # Latin
+        "de": "Poppins-Bold.ttf",       # Latin
+        "fil": "Poppins-Bold.ttf",      # Latin
+        "vi": "BeVietnamPro-Bold.ttf",  # Vietnamese diacritics + Latin
+        "ar": "NotoSansArabic.ttf",     # Arabic + Latin
+        "ja": "NotoSansJP.ttf",         # Japanese Kanji/Kana + Latin
+        "ko": "NotoSansKR.ttf",         # Korean Hangul + Latin
+    }
     
+    bundled = os.path.join(fonts_dir, font_map.get(lang_code, "Poppins-Bold.ttf"))
+    if os.path.exists(bundled):
+        return bundled.replace("\\", "/").replace(":", "\\:")
+
+    is_win = sys.platform.startswith("win")
     font_candidates = []
     if is_win:
         win_fonts = os.environ.get("WINDIR", "C:\\Windows") + "\\Fonts\\"
@@ -222,9 +260,20 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
             if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
         ]
 
-    # Font resolution for non-Latin script support (Devanagari, CJK, Arabic)
+    # Fallback to thumbnail if scene assets are not yet downloaded
+    if not scene_images:
+        thumb_path = os.path.join(script_dir, "stories", "thumbnails", f"story_{story_no:02d}_thumbnail.jpg")
+        if os.path.exists(thumb_path):
+            scene_images = [thumb_path]
+
+    # Brand Font (for Latin branding and channel handle - 100% zero tofu boxes)
+    brand_font = resolve_brand_font()
+    brand_font_arg = f":fontfile='{brand_font}'" if brand_font else ""
+
+    # Language Font (for story titles and morals across 11 languages)
     font_file = resolve_font_for_language(lang_code)
-    font_arg = f":fontfile='{font_file}'" if font_file else ""
+    shaping_arg = ":text_shaping=1" if lang_code == "ar" else ""
+    font_arg = f":fontfile='{font_file}'{shaping_arg}" if font_file else ""
 
     # Clean text for ffmpeg drawtext filter
     clean_title = sanitize_ffmpeg_text(title)
@@ -276,10 +325,10 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
     overlay_filters = (
         f"drawbox=y=0:h={box_top_h}:color=0x0a0f1d@0.65:t=fill,"
         f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.65:t=fill,"
-        f"drawtext={font_arg}:text='MINDNEST TALES':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
+        f"drawtext={brand_font_arg}:text='MINDNEST TALES':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
         f"drawtext={font_arg}:text='{clean_title}':fontsize={f_title}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_title},"
         f"{moral_drawtext},"
-        f"drawtext={font_arg}:text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
+        f"drawtext={brand_font_arg}:text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
     )
 
     ffmpeg_inputs = []
