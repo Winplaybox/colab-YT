@@ -39,34 +39,42 @@ def enhance_pixar_prompt(base_prompt):
     clean = base_prompt.replace("portrait 9:16", "").replace("3D Pixar-style", "").strip()
     return f"3D Pixar-style animated {clean}, {style_suffix}"
 
+def get_hf_token():
+    """Retrieves Hugging Face token from environment or local credentials file."""
+    token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN")
+    if token:
+        return token.strip()
+    local_creds = os.path.join(script_dir, "credentials", "hf_token.txt")
+    if os.path.exists(local_creds):
+        try:
+            with open(local_creds, "r", encoding="utf-8") as f:
+                t = f.read().strip()
+                if t:
+                    return t
+        except Exception:
+            pass
+    return None
+
 def generate_via_huggingface_flux(prompt, output_path, hf_token):
     """Generates 8K Pixar image via Hugging Face Serverless Inference (FLUX.1-schnell). 100% Free."""
-    api_url = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
-    headers = {
-        "Authorization": f"Bearer {hf_token}",
-        "Content-Type": "application/json",
-        "User-Agent": "MindNestTales/2.0"
-    }
-    payload = {
-        "inputs": prompt,
-        "parameters": {
-            "width": 768,
-            "height": 1344,  # 9:16 vertical ratio for FLUX
-            "num_inference_steps": 4,
-            "guidance_scale": 7.5
-        }
-    }
     try:
-        resp = requests.post(api_url, headers=headers, json=payload, timeout=90)
-        if resp.status_code == 200 and len(resp.content) > 1000:
-            with open(output_path, "wb") as f:
-                f.write(resp.content)
-            print(f"✅ [FLUX.1-schnell Free Tier] Generated: {output_path} ({len(resp.content)} bytes)")
-            return True
-        else:
-            print(f"HuggingFace error ({resp.status_code}): {resp.text[:150]}")
+        from huggingface_hub import InferenceClient
+        client = InferenceClient(api_key=hf_token)
+        img = client.text_to_image(prompt, model="black-forest-labs/FLUX.1-schnell")
+        img.save(output_path)
+        print(f"✅ [FLUX.1-schnell Free Tier] Generated: {output_path} ({os.path.getsize(output_path)} bytes)")
+        return True
     except Exception as e:
-        print(f"HuggingFace inference error: {e}")
+        print(f"Hugging Face FLUX error: {e}")
+        try:
+            from huggingface_hub import InferenceClient
+            client = InferenceClient(api_key=hf_token)
+            img = client.text_to_image(prompt, model="stabilityai/stable-diffusion-xl-base-1.0")
+            img.save(output_path)
+            print(f"✅ [SDXL Free Tier] Generated: {output_path} ({os.path.getsize(output_path)} bytes)")
+            return True
+        except Exception as e2:
+            print(f"Hugging Face SDXL fallback error: {e2}")
     return False
 
 def generate_via_pollinations_flux(prompt, output_path, seed=None):
@@ -91,11 +99,13 @@ def generate_via_pollinations_flux(prompt, output_path, seed=None):
 
 def generate_scene_image(prompt, output_path):
     """Autonomous Free-Tier generator with multi-provider fallback."""
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    out_dir = os.path.dirname(output_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
     enhanced = enhance_pixar_prompt(prompt)
 
-    # 1. Check for free Hugging Face token
-    hf_token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN")
+    # 1. Check for free Hugging Face token (from env or credentials/hf_token.txt)
+    hf_token = get_hf_token()
     if hf_token:
         print(f"🎨 Generating via Hugging Face FLUX.1 (Free Tier)...")
         if generate_via_huggingface_flux(enhanced, output_path, hf_token):
