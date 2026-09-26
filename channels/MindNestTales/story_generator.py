@@ -9,6 +9,11 @@ import os
 import sys
 import json
 import random
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
 from sheets_tracker import STORIES_MASTER
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -417,12 +422,12 @@ Generate the JSON for {json.dumps(group)} now."""
             group_data = json.loads(res.choices[0].message.content)
             all_translations.update(group_data)
         except Exception as e:
-            print(f"⚠️ AI Translation failed for group {group}: {e}")
+            print(f"[WARNING] AI Translation failed for group {group}: {e}")
 
     # Verify all 11 languages are present
     needed = ["en", "hi", "es", "pt", "fr", "de", "ar", "ja", "ko", "vi", "fil"]
     if all(l in all_translations for l in needed):
-        print(f"✅ AI successfully generated all 11 pure native translations!")
+        print("[SUCCESS] AI successfully generated all 11 pure native translations!")
         return all_translations
 
     print(f"Notice: AI generated {len(all_translations)}/11 languages. Completing missing with pure fallbacks.")
