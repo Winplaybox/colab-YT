@@ -285,7 +285,24 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
 
     # Clean text for ffmpeg drawtext filter
     clean_title = sanitize_ffmpeg_text(title)
-    moral_text = translation.get("moral", story_data.get("moral", ""))
+    moral_text = translation.get("moral", "")
+    if not moral_text:
+        if lang_code == "en":
+            moral_text = story_data.get("moral", "")
+        else:
+            fallback_morals = {
+                "hi": "समय की पाबंदी ही असली रफ्तार है। हमेशा समय पर रहें!",
+                "es": "La mayor velocidad no significa nada sin el momento adecuado. ¡Sé puntual!",
+                "pt": "A velocidade não significa nada sem o horário certo. Seja pontual!",
+                "fr": "La plus grande vitesse ne signifie rien sans le bon timing. Sois ponctuel !",
+                "de": "Die größte Geschwindigkeit bedeutet nichts ohne die richtige Zeit. Sei pünktlich!",
+                "ar": "السرعة بلا توقيت لا معنى لها. كن في الوقت المناسب دائماً!",
+                "ja": "速さだけでは意味がない。時間を守ることが大切です。",
+                "ko": "가장 빠른 속도도 적절한 타이밍 없이는 아무 소용이 없다.",
+                "vi": "Tốc độ nhanh nhất cũng không có ý nghĩa gì nếu không đúng lúc.",
+                "fil": "Ang bilis na hindi may tamang panahon ay walang halaga.",
+            }
+            moral_text = fallback_morals.get(lang_code, "")
     moral_label = MORAL_LABELS.get(lang_code, "MORAL")
     clean_moral = sanitize_ffmpeg_text(moral_text)
     clean_handle = sanitize_ffmpeg_text(handle)
