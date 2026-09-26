@@ -103,6 +103,8 @@ jobs:
 
       - name: Execute MindNest Tales Production & Upload
         env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
           MINDNEST_ALL_TOKENS_JSON: ${{ secrets.MINDNEST_ALL_TOKENS_JSON }}
           MINDNEST_TOKEN_JSON: ${{ secrets.MINDNEST_TOKEN_JSON }}
           MINDNEST_TOKEN_HI_JSON: ${{ secrets.MINDNEST_TOKEN_HI_JSON }}

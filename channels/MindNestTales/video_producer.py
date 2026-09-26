@@ -249,7 +249,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
     # Target duration (default 120 seconds / 2 minutes)
     duration = target_duration if target_duration else max(raw_audio_dur, 60.0)
 
-    # 2. Check for 3D Pixar Scene Assets
+    # 2. Check for 3D Pixar Scene Assets (Auto-generates via Free Tier if missing)
     story_no = story_data.get("story_number", 1)
     assets_dir = os.path.join(script_dir, "stories", "assets", f"story_{story_no:02d}")
     scene_images = []
@@ -259,6 +259,14 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
             for f in sorted(os.listdir(assets_dir))
             if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
         ]
+
+    # If missing, autonomously generate 8K Pixar scenes via Free AI (FLUX / Pollinations)
+    if not scene_images:
+        try:
+            from image_generator import ensure_story_assets
+            scene_images = ensure_story_assets(story_no)
+        except Exception as e:
+            print(f"Notice: Auto image generation error: {e}")
 
     # Fallback to thumbnail if scene assets are not yet downloaded
     if not scene_images:
