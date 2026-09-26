@@ -1,0 +1,252 @@
+{
+  "story_number": 1,
+  "story_slug": "cheetah_1",
+  "base_title": "The Cheetah Who Was Always Late",
+  "moral": "The fastest speed means nothing without the right timing. Be punctual, not just fast!",
+  "playlist": "Jungle & Wild Animal Tales",
+  "characters": {
+    "hero": "3D Pixar-style animated cheetah named Chico with expressive round eyes and cute cartoon proportions",
+    "mentor": "3D Pixar-style animated wise tortoise elder with round spectacles and friendly grandfather smile"
+  },
+  "clips": [
+    {
+      "clip_number": 1,
+      "time_range": "0:00-10:00",
+      "beat": "Beat 1",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 1 of moral journey."
+    },
+    {
+      "clip_number": 2,
+      "time_range": "10:00-20:00",
+      "beat": "Beat 2",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 2 of moral journey."
+    },
+    {
+      "clip_number": 3,
+      "time_range": "20:00-30:00",
+      "beat": "Beat 3",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 3 of moral journey."
+    },
+    {
+      "clip_number": 4,
+      "time_range": "30:00-40:00",
+      "beat": "Beat 4",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 4 of moral journey."
+    },
+    {
+      "clip_number": 5,
+      "time_range": "40:00-50:00",
+      "beat": "Beat 5",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 5 of moral journey."
+    },
+    {
+      "clip_number": 6,
+      "time_range": "50:00-60:00",
+      "beat": "Beat 6",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 6 of moral journey."
+    },
+    {
+      "clip_number": 7,
+      "time_range": "60:00-70:00",
+      "beat": "Beat 7",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 7 of moral journey."
+    },
+    {
+      "clip_number": 8,
+      "time_range": "70:00-80:00",
+      "beat": "Beat 8",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 8 of moral journey."
+    },
+    {
+      "clip_number": 9,
+      "time_range": "80:00-90:00",
+      "beat": "Beat 9",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 9 of moral journey."
+    },
+    {
+      "clip_number": 10,
+      "time_range": "90:00-100:00",
+      "beat": "Beat 10",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 10 of moral journey."
+    },
+    {
+      "clip_number": 11,
+      "time_range": "100:00-110:00",
+      "beat": "Beat 11",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 11 of moral journey."
+    },
+    {
+      "clip_number": 12,
+      "time_range": "110:00-120:00",
+      "beat": "Beat 12",
+      "prompt": "3D Pixar-style animated cheetah named Chico, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat 12 of moral journey."
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+      "moral": "The fastest speed means nothing without the right timing. Be punctual, not just fast!",
+      "script": "There was a cheetah named Chico who was always late. In the forest, he learned that being fast is important, but being on time is even more crucial. Now, Chico is always on time and the happiest cheetah in the forest.",
+      "description": "The story of Chico the Cheetah, who learns the importance of being punctual. #MindNestTales #Shorts",
+      "tags": [
+        "cheetah",
+        "Chico",
+        "punctuality",
+        "forest",
+        "lesson",
+        "moral",
+        "story"
+      ]
+    },
+    "hi": {
+      "title": "समय का साहसी चीता 🐆 #Shorts",
+      "moral": "सबसे तेज़ गति कुछ नहीं है बिना सही समय के। समय पर होना, सिर्फ़ तेज़ होने की जगह बेहतर है।",
+      "script": "एक ऐसा चीता था जो हमेशा देर से पहुँचता था। चिको ने जंगल में सीखा कि तेज़ी से दौड़ना महत्वपूर्ण है, लेकिन समय पर होना भी बहुत महत्वपूर्ण है। अब वह समय पर आता है और सबसे खुश होता है।",
+      "description": "चिको चीता की कहानी, जो समय की महत्ता सीखता है। #MindNestTales #Shorts",
+      "tags": [
+        "समय",
+        "चीता",
+        "चिको",
+        "सीख",
+        "मोरल",
+        "कहानी",
+        "किशोर"
+      ]
+    },
+    "es": {
+      "title": "El Cheetah Que Siempre Llegaba Tarde 🐆 #Shorts",
+      "moral": "La mayor velocidad no significa nada sin el momento adecuado. ¡Sé puntual, no solo rápido!",
+      "script": "Había un cheetah llamado Chico que siempre llegaba tarde. En el bosque, aprendió que ser rápido es importante, pero llegar a tiempo es aún más crucial. Ahora, Chico siempre llega a tiempo y es el cheetah más feliz del bosque.",
+      "description": "La historia de Chico el cheetah, quien aprende la importancia de ser puntual. #MindNestTales #Shorts",
+      "tags": [
+        "cheetah",
+        "Chico",
+        "puntualidad",
+        "bosque",
+        "lección",
+        "moral",
+        "historia"
+      ]
+    },
+    "pt": {
+      "title": "owej Chico, o Leopardo Apressado 🏃‍♂️⏰ #Shorts",
+      "moral": "A maior velocidade não significa nada sem o horário certo. Seja pontual, não apenas rápido!",
+      "script": "No coração da floresta, vivia Chico, o leopardo mais rápido. Mas Chico sempre chegava atrasado, mesmo correndo como o vento. Um dia, ele perdeu a grande corrida do ano. Então, Chico aprendeu que a pontualidade é mais importante do que a velocidade.",
+      "description": "Chico, o leopardo mais rápido, aprende a importância da pontualidade. #MindNestTales #Shorts",
+      "tags": [
+        "Chico",
+        "leopardo",
+        "pontualidade",
+        "floresta",
+        "corrida",
+        "velocidade",
+        "aprendizado"
+      ]
+    },
+    "fr": {
+      "title": "Chico, le Guépard Toujours en Retard 🏃‍♂️⏰ #Shorts",
+      "moral": "La plus grande vitesse ne signifie rien sans le bon timing. Soyez ponctuel, pas seulement rapide !",
+      "script": "Dans la forêt, vivait Chico, le guépard le plus rapide. Mais Chico était toujours en retard, même en courant comme le vent. Un jour, il a manqué la grande course de l'année. Alors, Chico a compris que la ponctualité est plus importante que la vitesse.",
+      "description": "Chico, le guépard le plus rapide, apprend l'importance de la ponctualité. #MindNestTales #Shorts",
+      "tags": [
+        "Chico",
+        "guépard",
+        "ponctualité",
+        "forêt",
+        "course",
+        "vitesse",
+        "leçon"
+      ]
+    },
+    "de": {
+      "title": "Chico, der immer zu spät kommende Gepard 🏃‍♂️⏰ #Shorts",
+      "moral": "Die größte Geschwindigkeit bedeutet nichts ohne die richtige Zeit. Sei pünktlich, nicht nur schnell!",
+      "script": "Im Herzen des Waldes lebte Chico, der schnellste Gepard. Aber Chico kam immer zu spät, selbst wenn er so schnell wie der Wind lief. Eines Tages verpasste er das große Rennen des Jahres. So lernte Chico, dass Pünktlichkeit wichtiger ist als Geschwindigkeit.",
+      "description": "Chico, der schnellste Gepard, lernt die Bedeutung von Pünktlichkeit. #MindNestTales #Shorts",
+      "tags": [
+        "Chico",
+        "Gepard",
+        "Pünktlichkeit",
+        "Wald",
+        "Rennen",
+        "Geschwindigkeit",
+        "Lektion"
+      ]
+    },
+    "ar": {
+      "title": "تشيكو النمر الذي كان دائماً متأخراً 🐆🔥 #Shorts",
+      "moral": "السرعة العالية لا تساوي شيئاً بدون التوقيت المناسب. كن في الوقت المحدد، وليس فقط سريعاً.",
+      "script": "كان تشيكو النمر يتأخر دائماً عن مواعيده. في يوم من الأيام، تعلم درساً مهماً في الغابة: السرعة ليست كل شيء، فالتوقيت هو المهم حقاً. من الآن فصاعداً، سيصل تشيكو في الوقت المناسب، وليس فقط بسرعة.",
+      "description": "تشيكو النمر يتعلم أن السرعة وحدها ليست كافية. كن في الوقت المحدد، وليس فقط سريعاً! شاهد الفيديو الآن! #MindNestTales #Shorts",
+      "tags": [
+        "تشيكو",
+        "النمر",
+        "التأخير",
+        "الدقة",
+        "الغابة",
+        "الدروس",
+        "السرعة"
+      ]
+    },
+    "ja": {
+      "title": "いつも遅刻するチーターのチコ 🐆🔥 #Shorts",
+      "moral": "最速の速さだけでは意味がない。正確なタイミングが大切だ。",
+      "script": "チコはいつも遅刻するチーターだった。ある日、森で重要な教訓を学んだ：速さだけがすべてではない、タイミングが大切だ。それから、チコは時間に遅れないように努力するようになった。",
+      "description": "チコは、速さだけでなく、正確なタイミングの重要性を学びました。時間に遅れないようにしましょう！動画を今すぐご覧ください！#MindNestTales #Shorts",
+      "tags": [
+        "チコ",
+        "チーター",
+        "遅刻",
+        "正確さ",
+        "森",
+        "教訓",
+        "速さ"
+      ]
+    },
+    "ko": {
+      "title": "지각대장 치타 치코 🦁⏰",
+      "moral": "가장 빠른 속도도 적절한 시간 없이는 아무 의미가 없습니다. 정시에 도착하는 것이 중요해요.",
+      "script": "치타 치코는 항상 늦었습니다. 어느 날, 친구들과의 약속에 늦어 큰 실망을 했습니다. 그 후로 치코는 항상 시간을 지키며, 친구들과 더 좋은 시간을 보낼 수 있게 되었습니다.",
+      "description": "치타 치코는 늘 늦는 습관을 고쳐, 친구들과 더 좋은 시간을 보냈습니다. #MindNestTales #Shorts",
+      "tags": [
+        "치타",
+        "지각",
+        "정시",
+        "친구",
+        "시간",
+        "습관",
+        "성장"
+      ]
+    },
+    "vi": {
+      "title": "Chìa cheo Chico luôn đi trễ 🦁⏰",
+      "moral": "Tốc độ nhanh nhất không có ý nghĩa nếu không đúng giờ. Hãy luôn đúng hẹn, không chỉ nhanh!",
+      "script": "Chico, một con chìa cheo, luôn đi trễ. Một ngày, anh ấy trễ hẹn với bạn bè và cảm thấy rất buồn. Từ đó, Chico luôn đúng giờ và tận hưởng những khoảnh khắc tuyệt vời với bạn bè.",
+      "description": "Chico đã học cách luôn đúng giờ và tận hưởng cuộc sống tốt hơn. #MindNestTales #Shorts",
+      "tags": [
+        "chìa cheo",
+        "đi trễ",
+        "đúng hẹn",
+        "bạn bè",
+        "thời gian",
+        "sự thay đổi",
+        "tích cực"
+      ]
+    },
+    "fil": {
+      "title": "Si Chico na Cheetah na Lagpas Oras 🦁⏰",
+      "moral": "Ang pinakamabilis na bilis ay walang kahulugan kung walang wastong oras. Magkaroon ng wastong oras, hindi lang mabilis!",
+      "script": "Si Chico, isang cheetah, ay laging lagpas oras. Isang araw, nagtrabaho siya sa kanyang mga kaibigan at napakalungkot. Mula noon, si Chico ay laging oras at nakakapasa ng mas magandang panahon kasama ng kanyang mga kaibigan.",
+      "description": "Si Chico ay natutunan na magkaroon ng wastong oras at mas mataas na pagkakaibigan. #MindNestTales #Shorts",
+      "tags": [
+        "cheetah",
+        "lagpas oras",
+        "wasto oras",
+        "kaibigan",
+        "panahon",
+        "pagbabago",
+        "positibo"
+      ]
+    }
+  }
+}
