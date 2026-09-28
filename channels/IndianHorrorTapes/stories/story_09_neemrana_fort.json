@@ -1,75 +1,251 @@
 {
   "story_number": 9,
   "title": "नीमराना किला का खौफ़नाक सच 💀 #Shorts",
+  "location": "Rajasthan",
+  "category": "HAUNTED FORTS & PALACES",
+  "tagline": "old battle-ground legends of wandering soldiers",
+  "narrative_angle": "UNSOLVED_HISTORICAL_MYSTERY",
+  "hook_type": "FORBIDDEN_RULE_VIOLATION",
+  "planted_detail": "नीमराना किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा",
+  "claims": [
+    {
+      "text": "Neemrana Fort (नीमराना किला) Rajasthan में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1580 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा तापमान अचानक पंद्रह अंश गिर जाता है और हवा में पुराने लोबान तथा लोहे के ज़ंग की तीखी गंध आने लगती है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • NEEMRANA FORT",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Neemrana Fort in Rajasthan, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Neemrana Fort, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Neemrana Fort in Rajasthan, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि नीमराना किला की सदियों पुरानी पथरीली प्राचीर और सरकारी चेतावनी पटल में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ नीमराना किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, दिन में सैलानी यहाँ ऐतिहासिक वास्तुकला देखने आते हैं, लेकिन शाम ढलते ही किले के बंद दरवाज़े अजीब रूप ले लेते हैं।",
+      "text_overlay": "CASE RECORD • YEAR 1580",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि नीमराना किला की सदियों पुरानी पथरीली प्राचीर और सरकारी चेतावनी पटल में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Neemrana Fort, authentic 1580 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ नीमराना किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of नीमराना किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, दिन में सैलानी यहाँ ऐतिहासिक वास्तुकला देखने आते हैं, लेकिन शाम ढलते ही किले के बंद दरवाज़े अजीब रूप ले लेते हैं।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Neemrana Fort, authentic 1580 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में लोहे के भारी दरवाज़े पर दस्तक और घुंघरुओं की तीखी झनकार। और सबसे हैरान करने वाली बात यह है कि अचानक तापमान अचानक पंद्रह अंश गिर जाता है और हवा में पुराने लोबान तथा लोहे के ज़ंग की तीखी गंध आने लगती है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "लोहे के भारी दरवाज़े पर दस्तक और घुंघरुओं की तीखी झनकार + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में लोहे के भारी दरवाज़े पर दस्तक और घुंघरुओं की तीखी झनकार।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Neemrana Fort, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक तापमान अचानक पंद्रह अंश गिर जाता है और हवा में पुराने लोबान तथा लोहे के ज़ंग की तीखी गंध आने लगती है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Neemrana Fort, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब रात्रि सर्वेक्षण अधिकारियों ने प्राचीर की आखिरी दीवार पर एक ऐसी परछाई देखी जो बिना ज़मीन छुए हवा में चल रही थी। प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'वो परछाई दीवार से उतरकर सीधे हमारी तरफ़ तेज़ी से बढ़ने लगी थी!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब रात्रि सर्वेक्षण अधिकारियों ने प्राचीर की आखिरी दीवार पर एक ऐसी परछाई देखी जो बिना ज़मीन छुए हवा में चल रही थी।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Neemrana Fort, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'वो परछाई दीवार से उतरकर सीधे हमारी तरफ़ तेज़ी से बढ़ने लगी थी!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Neemrana Fort, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी पुरातत्व अधिकारियों ने रात की गश्त आधिकारिक तौर पर बंद कर दी है और मुख्य दरवाज़ों पर भारी ताले जड़ दिए हैं। और उस रात के बाद से, नीमराना किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी पुरातत्व अधिकारियों ने रात की गश्त आधिकारिक तौर पर बंद कर दी है और मुख्य दरवाज़ों पर भारी ताले जड़ दिए हैं।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Neemrana Fort in Rajasthan, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, नीमराना किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of नीमराना किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Neemrana Fort in Rajasthan, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान मध्य प्रदेश के ग्वालियर का किला के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 10: GWALIOR FORT",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान मध्य प्रदेश के ग्वालियर का किला के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Gwalior Fort, MP engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Gwalior Fort, MP engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "नीमराना किला का खौफ़नाक सच 💀 #Shorts",
+    "first_frame_text": "नीमराना  का सच",
+    "description": "⚠️ Neemrana Fort (नीमराना किला) Real Horror Story in Hindi | Rajasthan Paranormal Incident (1580)\nक्या सच में नीमराना किला में Laapata Fauji का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: नीमराना किला की सदियों पुरानी पथरीली प्राचीर और सरकारी चेतावनी पटल (1580)\nRajasthan के Neemrana Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1580 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1580)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 10)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #rajasthan\n",
+    "search_phrases": [
+      "neemrana fort horror story",
+      "neemrana fort real story",
+      "neemrana fort mystery",
+      "नीमराना किला की असली कहानी",
+      "नीमराना किला का रहस्य",
+      "rajasthan horror stories",
+      "haunted places in rajasthan"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#rajasthan"
+    ],
+    "tags": [
+      "neemrana fort horror story",
+      "neemrana fort real story",
+      "neemrana fort haunted",
+      "neemrana fort ghost",
+      "neemrana fort mystery in hindi",
+      "neemrana fort incident",
+      "neemrana fort ka sach",
+      "नीमराना किला की असली कहानी",
+      "नीमराना किला का भूत",
+      "नीमराना किला का रहस्य",
+      "rajasthan horror stories",
+      "haunted places in rajasthan",
+      "rajasthan haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "अगर आपको एक रात नीमराना किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
+    "playlist": "HAUNTED FORTS & PALACES",
+    "instagram_caption": "⚠️ Neemrana Fort (नीमराना किला) — Laapata Fauji\nअगर आपको एक रात नीमराना किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#rajasthan",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Neemrana Fort",
+  "year": "1580",
   "viral_titles": [
     "नीमराना किला: रात को मत जाना ⚠️ #Shorts",
     "नीमराना किला का खौफ़नाक सच 💀 #Shorts",
     "ASI ने इसे क्यों सील किया? 🔴 #Shorts",
-    "नीमराना किला: 1640 की खौफ़नाक रात 💀 #Shorts",
+    "नीमराना किला: 1580 की खौफ़नाक रात 💀 #Shorts",
     "Neemrana Fort Real Horror Incident 💀 #Shorts"
   ],
-  "name": "Neemrana Fort",
-  "location": "Rajasthan",
-  "year": "1640",
-  "tagline": "old battle-ground legends of wandering soldiers",
-  "category": "HAUNTED FORTS & PALACES",
-  "archetype": "ARCHIVAL_EXPEDITION",
-  "beats": [
-    {
-      "beat": "CASE_FILE_COLD_OPEN",
-      "time_range": "0:00–0:08",
-      "target_dur": 8.0,
-      "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Neemrana Fort, Rajasthan, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
-      "text_overlay": "CLASSIFIED ARCHIVE • NEEMRANA FORT",
-      "vo_text": "पुरातत्व विभाग और वर्ष 1640 के सरकारी दस्तावेज़ों के अनुसार... नीमराना किला की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
-      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
-    },
-    {
-      "beat": "HISTORICAL_RECORD",
-      "time_range": "0:08–0:32",
-      "target_dur": 24.0,
-      "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Neemrana Fort, Rajasthan, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR 1640",
-      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि नीमराना किला की सदियों पुरानी पथरीली प्राचीर और सरकारी चेतावनी पटल में दर्ज है। दिन में सैलानी यहाँ ऐतिहासिक वास्तुकला देखने आते हैं, लेकिन शाम ढलते ही किले के बंद दरवाज़े अजीब रूप ले लेते हैं। लेकिन वर्ष 1640 में राजस्थान के प्राचीन शासक और शाही इतिहासकार के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
-      "sound_cue": "Distant hollow wind + eerie ambient string drone"
-    },
-    {
-      "beat": "DOCUMENTED_ANOMALY",
-      "time_range": "0:32–1:02",
-      "target_dur": 30.0,
-      "visual_prompt": "Subterranean dark corridor inside Neemrana Fort, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
-      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... तापमान अचानक पंद्रह अंश गिर जाता है और हवा में पुराने लोबान तथा लोहे के ज़ंग की तीखी गंध आने लगती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
-      "sound_cue": "लोहे के भारी दरवाज़े पर दस्तक और घुंघरुओं की तीखी झनकार + slow accelerating heartbeat"
-    },
-    {
-      "beat": "THE_ENCOUNTER_TAPE",
-      "time_range": "1:02–1:36",
-      "target_dur": 34.0,
-      "visual_prompt": "Heart-stopping eyewitness collision inside Neemrana Fort: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
-      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब रात्रि सर्वेक्षण अधिकारियों ने प्राचीर की आखिरी दीवार पर एक ऐसी परछाई देखी जो बिना ज़मीन छुए हवा में चल रही थी! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'वो परछाई दीवार से उतरकर सीधे हमारी तरफ़ तेज़ी से बढ़ने लगी थी!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
-      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
-    },
-    {
-      "beat": "UNRESOLVED_FORENSICS",
-      "time_range": "1:36–1:50",
-      "target_dur": 14.0,
-      "visual_prompt": "Desolate forensic aftermath of Neemrana Fort, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
-      "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "इस भयानक हादसे के बाद से पुरातत्व अधिकारियों ने रात की गश्त आधिकारिक तौर पर बंद कर दी है और मुख्य दरवाज़ों पर भारी ताले जड़ दिए हैं। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
-      "sound_cue": "Sudden dead silence + chilling low wind gust"
-    },
-    {
-      "beat": "NEXT_ARCHIVE_HOOK",
-      "time_range": "1:50–2:00",
-      "target_dur": 10.0,
-      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Gwalior Fort, MP, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
-      "text_overlay": "NEXT DOSSIER → PART 10: GWALIOR FORT",
-      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान मध्य प्रदेश के ग्वालियर का किला की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
-      "sound_cue": "Sub-bass drop into pitch darkness"
-    }
-  ],
+  "seo_description": "⚠️ Neemrana Fort (नीमराना किला) Real Horror Story in Hindi | Rajasthan Paranormal Incident (1580)\nक्या सच में नीमराना किला में Laapata Fauji का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: नीमराना किला की सदियों पुरानी पथरीली प्राचीर और सरकारी चेतावनी पटल (1580)\nRajasthan के Neemrana Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1580 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1580)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 10)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #rajasthan\n",
+  "pinned_comment": "अगर आपको एक रात नीमराना किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Neemrana Fort in Rajasthan framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
   "tags": [
     "neemrana fort horror story",
     "neemrana fort real story",
@@ -102,8 +278,5 @@
     "trending horror shorts",
     "viral horror shorts",
     "shorts"
-  ],
-  "seo_description": "⚠️ Neemrana Fort (नीमराना किला) Real Horror Story in Hindi | Rajasthan Paranormal Incident (1640)\nक्या सच में नीमराना किला में Laapata Fauji का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: नीमराना किला की सदियों पुरानी पथरीली प्राचीर और सरकारी चेतावनी पटल (1640)\nRajasthan के Neemrana Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1640 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1640)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 10)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #rajasthan\n",
-  "pinned_comment": "अगर आपको एक रात नीमराना किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
-  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Neemrana Fort in Rajasthan framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+  ]
 }

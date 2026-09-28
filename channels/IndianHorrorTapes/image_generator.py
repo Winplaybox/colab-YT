@@ -191,45 +191,61 @@ def ensure_story_assets(story_number, force_regenerate=False):
     story_data = get_or_create_story(story_number)
 
     beats = story_data.get("beats", [])
-    beat_filenames = [
-        "beat_01_case_file.jpg",
-        "beat_02_historical_record.jpg",
-        "beat_03_documented_anomaly.jpg",
-        "beat_04_encounter_tape.jpg",
-        "beat_05_unresolved_forensics.jpg",
-        "beat_06_next_archive_hook.jpg"
-    ]
+
+    # Check if beat has micro-shots (Hybrid Synthesis architecture)
+    all_shots = []
+    for b_idx, b in enumerate(beats):
+        if "shots" in b and isinstance(b["shots"], list) and len(b["shots"]) > 0:
+            for s_idx, shot in enumerate(b["shots"]):
+                fn = f"shot_{b_idx+1:02d}_{s_idx+1:02d}.jpg"
+                prompt = shot.get("visual_prompt") or b.get("visual_prompt", f"Dark horror photography of {story_data['title']}")
+                all_shots.append((fn, prompt, b.get("beat", f"BEAT_{b_idx+1}"), s_idx + 1))
+
+    if all_shots:
+        target_items = all_shots
+    else:
+        beat_filenames = [
+            "beat_01_case_file.jpg",
+            "beat_02_historical_record.jpg",
+            "beat_03_documented_anomaly.jpg",
+            "beat_04_encounter_tape.jpg",
+            "beat_05_unresolved_forensics.jpg",
+            "beat_06_next_archive_hook.jpg"
+        ]
+        target_items = []
+        for idx, fn in enumerate(beat_filenames):
+            beat_info = beats[idx] if idx < len(beats) else beats[-1]
+            prompt = beat_info.get("visual_prompt", f"Dark 8k horror photography of {story_data['title']}")
+            target_items.append((fn, prompt, beat_info.get("beat", f"BEAT_{idx+1}"), 1))
 
     existing_scenes = []
-    for fn in beat_filenames:
+    for fn, _, _, _ in target_items:
         p = os.path.join(story_dir, fn)
         if os.path.exists(p) and os.path.getsize(p) > 1000:
             existing_scenes.append(p)
 
-    if len(existing_scenes) == len(beat_filenames) and os.path.exists(thumb_path) and not force_regenerate:
+    if len(existing_scenes) == len(target_items) and os.path.exists(thumb_path) and not force_regenerate:
         print(f"✨ Found all {len(existing_scenes)} 8K horror visual scenes for Story #{story_number}. Ready for render.")
         return existing_scenes
 
     print(f"\n=======================================================")
-    print(f"🎬 8K HORROR ASSET GENERATION: Story #{story_number} (6 Forensic Beats)")
+    print(f"🎬 8K HORROR ASSET GENERATION: Story #{story_number} ({len(target_items)} Micro-Shots / Beats)")
     print(f"Title: {story_data.get('title')}")
     print(f"Location: {story_data.get('location')}")
-    print(f"Archetype: {story_data.get('archetype', 'ARCHIVAL_EXPEDITION')}")
+    print(f"Archetype: {story_data.get('narrative_angle') or story_data.get('archetype', 'ARCHIVAL_EXPEDITION')}")
     print(f"=======================================================")
 
     generated_scenes = []
     location_name = story_data.get("location", "").split(",")[0].strip()
 
-    for idx, fn in enumerate(beat_filenames):
+    for idx, (fn, prompt, beat_name, shot_no) in enumerate(target_items):
         target_path = os.path.join(story_dir, fn)
         if os.path.exists(target_path) and os.path.getsize(target_path) > 1000 and not force_regenerate:
             print(f"Reusing existing: {fn}")
             generated_scenes.append(target_path)
             continue
 
-        beat_info = beats[idx] if idx < len(beats) else beats[-1]
-        prompt = beat_info.get("visual_prompt", f"Dark 8k horror photography of {story_data['title']}")
-        print(f"\n--> Generating 8K Horror Scene Beat #{idx+1} ({beat_info['beat']}): {fn}...")
+        print(f"\n--> Generating 8K Horror Scene #{idx+1}/{len(target_items)} [{beat_name} Shot {shot_no}]: {fn}...")
         img = generate_scene_image(prompt, target_path, wiki_fallback_query=location_name)
         if img:
             generated_scenes.append(img)

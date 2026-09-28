@@ -1,6 +1,243 @@
 {
   "story_number": 83,
   "title": "जमाली कमाली का खौफ़नाक सच 💀 #Shorts",
+  "location": "Delhi",
+  "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+  "tagline": "jinn sightings reported by locals for decades",
+  "narrative_angle": "LOCAL_ELDER_ORAL_HISTORY",
+  "hook_type": "NIGHT_CALL_WARNING",
+  "planted_detail": "प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया",
+  "claims": [
+    {
+      "text": "Jamali Kamali Mosque & Tomb (जमाली कमाली) Delhi में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1528 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा मक़बरे की चौखट के पास आते ही अचानक लोबान और इत्र की भारी गंध आती है, और हवा का दबाव कानों को सुन्न कर देता है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [
+    "sacred_site_handled_with_respect"
+  ],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • JAMALI KAMALI MOSQUE & TOMB",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Jamali Kamali Mosque & Tomb in Delhi, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Jamali Kamali Mosque & Tomb, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Jamali Kamali Mosque & Tomb in Delhi, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि महरौली पुरातत्व पार्क के ऐतिहासिक मक़बरे और पुरातत्व अभिलेख में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, क़ुतुब मीनार के पास मौजूद एक बेहद शांत और हरा-भरा बाग जहाँ लोग सुबह की सैर के लिए आते हैं।",
+      "text_overlay": "CASE RECORD • YEAR 1528",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि महरौली पुरातत्व पार्क के ऐतिहासिक मक़बरे और पुरातत्व अभिलेख में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Jamali Kamali Mosque & Tomb, authentic 1528 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, क़ुतुब मीनार के पास मौजूद एक बेहद शांत और हरा-भरा बाग जहाँ लोग सुबह की सैर के लिए आते हैं।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Jamali Kamali Mosque & Tomb, authentic 1528 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में लोबान की महक के साथ कान के पास तीखी फूंक और हवा का भारी झोंका। और सबसे हैरान करने वाली बात यह है कि अचानक मक़बरे की चौखट के पास आते ही अचानक लोबान और इत्र की भारी गंध आती है, और हवा का दबाव कानों को सुन्न कर देता है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "लोबान की महक के साथ कान के पास तीखी फूंक और हवा का भारी झोंका + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में लोबान की महक के साथ कान के पास तीखी फूंक और हवा का भारी झोंका।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Jamali Kamali Mosque & Tomb, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक मक़बरे की चौखट के पास आते ही अचानक लोबान और इत्र की भारी गंध आती है, और हवा का दबाव कानों को सुन्न कर देता है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Jamali Kamali Mosque & Tomb, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब यहाँ आने वाले सैलानियों और पहरेदारों ने बताया कि बंद कक्षों के सामने खड़े होने पर उनके गाल पर किसी अदृश्य हाथ से ज़ोरदार तमाचा पड़ा और कान में गुस्से से भरी सांस महसूस हुई। प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'वहाँ कोई नहीं था, लेकिन मेरे कान के बिल्कुल करीब कोई भारी गुस्से में फूंक मार रहा था!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब यहाँ आने वाले सैलानियों और पहरेदारों ने बताया कि बंद कक्षों के सामने खड़े होने पर उनके गाल पर किसी अदृश्य हाथ से ज़ोरदार तमाचा पड़ा और कान में गुस्से से भरी सांस महसूस हुई।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Jamali Kamali Mosque & Tomb, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'वहाँ कोई नहीं था, लेकिन मेरे कान के बिल्कुल करीब कोई भारी गुस्से में फूंक मार रहा था!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Jamali Kamali Mosque & Tomb, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी स्थानीय लोगों का मानना है कि यह परिसर जिन्नों का बसेरा है, और सूरज ढलने के बाद यहाँ रुकना उनकी दुनिया में दखल देना माना जाता है। और उस रात के बाद से, प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी स्थानीय लोगों का मानना है कि यह परिसर जिन्नों का बसेरा है, और सूरज ढलने के बाद यहाँ रुकना उनकी दुनिया में दखल देना माना जाता है।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Jamali Kamali Mosque & Tomb in Delhi, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Jamali Kamali Mosque & Tomb in Delhi, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान दिल्ली के Karbala Graveyard के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 84: KARBALA GRAVEYARD",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान दिल्ली के Karbala Graveyard के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Karbala Graveyard, Delhi engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Karbala Graveyard, Delhi engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "जमाली कमाली का खौफ़नाक सच 💀 #Shorts",
+    "first_frame_text": "जमाली कम का सच",
+    "description": "⚠️ Jamali Kamali Mosque & Tomb (जमाली कमाली) Real Horror Story in Hindi | Delhi Paranormal Incident (1528)\nक्या सच में जमाली कमाली में Mehrauli Ka Jinn का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: महरौली पुरातत्व पार्क के ऐतिहासिक मक़बरे और पुरातत्व अभिलेख (1528)\nDelhi के Jamali Kamali Mosque & Tomb से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1528 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1528)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 84)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #delhi\n",
+    "search_phrases": [
+      "jamali kamali mosque & tomb horror story",
+      "jamali kamali mosque & tomb real story",
+      "jamali kamali mosque & tomb mystery",
+      "जमाली कमाली की असली कहानी",
+      "जमाली कमाली का रहस्य",
+      "delhi horror stories",
+      "haunted places in delhi"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#delhi"
+    ],
+    "tags": [
+      "jamali kamali mosque & tomb horror story",
+      "jamali kamali mosque & tomb real story",
+      "jamali kamali mosque & tomb haunted",
+      "jamali kamali mosque & tomb ghost",
+      "jamali kamali mosque & tomb mystery in hindi",
+      "jamali kamali mosque & tomb incident",
+      "jamali kamali mosque & tomb ka sach",
+      "जमाली कमाली की असली कहानी",
+      "जमाली कमाली का भूत",
+      "जमाली कमाली का रहस्य",
+      "delhi horror stories",
+      "haunted places in delhi",
+      "delhi haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "क्या आप मानते हैं कि दिल्ली के जमाली कमाली में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+    "playlist": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "instagram_caption": "⚠️ Jamali Kamali Mosque & Tomb (जमाली कमाली) — Mehrauli Ka Jinn\nक्या आप मानते हैं कि दिल्ली के जमाली कमाली में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#delhi",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Jamali Kamali Mosque & Tomb",
+  "year": "1528",
   "viral_titles": [
     "जमाली कमाली: रात को मत जाना ⚠️ #Shorts",
     "जमाली कमाली का खौफ़नाक सच 💀 #Shorts",
@@ -8,68 +245,9 @@
     "जमाली कमाली: 1528 की खौफ़नाक रात 💀 #Shorts",
     "Jamali Kamali Mosque Real Horror Incident 💀 #Shorts"
   ],
-  "name": "Jamali Kamali Mosque & Tomb",
-  "location": "Delhi",
-  "year": "1528",
-  "tagline": "jinn sightings reported by locals for decades",
-  "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
-  "archetype": "ARCHIVAL_EXPEDITION",
-  "beats": [
-    {
-      "beat": "CASE_FILE_COLD_OPEN",
-      "time_range": "0:00–0:08",
-      "target_dur": 8.0,
-      "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Jamali Kamali Mosque & Tomb, Delhi, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
-      "text_overlay": "CLASSIFIED ARCHIVE • JAMALI KAMALI MOSQUE & TOMB",
-      "vo_text": "पुरातत्व विभाग और वर्ष 1528 के सरकारी दस्तावेज़ों के अनुसार... जमाली कमाली की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
-      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
-    },
-    {
-      "beat": "HISTORICAL_RECORD",
-      "time_range": "0:08–0:32",
-      "target_dur": 24.0,
-      "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Jamali Kamali Mosque & Tomb, Delhi, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR 1528",
-      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि महरौली पुरातत्व पार्क के ऐतिहासिक मक़बरे और पुरातत्व अभिलेख में दर्ज है। क़ुतुब मीनार के पास मौजूद एक बेहद शांत और हरा-भरा बाग जहाँ लोग सुबह की सैर के लिए आते हैं। लेकिन वर्ष 1528 में शेख़ जमाली कंबोह और सूफी संत कमाली के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
-      "sound_cue": "Distant hollow wind + eerie ambient string drone"
-    },
-    {
-      "beat": "DOCUMENTED_ANOMALY",
-      "time_range": "0:32–1:02",
-      "target_dur": 30.0,
-      "visual_prompt": "Subterranean dark corridor inside Jamali Kamali Mosque & Tomb, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
-      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... मक़बरे की चौखट के पास आते ही अचानक लोबान और इत्र की भारी गंध आती है, और हवा का दबाव कानों को सुन्न कर देता है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
-      "sound_cue": "लोबान की महक के साथ कान के पास तीखी फूंक और हवा का भारी झोंका + slow accelerating heartbeat"
-    },
-    {
-      "beat": "THE_ENCOUNTER_TAPE",
-      "time_range": "1:02–1:36",
-      "target_dur": 34.0,
-      "visual_prompt": "Heart-stopping eyewitness collision inside Jamali Kamali Mosque & Tomb: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
-      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब यहाँ आने वाले सैलानियों और पहरेदारों ने बताया कि बंद कक्षों के सामने खड़े होने पर उनके गाल पर किसी अदृश्य हाथ से ज़ोरदार तमाचा पड़ा और कान में गुस्से से भरी सांस महसूस हुई! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'वहाँ कोई नहीं था, लेकिन मेरे कान के बिल्कुल करीब कोई भारी गुस्से में फूंक मार रहा था!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
-      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
-    },
-    {
-      "beat": "UNRESOLVED_FORENSICS",
-      "time_range": "1:36–1:50",
-      "target_dur": 14.0,
-      "visual_prompt": "Desolate forensic aftermath of Jamali Kamali Mosque & Tomb, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
-      "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "इस भयानक हादसे के बाद से स्थानीय लोगों का मानना है कि यह परिसर जिन्नों का बसेरा है, और सूरज ढलने के बाद यहाँ रुकना उनकी दुनिया में दखल देना माना जाता है। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
-      "sound_cue": "Sudden dead silence + chilling low wind gust"
-    },
-    {
-      "beat": "NEXT_ARCHIVE_HOOK",
-      "time_range": "1:50–2:00",
-      "target_dur": 10.0,
-      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Karbala Graveyard, Delhi, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
-      "text_overlay": "NEXT DOSSIER → PART 84: KARBALA GRAVEYARD",
-      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान दिल्ली के Karbala Graveyard की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
-      "sound_cue": "Sub-bass drop into pitch darkness"
-    }
-  ],
+  "seo_description": "⚠️ Jamali Kamali Mosque & Tomb (जमाली कमाली) Real Horror Story in Hindi | Delhi Paranormal Incident (1528)\nक्या सच में जमाली कमाली में Mehrauli Ka Jinn का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: महरौली पुरातत्व पार्क के ऐतिहासिक मक़बरे और पुरातत्व अभिलेख (1528)\nDelhi के Jamali Kamali Mosque & Tomb से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1528 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1528)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 84)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #delhi\n",
+  "pinned_comment": "क्या आप मानते हैं कि दिल्ली के जमाली कमाली में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Jamali Kamali Mosque & Tomb in Delhi framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
   "tags": [
     "jamali kamali mosque & tomb horror story",
     "jamali kamali mosque & tomb real story",
@@ -102,8 +280,5 @@
     "trending horror shorts",
     "viral horror shorts",
     "shorts"
-  ],
-  "seo_description": "⚠️ Jamali Kamali Mosque & Tomb (जमाली कमाली) Real Horror Story in Hindi | Delhi Paranormal Incident (1528)\nक्या सच में जमाली कमाली में Mehrauli Ka Jinn का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: महरौली पुरातत्व पार्क के ऐतिहासिक मक़बरे और पुरातत्व अभिलेख (1528)\nDelhi के Jamali Kamali Mosque & Tomb से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1528 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1528)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 84)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #delhi\n",
-  "pinned_comment": "क्या आप मानते हैं कि दिल्ली के जमाली कमाली में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
-  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Jamali Kamali Mosque & Tomb in Delhi framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+  ]
 }

@@ -1,6 +1,241 @@
 {
   "story_number": 2,
   "title": "गोलकोंडा किला का खौफ़नाक सच 💀 #Shorts",
+  "location": "Hyderabad, Telangana",
+  "category": "HAUNTED FORTS & PALACES",
+  "tagline": "echoes and whispers in the old citadel ruins",
+  "narrative_angle": "UNSOLVED_HISTORICAL_MYSTERY",
+  "hook_type": "FORBIDDEN_RULE_VIOLATION",
+  "planted_detail": "गोलकोंडा किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा",
+  "claims": [
+    {
+      "text": "Golconda Fort (गोलकोंडा किला) Hyderabad, Telangana में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1518 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा सुनसान प्राचीर में अचानक अजीब कंपन होने लगता है और दूर खंडहरों से किसी के गाने की धीमी आवाज़ हवा में तैरने लगती है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • GOLCONDA FORT",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Golconda Fort in Hyderabad, Telangana, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Golconda Fort, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Golconda Fort in Hyderabad, Telangana, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि फ़तेह रहबर दरवाज़ा और चार सौ फ़ीट ऊँची बाला हिसार की प्राचीर में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ गोलकोंडा किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, दिन में सैलानी यहाँ ताली बजाकर गूंज की परीक्षा लेते हैं, लेकिन शाम सात बजे मुख्य दरवाज़े पर पहला ताला पड़ते ही पूरा पहाड़ सन्नाटे में डूब जाता है।",
+      "text_overlay": "CASE RECORD • YEAR 1518",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि फ़तेह रहबर दरवाज़ा और चार सौ फ़ीट ऊँची बाला हिसार की प्राचीर में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Golconda Fort, authentic 1518 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ गोलकोंडा किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of गोलकोंडा किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, दिन में सैलानी यहाँ ताली बजाकर गूंज की परीक्षा लेते हैं, लेकिन शाम सात बजे मुख्य दरवाज़े पर पहला ताला पड़ते ही पूरा पहाड़ सन्नाटे में डूब जाता है।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Golconda Fort, authentic 1518 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में हवा में तैरती पुरानी तान और पाज़ेब की छन-छन। और सबसे हैरान करने वाली बात यह है कि अचानक सुनसान प्राचीर में अचानक अजीब कंपन होने लगता है और दूर खंडहरों से किसी के गाने की धीमी आवाज़ हवा में तैरने लगती है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "हवा में तैरती पुरानी तान और पाज़ेब की छन-छन + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में हवा में तैरती पुरानी तान और पाज़ेब की छन-छन।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Golconda Fort, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक सुनसान प्राचीर में अचानक अजीब कंपन होने लगता है और दूर खंडहरों से किसी के गाने की धीमी आवाज़ हवा में तैरने लगती है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Golconda Fort, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब रात के पहरेदारों ने प्राचीर की सबसे ऊंची दीवार पर एक ऐसी परछाई देखी जो हवा में तीन फ़ीट ऊपर तैरती हुई खंडहर की अंधेरी खिड़की में ग़ायब हो गई। प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'कान में ऐसी आवाज़ आई मानो कोई बिल्कुल गले के पास खड़े होकर धीमे सुर में गा रहा हो!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब रात के पहरेदारों ने प्राचीर की सबसे ऊंची दीवार पर एक ऐसी परछाई देखी जो हवा में तीन फ़ीट ऊपर तैरती हुई खंडहर की अंधेरी खिड़की में ग़ायब हो गई।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Golconda Fort, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'कान में ऐसी आवाज़ आई मानो कोई बिल्कुल गले के पास खड़े होकर धीमे सुर में गा रहा हो!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Golconda Fort, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी अधिकारियों ने रात की गश्त हमेशा के लिए बंद कर दी है और चौथे गलियारे को सील कर दिया गया है। और उस रात के बाद से, गोलकोंडा किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी अधिकारियों ने रात की गश्त हमेशा के लिए बंद कर दी है और चौथे गलियारे को सील कर दिया गया है।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Golconda Fort in Hyderabad, Telangana, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, गोलकोंडा किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of गोलकोंडा किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Golconda Fort in Hyderabad, Telangana, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान पुणे के शनिवार वाड़ा के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 3: SHANIWAR WADA",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान पुणे के शनिवार वाड़ा के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Shaniwar Wada, Pune, Maharashtra engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Shaniwar Wada, Pune, Maharashtra engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "गोलकोंडा किला का खौफ़नाक सच 💀 #Shorts",
+    "first_frame_text": "गोलकोंडा का सच",
+    "description": "⚠️ Golconda Fort (गोलकोंडा किला) Real Horror Story in Hindi | Hyderabad, Telangana Paranormal Incident (1518)\nक्या सच में गोलकोंडा किला में Rani Ki Awaaz का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: फ़तेह रहबर दरवाज़ा और चार सौ फ़ीट ऊँची बाला हिसार की प्राचीर (1518)\nHyderabad, Telangana के Golconda Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1518 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1518)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 3)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #hyderabad\n",
+    "search_phrases": [
+      "golconda fort horror story",
+      "golconda fort real story",
+      "golconda fort mystery",
+      "गोलकोंडा किला की असली कहानी",
+      "गोलकोंडा किला का रहस्य",
+      "hyderabad, telangana horror stories",
+      "haunted places in hyderabad, telangana"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#hyderabad"
+    ],
+    "tags": [
+      "golconda fort horror story",
+      "golconda fort real story",
+      "golconda fort haunted",
+      "golconda fort ghost",
+      "golconda fort mystery in hindi",
+      "golconda fort incident",
+      "golconda fort ka sach",
+      "गोलकोंडा किला की असली कहानी",
+      "गोलकोंडा किला का भूत",
+      "गोलकोंडा किला का रहस्य",
+      "hyderabad, telangana horror stories",
+      "haunted places in hyderabad, telangana",
+      "hyderabad haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "अगर आपको एक रात गोलकोंडा किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
+    "playlist": "HAUNTED FORTS & PALACES",
+    "instagram_caption": "⚠️ Golconda Fort (गोलकोंडा किला) — Rani Ki Awaaz\nअगर आपको एक रात गोलकोंडा किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#hyderabad",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Golconda Fort",
+  "year": "1518",
   "viral_titles": [
     "गोलकोंडा किला: रात को मत जाना ⚠️ #Shorts",
     "गोलकोंडा किला का खौफ़नाक सच 💀 #Shorts",
@@ -8,68 +243,9 @@
     "गोलकोंडा किला: 1518 की खौफ़नाक रात 💀 #Shorts",
     "Golconda Fort Real Horror Incident 💀 #Shorts"
   ],
-  "name": "Golconda Fort",
-  "location": "Hyderabad, Telangana",
-  "year": "1518",
-  "tagline": "echoes and whispers in the old citadel ruins",
-  "category": "HAUNTED FORTS & PALACES",
-  "archetype": "ARCHIVAL_EXPEDITION",
-  "beats": [
-    {
-      "beat": "CASE_FILE_COLD_OPEN",
-      "time_range": "0:00–0:08",
-      "target_dur": 8.0,
-      "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Golconda Fort, Hyderabad, Telangana, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
-      "text_overlay": "CLASSIFIED ARCHIVE • GOLCONDA FORT",
-      "vo_text": "पुरातत्व विभाग और वर्ष 1518 के सरकारी दस्तावेज़ों के अनुसार... गोलकोंडा किला की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
-      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
-    },
-    {
-      "beat": "HISTORICAL_RECORD",
-      "time_range": "0:08–0:32",
-      "target_dur": 24.0,
-      "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Golconda Fort, Hyderabad, Telangana, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR 1518",
-      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि फ़तेह रहबर दरवाज़ा और चार सौ फ़ीट ऊँची बाला हिसार की प्राचीर में दर्ज है। दिन में सैलानी यहाँ ताली बजाकर गूंज की परीक्षा लेते हैं, लेकिन शाम सात बजे मुख्य दरवाज़े पर पहला ताला पड़ते ही पूरा पहाड़ सन्नाटे में डूब जाता है। लेकिन वर्ष 1518 में सुलतान मुहम्मद क़ुली क़ुतुब शाह और शाही नर्तकी तारामती के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
-      "sound_cue": "Distant hollow wind + eerie ambient string drone"
-    },
-    {
-      "beat": "DOCUMENTED_ANOMALY",
-      "time_range": "0:32–1:02",
-      "target_dur": 30.0,
-      "visual_prompt": "Subterranean dark corridor inside Golconda Fort, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
-      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... सुनसान प्राचीर में अचानक अजीब कंपन होने लगता है और दूर खंडहरों से किसी के गाने की धीमी आवाज़ हवा में तैरने लगती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
-      "sound_cue": "हवा में तैरती पुरानी तान और पाज़ेब की छन-छन + slow accelerating heartbeat"
-    },
-    {
-      "beat": "THE_ENCOUNTER_TAPE",
-      "time_range": "1:02–1:36",
-      "target_dur": 34.0,
-      "visual_prompt": "Heart-stopping eyewitness collision inside Golconda Fort: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
-      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब रात के पहरेदारों ने प्राचीर की सबसे ऊंची दीवार पर एक ऐसी परछाई देखी जो हवा में तीन फ़ीट ऊपर तैरती हुई खंडहर की अंधेरी खिड़की में ग़ायब हो गई! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'कान में ऐसी आवाज़ आई मानो कोई बिल्कुल गले के पास खड़े होकर धीमे सुर में गा रहा हो!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
-      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
-    },
-    {
-      "beat": "UNRESOLVED_FORENSICS",
-      "time_range": "1:36–1:50",
-      "target_dur": 14.0,
-      "visual_prompt": "Desolate forensic aftermath of Golconda Fort, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
-      "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "इस भयानक हादसे के बाद से अधिकारियों ने रात की गश्त हमेशा के लिए बंद कर दी है और चौथे गलियारे को सील कर दिया गया है। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
-      "sound_cue": "Sudden dead silence + chilling low wind gust"
-    },
-    {
-      "beat": "NEXT_ARCHIVE_HOOK",
-      "time_range": "1:50–2:00",
-      "target_dur": 10.0,
-      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Shaniwar Wada, Pune, Maharashtra, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
-      "text_overlay": "NEXT DOSSIER → PART 3: SHANIWAR WADA",
-      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान पुणे के शनिवार वाड़ा की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
-      "sound_cue": "Sub-bass drop into pitch darkness"
-    }
-  ],
+  "seo_description": "⚠️ Golconda Fort (गोलकोंडा किला) Real Horror Story in Hindi | Hyderabad, Telangana Paranormal Incident (1518)\nक्या सच में गोलकोंडा किला में Rani Ki Awaaz का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: फ़तेह रहबर दरवाज़ा और चार सौ फ़ीट ऊँची बाला हिसार की प्राचीर (1518)\nHyderabad, Telangana के Golconda Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1518 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1518)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 3)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #hyderabad\n",
+  "pinned_comment": "अगर आपको एक रात गोलकोंडा किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Golconda Fort in Hyderabad, Telangana framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
   "tags": [
     "golconda fort horror story",
     "golconda fort real story",
@@ -102,8 +278,5 @@
     "trending horror shorts",
     "viral horror shorts",
     "shorts"
-  ],
-  "seo_description": "⚠️ Golconda Fort (गोलकोंडा किला) Real Horror Story in Hindi | Hyderabad, Telangana Paranormal Incident (1518)\nक्या सच में गोलकोंडा किला में Rani Ki Awaaz का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: फ़तेह रहबर दरवाज़ा और चार सौ फ़ीट ऊँची बाला हिसार की प्राचीर (1518)\nHyderabad, Telangana के Golconda Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1518 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1518)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 3)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #hyderabad\n",
-  "pinned_comment": "अगर आपको एक रात गोलकोंडा किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
-  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Golconda Fort in Hyderabad, Telangana framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+  ]
 }

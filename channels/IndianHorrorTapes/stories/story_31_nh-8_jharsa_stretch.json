@@ -1,6 +1,241 @@
 {
   "story_number": 31,
   "title": "ASI ने इसे क्यों सील किया? 🔴 #Shorts",
+  "location": "Gurugram-Delhi",
+  "category": "HAUNTED ROADS & HIGHWAYS",
+  "tagline": "woman in white flagging down cars at night",
+  "narrative_angle": "POLICE_DISPATCH_RECORD",
+  "hook_type": "MIDNIGHT_LIFT_WARNING",
+  "planted_detail": "सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 31",
+  "claims": [
+    {
+      "text": "NH-8, Jharsa stretch (झाड़सा एक्सप्रेसवे मार्ग) Gurugram-Delhi में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1998 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा गाड़ी का संगीत यंत्र अचानक कर्कश आवाज़ निकालने लगता है और पीछे देखने वाले शीशे में किसी अनजान मुसाफ़िर की परछाई नज़र आने लगती है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • NH-8, JHARSA STRETCH",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of NH-8, Jharsa stretch in Gurugram-Delhi, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of NH-8, Jharsa stretch, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of NH-8, Jharsa stretch in Gurugram-Delhi, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि झाड़सा-इफ़्को चौक पुलिस नियंत्रण कक्ष के दुर्घटना रजिस्टर में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 31 आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, रात के समय चौड़े राजमार्ग पर तेज़ रफ़्तार से वाहन दौड़ते हैं और पूरा रास्ता रोशनी से जगमगाता दिखाई देता है।",
+      "text_overlay": "CASE RECORD • YEAR 1998",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि झाड़सा-इफ़्को चौक पुलिस नियंत्रण कक्ष के दुर्घटना रजिस्टर में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of NH-8, Jharsa stretch, authentic 1998 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 31 आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 31, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, रात के समय चौड़े राजमार्ग पर तेज़ रफ़्तार से वाहन दौड़ते हैं और पूरा रास्ता रोशनी से जगमगाता दिखाई देता है।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of NH-8, Jharsa stretch, authentic 1998 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में सन्नाटे में हवा की तेज़ सांय-सांय और गाड़ी के शीशे पर ज़ोरदार थप्पड़ की आवाज़। और सबसे हैरान करने वाली बात यह है कि अचानक गाड़ी का संगीत यंत्र अचानक कर्कश आवाज़ निकालने लगता है और पीछे देखने वाले शीशे में किसी अनजान मुसाफ़िर की परछाई नज़र आने लगती है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "सन्नाटे में हवा की तेज़ सांय-सांय और गाड़ी के शीशे पर ज़ोरदार थप्पड़ की आवाज़ + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में सन्नाटे में हवा की तेज़ सांय-सांय और गाड़ी के शीशे पर ज़ोरदार थप्पड़ की आवाज़।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of NH-8, Jharsa stretch, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक गाड़ी का संगीत यंत्र अचानक कर्कश आवाज़ निकालने लगता है और पीछे देखने वाले शीशे में किसी अनजान मुसाफ़िर की परछाई नज़र आने लगती है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of NH-8, Jharsa stretch, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब एक चालक ने सौ से ज़्यादा की रफ़्तार पर देखा कि एक भयानक स्त्री उसकी गाड़ी के बिल्कुल बराबर हवा में दौड़ रही थी और सीधे उसकी आँखों में घूर रही थी। गाड़ी की रोशनी में सामने अचानक एक ऐसा साया आकर खड़ा हो गया जिसने रास्ता पूरी तरह रोक दिया था! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'उसकी आँखें पूरी तरह काली थीं और वो सौ की रफ़्तार पर गाड़ी की खिड़की पर ज़ोर-ज़ोर से हाथ मार रही थी!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब एक चालक ने सौ से ज़्यादा की रफ़्तार पर देखा कि एक भयानक स्त्री उसकी गाड़ी के बिल्कुल बराबर हवा में दौड़ रही थी और सीधे उसकी आँखों में घूर रही थी।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of NH-8, Jharsa stretch, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "गाड़ी की रोशनी में सामने अचानक एक ऐसा साया आकर खड़ा हो गया जिसने रास्ता पूरी तरह रोक दिया था! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'उसकी आँखें पूरी तरह काली थीं और वो सौ की रफ़्तार पर गाड़ी की खिड़की पर ज़ोर-ज़ोर से हाथ मार रही थी!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of NH-8, Jharsa stretch, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी राजमार्ग पुलिस ने चालकों को चेतावनी दी है कि इस सुनसान मोड़ पर रात के अंधेरे में अकेले गाड़ी रोकना जानलेवा साबित हो सकता है। और उस रात के बाद से, सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 31 हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी राजमार्ग पुलिस ने चालकों को चेतावनी दी है कि इस सुनसान मोड़ पर रात के अंधेरे में अकेले गाड़ी रोकना जानलेवा साबित हो सकता है।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of NH-8, Jharsa stretch in Gurugram-Delhi, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 31 हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 31 showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of NH-8, Jharsa stretch in Gurugram-Delhi, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान दिल्ली के Delhi Cantonment मार्ग के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 32: DELHI CANTONMENT ROAD",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान दिल्ली के Delhi Cantonment मार्ग के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Delhi Cantonment Road, Delhi engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Delhi Cantonment Road, Delhi engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "ASI ने इसे क्यों सील किया? 🔴 #Shorts",
+    "first_frame_text": "झाड़सा ए का सच",
+    "description": "⚠️ NH-8, Jharsa stretch (झाड़सा एक्सप्रेसवे मार्ग) Real Horror Story in Hindi | Gurugram-Delhi Paranormal Incident (1998)\nक्या सच में झाड़सा एक्सप्रेसवे मार्ग में Highway Par Lift का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: झाड़सा-इफ़्को चौक पुलिस नियंत्रण कक्ष के दुर्घटना रजिस्टर (1998)\nGurugram-Delhi के NH-8, Jharsa stretch से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1998 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1998)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 32)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #gurugram-delhi\n",
+    "search_phrases": [
+      "nh-8, jharsa stretch horror story",
+      "nh-8, jharsa stretch real story",
+      "nh-8, jharsa stretch mystery",
+      "झाड़सा एक्सप्रेसवे मार्ग की असली कहानी",
+      "झाड़सा एक्सप्रेसवे मार्ग का रहस्य",
+      "gurugram-delhi horror stories",
+      "haunted places in gurugram-delhi"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#gurugram-delhi"
+    ],
+    "tags": [
+      "nh-8, jharsa stretch horror story",
+      "nh-8, jharsa stretch real story",
+      "nh-8, jharsa stretch haunted",
+      "nh-8, jharsa stretch ghost",
+      "nh-8, jharsa stretch mystery in hindi",
+      "nh-8, jharsa stretch incident",
+      "nh-8, jharsa stretch ka sach",
+      "झाड़सा एक्सप्रेसवे मार्ग की असली कहानी",
+      "झाड़सा एक्सप्रेसवे मार्ग का भूत",
+      "झाड़सा एक्सप्रेसवे मार्ग का रहस्य",
+      "gurugram-delhi horror stories",
+      "haunted places in gurugram-delhi",
+      "gurugram-delhi haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "क्या आप मानते हैं कि Gurugram-Delhi के झाड़सा एक्सप्रेसवे मार्ग में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+    "playlist": "HAUNTED ROADS & HIGHWAYS",
+    "instagram_caption": "⚠️ NH-8, Jharsa stretch (झाड़सा एक्सप्रेसवे मार्ग) — Highway Par Lift\nक्या आप मानते हैं कि Gurugram-Delhi के झाड़सा एक्सप्रेसवे मार्ग में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#gurugram-delhi",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "NH-8, Jharsa stretch",
+  "year": "1998",
   "viral_titles": [
     "रात 3 बजे यहाँ लिफ़्ट मत देना ⚠️ #Shorts",
     "झाड़सा एक्सप्रेसवे म का खौफ़नाक सच 💀 #Shorts",
@@ -8,68 +243,9 @@
     "झाड़सा एक्सप्रेसवे म: 1998 की खौफ़नाक रात 💀 #Shorts",
     "NH-8, Jharsa stretch Real Horror Incident 💀 #Shorts"
   ],
-  "name": "NH-8, Jharsa stretch",
-  "location": "Gurugram-Delhi",
-  "year": "1998",
-  "tagline": "woman in white flagging down cars at night",
-  "category": "HAUNTED ROADS & HIGHWAYS",
-  "archetype": "POLICE_DISPATCH_LOG",
-  "beats": [
-    {
-      "beat": "CASE_FILE_COLD_OPEN",
-      "time_range": "0:00–0:08",
-      "target_dur": 8.0,
-      "visual_prompt": "Hyper-realistic 8K cinematic dashcam POV, 3:14 AM on lonely deserted stretch of NH-8, Jharsa stretch, Gurugram-Delhi, blinding headlights cutting through dense nocturnal mist, rain-slicked asphalt reflecting amber street signs, distant distorted shadow standing motionless on highway shoulder, 35mm Arri Alexa cinematography, 8k resolution, portrait 9:16",
-      "text_overlay": "POLICE LOG • NH-8, JHARSA STRETCH",
-      "vo_text": "पुलिस नियंत्रण कक्ष के गोपनीय रिकॉर्ड के अनुसार... अगर आधी रात को Gurugram-Delhi के इस सुनसान रास्ते पर आपकी गाड़ी बंद हो जाए, तो बत्तियाँ मत बुझाना और बाहर से चाहे कोई कितना भी रोए, दरवाज़ा भूलकर भी मत खोलना।",
-      "sound_cue": "Police radio squelch + dispatch tone + low sub-bass drone"
-    },
-    {
-      "beat": "HISTORICAL_RECORD",
-      "time_range": "0:08–0:32",
-      "target_dur": 24.0,
-      "visual_prompt": "Historical archival documentary establishing shot of NH-8, Jharsa stretch, Gurugram-Delhi, desolate accident milestone marker, overcast dusk sky, ominous shadows lengthening across highway curves, photorealistic documentary realism, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR 1998",
-      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि झाड़सा-इफ़्को चौक पुलिस नियंत्रण कक्ष के दुर्घटना रजिस्टर में दर्ज है। रात के समय चौड़े राजमार्ग पर तेज़ रफ़्तार से वाहन दौड़ते हैं और पूरा रास्ता रोशनी से जगमगाता दिखाई देता है। लेकिन वर्ष 1998 में राष्ट्रीय राजमार्ग गश्ती दल और स्थानीय वाहन चालक के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
-      "sound_cue": "Distant hollow wind + eerie ambient string drone"
-    },
-    {
-      "beat": "DOCUMENTED_ANOMALY",
-      "time_range": "0:32–1:02",
-      "target_dur": 30.0,
-      "visual_prompt": "Intense psychological horror POV inside car at NH-8, Jharsa stretch, dashboard speedometer frozen, heavy frost creeping unnaturally across the inside of the windshield, faint bloody handprint slowly appearing on glass, terrifying atmospheric lighting, 8k resolution, portrait 9:16",
-      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... गाड़ी का संगीत यंत्र अचानक कर्कश आवाज़ निकालने लगता है और पीछे देखने वाले शीशे में किसी अनजान मुसाफ़िर की परछाई नज़र आने लगती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
-      "sound_cue": "सन्नाटे में हवा की तेज़ सांय-सांय और गाड़ी के शीशे पर ज़ोरदार थप्पड़ की आवाज़ + slow accelerating heartbeat"
-    },
-    {
-      "beat": "THE_ENCOUNTER_TAPE",
-      "time_range": "1:02–1:36",
-      "target_dur": 34.0,
-      "visual_prompt": "Terrifying high-tension dashcam footage on NH-8, Jharsa stretch, Gurugram-Delhi, high-beam headlights illuminating a horrifying tall apparition standing in the center of the dark road, glowing eyes, disheveled wet hair, motion blur distortion, heart-stopping horror, 8k resolution, portrait 9:16",
-      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब एक चालक ने सौ से ज़्यादा की रफ़्तार पर देखा कि एक भयानक स्त्री उसकी गाड़ी के बिल्कुल बराबर हवा में दौड़ रही थी और सीधे उसकी आँखों में घूर रही थी! गाड़ी की रोशनी में उनके सामने अचानक एक ऐसा साया आकर खड़ा हो गया जिसकी आँखें अंगारे की तरह दहक रही थीं! उन्होंने कांपती आवाज़ में कहा: 'उसकी आँखें पूरी तरह काली थीं और वो सौ की रफ़्तार पर गाड़ी की खिड़की पर ज़ोर-ज़ोर से हाथ मार रही थी!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
-      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
-    },
-    {
-      "beat": "UNRESOLVED_FORENSICS",
-      "time_range": "1:36–1:50",
-      "target_dur": 14.0,
-      "visual_prompt": "Desolate police forensic aftermath of NH-8, Jharsa stretch, yellow police barrier tape fluttering in cold night wind, abandoned car with open door under solitary flickering roadlamp, damp highway asphalt, eerie quietude, 8k resolution, portrait 9:16",
-      "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "इस भयानक हादसे के बाद से राजमार्ग पुलिस ने चालकों को चेतावनी दी है कि इस सुनसान मोड़ पर रात के अंधेरे में अकेले गाड़ी रोकना जानलेवा साबित हो सकता है। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
-      "sound_cue": "Sudden dead silence + chilling low wind gust"
-    },
-    {
-      "beat": "NEXT_ARCHIVE_HOOK",
-      "time_range": "1:50–2:00",
-      "target_dur": 10.0,
-      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Delhi Cantonment Road, Delhi, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
-      "text_overlay": "NEXT DOSSIER → PART 32: DELHI CANTONMENT ROAD",
-      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान दिल्ली के Delhi Cantonment मार्ग की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
-      "sound_cue": "Sub-bass drop into pitch darkness"
-    }
-  ],
+  "seo_description": "⚠️ NH-8, Jharsa stretch (झाड़सा एक्सप्रेसवे मार्ग) Real Horror Story in Hindi | Gurugram-Delhi Paranormal Incident (1998)\nक्या सच में झाड़सा एक्सप्रेसवे मार्ग में Highway Par Lift का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: झाड़सा-इफ़्को चौक पुलिस नियंत्रण कक्ष के दुर्घटना रजिस्टर (1998)\nGurugram-Delhi के NH-8, Jharsa stretch से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1998 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1998)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 32)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #gurugram-delhi\n",
+  "pinned_comment": "क्या आप मानते हैं कि Gurugram-Delhi के झाड़सा एक्सप्रेसवे मार्ग में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of NH-8, Jharsa stretch in Gurugram-Delhi framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
   "tags": [
     "nh-8, jharsa stretch horror story",
     "nh-8, jharsa stretch real story",
@@ -102,8 +278,5 @@
     "trending horror shorts",
     "viral horror shorts",
     "shorts"
-  ],
-  "seo_description": "⚠️ NH-8, Jharsa stretch (झाड़सा एक्सप्रेसवे मार्ग) Real Horror Story in Hindi | Gurugram-Delhi Paranormal Incident (1998)\nक्या सच में झाड़सा एक्सप्रेसवे मार्ग में Highway Par Lift का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: झाड़सा-इफ़्को चौक पुलिस नियंत्रण कक्ष के दुर्घटना रजिस्टर (1998)\nGurugram-Delhi के NH-8, Jharsa stretch से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1998 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1998)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 32)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #gurugram-delhi\n",
-  "pinned_comment": "क्या आप मानते हैं कि Gurugram-Delhi के झाड़सा एक्सप्रेसवे मार्ग में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
-  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of NH-8, Jharsa stretch in Gurugram-Delhi framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+  ]
 }

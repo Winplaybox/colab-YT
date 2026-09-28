@@ -1,6 +1,241 @@
 {
   "story_number": 1,
   "title": "भानगढ़ किला का खौफ़नाक सच 💀 #Shorts",
+  "location": "Alwar, Rajasthan",
+  "category": "HAUNTED FORTS & PALACES",
+  "tagline": "ASI-banned after sunset; tantrik's curse on a princess",
+  "narrative_angle": "UNSOLVED_HISTORICAL_MYSTERY",
+  "hook_type": "FORBIDDEN_RULE_VIOLATION",
+  "planted_detail": "भानगढ़ किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा",
+  "claims": [
+    {
+      "text": "Bhangarh Fort (भानगढ़ किला) Alwar, Rajasthan में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1573 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा हवा में अचानक गुलाब जल और सड़ते हुए चमड़े की अजीब गंध घुल जाती है, और हाथ की घड़ी अपने आप बंद हो जाती है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • BHANGARH FORT",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Bhangarh Fort in Alwar, Rajasthan, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Bhangarh Fort, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Bhangarh Fort in Alwar, Rajasthan, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि भारतीय पुरातत्व सर्वेक्षण के प्राचीन स्मारक अधिनियम के चेतावनी पटल में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ भानगढ़ किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, सूरज ढलने से ठीक पंद्रह मिनट पहले अरावली की पहाड़ियों से आने वाले पक्षी अचानक किले की तरफ जाना बंद कर देते हैं।",
+      "text_overlay": "CASE RECORD • YEAR 1573",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि भारतीय पुरातत्व सर्वेक्षण के प्राचीन स्मारक अधिनियम के चेतावनी पटल में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Bhangarh Fort, authentic 1573 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ भानगढ़ किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of भानगढ़ किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, सूरज ढलने से ठीक पंद्रह मिनट पहले अरावली की पहाड़ियों से आने वाले पक्षी अचानक किले की तरफ जाना बंद कर देते हैं।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Bhangarh Fort, authentic 1573 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में घुंघरुओं की तीखी झनकार और पत्थरों पर भारी लोहे के घिसटने की आवाज़। और सबसे हैरान करने वाली बात यह है कि अचानक हवा में अचानक गुलाब जल और सड़ते हुए चमड़े की अजीब गंध घुल जाती है, और हाथ की घड़ी अपने आप बंद हो जाती है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "घुंघरुओं की तीखी झनकार और पत्थरों पर भारी लोहे के घिसटने की आवाज़ + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में घुंघरुओं की तीखी झनकार और पत्थरों पर भारी लोहे के घिसटने की आवाज़।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Bhangarh Fort, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक हवा में अचानक गुलाब जल और सड़ते हुए चमड़े की अजीब गंध घुल जाती है, और हाथ की घड़ी अपने आप बंद हो जाती है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Bhangarh Fort, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब वर्ष 2010 में दो साहसी युवक बाहरी सीमा पार करके रात को अंदर रुके थे, अगली सुबह उनका सामान जौहरी बाज़ार के खंडहर में बिखरा मिला और उनके साथ क्या हुआ, कोई नहीं जान सका। प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'वो दीवार से नहीं निकला... दीवार ही उसका भयानक चेहरा बन चुकी थी!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब वर्ष 2010 में दो साहसी युवक बाहरी सीमा पार करके रात को अंदर रुके थे, अगली सुबह उनका सामान जौहरी बाज़ार के खंडहर में बिखरा मिला और उनके साथ क्या हुआ, कोई नहीं जान सका।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Bhangarh Fort, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'वो दीवार से नहीं निकला... दीवार ही उसका भयानक चेहरा बन चुकी थी!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Bhangarh Fort, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी पुरातत्व विभाग ने इस किले के मुख्य द्वार पर लोहे के भारी ताले जड़वा दिए हैं और सूरज ढलने के बाद कोई भी सुरक्षाकर्मी अंदर रुकने की हिम्मत नहीं करता। और उस रात के बाद से, भानगढ़ किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी पुरातत्व विभाग ने इस किले के मुख्य द्वार पर लोहे के भारी ताले जड़वा दिए हैं और सूरज ढलने के बाद कोई भी सुरक्षाकर्मी अंदर रुकने की हिम्मत नहीं करता।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Bhangarh Fort in Alwar, Rajasthan, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, भानगढ़ किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of भानगढ़ किला की प्राचीर पर लगा पुराना लोहे का ज़ंग लगा कड़ा showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Bhangarh Fort in Alwar, Rajasthan, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान हैदराबाद के गोलकोंडा किला के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 2: GOLCONDA FORT",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान हैदराबाद के गोलकोंडा किला के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Golconda Fort, Hyderabad, Telangana engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Golconda Fort, Hyderabad, Telangana engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "भानगढ़ किला का खौफ़नाक सच 💀 #Shorts",
+    "first_frame_text": "भानगढ़ क का सच",
+    "description": "⚠️ Bhangarh Fort (भानगढ़ किला) Real Horror Story in Hindi | Alwar, Rajasthan Paranormal Incident (1573)\nक्या सच में भानगढ़ किला में Sabse Paapi Kila का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: भारतीय पुरातत्व सर्वेक्षण के प्राचीन स्मारक अधिनियम के चेतावनी पटल (1573)\nAlwar, Rajasthan के Bhangarh Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1573 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1573)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 2)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #alwar\n",
+    "search_phrases": [
+      "bhangarh fort horror story",
+      "bhangarh fort real story",
+      "bhangarh fort mystery",
+      "भानगढ़ किला की असली कहानी",
+      "भानगढ़ किला का रहस्य",
+      "alwar, rajasthan horror stories",
+      "haunted places in alwar, rajasthan"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#alwar"
+    ],
+    "tags": [
+      "bhangarh fort horror story",
+      "bhangarh fort real story",
+      "bhangarh fort haunted",
+      "bhangarh fort ghost",
+      "bhangarh fort mystery in hindi",
+      "bhangarh fort incident",
+      "bhangarh fort ka sach",
+      "भानगढ़ किला की असली कहानी",
+      "भानगढ़ किला का भूत",
+      "भानगढ़ किला का रहस्य",
+      "alwar, rajasthan horror stories",
+      "haunted places in alwar, rajasthan",
+      "alwar haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "अगर आपको एक रात भानगढ़ किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
+    "playlist": "HAUNTED FORTS & PALACES",
+    "instagram_caption": "⚠️ Bhangarh Fort (भानगढ़ किला) — Sabse Paapi Kila\nअगर आपको एक रात भानगढ़ किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#alwar",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Bhangarh Fort",
+  "year": "1573",
   "viral_titles": [
     "भानगढ़ किला: रात को मत जाना ⚠️ #Shorts",
     "भानगढ़ किला का खौफ़नाक सच 💀 #Shorts",
@@ -8,68 +243,9 @@
     "भानगढ़ किला: 1573 की खौफ़नाक रात 💀 #Shorts",
     "Bhangarh Fort Real Horror Incident 💀 #Shorts"
   ],
-  "name": "Bhangarh Fort",
-  "location": "Alwar, Rajasthan",
-  "year": "1573",
-  "tagline": "ASI-banned after sunset; tantrik's curse on a princess",
-  "category": "HAUNTED FORTS & PALACES",
-  "archetype": "ARCHIVAL_EXPEDITION",
-  "beats": [
-    {
-      "beat": "CASE_FILE_COLD_OPEN",
-      "time_range": "0:00–0:08",
-      "target_dur": 8.0,
-      "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Bhangarh Fort, Alwar, Rajasthan, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
-      "text_overlay": "CLASSIFIED ARCHIVE • BHANGARH FORT",
-      "vo_text": "पुरातत्व विभाग और वर्ष 1573 के सरकारी दस्तावेज़ों के अनुसार... भानगढ़ किला की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
-      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
-    },
-    {
-      "beat": "HISTORICAL_RECORD",
-      "time_range": "0:08–0:32",
-      "target_dur": 24.0,
-      "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Bhangarh Fort, Alwar, Rajasthan, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR 1573",
-      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि भारतीय पुरातत्व सर्वेक्षण के प्राचीन स्मारक अधिनियम के चेतावनी पटल में दर्ज है। सूरज ढलने से ठीक पंद्रह मिनट पहले अरावली की पहाड़ियों से आने वाले पक्षी अचानक किले की तरफ जाना बंद कर देते हैं। लेकिन वर्ष 1573 में राजा माधो सिंह, राजकुमारी रत्नावती और तांत्रिक सिंघिया के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
-      "sound_cue": "Distant hollow wind + eerie ambient string drone"
-    },
-    {
-      "beat": "DOCUMENTED_ANOMALY",
-      "time_range": "0:32–1:02",
-      "target_dur": 30.0,
-      "visual_prompt": "Subterranean dark corridor inside Bhangarh Fort, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
-      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... हवा में अचानक गुलाब जल और सड़ते हुए चमड़े की अजीब गंध घुल जाती है, और हाथ की घड़ी अपने आप बंद हो जाती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
-      "sound_cue": "घुंघरुओं की तीखी झनकार और पत्थरों पर भारी लोहे के घिसटने की आवाज़ + slow accelerating heartbeat"
-    },
-    {
-      "beat": "THE_ENCOUNTER_TAPE",
-      "time_range": "1:02–1:36",
-      "target_dur": 34.0,
-      "visual_prompt": "Heart-stopping eyewitness collision inside Bhangarh Fort: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
-      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब वर्ष 2010 में दो साहसी युवक बाहरी सीमा पार करके रात को अंदर रुके थे, अगली सुबह उनका सामान जौहरी बाज़ार के खंडहर में बिखरा मिला और उनके साथ क्या हुआ, कोई नहीं जान सका! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'वो दीवार से नहीं निकला... दीवार ही उसका भयानक चेहरा बन चुकी थी!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
-      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
-    },
-    {
-      "beat": "UNRESOLVED_FORENSICS",
-      "time_range": "1:36–1:50",
-      "target_dur": 14.0,
-      "visual_prompt": "Desolate forensic aftermath of Bhangarh Fort, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
-      "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "इस भयानक हादसे के बाद से पुरातत्व विभाग ने इस किले के मुख्य द्वार पर लोहे के भारी ताले जड़वा दिए हैं और सूरज ढलने के बाद कोई भी सुरक्षाकर्मी अंदर रुकने की हिम्मत नहीं करता। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
-      "sound_cue": "Sudden dead silence + chilling low wind gust"
-    },
-    {
-      "beat": "NEXT_ARCHIVE_HOOK",
-      "time_range": "1:50–2:00",
-      "target_dur": 10.0,
-      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Golconda Fort, Hyderabad, Telangana, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
-      "text_overlay": "NEXT DOSSIER → PART 2: GOLCONDA FORT",
-      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान हैदराबाद के गोलकोंडा किला की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
-      "sound_cue": "Sub-bass drop into pitch darkness"
-    }
-  ],
+  "seo_description": "⚠️ Bhangarh Fort (भानगढ़ किला) Real Horror Story in Hindi | Alwar, Rajasthan Paranormal Incident (1573)\nक्या सच में भानगढ़ किला में Sabse Paapi Kila का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: भारतीय पुरातत्व सर्वेक्षण के प्राचीन स्मारक अधिनियम के चेतावनी पटल (1573)\nAlwar, Rajasthan के Bhangarh Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1573 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1573)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 2)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #alwar\n",
+  "pinned_comment": "अगर आपको एक रात भानगढ़ किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Bhangarh Fort in Alwar, Rajasthan framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
   "tags": [
     "bhangarh fort horror story",
     "bhangarh fort real story",
@@ -102,8 +278,5 @@
     "trending horror shorts",
     "viral horror shorts",
     "shorts"
-  ],
-  "seo_description": "⚠️ Bhangarh Fort (भानगढ़ किला) Real Horror Story in Hindi | Alwar, Rajasthan Paranormal Incident (1573)\nक्या सच में भानगढ़ किला में Sabse Paapi Kila का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: भारतीय पुरातत्व सर्वेक्षण के प्राचीन स्मारक अधिनियम के चेतावनी पटल (1573)\nAlwar, Rajasthan के Bhangarh Fort से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1573 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1573)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 2)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #alwar\n",
-  "pinned_comment": "अगर आपको एक रात भानगढ़ किला के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇",
-  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Bhangarh Fort in Alwar, Rajasthan framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+  ]
 }

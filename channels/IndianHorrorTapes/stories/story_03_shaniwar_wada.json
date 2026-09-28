@@ -1,6 +1,241 @@
 {
   "story_number": 3,
   "title": "शनिवार वाड़ा का खौफ़नाक सच 💀 #Shorts",
+  "location": "Pune, Maharashtra",
+  "category": "HAUNTED FORTS & PALACES",
+  "tagline": "cries of a murdered young prince heard on full moons",
+  "narrative_angle": "LOCAL_ELDER_ORAL_HISTORY",
+  "hook_type": "NIGHT_CALL_WARNING",
+  "planted_detail": "प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया",
+  "claims": [
+    {
+      "text": "Shaniwar Wada (शनिवार वाड़ा) Pune, Maharashtra में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1773 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा अमावस की आधी रात को पत्थर के फर्श पर सूखे निशान उभरते हैं और हवा में अचानक हथियारों के टकराने की तीखी गंध आने लगती है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • SHANIWAR WADA",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Shaniwar Wada in Pune, Maharashtra, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Shaniwar Wada, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Shaniwar Wada in Pune, Maharashtra, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, पुणे शहर की एक सामान्य शाम थी, जब महल के भीतर अचानक सारी मशालें बुझा दी गईं और हथियारबंद सैनिक चीखते हुए अंदर घुसे।",
+      "text_overlay": "CASE RECORD • YEAR 1773",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Shaniwar Wada, authentic 1773 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, पुणे शहर की एक सामान्य शाम थी, जब महल के भीतर अचानक सारी मशालें बुझा दी गईं और हथियारबंद सैनिक चीखते हुए अंदर घुसे।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Shaniwar Wada, authentic 1773 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में तलवारों के टकराने की आवाज़ और फर्श पर भागते हुए पैरों की चाप। और सबसे हैरान करने वाली बात यह है कि अचानक अमावस की आधी रात को पत्थर के फर्श पर सूखे निशान उभरते हैं और हवा में अचानक हथियारों के टकराने की तीखी गंध आने लगती है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "तलवारों के टकराने की आवाज़ और फर्श पर भागते हुए पैरों की चाप + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में तलवारों के टकराने की आवाज़ और फर्श पर भागते हुए पैरों की चाप।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Shaniwar Wada, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक अमावस की आधी रात को पत्थर के फर्श पर सूखे निशान उभरते हैं और हवा में अचानक हथियारों के टकराने की तीखी गंध आने लगती है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Shaniwar Wada, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब अट्ठारह साल के युवा पेशवा की महल के भीतर बेरहमी से जान ले ली गई थी, और पिछले ढाई सौ सालों से हर पूर्णिमा की रात हज़ारों लोगों ने वही दर्दनाक चीख सुनी है। प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'काका मला वाचवा! (चाचा मुझे बचा लो!)'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब अट्ठारह साल के युवा पेशवा की महल के भीतर बेरहमी से जान ले ली गई थी, और पिछले ढाई सौ सालों से हर पूर्णिमा की रात हज़ारों लोगों ने वही दर्दनाक चीख सुनी है।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Shaniwar Wada, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'काका मला वाचवा! (चाचा मुझे बचा लो!)'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Shaniwar Wada, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी प्रशासन ने शनिवार वाड़ा के नारायण दरवाज़े पर रात के समय प्रवेश पर क़ानूनी पाबंदी लगा रखी है। और उस रात के बाद से, प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी प्रशासन ने शनिवार वाड़ा के नारायण दरवाज़े पर रात के समय प्रवेश पर क़ानूनी पाबंदी लगा रखी है।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Shaniwar Wada in Pune, Maharashtra, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Shaniwar Wada in Pune, Maharashtra, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान झाँसी के झाँसी का किला के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 4: JHANSI FORT",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान झाँसी के झाँसी का किला के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Jhansi Fort, Jhansi, UP engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Jhansi Fort, Jhansi, UP engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "शनिवार वाड़ा का खौफ़नाक सच 💀 #Shorts",
+    "first_frame_text": "शनिवार व का सच",
+    "description": "⚠️ Shaniwar Wada (शनिवार वाड़ा) Real Horror Story in Hindi | Pune, Maharashtra Paranormal Incident (1773)\nक्या सच में शनिवार वाड़ा में Kaka Mala Vachva का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ (1773)\nPune, Maharashtra के Shaniwar Wada से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1773 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1773)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 4)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #pune\n",
+    "search_phrases": [
+      "shaniwar wada horror story",
+      "shaniwar wada real story",
+      "shaniwar wada mystery",
+      "शनिवार वाड़ा की असली कहानी",
+      "शनिवार वाड़ा का रहस्य",
+      "pune, maharashtra horror stories",
+      "haunted places in pune, maharashtra"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#pune"
+    ],
+    "tags": [
+      "shaniwar wada horror story",
+      "shaniwar wada real story",
+      "shaniwar wada haunted",
+      "shaniwar wada ghost",
+      "shaniwar wada mystery in hindi",
+      "shaniwar wada incident",
+      "shaniwar wada ka sach",
+      "शनिवार वाड़ा की असली कहानी",
+      "शनिवार वाड़ा का भूत",
+      "शनिवार वाड़ा का रहस्य",
+      "pune, maharashtra horror stories",
+      "haunted places in pune, maharashtra",
+      "pune haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "क्या आप मानते हैं कि पुणे के शनिवार वाड़ा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+    "playlist": "HAUNTED FORTS & PALACES",
+    "instagram_caption": "⚠️ Shaniwar Wada (शनिवार वाड़ा) — Kaka Mala Vachva\nक्या आप मानते हैं कि पुणे के शनिवार वाड़ा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#pune",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Shaniwar Wada",
+  "year": "1773",
   "viral_titles": [
     "शनिवार वाड़ा: रात को मत जाना ⚠️ #Shorts",
     "शनिवार वाड़ा का खौफ़नाक सच 💀 #Shorts",
@@ -8,68 +243,9 @@
     "शनिवार वाड़ा: 1773 की खौफ़नाक रात 💀 #Shorts",
     "Shaniwar Wada Real Horror Incident 💀 #Shorts"
   ],
-  "name": "Shaniwar Wada",
-  "location": "Pune, Maharashtra",
-  "year": "1773",
-  "tagline": "cries of a murdered young prince heard on full moons",
-  "category": "HAUNTED FORTS & PALACES",
-  "archetype": "ARCHIVAL_EXPEDITION",
-  "beats": [
-    {
-      "beat": "CASE_FILE_COLD_OPEN",
-      "time_range": "0:00–0:08",
-      "target_dur": 8.0,
-      "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Shaniwar Wada, Pune, Maharashtra, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
-      "text_overlay": "CLASSIFIED ARCHIVE • SHANIWAR WADA",
-      "vo_text": "पुरातत्व विभाग और वर्ष 1773 के सरकारी दस्तावेज़ों के अनुसार... शनिवार वाड़ा की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
-      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
-    },
-    {
-      "beat": "HISTORICAL_RECORD",
-      "time_range": "0:08–0:32",
-      "target_dur": 24.0,
-      "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Shaniwar Wada, Pune, Maharashtra, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR 1773",
-      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ में दर्ज है। पुणे शहर की एक सामान्य शाम थी, जब महल के भीतर अचानक सारी मशालें बुझा दी गईं और हथियारबंद सैनिक चीखते हुए अंदर घुसे। लेकिन वर्ष 1773 में अट्ठारह वर्ष के पेशवा नारायणराव, रघुनाथराव और सुमेर सिंह के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
-      "sound_cue": "Distant hollow wind + eerie ambient string drone"
-    },
-    {
-      "beat": "DOCUMENTED_ANOMALY",
-      "time_range": "0:32–1:02",
-      "target_dur": 30.0,
-      "visual_prompt": "Subterranean dark corridor inside Shaniwar Wada, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
-      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... अमावस की आधी रात को पत्थर के फर्श पर सूखे निशान उभरते हैं और हवा में अचानक हथियारों के टकराने की तीखी गंध आने लगती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
-      "sound_cue": "तलवारों के टकराने की आवाज़ और फर्श पर भागते हुए पैरों की चाप + slow accelerating heartbeat"
-    },
-    {
-      "beat": "THE_ENCOUNTER_TAPE",
-      "time_range": "1:02–1:36",
-      "target_dur": 34.0,
-      "visual_prompt": "Heart-stopping eyewitness collision inside Shaniwar Wada: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
-      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब अट्ठारह साल के युवा पेशवा की महल के भीतर बेरहमी से जान ले ली गई थी, और पिछले ढाई सौ सालों से हर पूर्णिमा की रात हज़ारों लोगों ने वही दर्दनाक चीख सुनी है! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'काका मला वाचवा! (चाचा मुझे बचा लो!)' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
-      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
-    },
-    {
-      "beat": "UNRESOLVED_FORENSICS",
-      "time_range": "1:36–1:50",
-      "target_dur": 14.0,
-      "visual_prompt": "Desolate forensic aftermath of Shaniwar Wada, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
-      "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "इस भयानक हादसे के बाद से प्रशासन ने शनिवार वाड़ा के नारायण दरवाज़े पर रात के समय प्रवेश पर क़ानूनी पाबंदी लगा रखी है। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
-      "sound_cue": "Sudden dead silence + chilling low wind gust"
-    },
-    {
-      "beat": "NEXT_ARCHIVE_HOOK",
-      "time_range": "1:50–2:00",
-      "target_dur": 10.0,
-      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Jhansi Fort, Jhansi, UP, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
-      "text_overlay": "NEXT DOSSIER → PART 4: JHANSI FORT",
-      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान झाँसी के झाँसी का किला की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
-      "sound_cue": "Sub-bass drop into pitch darkness"
-    }
-  ],
+  "seo_description": "⚠️ Shaniwar Wada (शनिवार वाड़ा) Real Horror Story in Hindi | Pune, Maharashtra Paranormal Incident (1773)\nक्या सच में शनिवार वाड़ा में Kaka Mala Vachva का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ (1773)\nPune, Maharashtra के Shaniwar Wada से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1773 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1773)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 4)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #pune\n",
+  "pinned_comment": "क्या आप मानते हैं कि पुणे के शनिवार वाड़ा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Shaniwar Wada in Pune, Maharashtra framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
   "tags": [
     "shaniwar wada horror story",
     "shaniwar wada real story",
@@ -102,8 +278,5 @@
     "trending horror shorts",
     "viral horror shorts",
     "shorts"
-  ],
-  "seo_description": "⚠️ Shaniwar Wada (शनिवार वाड़ा) Real Horror Story in Hindi | Pune, Maharashtra Paranormal Incident (1773)\nक्या सच में शनिवार वाड़ा में Kaka Mala Vachva का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ (1773)\nPune, Maharashtra के Shaniwar Wada से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1773 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1773)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 4)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #pune\n",
-  "pinned_comment": "क्या आप मानते हैं कि पुणे के शनिवार वाड़ा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
-  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Shaniwar Wada in Pune, Maharashtra framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+  ]
 }

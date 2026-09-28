@@ -1,6 +1,241 @@
 {
   "story_number": 77,
   "title": "कुलधरा: रात को मत जाना ⚠️ #Shorts",
+  "location": "Jaisalmer, Rajasthan",
+  "category": "ABANDONED VILLAGES & GHOST TOWNS",
+  "tagline": "1500+ Paliwal Brahmins vanished overnight, curse legend",
+  "narrative_angle": "LOCAL_ELDER_ORAL_HISTORY",
+  "hook_type": "NIGHT_CALL_WARNING",
+  "planted_detail": "प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया",
+  "claims": [
+    {
+      "text": "Kuldhara (कुलधरा) Jaisalmer, Rajasthan में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1825 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा शाम ढलते ही रेगिस्तानी हवा में रेत का बवंडर उठता है और टूटी हवेलियों से चूड़ियों की खनक और बच्चों के रोने की आवाज़ें आने लगती हैं का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • KULDHARA",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Kuldhara in Jaisalmer, Rajasthan, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Kuldhara, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Kuldhara in Jaisalmer, Rajasthan, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि जैसलमेर रियासत के शाही अभिलेख और चौरासी वीरान गाँवों के खंडहर में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, थार के रेगिस्तान के बीच चौरासी खुशहाल गाँव थे जो अपनी बेमिसाल वास्तुकला और जल संरक्षण के लिए पूरे देश में प्रसिद्ध थे।",
+      "text_overlay": "CASE RECORD • YEAR 1825",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि जैसलमेर रियासत के शाही अभिलेख और चौरासी वीरान गाँवों के खंडहर में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Kuldhara, authentic 1825 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, थार के रेगिस्तान के बीच चौरासी खुशहाल गाँव थे जो अपनी बेमिसाल वास्तुकला और जल संरक्षण के लिए पूरे देश में प्रसिद्ध थे।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Kuldhara, authentic 1825 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में सूखी रेगिस्तानी हवा की चीख और सूने आँगनों में बर्तनों के गिरने की खनक। और सबसे हैरान करने वाली बात यह है कि अचानक शाम ढलते ही रेगिस्तानी हवा में रेत का बवंडर उठता है और टूटी हवेलियों से चूड़ियों की खनक और बच्चों के रोने की आवाज़ें आने लगती हैं। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "सूखी रेगिस्तानी हवा की चीख और सूने आँगनों में बर्तनों के गिरने की खनक + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में सूखी रेगिस्तानी हवा की चीख और सूने आँगनों में बर्तनों के गिरने की खनक।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Kuldhara, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक शाम ढलते ही रेगिस्तानी हवा में रेत का बवंडर उठता है और टूटी हवेलियों से चूड़ियों की खनक और बच्चों के रोने की आवाज़ें आने लगती हैं।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Kuldhara, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब दीवान के अत्याचार और अपनी बेटियों के सम्मान की रक्षा के लिए पंद्रह सौ परिवार एक ही रात में बिना कोई आहट किए सब कुछ छोड़कर ग़ायब हो गए और ज़मीन को भयानक श्राप दे गए। खंडहर के सूखे पेड़ों के पीछे से एक ऐसा विशाल साया निकला जो देखते ही देखते उनकी तरफ बढ़ा! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'सुबह सारे घर खाली पड़े थे, चूल्हों पर दाल पक रही थी, लेकिन पूरे गाँव में एक भी इंसान ज़िंदा नहीं था!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब दीवान के अत्याचार और अपनी बेटियों के सम्मान की रक्षा के लिए पंद्रह सौ परिवार एक ही रात में बिना कोई आहट किए सब कुछ छोड़कर ग़ायब हो गए और ज़मीन को भयानक श्राप दे गए।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Kuldhara, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "खंडहर के सूखे पेड़ों के पीछे से एक ऐसा विशाल साया निकला जो देखते ही देखते उनकी तरफ बढ़ा! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'सुबह सारे घर खाली पड़े थे, चूल्हों पर दाल पक रही थी, लेकिन पूरे गाँव में एक भी इंसान ज़िंदा नहीं था!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Kuldhara, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी पिछले दो सौ सालों में जिसने भी कुलधरा के खंडहरों में रात बिताने की कोशिश की, वो या तो अपना मानसिक संतुलन खो बैठा या हमेशा के लिए गूंगा हो गया। और उस रात के बाद से, प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी पिछले दो सौ सालों में जिसने भी कुलधरा के खंडहरों में रात बिताने की कोशिश की, वो या तो अपना मानसिक संतुलन खो बैठा या हमेशा के लिए गूंगा हो गया।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Kuldhara in Jaisalmer, Rajasthan, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of प्रवेश द्वार के पास रखा मिट्टी का पुराना बिना जला दिया showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Kuldhara in Jaisalmer, Rajasthan, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान राजस्थान के Khameda & Kuldhara clusters के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 78: KHAMEDA & KULDHARA CLUSTERS",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान राजस्थान के Khameda & Kuldhara clusters के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Khameda & Kuldhara clusters, Rajasthan engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Khameda & Kuldhara clusters, Rajasthan engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "कुलधरा: रात को मत जाना ⚠️ #Shorts",
+    "first_frame_text": "कुलधरा का सच",
+    "description": "⚠️ Kuldhara (कुलधरा) Real Horror Story in Hindi | Jaisalmer, Rajasthan Paranormal Incident (1825)\nक्या सच में कुलधरा में Ek Raat Mein Gayab Gaon का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: जैसलमेर रियासत के शाही अभिलेख और चौरासी वीरान गाँवों के खंडहर (1825)\nJaisalmer, Rajasthan के Kuldhara से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1825 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1825)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 78)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #jaisalmer\n",
+    "search_phrases": [
+      "kuldhara horror story",
+      "kuldhara real story",
+      "kuldhara mystery",
+      "कुलधरा की असली कहानी",
+      "कुलधरा का रहस्य",
+      "jaisalmer, rajasthan horror stories",
+      "haunted places in jaisalmer, rajasthan"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#jaisalmer"
+    ],
+    "tags": [
+      "kuldhara horror story",
+      "kuldhara real story",
+      "kuldhara haunted",
+      "kuldhara ghost",
+      "kuldhara mystery in hindi",
+      "kuldhara incident",
+      "kuldhara ka sach",
+      "कुलधरा की असली कहानी",
+      "कुलधरा का भूत",
+      "कुलधरा का रहस्य",
+      "jaisalmer, rajasthan horror stories",
+      "haunted places in jaisalmer, rajasthan",
+      "jaisalmer haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "क्या आप मानते हैं कि जैसलमेर के कुलधरा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+    "playlist": "ABANDONED VILLAGES & GHOST TOWNS",
+    "instagram_caption": "⚠️ Kuldhara (कुलधरा) — Ek Raat Mein Gayab Gaon\nक्या आप मानते हैं कि जैसलमेर के कुलधरा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#jaisalmer",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Kuldhara",
+  "year": "1825",
   "viral_titles": [
     "कुलधरा: रात को मत जाना ⚠️ #Shorts",
     "कुलधरा का खौफ़नाक सच 💀 #Shorts",
@@ -8,68 +243,9 @@
     "कुलधरा: 1825 की खौफ़नाक रात 💀 #Shorts",
     "Kuldhara Real Horror Incident 💀 #Shorts"
   ],
-  "name": "Kuldhara",
-  "location": "Jaisalmer, Rajasthan",
-  "year": "1825",
-  "tagline": "1500+ Paliwal Brahmins vanished overnight, curse legend",
-  "category": "ABANDONED VILLAGES & GHOST TOWNS",
-  "archetype": "FORBIDDEN_ZONE_BREACH",
-  "beats": [
-    {
-      "beat": "CASE_FILE_COLD_OPEN",
-      "time_range": "0:00–0:08",
-      "target_dur": 8.0,
-      "visual_prompt": "Forensic 8K night-vision shot of the perimeter boundary of Kuldhara, Jaisalmer, Rajasthan, rusted government warning board in Hindi and English, ancient gnarly trees engulfed in heavy supernatural mist, cold moonlight, ominous silhouette, 8k resolution, portrait 9:16",
-      "text_overlay": "RESTRICTED ZONE • KULDHARA",
-      "vo_text": "वर्ष 1825 के वन विभाग के सरकारी दस्तावेज़ साफ़ चेतावनी देते हैं... जैसलमेर की इस सीमा के भीतर सूरज ढलने के बाद कदम रखना अपनी जान को सीधे मौत के हवाले करना है।",
-      "sound_cue": "Warning siren echo + heavy wind howling + low drone"
-    },
-    {
-      "beat": "HISTORICAL_RECORD",
-      "time_range": "0:08–0:32",
-      "target_dur": 24.0,
-      "visual_prompt": "Wide atmospheric documentary establishing shot of the forbidden ruins of Kuldhara, Jaisalmer, Rajasthan, 1825 historical era, crumbling stone dwellings and ancient well, dramatic crimson sunset casting long black shadows, photorealistic masterpiece, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR 1825",
-      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि जैसलमेर रियासत के शाही अभिलेख और चौरासी वीरान गाँवों के खंडहर में दर्ज है। थार के रेगिस्तान के बीच चौरासी खुशहाल गाँव थे जो अपनी बेमिसाल वास्तुकला और जल संरक्षण के लिए पूरे देश में प्रसिद्ध थे। लेकिन वर्ष 1825 में ज़ालिम दीवान सालिम सिंह और पंद्रह सौ पालीवाल ब्राह्मण परिवार के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
-      "sound_cue": "Distant hollow wind + eerie ambient string drone"
-    },
-    {
-      "beat": "DOCUMENTED_ANOMALY",
-      "time_range": "0:32–1:02",
-      "target_dur": 30.0,
-      "visual_prompt": "Handheld POV trekking through dark wilderness of Kuldhara, flashlight beam illuminating an impossible forensic anomaly: magnetic compass needle spinning frantically, strange unnatural footprints pressed into cold soil, 8k psychological horror, portrait 9:16",
-      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... शाम ढलते ही रेगिस्तानी हवा में रेत का बवंडर उठता है और टूटी हवेलियों से चूड़ियों की खनक और बच्चों के रोने की आवाज़ें आने लगती हैं। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
-      "sound_cue": "सूखी रेगिस्तानी हवा की चीख और सूने आँगनों में बर्तनों के गिरने की खनक + slow accelerating heartbeat"
-    },
-    {
-      "beat": "THE_ENCOUNTER_TAPE",
-      "time_range": "1:02–1:36",
-      "target_dur": 34.0,
-      "visual_prompt": "Extreme terror confrontation in the ruins of Kuldhara, towering 8-foot tall shadowy entity emerging from behind ancient stone pillar, dark smoke and swirling ash, glowing yellow eyes piercing the fog, dramatic cinematic tension lighting, 8k resolution, portrait 9:16",
-      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब दीवान के अत्याचार और अपनी बेटियों के सम्मान की रक्षा के लिए पंद्रह सौ परिवार एक ही रात में बिना कोई आहट किए सब कुछ छोड़कर ग़ायब हो गए और ज़मीन को भयानक श्राप दे गए! खंडहर के सूखे पेड़ों के पीछे से एक ऐसा विशाल साया निकला जो देखते ही देखते उनकी तरफ झपट पड़ा! उन्होंने कांपती आवाज़ में कहा: 'सुबह सारे घर खाली पड़े थे, चूल्हों पर दाल पक रही थी, लेकिन पूरे गाँव में एक भी इंसान ज़िंदा नहीं था!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
-      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
-    },
-    {
-      "beat": "UNRESOLVED_FORENSICS",
-      "time_range": "1:36–1:50",
-      "target_dur": 14.0,
-      "visual_prompt": "Forensic archival evidence photo of Kuldhara, heavy iron chains and police lock sealing the boundary, abandoned researcher torch on rocky soil, barren desolate landscape under starry cold night sky, 8k resolution, portrait 9:16",
-      "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "इस भयानक हादसे के बाद से पिछले दो सौ सालों में जिसने भी कुलधरा के खंडहरों में रात बिताने की कोशिश की, वो या तो अपना मानसिक संतुलन खो बैठा या हमेशा के लिए गूंगा हो गया। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
-      "sound_cue": "Sudden dead silence + chilling low wind gust"
-    },
-    {
-      "beat": "NEXT_ARCHIVE_HOOK",
-      "time_range": "1:50–2:00",
-      "target_dur": 10.0,
-      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Khameda & Kuldhara clusters, Rajasthan, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
-      "text_overlay": "NEXT DOSSIER → PART 78: KHAMEDA & KULDHARA CLUSTERS",
-      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान राजस्थान के Khameda & Kuldhara clusters की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
-      "sound_cue": "Sub-bass drop into pitch darkness"
-    }
-  ],
+  "seo_description": "⚠️ Kuldhara (कुलधरा) Real Horror Story in Hindi | Jaisalmer, Rajasthan Paranormal Incident (1825)\nक्या सच में कुलधरा में Ek Raat Mein Gayab Gaon का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: जैसलमेर रियासत के शाही अभिलेख और चौरासी वीरान गाँवों के खंडहर (1825)\nJaisalmer, Rajasthan के Kuldhara से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1825 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1825)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 78)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #jaisalmer\n",
+  "pinned_comment": "क्या आप मानते हैं कि जैसलमेर के कुलधरा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Kuldhara in Jaisalmer, Rajasthan framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
   "tags": [
     "kuldhara horror story",
     "kuldhara real story",
@@ -102,8 +278,5 @@
     "trending horror shorts",
     "viral horror shorts",
     "shorts"
-  ],
-  "seo_description": "⚠️ Kuldhara (कुलधरा) Real Horror Story in Hindi | Jaisalmer, Rajasthan Paranormal Incident (1825)\nक्या सच में कुलधरा में Ek Raat Mein Gayab Gaon का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: जैसलमेर रियासत के शाही अभिलेख और चौरासी वीरान गाँवों के खंडहर (1825)\nJaisalmer, Rajasthan के Kuldhara से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1825 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1825)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 78)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #jaisalmer\n",
-  "pinned_comment": "क्या आप मानते हैं कि जैसलमेर के कुलधरा में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇",
-  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Kuldhara in Jaisalmer, Rajasthan framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+  ]
 }
