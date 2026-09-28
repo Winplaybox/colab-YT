@@ -93,6 +93,12 @@ def get_youtube_service():
         with open(token_path, "w", encoding="utf-8") as f:
             f.write(env_token.strip())
 
+    secret_path = os.path.join(script_dir, "youtube_client_secret.json")
+    env_secret = os.environ.get("INDIANHORRORTAPES_CLIENT_SECRET_JSON") or os.environ.get("YOUTUBE_CLIENT_SECRET_JSON")
+    if env_secret and env_secret.strip() and not os.path.exists(secret_path):
+        with open(secret_path, "w", encoding="utf-8") as f:
+            f.write(env_secret.strip())
+
     if not os.path.exists(token_path):
         print(f"⚠️ Notice: No credentials found for {EXPECTED_NAME}. Running in local render mode.")
         print(f"👉 Run 'python channels/IndianHorrorTapes/authenticate_youtube.py' to link your channel.")
@@ -102,11 +108,41 @@ def get_youtube_service():
         with open(token_path, "r", encoding="utf-8") as f:
             token_data = json.load(f)
 
+        # Auto-inject client_id and client_secret if missing from token.json but present in client secret file
+        if os.path.exists(secret_path) and ("client_id" not in token_data or "client_secret" not in token_data):
+            try:
+                with open(secret_path, "r", encoding="utf-8") as sf:
+                    sec_json = json.load(sf)
+                    c_info = sec_json.get("installed") or sec_json.get("web") or {}
+                    if "client_id" in c_info:
+                        token_data.setdefault("client_id", c_info["client_id"])
+                    if "client_secret" in c_info:
+                        token_data.setdefault("client_secret", c_info["client_secret"])
+            except Exception as se:
+                print(f"Notice: Could not parse client secret file: {se}")
+
         creds = Credentials.from_authorized_user_info(token_data)
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(google.auth.transport.requests.Request())
-            with open(token_path, "w", encoding="utf-8") as f:
-                f.write(creds.to_json())
+            try:
+                creds.refresh(google.auth.transport.requests.Request())
+                with open(token_path, "w", encoding="utf-8") as f:
+                    f.write(creds.to_json())
+                print("🔒 Access token refreshed successfully.")
+            except Exception as re:
+                err_str = str(re)
+                print(f"❌ Failed to refresh token: {err_str}")
+                if "invalid_grant" in err_str:
+                    print("\n" + "=" * 70)
+                    print("⚠️ GOOGLE OAUTH 'invalid_grant: Bad Request' DETECTED:")
+                    print("This happens for one of two reasons:")
+                    print("1. In Google Cloud Console (APIs & Services -> OAuth consent screen),")
+                    print("   the Publishing status is in 'Testing' mode (refresh tokens expire in 7 days).")
+                    print("   👉 Click 'PUBLISH APP' to switch to Production (tokens will never expire).")
+                    print("2. The refresh token expired, was revoked, or does not match the client secret.")
+                    print("   👉 Run locally: 'python channels/IndianHorrorTapes/authenticate_youtube.py'")
+                    print("   and update INDIANHORRORTAPES_TOKEN_JSON in GitHub Repository Secrets.")
+                    print("=" * 70 + "\n")
+                return None
 
         youtube = build("youtube", "v3", credentials=creds)
         valid, msg = verify_channel_identity(youtube)
