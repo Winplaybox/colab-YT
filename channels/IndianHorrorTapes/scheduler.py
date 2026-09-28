@@ -108,16 +108,26 @@ def get_youtube_service():
         with open(token_path, "r", encoding="utf-8") as f:
             token_data = json.load(f)
 
-        # Auto-inject client_id and client_secret if missing from token.json but present in client secret file
-        if os.path.exists(secret_path) and ("client_id" not in token_data or "client_secret" not in token_data):
+        # Validate and synchronize client_id & client_secret
+        if os.path.exists(secret_path):
             try:
                 with open(secret_path, "r", encoding="utf-8") as sf:
                     sec_json = json.load(sf)
                     c_info = sec_json.get("installed") or sec_json.get("web") or {}
-                    if "client_id" in c_info:
-                        token_data.setdefault("client_id", c_info["client_id"])
-                    if "client_secret" in c_info:
-                        token_data.setdefault("client_secret", c_info["client_secret"])
+                    sec_cid = c_info.get("client_id")
+                    sec_sec = c_info.get("client_secret")
+
+                    tok_cid = token_data.get("client_id")
+                    if tok_cid and sec_cid and tok_cid != sec_cid:
+                        print(f"⚠️ Mismatched Client ID detected:")
+                        print(f"   token.json uses:          {tok_cid}")
+                        print(f"   client_secret.json uses:  {sec_cid}")
+                        print("👉 If refresh fails, re-authenticate using authenticate_youtube.py with this client secret.")
+
+                    if sec_cid and "client_id" not in token_data:
+                        token_data["client_id"] = sec_cid
+                    if sec_sec and "client_secret" not in token_data:
+                        token_data["client_secret"] = sec_sec
             except Exception as se:
                 print(f"Notice: Could not parse client secret file: {se}")
 
@@ -138,7 +148,8 @@ def get_youtube_service():
                     print("1. In Google Cloud Console (APIs & Services -> OAuth consent screen),")
                     print("   the Publishing status is in 'Testing' mode (refresh tokens expire in 7 days).")
                     print("   👉 Click 'PUBLISH APP' to switch to Production (tokens will never expire).")
-                    print("2. The refresh token expired, was revoked, or does not match the client secret.")
+                    print("2. The refresh token expired, was revoked, or was created with a different OAuth Client ID.")
+                    print(f"   Active Client ID in secret: {token_data.get('client_id', 'unknown')}")
                     print("   👉 Run locally: 'python channels/IndianHorrorTapes/authenticate_youtube.py'")
                     print("   and update INDIANHORRORTAPES_TOKEN_JSON in GitHub Repository Secrets.")
                     print("=" * 70 + "\n")

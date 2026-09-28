@@ -80,6 +80,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
           INDIANHORRORTAPES_TOKEN_JSON: ${{ secrets.INDIANHORRORTAPES_TOKEN_JSON }}
+          INDIANHORRORTAPES_CLIENT_SECRET_JSON: ${{ secrets.INDIANHORRORTAPES_CLIENT_SECRET_JSON }}
         run: |
           STORY_NUM="${{ github.event.inputs.story_number }}"
           QUALITY="${{ github.event.inputs.quality }}"
@@ -97,6 +98,18 @@ jobs:
           else
             python "channels/IndianHorrorTapes/scheduler.py" "" "$QUAL_ARG" $IMM_FLAG
           fi
+
+      - name: Upload Output Video & Subtitles Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: indian-horror-tapes-episodes
+          path: |
+            channels/IndianHorrorTapes/output/*.mp4
+            channels/IndianHorrorTapes/output/*.srt
+            channels/IndianHorrorTapes/output/*.vtt
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Commit State / Logs
         if: always()
