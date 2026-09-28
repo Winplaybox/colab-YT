@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 3,
+  "story_id": "train_03_begunkodor_ghost_station",
+  "story_hash": "d22fbc5174ac0d75",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "42 Saal Band Raha Ye Station: Begunkodor 👻",
+  "youtube_title": "42 Saal Band Raha Ye Station: Begunkodor 👻",
+  "title_variations": [
+    "42 Saal Band Raha Ye Station: Begunkodor 👻",
+    "Begunkodor station folklore and reopening 🚂",
+    "42 Saal Band Raha Ye Station: Begunkodor 👻 #Shorts",
+    "The Real Story: Begunkodor station folklore and reopening"
+  ],
+  "tagline": "Begunkodor station folklore and reopening",
+  "visual_theme": "CABIN_POV_RADAR",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://timesofindia.indiatimes.com/india/begunkodor-railway-station-purulia/articleshow/4949216.cms",
+    "https://en.wikipedia.org/wiki/Begunkodor_railway_station"
+  ],
+  "verified_fact": "Begunkodor railway station in Purulia, West Bengal was decommissioned in 1967 after staff left citing ghost sightings; it remained unmanned for 42 years until passenger services resumed in 2009.",
+  "voiceover_script": "West Bengal ka Begunkodor station 42 saal tak sunsan raha! Kaha jata hai ki 1967 mein station master ne patri par ek ajeeb saaya dekhne ka daawa kiya, aur kuch hi din baad unki maut ho gayi. Is afwah ke baad railway staff ne yahan kaam karne se mana kar diya, aur agle 42 saal tak yahan koi train nahi ruki! 2009 mein railway ne ise regular stop ke roop mein dobara khola. Log aaj bhi shaam ke baad yahan akele rukne se katrate hain.",
+  "debate_question": "Kya aapko lagta hai Begunkodor sirf ek afwah thi ya kuch aur?",
+  "pinned_comment": "👻 1967 se 2009 tak band raha! Local stories ya darr? Aapka kya maanna hai Begunkodor ke baare mein?",
+  "description": "42 Saal Band Raha Ye Station: Begunkodor 👻\n\n🚂 Begunkodor station folklore and reopening\n\nBegunkodor railway station in Purulia, West Bengal was decommissioned in 1967 after staff left citing ghost sightings; it remained unmanned for 42 years until passenger services resumed in 2009.\n\n👉 Kya aapko lagta hai Begunkodor sirf ek afwah thi ya kuch aur?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Begunkodor #IndianRailways #GhostStation #Purulia #Mystery #Shorts #TrainFacts",
+  "tags": [
+    "Begunkodor",
+    "IndianRailways",
+    "GhostStation",
+    "Purulia",
+    "Mystery",
+    "Shorts",
+    "TrainFacts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "42 saal tak sunsan raha Begunkodor station!",
+      "sound_cue": "distant_wind",
+      "prompt": "Rural Indian railway station platform surrounded by dense green trees shrouded in evening mist, vintage station board reading Begunkodor, atmospheric lighting, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "1967 mein achanak band hua tha ye station.",
+      "sound_cue": "eerie_creak",
+      "prompt": "Old deserted stone station building beside empty railway tracks in rural Bengal, twilight shadows, cold fog rolling over tracks, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "42 saal tak koi train yahan nahi ruki!",
+      "sound_cue": "fast_train_pass",
+      "prompt": "Passenger train rushing past an empty dark rural platform without halting, warm window lights streaking into motion blur, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "2009 mein ise dobara shuru kiya gaya.",
+      "sound_cue": "diesel_horn",
+      "prompt": "Local passenger train halted at the renovated Begunkodor station at dusk, passengers boarding, peaceful rural evening, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Shaam ke baad log aaj bhi katrate hain!",
+      "sound_cue": "ambient_night",
+      "prompt": "Railway tracks extending into the quiet countryside under starlit night sky, solitary station signal lamp glowing red, 9:16 vertical portrait"
+    }
+  ]
+}

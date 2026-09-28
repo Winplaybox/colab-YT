@@ -10,8 +10,9 @@
   "target_duration_seconds": 120,
   "default_category_id": "28",
   "default_voice": "hi-IN-MadhurNeural",
-  "voice_rate": "+2%",
-  "voice_pitch": "+0Hz",
+  "default_voice_female": "hi-IN-SwaraNeural",
+  "voice_rate": "+8%",
+  "voice_pitch": "+2Hz",
   "schedule": {
     "days_of_week": [
       0,
@@ -48,7 +49,7 @@
       "height": 1920
     }
   },
-  "default_quality": "4k",
+  "default_quality": "8k",
   "branding": {
     "mascot_name": "Chhukku",
     "mascot_tagline": "Chhuk-Chhuk, Fact Fast!",

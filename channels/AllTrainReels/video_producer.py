@@ -1,9 +1,9 @@
 """
 AllTrainReels Dynamic 9:16 Portrait Rail Video Producer
 ======================================================
-- Produces ultra-high-retention YouTube Shorts (1080x1920 / 4K) in 20-30 seconds.
-- Pacing: 5 distinct visual beats with smooth, stutter-free zoompan.
-- Audio: Edge-TTS Voiceover (1.0 volume) + subtle procedural rail SFX (0.10 volume)
+- Produces ultra-high-retention YouTube Shorts (1080x1920 / 4K) documentary-style.
+- Pacing: 12–18 distinct visual shots with 4-style alternating stutter-free zoompan.
+- Audio: Pluggable TTS (Kokoro/IndicVoice → Edge-TTS fallback) + procedural rail SFX
   mixed via amix(normalize=0) and loudnorm(I=-16:TP=-1.5:LRA=11) for broadcast standards.
 - Kinetic Subtitles: Placed in Shorts safe zone (y=1080-1350) rendered via external textfile
   with sanitization (₹ -> Rs, emoji/Devanagari stripped to prevent tofu glyphs).
@@ -77,12 +77,26 @@ def get_audio_duration(audio_path):
     except Exception:
         return 25.0
 
-async def generate_voiceover(text, output_audio_path, voice="hi-IN-MadhurNeural", rate="+6%"):
-    """Generates crisp, high-energy voiceover via Edge-TTS."""
-    import edge_tts
-    communicate = edge_tts.Communicate(text, voice=voice, rate=rate)
-    await communicate.save(output_audio_path)
-    print(f"🎙️ [Edge-TTS] Generated Voiceover: {output_audio_path}")
+def generate_voiceover(text, output_audio_path, voice="hi-IN-MadhurNeural", rate="+6%"):
+    """
+    Generates voiceover via the pluggable TTS engine:
+    Priority: Kokoro/IndicVoice (local, free) → Edge-TTS (free neural fallback).
+    """
+    try:
+        # Import from the local tts/ package
+        from tts.engine import synthesize_narration
+        result = synthesize_narration(text, output_audio_path)
+        print(f"🎙️ [TTS Engine] Generated via: {result.get('engine', 'unknown')}")
+    except Exception as e:
+        # Hard fallback: pure Edge-TTS async
+        print(f"TTS engine notice ({e}), falling back to direct Edge-TTS...")
+        import asyncio
+        import edge_tts
+        async def _synth():
+            communicate = edge_tts.Communicate(text, voice=voice, rate=rate)
+            await communicate.save(output_audio_path)
+        asyncio.run(_synth())
+        print(f"🎙️ [Edge-TTS Fallback] Generated: {output_audio_path}")
 
 def synthesize_procedural_rail_audio(output_audio_path, duration=25.0):
     """
@@ -213,9 +227,9 @@ def produce_train_video(story_json_path, quality="1080p"):
     episode_assets_dir = os.path.join(assets_base, story_id)
     generate_story_assets(story_json_path)
 
-    # Step 1: Voiceover Audio
+    # Step 1: Voiceover Audio (pluggable TTS engine — no asyncio.run needed)
     voice_path = os.path.join(output_dir, f"{story_id}_voice.mp3")
-    asyncio.run(generate_voiceover(voiceover_text, voice_path))
+    generate_voiceover(voiceover_text, voice_path)
     duration = get_audio_duration(voice_path)
     print(f"⏱️ Audio Duration: {duration:.2f} seconds")
 
@@ -257,23 +271,32 @@ def produce_train_video(story_json_path, quality="1080p"):
             from image_generator import generate_procedural_fallback
             generate_procedural_fallback(title, shots[i].get("subtitle", ""), shot_img, w, h)
 
-        # Bug 1 Fix: Single-frame input (no -loop 1 -t)
+        # Single-frame input (no -loop 1 -t)
         input_args.extend(["-i", shot_img])
 
-        # Smooth alternating zoom/pan
-        if i % 2 == 0:
-            zoom_expr = f"zoom='min(zoom+0.0015,1.15)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+        # 4-style alternating zoom/pan for visual variety
+        style = i % 4
+        if style == 0:
+            # Slow zoom-in from center
+            zoom_expr = f"zoom='min(zoom+0.0015,1.18)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+        elif style == 1:
+            # Slow pan right with mild zoom
+            zoom_expr = f"zoom='min(zoom+0.0010,1.12)':x='(iw-iw/zoom)*(on/{frames})':y='ih/2-(ih/zoom/2)'"
+        elif style == 2:
+            # Slow pan left with mild zoom
+            zoom_expr = f"zoom='min(zoom+0.0010,1.12)':x='(iw-iw/zoom)*(1-on/{frames})':y='ih/2-(ih/zoom/2)'"
         else:
-            zoom_expr = f"zoom='min(zoom+0.0012,1.12)':x='(iw-iw/zoom)*(on/{frames})':y='ih/2-(ih/zoom/2)'"
+            # Slow tilt up (pan vertically)
+            zoom_expr = f"zoom='min(zoom+0.0012,1.15)':x='iw/2-(iw/zoom/2)':y='(ih-ih/zoom)*(on/{frames})'"
 
-        # Bug 2 & 3 Fix: Sanitize subtitle text and write to external textfile
+        # Sanitize subtitle text and write to external textfile
         sub_file = os.path.join(output_dir, f"{story_id}_sub{i}.txt")
         clean_text = clean_sub(shots[i].get("subtitle", ""))
         wrapped_sub = textwrap.fill(clean_text, width=28)
         with open(sub_file, "w", encoding="utf-8") as sf:
             sf.write(wrapped_sub)
 
-        # Bug 8 Fix: Move subtitles into Shorts safe zone (y=1080 to 1340)
+        # Subtitles in Shorts safe zone (y=1080 to 1340)
         box_y = int(1080 * scale)
         box_h = int(240 * scale)
         text_y = int(1110 * scale)
@@ -285,7 +308,7 @@ def produce_train_video(story_json_path, quality="1080p"):
             f"setsar=1"
         )
 
-        # Bug 1 Fix: Scale 2x before zoompan to eliminate jitter/stutter
+        # Scale 2x before zoompan to eliminate jitter/stutter
         filter_chains.append(
             f"[{i}:v]scale={w*2}:{h*2}:force_original_aspect_ratio=increase,crop={w*2}:{h*2},"
             f"zoompan={zoom_expr}:d={frames}:s={w}x{h}:fps=30,"

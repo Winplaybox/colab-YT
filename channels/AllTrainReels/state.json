@@ -1,24 +1,9 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 3,
-  "total_stories": 30,
-  "last_run": "2026-09-29T01:53:43.473125",
+  "current_story_number": 1,
+  "total_stories": 3000,
+  "last_run": null,
   "last_uploaded_video_id": null,
-  "history": [
-    {
-      "episode_number": 1,
-      "title": "Ye Train 603 km/h Chali! Bina Pahiye Ke 🤯",
-      "video_id": null,
-      "mode": "render_only",
-      "timestamp": "2026-09-29T01:38:42.953183"
-    },
-    {
-      "episode_number": 2,
-      "title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
-      "video_id": null,
-      "mode": "render_only",
-      "timestamp": "2026-09-29T01:53:43.473125"
-    }
-  ]
+  "history": []
 }
