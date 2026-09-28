@@ -1,0 +1,250 @@
+"""
+AllTrainReels Autonomous Scheduler & Uploader
+=============================================
+- Schedules and uploads 9:16 portrait train shorts daily at 18:30 IST (13:00 UTC).
+- Automatically manages video rendering, description formatting, tags, and pinned comment.
+- Tracks upload status and queue in state.json.
+"""
+
+import os
+import sys
+import json
+import time
+from datetime import datetime, timedelta
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
+try:
+    from googleapiclient.discovery import build
+    from googleapiclient.http import MediaFileUpload
+    from googleapiclient.errors import HttpError
+    from google.oauth2.credentials import Credentials
+    import google.auth.transport.requests
+    HAS_GOOGLE_CLIENT = True
+except ImportError:
+    HAS_GOOGLE_CLIENT = False
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, script_dir)
+
+from story_generator import generate_story_from_bank
+from video_producer import produce_train_video
+
+def compute_next_publish_time(publish_time_utc="13:00"):
+    """
+    Computes next daily publish timestamp at 18:30 IST (13:00 UTC).
+    Ensures timestamp is at least 15 minutes in future.
+    """
+    try:
+        from datetime import timezone
+        now_utc = datetime.now(timezone.utc)
+        target_hour, target_min = map(int, publish_time_utc.split(":"))
+
+        candidate = datetime(now_utc.year, now_utc.month, now_utc.day, target_hour, target_min, 0, tzinfo=timezone.utc)
+        if candidate <= now_utc + timedelta(minutes=15):
+            candidate += timedelta(days=1)
+        return candidate.strftime("%Y-%m-%dT%H:%M:%SZ")
+    except Exception as e:
+        print(f"Schedule calculation notice: {e}")
+        return None
+
+def get_youtube_service():
+    """Resolves OAuth credentials for AllTrainReels."""
+    if not HAS_GOOGLE_CLIENT:
+        print("Notice: google-api-python-client not installed in this environment.")
+        return None
+
+    # Check local channel token, then parent colab-YT root token
+    token_candidates = [
+        os.path.join(script_dir, "token.json"),
+        os.path.join(script_dir, "..", "..", "token.json"),
+        os.path.join(script_dir, "..", "IndianHorrorTapes", "token.json")
+    ]
+    token_path = None
+    for p in token_candidates:
+        if os.path.exists(p) and os.path.getsize(p) > 50:
+            token_path = p
+            break
+
+    secret_candidates = [
+        os.path.join(script_dir, "youtube_client_secret.json"),
+        os.path.join(script_dir, "..", "..", "youtube_client_secret.json"),
+        os.path.join(script_dir, "..", "IndianHorrorTapes", "youtube_client_secret.json")
+    ]
+    secret_path = None
+    for p in secret_candidates:
+        if os.path.exists(p) and os.path.getsize(p) > 50:
+            secret_path = p
+            break
+
+    if not token_path:
+        print("⚠️ No valid token.json found. Run authenticate_youtube.py first.")
+        return None
+
+    try:
+        with open(token_path, "r", encoding="utf-8") as f:
+            creds_data = json.load(f)
+        creds = Credentials.from_authorized_user_info(creds_data)
+        if creds.expired and creds.refresh_token:
+            request = google.auth.transport.requests.Request()
+            creds.refresh(request)
+            with open(token_path, "w", encoding="utf-8") as f:
+                f.write(creds.to_json())
+        return build("youtube", "v3", credentials=creds)
+    except Exception as e:
+        print(f"Failed to build YouTube service: {e}")
+        return None
+
+def upload_short(video_path, story_data, publish_mode="schedule"):
+    """Uploads and configures YouTube Short with tags and pinned comment."""
+    youtube = get_youtube_service()
+    if not youtube:
+        print(f"Simulation Mode: Would upload {video_path} for '{story_data['title']}'")
+        return None
+
+    title = story_data["youtube_title"]
+    description = story_data["description"]
+    tags = story_data["tags"] + story_data.get("seo_keywords", [])
+
+    body = {
+        "snippet": {
+            "title": title,
+            "description": description,
+            "tags": tags,
+            "categoryId": "28"
+        },
+        "status": {
+            "selfDeclaredMadeForKids": False
+        }
+    }
+
+    if publish_mode == "schedule":
+        next_pub = compute_next_publish_time()
+        if next_pub:
+            body["status"]["privacyStatus"] = "private"
+            body["status"]["publishAt"] = next_pub
+            print(f"📅 Scheduled for: {next_pub}")
+        else:
+            body["status"]["privacyStatus"] = "unlisted"
+    elif publish_mode == "public":
+        body["status"]["privacyStatus"] = "public"
+    else:
+        body["status"]["privacyStatus"] = "unlisted"
+
+    media = MediaFileUpload(video_path, chunksize=10*1024*1024, resumable=True, mimetype="video/mp4")
+    request = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
+
+    print(f"🚀 Uploading Short to YouTube: '{title}'...")
+    response = None
+    while response is None:
+        status, response = request.next_chunk()
+        if status:
+            print(f"Uploaded {int(status.progress() * 100)}%")
+
+    video_id = response.get("id")
+    video_url = f"https://www.youtube.com/shorts/{video_id}"
+    print(f"✅ Video Uploaded! URL: {video_url}")
+
+    # Add pinned comment
+    pinned_text = story_data.get("pinned_comment")
+    if pinned_text:
+        try:
+            comment_body = {
+                "snippet": {
+                    "videoId": video_id,
+                    "topLevelComment": {
+                        "snippet": {
+                            "textOriginal": pinned_text
+                        }
+                    }
+                }
+            }
+            youtube.commentThreads().insert(part="snippet", body=comment_body).execute()
+            print(f"📌 Pinned Comment Added: {pinned_text}")
+        except Exception as e:
+            print(f"Notice: Could not post pinned comment: {e}")
+
+    return video_id
+
+def load_state():
+    """Loads state.json tracking current episode and upload history."""
+    state_file = os.path.join(script_dir, "state.json")
+    if os.path.exists(state_file):
+        try:
+            with open(state_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {
+        "channel_id": "AllTrainReels",
+        "channel_name": "AllTrainReels",
+        "current_story_number": 1,
+        "total_stories": 30,
+        "last_run": None,
+        "last_uploaded_video_id": None,
+        "history": []
+    }
+
+def save_state(state):
+    """Saves updated state.json back to disk."""
+    state_file = os.path.join(script_dir, "state.json")
+    with open(state_file, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
+    print(f"💾 Updated state.json (Next episode queued: #{state['current_story_number']})")
+
+def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
+    """
+    Runs complete episodic release workflow for AllTrainReels:
+    1. Determines episode number from state.json if not specified
+    2. Generates that single episode on-demand via get_or_create_story
+    3. Renders 8K/4K/1080p Short with procedural soundscape and yellow subtitles
+    4. Schedules or uploads to YouTube
+    5. Updates state.json and advances to next episode
+    """
+    state = load_state()
+    if episode_number is None or str(episode_number).strip() == "":
+        episode_number = state.get("current_story_number", 1)
+    else:
+        episode_number = int(episode_number)
+
+    print(f"\n🚀 [AllTrainReels Workflow Trigger] Processing Episode #{episode_number:02d} ({quality})...")
+
+    # Generate single episode on-demand
+    from story_generator import get_or_create_story
+    story = get_or_create_story(episode_number)
+
+    slug = story['story_id'].replace('train_', '')
+    story_path = os.path.join(script_dir, "stories", f"story_{episode_number:02d}_{slug}.json")
+    video_path = produce_train_video(story_path, quality=quality)
+
+    video_id = None
+    if publish_mode != "render_only":
+        video_id = upload_short(video_path, story, publish_mode=publish_mode)
+
+    # Update state.json progression
+    total_stories = state.get("total_stories", 30)
+    next_ep = (episode_number % total_stories) + 1
+    state["last_run"] = datetime.now().isoformat()
+    state["last_uploaded_video_id"] = video_id
+    state["current_story_number"] = next_ep
+    state["history"].append({
+        "episode_number": episode_number,
+        "title": story["title"],
+        "video_id": video_id,
+        "mode": publish_mode,
+        "timestamp": state["last_run"]
+    })
+    save_state(state)
+
+    print(f"\n🎉 Episode #{episode_number:02d} workflow completed! Next episode queued: #{next_ep:02d}")
+    return video_path
+
+if __name__ == "__main__":
+    ep_arg = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1].isdigit() else None
+    qual_arg = sys.argv[2] if len(sys.argv) > 2 else "1080p"
+    mode_arg = "public" if "--immediate" in sys.argv else ("render_only" if "--render-only" in sys.argv else "schedule")
+
+    run_episode(episode_number=ep_arg, quality=qual_arg, publish_mode=mode_arg)

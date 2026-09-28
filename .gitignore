@@ -21,6 +21,8 @@ temp_render/
 *_concat.txt
 channels/IndianHorrorTapes/stories/assets/
 channels/IndianHorrorTapes/stories/thumbnails/
+channels/AllTrainReels/stories/assets/
+channels/AllTrainReels/stories/thumbnails/
 *.srt
 *.vtt
 

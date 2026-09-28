@@ -1,0 +1,37 @@
+{
+  "channel_id": "AllTrainReels",
+  "channel_name": "All Train Reels",
+  "channel_handle": "@AllTrainReels",
+  "channel_url": "https://www.youtube.com/@AllTrainReels",
+  "tagline": "Har Patri Ki Kahani 🚂",
+  "niche": "World & Indian Railways, Bullet Trains, Locomotives & Railway Engineering Marvels",
+  "language": "Hinglish",
+  "format": "9:16 Portrait Shorts",
+  "target_duration_seconds": 30,
+  "default_category_id": "28",
+  "default_voice": "hi-IN-MadhurNeural",
+  "voice_rate": "+6%",
+  "voice_pitch": "+0Hz",
+  "schedule": {
+    "days_of_week": [0, 1, 2, 3, 4, 5, 6],
+    "days_names": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "time_ist": "18:30",
+    "time_utc": "13:00:00.000Z"
+  },
+  "resolutions": {
+    "8k": { "width": 4320, "height": 7680 },
+    "4k": { "width": 2160, "height": 3840 },
+    "1080p": { "width": 1080, "height": 1920 }
+  },
+  "default_quality": "1080p",
+  "branding": {
+    "mascot_name": "Chhukku",
+    "mascot_tagline": "Chhuk-Chhuk, Fact Fast!",
+    "watermark": "@AllTrainReels",
+    "series_title": "ALL TRAIN REELS",
+    "primary_color": "0xe63946",
+    "accent_color": "0xffc300",
+    "background_color": "0x0b1f3a",
+    "text_color": "0xf1f5f9"
+  }
+}
