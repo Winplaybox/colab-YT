@@ -19,7 +19,7 @@
       "target_dur": 8.0,
       "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Shaniwar Wada, Pune, Maharashtra, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
       "text_overlay": "CLASSIFIED ARCHIVE • SHANIWAR WADA",
-      "vo_text": "Archaeological Survey aur 1773 ke official records ke mutabiq... Shaniwar Wada ki outer boundary par aadhi raat ko kadam rakhne wale ki jaan ki koi guarantee nahi hai.",
+      "vo_text": "पुरातत्व विभाग और वर्ष 1773 के सरकारी दस्तावेज़ों के अनुसार... शनिवार वाड़ा की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
       "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
     },
     {
@@ -28,7 +28,7 @@
       "target_dur": 24.0,
       "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Shaniwar Wada, Pune, Maharashtra, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1773",
-      "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Peshwa daftaron mein darj 30 August 1773 ki aadhi raat ka qatl par darj hai. Poona shahr ki aam shaam thi, jab mehal ke andar achanak mashalein bujha di gayin aur Gardi hathiyaron ke sath daudte hue ghuse. Lekin 1773 mein 18 saal ke Peshwa Narayanrao, Raghunathrao aur Gardi sainik Sumer Singh ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
+      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ में दर्ज है। पुणे शहर की एक सामान्य शाम थी, जब महल के भीतर अचानक सारी मशालें बुझा दी गईं और हथियारबंद सैनिक चीखते हुए अंदर घुसे। लेकिन वर्ष 1773 में अट्ठारह वर्ष के पेशवा नारायणराव, रघुनाथराव और सुमेर सिंह के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
     },
     {
@@ -37,8 +37,8 @@
       "target_dur": 30.0,
       "visual_prompt": "Subterranean dark corridor inside Shaniwar Wada, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... Amavasya ki aadhi raat ko patthar ke farsh par khoon ke sookhe daag ubharte hain aur achanak hawa mein talwaron ke takrane ki metallic smell aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
-      "sound_cue": "talwaron ke takrane ki cheekh aur farsh par bhaagte hue ladke ke kadam + slow accelerating heartbeat"
+      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... अमावस की आधी रात को पत्थर के फर्श पर सूखे निशान उभरते हैं और हवा में अचानक हथियारों के टकराने की तीखी गंध आने लगती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
+      "sound_cue": "तलवारों के टकराने की आवाज़ और फर्श पर भागते हुए पैरों की चाप + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
@@ -46,7 +46,7 @@
       "target_dur": 34.0,
       "visual_prompt": "Heart-stopping eyewitness collision inside Shaniwar Wada: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "Sabse khaufnaak hadsa tab report hua jab 18 saal ke peshwa ko uske apne chacha ke samne tukde-tukde kar diya gaya tha, aur pichle 250 saal se har full moon ko hazaaron logon ne wahi cheekh suni hai! Chashmadeedo ke mutabiq unhone deewar par dekha ki sadiyon purana ek saya bina zameen ko chhue tezi se unki taraf badh raha tha! Unhone cheekh kar kaha: 'काका मला वाचवा! (Kaka Mala Vachva — Chacha mujhe bacha lo!)' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
+      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब अट्ठारह साल के युवा पेशवा की महल के भीतर बेरहमी से जान ले ली गई थी, और पिछले ढाई सौ सालों से हर पूर्णिमा की रात हज़ारों लोगों ने वही दर्दनाक चीख सुनी है! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'काका मला वाचवा! (चाचा मुझे बचा लो!)' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
     },
     {
@@ -55,7 +55,7 @@
       "target_dur": 14.0,
       "visual_prompt": "Desolate forensic aftermath of Shaniwar Wada, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "Is hadse ke baad se Pune Municipal Corporation ne Shaniwar Wada ke Narayan Darwaza par raat ko entry legally ban kar rakhi hai. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
+      "vo_text": "इस भयानक हादसे के बाद से प्रशासन ने शनिवार वाड़ा के नारायण दरवाज़े पर रात के समय प्रवेश पर क़ानूनी पाबंदी लगा रखी है। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
     },
     {
@@ -64,26 +64,39 @@
       "target_dur": 10.0,
       "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Jhansi Fort, Jhansi, UP, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 4: JHANSI FORT",
-      "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Jhansi, UP ke Jhansi Fort ka hai... Follow for Part 4!",
+      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान झाँसी के झाँसी का किला की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
       "sound_cue": "Sub-bass drop into pitch darkness"
     }
   ],
   "tags": [
     "indian horror tapes",
+    "bhoot ki kahani",
     "real horror stories in hindi",
     "haunted places in india",
     "ghost stories hindi",
     "paranormal investigation india",
     "horror shorts hindi",
+    "chudail ki kahani",
+    "sacchi ghatna horror",
+    "khauf",
+    "darr",
+    "bhoot pret",
+    "scary horror stories",
+    "haunted fort india",
+    "creepy hindi kahaniya",
+    "khooni raaz",
+    "unsolved mysteries hindi",
+    "trending horror shorts",
+    "viral horror shorts",
+    "horror story in hindi",
+    "indian paranormal",
     "shorts",
     "shaniwarwada",
     "pune",
     "shaniwar wada real story",
-    "bhoot ki kahani",
-    "unsolved mysteries india",
     "mrballen hindi"
   ],
-  "seo_description": "⚠️ EPISODE 3: Shaniwar Wada — Kaka Mala Vachva\n📍 Real Location: Pune, Maharashtra\n📜 Archival Reference: Peshwa daftaron mein darj 30 August 1773 ki aadhi raat ka qatl (1773)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Shaniwar Wada ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1773)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 4)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStoriesHindi #ParanormalInvestigation #pune\n",
-  "pinned_comment": "Agar aap aadhi raat ko Pune ke is ilaaqe mein akele hon aur aapki car achanak ruk jaye... toh aap kya karenge? 1. Darwaza kholkar madad mangenge ya 2. Car ke andar lock hokar subah ka wait karenge? Sach batana comments mein 👇",
+  "seo_description": "⚠️ EPISODE 3: Shaniwar Wada — Kaka Mala Vachva\n📍 Real Location: Pune, Maharashtra\n📜 Archival Reference: पेशवा दफ़्तरों में दर्ज तीस अगस्त सत्रह सौ तिहत्तर की आधी रात का शाही दस्तावेज़ (1773)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Shaniwar Wada ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1773)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 4)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #pune\n",
+  "pinned_comment": "अगर आप आधी रात को पुणे के इस इलाके में अकेले हों और आपकी गाड़ी अचानक बंद हो जाए... तो आप क्या करेंगे? 1. दरवाज़ा खोलकर मदद मांगेंगे या 2. गाड़ी के भीतर बंद रहकर सुबह होने का इंतज़ार करेंगे? सच बताना कमेंट्स में 👇",
   "thumbnail_concept": "Ultra-high contrast horror portrait thumbnail, terrifying silhouette of Shaniwar Wada under dark crimson and moonlight fog, single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
 }

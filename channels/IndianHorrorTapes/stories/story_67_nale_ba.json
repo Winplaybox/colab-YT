@@ -18,9 +18,9 @@
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
       "visual_prompt": "Atmospheric 8K cinematic shot of deserted Indian suburban street at 2:00 AM, Bangalore, Karnataka, vintage sodium streetlights casting eerie yellow glow, traditional closed wooden houses, red chalk letters painted on front doors, thick nocturnal silence, 8k resolution, portrait 9:16",
-      "text_overlay": "CLASSIFIED ARCHIVE • NALE BA",
-      "vo_text": "Archaeological Survey aur 1985 ke official records ke mutabiq... Nale Ba ki outer boundary par aadhi raat ko kadam rakhne wale ki jaan ki koi guarantee nahi hai.",
-      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
+      "text_overlay": "ELDER TESTIMONY • NALE BA",
+      "vo_text": "स्थानीय बुज़ुर्गों और पुलिस रिकॉर्ड की गवाही के अनुसार... आधी रात को अगर आपके दरवाज़े पर जानी-पहचानी आवाज़ पुकारे, तो जवाब मत देना... क्योंकि बाहर कोई इंसान नहीं खड़ा है।",
+      "sound_cue": "Heavy wood knocking + eerie whispering wind"
     },
     {
       "beat": "HISTORICAL_RECORD",
@@ -28,7 +28,7 @@
       "target_dur": 24.0,
       "visual_prompt": "Archival documentary shot of 1980s residential neighborhood in Bangalore, Karnataka, traditional Indian brick architecture, narrow alleys shrouded in twilight mist, vintage bicycles parked, unsettling tension in the air, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1985",
-      "vo_text": "Ye kahani kisi social media afwaah par nahi, balki 1980s Bangalore City Panic aur deewaron par likhe red letters par darj hai. Old Bangalore ke residential ilaaqe jahan raat 9 baje sab log apne gharon ke darwaze band kar lete the. Lekin 1985 mein Bangalore Urban Legend & Karnataka Police Case Reports ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
+      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि उन्नीस सौ अस्सी के दशक की दहशत और दीवारों पर सिंदूर से लिखे शब्द में दर्ज है। पुराने बंगलुरु के रिहायशी मोहल्ले जहाँ रात नौ बजते ही लोग अपने घरों के भारी दरवाज़े भीतर से बंद कर लेते थे। लेकिन वर्ष 1985 में कर्नाटक पुलिस के पुराने मामले और बंगलुरु के पुराने निवासी के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
     },
     {
@@ -37,8 +37,8 @@
       "target_dur": 30.0,
       "visual_prompt": "Macro horror close-up of a heavy Indian vintage wooden door at Nale Ba, three violent deep claw gouges on wood, fresh red sindoor powder scattered on threshold, frosted glass showing a dark feminine silhouette waiting outside, 8k horror, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... raat 2 baje main gate par theek 3 bhari knocks sunayi dete hain aur bahar se aapki apni maa ya behen ki aawaz aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
-      "sound_cue": "lakdi ke bhaari gate par teen slow knocks aur dheemi sargoshi + slow accelerating heartbeat"
+      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... रात के ठीक दो बजे मुख्य दरवाज़े पर भारी दस्तक होती है और बाहर से आपकी अपनी माँ या बहन की जानी-पहचानी आवाज़ पुकारती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
+      "sound_cue": "लकड़ी के भारी दरवाज़े पर तीन धीमी दस्तकें और फुसफुसाती पुकार + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
@@ -46,7 +46,7 @@
       "target_dur": 34.0,
       "visual_prompt": "POV peering through cracked window slat at Nale Ba: terrifying pale woman in vintage Indian saree levitating inches above the damp street, hollow eyes staring straight into the camera, hand reaching forward, visceral heart-stopping terror, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "Sabse khaufnaak hadsa tab report hua jab aurat darwaza khatkhatakar rishtedar ki aawaz mein pukarti thi, jisne darwaza khola wo agle 24 ghante ke andar khoon ki ultiyan karke dead paya gaya! Chashmadeed ke mutabiq unke saamne achanak ek aisi aatma prakat hui jisne unki saansein rok di thi! Unhone cheekh kar kaha: 'Aawaz meri behen ki thi, lekin khidki se dekha toh bahar khadi aurat ke pair zameen se 6 inch upar the!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
+      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब जिसने भी बाहर से आती अपने रिश्तेदार की आवाज़ सुनकर दरवाज़ा खोला, वो अगले चौबीस घंटे के भीतर खून की उल्टियाँ करके मृत पाया गया! चश्मदीदों की मानें तो उनके सामने एक ऐसी रूहानी ताक़त आकर खड़ी हो गई जिसने उनके गले की आवाज़ और सांसें छीन ली थीं! उन्होंने कांपती आवाज़ में कहा: 'आवाज़ मेरी बहन की थी, लेकिन खिड़की की झिरी से देखा तो बाहर खड़ी स्त्री के पैर ज़मीन से छह इंच ऊपर हवा में थे!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
     },
     {
@@ -55,7 +55,7 @@
       "target_dur": 14.0,
       "visual_prompt": "Forensic aftermath street view in Bangalore, Karnataka, entire row of residential front doors marked with red protective Kannada and Hindi script, deserted dawn mist, damp pavement, eerie quietude, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "Is hadse ke baad se Hazaaron gharon ne apni deewar par chuna aur sindoor se likha tha: 'ನಾಳೆ ಬಾ' (Nale Ba — Kal Aana), jisse wo aatma agle din laut jaye. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
+      "vo_text": "इस भयानक हादसे के बाद से हज़ारों घरों ने अपनी बाहरी दीवारों पर चूने और सिंदूर से लिख दिया था: 'नाळे बा' यानी कल आना, जिससे वो रूह वापस लौट जाए। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
     },
     {
@@ -64,26 +64,39 @@
       "target_dur": 10.0,
       "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Ramoji Film City, Hyderabad, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 68: RAMOJI FILM CITY",
-      "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Hyderabad ke Ramoji Film City ka hai... Follow for Part 68!",
+      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान हैदराबाद के Ramoji Film City की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
       "sound_cue": "Sub-bass drop into pitch darkness"
     }
   ],
   "tags": [
     "indian horror tapes",
+    "bhoot ki kahani",
     "real horror stories in hindi",
     "haunted places in india",
     "ghost stories hindi",
     "paranormal investigation india",
     "horror shorts hindi",
+    "chudail ki kahani",
+    "sacchi ghatna horror",
+    "khauf",
+    "darr",
+    "bhoot pret",
+    "scary horror stories",
+    "haunted fort india",
+    "creepy hindi kahaniya",
+    "khooni raaz",
+    "unsolved mysteries hindi",
+    "trending horror shorts",
+    "viral horror shorts",
+    "horror story in hindi",
+    "indian paranormal",
     "shorts",
     "naleba",
     "bangalore",
     "nale ba real story",
-    "bhoot ki kahani",
-    "unsolved mysteries india",
     "mrballen hindi"
   ],
-  "seo_description": "⚠️ EPISODE 67: Nale Ba — Bangalore Ki Awaaz\n📍 Real Location: Bangalore, Karnataka\n📜 Archival Reference: 1980s Bangalore City Panic aur deewaron par likhe red letters (1985)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Nale Ba ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1985)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 68)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStoriesHindi #ParanormalInvestigation #bangalore\n",
-  "pinned_comment": "Agar aap aadhi raat ko Bangalore ke is ilaaqe mein akele hon aur aapki car achanak ruk jaye... toh aap kya karenge? 1. Darwaza kholkar madad mangenge ya 2. Car ke andar lock hokar subah ka wait karenge? Sach batana comments mein 👇",
+  "seo_description": "⚠️ EPISODE 67: Nale Ba — Bangalore Ki Awaaz\n📍 Real Location: Bangalore, Karnataka\n📜 Archival Reference: उन्नीस सौ अस्सी के दशक की दहशत और दीवारों पर सिंदूर से लिखे शब्द (1985)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Nale Ba ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1985)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 68)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #bangalore\n",
+  "pinned_comment": "अगर आप आधी रात को बंगलुरु के इस इलाके में अकेले हों और आपकी गाड़ी अचानक बंद हो जाए... तो आप क्या करेंगे? 1. दरवाज़ा खोलकर मदद मांगेंगे या 2. गाड़ी के भीतर बंद रहकर सुबह होने का इंतज़ार करेंगे? सच बताना कमेंट्स में 👇",
   "thumbnail_concept": "Ultra-high contrast horror portrait thumbnail, terrifying silhouette of Nale Ba under dark crimson and moonlight fog, single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
 }

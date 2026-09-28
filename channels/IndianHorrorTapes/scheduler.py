@@ -193,25 +193,44 @@ Part {next_num} coming next Wednesday/Sunday at 9:00 PM IST!
 Subscribe to @IndianHorrorTapes for 100+ Real Indian Horror Stories & Paranormal Legends.
 
 ---
-#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStories #UrbanLegends #HindiHorror #Bhangarh #Kuldhara #Paranormal
+#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #UrbanLegendsHindi
 """
 
-    tags = story_data.get("tags", []) + [
+    viral_horror_tags = [
         "indian horror tapes",
+        "bhoot ki kahani",
         "real horror stories in hindi",
         "haunted places in india",
         "ghost stories hindi",
         "paranormal investigation india",
         "horror shorts hindi",
+        "chudail ki kahani",
+        "sacchi ghatna horror",
+        "khauf",
+        "darr",
+        "bhoot pret",
+        "scary horror stories",
+        "haunted fort india",
+        "creepy hindi kahaniya",
+        "khooni raaz",
+        "unsolved mysteries hindi",
+        "trending horror shorts",
+        "viral horror shorts",
+        "horror story in hindi",
+        "indian paranormal",
         "shorts"
     ]
+    tags = story_data.get("tags", []) + viral_horror_tags
     seen = set()
     dedup_tags = []
+    total_len = 0
     for t in tags:
         t_clean = t.strip()
         if t_clean.lower() not in seen:
-            seen.add(t_clean.lower())
-            dedup_tags.append(t_clean)
+            if total_len + len(t_clean) + 1 <= 480: # YouTube 500-char limit safety
+                seen.add(t_clean.lower())
+                dedup_tags.append(t_clean)
+                total_len += len(t_clean) + 1
 
     body = {
         "snippet": {
@@ -223,7 +242,8 @@ Subscribe to @IndianHorrorTapes for 100+ Real Indian Horror Stories & Paranormal
             "defaultAudioLanguage": "hi"
         },
         "status": {
-            "selfDeclaredMadeForKids": False
+            "selfDeclaredMadeForKids": False,
+            "containsSyntheticMedia": False
         }
     }
 
@@ -420,8 +440,8 @@ def run_schedule(story_number=None, quality="4k", force_immediate=False):
         pinned = story_data.get("pinned_comment")
         video_id, video_url = upload_video(youtube, video_path, metadata, thumbnail_path=thumb_path, pinned_comment=pinned)
 
-        # 4. Upload Captions (Hindi & English SRT)
-        upload_subtitles_to_youtube(youtube, video_id, output_dir, story_number, story_data)
+        # 4. Upload Captions: Skipped (YouTube generates high-accuracy automatic native Hindi captions)
+        print("ℹ️ Skipping custom SRT/VTT caption upload — YouTube native auto-captions enabled.")
 
         # 5. Sync to Thematic Playlists (Category Playlist + All Episodes Chronological)
         from playlist_manager import sync_video_to_playlists

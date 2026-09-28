@@ -19,7 +19,7 @@
       "target_dur": 8.0,
       "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Malcha Mahal, Delhi, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
       "text_overlay": "CLASSIFIED ARCHIVE • MALCHA MAHAL",
-      "vo_text": "Archaeological Survey aur 1993 ke official records ke mutabiq... Malcha Mahal ki outer boundary par aadhi raat ko kadam rakhne wale ki jaan ki koi guarantee nahi hai.",
+      "vo_text": "पुरातत्व विभाग और वर्ष 1993 के सरकारी दस्तावेज़ों के अनुसार... मालचा महल की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
       "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
     },
     {
@@ -28,7 +28,7 @@
       "target_dur": 24.0,
       "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Malcha Mahal, Delhi, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1993",
-      "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Delhi Ridge Forest ka 14th century Tughlaq Hunting Lodge (Malcha Mahal) par darj hai. Bahar Dhaula Kuan ka traffic daudta hai, lekin jaise hi aap jungle ke andar ISRO satellite station ke paas kadam rakhte hain, mobile network completely dead ho jata hai. Lekin 1993 mein Begum Wilayat Mahal of Awadh, Prince Ali Raza aur Princess Sakina ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
+      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि दिल्ली के रिज़ जंगल में मौजूद चौदहवीं सदी के तुगलक शिकारगाह मालचा महल के सरकारी अभिलेखों में दर्ज है। दिन के समय यहाँ से कुछ ही दूरी पर शहर का भारी शोर सुनाई देता है, लेकिन इस घने जंगल के भीतर कदम रखते ही हर तरफ एक अजीब और डरावना सन्नाटा छा जाता है। लेकिन वर्ष 1993 में अवध की बेगम विलायत महल, शहज़ादे अली रज़ा और राजकुमारी सकीना के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
     },
     {
@@ -37,8 +37,8 @@
       "target_dur": 30.0,
       "visual_prompt": "Subterranean dark corridor inside Malcha Mahal, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... hawa mein heere pisne jaisi karr-karr aawaz aati hai aur 28 Doberman kutton ke bhonkne ki ajeeb goonj sunaayi deti hai jabki wahan koi kutta zinda nahi hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
-      "sound_cue": "junglee kutton ke rone aur ret par sukhi haddiyon ke tootne ki aahat + slow accelerating heartbeat"
+      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... हवा में कांच और हीरे पिसने जैसी कर्कश आवाज़ गूंजती है और दूर से अट्ठाईस खूंखार कुत्तों के रोने की रूह कंपा देने वाली चीखें सुनाई देती हैं, जबकि वहाँ अब कोई कुत्ता ज़िंदा नहीं है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
+      "sound_cue": "जंगली कुत्तों का रुदन और पत्तों पर हड्डियों के टूटने की आहट + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
@@ -46,7 +46,7 @@
       "target_dur": 34.0,
       "visual_prompt": "Heart-stopping eyewitness collision inside Malcha Mahal: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "Sabse khaufnaak hadsa tab report hua jab 1993 mein Begum ne apne khandaani heere peeskar khudkushi ki thi, unke marne ke baad dono bachhe unki laash ke sath 10 din tak usi bistar par sote rahe! Chashmadeedo ke mutabiq unhone deewar par dekha ki sadiyon purana ek saya bina zameen ko chhue tezi se unki taraf badh raha tha! Unhone cheekh kar kaha: 'Yahan aane wale kisi bhi ajnabi ko zinda wapas nahi jane diya jayega!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
+      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब वर्ष 1993 में बेगम ने अपने पुश्तैनी हीरे पीसकर जान दे दी थी, और उनके गुज़रने के बाद दोनों बच्चे दस दिनों तक अपनी माँ के शव के साथ उसी बिस्तर पर सोते रहे! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'यहाँ आने वाले किसी भी अजनबी को ज़िंदा वापस नहीं जाने दिया जाएगा!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
     },
     {
@@ -55,7 +55,7 @@
       "target_dur": 14.0,
       "visual_prompt": "Desolate forensic aftermath of Malcha Mahal, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "Is hadse ke baad se Forest Department aur police ne Malcha Mahal ke raste par barbed wire laga di hai aur trespassers par shoot-at-sight ka order tha. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
+      "vo_text": "इस भयानक हादसे के बाद से वन विभाग और पुलिस ने मालचा महल के रास्तों पर कटीले तारों की बाड़ लगाकर पहरा बैठा दिया था और बिना इजाज़त घुसने वालों पर सीधे गोली चलाने के आदेश जारी कर दिए गए थे। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
     },
     {
@@ -64,26 +64,39 @@
       "target_dur": 10.0,
       "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Neemrana Fort, Rajasthan, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 9: NEEMRANA FORT",
-      "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Rajasthan ke Neemrana Fort ka hai... Follow for Part 9!",
+      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान राजस्थान के नीमराना किला की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
       "sound_cue": "Sub-bass drop into pitch darkness"
     }
   ],
   "tags": [
     "indian horror tapes",
+    "bhoot ki kahani",
     "real horror stories in hindi",
     "haunted places in india",
     "ghost stories hindi",
     "paranormal investigation india",
     "horror shorts hindi",
+    "chudail ki kahani",
+    "sacchi ghatna horror",
+    "khauf",
+    "darr",
+    "bhoot pret",
+    "scary horror stories",
+    "haunted fort india",
+    "creepy hindi kahaniya",
+    "khooni raaz",
+    "unsolved mysteries hindi",
+    "trending horror shorts",
+    "viral horror shorts",
+    "horror story in hindi",
+    "indian paranormal",
     "shorts",
     "malchamahal",
     "delhi",
     "malcha mahal real story",
-    "bhoot ki kahani",
-    "unsolved mysteries india",
     "mrballen hindi"
   ],
-  "seo_description": "⚠️ EPISODE 8: Malcha Mahal — Begum Wilayat Ka Shraap\n📍 Real Location: Delhi\n📜 Archival Reference: Delhi Ridge Forest ka 14th century Tughlaq Hunting Lodge (Malcha Mahal) (1993)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Malcha Mahal ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1993)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 9)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStoriesHindi #ParanormalInvestigation #delhi\n",
-  "pinned_comment": "Agar aap aadhi raat ko Delhi ke is ilaaqe mein akele hon aur aapki car achanak ruk jaye... toh aap kya karenge? 1. Darwaza kholkar madad mangenge ya 2. Car ke andar lock hokar subah ka wait karenge? Sach batana comments mein 👇",
+  "seo_description": "⚠️ EPISODE 8: Malcha Mahal — Begum Wilayat Ka Shraap\n📍 Real Location: Delhi\n📜 Archival Reference: दिल्ली के रिज़ जंगल में मौजूद चौदहवीं सदी के तुगलक शिकारगाह मालचा महल के सरकारी अभिलेखों (1993)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Malcha Mahal ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1993)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 9)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #delhi\n",
+  "pinned_comment": "अगर आप आधी रात को दिल्ली के इस इलाके में अकेले हों और आपकी गाड़ी अचानक बंद हो जाए... तो आप क्या करेंगे? 1. दरवाज़ा खोलकर मदद मांगेंगे या 2. गाड़ी के भीतर बंद रहकर सुबह होने का इंतज़ार करेंगे? सच बताना कमेंट्स में 👇",
   "thumbnail_concept": "Ultra-high contrast horror portrait thumbnail, terrifying silhouette of Malcha Mahal under dark crimson and moonlight fog, single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
 }

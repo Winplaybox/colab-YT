@@ -19,7 +19,7 @@
       "target_dur": 8.0,
       "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Cellular Jail, Andaman & Nicobar, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
       "text_overlay": "CLASSIFIED ARCHIVE • CELLULAR JAIL",
-      "vo_text": "Archaeological Survey aur 1906 ke official records ke mutabiq... Cellular Jail ki outer boundary par aadhi raat ko kadam rakhne wale ki jaan ki koi guarantee nahi hai.",
+      "vo_text": "पुरातत्व विभाग और वर्ष 1906 के सरकारी दस्तावेज़ों के अनुसार... सेलुलर जेल की बाहरी सीमा में सूरज ढलने के बाद कदम रखने वाले किसी भी इंसान की सुरक्षा का कोई भरोसा नहीं है।",
       "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
     },
     {
@@ -28,7 +28,7 @@
       "target_dur": 24.0,
       "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Cellular Jail, Andaman & Nicobar, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1906",
-      "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Kalapani 7-wing panopticon, solitary confinement cells aur gallows room par darj hai. Andaman ka khubsurat tourist spot jahan din mein patriotic light & sound show chalta hai. Lekin 1906 mein Cellular Jail Port Blair British Penal Settlement (Kalapani) ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
+      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि पोर्ट ब्लेयर की सेलुलर जेल के ऐतिहासिक अभिलेख और फांसी घर का कमरा में दर्ज है। अंडमान का शांत और भव्य ऐतिहासिक स्मारक जहाँ दिन में सैलानी शहीदों को श्रद्धांजलि देने आते हैं। लेकिन वर्ष 1906 में कालापानी की सात शाखाओं वाली जेल और स्वतंत्रता सेनानी के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
     },
     {
@@ -37,8 +37,8 @@
       "target_dur": 30.0,
       "visual_prompt": "Subterranean dark corridor inside Cellular Jail, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... night guards jab solitary confinement wing number 3 se guzarte hain toh band lohe ke darwaze par achanak nakhun ghasitne ki aawaz aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
-      "sound_cue": "bhaari lohe ki bediyon ke farsh par khinchne ki metallic aahat aur karahne ki aawaz + slow accelerating heartbeat"
+      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... पहरेदार जब एकांत कारावास की तीसरी शाखा से गुज़रते हैं तो बंद लोहे के दरवाज़े पर अचानक नाखूनों के घिसटने की तीखी आवाज़ सुनाई देती है। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
+      "sound_cue": "फर्श पर भारी लोहे की बेड़ियों के खिंचने की खनक और दर्दनाक कराहने की आवाज़ + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
@@ -46,7 +46,7 @@
       "target_dur": 34.0,
       "visual_prompt": "Heart-stopping eyewitness collision inside Cellular Jail: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "Sabse khaufnaak hadsa tab report hua jab azaadi ke deewano par Britishers ne aisi aamaniye yaatnayein di thi ki unki aatmayen aaj bhi unhi bediyon mein jakdi hui mehsoos hoti hain! Chashmadeedo ke mutabiq unhone deewar par dekha ki sadiyon purana ek saya bina zameen ko chhue tezi se unki taraf badh raha tha! Unhone cheekh kar kaha: 'Phaansi ghar ke tappe par bediyon ke girne ki aawaz aati hai jabki wahan koi kaidi nahi hai!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
+      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब आज़ादी के मतवालों पर अंग्रेज़ों ने ऐसे अमानवीय अत्याचार किए थे कि उनकी तड़प आज भी उन अंधेरी कोठरियों की दीवारों में महसूस होती है! प्रत्यक्षदर्शियों के अनुसार उन्होंने दीवार से एक ऐसी परछाई को उतरते देखा जो बिना ज़मीन छुए तेज़ी से उनकी तरफ बढ़ रही थी! उन्होंने कांपती आवाज़ में कहा: 'फांसी घर के तख्ते पर बेड़ियों के गिरने की झंकार आती है, जबकि वहाँ दूर-दूर तक कोई कैदी नहीं है!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
     },
     {
@@ -55,7 +55,7 @@
       "target_dur": 14.0,
       "visual_prompt": "Desolate forensic aftermath of Cellular Jail, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "Is hadse ke baad se Security guards ne official written statements mein un wings par akele night duty karne se refuse kiya hai. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
+      "vo_text": "इस भयानक हादसे के बाद से सुरक्षाकर्मियों ने लिखित बयानों में उन पुरानी शाखाओं में रात के समय अकेले ड्यूटी करने से साफ़ इनकार कर दिया था। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
     },
     {
@@ -64,26 +64,39 @@
       "target_dur": 10.0,
       "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Warangal Fort, Telangana, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 96: WARANGAL FORT",
-      "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Telangana ke Warangal Fort ka hai... Follow for Part 96!",
+      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान तेलंगाना के Warangal किला की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
       "sound_cue": "Sub-bass drop into pitch darkness"
     }
   ],
   "tags": [
     "indian horror tapes",
+    "bhoot ki kahani",
     "real horror stories in hindi",
     "haunted places in india",
     "ghost stories hindi",
     "paranormal investigation india",
     "horror shorts hindi",
+    "chudail ki kahani",
+    "sacchi ghatna horror",
+    "khauf",
+    "darr",
+    "bhoot pret",
+    "scary horror stories",
+    "haunted fort india",
+    "creepy hindi kahaniya",
+    "khooni raaz",
+    "unsolved mysteries hindi",
+    "trending horror shorts",
+    "viral horror shorts",
+    "horror story in hindi",
+    "indian paranormal",
     "shorts",
     "cellularjail",
     "andaman&nicobar",
     "cellular jail real story",
-    "bhoot ki kahani",
-    "unsolved mysteries india",
     "mrballen hindi"
   ],
-  "seo_description": "⚠️ EPISODE 95: Cellular Jail — Kaala Pani Ki Cheekhein\n📍 Real Location: Andaman & Nicobar\n📜 Archival Reference: Kalapani 7-wing panopticon, solitary confinement cells aur gallows room (1906)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Cellular Jail ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1906)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 96)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStoriesHindi #ParanormalInvestigation #andaman&nicobar\n",
-  "pinned_comment": "Agar aap aadhi raat ko Andaman & Nicobar ke is ilaaqe mein akele hon aur aapki car achanak ruk jaye... toh aap kya karenge? 1. Darwaza kholkar madad mangenge ya 2. Car ke andar lock hokar subah ka wait karenge? Sach batana comments mein 👇",
+  "seo_description": "⚠️ EPISODE 95: Cellular Jail — Kaala Pani Ki Cheekhein\n📍 Real Location: Andaman & Nicobar\n📜 Archival Reference: पोर्ट ब्लेयर की सेलुलर जेल के ऐतिहासिक अभिलेख और फांसी घर का कमरा (1906)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Cellular Jail ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1906)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 96)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #andaman&nicobar\n",
+  "pinned_comment": "अगर आप आधी रात को Andaman & Nicobar के इस इलाके में अकेले हों और आपकी गाड़ी अचानक बंद हो जाए... तो आप क्या करेंगे? 1. दरवाज़ा खोलकर मदद मांगेंगे या 2. गाड़ी के भीतर बंद रहकर सुबह होने का इंतज़ार करेंगे? सच बताना कमेंट्स में 👇",
   "thumbnail_concept": "Ultra-high contrast horror portrait thumbnail, terrifying silhouette of Cellular Jail under dark crimson and moonlight fog, single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
 }

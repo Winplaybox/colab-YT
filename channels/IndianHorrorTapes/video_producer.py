@@ -362,10 +362,8 @@ def produce_horror_short(story_data, output_video_path, quality="8k", voice="hi-
 
     total_duration = max(vo_duration + 3.0, target_duration if target_duration else 120.0)
 
-    # 3. Generate multi-language subtitles (.srt & .vtt)
-    print("📝 Generating multi-language subtitles (Hindi, Hinglish, English)...")
-    from subtitles import generate_multi_language_subtitles
-    generate_multi_language_subtitles(beats, beat_audios, out_dir, story_data)
+    # 3. Subtitles skipped: YouTube generates automatic captions natively
+    print("ℹ️ Subtitle files skipped — relying on YouTube automatic native captions.")
 
     # 4. Typography setup & Thematic Overlay Filters
     font_file = resolve_font()

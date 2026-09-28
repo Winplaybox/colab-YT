@@ -8,7 +8,7 @@
   ],
   "name": "Dumas Beach",
   "location": "Surat, Gujarat",
-  "year": "Ancient",
+  "year": "प्राचीन काल",
   "tagline": "black sand, former cremation ground, whispered voices",
   "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
   "archetype": "SOLITARY_TRAVELER_TAPE",
@@ -19,16 +19,16 @@
       "target_dur": 8.0,
       "visual_prompt": "Low-angle atmospheric 8K photography of rusted railway tracks and abandoned platform of Dumas Beach, Surat, Gujarat, dense supernatural cold fog, a single distant red signal lamp glowing faintly in pitch darkness, 35mm film grain, 8k resolution, portrait 9:16",
       "text_overlay": "RAILWAY DOSSIER • DUMAS BEACH",
-      "vo_text": "Indian Railways ke unclassified accident files mein Dumas Beach ke baare mein aisi report darj hai... jise padhkar drivers aaj bhi yahan horn bajakar maximum speed se nikalte hain.",
+      "vo_text": "भारतीय रेलवे के गोपनीय दस्तावेज़ों में डूमस तट के बारे में एक ऐसी रूह कंपा देने वाली दास्तान दर्ज है... जिसे पढ़कर चालक आज भी यहाँ पूरी रफ़्तार से गाड़ी निकाल ले जाते हैं और रुकते नहीं।",
       "sound_cue": "Low train horn echo + metal wheel squeal + sub-bass pulse"
     },
     {
       "beat": "HISTORICAL_RECORD",
       "time_range": "0:08–0:32",
       "target_dur": 24.0,
-      "visual_prompt": "Authentic historical establishing shot of Dumas Beach railway station in Ancient, colonial brick architecture, rusted iron station signboard with Hindi and English lettering, misty platform under dim tungsten lantern light, 8k resolution, portrait 9:16",
-      "text_overlay": "CASE RECORD • YEAR Ancient",
-      "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Arabian Sea Black Sand Shoreline and Hindu Cremation Grounds par darj hai. Surat shahr ke log din mein yahan bhutta khane aur Arabian Sea ki hawa lene aate hain, reti aam beach se alag kaali dikhti hai. Lekin Ancient mein Surat Dumas Beach Shamshan Ghat & Local Fishermen ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
+      "visual_prompt": "Authentic historical establishing shot of Dumas Beach railway station in प्राचीन काल, colonial brick architecture, rusted iron station signboard with Hindi and English lettering, misty platform under dim tungsten lantern light, 8k resolution, portrait 9:16",
+      "text_overlay": "CASE RECORD • YEAR प्राचीन काल",
+      "vo_text": "यह रूह कंपा देने वाली दास्तान इंटरनेट की किसी झूठी अफ़वाह पर नहीं, बल्कि अरब सागर का काला रेतीला तट और प्राचीन श्मशान भूमि में दर्ज है। दिन के समय शहर के लोग यहाँ समुद्र की हवा लेने आते हैं, और यहाँ की रेत आम समंदर से अलग बिल्कुल काली दिखाई देती है। लेकिन वर्ष प्राचीन काल में सूरत का डूमस तट और स्थानीय मछुआरे के साथ एक ऐसी दिल दहला देने वाली घटना घटी जिसने इस पूरे इलाके को हमेशा के लिए ख़ौफ़ में डाल दिया।",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
     },
     {
@@ -37,8 +37,8 @@
       "target_dur": 30.0,
       "visual_prompt": "First-person POV walking inside pitch black railway tunnel or tracks at Dumas Beach, single flashlight beam cutting through floating dust, railway tracks vibrating with no train in sight, cold condensation breath in air, spine-chilling dread, 8k resolution, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... suraj dhalne ke baad samandar ki lehrein achanak shant ho jati hain aur hawa mein phusphusahat shuru hoti hai jaise hazaaron log aapas mein baat kar rahe hon. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
-      "sound_cue": "kaali lehron ka achanak thahar jana aur kaan ke bilkul paas sargoshi + slow accelerating heartbeat"
+      "vo_text": "जो लोग यहाँ से आधी रात को गुज़रे हैं, उन्होंने बताया कि ठीक बारह बजते ही... सूरज ढलते ही समंदर की लहरें अचानक शांत हो जाती हैं और हवा में ऐसी फुसफुसाहट शुरू होती है मानो हज़ारों अदृश्य लोग आपस में बातें कर रहे हों। फ़ोन अचानक बंद हो जाता है और तापमान इतना गिर जाता है मानो आप किसी बर्फीले श्मशान में खड़े हों।",
+      "sound_cue": "काली लहरों का अचानक थम जाना और कान के बिल्कुल पास ठंडी फुसफुसाहट + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
@@ -46,7 +46,7 @@
       "target_dur": 34.0,
       "visual_prompt": "Terrifying shock shot on railway tracks of Dumas Beach, Surat, Gujarat, ethereal pale woman in tattered white saree levitating above the steel rails, facing camera with hollow dark eyes, supernatural wind whipping clothes, chiaroscuro rim lighting, 8k photorealistic horror, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
-      "vo_text": "Sabse khaufnaak hadsa tab report hua jab kuch saal pehle morning walkers aadhi raat ko walk par nikle aur gayab ho gaye, unke phone recorder mein aakhri audio mili: 'Yahan se wapas mat jao... hum akele hain'! Tracks aur surang ke andhere se aisi aakriti achanak prakat hui jo bina zameen ko chhue hawa mein tair rahi thi! Unhone cheekh kar kaha: 'Reti par kadam ke nishaan the, lekin wo samandar ki taraf ja rahe the... wapas aane ka koi nishaan nahi tha!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
+      "vo_text": "सबसे ख़ौफ़नाक मंज़र तब सामने आया जब कुछ वर्ष पहले रात के समय टहलने निकले कुछ लोग रहस्यमयी ढंग से ग़ायब हो गए, और उनकी आखिरी आवाज़ सिर्फ़ यह दर्ज हुई: 'यहाँ से वापस मत जाओ... हम अकेले हैं'! पटरियों और सुरंग के अंधेरे से एक ऐसी परछाई प्रकट हुई जो बिना ज़मीन छुए हवा में तैर रही थी! उन्होंने कांपती आवाज़ में कहा: 'रेत पर पैरों के निशान थे जो सीधे समंदर की गहराई में जा रहे थे... लेकिन लौटने का कोई निशान नहीं था!' — और उनके पास वहाँ से उल्टे पैर भागने के सिवा कोई रास्ता नहीं बचा था!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
     },
     {
@@ -55,7 +55,7 @@
       "target_dur": 14.0,
       "visual_prompt": "Forensic aftermath shot of abandoned Dumas Beach railway station, official Indian Railways lock on signal cabin, overgrown weeds across rusted tracks, solitary lantern on damp stone platform at dawn, haunting desolation, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
-      "vo_text": "Is hadse ke baad se Surat Police ne beach entrance par warning boards lagaye hain aur raat ko beach par rukna punishable offence hai. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
+      "vo_text": "इस भयानक हादसे के बाद से पुलिस ने तट के प्रवेश द्वार पर चेतावनी लगा रखी है और रात के समय इस रेतीले तट पर रुकना सख़्त मना है। आज तक आधुनिक विज्ञान और स्थानीय प्रशासन के पास इस अनसुलझे रहस्य का कोई ठोस जवाब नहीं है। शायद कुछ राज़ ऐसे होते हैं जिन्हें अंधेरे में ही दफ़न रहने देना चाहिए।",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
     },
     {
@@ -64,26 +64,39 @@
       "target_dur": 10.0,
       "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Jatinga Valley, Assam, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 50: JATINGA VALLEY",
-      "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Assam ke Jatinga Valley ka hai... Follow for Part 50!",
+      "vo_text": "आज रात जब आप सोने से पहले अपने कमरे की बत्तियाँ बुझाएँगे... तो एक बार अपने दरवाज़े की कुंडी ज़रूर जाँच लेना। हमारी अगली रूह कंपा देने वाली दास्तान असम के जातिंगा घाटी की है... अगले भाग के लिए चैनल को अभी सब्सक्राइब करें।",
       "sound_cue": "Sub-bass drop into pitch darkness"
     }
   ],
   "tags": [
     "indian horror tapes",
+    "bhoot ki kahani",
     "real horror stories in hindi",
     "haunted places in india",
     "ghost stories hindi",
     "paranormal investigation india",
     "horror shorts hindi",
+    "chudail ki kahani",
+    "sacchi ghatna horror",
+    "khauf",
+    "darr",
+    "bhoot pret",
+    "scary horror stories",
+    "haunted fort india",
+    "creepy hindi kahaniya",
+    "khooni raaz",
+    "unsolved mysteries hindi",
+    "trending horror shorts",
+    "viral horror shorts",
+    "horror story in hindi",
+    "indian paranormal",
     "shorts",
     "dumasbeach",
     "surat",
     "dumas beach real story",
-    "bhoot ki kahani",
-    "unsolved mysteries india",
     "mrballen hindi"
   ],
-  "seo_description": "⚠️ EPISODE 49: Dumas Beach — Kaali Reti Ka Raaz\n📍 Real Location: Surat, Gujarat\n📜 Archival Reference: Arabian Sea Black Sand Shoreline and Hindu Cremation Grounds (Ancient)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Dumas Beach ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (Ancient)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 50)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStoriesHindi #ParanormalInvestigation #surat\n",
-  "pinned_comment": "Agar aap aadhi raat ko Surat ke is ilaaqe mein akele hon aur aapki car achanak ruk jaye... toh aap kya karenge? 1. Darwaza kholkar madad mangenge ya 2. Car ke andar lock hokar subah ka wait karenge? Sach batana comments mein 👇",
+  "seo_description": "⚠️ EPISODE 49: Dumas Beach — Kaali Reti Ka Raaz\n📍 Real Location: Surat, Gujarat\n📜 Archival Reference: अरब सागर का काला रेतीला तट और प्राचीन श्मशान भूमि (प्राचीन काल)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Dumas Beach ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (प्राचीन काल)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 50)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #surat\n",
+  "pinned_comment": "अगर आप आधी रात को सूरत के इस इलाके में अकेले हों और आपकी गाड़ी अचानक बंद हो जाए... तो आप क्या करेंगे? 1. दरवाज़ा खोलकर मदद मांगेंगे या 2. गाड़ी के भीतर बंद रहकर सुबह होने का इंतज़ार करेंगे? सच बताना कमेंट्स में 👇",
   "thumbnail_concept": "Ultra-high contrast horror portrait thumbnail, terrifying silhouette of Dumas Beach under dark crimson and moonlight fog, single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
 }
