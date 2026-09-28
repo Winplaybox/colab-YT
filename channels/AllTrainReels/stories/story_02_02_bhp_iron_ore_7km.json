@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 2,
+  "story_id": "train_02_bhp_iron_ore_7km",
+  "story_hash": "5f62250df6a21353",
+  "format": "Insane Facts",
+  "title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
+  "youtube_title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
+  "title_variations": [
+    "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
+    "682 wagons BHP Australia monster train 🚂",
+    "Duniya Ki Sabse Lambi Train: 7 KM! 😳 #Shorts",
+    "The Real Story: 682 wagons BHP Australia monster train"
+  ],
+  "tagline": "682 wagons BHP Australia monster train",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://www.guinnessworldrecords.com/world-records/longest-train",
+    "https://en.wikipedia.org/wiki/BHP_Iron_Ore"
+  ],
+  "verified_fact": "On June 21, 2001, BHP Billiton ran an iron ore train in Western Australia measuring 7.353 km with 682 wagons and 8 GE AC6000CW locomotives, weighing 99,734 tonnes.",
+  "voiceover_script": "Duniya ki sabse lambi train 7 kilometer se bhi lambi thi! 2001 mein Australia ki BHP company ne 682 dabbo aur 8 massive diesel engines ko jod kar ek record banaya. Iska kul wazan lagbhag 1 lakh ton tha. 70 km/h ki speed se chalte hue bhi is akeli train ko railway fatak cross karne mein pure 6 se 7 minute lagte the! Imagine karo aisi train ka engine crossing paar kar chuka ho, aur aakhri dabba 7 kilometer peeche ho!",
+  "debate_question": "Agar 7 kilometer lambi train aapke samne se nikle, toh kaisa lagega?",
+  "pinned_comment": "🚂 7.3 KM lambi train aur 682 dabbe! 70 km/h pe bhi 7 minute lagte the fatak cross karne mein! Dekhiye ye raw power.",
+  "description": "Duniya Ki Sabse Lambi Train: 7 KM! 😳\n\n🚂 682 wagons BHP Australia monster train\n\nOn June 21, 2001, BHP Billiton ran an iron ore train in Western Australia measuring 7.353 km with 682 wagons and 8 GE AC6000CW locomotives, weighing 99,734 tonnes.\n\n👉 Agar 7 kilometer lambi train aapke samne se nikle, toh kaisa lagega?\n\nSubscribe to @AllTrainReels for daily high-speed rail facts, monster locomotives, and Indian Railways marvels!\n\n#Trains #LongestTrain #MonsterTrain #Railways #Australia #Shorts #TrainFacts",
+  "tags": [
+    "Trains",
+    "LongestTrain",
+    "MonsterTrain",
+    "Railways",
+    "Australia",
+    "Shorts",
+    "TrainFacts"
+  ],
+  "seo_keywords": [
+    "Indian Railways",
+    "Train Facts",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Vande Bharat",
+    "Train Spotting",
+    "Fastest Train",
+    "Monster Train"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Duniya ki sabse lambi train: 7.3 KM lambi!",
+      "sound_cue": "diesel_horn",
+      "prompt": "Massive heavy haul freight train snaking through vast red Australian Pilbara desert, aerial drone wide angle view extending to the distant horizon, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "682 dabbe aur 8 monster locomotive engines!",
+      "sound_cue": "engine_rumble",
+      "prompt": "Multiple giant diesel electric locomotives coupled together, roaring exhaust heat haze, low angle powerful shot, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Kul wazan: 1 Lakh Ton se zyada!",
+      "sound_cue": "track_clatter",
+      "prompt": "Endless line of heavy iron ore hopper wagons loaded with reddish rock, heavy steel wheels gripping tracks, industrial scale, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Crossing paar karne mein lagte the 7 minute!",
+      "sound_cue": "crossing_bell",
+      "prompt": "Outback railway crossing gate with red warning lights flashing as the endless iron ore train rolls past under golden sunset, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Engine aage, aur aakhri dabba 7 KM door!",
+      "sound_cue": "train_departure",
+      "prompt": "Panoramic view of train disappearance into distant desert vanishing point, dusk sky with orange horizon, 9:16 vertical portrait"
+    }
+  ]
+}

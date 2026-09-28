@@ -2,21 +2,18 @@
 AllTrainReels Dynamic 9:16 Portrait Rail Video Producer
 ======================================================
 - Produces ultra-high-retention YouTube Shorts (1080x1920 / 4K) in 20-30 seconds.
-- 5 Distinct Visual Rail Themes:
-  1. SPEEDOMETER_HUD        : Digital neon velocity gauge, GPS coordinates, track speed tracker
-  2. SPLIT_VS_ARENA         : High-voltage battle split-screen with glowing VS divider
-  3. VINTAGE_STEAM_GAUGE    : Polished brass steam pressure gauge, warm coal amber vignette
-  4. CABIN_POV_RADAR        : Locomotive cockpit HUD with track clearance radar
-  5. ARCHITECTURAL_BLUEPRINT: Technical CAD engineering grid with dimension markers
-- Energetic Edge-TTS Voiceover (hi-IN-MadhurNeural, +6% rate).
-- Procedural rail soundscape: horn blasts, steam whistle chimes, rhythmic rail track rumble.
-- High-contrast Railway Yellow (#FFC300) dynamic kinetic subtitles.
-- Persistent @AllTrainReels branding badge.
+- Pacing: 5 distinct visual beats with smooth, stutter-free zoompan.
+- Audio: Edge-TTS Voiceover (1.0 volume) + subtle procedural rail SFX (0.10 volume)
+  mixed via amix(normalize=0) and loudnorm(I=-16:TP=-1.5:LRA=11) for broadcast standards.
+- Kinetic Subtitles: Placed in Shorts safe zone (y=1080-1350) rendered via external textfile
+  with sanitization (₹ -> Rs, emoji/Devanagari stripped to prevent tofu glyphs).
+- Visual HUDs: Context-aware overlay without fake speedometer spam.
 """
 
 import os
 import sys
 import json
+import re
 import subprocess
 import textwrap
 import asyncio
@@ -55,12 +52,16 @@ def resolve_font():
                 return f.replace("\\", "/").replace(":", "\\:")
     return ""
 
-def sanitize_ffmpeg_text(text):
-    """Sanitizes text for safe FFmpeg drawtext rendering."""
-    clean = text.replace(":", " -").replace("'", "").replace('"', '').replace("\\", "").replace("%", "")
-    clean = "".join(c for c in clean if ord(c) < 0x2000 or ord(c) > 0x2BFF)
-    clean = " ".join(clean.split())
-    return clean.strip()
+def ff_path(p):
+    """Escapes path for FFmpeg filter arguments."""
+    return p.replace("\\", "/").replace(":", "\\:")
+
+def clean_sub(t):
+    """Sanitizes subtitle text to prevent drawtext crashes or tofu glyphs in Poppins font."""
+    t = t.replace("₹", "Rs ")
+    t = re.sub(r'[\u0900-\u097F\U0001F000-\U0001FAFF\u2600-\u27BF]', '', t)
+    t = t.replace("'", "").replace('"', '').replace(":", " -").replace("\\", "").replace("%", "")
+    return " ".join(t.split()).strip()
 
 def get_audio_duration(audio_path):
     """Returns audio duration in seconds using ffprobe."""
@@ -107,28 +108,25 @@ def synthesize_procedural_rail_audio(output_audio_path, duration=25.0):
         t = n / sample_rate
         # 1. Distant horn (first 2 seconds)
         horn = 0.0
-        if t < 2.2:
-            env = math.sin((t / 2.2) * math.pi)
-            horn = (math.sin(2 * math.pi * 329.63 * t) * 0.4 + math.sin(2 * math.pi * 440.0 * t) * 0.3) * env * 0.3
+        if t < 2.0:
+            env = math.sin((t / 2.0) * math.pi)
+            horn = (math.sin(2 * math.pi * 329.63 * t) * 0.3 + math.sin(2 * math.pi * 440.0 * t) * 0.25) * env * 0.25
 
         # 2. Rhythmic track clatter (two clicks every 0.6 seconds)
         cycle_pos = t % 0.6
         clatter = 0.0
-        if cycle_pos < 0.05:
-            clatter += math.sin(2 * math.pi * 90 * cycle_pos) * math.exp(-cycle_pos * 60) * 0.35
-        elif 0.12 < cycle_pos < 0.17:
+        if cycle_pos < 0.04:
+            clatter += math.sin(2 * math.pi * 90 * cycle_pos) * math.exp(-cycle_pos * 70) * 0.25
+        elif 0.12 < cycle_pos < 0.16:
             p2 = cycle_pos - 0.12
-            clatter += math.sin(2 * math.pi * 110 * p2) * math.exp(-p2 * 60) * 0.25
+            clatter += math.sin(2 * math.pi * 110 * p2) * math.exp(-p2 * 70) * 0.18
 
         # 3. Low rumble
-        rumble = math.sin(2 * math.pi * 55 * t) * 0.08
+        rumble = math.sin(2 * math.pi * 55 * t) * 0.05
 
-        # Combine
         sample = horn + clatter + rumble
         sample = max(-0.95, min(0.95, sample))
         int_sample = int(sample * 32767)
-
-        # Pack left and right channels
         frames.extend(struct.pack("<hh", int_sample, int_sample))
 
     wav_file.writeframes(frames)
@@ -136,72 +134,56 @@ def synthesize_procedural_rail_audio(output_audio_path, duration=25.0):
     print(f"🎵 [Procedural Rail Sound] Synthesized: {output_audio_path}")
     return True
 
-def build_railway_hud_filter(theme, w, h, font_arg, title, episode_num):
-    """Builds visual HUD overlay filters for high-energy railway shorts."""
+def build_railway_hud_filter(theme, w, h, font_arg, episode_num):
+    """Builds visual HUD overlay filters strictly avoiding the bottom Shorts safe zone."""
     scale = w / 1080.0
-    safe_title = sanitize_ffmpeg_text(title)[:35]
 
-    # Persistent brand banner on top
+    # Persistent brand banner on top (Safe zone: y=0 to 140)
     brand_filters = [
-        # Top banner background
-        f"drawbox=x=0:y=0:w={w}:h={int(140*scale)}:color=0x0B1F3A@0.85:t=fill",
-        # Signal Red accent stripe
-        f"drawbox=x=0:y={int(140*scale)}:w={w}:h={int(8*scale)}:color=0xE63946@1.0:t=fill",
-        # Yellow series tag
-        f"drawtext={font_arg}text='ALL TRAIN REELS':x={int(50*scale)}:y={int(35*scale)}:fontsize={int(30*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=2:shadowy=2",
-        # Episode badge
-        f"drawtext={font_arg}text='EPISODE #{episode_num:02d}':x={w - int(250*scale)}:y={int(35*scale)}:fontsize={int(28*scale)}:fontcolor=0xF1F5F9:shadowcolor=black:shadowx=2:shadowy=2",
-        # Watermark bottom left
-        f"drawbox=x={int(40*scale)}:y={h - int(120*scale)}:w={int(320*scale)}:h={int(60*scale)}:color=0x0B1F3A@0.80:t=fill",
-        f"drawtext={font_arg}text='@AllTrainReels':x={int(60*scale)}:y={h - int(105*scale)}:fontsize={int(28*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=2:shadowy=2"
+        f"drawbox=x=0:y=0:w={w}:h={int(130*scale)}:color=0x0B1F3A@0.85:t=fill",
+        f"drawbox=x=0:y={int(130*scale)}:w={w}:h={int(6*scale)}:color=0xE63946@1.0:t=fill",
+        f"drawtext={font_arg}text='ALL TRAIN REELS':x={int(45*scale)}:y={int(35*scale)}:fontsize={int(32*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=2:shadowy=2",
+        f"drawtext={font_arg}text='EPISODE #{episode_num:02d}':x={w - int(240*scale)}:y={int(35*scale)}:fontsize={int(28*scale)}:fontcolor=0xF1F5F9:shadowcolor=black:shadowx=2:shadowy=2"
     ]
 
-    # Theme-specific dynamic HUD
+    # Contextual top badge (y=150 to 220)
     if theme == "SPEEDOMETER_HUD":
-        # Dynamic digital speed indicator in top right
-        speed_filters = [
-            f"drawbox=x={w - int(320*scale)}:y={int(170*scale)}:w={int(280*scale)}:h={int(90*scale)}:color=0x0B1F3A@0.85:t=fill",
-            f"drawbox=x={w - int(320*scale)}:y={int(170*scale)}:w={int(8*scale)}:h={int(90*scale)}:color=0xFFC300@1.0:t=fill",
-            f"drawtext={font_arg}text='SPEED':x={w - int(290*scale)}:y={int(185*scale)}:fontsize={int(22*scale)}:fontcolor=0x94A3B8",
-            f"drawtext={font_arg}text='HIGH-SPEED':x={w - int(290*scale)}:y={int(215*scale)}:fontsize={int(28*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=2:shadowy=2"
+        badge = [
+            f"drawbox=x={w - int(280*scale)}:y={int(150*scale)}:w={int(240*scale)}:h={int(60*scale)}:color=0x0B1F3A@0.85:t=fill",
+            f"drawbox=x={w - int(280*scale)}:y={int(150*scale)}:w={int(6*scale)}:h={int(60*scale)}:color=0xFFC300@1.0:t=fill",
+            f"drawtext={font_arg}text='HIGH-SPEED':x={w - int(255*scale)}:y={int(165*scale)}:fontsize={int(24*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=2:shadowy=2"
         ]
-        return brand_filters + speed_filters
+        return brand_filters + badge
 
     elif theme == "SPLIT_VS_ARENA":
-        # Dramatic VS badge in center
-        vs_filters = [
-            f"drawbox=x={w//2 - int(70*scale)}:y={int(180*scale)}:w={int(140*scale)}:h={int(80*scale)}:color=0xE63946@0.95:t=fill",
-            f"drawtext={font_arg}text='VS':x={w//2 - int(30*scale)}:y={int(195*scale)}:fontsize={int(50*scale)}:fontcolor=0xFFFFFF:shadowcolor=black:shadowx=3:shadowy=3"
+        badge = [
+            f"drawbox=x={w//2 - int(60*scale)}:y={int(150*scale)}:w={int(120*scale)}:h={int(60*scale)}:color=0xE63946@0.95:t=fill",
+            f"drawtext={font_arg}text='VS':x={w//2 - int(22*scale)}:y={int(162*scale)}:fontsize={int(36*scale)}:fontcolor=0xFFFFFF:shadowcolor=black:shadowx=2:shadowy=2"
         ]
-        return brand_filters + vs_filters
+        return brand_filters + badge
 
     elif theme == "VINTAGE_STEAM_GAUGE":
-        # Vintage steam heritage badge
-        steam_filters = [
-            f"drawbox=x={int(40*scale)}:y={int(170*scale)}:w={int(320*scale)}:h={int(70*scale)}:color=0x2c1a0e@0.85:t=fill",
-            f"drawtext={font_arg}text='STEAM HERITAGE':x={int(60*scale)}:y={int(190*scale)}:fontsize={int(26*scale)}:fontcolor=0xE0A96D:shadowcolor=black:shadowx=2:shadowy=2"
+        badge = [
+            f"drawbox=x={int(40*scale)}:y={int(150*scale)}:w={int(260*scale)}:h={int(60*scale)}:color=0x2c1a0e@0.85:t=fill",
+            f"drawtext={font_arg}text='HERITAGE STEAM':x={int(55*scale)}:y={int(165*scale)}:fontsize={int(24*scale)}:fontcolor=0xE0A96D:shadowcolor=black:shadowx=2:shadowy=2"
         ]
-        return brand_filters + steam_filters
+        return brand_filters + badge
 
     elif theme == "CABIN_POV_RADAR":
-        # Track cockpit clearance indicator
-        cockpit_filters = [
-            f"drawbox=x={w - int(340*scale)}:y={int(170*scale)}:w={int(300*scale)}:h={int(70*scale)}:color=0x0B1F3A@0.85:t=fill",
-            f"drawtext={font_arg}text='TRACK CLEAR':x={w - int(310*scale)}:y={int(190*scale)}:fontsize={int(26*scale)}:fontcolor=0x22C55E:shadowcolor=black:shadowx=2:shadowy=2"
+        badge = [
+            f"drawbox=x={w - int(280*scale)}:y={int(150*scale)}:w={int(240*scale)}:h={int(60*scale)}:color=0x0B1F3A@0.85:t=fill",
+            f"drawtext={font_arg}text='CABIN VIEW':x={w - int(255*scale)}:y={int(165*scale)}:fontsize={int(24*scale)}:fontcolor=0x22C55E:shadowcolor=black:shadowx=2:shadowy=2"
         ]
-        return brand_filters + cockpit_filters
+        return brand_filters + badge
 
-    else:
-        return brand_filters
+    return brand_filters
 
 def produce_train_video(story_json_path, quality="1080p"):
     """
     Renders an end-to-end 9:16 YouTube Short from a story JSON file:
-    1. Generates voiceover via Edge-TTS
-    2. Generates procedural rail SFX
-    3. Assembles 5 visual shots with smooth Ken Burns motion
-    4. Overlays Railway Yellow typography & HUD
-    5. Outputs final MP4 ready for YouTube Shorts / Instagram Reels
+    - Eliminates -loop 1 -t frame explosion bug (uses single frame input + upscale to eliminate zoompan stutter)
+    - Subtitles rendered in Shorts safe zone (y=1080-1350) via sanitized textfiles
+    - Audio mixed via amix(normalize=0) and loudnorm(-16 LUFS)
     """
     with open(story_json_path, "r", encoding="utf-8") as f:
         story_data = json.load(f)
@@ -217,11 +199,10 @@ def produce_train_video(story_json_path, quality="1080p"):
     print(f"🚂 PRODUCING ALLTRAINREELS SHORT #{episode_num:02d}: {title}")
     print(f"==================================================")
 
-    # Resolution settings
+    # Resolution settings (Safe from zoompan OOM)
     res_map = {
         "1080p": (1080, 1920),
-        "4k": (2160, 3840),
-        "8k": (4320, 7680)
+        "4k": (2160, 3840)
     }
     w, h = res_map.get(quality, (1080, 1920))
     scale = w / 1080.0
@@ -229,8 +210,7 @@ def produce_train_video(story_json_path, quality="1080p"):
     # Ensure shot image assets exist
     from image_generator import generate_story_assets
     episode_assets_dir = os.path.join(assets_base, story_id)
-    if not os.path.exists(episode_assets_dir) or len(os.listdir(episode_assets_dir)) < len(shots):
-        generate_story_assets(story_json_path)
+    generate_story_assets(story_json_path)
 
     # Step 1: Voiceover Audio
     voice_path = os.path.join(output_dir, f"{story_id}_voice.mp3")
@@ -242,25 +222,31 @@ def produce_train_video(story_json_path, quality="1080p"):
     sfx_path = os.path.join(output_dir, f"{story_id}_rail_sfx.wav")
     synthesize_procedural_rail_audio(sfx_path, duration=duration)
 
-    # Mixed Audio (Voice 1.0 + Rail SFX 0.25)
+    # Step 3: Broadcast-standard Audio Mix (normalize=0, loudnorm)
     mixed_audio_path = os.path.join(output_dir, f"{story_id}_mixed_audio.wav")
+    audio_filter = (
+        "[0:a]volume=1.0[v];"
+        "[1:a]volume=0.10[s];"
+        "[v][s]amix=inputs=2:duration=first:normalize=0,"
+        "loudnorm=I=-16:TP=-1.5:LRA=11[out]"
+    )
     cmd_audio = [
         "ffmpeg", "-y",
         "-i", voice_path,
         "-i", sfx_path,
-        "-filter_complex", "[0:a]volume=1.0[voice];[1:a]volume=0.25[sfx];[voice][sfx]amix=inputs=2:duration=first[out]",
+        "-filter_complex", audio_filter,
         "-map", "[out]",
         mixed_audio_path
     ]
-    subprocess.run(cmd_audio, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    subprocess.run(cmd_audio, check=True)
 
-    # Step 3: Visual Assembly & Shot Pacing
+    # Step 4: Single-Frame Visual Assembly & Stutter-Free Zoompan
     num_shots = len(shots)
     shot_duration = duration / num_shots
+    frames = int(shot_duration * 30)
     font_file = resolve_font()
     font_arg = f"fontfile='{font_file}':" if font_file else ""
 
-    # Build input files & filter complex
     input_args = []
     filter_chains = []
 
@@ -270,31 +256,38 @@ def produce_train_video(story_json_path, quality="1080p"):
             from image_generator import generate_procedural_fallback
             generate_procedural_fallback(title, shots[i].get("subtitle", ""), shot_img, w, h)
 
-        input_args.extend(["-loop", "1", "-t", f"{shot_duration:.2f}", "-i", shot_img])
+        # Bug 1 Fix: Single-frame input (no -loop 1 -t)
+        input_args.extend(["-i", shot_img])
 
-        # Ken Burns pan/zoom on each shot
-        # Alternate forward zoom and subtle glide
+        # Smooth alternating zoom/pan
         if i % 2 == 0:
             zoom_expr = f"zoom='min(zoom+0.0015,1.15)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
         else:
-            zoom_expr = f"zoom='min(zoom+0.0012,1.12)':x='(iw-iw/zoom)*(on/({int(shot_duration*30)}))':y='ih/2-(ih/zoom/2)'"
+            zoom_expr = f"zoom='min(zoom+0.0012,1.12)':x='(iw-iw/zoom)*(on/{frames})':y='ih/2-(ih/zoom/2)'"
 
-        # Shot subtitle text
-        sub_text = sanitize_ffmpeg_text(shots[i].get("subtitle", ""))
-        wrapped_sub = textwrap.fill(sub_text, width=28)
-        sub_escaped = wrapped_sub.replace("\n", "\\\n")
+        # Bug 2 & 3 Fix: Sanitize subtitle text and write to external textfile
+        sub_file = os.path.join(output_dir, f"{story_id}_sub{i}.txt")
+        clean_text = clean_sub(shots[i].get("subtitle", ""))
+        wrapped_sub = textwrap.fill(clean_text, width=28)
+        with open(sub_file, "w", encoding="utf-8") as sf:
+            sf.write(wrapped_sub)
 
-        # Subtitle box & drawtext
+        # Bug 8 Fix: Move subtitles into Shorts safe zone (y=1080 to 1340)
+        box_y = int(1080 * scale)
+        box_h = int(240 * scale)
+        text_y = int(1110 * scale)
+
         sub_draw = (
-            f"drawbox=x=0:y={h - int(380*scale)}:w={w}:h={int(220*scale)}:color=0x000000@0.70:t=fill,"
-            f"drawtext={font_arg}text='{sub_escaped}':x=(w-text_w)/2:y={h - int(340*scale)}:"
+            f"drawbox=x=0:y={box_y}:w={w}:h={box_h}:color=0x000000@0.70:t=fill,"
+            f"drawtext={font_arg}textfile='{ff_path(sub_file)}':x=(w-text_w)/2:y={text_y}:"
             f"fontsize={int(48*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=3:shadowy=3:line_spacing=14,"
             f"setsar=1"
         )
 
+        # Bug 1 Fix: Scale 2x before zoompan to eliminate jitter/stutter
         filter_chains.append(
-            f"[{i}:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},"
-            f"zoompan={zoom_expr}:d={int(shot_duration*30)}:s={w}x{h}:fps=30,"
+            f"[{i}:v]scale={w*2}:{h*2}:force_original_aspect_ratio=increase,crop={w*2}:{h*2},"
+            f"zoompan={zoom_expr}:d={frames}:s={w}x{h}:fps=30,"
             f"{sub_draw}[v{i}]"
         )
 
@@ -303,7 +296,7 @@ def produce_train_video(story_json_path, quality="1080p"):
     concat_filter = f"{concat_inputs}concat=n={num_shots}:v=1:a=0[vconcat]"
 
     # HUD & Branding overlay
-    hud_filters = build_railway_hud_filter(visual_theme, w, h, font_arg, title, episode_num)
+    hud_filters = build_railway_hud_filter(visual_theme, w, h, font_arg, episode_num)
     hud_chain = ",".join(hud_filters)
     final_v_filter = f"[vconcat]{hud_chain}[vfinal]"
 

@@ -118,7 +118,8 @@ def upload_short(video_path, story_data, publish_mode="schedule"):
 
     title = story_data["youtube_title"]
     description = story_data["description"]
-    tags = story_data["tags"] + story_data.get("seo_keywords", [])
+    raw_tags = story_data.get("tags", []) + story_data.get("seo_keywords", [])
+    tags = [t.lstrip("#").strip() for t in raw_tags if t.strip()]
 
     body = {
         "snippet": {
