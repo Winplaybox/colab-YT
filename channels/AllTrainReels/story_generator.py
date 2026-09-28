@@ -100,9 +100,12 @@ def get_or_create_story(episode_number=1, force_refresh=False):
     """
     bank = load_bank()
     matching = [s for s in bank if s.get("episode_number") == episode_number]
-    if not matching:
-        raise ValueError(f"Episode {episode_number} not found in story bank (1-{len(bank)} available).")
-    story = matching[0]
+    if matching:
+        story = matching[0]
+    else:
+        # Tier 2: Seamlessly route episodes 31+ to Extended Railway Archive
+        from extended_generator import get_extended_rail_story
+        story = get_extended_rail_story(episode_number)
 
     # Patch D: Fact Gate Check
     if story.get("review_status") != "verified" and "--allow-unverified" not in sys.argv:

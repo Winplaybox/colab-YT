@@ -326,6 +326,18 @@ def produce_train_video(story_json_path, quality="1080p"):
 
     size_mb = os.path.getsize(output_video_path) / (1024 * 1024)
     print(f"✅ VIDEO READY: {output_video_path} ({size_mb:.2f} MB)")
+
+    # Automatically purge intermediate scratch audio and text files
+    intermediate_files = [voice_path, sfx_path, mixed_audio_path] + [
+        os.path.join(output_dir, f"{story_id}_sub{i}.txt") for i in range(num_shots)
+    ]
+    for temp_f in intermediate_files:
+        try:
+            if os.path.exists(temp_f):
+                os.remove(temp_f)
+        except Exception:
+            pass
+
     return output_video_path
 
 if __name__ == "__main__":
