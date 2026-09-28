@@ -11,6 +11,12 @@ import sys
 import glob
 import json
 import pickle
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 from google_auth_oauthlib.flow import InstalledAppFlow
 
 EXPECTED_CHANNEL_ID = "UCNRr8A9gVZQZJi1eMKiXIJw"
@@ -49,11 +55,11 @@ def inspect_channel_info(credentials):
 def main():
     secret_file = find_client_secret()
     if not secret_file:
-        print(f"❌ Error: No client secret found at '{client_secret_path}'.")
+        print(f"[ERROR] No client secret found at '{client_secret_path}'.")
         return
 
     print("=" * 70)
-    print(f"👉 AUTHENTICATING: {EXPECTED_NAME} ({EXPECTED_CHANNEL_ID})")
+    print(f">> AUTHENTICATING: {EXPECTED_NAME} ({EXPECTED_CHANNEL_ID})")
     print("=" * 70)
     print(f"Using client secret: {secret_file}")
     print("A browser window will open. Sign into Google and choose IndianHorrorTapes!\n")
@@ -77,16 +83,16 @@ def main():
     actual_title, actual_id = inspect_channel_info(credentials)
     print("\n" + "=" * 70)
     if actual_id == EXPECTED_CHANNEL_ID:
-        print(f"🎉 VERIFIED SUCCESS! Connected to target channel: '{actual_title}' ({actual_id})")
+        print(f"[SUCCESS] VERIFIED! Connected to target channel: '{actual_title}' ({actual_id})")
     else:
-        print(f"⚠️ NOTICE: Connected to '{actual_title}' ({actual_id}). Expected '{EXPECTED_NAME}' ({EXPECTED_CHANNEL_ID}).")
+        print(f"[WARNING] Connected to '{actual_title}' ({actual_id}). Expected '{EXPECTED_NAME}' ({EXPECTED_CHANNEL_ID}).")
     print(f"Tokens saved locally:")
     print(f" - {token_json_path}")
     print(f" - {token_pickle_path}")
     print("=" * 70)
-    print("\n📋 For GitHub Actions 24/7 autonomous scheduling:")
+    print("\n[GITHUB SECRETS] For GitHub Actions 24/7 autonomous scheduling:")
     print("Go to GitHub -> Repo Settings -> Secrets and variables -> Actions")
-    print("Add new repository secret: INDIANHORRORTAPES_TOKEN_JSON")
+    print("Add/Update repository secret: INDIANHORRORTAPES_TOKEN_JSON")
     print("Secret value:\n")
     print(token_str)
     print("\n" + "=" * 70)
