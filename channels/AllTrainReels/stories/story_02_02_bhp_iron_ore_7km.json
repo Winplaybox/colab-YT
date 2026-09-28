@@ -3,7 +3,7 @@
   "handle": "@AllTrainReels",
   "episode_number": 2,
   "story_id": "train_02_bhp_iron_ore_7km",
-  "story_hash": "5f62250df6a21353",
+  "story_hash": "4ba11f0674fa988f",
   "format": "Insane Facts",
   "title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
   "youtube_title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
@@ -15,17 +15,17 @@
   ],
   "tagline": "682 wagons BHP Australia monster train",
   "visual_theme": "SPEEDOMETER_HUD",
-  "target_duration_seconds": 25,
+  "target_duration_seconds": 95,
   "review_status": "verified",
   "sources": [
     "https://www.guinnessworldrecords.com/world-records/longest-train",
     "https://en.wikipedia.org/wiki/BHP_Iron_Ore"
   ],
   "verified_fact": "On June 21, 2001, BHP Billiton ran an iron ore train in Western Australia measuring 7.353 km with 682 wagons and 8 GE AC6000CW locomotives, weighing 99,734 tonnes.",
-  "voiceover_script": "Duniya ki sabse lambi train 7 kilometer se bhi lambi thi! 2001 mein Australia ki BHP company ne 682 dabbo aur 8 massive diesel engines ko jod kar ek record banaya. Iska kul wazan lagbhag 1 lakh ton tha. 70 km/h ki speed se chalte hue bhi is akeli train ko railway fatak cross karne mein pure 6 se 7 minute lagte the! Imagine karo aisi train ka engine crossing paar kar chuka ho, aur aakhri dabba 7 kilometer peeche ho!",
-  "debate_question": "Agar 7 kilometer lambi train aapke samne se nikle, toh kaisa lagega?",
-  "pinned_comment": "🚂 7.3 KM lambi train aur 682 dabbe! 70 km/h pe bhi 7 minute lagte the fatak cross karne mein! Dekhiye ye raw power.",
-  "description": "Duniya Ki Sabse Lambi Train: 7 KM! 😳\n\n🚂 682 wagons BHP Australia monster train\n\nOn June 21, 2001, BHP Billiton ran an iron ore train in Western Australia measuring 7.353 km with 682 wagons and 8 GE AC6000CW locomotives, weighing 99,734 tonnes.\n\n👉 Agar 7 kilometer lambi train aapke samne se nikle, toh kaisa lagega?\n\nSubscribe to @AllTrainReels for daily high-speed rail facts, monster locomotives, and Indian Railways marvels!\n\n#Trains #LongestTrain #MonsterTrain #Railways #Australia #Shorts #TrainFacts",
+  "voiceover_script": "Imagine karo ek aisi train jo 7.3 kilometer lambi hai! Itni lambi ki engine se aakhri dibba dekhne ke liye binoculars chahiye. Ye hai Australia ke Pilbara registan mein chalne wali BHP Iron Ore Train. 21 June 2001 ko is train ne duniya ki sabse lambi aur sabse bhaari train ka official record banaya tha. Is akeli train ko chalane ke liye 8 vishal GE diesel locomotives lagaye gaye the. Har engine 6,000 horsepower deta hai, matlab kul milakar 48,000 horsepower ki taakat! Lekin ye aathon engine aage nahi jude the. Train ko patri se utarne se bachane ke liye engines ko do-do ke jodon mein poori 7 kilometer ki lambai mein baanta gaya tha, jo radio signals se synchronize hote the. Isme kul 682 wagons the, jinme 82,000 ton iron ore bhara tha. Train ka total wazan lagbhag 1 lakh ton tha! Agar ye train kisi crossing se 70 km/h par guzre, toh use poora cross hone mein 6 se 7 minute lagte hain. Port Hedland pahunch kar special rotary dumpers bina dibbe alag kiye unhe ulta karke ore khali karte the. 2001 ke baad aaj tak kisi ne aisi train dobara nahi chalayi. Kya India mein Dedicated Freight Corridor par aisi lambi train chal sakti hai?",
+  "debate_question": "Kya India mein Dedicated Freight Corridor par aisi monster train chal sakti hai?",
+  "pinned_comment": "🚂 7.3 KM lambi train, 682 dabbe aur 48,000 HP ki taakat! 70 km/h par bhi 7 minute lagte the fatak paar karne mein! Dekhiye ye raw power.",
+  "description": "Duniya Ki Sabse Lambi Train: 7 KM! 😳\n\n🚂 682 wagons BHP Australia monster train\n\nOn June 21, 2001, BHP Billiton ran an iron ore train in Western Australia measuring 7.353 km with 682 wagons and 8 GE AC6000CW locomotives, weighing 99,734 tonnes.\n\n👉 Kya India mein Dedicated Freight Corridor par aisi monster train chal sakti hai?\n\nSubscribe to @AllTrainReels for daily high-speed rail facts, monster locomotives, and Indian Railways marvels!\n\n#Trains #LongestTrain #MonsterTrain #Railways #Australia #Shorts #TrainFacts",
   "tags": [
     "Trains",
     "LongestTrain",
@@ -51,38 +51,75 @@
   "shots": [
     {
       "shot_index": 1,
-      "duration": 5,
-      "subtitle": "Duniya ki sabse lambi train: 7.3 KM lambi!",
-      "sound_cue": "diesel_horn",
-      "prompt": "Massive heavy haul freight train snaking through vast red Australian Pilbara desert, aerial drone wide angle view extending to the distant horizon, 9:16 vertical portrait"
+      "duration": 8,
+      "subtitle": "Duniya ki sabse lambi train: 7.3 KM!",
+      "prompt": "Endless heavy haul iron ore train stretching across Pilbara desert, 9:16 portrait"
     },
     {
       "shot_index": 2,
-      "duration": 5,
-      "subtitle": "682 dabbe aur 8 monster locomotive engines!",
-      "sound_cue": "engine_rumble",
-      "prompt": "Multiple giant diesel electric locomotives coupled together, roaring exhaust heat haze, low angle powerful shot, 9:16 vertical portrait"
+      "duration": 8,
+      "subtitle": "Aakhri dibba dekhne ke liye binoculars chahiye!",
+      "prompt": "Looking down infinite straight railway track in Australian outback, 9:16 portrait"
     },
     {
       "shot_index": 3,
-      "duration": 5,
-      "subtitle": "Kul wazan: 1 Lakh Ton se zyada!",
-      "sound_cue": "track_clatter",
-      "prompt": "Endless line of heavy iron ore hopper wagons loaded with reddish rock, heavy steel wheels gripping tracks, industrial scale, 9:16 vertical portrait"
+      "duration": 8,
+      "subtitle": "21 June 2001: Australia ka historic world record!",
+      "prompt": "Blue BHP Iron Ore GE diesel locomotive #4344 leading the record train, 9:16 portrait"
     },
     {
       "shot_index": 4,
-      "duration": 5,
-      "subtitle": "Crossing paar karne mein lagte the 7 minute!",
-      "sound_cue": "crossing_bell",
-      "prompt": "Outback railway crossing gate with red warning lights flashing as the endless iron ore train rolls past under golden sunset, 9:16 vertical portrait"
+      "duration": 8,
+      "subtitle": "8 massive GE diesel engines ki taakat!",
+      "prompt": "Pair of heavy diesel locomotives coupled together pulling massive freight, 9:16 portrait"
     },
     {
       "shot_index": 5,
-      "duration": 5,
-      "subtitle": "Engine aage, aur aakhri dabba 7 KM door!",
-      "sound_cue": "train_departure",
-      "prompt": "Panoramic view of train disappearance into distant desert vanishing point, dusk sky with orange horizon, 9:16 vertical portrait"
+      "duration": 8,
+      "subtitle": "Kul taakat: 48,000 Horsepower ki raw power!",
+      "prompt": "Orange and black BHP Billiton diesel locomotive #5647 idling on siding, 9:16 portrait"
+    },
+    {
+      "shot_index": 6,
+      "duration": 8,
+      "subtitle": "Engines poori 7 km lambai mein distributed the!",
+      "prompt": "Industrial railway maintenance depot and fuel rack in Pilbara, 9:16 portrait"
+    },
+    {
+      "shot_index": 7,
+      "duration": 8,
+      "subtitle": "Radio telemetry se synchronized braking!",
+      "prompt": "Locomotive driver cab control console with computer telemetry screens, 9:16 portrait"
+    },
+    {
+      "shot_index": 8,
+      "duration": 8,
+      "subtitle": "682 wagons mein 82,000 ton iron ore bhara tha!",
+      "prompt": "Loaded iron ore cars winding through red rock desert canyon, 9:16 portrait"
+    },
+    {
+      "shot_index": 9,
+      "duration": 8,
+      "subtitle": "Train ka total wazan lagbhag 1 Lakh Ton tha!",
+      "prompt": "Heavy steel wheels and couplers under massive strain on heavy haul track, 9:16 portrait"
+    },
+    {
+      "shot_index": 10,
+      "duration": 8,
+      "subtitle": "Crossing paar karne mein lagte the 6 se 7 minute!",
+      "prompt": "Outback level crossing gate with flashing warning signals as train rumbles past, 9:16 portrait"
+    },
+    {
+      "shot_index": 11,
+      "duration": 8,
+      "subtitle": "Rotary dumpers bina uncouple kiye dibbe khali karte!",
+      "prompt": "Rotary train car dumper rotating loaded iron ore wagon upside down at port, 9:16 portrait"
+    },
+    {
+      "shot_index": 12,
+      "duration": 7,
+      "subtitle": "2001 ke baad kisi ne aisi train nahi chalayi!",
+      "prompt": "BHP freight train disappearing into golden desert sunset horizon, 9:16 portrait"
     }
   ]
 }

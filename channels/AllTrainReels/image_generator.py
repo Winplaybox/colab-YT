@@ -86,7 +86,7 @@ def format_image_for_vertical_short(pil_img, target_width=1080, target_height=19
     canvas.paste(fg, (0, paste_y))
     return canvas
 
-def fetch_wikimedia_images(search_queries, limit=12):
+def fetch_wikimedia_images(search_queries, limit=25):
     """
     Queries Wikimedia Commons API across a list of query variations.
     Filters out diagrams, icons, logos, and returns direct URLs for real photos.
@@ -294,7 +294,7 @@ def generate_story_assets(story_json_path):
 
     # Step 1: Query Wikimedia Commons for pool of real railway photos
     queries = extract_search_queries_for_story(story_data)
-    real_photo_urls = fetch_wikimedia_images(queries, limit=max(10, len(shots) * 2))
+    real_photo_urls = fetch_wikimedia_images(queries, limit=max(25, len(shots) + 5))
     print(f"📸 [Wikimedia Commons] Discovered {len(real_photo_urls)} real authentic railway photos for: {queries[:3]}")
 
     for idx, shot in enumerate(shots, 1):

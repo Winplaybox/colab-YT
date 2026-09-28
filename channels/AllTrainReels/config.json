@@ -7,10 +7,10 @@
   "niche": "World & Indian Railways, Bullet Trains, Locomotives & Railway Engineering Marvels",
   "language": "Hinglish",
   "format": "9:16 Portrait Shorts",
-  "target_duration_seconds": 30,
+  "target_duration_seconds": 120,
   "default_category_id": "28",
   "default_voice": "hi-IN-MadhurNeural",
-  "voice_rate": "+6%",
+  "voice_rate": "+2%",
   "voice_pitch": "+0Hz",
   "schedule": {
     "days_of_week": [
