@@ -51,37 +51,41 @@ def compute_next_publish_time(publish_time_utc="13:00"):
         print(f"Schedule calculation notice: {e}")
         return None
 
+EXPECTED_CHANNEL_ID = "UCKfX7By0w94LHI-AWj0a_QQ"
+EXPECTED_NAME = "All Train Reels"
+
+def verify_channel_identity(youtube):
+    """Verifies that the authenticated token strictly belongs to AllTrainReels."""
+    try:
+        res = youtube.channels().list(mine=True, part="snippet").execute()
+        items = res.get("items", [])
+        if not items:
+            return False, "No YouTube channel associated with this token."
+        actual_id = items[0]["id"]
+        actual_title = items[0]["snippet"]["title"]
+        if actual_id != EXPECTED_CHANNEL_ID:
+            return False, f"Token belongs to '{actual_title}' ({actual_id}), NOT target '{EXPECTED_NAME}' ({EXPECTED_CHANNEL_ID})!"
+        return True, f"Verified: '{actual_title}' ({actual_id})"
+    except Exception as e:
+        print(f"Warning: Channel verification check: {e}")
+        return True, "Verification check bypassed"
+
 def get_youtube_service():
-    """Resolves OAuth credentials for AllTrainReels."""
+    """Resolves OAuth credentials specifically for AllTrainReels."""
     if not HAS_GOOGLE_CLIENT:
         print("Notice: google-api-python-client not installed in this environment.")
         return None
 
-    # Check local channel token, then parent colab-YT root token
-    token_candidates = [
-        os.path.join(script_dir, "token.json"),
-        os.path.join(script_dir, "..", "..", "token.json"),
-        os.path.join(script_dir, "..", "IndianHorrorTapes", "token.json")
-    ]
-    token_path = None
-    for p in token_candidates:
-        if os.path.exists(p) and os.path.getsize(p) > 50:
-            token_path = p
-            break
+    token_path = os.path.join(script_dir, "token.json")
 
-    secret_candidates = [
-        os.path.join(script_dir, "youtube_client_secret.json"),
-        os.path.join(script_dir, "..", "..", "youtube_client_secret.json"),
-        os.path.join(script_dir, "..", "IndianHorrorTapes", "youtube_client_secret.json")
-    ]
-    secret_path = None
-    for p in secret_candidates:
-        if os.path.exists(p) and os.path.getsize(p) > 50:
-            secret_path = p
-            break
+    # Check environment variable
+    env_token = os.environ.get("ALLTRAINREELS_TOKEN_JSON") or os.environ.get("YOUTUBE_TOKEN_JSON")
+    if env_token and env_token.strip() and not os.path.exists(token_path):
+        with open(token_path, "w", encoding="utf-8") as f:
+            f.write(env_token.strip())
 
-    if not token_path:
-        print("⚠️ No valid token.json found. Run authenticate_youtube.py first.")
+    if not os.path.exists(token_path) or os.path.getsize(token_path) < 50:
+        print("⚠️ No valid token.json found in channels/AllTrainReels/. Run authenticate_youtube.py first.")
         return None
 
     try:
@@ -93,7 +97,14 @@ def get_youtube_service():
             creds.refresh(request)
             with open(token_path, "w", encoding="utf-8") as f:
                 f.write(creds.to_json())
-        return build("youtube", "v3", credentials=creds)
+        service = build("youtube", "v3", credentials=creds)
+
+        ok, msg = verify_channel_identity(service)
+        if not ok:
+            print(f"❌ AUTHENTICATION ERROR: {msg}")
+            return None
+        print(f"✅ [YouTube Auth] {msg}")
+        return service
     except Exception as e:
         print(f"Failed to build YouTube service: {e}")
         return None

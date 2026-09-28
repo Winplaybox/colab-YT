@@ -1,8 +1,8 @@
 {
-  "channel_id": "AllTrainReels",
+  "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
   "channel_handle": "@AllTrainReels",
-  "channel_url": "https://www.youtube.com/@AllTrainReels",
+  "channel_url": "https://www.youtube.com/channel/UCKfX7By0w94LHI-AWj0a_QQ",
   "tagline": "Har Patri Ki Kahani 🚂",
   "niche": "World & Indian Railways, Bullet Trains, Locomotives & Railway Engineering Marvels",
   "language": "Hinglish",
@@ -13,15 +13,40 @@
   "voice_rate": "+6%",
   "voice_pitch": "+0Hz",
   "schedule": {
-    "days_of_week": [0, 1, 2, 3, 4, 5, 6],
-    "days_names": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "days_of_week": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "days_names": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
     "time_ist": "18:30",
     "time_utc": "13:00:00.000Z"
   },
   "resolutions": {
-    "8k": { "width": 4320, "height": 7680 },
-    "4k": { "width": 2160, "height": 3840 },
-    "1080p": { "width": 1080, "height": 1920 }
+    "8k": {
+      "width": 4320,
+      "height": 7680
+    },
+    "4k": {
+      "width": 2160,
+      "height": 3840
+    },
+    "1080p": {
+      "width": 1080,
+      "height": 1920
+    }
   },
   "default_quality": "1080p",
   "branding": {
