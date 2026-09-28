@@ -1,9 +1,9 @@
 {
   "story_number": 31,
-  "title": "NH-8, Jharsa stretch: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 31 #Shorts",
+  "title": "Police FIR #3102: NH-8, Jharsa stretch Ka Asli Sach 💀 #Shorts",
   "viral_titles": [
     "NH-8, Jharsa stretch: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 31 #Shorts",
-    "Kyu Indian Government Ne NH-8, Jharsa stretch Ko Seal Kiya? 🔴 Ep. 31",
+    "Kyu Indian Government Ne NH-8, Jharsa stretch Ko Seal Kiya? 🔴 Ep. 31 #Shorts",
     "Police FIR #3102: NH-8, Jharsa stretch Ka Asli Sach 💀 #Shorts"
   ],
   "name": "NH-8, Jharsa stretch",
@@ -17,7 +17,7 @@
       "beat": "CASE_FILE_COLD_OPEN",
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
-      "visual_prompt": "Forensic investigative 35mm documentary shot of NH-8, Jharsa stretch, Gurugram-Delhi, heavy atmospheric mist, subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16",
+      "visual_prompt": "Hyper-realistic 8K cinematic dashcam POV, 3:14 AM on lonely deserted stretch of NH-8, Jharsa stretch, Gurugram-Delhi, blinding headlights cutting through dense nocturnal mist, rain-slicked asphalt reflecting amber street signs, distant distorted shadow standing motionless on highway shoulder, 35mm Arri Alexa cinematography, 8k resolution, portrait 9:16",
       "text_overlay": "POLICE LOG • NH-8, JHARSA STRETCH",
       "vo_text": "Police Control Room ke record ke mutabiq... agar aadhi raat ko Gurugram-Delhi ke is stretch par aapki gadi band ho jaye, toh headlights mat bujhana aur chahe koi kitna bhi roye, darwaza mat kholna.",
       "sound_cue": "Police radio squelch + dispatch tone + low sub-bass drone"
@@ -26,7 +26,7 @@
       "beat": "HISTORICAL_RECORD",
       "time_range": "0:08–0:32",
       "target_dur": 24.0,
-      "visual_prompt": "Wide atmospheric documentary establishing shot of NH-8, Jharsa stretch, Gurugram-Delhi, authentic historical architecture, overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16",
+      "visual_prompt": "Historical archival documentary establishing shot of NH-8, Jharsa stretch, Gurugram-Delhi, desolate accident milestone marker, overcast dusk sky, ominous shadows lengthening across highway curves, photorealistic documentary realism, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1998",
       "vo_text": "Ye kahani kisi social media afwaah par nahi, balki NH-8 Jharsa-Iffco Chowk Highway Police Control Room logs par darj hai. Raat ko 120 km/h ki speed par multi-lane expressway par corporate cabs daudti hain, safe aur brightly lit stretch dikhta hai. Lekin 1998 mein Gurugram-Delhi Expressway Highway Patrol Unit 4 ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
@@ -35,16 +35,16 @@
       "beat": "DOCUMENTED_ANOMALY",
       "time_range": "0:32–1:02",
       "target_dur": 30.0,
-      "visual_prompt": "POV walking inside NH-8, Jharsa stretch, handheld flashlight beam cutting through pitch-black heavy dust particles, distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16",
+      "visual_prompt": "Intense psychological horror POV inside car at NH-8, Jharsa stretch, dashboard speedometer frozen, heavy frost creeping unnaturally across the inside of the windshield, faint bloody handprint slowly appearing on glass, terrifying atmospheric lighting, 8k resolution, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... car ka audio system achanak static radio noise mein convert ho jata hai aur rearview mirror par piche baithe kisi passenger ki parchhai aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon.",
+      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... car ka audio system achanak static radio noise mein convert ho jata hai aur rearview mirror par piche baithe kisi passenger ki parchhai aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
       "sound_cue": "highway hawa ki bhari sansanahat aur windshield par thappad padne ka thud + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
       "time_range": "1:02–1:36",
       "target_dur": 34.0,
-      "visual_prompt": "Dramatic tense shaky camera footage inside NH-8, Jharsa stretch, sudden chilling appearance of an ominous tall shadowy figure in fog, high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16",
+      "visual_prompt": "Terrifying high-tension dashcam footage on NH-8, Jharsa stretch, Gurugram-Delhi, high-beam headlights illuminating a horrifying tall apparition standing in the center of the dark road, glowing eyes, disheveled wet hair, motion blur distortion, heart-stopping horror, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
       "vo_text": "Sabse khaufnaak hadsa tab report hua jab ek cab driver ne 110 ki raftaar par dekha ki ek aurat uski car ke bilkul barabar hawa mein daud rahi thi aur sidhi driver ki aankhon mein dekh rahi thi! Headlights ke ujaale mein unke saamne ek aisi parchhai aayi jiski aankhein aag ki tarah chamak rahi thi! Unhone cheekh kar kaha: 'Us aurat ki aankhein bilkul kaali thi aur wo 100 ki speed par car ki khidki par hath maar rahi thi!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
@@ -53,7 +53,7 @@
       "beat": "UNRESOLVED_FORENSICS",
       "time_range": "1:36–1:50",
       "target_dur": 14.0,
-      "visual_prompt": "Desolate aftermath cinematic shot of NH-8, Jharsa stretch, solitary lantern flickering on cold ground, deep midnight shadows, eerie silence, 8k resolution, portrait 9:16",
+      "visual_prompt": "Desolate police forensic aftermath of NH-8, Jharsa stretch, yellow police barrier tape fluttering in cold night wind, abandoned car with open door under solitary flickering roadlamp, damp highway asphalt, eerie quietude, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
       "vo_text": "Is hadse ke baad se Highway patrol unit ne drivers ke liye night advisory issue ki thi: is stretch par akele gaadi rokna jaanleva ho sakta hai. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
@@ -62,7 +62,7 @@
       "beat": "NEXT_ARCHIVE_HOOK",
       "time_range": "1:50–2:00",
       "target_dur": 10.0,
-      "visual_prompt": "Vignette pitch black background with blood-red glowing smoke and dark silhouette of Delhi Cantonment Road, cinematic forensic horror style, 8k resolution, portrait 9:16",
+      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Delhi Cantonment Road, Delhi, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 32: DELHI CANTONMENT ROAD",
       "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Delhi ke Delhi Cantonment Road ka hai... Follow for Part 32!",
       "sound_cue": "Sub-bass drop into pitch darkness"

@@ -19,6 +19,10 @@ temp_render/
 *.mp3
 *.wav
 *_concat.txt
+channels/IndianHorrorTapes/stories/assets/
+channels/IndianHorrorTapes/stories/thumbnails/
+*.srt
+*.vtt
 
 
 

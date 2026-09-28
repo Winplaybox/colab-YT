@@ -1,9 +1,9 @@
 {
   "story_number": 2,
-  "title": "Golconda Fort: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 2 #Shorts",
+  "title": "Kyu Government Ne Golconda Fort Ko Ban Kiya? 🔴 Ep. 2 #Shorts",
   "viral_titles": [
     "Golconda Fort: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 2 #Shorts",
-    "Kyu Indian Government Ne Golconda Fort Ko Seal Kiya? 🔴 Ep. 2",
+    "Kyu Indian Government Ne Golconda Fort Ko Seal Kiya? 🔴 Ep. 2 #Shorts",
     "Police FIR #202: Golconda Fort Ka Asli Sach 💀 #Shorts"
   ],
   "name": "Golconda Fort",
@@ -17,7 +17,7 @@
       "beat": "CASE_FILE_COLD_OPEN",
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
-      "visual_prompt": "Forensic investigative 35mm documentary shot of Golconda Fort, Hyderabad, Telangana, heavy atmospheric mist, subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16",
+      "visual_prompt": "Declassified forensic 8K photograph of the massive ancient stone gate of Golconda Fort, Hyderabad, Telangana, official rusted ASI warning signboard in foreground warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16",
       "text_overlay": "CLASSIFIED ARCHIVE • GOLCONDA FORT",
       "vo_text": "Archaeological Survey aur 1518 ke official records ke mutabiq... Golconda Fort ki outer boundary par aadhi raat ko kadam rakhne wale ki jaan ki koi guarantee nahi hai.",
       "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
@@ -26,7 +26,7 @@
       "beat": "HISTORICAL_RECORD",
       "time_range": "0:08–0:32",
       "target_dur": 24.0,
-      "visual_prompt": "Wide atmospheric documentary establishing shot of Golconda Fort, Hyderabad, Telangana, authentic historical architecture, overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16",
+      "visual_prompt": "Wide cinematic establishing shot of the majestic ruined courtyards of Golconda Fort, Hyderabad, Telangana, 16th century Rajput/Mughal architecture, cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1518",
       "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Fateh Rahben Darwaza aur 400-foot unchi Bala Hissar ramparts par darj hai. Din mein tourist yahan clap karke acoustic echo test karte hain, lekin shaam 7 baje gate par pehla tala padte hi pura pahad sannate mein doob jata hai. Lekin 1518 mein Sultan Muhammad Quli Qutb Shah aur Royal Courtesan Taramati ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
@@ -35,16 +35,16 @@
       "beat": "DOCUMENTED_ANOMALY",
       "time_range": "0:32–1:02",
       "target_dur": 30.0,
-      "visual_prompt": "POV walking inside Golconda Fort, handheld flashlight beam cutting through pitch-black heavy dust particles, distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16",
+      "visual_prompt": "Subterranean dark corridor inside Golconda Fort, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... ambient microphone mein 42Hz ka unexplained low-frequency hum capture hota hai aur dur khandar se thumri ki dheemi sargoshi aane lagti hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon.",
+      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... ambient microphone mein 42Hz ka unexplained low-frequency hum capture hota hai aur dur khandar se thumri ki dheemi sargoshi aane lagti hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
       "sound_cue": "hawa mein ghulti purani thumri ki dheemi goonj aur paajeb ki aahat + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
       "time_range": "1:02–1:36",
       "target_dur": 34.0,
-      "visual_prompt": "Dramatic tense shaky camera footage inside Golconda Fort, sudden chilling appearance of an ominous tall shadowy figure in fog, high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16",
+      "visual_prompt": "Heart-stopping eyewitness collision inside Golconda Fort: ancient dark tantrik apparition manifesting directly from crumbling stone wall, swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
       "vo_text": "Sabse khaufnaak hadsa tab report hua jab night survey officers ne ramparts ki aakhri deewar par ek aisi parchhai dekhi jo hawa mein 3 foot upar tairti hui khandar ki khidki mein gayab ho gayi! Chashmadeedo ke mutabiq unhone deewar par dekha ki sadiyon purana ek saya bina zameen ko chhue tezi se unki taraf badh raha tha! Unhone cheekh kar kaha: 'Kaan mein aisi aawaz aayi jaise koi bilkul gale ke paas khada hokar gaa raha ho!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
@@ -53,7 +53,7 @@
       "beat": "UNRESOLVED_FORENSICS",
       "time_range": "1:36–1:50",
       "target_dur": 14.0,
-      "visual_prompt": "Desolate aftermath cinematic shot of Golconda Fort, solitary lantern flickering on cold ground, deep midnight shadows, eerie silence, 8k resolution, portrait 9:16",
+      "visual_prompt": "Desolate forensic aftermath of Golconda Fort, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
       "vo_text": "Is hadse ke baad se Archaeological officers ne raat ki patrolling officially band kardi hai aur corridor 4 ko hamesha ke liye seal kar diya gaya hai. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
@@ -62,7 +62,7 @@
       "beat": "NEXT_ARCHIVE_HOOK",
       "time_range": "1:50–2:00",
       "target_dur": 10.0,
-      "visual_prompt": "Vignette pitch black background with blood-red glowing smoke and dark silhouette of Shaniwar Wada, cinematic forensic horror style, 8k resolution, portrait 9:16",
+      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Shaniwar Wada, Pune, Maharashtra, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 3: SHANIWAR WADA",
       "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Pune, Maharashtra ke Shaniwar Wada ka hai... Follow for Part 3!",
       "sound_cue": "Sub-bass drop into pitch darkness"

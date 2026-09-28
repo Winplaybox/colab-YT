@@ -1,9 +1,9 @@
 {
   "story_number": 67,
-  "title": "Nale Ba: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 67 #Shorts",
+  "title": "Nale Ba: Is Awaaz Ka Jawab Mat Dena ⚠️ Ep. 67 #Shorts",
   "viral_titles": [
     "Nale Ba: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 67 #Shorts",
-    "Kyu Indian Government Ne Nale Ba Ko Seal Kiya? 🔴 Ep. 67",
+    "Kyu Indian Government Ne Nale Ba Ko Seal Kiya? 🔴 Ep. 67 #Shorts",
     "Police FIR #6702: Nale Ba Ka Asli Sach 💀 #Shorts"
   ],
   "name": "Nale Ba",
@@ -17,7 +17,7 @@
       "beat": "CASE_FILE_COLD_OPEN",
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
-      "visual_prompt": "Forensic investigative 35mm documentary shot of Nale Ba, Bangalore, Karnataka, heavy atmospheric mist, subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16",
+      "visual_prompt": "Atmospheric 8K cinematic shot of deserted Indian suburban street at 2:00 AM, Bangalore, Karnataka, vintage sodium streetlights casting eerie yellow glow, traditional closed wooden houses, red chalk letters painted on front doors, thick nocturnal silence, 8k resolution, portrait 9:16",
       "text_overlay": "CLASSIFIED ARCHIVE • NALE BA",
       "vo_text": "Archaeological Survey aur 1985 ke official records ke mutabiq... Nale Ba ki outer boundary par aadhi raat ko kadam rakhne wale ki jaan ki koi guarantee nahi hai.",
       "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
@@ -26,7 +26,7 @@
       "beat": "HISTORICAL_RECORD",
       "time_range": "0:08–0:32",
       "target_dur": 24.0,
-      "visual_prompt": "Wide atmospheric documentary establishing shot of Nale Ba, Bangalore, Karnataka, authentic historical architecture, overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16",
+      "visual_prompt": "Archival documentary shot of 1980s residential neighborhood in Bangalore, Karnataka, traditional Indian brick architecture, narrow alleys shrouded in twilight mist, vintage bicycles parked, unsettling tension in the air, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1985",
       "vo_text": "Ye kahani kisi social media afwaah par nahi, balki 1980s Bangalore City Panic aur deewaron par likhe red letters par darj hai. Old Bangalore ke residential ilaaqe jahan raat 9 baje sab log apne gharon ke darwaze band kar lete the. Lekin 1985 mein Bangalore Urban Legend & Karnataka Police Case Reports ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
@@ -35,16 +35,16 @@
       "beat": "DOCUMENTED_ANOMALY",
       "time_range": "0:32–1:02",
       "target_dur": 30.0,
-      "visual_prompt": "POV walking inside Nale Ba, handheld flashlight beam cutting through pitch-black heavy dust particles, distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16",
+      "visual_prompt": "Macro horror close-up of a heavy Indian vintage wooden door at Nale Ba, three violent deep claw gouges on wood, fresh red sindoor powder scattered on threshold, frosted glass showing a dark feminine silhouette waiting outside, 8k horror, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... raat 2 baje main gate par theek 3 bhari knocks sunayi dete hain aur bahar se aapki apni maa ya behen ki aawaz aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon.",
+      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... raat 2 baje main gate par theek 3 bhari knocks sunayi dete hain aur bahar se aapki apni maa ya behen ki aawaz aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
       "sound_cue": "lakdi ke bhaari gate par teen slow knocks aur dheemi sargoshi + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
       "time_range": "1:02–1:36",
       "target_dur": 34.0,
-      "visual_prompt": "Dramatic tense shaky camera footage inside Nale Ba, sudden chilling appearance of an ominous tall shadowy figure in fog, high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16",
+      "visual_prompt": "POV peering through cracked window slat at Nale Ba: terrifying pale woman in vintage Indian saree levitating inches above the damp street, hollow eyes staring straight into the camera, hand reaching forward, visceral heart-stopping terror, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
       "vo_text": "Sabse khaufnaak hadsa tab report hua jab aurat darwaza khatkhatakar rishtedar ki aawaz mein pukarti thi, jisne darwaza khola wo agle 24 ghante ke andar khoon ki ultiyan karke dead paya gaya! Chashmadeed ke mutabiq unke saamne achanak ek aisi aatma prakat hui jisne unki saansein rok di thi! Unhone cheekh kar kaha: 'Aawaz meri behen ki thi, lekin khidki se dekha toh bahar khadi aurat ke pair zameen se 6 inch upar the!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
@@ -53,7 +53,7 @@
       "beat": "UNRESOLVED_FORENSICS",
       "time_range": "1:36–1:50",
       "target_dur": 14.0,
-      "visual_prompt": "Desolate aftermath cinematic shot of Nale Ba, solitary lantern flickering on cold ground, deep midnight shadows, eerie silence, 8k resolution, portrait 9:16",
+      "visual_prompt": "Forensic aftermath street view in Bangalore, Karnataka, entire row of residential front doors marked with red protective Kannada and Hindi script, deserted dawn mist, damp pavement, eerie quietude, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
       "vo_text": "Is hadse ke baad se Hazaaron gharon ne apni deewar par chuna aur sindoor se likha tha: 'ನಾಳೆ ಬಾ' (Nale Ba — Kal Aana), jisse wo aatma agle din laut jaye. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
@@ -62,7 +62,7 @@
       "beat": "NEXT_ARCHIVE_HOOK",
       "time_range": "1:50–2:00",
       "target_dur": 10.0,
-      "visual_prompt": "Vignette pitch black background with blood-red glowing smoke and dark silhouette of Ramoji Film City, cinematic forensic horror style, 8k resolution, portrait 9:16",
+      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Ramoji Film City, Hyderabad, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 68: RAMOJI FILM CITY",
       "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Hyderabad ke Ramoji Film City ka hai... Follow for Part 68!",
       "sound_cue": "Sub-bass drop into pitch darkness"

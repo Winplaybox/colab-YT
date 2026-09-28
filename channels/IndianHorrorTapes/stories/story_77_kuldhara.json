@@ -17,7 +17,7 @@
       "beat": "CASE_FILE_COLD_OPEN",
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
-      "visual_prompt": "Forensic investigative 35mm documentary shot of Kuldhara, Jaisalmer, Rajasthan, heavy atmospheric mist, subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16",
+      "visual_prompt": "Forensic 8K night-vision shot of the perimeter boundary of Kuldhara, Jaisalmer, Rajasthan, rusted government warning board in Hindi and English, ancient gnarly trees engulfed in heavy supernatural mist, cold moonlight, ominous silhouette, 8k resolution, portrait 9:16",
       "text_overlay": "RESTRICTED ZONE • KULDHARA",
       "vo_text": "1825 ke forest department records clearly kehte hain... Jaisalmer, Rajasthan ke is border ke andar sunset ke baad kadam rakhna kanoon aur jaan dono ke khilaaf hai.",
       "sound_cue": "Warning siren echo + heavy wind howling + low drone"
@@ -26,7 +26,7 @@
       "beat": "HISTORICAL_RECORD",
       "time_range": "0:08–0:32",
       "target_dur": 24.0,
-      "visual_prompt": "Wide atmospheric documentary establishing shot of Kuldhara, Jaisalmer, Rajasthan, authentic historical architecture, overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16",
+      "visual_prompt": "Wide atmospheric documentary establishing shot of the forbidden ruins of Kuldhara, Jaisalmer, Rajasthan, 1825 historical era, crumbling stone dwellings and ancient well, dramatic crimson sunset casting long black shadows, photorealistic masterpiece, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1825",
       "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Jaisalmer Royal Court archives and 84 abandoned desert village ruins par darj hai. Thar desert ke beech 84 khushhaal gaon the jo apni architectural water harvesting ke liye pure desh mein mashhoor the. Lekin 1825 mein Salim Singh Diwan aur 1500 Paliwal Brahmin families ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
@@ -35,16 +35,16 @@
       "beat": "DOCUMENTED_ANOMALY",
       "time_range": "0:32–1:02",
       "target_dur": 30.0,
-      "visual_prompt": "POV walking inside Kuldhara, handheld flashlight beam cutting through pitch-black heavy dust particles, distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16",
+      "visual_prompt": "Handheld POV trekking through dark wilderness of Kuldhara, flashlight beam illuminating an impossible forensic anomaly: magnetic compass needle spinning frantically, strange unnatural footprints pressed into cold soil, 8k psychological horror, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... sham 6 baje ke baad hawa mein achanak ret ka bawandar uthta hai aur tuti hui deewaron se choodiyon ki khanak aur bacchon ke rone ki aawaz aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon.",
+      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... sham 6 baje ke baad hawa mein achanak ret ka bawandar uthta hai aur tuti hui deewaron se choodiyon ki khanak aur bacchon ke rone ki aawaz aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
       "sound_cue": "sukhi desert hawa ki cheekh aur soone aangan mein bartan girne ka clatter + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
       "time_range": "1:02–1:36",
       "target_dur": 34.0,
-      "visual_prompt": "Dramatic tense shaky camera footage inside Kuldhara, sudden chilling appearance of an ominous tall shadowy figure in fog, high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16",
+      "visual_prompt": "Extreme terror confrontation in the ruins of Kuldhara, towering 8-foot tall shadowy entity emerging from behind ancient stone pillar, dark smoke and swirling ash, glowing yellow eyes piercing the fog, dramatic cinematic tension lighting, 8k resolution, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
       "vo_text": "Sabse khaufnaak hadsa tab report hua jab Zalim diwan Salim Singh se apni beti ki izzat bachane ke liye 1500 parivar ek hi raat mein bina koi aahat kiye sab kuch chhod kar gayab ho gaye aur zameen ko shraap de gaye! Khandar ke pedon ke peeche se aisi parchhai nikli jiski unchai aam insaan se dugni thi aur wo seedha unki taraf daudne lagi! Unhone cheekh kar kaha: 'Subah sab ghar khali the, chulhe par daal pak rahi thi, lekin ek bhi insaan zinda nahi tha!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
@@ -53,7 +53,7 @@
       "beat": "UNRESOLVED_FORENSICS",
       "time_range": "1:36–1:50",
       "target_dur": 14.0,
-      "visual_prompt": "Desolate aftermath cinematic shot of Kuldhara, solitary lantern flickering on cold ground, deep midnight shadows, eerie silence, 8k resolution, portrait 9:16",
+      "visual_prompt": "Forensic archival evidence photo of Kuldhara, heavy iron chains and police lock sealing the boundary, abandoned researcher torch on rocky soil, barren desolate landscape under starry cold night sky, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
       "vo_text": "Is hadse ke baad se Pichle 200 saal mein jisne bhi Kuldhara mein raat guzarne ki koshish ki, wo ya toh pagal ho gaya ya usne hamesha ke liye bolna chhod diya. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
@@ -62,7 +62,7 @@
       "beat": "NEXT_ARCHIVE_HOOK",
       "time_range": "1:50–2:00",
       "target_dur": 10.0,
-      "visual_prompt": "Vignette pitch black background with blood-red glowing smoke and dark silhouette of Khameda & Kuldhara clusters, cinematic forensic horror style, 8k resolution, portrait 9:16",
+      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Khameda & Kuldhara clusters, Rajasthan, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 78: KHAMEDA & KULDHARA CLUSTERS",
       "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Rajasthan ke Khameda & Kuldhara clusters ka hai... Follow for Part 78!",
       "sound_cue": "Sub-bass drop into pitch darkness"

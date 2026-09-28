@@ -17,7 +17,7 @@
       "beat": "CASE_FILE_COLD_OPEN",
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
-      "visual_prompt": "Forensic investigative 35mm documentary shot of Begunkodor Railway Station, West Bengal, heavy atmospheric mist, subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16",
+      "visual_prompt": "Low-angle atmospheric 8K photography of rusted railway tracks and abandoned platform of Begunkodor Railway Station, West Bengal, dense supernatural cold fog, a single distant red signal lamp glowing faintly in pitch darkness, 35mm film grain, 8k resolution, portrait 9:16",
       "text_overlay": "RAILWAY DOSSIER • BEGUNKODOR RAILWAY STATION",
       "vo_text": "Indian Railways ke unclassified accident files mein Begunkodor Railway Station ke baare mein aisi report darj hai... jise padhkar drivers aaj bhi yahan horn bajakar maximum speed se nikalte hain.",
       "sound_cue": "Low train horn echo + metal wheel squeal + sub-bass pulse"
@@ -26,7 +26,7 @@
       "beat": "HISTORICAL_RECORD",
       "time_range": "0:08–0:32",
       "target_dur": 24.0,
-      "visual_prompt": "Wide atmospheric documentary establishing shot of Begunkodor Railway Station, West Bengal, authentic historical architecture, overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16",
+      "visual_prompt": "Authentic historical establishing shot of Begunkodor Railway Station railway station in 1967, colonial brick architecture, rusted iron station signboard with Hindi and English lettering, misty platform under dim tungsten lantern light, 8k resolution, portrait 9:16",
       "text_overlay": "CASE RECORD • YEAR 1967",
       "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Indian Railways Official Archives — 42-year Begunkodar Station Shutdown par darj hai. West Bengal ke Purulia ziley ka ek chhota railway station jahan Santhal gaon ke log shaam ko bazaar se lautta karte the. Lekin 1967 mein Station Master Mohan Roy Purulia Division ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
       "sound_cue": "Distant hollow wind + eerie ambient string drone"
@@ -35,16 +35,16 @@
       "beat": "DOCUMENTED_ANOMALY",
       "time_range": "0:32–1:02",
       "target_dur": 30.0,
-      "visual_prompt": "POV walking inside Begunkodor Railway Station, handheld flashlight beam cutting through pitch-black heavy dust particles, distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16",
+      "visual_prompt": "First-person POV walking inside pitch black railway tunnel or tracks at Begunkodor Railway Station, single flashlight beam cutting through floating dust, railway tracks vibrating with no train in sight, cold condensation breath in air, spine-chilling dread, 8k resolution, portrait 9:16",
       "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
-      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... raat ke 11:30 baje signal light achanak bina kisi operator ke green se red ho jati hai aur empty track par ghunghroo bajne lagte hain. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon.",
+      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... raat ke 11:30 baje signal light achanak bina kisi operator ke green se red ho jati hai aur empty track par ghunghroo bajne lagte hain. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon.",
       "sound_cue": "dur se aati steam train ki whistle aur khali platform par ghunghroo ki chhan-chhan + slow accelerating heartbeat"
     },
     {
       "beat": "THE_ENCOUNTER_TAPE",
       "time_range": "1:02–1:36",
       "target_dur": 34.0,
-      "visual_prompt": "Dramatic tense shaky camera footage inside Begunkodor Railway Station, sudden chilling appearance of an ominous tall shadowy figure in fog, high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16",
+      "visual_prompt": "Terrifying shock shot on railway tracks of Begunkodor Railway Station, West Bengal, ethereal pale woman in tattered white saree levitating above the steel rails, facing camera with hollow dark eyes, supernatural wind whipping clothes, chiaroscuro rim lighting, 8k photorealistic horror, portrait 9:16",
       "text_overlay": "EYEWITNESS TAPE: RECOVERED",
       "vo_text": "Sabse khaufnaak hadsa tab report hua jab 1967 mein Station Master Mohan Roy ne tracks par ek aurat ko ajeeb mudra mein naachte dekha, agle din Mohan Roy aur unka pura parivar quarters mein dead mila! Tracks aur surang ke andhere se aisi aakriti achanak prakat hui jo bina zameen ko chhue hawa mein tair rahi thi! Unhone cheekh kar kaha: 'Wo platform par nahi chal rahi thi... wo train ke aage tracks par hawa mein daud rahi thi!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
       "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
@@ -53,7 +53,7 @@
       "beat": "UNRESOLVED_FORENSICS",
       "time_range": "1:36–1:50",
       "target_dur": 14.0,
-      "visual_prompt": "Desolate aftermath cinematic shot of Begunkodor Railway Station, solitary lantern flickering on cold ground, deep midnight shadows, eerie silence, 8k resolution, portrait 9:16",
+      "visual_prompt": "Forensic aftermath shot of abandoned Begunkodor Railway Station railway station, official Indian Railways lock on signal cabin, overgrown weeds across rusted tracks, solitary lantern on damp stone platform at dawn, haunting desolation, 8k resolution, portrait 9:16",
       "text_overlay": "STATUS: UNRESOLVED & SEALED",
       "vo_text": "Is hadse ke baad se Indian Railways ne is station ko agle 42 saal tak band rakha, 2009 tak koi passenger train yahan raat ko nahi rukti thi. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
       "sound_cue": "Sudden dead silence + chilling low wind gust"
@@ -62,7 +62,7 @@
       "beat": "NEXT_ARCHIVE_HOOK",
       "time_range": "1:50–2:00",
       "target_dur": 10.0,
-      "visual_prompt": "Vignette pitch black background with blood-red glowing smoke and dark silhouette of Barog Tunnel, cinematic forensic horror style, 8k resolution, portrait 9:16",
+      "visual_prompt": "Cinematic dark teaser shot: ominous architectural silhouette of Barog Tunnel, Himachal Pradesh, engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16",
       "text_overlay": "NEXT DOSSIER → PART 42: BAROG TUNNEL",
       "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Himachal Pradesh ke Barog Tunnel ka hai... Follow for Part 42!",
       "sound_cue": "Sub-bass drop into pitch darkness"

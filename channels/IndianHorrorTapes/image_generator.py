@@ -30,10 +30,9 @@ os.makedirs(thumbs_base, exist_ok=True)
 def enhance_horror_prompt(base_prompt):
     """Enhances base prompt into an ultra-detailed, photorealistic 8K dark horror visual prompt."""
     horror_aesthetic = (
-        "cinematic dark horror photography, hyper-realistic, chilling atmospheric fog, "
-        "volumetric cold moonlight, eerie deep shadows, intricate dilapidated stone textures, "
-        "35mm film grain, high contrast chiaroscuro lighting, masterwork quality, Unreal Engine 5 render, "
-        "8k resolution, ultra-detailed, vertical portrait 9:16"
+        "award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, "
+        "chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, "
+        "Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
     )
     clean = base_prompt.replace("portrait 9:16", "").replace("8k resolution", "").strip()
     return f"{clean}, {horror_aesthetic}"
@@ -65,45 +64,48 @@ def get_hf_token():
     return None
 
 def generate_via_huggingface_flux(prompt, output_path, hf_token):
-    """Generates 8K horror visual via Hugging Face Serverless FLUX.1-schnell."""
+    """Generates 8K horror visual via Hugging Face Serverless FLUX.1-schnell in 9:16 portrait."""
     try:
         from huggingface_hub import InferenceClient
         client = InferenceClient(api_key=hf_token)
-        img = client.text_to_image(prompt, model="black-forest-labs/FLUX.1-schnell")
+        img = client.text_to_image(prompt, model="black-forest-labs/FLUX.1-schnell", width=768, height=1360)
         img.save(output_path)
         print(f"✅ [FLUX.1-schnell Free Tier] Generated: {output_path} ({os.path.getsize(output_path)} bytes)")
         return True
     except Exception as e:
-        print(f"Hugging Face FLUX error: {e}")
+        err_msg = str(e)
+        print(f"Hugging Face FLUX notice: {err_msg[:100]}...")
+        if "402" in err_msg or "Payment Required" in err_msg or "depleted" in err_msg:
+            return False
         try:
             from huggingface_hub import InferenceClient
             client = InferenceClient(api_key=hf_token)
-            img = client.text_to_image(prompt, model="stabilityai/stable-diffusion-xl-base-1.0")
+            img = client.text_to_image(prompt, model="stabilityai/stable-diffusion-xl-base-1.0", width=768, height=1360)
             img.save(output_path)
             print(f"✅ [SDXL Free Tier] Generated: {output_path} ({os.path.getsize(output_path)} bytes)")
             return True
         except Exception as e2:
-            print(f"Hugging Face SDXL fallback error: {e2}")
+            print(f"Hugging Face SDXL fallback notice: {str(e2)[:100]}...")
     return False
 
 def generate_via_pollinations_flux(prompt, output_path, seed=None):
-    """Generates 8K-equivalent horror image via Pollinations Flux Engine. 100% Free."""
+    """Generates 8K-equivalent horror image via Pollinations Flux Engine in 9:16 portrait. 100% Free."""
     if seed is None:
         seed = int(time.time() * 1000) % 999999
     encoded = requests.utils.quote(prompt)
     url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&model=flux&nologo=true&seed={seed}"
     headers = {"User-Agent": "IndianHorrorTapes/1.0 (Mozilla/5.0; Windows NT 10.0; Win64; x64)"}
     try:
-        resp = requests.get(url, headers=headers, timeout=90)
+        resp = requests.get(url, headers=headers, timeout=60)
         if resp.status_code == 200 and len(resp.content) > 1000:
             with open(output_path, "wb") as f:
                 f.write(resp.content)
             print(f"✅ [Pollinations Flux Free Tier] Generated: {output_path} ({len(resp.content)} bytes)")
             return True
         else:
-            print(f"Pollinations error ({resp.status_code})")
+            print(f"Pollinations notice ({resp.status_code})")
     except Exception as e:
-        print(f"Pollinations generation error: {e}")
+        print(f"Pollinations generation notice: {e}")
     return False
 
 def fetch_wiki_horror_image(query, output_path):
@@ -126,21 +128,20 @@ def fetch_wiki_horror_image(query, output_path):
     return False
 
 def generate_scene_image(prompt, output_path, wiki_fallback_query=None):
-    """Multi-tiered generator: HF Flux -> Pollinations Flux -> Wikimedia -> Local."""
+    """Multi-tiered generator: HF Flux (9:16) -> Pollinations Flux (9:16) -> Wikimedia -> Local."""
     out_dir = os.path.dirname(output_path)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
     enhanced = enhance_horror_prompt(prompt)
 
-    # 1. Hugging Face Free Tier
+    # 1. Hugging Face Free Tier (if active credits exist)
     hf_token = get_hf_token()
     if hf_token:
-        print(f"🎨 Generating via Hugging Face FLUX.1 (Free Tier)...")
         if generate_via_huggingface_flux(enhanced, output_path, hf_token):
             return output_path
 
-    # 2. Pollinations Flux Engine (100% Free, zero config)
-    print(f"🎨 Generating via Pollinations Flux Engine (100% Free)...")
+    # 2. Pollinations Flux Engine (100% Free, zero config, 9:16 vertical 1080x1920)
+    print(f"🎨 Generating via Pollinations Flux Engine (100% Free, 9:16 Portrait)...")
     if generate_via_pollinations_flux(enhanced, output_path):
         return output_path
 
@@ -155,8 +156,10 @@ def generate_scene_image(prompt, output_path, wiki_fallback_query=None):
 
 def ensure_story_assets(story_number, force_regenerate=False):
     """
-    Ensures all 5 story beat visual assets and YouTube thumbnail exist for story_number.
-    Re-uses existing files if already generated.
+    Ensures all 6 story beat visual assets (Case File Cold Open, Historical Record,
+    Documented Anomaly, The Encounter Tape, Unresolved Forensics, Next Archive Hook)
+    and YouTube 8K thumbnail exist for story_number.
+    Re-uses existing valid assets if already generated.
     """
     story_dir = os.path.join(assets_base, f"story_{story_number:02d}")
     thumb_path = os.path.join(thumbs_base, f"story_{story_number:02d}_thumbnail.jpg")
@@ -167,11 +170,12 @@ def ensure_story_assets(story_number, force_regenerate=False):
 
     beats = story_data.get("beats", [])
     beat_filenames = [
-        "beat_01_intro.jpg",
-        "beat_02_setup.jpg",
-        "beat_03_buildup.jpg",
-        "beat_04_incident.jpg",
-        "beat_05_aftermath.jpg"
+        "beat_01_case_file.jpg",
+        "beat_02_historical_record.jpg",
+        "beat_03_documented_anomaly.jpg",
+        "beat_04_encounter_tape.jpg",
+        "beat_05_unresolved_forensics.jpg",
+        "beat_06_next_archive_hook.jpg"
     ]
 
     existing_scenes = []
@@ -181,13 +185,14 @@ def ensure_story_assets(story_number, force_regenerate=False):
             existing_scenes.append(p)
 
     if len(existing_scenes) == len(beat_filenames) and os.path.exists(thumb_path) and not force_regenerate:
-        print(f"✨ Found all {len(existing_scenes)} horror visual scenes for Story #{story_number}. Ready for render.")
+        print(f"✨ Found all {len(existing_scenes)} 8K horror visual scenes for Story #{story_number}. Ready for render.")
         return existing_scenes
 
     print(f"\n=======================================================")
-    print(f"🎬 8K HORROR ASSET GENERATION: Story #{story_number}")
+    print(f"🎬 8K HORROR ASSET GENERATION: Story #{story_number} (6 Forensic Beats)")
     print(f"Title: {story_data.get('title')}")
     print(f"Location: {story_data.get('location')}")
+    print(f"Archetype: {story_data.get('archetype', 'ARCHIVAL_EXPEDITION')}")
     print(f"=======================================================")
 
     generated_scenes = []
@@ -201,23 +206,27 @@ def ensure_story_assets(story_number, force_regenerate=False):
             continue
 
         beat_info = beats[idx] if idx < len(beats) else beats[-1]
-        prompt = beat_info.get("visual_prompt", f"Dark horror photography of {story_data['title']}")
-        print(f"\n--> Generating 8K Horror Scene ({beat_info['beat']}): {fn}...")
+        prompt = beat_info.get("visual_prompt", f"Dark 8k horror photography of {story_data['title']}")
+        print(f"\n--> Generating 8K Horror Scene Beat #{idx+1} ({beat_info['beat']}): {fn}...")
         img = generate_scene_image(prompt, target_path, wiki_fallback_query=location_name)
         if img:
             generated_scenes.append(img)
         time.sleep(1)
 
-    # Generate custom 8K YouTube thumbnail
+    # Generate custom 8K YouTube thumbnail using story thumbnail concept
     if not os.path.exists(thumb_path) or force_regenerate:
-        thumb_prompt = (
-            f"YouTube Shorts horror thumbnail, {story_data.get('title')}, terrifying haunted place in India, "
-            f"eerie dark shadows, glowing red mist, hyper-realistic, dramatic high contrast, photorealistic horror, portrait 9:16"
-        )
+        thumb_concept = story_data.get("thumbnail_concept")
+        if thumb_concept:
+            thumb_prompt = f"YouTube Shorts horror thumbnail: {thumb_concept}"
+        else:
+            thumb_prompt = (
+                f"YouTube Shorts horror thumbnail, {story_data.get('title')}, terrifying haunted place in India, "
+                f"eerie dark shadows, glowing red mist, hyper-realistic, dramatic high contrast, photorealistic horror, portrait 9:16"
+            )
         print(f"\n--> Generating 8K YouTube Shorts Thumbnail: story_{story_number:02d}_thumbnail.jpg...")
         generate_scene_image(thumb_prompt, thumb_path, wiki_fallback_query=location_name)
 
-    print(f"\n🎉 Story #{story_number} has {len(generated_scenes)} scenes ready for 8K video render!")
+    print(f"\n🎉 Story #{story_number} has {len(generated_scenes)} 8K scenes ready for video render!")
     return generated_scenes
 
 if __name__ == "__main__":

@@ -427,13 +427,124 @@ def generate_investigative_script(story_info, next_story_info=None):
         cold_open_overlay = f"CLASSIFIED ARCHIVE • {name.upper()}"
         cold_open_sfx = "Ancient temple bell muffled chime + 45Hz sub-bass tremor"
 
-    cold_open_prompt = (
-        f"Forensic investigative 35mm documentary shot of {name}, {loc}, heavy atmospheric mist, "
-        f"subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16"
+    # -------------------------------------------------------------
+    # 8K ULTRA-CINEMATIC VISUAL PROMPT ENGINE (REAL-LOCATION & ARCHIVAL ACCURATE)
+    # -------------------------------------------------------------
+    if arch == "POLICE_DISPATCH_LOG":
+        cold_open_prompt = (
+            f"Hyper-realistic 8K cinematic dashcam POV, 3:14 AM on lonely deserted stretch of {name}, {loc}, "
+            f"blinding headlights cutting through dense nocturnal mist, rain-slicked asphalt reflecting amber street signs, "
+            f"distant distorted shadow standing motionless on highway shoulder, 35mm Arri Alexa cinematography, 8k resolution, portrait 9:16"
+        )
+        hist_prompt = (
+            f"Historical archival documentary establishing shot of {name}, {loc}, desolate accident milestone marker, "
+            f"overcast dusk sky, ominous shadows lengthening across highway curves, photorealistic documentary realism, 8k resolution, portrait 9:16"
+        )
+        anomaly_prompt = (
+            f"Intense psychological horror POV inside car at {name}, dashboard speedometer frozen, "
+            f"heavy frost creeping unnaturally across the inside of the windshield, faint bloody handprint slowly appearing on glass, "
+            f"terrifying atmospheric lighting, 8k resolution, portrait 9:16"
+        )
+        encounter_prompt = (
+            f"Terrifying high-tension dashcam footage on {name}, {loc}, high-beam headlights illuminating a horrifying tall apparition "
+            f"standing in the center of the dark road, glowing eyes, disheveled wet hair, motion blur distortion, heart-stopping horror, 8k resolution, portrait 9:16"
+        )
+        aftermath_prompt = (
+            f"Desolate police forensic aftermath of {name}, yellow police barrier tape fluttering in cold night wind, "
+            f"abandoned car with open door under solitary flickering roadlamp, damp highway asphalt, eerie quietude, 8k resolution, portrait 9:16"
+        )
+    elif arch == "SOLITARY_TRAVELER_TAPE":
+        cold_open_prompt = (
+            f"Low-angle atmospheric 8K photography of rusted railway tracks and abandoned platform of {name}, {loc}, "
+            f"dense supernatural cold fog, a single distant red signal lamp glowing faintly in pitch darkness, 35mm film grain, 8k resolution, portrait 9:16"
+        )
+        hist_prompt = (
+            f"Authentic historical establishing shot of {name} railway station in {dossier['year']}, colonial brick architecture, "
+            f"rusted iron station signboard with Hindi and English lettering, misty platform under dim tungsten lantern light, 8k resolution, portrait 9:16"
+        )
+        anomaly_prompt = (
+            f"First-person POV walking inside pitch black railway tunnel or tracks at {name}, single flashlight beam cutting through floating dust, "
+            f"railway tracks vibrating with no train in sight, cold condensation breath in air, spine-chilling dread, 8k resolution, portrait 9:16"
+        )
+        encounter_prompt = (
+            f"Terrifying shock shot on railway tracks of {name}, {loc}, ethereal pale woman in tattered white saree levitating above the steel rails, "
+            f"facing camera with hollow dark eyes, supernatural wind whipping clothes, chiaroscuro rim lighting, 8k photorealistic horror, portrait 9:16"
+        )
+        aftermath_prompt = (
+            f"Forensic aftermath shot of abandoned {name} railway station, official Indian Railways lock on signal cabin, "
+            f"overgrown weeds across rusted tracks, solitary lantern on damp stone platform at dawn, haunting desolation, 8k resolution, portrait 9:16"
+        )
+    elif arch == "FORBIDDEN_ZONE_BREACH":
+        cold_open_prompt = (
+            f"Forensic 8K night-vision shot of the perimeter boundary of {name}, {loc}, rusted government warning board in Hindi and English, "
+            f"ancient gnarly trees engulfed in heavy supernatural mist, cold moonlight, ominous silhouette, 8k resolution, portrait 9:16"
+        )
+        hist_prompt = (
+            f"Wide atmospheric documentary establishing shot of the forbidden ruins of {name}, {loc}, {dossier['year']} historical era, "
+            f"crumbling stone dwellings and ancient well, dramatic crimson sunset casting long black shadows, photorealistic masterpiece, 8k resolution, portrait 9:16"
+        )
+        anomaly_prompt = (
+            f"Handheld POV trekking through dark wilderness of {name}, flashlight beam illuminating an impossible forensic anomaly: "
+            f"magnetic compass needle spinning frantically, strange unnatural footprints pressed into cold soil, 8k psychological horror, portrait 9:16"
+        )
+        encounter_prompt = (
+            f"Extreme terror confrontation in the ruins of {name}, towering 8-foot tall shadowy entity emerging from behind ancient stone pillar, "
+            f"dark smoke and swirling ash, glowing yellow eyes piercing the fog, dramatic cinematic tension lighting, 8k resolution, portrait 9:16"
+        )
+        aftermath_prompt = (
+            f"Forensic archival evidence photo of {name}, heavy iron chains and police lock sealing the boundary, "
+            f"abandoned researcher torch on rocky soil, barren desolate landscape under starry cold night sky, 8k resolution, portrait 9:16"
+        )
+    elif arch == "LOCAL_ELDER_TESTIMONY":
+        cold_open_prompt = (
+            f"Atmospheric 8K cinematic shot of deserted Indian suburban street at 2:00 AM, {loc}, vintage sodium streetlights casting eerie yellow glow, "
+            f"traditional closed wooden houses, red chalk letters painted on front doors, thick nocturnal silence, 8k resolution, portrait 9:16"
+        )
+        hist_prompt = (
+            f"Archival documentary shot of 1980s residential neighborhood in {loc}, traditional Indian brick architecture, "
+            f"narrow alleys shrouded in twilight mist, vintage bicycles parked, unsettling tension in the air, 8k resolution, portrait 9:16"
+        )
+        anomaly_prompt = (
+            f"Macro horror close-up of a heavy Indian vintage wooden door at {name}, three violent deep claw gouges on wood, "
+            f"fresh red sindoor powder scattered on threshold, frosted glass showing a dark feminine silhouette waiting outside, 8k horror, portrait 9:16"
+        )
+        encounter_prompt = (
+            f"POV peering through cracked window slat at {name}: terrifying pale woman in vintage Indian saree levitating inches above the damp street, "
+            f"hollow eyes staring straight into the camera, hand reaching forward, visceral heart-stopping terror, 8k resolution, portrait 9:16"
+        )
+        aftermath_prompt = (
+            f"Forensic aftermath street view in {loc}, entire row of residential front doors marked with red protective Kannada and Hindi script, "
+            f"deserted dawn mist, damp pavement, eerie quietude, 8k resolution, portrait 9:16"
+        )
+    else: # ARCHIVAL_EXPEDITION (Forts, Palaces, Tombs, Baolis)
+        cold_open_prompt = (
+            f"Declassified forensic 8K photograph of the massive ancient stone gate of {name}, {loc}, official rusted ASI warning signboard in foreground "
+            f"warning entry strictly forbidden after sunset, towering cracked fortress walls in heavy midnight fog, 35mm documentary realism, 8k resolution, portrait 9:16"
+        )
+        hist_prompt = (
+            f"Wide cinematic establishing shot of the majestic ruined courtyards of {name}, {loc}, 16th century Rajput/Mughal architecture, "
+            f"cracked sandstone pillars, blood-red twilight sky, cold atmospheric mist creeping along ancient stone floor, 8k resolution, portrait 9:16"
+        )
+        anomaly_prompt = (
+            f"Subterranean dark corridor inside {name}, stone ceiling dripping cold water, ancient carved pillars casting unnatural twisted shadows "
+            f"against a single dying flashlight beam, sudden freezing condensation cloud at floor level, 8k cinematic horror, portrait 9:16"
+        )
+        encounter_prompt = (
+            f"Heart-stopping eyewitness collision inside {name}: ancient dark tantrik apparition manifesting directly from crumbling stone wall, "
+            f"swirling black energy, glowing hollow eyes, high-contrast chiaroscuro rim lighting, breathtaking horror masterpiece, 8k resolution, portrait 9:16"
+        )
+        aftermath_prompt = (
+            f"Desolate forensic aftermath of {name}, massive rusted iron padlock and chains locking the ancient citadel gate at dawn, "
+            f"abandoned flashlight on cold stone courtyard, eerie mist rolling down Aravali mountains, 8k resolution, portrait 9:16"
+        )
+
+    outro_prompt = (
+        f"Cinematic dark teaser shot: ominous architectural silhouette of {next_name}, {next_loc}, "
+        f"engulfed in swirling blood-red smoke and midnight fog, solitary eerie light flickering in distance, 8k resolution, portrait 9:16"
     )
 
     # -------------------------------------------------------------
-    # PHASE 2: THE DECLASSIFIED DOSSIER (0:08–0:32) — Real Names, Dates & Mundane Baseline
+    # PHASE 2: THE DECLASSIFIED DOSSIER (0:08–0:32)
     # -------------------------------------------------------------
     hist_vo = (
         f"Ye kahani kisi social media afwaah par nahi, balki {dossier['forensic_anchor']} par darj hai. "
@@ -441,27 +552,19 @@ def generate_investigative_script(story_info, next_story_info=None):
         f"Lekin {dossier['year']} mein {dossier['real_names']} ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di."
     )
     hist_overlay = f"CASE RECORD • YEAR {dossier['year']}"
-    hist_prompt = (
-        f"Wide atmospheric documentary establishing shot of {name}, {loc}, authentic historical architecture, "
-        f"overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16"
-    )
 
     # -------------------------------------------------------------
-    # PHASE 3: THE SENSORY ANOMALY (0:32–1:02) — The Micro-Fracture of Reality
+    # PHASE 3: THE SENSORY ANOMALY (0:32–1:02)
     # -------------------------------------------------------------
     anomaly_vo = (
         f"Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... "
         f"{dossier['sensory_anomaly']}. "
-        f"Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon."
+        f"Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta jaise aap kisi barfili ghaati mein khade hon."
     )
     anomaly_overlay = "ANOMALY: SUDDEN TEMP CRASH"
-    anomaly_prompt = (
-        f"POV walking inside {name}, handheld flashlight beam cutting through pitch-black heavy dust particles, "
-        f"distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16"
-    )
 
     # -------------------------------------------------------------
-    # PHASE 4: THE EYEWITNESS COLLISION TAPE (1:02–1:36) — Breathless Climax
+    # PHASE 4: THE EYEWITNESS COLLISION TAPE (1:02–1:36)
     # -------------------------------------------------------------
     if arch == "POLICE_DISPATCH_LOG":
         eyewitness_context = "Headlights ke ujaale mein unke saamne ek aisi parchhai aayi jiski aankhein aag ki tarah chamak rahi thi!"
@@ -480,13 +583,9 @@ def generate_investigative_script(story_info, next_story_info=None):
         f"Unhone cheekh kar kaha: '{dossier['eyewitness_dialogue']}' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!"
     )
     encounter_overlay = "EYEWITNESS TAPE: RECOVERED"
-    encounter_prompt = (
-        f"Dramatic tense shaky camera footage inside {name}, sudden chilling appearance of an ominous tall shadowy figure in fog, "
-        f"high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16"
-    )
 
     # -------------------------------------------------------------
-    # PHASE 5: THE FORENSIC AFTERMATH (1:36–1:50) — The Official Seal & Unsolved Reality
+    # PHASE 5: THE FORENSIC AFTERMATH (1:36–1:50)
     # -------------------------------------------------------------
     aftermath_vo = (
         f"Is hadse ke baad se {dossier['unresolved_fact']}. "
@@ -494,23 +593,15 @@ def generate_investigative_script(story_info, next_story_info=None):
         f"Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye."
     )
     aftermath_overlay = "STATUS: UNRESOLVED & SEALED"
-    aftermath_prompt = (
-        f"Desolate aftermath cinematic shot of {name}, solitary lantern flickering on cold ground, "
-        f"deep midnight shadows, eerie silence, 8k resolution, portrait 9:16"
-    )
 
     # -------------------------------------------------------------
-    # PHASE 6: THE ALGORITHMIC CLIFFHANGER (1:50–2:00) — High-CTR Binge Loop
+    # PHASE 6: THE ALGORITHMIC CLIFFHANGER (1:50–2:00)
     # -------------------------------------------------------------
     outro_vo = (
         f"Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. "
         f"Agla case file {next_loc} ke {next_name} ka hai... Follow for Part {next_num}!"
     )
     outro_overlay = f"NEXT DOSSIER → PART {next_num}: {next_name.upper()}"
-    outro_prompt = (
-        f"Vignette pitch black background with blood-red glowing smoke and dark silhouette of {next_name}, "
-        f"cinematic forensic horror style, 8k resolution, portrait 9:16"
-    )
 
     beats = [
         {

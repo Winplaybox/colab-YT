@@ -257,6 +257,38 @@ def upload_video(youtube, video_path, metadata, thumbnail_path=None, pinned_comm
 
     return video_id, video_url
 
+def upload_subtitles_to_youtube(youtube, video_id, output_dir, story_number, story_data):
+    """Uploads multi-language SRT caption tracks to the uploaded YouTube video."""
+    slug = story_data.get("slug") or story_data.get("name", "").lower().replace(" ", "_")
+    
+    caption_tracks = [
+        {"file": f"story_{story_number:02d}_{slug}_hi.srt", "lang": "hi", "name": "Hindi (हिन्दी)", "default": True},
+        {"file": f"story_{story_number:02d}_{slug}_en.srt", "lang": "en", "name": "English", "default": False},
+        {"file": f"story_{story_number:02d}_{slug}_hinglish.srt", "lang": "hi-Latn", "name": "Hinglish", "default": False}
+    ]
+    
+    for track in caption_tracks:
+        srt_path = os.path.join(output_dir, track["file"])
+        if os.path.exists(srt_path):
+            try:
+                print(f"📝 Uploading [{track['lang']}] subtitle track: {track['name']}...")
+                media = MediaFileUpload(srt_path, mimetype="application/x-subrip")
+                youtube.captions().insert(
+                    part="snippet",
+                    body={
+                        "snippet": {
+                            "videoId": video_id,
+                            "language": track["lang"],
+                            "name": track["name"],
+                            "isDraft": False
+                        }
+                    },
+                    media_body=media
+                ).execute()
+                print(f"✅ Caption track [{track['lang']}] attached successfully!")
+            except Exception as ce:
+                print(f"Notice: Could not upload caption track [{track['lang']}]: {ce}")
+
 def update_state(story_number, video_id, publish_at):
     """Updates state.json after successful upload and advances story pointer."""
     state_file = os.path.join(script_dir, "state.json")
@@ -267,7 +299,8 @@ def update_state(story_number, video_id, publish_at):
         "total_stories": 103,
         "last_run": None,
         "last_uploaded_video_id": None,
-        "history": []
+        "history": [],
+        "playlists": {}
     }
     if os.path.exists(state_file):
         try:
@@ -300,9 +333,10 @@ def run_schedule(story_number=None, quality="8k", force_immediate=False):
     """
     Main orchestration routine:
     1. Loads current story definition
-    2. Renders 9:16 portrait video
-    3. Calculates Wednesday/Sunday 9:00 PM IST slot
-    4. Uploads to YouTube and updates state
+    2. Renders 9:16 portrait video with dynamic visual theme & multi-language subtitles
+    3. Generates matching Community Tab Polls & Updates
+    4. Calculates Wednesday/Sunday 9:00 PM IST slot
+    5. Uploads to YouTube, pins engagement comment, attaches captions, and syncs playlists
     """
     state_file = os.path.join(script_dir, "state.json")
     if story_number is None and os.path.exists(state_file):
@@ -321,10 +355,14 @@ def run_schedule(story_number=None, quality="8k", force_immediate=False):
     os.makedirs(output_dir, exist_ok=True)
     video_path = os.path.join(output_dir, f"IndianHorrorTapes_Ep{story_number:02d}_{quality}.mp4")
 
-    # Render video
+    # 1. Render video (which now applies dynamic visual theme and outputs multi-language subtitles)
     produce_horror_short(story_data, video_path, quality=quality)
 
-    # Compute release schedule: Wednesday / Sunday 9:00 PM IST (15:30 UTC)
+    # 2. Generate YouTube Community Posts & Polls
+    from community_post_generator import build_community_bundle
+    community_bundle = build_community_bundle(story_data)
+
+    # 3. Compute release schedule: Wednesday / Sunday 9:00 PM IST (15:30 UTC)
     publish_iso = None if force_immediate else compute_next_publish_time(publish_time_utc="15:30", schedule_days=[2, 6])
     metadata = build_metadata(story_data, publish_iso)
 
@@ -334,10 +372,20 @@ def run_schedule(story_number=None, quality="8k", force_immediate=False):
     if youtube:
         pinned = story_data.get("pinned_comment")
         video_id, video_url = upload_video(youtube, video_path, metadata, thumbnail_path=thumb_path, pinned_comment=pinned)
+
+        # 4. Upload Captions (Hindi & English SRT)
+        upload_subtitles_to_youtube(youtube, video_id, output_dir, story_number, story_data)
+
+        # 5. Sync to Thematic Playlists (Category Playlist + All Episodes Chronological)
+        from playlist_manager import sync_video_to_playlists
+        cat = story_data.get("category", "ALL_EPISODES")
+        sync_video_to_playlists(youtube, video_id, cat)
+
         update_state(story_number, video_id, publish_iso)
         return video_id, video_url
     else:
         print(f"\n✨ Video generated locally at: {video_path}")
+        print(f"📊 Community Poll generated: {community_bundle['poll']['question']}")
         print("Upload skipped because YouTube API credentials were not found or not yet authenticated.")
         return None, video_path
 

@@ -99,8 +99,17 @@ Authentic, terrifying, 2-minute 9:16 portrait YouTube Shorts engine producing **
 * **Channel ID:** `UCNRr8A9gVZQZJi1eMKiXIJw`
 * **Release Schedule:** **Wednesday & Sunday at 9:00 PM IST** (`15:30 UTC`)
 * **Format:** 9:16 Portrait Ultra-HD Shorts (`8k` / `4k` / `1080p`)
-* **Audio Engine:** Expressive Hinglish studio neural narration (whisper intro/outro, tense build-up, punchy incident) + procedurally synthesized horror ambient drones & heartbeat pulse!
-* **Visuals:** 8K hyper-detailed photorealistic horror imagery (FLUX.1-schnell / Pollinations Flux / Wikimedia Historical Archives) with smooth cinematic crossfades and high-retention typographic branding.
+* **Visual Styling:** **5 Distinct Non-Repetitive Themes** (No cloned layouts!):
+  1. `VHS_FOUND_FOOTAGE`: Camcorder REC OSD, live timecode, battery indicator, analog noise.
+  2. `CLASSIFIED_DOSSIER`: Top-Secret ASI / Govt archive red stamp, typewriter fonts, paper borders.
+  3. `CINEMATIC_NOIR`: Minimalist edge-to-edge luxury documentary styling with gold/crimson accents.
+  4. `NIGHT_SURVEILLANCE_CCTV`: Closed-circuit security camera feed, cold green tint, targeting crosshairs.
+  5. `CURSED_MYTHIC`: Blood-red pulsing vignette, burning ember edge glow, ancient warning watermarks.
+* **Audio Engine:** Expressive Hinglish studio neural narration (whisper intro/outro, tense build-up, punchy incident) + procedurally synthesized horror ambient drones (45Hz) & heartbeat pulse (55Hz)!
+* **Multi-Language Subtitles:** Automatically generates `.srt` and `.vtt` in **Hindi (हिन्दी)**, **Hinglish**, and **English**, with automated YouTube caption track attachment!
+* **Thematic Playlists:** Auto-syncs into 10 dedicated channel playlists + master chronological playlist.
+* **Community Tab Engine:** Generates viral 4-option audience dilemma polls, premiere teasers, and archival trivia.
+* **Pinned Comment Engine:** Automatically posts high-friction psychological dilemma questions upon upload.
 
 ### 🏛️ 10 Thematic Story Categories (103 Episodes Master Bank):
 1. **Haunted Forts & Palaces (15):** Bhangarh Fort, Golconda, Shaniwar Wada, Jhansi Fort, Rani Kamlapati, Malcha Mahal, etc.
