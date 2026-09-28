@@ -256,7 +256,7 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
 
 if __name__ == "__main__":
     ep_arg = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1].isdigit() else None
-    qual_arg = sys.argv[2] if len(sys.argv) > 2 else "1080p"
+    qual_arg = sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] in ["1080p", "4k", "8k"] else "4k"
     mode_arg = "public" if "--immediate" in sys.argv else ("render_only" if "--render-only" in sys.argv else "schedule")
 
     run_episode(episode_number=ep_arg, quality=qual_arg, publish_mode=mode_arg)

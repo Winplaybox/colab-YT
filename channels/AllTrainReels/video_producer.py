@@ -202,9 +202,10 @@ def produce_train_video(story_json_path, quality="1080p"):
     # Resolution settings (Safe from zoompan OOM)
     res_map = {
         "1080p": (1080, 1920),
-        "4k": (2160, 3840)
+        "4k": (2160, 3840),
+        "8k": (4320, 7680)
     }
-    w, h = res_map.get(quality, (1080, 1920))
+    w, h = res_map.get(quality, (2160, 3840))
     scale = w / 1080.0
 
     # Ensure shot image assets exist

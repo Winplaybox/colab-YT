@@ -305,14 +305,14 @@ def generate_story_assets(story_json_path):
             print(f"⏩ [Cached] Verified asset exists: shot_{idx:02d}.jpg")
             continue
 
-        # Try real photo from pool first
+        # Documentary standard: Always use real Wikipedia photography
         photo_idx = idx - 1
         success = False
-        if photo_idx < len(real_photo_urls):
-            real_url = real_photo_urls[photo_idx]
+        if real_photo_urls:
+            real_url = real_photo_urls[photo_idx % len(real_photo_urls)]
             success = download_and_format_real_photo(real_url, shot_path)
             if success:
-                print(f"✅ [Real Photography #{idx}] Formatted {shot_filename} from Wikimedia Commons")
+                print(f"✅ [Wikipedia Documentary Photo #{idx}] Formatted {shot_filename} from Wikimedia Commons")
 
         # Fallback to AI generation if real photo not available or download failed
         if not success:

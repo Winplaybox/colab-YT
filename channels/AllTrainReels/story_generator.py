@@ -50,7 +50,7 @@ def build_full_data(story, episode_number):
         f"🚂 {story['tagline']}\n\n"
         f"{story['verified_fact']}\n\n"
         f"👉 {story['debate_question']}\n\n"
-        f"Subscribe to @AllTrainReels for daily high-speed rail facts, monster locomotives, and Indian Railways marvels!\n\n"
+        f"Subscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n"
         f"{hashtags_str}"
     )
 
@@ -73,7 +73,7 @@ def build_full_data(story, episode_number):
         ],
         "tagline": story["tagline"],
         "visual_theme": story.get("visual_theme", "SPEEDOMETER_HUD"),
-        "target_duration_seconds": story.get("target_duration", 25),
+        "target_duration_seconds": story.get("target_duration", 95),
         "review_status": story.get("review_status", "verified"),
         "sources": story.get("sources", []),
         "verified_fact": story["verified_fact"],
@@ -83,9 +83,9 @@ def build_full_data(story, episode_number):
         "description": description,
         "tags": clean_tags,
         "seo_keywords": [
-            "Indian Railways", "Train Facts", "Bullet Train", "Locomotive",
-            "High Speed Rail", "Shorts", "Viral Trains", "Vande Bharat",
-            "Train Spotting", "Fastest Train", "Monster Train"
+            "World Railways", "Monster Trains", "Bullet Train", "Locomotive",
+            "High Speed Rail", "Shorts", "Viral Trains", "Train Spotting",
+            "Fastest Train", "Railway Engineering", "Extreme Railways"
         ],
         "shots": story["shots"]
     }
