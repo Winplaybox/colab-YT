@@ -1,0 +1,75 @@
+{
+  "story_number": 49,
+  "title": "Dumas Beach — Kaali Reti Ka Raaz",
+  "name": "Dumas Beach",
+  "location": "Surat, Gujarat",
+  "tagline": "black sand, former cremation ground, whispered voices",
+  "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "visual_prompt": "Dark eerie establishing shot of Dumas Beach, Surat, Gujarat, blood red flickering glow, misty twilight, dark eerie black sand beach, violent foaming nocturnal tide under bruised purple sky, twisted dead trees, swamp marsh lights, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "BLACK SAND SECRET: DUMAS BEACH",
+      "vo_text": "Dikhne mein ye Surat, Gujarat ka ek normal kinara hai... lekin iski reti kaali hai, aur iska raaz aur bhi zyada khaufnaak.",
+      "sound_cue": "Low eerie sub-bass drone + slow heartbeat pulse"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:30",
+      "target_dur": 22.0,
+      "visual_prompt": "Wide establishing cinematic shot of Dumas Beach in Surat, Gujarat, dark eerie black sand beach, violent foaming nocturnal tide under bruised purple sky, twisted dead trees, swamp marsh lights, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "SURAT — REAL LORE",
+      "vo_text": "Kaha jaata hai, Surat, Gujarat ke is Dumas Beach mein sadiyon se aisi taqaton ka dera hai jinka zikr purane dastawezon mein bhi milta hai. Ye wahi jagah hai jahan Black sand, former cremation ground, whispered voices. Aaj bhi yahan ke locals kehte hain — din ke ujaale mein sab shant lagta hai, lekin aadhi raat ko is jagah ki hawa badal jaati hai.",
+      "sound_cue": "Distant wind howl with subtle atmospheric swell"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:30–1:00",
+      "target_dur": 30.0,
+      "visual_prompt": "POV walking shot entering Dumas Beach, dim eerie lantern, deep shadows, atmospheric mist, dark eerie black sand beach, violent foaming nocturnal tide under bruised purple sky, twisted dead trees, swamp marsh lights, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "WARNING SIGNS AT MIDNIGHT",
+      "vo_text": "Jo log yahan se shaam ke baad guzre hain, unka kehna hai ki jaise hi ghadi mein 12 bajte hain... paani ki lehron ke beech se kisi ke madad ke liye pukarne ki dheemi goonj sunayi deti hai.",
+      "sound_cue": "Slow approaching footsteps, faint metallic whisper, accelerating pulse"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:00–1:35",
+      "target_dur": 35.0,
+      "visual_prompt": "Tense shaky camera shot at Dumas Beach, sudden sinister shadow moving in darkness, high contrast horror lighting, 8k resolution, portrait 9:16",
+      "text_overlay": "THE REAL INCIDENT",
+      "vo_text": "Sabse darawani ghatna tab ghati jab beach par walk karne gaye do doston ke mobile ka network achanak uda aur unke kaan mein unka naam pukara gaya. Unke paas bhagne ke siva koi rasta nahi bacha tha!",
+      "sound_cue": "Sudden loud branch snap, aggressive riser, intense rapid heartbeat"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:35–1:50",
+      "target_dur": 15.0,
+      "visual_prompt": "Quiet eerie aftermath shot of Dumas Beach, solitary flickering candle in pitch darkness, cold fog, 8k resolution, portrait 9:16",
+      "text_overlay": "STILL AVOIDED TODAY",
+      "vo_text": "Is hadse ke baad se aaj bhi machhuare suraj doobte hi apni naav kinare baandhkar wahan se nikal jaate hain. Kuch raaz aise hote hain jinhe band darwazon ke peeche hi rehne dena behtar hai.",
+      "sound_cue": "Dead silence followed by cold hollow wind"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "visual_prompt": "Total black vignette background with blood red glowing mist, atmospheric cinematic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "PART 50 → JATINGA VALLEY",
+      "vo_text": "Agli kahani Assam ke Jatinga Valley ki hai... jahan aisi cheekh sunayi di jo kisi insaan ki nahi thi. Follow for Part 50!",
+      "sound_cue": "Sub-bass drop into darkness"
+    }
+  ],
+  "tags": [
+    "dumasbeach",
+    "indianhorror",
+    "realhorrorstories",
+    "horrorstorieshindi",
+    "paranormalinvestigation",
+    "hauntedplacesindia",
+    "ghoststories",
+    "shorts",
+    "surat"
+  ]
+}

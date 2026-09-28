@@ -1,0 +1,75 @@
+{
+  "story_number": 31,
+  "title": "NH-8, Jharsa stretch — Highway Par Lift",
+  "name": "NH-8, Jharsa stretch",
+  "location": "Gurugram-Delhi",
+  "tagline": "woman in white flagging down cars at night",
+  "category": "HAUNTED ROADS & HIGHWAYS",
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "visual_prompt": "Dark eerie establishing shot of NH-8, Jharsa stretch, Gurugram-Delhi, blood red flickering glow, misty twilight, wet dark highway asphalt under high-beam yellow headlights, dense highway fog, solitary tree on blind curve, vanishing taillights, cinematic horror photography, 8k resolution, portrait 9:16",
+      "text_overlay": "NIGHT HIGHWAY WARNING",
+      "vo_text": "Agar aap raat ko Gurugram-Delhi se guzar rahe hain... toh apni gadi ki khidki aur speed kabhi mat girana.",
+      "sound_cue": "Low eerie sub-bass drone + slow heartbeat pulse"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:30",
+      "target_dur": 22.0,
+      "visual_prompt": "Wide establishing cinematic shot of NH-8, Jharsa stretch in Gurugram-Delhi, wet dark highway asphalt under high-beam yellow headlights, dense highway fog, solitary tree on blind curve, vanishing taillights, cinematic horror photography, 8k resolution, portrait 9:16",
+      "text_overlay": "GURUGRAM-DELHI — REAL LORE",
+      "vo_text": "Kaha jaata hai, Gurugram-Delhi ke is NH-8, Jharsa stretch mein sadiyon se aisi taqaton ka dera hai jinka zikr purane dastawezon mein bhi milta hai. Ye wahi jagah hai jahan Woman in white flagging down cars at night. Aaj bhi yahan ke locals kehte hain — din ke ujaale mein sab shant lagta hai, lekin aadhi raat ko is jagah ki hawa badal jaati hai.",
+      "sound_cue": "Distant wind howl with subtle atmospheric swell"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:30–1:00",
+      "target_dur": 30.0,
+      "visual_prompt": "POV walking shot entering NH-8, Jharsa stretch, dim eerie lantern, deep shadows, atmospheric mist, wet dark highway asphalt under high-beam yellow headlights, dense highway fog, solitary tree on blind curve, vanishing taillights, cinematic horror photography, 8k resolution, portrait 9:16",
+      "text_overlay": "WARNING SIGNS AT MIDNIGHT",
+      "vo_text": "Jo log yahan se shaam ke baad guzre hain, unka kehna hai ki jaise hi ghadi mein 12 bajte hain... radio par gaane band hokar ajeeb si static aur kisi ke rone ki dheemi sargoshi aane lagti hai.",
+      "sound_cue": "Slow approaching footsteps, faint metallic whisper, accelerating pulse"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:00–1:35",
+      "target_dur": 35.0,
+      "visual_prompt": "Tense shaky camera shot at NH-8, Jharsa stretch, sudden sinister shadow moving in darkness, high contrast horror lighting, 8k resolution, portrait 9:16",
+      "text_overlay": "THE REAL INCIDENT",
+      "vo_text": "Sabse darawani ghatna tab ghati jab raat ke 3 baje car ka engine achanak band ho gaya aur steering wheel apne aap ghoomne laga. Unke paas bhagne ke siva koi rasta nahi bacha tha!",
+      "sound_cue": "Sudden loud branch snap, aggressive riser, intense rapid heartbeat"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:35–1:50",
+      "target_dur": 15.0,
+      "visual_prompt": "Quiet eerie aftermath shot of NH-8, Jharsa stretch, solitary flickering candle in pitch darkness, cold fog, 8k resolution, portrait 9:16",
+      "text_overlay": "STILL AVOIDED TODAY",
+      "vo_text": "Is hadse ke baad se local highway police patrol bhi aadhi raat ko is stretch par akele rukne ki himmat nahi karti. Kuch raaz aise hote hain jinhe band darwazon ke peeche hi rehne dena behtar hai.",
+      "sound_cue": "Dead silence followed by cold hollow wind"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "visual_prompt": "Total black vignette background with blood red glowing mist, atmospheric cinematic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "PART 32 → DELHI CANTONMENT ROAD",
+      "vo_text": "Agli kahani Delhi ke Delhi Cantonment Road ki hai... jahan aisi cheekh sunayi di jo kisi insaan ki nahi thi. Follow for Part 32!",
+      "sound_cue": "Sub-bass drop into darkness"
+    }
+  ],
+  "tags": [
+    "nh-8jharsastretch",
+    "indianhorror",
+    "realhorrorstories",
+    "horrorstorieshindi",
+    "paranormalinvestigation",
+    "hauntedplacesindia",
+    "ghoststories",
+    "shorts",
+    "gurugram-delhi"
+  ]
+}
