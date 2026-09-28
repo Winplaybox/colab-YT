@@ -141,6 +141,8 @@ def build_theme_overlay_filters(theme, w, h, scale, font_arg, story_data):
             f"drawtext={font_arg}:text='REC ●  02 - 47 - 19 AM':fontsize={f_rec}:fontcolor=0xff3333:x=60:y={y_top},"
             # Top Right: Camcorder Battery & SP mode
             f"drawtext={font_arg}:text='BATT [||||]  NTSC SP':fontsize={f_info}:fontcolor=0xffffff:x=w-text_w-60:y={y_top},"
+            # Top Right Sub: @IndianHorrorTapes Branding Watermark
+            f"drawtext={font_arg}:text='@IndianHorrorTapes':fontsize={int(22 * scale)}:fontcolor=0xffffff@0.65:x=w-text_w-60:y={int(95 * scale)},"
             # Floating glassmorphism bottom evidence title card
             f"drawbox=x=40:y={box_y}:w={w-80}:h={box_h}:color=0x050505@0.80:t=fill,"
             f"drawbox=x=40:y={box_y}:w={w-80}:h={box_h}:color=0xff3333@0.70:t=2,"
@@ -164,6 +166,8 @@ def build_theme_overlay_filters(theme, w, h, scale, font_arg, story_data):
             # Top Red Classified Banner
             f"drawbox=x=0:y=30:w={w}:h={y_top_h}:color=0x7f1d1d@0.90:t=fill,"
             f"drawtext={font_arg}:text='TOP SECRET // ASI RECORD #{num:03d}':fontsize={f_stamp}:fontcolor=0xffffff:x=(w-text_w)/2:y={int(48 * scale)},"
+            # Top Right Watermark under banner
+            f"drawtext={font_arg}:text='DOSSIER // @IndianHorrorTapes':fontsize={int(22 * scale)}:fontcolor=0xd97706@0.80:x=w-text_w-45:y={int(135 * scale)},"
             # Archival File Border
             f"drawbox=x=25:y=25:w={w-50}:h={h-50}:color=0xd97706@0.45:t=2,"
             # Bottom Dossier Data Box
@@ -190,6 +194,8 @@ def build_theme_overlay_filters(theme, w, h, scale, font_arg, story_data):
             f"drawbox=x=0:y=30:w={w}:h={int(80 * scale)}:color=0x022c22@0.85:t=fill,"
             f"drawtext={font_arg}:text='LIVE CCTV - {cam_id}':fontsize={f_cam}:fontcolor=0x34d399:x=50:y={int(48 * scale)},"
             f"drawtext={font_arg}:text='{year}-10-24 03 - 14 - 22':fontsize={f_time}:fontcolor=0x10b981:x=w-text_w-50:y={int(50 * scale)},"
+            # Watermark under CCTV header
+            f"drawtext={font_arg}:text='FEED // @IndianHorrorTapes':fontsize={int(22 * scale)}:fontcolor=0x34d399@0.70:x=50:y={int(125 * scale)},"
             # Target Crosshairs in Center
             f"drawbox=x={int(w/2-25)}:y={int(h/2-1)}:w=50:h=2:color=0x34d399@0.4:t=fill,"
             f"drawbox=x={int(w/2-1)}:y={int(h/2-25)}:w=2:h=50:color=0x34d399@0.4:t=fill,"
@@ -217,6 +223,8 @@ def build_theme_overlay_filters(theme, w, h, scale, font_arg, story_data):
             f"drawbox=x=25:y=25:w={w-50}:h={h-50}:color=0x991b1b@0.65:t=3,"
             # Top Channel Accent
             f"drawtext={font_arg}:text='SHRAAPIT SANKET • EPISODE {num}':fontsize={f_ch}:fontcolor=0xf87171:x=(w-text_w)/2:y={int(60 * scale)},"
+            # Top Right Watermark
+            f"drawtext={font_arg}:text='@IndianHorrorTapes':fontsize={int(24 * scale)}:fontcolor=0xfca5a5@0.75:x=w-text_w-50:y={int(60 * scale)},"
             # Bottom Floating Parchment Card
             f"drawbox=x=40:y={box_y}:w={w-80}:h={box_h}:color=0x1a0507@0.90:t=fill,"
             f"drawbox=x=40:y={box_y}:w={w-80}:h={box_h}:color=0xef4444@0.80:t=2,"
@@ -236,8 +244,9 @@ def build_theme_overlay_filters(theme, w, h, scale, font_arg, story_data):
 
         filters = (
             f"vignette=PI/4,"
-            # Top Minimalist Micro-Brand
+            # Top Minimalist Brand Header
             f"drawtext={font_arg}:text='I N D I A N   H O R R O R   T A P E S':fontsize={f_ch}:fontcolor=0xef4444:x=(w-text_w)/2:y={int(70 * scale)},"
+            f"drawtext={font_arg}:text='@IndianHorrorTapes':fontsize={int(24 * scale)}:fontcolor=0xffffff@0.65:x=(w-text_w)/2:y={int(115 * scale)},"
             # Bottom Sleek Glassmorphism Card
             f"drawbox=x=50:y={box_y}:w={w-100}:h={box_h}:color=0x09090b@0.75:t=fill,"
             f"drawbox=x=50:y={box_y}:w={w-100}:h={box_h}:color=0xef4444@0.60:t=1,"

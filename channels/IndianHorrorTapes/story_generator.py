@@ -334,6 +334,10 @@ HINDI_NAME_MAP = {
 def get_hindi_display_name(raw_name):
     if raw_name in HINDI_NAME_MAP:
         return HINDI_NAME_MAP[raw_name]
+    clean_k = raw_name.replace(",", "").strip().lower()
+    for k, v in HINDI_NAME_MAP.items():
+        if k.replace(",", "").strip().lower() == clean_k:
+            return v
     res = raw_name
     replacements = [
         (" Fort", " किला"),
@@ -793,37 +797,77 @@ def generate_investigative_script(story_info, next_story_info=None):
     clean_loc_tag = loc.split(",")[0].strip().lower().replace(" ", "")
 
     # -------------------------------------------------------------
-    # YOUTUBE SEO SUITE (3 Viral Titles, SEO Description, Pinned Comment, Tags)
+    # ELITE YOUTUBE SEO & CONTENT ENGINEERING BLUEPRINT
     # -------------------------------------------------------------
-    viral_titles = [
-        f"{name}: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. {num} #Shorts",
-        f"Kyu Indian Government Ne {name} Ko Seal Kiya? 🔴 Ep. {num} #Shorts",
-        f"Police FIR #{num}02: {name} Ka Asli Sach 💀 #Shorts"
-    ]
+    name_hi_short = name_hi[:20] if len(name_hi) > 20 else name_hi
+    name_short = name[:20] if len(name) > 20 else name
 
+    # PILLAR 1: PSYCHOLOGICAL TITLES (Strictly Under 60 Chars for Mobile Optimization)
+    t1_fear = f"रात को यहाँ मत रुकना ⚠️ #Shorts"
+    if "road" in name_l or "highway" in name_l or "stretch" in name_l or "expressway" in name_l:
+        t1_fear = f"रात 3 बजे यहाँ लिफ़्ट मत देना ⚠️ #Shorts"
+    elif "station" in name_l or "railway" in name_l or "tunnel" in name_l:
+        t1_fear = f"इस स्टेशन पर कभी मत उतरना ⚠️ #Shorts"
+    elif "village" in name_l or "ruin" in name_l or "beach" in name_l:
+        t1_fear = f"इस वीरान जगह कभी मत जाना ⚠️ #Shorts"
+    elif len(f"{name_hi_short}: रात को मत जाना ⚠️ #Shorts") <= 56:
+        t1_fear = f"{name_hi_short}: रात को मत जाना ⚠️ #Shorts"
+
+    t2_curiosity = f"{name_hi_short} का खौफ़नाक सच 💀 #Shorts"
+    if len(t2_curiosity) > 56:
+        t2_curiosity = f"{name_short} Ka Asli Sach 💀 #Shorts"
+
+    t3_authority = f"ASI ने इसे क्यों सील किया? 🔴 #Shorts"
+    if "road" in name_l or "highway" in name_l:
+        t3_authority = f"Police FIR #{num}02: खौफ़नाक सच 💀 #Shorts"
+    elif "railway" in name_l or "station" in name_l:
+        t3_authority = f"रेलवे ने इसे क्यों बंद किया? 🔴 #Shorts"
+    elif "hospital" in name_l or "asylum" in name_l:
+        t3_authority = f"प्रशासन ने इसे क्यों सील किया? 🔴 #Shorts"
+
+    t4_anomaly = f"{name_hi_short}: {dossier['year']} की खौफ़नाक रात 💀 #Shorts"
+    if len(t4_anomaly) > 56:
+        t4_anomaly = f"दीवार से किसकी आवाज़ आई? ⚠️ #Shorts"
+
+    t5_bilingual = f"{name_short} Real Horror Incident 💀 #Shorts"
+    if len(t5_bilingual) > 56:
+        t5_bilingual = f"{name_short} Horror Tape 💀 #Shorts"
+
+    raw_viral_titles = [t1_fear, t2_curiosity, t3_authority, t4_anomaly, t5_bilingual]
+    viral_titles = []
+    for vt in raw_viral_titles:
+        if len(vt) > 58:
+            vt = vt[:50].rsplit(" ", 1)[0] + " ⚠️ #Shorts"
+        viral_titles.append(vt)
+
+    # Primary Title Selection based on archetype
     if arch == "POLICE_DISPATCH_LOG":
-        primary_title = f"Police FIR #{num}02: {name} Ka Asli Sach 💀 #Shorts"
+        primary_title = viral_titles[2]
     elif arch == "ARCHIVAL_EXPEDITION":
-        primary_title = f"Kyu Government Ne {name} Ko Ban Kiya? 🔴 Ep. {num} #Shorts"
+        primary_title = viral_titles[1]
     elif arch == "FORBIDDEN_ZONE_BREACH":
-        primary_title = f"{name}: Is Khandar Mein Kadam Mat Rakhna ⚠️ Ep. {num} #Shorts"
-    elif arch == "SOLITARY_TRAVELER_TAPE":
-        primary_title = f"{name}: Raat Ko Yahan Akele Mat Rukna 💀 Ep. {num} #Shorts"
-    elif arch == "LOCAL_ELDER_TESTIMONY":
-        primary_title = f"{name}: Is Awaaz Ka Jawab Mat Dena ⚠️ Ep. {num} #Shorts"
-    else:
         primary_title = viral_titles[0]
+    elif arch == "SOLITARY_TRAVELER_TAPE":
+        primary_title = viral_titles[0]
+    else:
+        primary_title = viral_titles[1]
 
-    if len(primary_title) > 95:
-        primary_title = primary_title[:95]
+    # PILLAR 2: HIGH-CTR THUMBNAIL CONCEPT (Rule of Thirds & Split-Second Comprehension)
+    thumbnail_concept = (
+        f"YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of {name} in {loc} "
+        f"framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point "
+        f"in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16"
+    )
 
-    seo_description = f"""⚠️ EPISODE {num}: {name} — {sub}
-📍 Real Location: {loc}
-📜 Archival Reference: {dossier['forensic_anchor']} ({dossier['year']})
+    # PILLAR 4: METADATA STACK (Frontloaded First 2 Lines & Deep Semantic Keywords)
+    sub_clean = sub if sub else "Khaufnaak Raaz"
+    seo_description = f"""⚠️ {name} ({name_hi}) Real Horror Story in Hindi | {loc} Paranormal Incident ({dossier['year']})
+क्या सच में {name_hi} में {sub_clean} का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।
 
-Kehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. {name} ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...
+📜 ऐतिहासिक संदर्भ एवं अभिलेख: {dossier['forensic_anchor']} ({dossier['year']})
+{loc} के {name} से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष {dossier['year']} में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।
 
-⏱️ CASE TIMESTAMPS:
+⏱️ CASE FILE CHAPTERS:
 0:00 - Declassified Warning & Cold Open
 0:08 - The Historical Dossier ({dossier['year']})
 0:32 - The Documented Sensory Anomaly
@@ -831,20 +875,60 @@ Kehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sun
 1:36 - Official Forensic Aftermath & Government Seal
 1:50 - Next Case File Preview (Part {next_num})
 
-👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!
+👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!
 Subscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.
 
 ---
 #Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #{clean_loc_tag}
 """
 
-    pinned_comment = (
-        f"अगर आप आधी रात को {loc_hi} के इस इलाके में अकेले हों और आपकी गाड़ी अचानक बंद हो जाए... "
-        f"तो आप क्या करेंगे? 1. दरवाज़ा खोलकर मदद मांगेंगे या 2. गाड़ी के भीतर बंद रहकर सुबह होने का इंतज़ार करेंगे? "
-        f"सच बताना कमेंट्स में 👇"
-    )
+    # PILLAR 5: STORY-SPECIFIC ENGAGEMENT TRIGGERS (Pinned Comment Debate)
+    if "fort" in name_l or "palace" in name_l or "mahal" in name_l or "kila" in name_l:
+        pinned_comment = (
+            f"अगर आपको एक रात {name_hi} के उस वीरान तहखाने में अकेले रुकने के 10 लाख रुपये मिलें... "
+            f"तो क्या आप रुकेंगे? 1. हाँ (पैसों के लिए कुछ भी) 2. कभी नहीं (ज़िंदगी से बढ़कर कुछ नहीं)! अपनी राय कमेंट्स में सच-सच बताना 👇"
+        )
+    elif "road" in name_l or "highway" in name_l or "ghat" in name_l or "expressway" in name_l:
+        pinned_comment = (
+            f"अगर रात 3 बजे {loc_hi} के इस सुनसान रास्ते पर आपकी गाड़ी के सामने कोई लिफ़्ट मांगे... "
+            f"तो आप क्या करेंगे? 1. गाड़ी रोकेंगे या 2. रफ़्तार बढ़ाकर सीधे निकल जाएंगे? कमेंट्स में सच बताएं 👇"
+        )
+    elif "station" in name_l or "railway" in name_l or "tunnel" in name_l:
+        pinned_comment = (
+            f"क्या आप मानते हैं कि {name_hi} पर जो देखा गया वो सिर्फ़ आंखों का धोखा था या सच में कोई परलौकिक शक्ति? "
+            f"कमेंट्स में अपनी राय ज़रूर दें 👇"
+        )
+    elif "village" in name_l or "ruin" in name_l or "town" in name_l:
+        pinned_comment = (
+            f"अगर आपको {name_hi} के इस वीरान खंडहर में रात बिताने की चुनौती मिले, तो क्या आप जाएंगे? "
+            f"1. हाँ 2. बिल्कुल नहीं! कमेंट्स में बताएं 👇"
+        )
+    elif "hospital" in name_l or "asylum" in name_l:
+        pinned_comment = (
+            f"अगर रात को {name_hi} के बंद कमरे से अचानक किसी के कराहने की आवाज़ आए... "
+            f"तो क्या आप अंदर जाकर देखेंगे? 1. हाँ 2. उल्टे पैर भागेंगे! कमेंट्स में बताएं 👇"
+        )
+    else:
+        pinned_comment = (
+            f"क्या आप मानते हैं कि {loc_hi} के {name_hi} में घटित इस रहस्यमयी घटना के पीछे कोई वैज्ञानिक कारण है "
+            f"या सच में कोई अनसुलझी रूह? कमेंट्स में अपनी राय ज़रूर बताएं 👇"
+        )
 
-    tags = [
+    # STORY-TAILORED DYNAMIC SEARCH TAGS (Story Specific + Regional + Broad Viral Horror)
+    story_tags = [
+        f"{name.lower()} horror story",
+        f"{name.lower()} real story",
+        f"{name.lower()} haunted",
+        f"{name.lower()} ghost",
+        f"{name.lower()} mystery in hindi",
+        f"{name.lower()} incident",
+        f"{name.lower()} ka sach",
+        f"{name_hi} की असली कहानी",
+        f"{name_hi} का भूत",
+        f"{name_hi} का रहस्य",
+        f"{loc.lower()} horror stories",
+        f"haunted places in {loc.lower()}",
+        f"{loc_clean.lower()} haunted",
         "indian horror tapes",
         "bhoot ki kahani",
         "real horror stories in hindi",
@@ -858,25 +942,20 @@ Subscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.
         "darr",
         "bhoot pret",
         "scary horror stories",
-        "haunted fort india",
-        "creepy hindi kahaniya",
         "khooni raaz",
         "unsolved mysteries hindi",
         "trending horror shorts",
         "viral horror shorts",
-        "horror story in hindi",
-        "indian paranormal",
-        "shorts",
-        slug.replace("_", ""),
-        clean_loc_tag,
-        f"{name.lower()} real story",
-        "mrballen hindi"
+        "shorts"
     ]
-
-    thumbnail_concept = (
-        f"Ultra-high contrast horror portrait thumbnail, terrifying silhouette of {name} under dark crimson and moonlight fog, "
-        f"single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
-    )
+    seen_tags = set()
+    dedup_story_tags = []
+    for st in story_tags:
+        clean_st = st.strip()
+        if clean_st.lower() not in seen_tags:
+            seen_tags.add(clean_st.lower())
+            dedup_story_tags.append(clean_st)
+    tags = dedup_story_tags
 
     return {
         "story_number": num,

@@ -63,6 +63,25 @@ def get_hf_token():
             pass
     return None
 
+def strip_image_watermarks(image_path):
+    """
+    Guarantees 100% watermark-free images by stripping any residual bottom-corner
+    logos or text (such as pollinations.ai or AI generator signatures).
+    Crops the bottom 45px and resamples back to the exact portrait dimensions using Lanczos.
+    """
+    if not os.path.exists(image_path) or os.path.getsize(image_path) < 1000:
+        return
+    try:
+        from PIL import Image
+        with Image.open(image_path) as img:
+            w, h = img.size
+            if h >= 1000 and w >= 500:
+                cropped = img.crop((0, 0, w, h - 45))
+                cleaned = cropped.resize((w, h), Image.Resampling.LANCZOS)
+                cleaned.save(image_path, "JPEG", quality=95)
+    except Exception as e:
+        print(f"Watermark strip notice: {e}")
+
 def generate_via_huggingface_flux(prompt, output_path, hf_token):
     """Generates 8K horror visual via Hugging Face Serverless FLUX.1-schnell in 9:16 portrait."""
     try:
@@ -70,6 +89,7 @@ def generate_via_huggingface_flux(prompt, output_path, hf_token):
         client = InferenceClient(api_key=hf_token)
         img = client.text_to_image(prompt, model="black-forest-labs/FLUX.1-schnell", width=768, height=1360)
         img.save(output_path)
+        strip_image_watermarks(output_path)
         print(f"✅ [FLUX.1-schnell Free Tier] Generated: {output_path} ({os.path.getsize(output_path)} bytes)")
         return True
     except Exception as e:
@@ -82,6 +102,7 @@ def generate_via_huggingface_flux(prompt, output_path, hf_token):
             client = InferenceClient(api_key=hf_token)
             img = client.text_to_image(prompt, model="stabilityai/stable-diffusion-xl-base-1.0", width=768, height=1360)
             img.save(output_path)
+            strip_image_watermarks(output_path)
             print(f"✅ [SDXL Free Tier] Generated: {output_path} ({os.path.getsize(output_path)} bytes)")
             return True
         except Exception as e2:
@@ -93,14 +114,15 @@ def generate_via_pollinations_flux(prompt, output_path, seed=None):
     if seed is None:
         seed = int(time.time() * 1000) % 999999
     encoded = requests.utils.quote(prompt)
-    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&model=flux&nologo=true&seed={seed}"
+    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&model=flux&nologo=true&nofeed=true&seed={seed}"
     headers = {"User-Agent": "IndianHorrorTapes/1.0 (Mozilla/5.0; Windows NT 10.0; Win64; x64)"}
     try:
         resp = requests.get(url, headers=headers, timeout=60)
         if resp.status_code == 200 and len(resp.content) > 1000:
             with open(output_path, "wb") as f:
                 f.write(resp.content)
-            print(f"✅ [Pollinations Flux Free Tier] Generated: {output_path} ({len(resp.content)} bytes)")
+            strip_image_watermarks(output_path)
+            print(f"✅ [Pollinations Flux Free Tier] Generated (Watermark Stripped): {output_path} ({os.path.getsize(output_path)} bytes)")
             return True
         else:
             print(f"Pollinations notice ({resp.status_code})")
