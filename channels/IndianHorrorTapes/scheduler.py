@@ -376,7 +376,7 @@ def update_state(story_number, video_id, publish_at):
         json.dump(state, f, indent=2)
     print(f"📈 State updated. Next story will be: #{next_story}")
 
-def run_schedule(story_number=None, quality="8k", force_immediate=False):
+def run_schedule(story_number=None, quality="4k", force_immediate=False):
     """
     Main orchestration routine:
     1. Loads current story definition
@@ -438,6 +438,6 @@ def run_schedule(story_number=None, quality="8k", force_immediate=False):
 
 if __name__ == "__main__":
     s_arg = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else None
-    q_arg = sys.argv[2] if len(sys.argv) > 2 else "8k"
+    q_arg = sys.argv[2] if len(sys.argv) > 2 else "4k"
     imm_arg = "--immediate" in sys.argv
     run_schedule(story_number=s_arg, quality=q_arg, force_immediate=imm_arg)
