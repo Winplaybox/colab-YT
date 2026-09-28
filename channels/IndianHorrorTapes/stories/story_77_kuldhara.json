@@ -1,0 +1,73 @@
+{
+  "story_number": 77,
+  "title": "Kuldhara — Ek Raat Mein Gayab Gaon",
+  "location": "Jaisalmer, Rajasthan",
+  "tagline": "1500+ Paliwal Brahmins vanished overnight, curse legend",
+  "category": "ABANDONED VILLAGES & GHOST TOWNS",
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "visual_prompt": "Establishing dark shot of Kuldhara, Jaisalmer, Rajasthan, cold mist, blood red flicker lighting, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "KULDHARA",
+      "vo_text": "Ye kahani sach hai... Jaisalmer, Rajasthan ki is jagah ko log aaj bhi yaad karke darte hain.",
+      "sound_cue": "Low eerie drone + heartbeat"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:30",
+      "target_dur": 22.0,
+      "visual_prompt": "Wide establishing cinematic shot of Kuldhara in Jaisalmer, Rajasthan, ancient weathered architecture, fading dusk into twilight, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "Jaisalmer, Rajasthan — ABANDONED VILLAGES & GHOST TOWNS",
+      "vo_text": "Kaha jaata hai, Jaisalmer, Rajasthan ke is ilaqe mein saalon se ek ajeeb sa sannata rehta hai. 1500+ paliwal brahmins vanished overnight, curse legend.",
+      "sound_cue": "Ambient wind and eerie drone"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:30–1:00",
+      "target_dur": 30.0,
+      "visual_prompt": "Slow POV walking shot entering Kuldhara, dim flickering lantern, deep terrifying shadows behind pillars, dust motes in beam, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "First Warning Signs",
+      "vo_text": "Wahan se guzarne wale log kehte hain — jaise hi andhera hota hai, hawa ka tapman achanak gir jaata hai. Aisa lagta hai jaise koi apke bilkul peeche khada ho kar saans le raha ho.",
+      "sound_cue": "Slow footsteps, distant cold whisper"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:00–1:35",
+      "target_dur": 35.0,
+      "visual_prompt": "Tense shaky camera shot at Kuldhara, sudden appearance of a dark sinister silhouette crossing through mist, cinematic horror, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "The Unexplained Incident",
+      "vo_text": "Ek baar raat ko yahan aane wale logon ne daawa kiya — unke phone ka camera achanak band ho gaya, aur andhere mein unhe ajeeb si cheekh sunayi di. Subah tak wahan sirf unka samaan bacha tha.",
+      "sound_cue": "Sudden sharp snap, heartbeat accelerates"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:35–1:50",
+      "target_dur": 15.0,
+      "visual_prompt": "Desolate and quiet night shot of Kuldhara, single lantern flickering on ancient ground, heavy fog rolling, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "Locals Still Avoid After Sunset",
+      "vo_text": "Aaj bhi locals aadhi raat ko yahan jaane se mana karte hain. Kehte hain kuch raaz aise hote hain jinhe andhere mein hi rehne dena chahiye.",
+      "sound_cue": "Faint lingering drone"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "visual_prompt": "Vignette black screen with red glowing text and fog silhouette, cinematic horror, portrait 9:16",
+      "text_overlay": "PART 78 → KHAMEDA & KULDHARA CLUSTERS",
+      "vo_text": "Agli kahani Khameda & Kuldhara clusters ki hai... wo isse bhi zyada darawani hai. Dekhte rehna.",
+      "sound_cue": "Heartbeat fades into darkness"
+    }
+  ],
+  "tags": [
+    "kuldhara",
+    "indianhorror",
+    "horrorstories",
+    "paranormal",
+    "ghoststory",
+    "shorts",
+    "hauntedindia",
+    "jaisalmer"
+  ]
+}

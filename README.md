@@ -10,6 +10,7 @@ Autonomous, multi-channel video production and scheduling platform architected f
 |---|---|:---:|---|---|
 | **TigerVlogs-2026** | Indian Street Food & Cultural Exploration | 1 Channel | 16:9 Long-form + 9:16 Shorts | [`channels/TigerVlogs-2026/`](channels/TigerVlogs-2026/) |
 | **MindNest Tales** | 3D Pixar Cute Animal Moral Stories | **11 Localized Channels** | 9:16 8K/4K Ultra-HD Shorts | [`channels/MindNestTales/`](channels/MindNestTales/) |
+| **IndianHorrorTapes** | Real Indian Horror Stories & Paranormal Legends | 1 Channel | 9:16 8K/4K Ultra-HD Shorts | [`channels/IndianHorrorTapes/`](channels/IndianHorrorTapes/) |
 
 ---
 
@@ -90,16 +91,46 @@ The stories cycle automatically every single day across 6 thematic playlists:
 
 ---
 
+## 👻 IndianHorrorTapes — 100+ Real Indian Horror Stories Universe
+
+Authentic, terrifying, 2-minute 9:16 portrait YouTube Shorts engine producing **103 Real Indian Horror Stories** across 10 terrifying categories:
+
+* **Channel Name:** [IndianHorrorTapes](https://www.youtube.com/channel/UCNRr8A9gVZQZJi1eMKiXIJw)
+* **Channel ID:** `UCNRr8A9gVZQZJi1eMKiXIJw`
+* **Release Schedule:** **Wednesday & Sunday at 9:00 PM IST** (`15:30 UTC`)
+* **Format:** 9:16 Portrait Ultra-HD Shorts (`8k` / `4k` / `1080p`)
+* **Audio Engine:** Expressive Hinglish studio neural narration (whisper intro/outro, tense build-up, punchy incident) + procedurally synthesized horror ambient drones & heartbeat pulse!
+* **Visuals:** 8K hyper-detailed photorealistic horror imagery (FLUX.1-schnell / Pollinations Flux / Wikimedia Historical Archives) with smooth cinematic crossfades and high-retention typographic branding.
+
+### 🏛️ 10 Thematic Story Categories (103 Episodes Master Bank):
+1. **Haunted Forts & Palaces (15):** Bhangarh Fort, Golconda, Shaniwar Wada, Jhansi Fort, Rani Kamlapati, Malcha Mahal, etc.
+2. **Haunted Houses & Buildings (15):** GP Block Meerut, D'Souza Chawl, Lal Bangla, Hastings House, Vrindavan Society, Savoy Hotel, etc.
+3. **Haunted Roads & Highways (10):** NH-8 Jharsa, Delhi Cantt Road, Khandala Ghat, Sinhagad Road, ECR, etc.
+4. **Haunted Railway Stations & Tunnels (8):** Begunkodor, Barog Tunnel No 33, Chittoor Station, Howrah Bridge ghats, etc.
+5. **Haunted Beaches, Waters & Forests (10):** Dumas Beach, Jatinga Valley, Aleya Ghost Lights, Sanjay Van, etc.
+6. **Haunted Schools & Hospitals (8):** Victoria Boys' Dow Hill, Ranchi Asylum, JJ Hospital old ward, etc.
+7. **Urban Legends & Modern Ghost Stories (10):** Nale Ba, Ramoji Film City night sets, Gudiya, Vanishing Hitchhiker, etc.
+8. **Abandoned Villages & Ghost Towns (6):** Kuldhara, Dhanushkodi, Shettihalli submerged church, etc.
+9. **Graveyards, Tombs & Religious Sites (8):** Jamali Kamali, Feroz Shah Kotla, Agrasen ki Baoli, etc.
+10. **Regional & Lesser-Known Legends (13):** Cellular Jail, Warangal Fort, Champaner-Pavagadh, Nahargarh, etc.
+
+---
+
 ## ⚡ Autonomous 24/7 GitHub Actions Cloud Crons
 
-Both channel networks feature dedicated, independent daily crons:
+All three channel networks feature dedicated, independent schedulers:
 
-### 1. MindNest Tales Daily Scheduler
+### 1. IndianHorrorTapes Bi-Weekly Scheduler
+* **Workflow:** [`.github/workflows/indian_horror_tapes_scheduler.yml`](.github/workflows/indian_horror_tapes_scheduler.yml)
+* **Schedule:** Every **Wednesday & Sunday at 14:00 UTC** (**7:30 PM IST**).
+* **Action:** Reads `state.json`, renders the next 8K/4K horror story in 9:16 portrait with studio narration and procedural soundscape, attaches custom 8K thumbnail, and auto-schedules to go live exactly at **9:00 PM IST** via YouTube `publishAt`!
+
+### 2. MindNest Tales Daily Scheduler
 * **Workflow:** [`.github/workflows/mindnest_tales_scheduler.yml`](.github/workflows/mindnest_tales_scheduler.yml)
-* **Schedule:** Daily at `04:00 UTC` (**9:30 AM IST**).
+* **Schedule:** Wednesday, Saturday, Sunday at `02:00 UTC` (**7:30 AM IST**).
 * **Action:** Reads `state.json`, renders the next daily story with smooth `xfade` transitions in 8K/4K across all 11 languages, attaches custom thumbnails, uploads to YouTube, updates the Google Sheet, advances `current_story`, and pushes the state back to GitHub!
 
-### 2. TigerVlogs-2026 Daily Scheduler
+### 3. TigerVlogs-2026 Daily Scheduler
 * **Workflow:** [`.github/workflows/tigervlogs_2026_scheduler.yml`](.github/workflows/tigervlogs_2026_scheduler.yml)
 * **Schedule:** Daily at `00:00 UTC` (**5:30 AM IST**).
 * **Action:** Produces and schedules the 3 daily food slots (1:00 PM IST Long-Form, 6:00 PM IST Short, 8:45 PM IST Long-Form) up to December 2030.
@@ -110,10 +141,12 @@ Both channel networks feature dedicated, independent daily crons:
 
 Run any batch interactively in Google Colab with GPU/CPU acceleration:
 
-1. **MindNest Tales Colab Hub:** Open [`MindNestTales_Automation.ipynb`](MindNestTales_Automation.ipynb) in Colab.
+1. **IndianHorrorTapes Colab Hub:** Open [`IndianHorrorTapes_Automation.ipynb`](IndianHorrorTapes_Automation.ipynb) in Colab.
+   - Select Story # (1–103), choose quality (`8k` / `4k` / `1080p`), preview the video with inline player, and schedule to YouTube!
+2. **MindNest Tales Colab Hub:** Open [`MindNestTales_Automation.ipynb`](MindNestTales_Automation.ipynb) in Colab.
    - Select Story # (1–51), target language (`all` or single), and quality (`8k` / `4k`).
    - Click Run to produce, preview, upload, and update Google Sheets!
-2. **TigerVlogs Colab Hub:** Open [`channels/TigerVlogs-2026/youtube_automation_pipeline.ipynb`](channels/TigerVlogs-2026/youtube_automation_pipeline.ipynb).
+3. **TigerVlogs Colab Hub:** Open [`channels/TigerVlogs-2026/youtube_automation_pipeline.ipynb`](channels/TigerVlogs-2026/youtube_automation_pipeline.ipynb).
 
 ---
 
@@ -123,13 +156,18 @@ To enable autonomous cloud uploads without touching your local PC:
 
 1. In GitHub Repository: Go to **Settings -> Secrets and variables -> Actions -> New repository secret**.
 2. Add the following secrets:
+   - `INDIANHORRORTAPES_TOKEN_JSON`: OAuth token JSON for IndianHorrorTapes.
+   - `INDIANHORRORTAPES_CLIENT_SECRET_JSON`: Client secret JSON for IndianHorrorTapes.
    - `MINDNEST_TOKEN_JSON`: Master OAuth token JSON for MindNest Tales channels.
    - `MINDNEST_CLIENT_SECRET_JSON`: The Google OAuth client secret.
    - `TIGERVLOGS_TOKEN_JSON`: OAuth token JSON for TigerVlogs-2026.
-   - `GOOGLE_SHEETS_CREDENTIALS_JSON` *(Optional)*: Service account JSON to update Google Sheets from GitHub Actions.
+   - `HF_TOKEN` *(Optional)*: Free Hugging Face token for FLUX.1 8K image generation.
 
 To authenticate locally and generate your tokens in seconds:
 ```bash
+# IndianHorrorTapes
+python channels/IndianHorrorTapes/authenticate_youtube.py
+
 # MindNest Tales (all 11 channels)
 python channels/MindNestTales/authenticate_channels.py master
 

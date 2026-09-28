@@ -10,6 +10,8 @@ credentials/
 
 # Downloaded videos and data
 downloaded_videos/
+output/
+temp_render/
 *.mp4
 *.m4a
 *.webm

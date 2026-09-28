@@ -1,0 +1,33 @@
+{
+  "channel_id": "UCNRr8A9gVZQZJi1eMKiXIJw",
+  "channel_name": "IndianHorrorTapes",
+  "channel_handle": "@IndianHorrorTapes",
+  "channel_url": "https://www.youtube.com/channel/UCNRr8A9gVZQZJi1eMKiXIJw",
+  "niche": "Real Indian Horror Stories, Urban Legends & Paranormal Mysteries",
+  "language": "Hinglish",
+  "format": "9:16 Portrait Shorts",
+  "target_duration_seconds": 120,
+  "default_category_id": "24",
+  "default_voice": "hi-IN-MadhurNeural",
+  "voice_rate": "-2%",
+  "voice_pitch": "-1Hz",
+  "schedule": {
+    "days_of_week": [2, 6],
+    "days_names": ["Wednesday", "Sunday"],
+    "time_ist": "21:00",
+    "time_utc": "15:30:00.000Z"
+  },
+  "resolutions": {
+    "8k": { "width": 4320, "height": 7680 },
+    "4k": { "width": 2160, "height": 3840 },
+    "1080p": { "width": 1080, "height": 1920 }
+  },
+  "default_quality": "8k",
+  "branding": {
+    "watermark": "@IndianHorrorTapes",
+    "series_title": "INDIAN HORROR TAPES",
+    "primary_color": "0xff1e27",
+    "secondary_color": "0xf8fafc",
+    "ambient_color": "0x09050d"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "story_number": 1,
+  "title": "Bhangarh Fort — Sabse Paapi Kila",
+  "location": "Bhangarh Fort, Alwar, Rajasthan",
+  "tagline": "ASI-banned after sunset; tantrik's curse on a princess",
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "visual_prompt": "Drone shot of ancient Bhangarh Fort crumbling ruins at dusk, dense fog, eerie dark sky, volumetric red moonlight, hyper-realistic, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "BHANGARH FORT",
+      "vo_text": "Ye Rajasthan ka ek kila hai... jahan Archaeological Survey of India ne khud likha hai — sunset ke baad andar jaana mana hai.",
+      "sound_cue": "Wind howling, low drone"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:30",
+      "target_dur": 22.0,
+      "visual_prompt": "Walking POV shot through broken stone gates of Bhangarh Fort, golden hour sunlight fading into cold twilight, ancient desolate courtyards, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "16th Century — Rajasthan",
+      "vo_text": "Kehte hain, saalon pehle ek tantrik ne rani se pyaar kiya tha. Rani ne mana kar diya, aur gusse mein tantrik ne pura kila hi shraap de diya.",
+      "sound_cue": "Deep eerie ambient drone"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:30–1:00",
+      "target_dur": 30.0,
+      "visual_prompt": "Deep shadows moving in empty ruined palace rooms, dust motes in flashlight beam, slow zoom on broken arched windows, sinister darkness, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "Unexplained Sounds After Sunset",
+      "vo_text": "Aaj bhi log kehte hain — raat ko yahan awaazein aati hain. Chudiyon ki jhankaar, kisi ke rone ki awaaz... lekin koi dikhta nahi.",
+      "sound_cue": "Distant bangles jingling, faint whisper"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:00–1:35",
+      "target_dur": 35.0,
+      "visual_prompt": "Tense flashlight beam illuminating a fast-moving dark shadow crossing behind an ancient stone pillar, camera shake, chilling mystery, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "The 2010 Incident",
+      "vo_text": "2010 mein kuch trekkers raat rukne ki koshish kar rahe the fort ke bahar. Subah unme se ek ka phone mila — andar, us jagah jahan koi jaa hi nahi sakta tha.",
+      "sound_cue": "Sudden silence, then a loud branch snap and heartbeat"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:35–1:50",
+      "target_dur": 15.0,
+      "visual_prompt": "Single flashlight beam piercing darkness on the rusted ASI iron warning board at Bhangarh fort gate, cold mist, slow pan, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "Fact: ASI officially bans entry after 6 PM",
+      "vo_text": "Aaj bhi ASI ka board wahin khada hai. Sunset ke baad, wahan sirf sannata hai... ya shayad kuch aur bhi.",
+      "sound_cue": "Slow atmospheric drone"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "visual_prompt": "Total darkness with faint red glowing mist and silhouettes of abandoned palace arches fading to black, photorealistic horror, 8k resolution, portrait 9:16",
+      "text_overlay": "PART 2 → DUMAS BEACH",
+      "vo_text": "Agli kahani ek beach ki hai... jahan log raat ko akele jaana bhool jaate hain. Agla episode zaroor dekhein.",
+      "sound_cue": "Heartbeat fades into silence"
+    }
+  ],
+  "tags": [
+    "bhangarh",
+    "bhangarhfort",
+    "indianhorror",
+    "rajasthan",
+    "horrorstories",
+    "shorts",
+    "hauntedfort",
+    "asi",
+    "tantrik"
+  ]
+}

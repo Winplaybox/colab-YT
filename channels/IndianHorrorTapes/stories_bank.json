@@ -1,0 +1,1032 @@
+[
+  {
+    "story_number": 1,
+    "title": "Bhangarh Fort — Sabse Paapi Kila",
+    "name": "Bhangarh Fort",
+    "subtitle": "Sabse Paapi Kila",
+    "location": "Alwar, Rajasthan",
+    "hook": "ASI-banned after sunset; tantrik's curse on a princess",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "bhangarh_fort"
+  },
+  {
+    "story_number": 2,
+    "title": "Golconda Fort — Rani Ki Awaaz",
+    "name": "Golconda Fort",
+    "subtitle": "Rani Ki Awaaz",
+    "location": "Hyderabad, Telangana",
+    "hook": "echoes and whispers in the old citadel ruins",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "golconda_fort"
+  },
+  {
+    "story_number": 3,
+    "title": "Shaniwar Wada — Kaka Mala Vachva",
+    "name": "Shaniwar Wada",
+    "subtitle": "Kaka Mala Vachva",
+    "location": "Pune, Maharashtra",
+    "hook": "cries of a murdered young prince heard on full moons",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "shaniwar_wada"
+  },
+  {
+    "story_number": 4,
+    "title": "Jhansi Fort — Raat Ka Pehredaar",
+    "name": "Jhansi Fort",
+    "subtitle": "Raat Ka Pehredaar",
+    "location": "Jhansi, UP",
+    "hook": "Rani Lakshmibai's spirit said to guard the fort at night",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "jhansi_fort"
+  },
+  {
+    "story_number": 5,
+    "title": "Rani Kamlapati Palace — Rani Ka Inteqaam",
+    "name": "Rani Kamlapati Palace",
+    "subtitle": "Rani Ka Inteqaam",
+    "location": "Bhopal, MP",
+    "hook": "betrayal and death of a queen linger in the halls",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "rani_kamlapati_palace"
+  },
+  {
+    "story_number": 6,
+    "title": "Fatehpur Sikri — Khaali Mehal Ka Raaz",
+    "name": "Fatehpur Sikri",
+    "subtitle": "Khaali Mehal Ka Raaz",
+    "location": "Agra, UP",
+    "hook": "abandoned capital with unexplained cold spots",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "fatehpur_sikri"
+  },
+  {
+    "story_number": 7,
+    "title": "Brijraj Bhawan Palace — Major Burton Ka Saya",
+    "name": "Brijraj Bhawan Palace",
+    "subtitle": "Major Burton Ka Saya",
+    "location": "Kota, Rajasthan",
+    "hook": "haunted by a British officer killed in 1857",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "brijraj_bhawan_palace"
+  },
+  {
+    "story_number": 8,
+    "title": "Malcha Mahal — Begum Wilayat Ka Shraap",
+    "name": "Malcha Mahal",
+    "subtitle": "Begum Wilayat Ka Shraap",
+    "location": "Delhi",
+    "hook": "abandoned princess and her guard dogs, mysterious deaths",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "malcha_mahal"
+  },
+  {
+    "story_number": 9,
+    "title": "Neemrana Fort — Laapata Fauji",
+    "name": "Neemrana Fort",
+    "subtitle": "Laapata Fauji",
+    "location": "Rajasthan",
+    "hook": "old battle-ground legends of wandering soldiers",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "neemrana_fort"
+  },
+  {
+    "story_number": 10,
+    "title": "Gwalior Fort — Jauhar Ki Aag",
+    "name": "Gwalior Fort",
+    "subtitle": "Jauhar Ki Aag",
+    "location": "MP",
+    "hook": "mass self-immolation site, said to echo cries",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "gwalior_fort"
+  },
+  {
+    "story_number": 11,
+    "title": "Purana Qila — Qile Ka Jinn",
+    "name": "Purana Qila",
+    "subtitle": "Qile Ka Jinn",
+    "location": "Delhi",
+    "hook": "jinns and shadow figures reported near the lake",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "purana_qila"
+  },
+  {
+    "story_number": 12,
+    "title": "Bidar Fort — Tehkhane Ki Cheekhein",
+    "name": "Bidar Fort",
+    "subtitle": "Tehkhane Ki Cheekhein",
+    "location": "Karnataka",
+    "hook": "underground tunnels with reported strange sounds",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "bidar_fort"
+  },
+  {
+    "story_number": 13,
+    "title": "Chittorgarh Fort — Padmini Ka Saya",
+    "name": "Chittorgarh Fort",
+    "subtitle": "Padmini Ka Saya",
+    "location": "Rajasthan",
+    "hook": "jauhar legend, reflections seen in the pond",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "chittorgarh_fort"
+  },
+  {
+    "story_number": 14,
+    "title": "Daulatabad Fort — Andheri Bhoolbhulaiya",
+    "name": "Daulatabad Fort",
+    "subtitle": "Andheri Bhoolbhulaiya",
+    "location": "Maharashtra",
+    "hook": "dark tunnel said to trap unfaithful visitors",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "daulatabad_fort"
+  },
+  {
+    "story_number": 15,
+    "title": "Kangra Fort — Khandahar Ki Parchhai",
+    "name": "Kangra Fort",
+    "subtitle": "Khandahar Ki Parchhai",
+    "location": "Himachal Pradesh",
+    "hook": "earthquake ruins with reported apparitions",
+    "category": "HAUNTED FORTS & PALACES",
+    "slug": "kangra_fort"
+  },
+  {
+    "story_number": 16,
+    "title": "GP Block, Meerut — Laal Saari Wali Aurat",
+    "name": "GP Block, Meerut",
+    "subtitle": "Laal Saari Wali Aurat",
+    "location": "UP",
+    "hook": "locked colonial bungalow, woman in red at the window",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "gp_block_meerut"
+  },
+  {
+    "story_number": 17,
+    "title": "D'Souza Chawl — Khoon Ka Kuan",
+    "name": "D'Souza Chawl",
+    "subtitle": "Khoon Ka Kuan",
+    "location": "Mumbai",
+    "hook": "ghost of a woman who drowned in the well, still seen near a fig tree",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "dsouza_chawl"
+  },
+  {
+    "story_number": 18,
+    "title": "Lal Bangla — Grahan Ki Raat",
+    "name": "Lal Bangla",
+    "subtitle": "Grahan Ki Raat",
+    "location": "Naya Raipur, Chhattisgarh",
+    "hook": "abandoned villa, 1994 lunar eclipse tragedy",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "lal_bangla"
+  },
+  {
+    "story_number": 19,
+    "title": "Hastings House — Warren Hastings Ka Ghoda",
+    "name": "Hastings House",
+    "subtitle": "Warren Hastings Ka Ghoda",
+    "location": "Kolkata",
+    "hook": "old governor's residence, now a women's college with reported sightings",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "hastings_house"
+  },
+  {
+    "story_number": 20,
+    "title": "Vrindavan Society — Band Flat Ka Raaz",
+    "name": "Vrindavan Society",
+    "subtitle": "Band Flat Ka Raaz",
+    "location": "Thane, Mumbai",
+    "hook": "flat where a family vanished, still sealed",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "vrindavan_society"
+  },
+  {
+    "story_number": 21,
+    "title": "Writers' Building — 5th Floor Ka Sannata",
+    "name": "Writers' Building",
+    "subtitle": "5th Floor Ka Sannata",
+    "location": "Kolkata",
+    "hook": "colonial-era ghost stories among staff",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "writers_building"
+  },
+  {
+    "story_number": 22,
+    "title": "South Park Street Cemetery — Purani Qabron Ka Darr",
+    "name": "South Park Street Cemetery",
+    "subtitle": "Purani Qabron Ka Darr",
+    "location": "Kolkata",
+    "hook": "one of the oldest colonial cemeteries, shadow sightings",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "south_park_street_cemetery"
+  },
+  {
+    "story_number": 23,
+    "title": "Bhuli Bhatiyari Mahal — Shikaargah Ka Shraap",
+    "name": "Bhuli Bhatiyari Mahal",
+    "subtitle": "Shikaargah Ka Shraap",
+    "location": "Delhi",
+    "hook": "abandoned hunting lodge in the Ridge forest",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "bhuli_bhatiyari_mahal"
+  },
+  {
+    "story_number": 24,
+    "title": "Sanjay Van — Safed Saari Ka Saya",
+    "name": "Sanjay Van",
+    "subtitle": "Safed Saari Ka Saya",
+    "location": "Delhi",
+    "hook": "forest area with reports of a woman in white hitchhiker",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "sanjay_van"
+  },
+  {
+    "story_number": 25,
+    "title": "Kamla Nehru Ridge — Ridge Ki Khaufnaak Shaam",
+    "name": "Kamla Nehru Ridge",
+    "subtitle": "Ridge Ki Khaufnaak Shaam",
+    "location": "Delhi",
+    "hook": "jogger sightings of shadow figures at dusk",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "kamla_nehru_ridge"
+  },
+  {
+    "story_number": 26,
+    "title": "Christ Church compound — Barf Mein Dabe Raaz",
+    "name": "Christ Church compound",
+    "subtitle": "Barf Mein Dabe Raaz",
+    "location": "Shimla",
+    "hook": "old graveyard adjoining, reported cold spots",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "christ_church_compound"
+  },
+  {
+    "story_number": 27,
+    "title": "Morgan House — Lady Morgan Ki Aahat",
+    "name": "Morgan House",
+    "subtitle": "Lady Morgan Ki Aahat",
+    "location": "Kalimpong, West Bengal",
+    "hook": "colonial mansion, footsteps on empty floors",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "morgan_house"
+  },
+  {
+    "story_number": 28,
+    "title": "Dumas Road bungalows — Samandar Kinare Ka Khel",
+    "name": "Dumas Road bungalows",
+    "subtitle": "Samandar Kinare Ka Khel",
+    "location": "Surat, Gujarat",
+    "hook": "private homes near the beach with reported disturbances",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "dumas_road_bungalows"
+  },
+  {
+    "story_number": 29,
+    "title": "Savoy Hotel — Room 101 Ka Qatl",
+    "name": "Savoy Hotel",
+    "subtitle": "Room 101 Ka Qatl",
+    "location": "Mussoorie, Uttarakhand",
+    "hook": "inspired Agatha Christie; unsolved 1911 death of a guest",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "savoy_hotel"
+  },
+  {
+    "story_number": 30,
+    "title": "Fernhill Hotel — Pahaadon Ka Ghost Room",
+    "name": "Fernhill Hotel",
+    "subtitle": "Pahaadon Ka Ghost Room",
+    "location": "Ooty, Tamil Nadu",
+    "hook": "old British-era hotel, reported apparitions in corridors",
+    "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "slug": "fernhill_hotel"
+  },
+  {
+    "story_number": 31,
+    "title": "NH-8, Jharsa stretch — Highway Par Lift",
+    "name": "NH-8, Jharsa stretch",
+    "subtitle": "Highway Par Lift",
+    "location": "Gurugram-Delhi",
+    "hook": "woman in white flagging down cars at night",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "nh-8_jharsa_stretch"
+  },
+  {
+    "story_number": 32,
+    "title": "Delhi Cantonment Road — Gayab Hone Wali Sawaari",
+    "name": "Delhi Cantonment Road",
+    "subtitle": "Gayab Hone Wali Sawaari",
+    "location": "Delhi",
+    "hook": "taxi drivers' recurring vanishing passenger story",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "delhi_cantonment_road"
+  },
+  {
+    "story_number": 33,
+    "title": "Pune-Mumbai Expressway — Ghat Ki Khooni Mod",
+    "name": "Pune-Mumbai Expressway",
+    "subtitle": "Ghat Ki Khooni Mod",
+    "location": "Khandala ghat, Maharashtra",
+    "hook": "phantom hitchhiker reports in fog",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "pune-mumbai_expressway"
+  },
+  {
+    "story_number": 34,
+    "title": "Sinhagad Road — Raat Ka Musafir",
+    "name": "Sinhagad Road",
+    "subtitle": "Raat Ka Musafir",
+    "location": "Pune",
+    "hook": "reported accidents linked to local ghost legend",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "sinhagad_road"
+  },
+  {
+    "story_number": 35,
+    "title": "Agra-Delhi Highway — Truck Driver Ka Darr",
+    "name": "Agra-Delhi Highway",
+    "subtitle": "Truck Driver Ka Darr",
+    "location": "Sikandra stretch, UP",
+    "hook": "truck drivers' shared figure on the road story",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "agra-delhi_highway"
+  },
+  {
+    "story_number": 36,
+    "title": "East Coast Road — Biker Ka Peecha Karta Saya",
+    "name": "East Coast Road",
+    "subtitle": "Biker Ka Peecha Karta Saya",
+    "location": "Tamil Nadu",
+    "hook": "late-night bike riders report a following shadow",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "east_coast_road"
+  },
+  {
+    "story_number": 37,
+    "title": "Kasauli-Barog stretch — Dhund Ka Shaitaan",
+    "name": "Kasauli-Barog stretch",
+    "subtitle": "Dhund Ka Shaitaan",
+    "location": "Himachal Pradesh",
+    "hook": "old colonial road with fog-related legends",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "kasauli-barog_stretch"
+  },
+  {
+    "story_number": 38,
+    "title": "Yamuna Expressway — Expressway Ka Bhram",
+    "name": "Yamuna Expressway",
+    "subtitle": "Expressway Ka Bhram",
+    "location": "UP",
+    "hook": "reported strange lights near toll points",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "yamuna_expressway"
+  },
+  {
+    "story_number": 39,
+    "title": "Old Mumbai-Pune Highway — Bor Ghat Ki Aawaaz",
+    "name": "Old Mumbai-Pune Highway",
+    "subtitle": "Bor Ghat Ki Aawaaz",
+    "location": "Bor Ghat, Maharashtra",
+    "hook": "trucker legend of a woman waving for help",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "old_mumbai-pune_highway"
+  },
+  {
+    "story_number": 40,
+    "title": "Chakan-Talegaon Road — Khaali Sadak Ka Saya",
+    "name": "Chakan-Talegaon Road",
+    "subtitle": "Khaali Sadak Ka Saya",
+    "location": "Maharashtra",
+    "hook": "reported phantom pedestrian sightings",
+    "category": "HAUNTED ROADS & HIGHWAYS",
+    "slug": "chakan-talegaon_road"
+  },
+  {
+    "story_number": 41,
+    "title": "Begunkodor Railway Station — Bhootia Station Ka Sannata",
+    "name": "Begunkodor Railway Station",
+    "subtitle": "Bhootia Station Ka Sannata",
+    "location": "West Bengal",
+    "hook": "shut for decades after stationmaster death; reopened 2009",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "begunkodor_railway_station"
+  },
+  {
+    "story_number": 42,
+    "title": "Barog Tunnel — Tunnel No 33 Ka Raaz",
+    "name": "Barog Tunnel",
+    "subtitle": "Tunnel No 33 Ka Raaz",
+    "location": "Himachal Pradesh",
+    "hook": "engineer suicide during construction, said to haunt tunnel 33",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "barog_tunnel"
+  },
+  {
+    "story_number": 43,
+    "title": "Chittoor Railway Station — Platform Ka Pehredaar",
+    "name": "Chittoor Railway Station",
+    "subtitle": "Platform Ka Pehredaar",
+    "location": "Andhra Pradesh",
+    "hook": "linked to a 2013 constable death, reported sightings",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "chittoor_railway_station"
+  },
+  {
+    "story_number": 44,
+    "title": "Shoghi Tunnel — Andheri Rail Line",
+    "name": "Shoghi Tunnel",
+    "subtitle": "Andheri Rail Line",
+    "location": "Himachal Pradesh",
+    "hook": "old railway tunnel with local ghost stories",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "shoghi_tunnel"
+  },
+  {
+    "story_number": 45,
+    "title": "Delhi Cantt Railway Station — Old Platform 2 Ki Aahat",
+    "name": "Delhi Cantt Railway Station",
+    "subtitle": "Old Platform 2 Ki Aahat",
+    "location": "Delhi",
+    "hook": "night-shift staff reports of footsteps on old platform",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "delhi_cantt_railway_station"
+  },
+  {
+    "story_number": 46,
+    "title": "Howrah Bridge ghats — Ganga Kinare Ka Saya",
+    "name": "Howrah Bridge ghats",
+    "subtitle": "Ganga Kinare Ka Saya",
+    "location": "Kolkata",
+    "hook": "river deaths linked to reported spirit sightings",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "howrah_bridge_ghats"
+  },
+  {
+    "story_number": 47,
+    "title": "Kalyan Railway Station area — Lal Batti Ka Signalman",
+    "name": "Kalyan Railway Station area",
+    "subtitle": "Lal Batti Ka Signalman",
+    "location": "Mumbai",
+    "hook": "old legend of a signalman ghost",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "kalyan_railway_station_area"
+  },
+  {
+    "story_number": 48,
+    "title": "Nagpur-Itarsi rail stretch — Bina Driver Wali Train",
+    "name": "Nagpur-Itarsi rail stretch",
+    "subtitle": "Bina Driver Wali Train",
+    "location": "MP",
+    "hook": "old folklore of a phantom train",
+    "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "slug": "nagpur-itarsi_rail_stretch"
+  },
+  {
+    "story_number": 49,
+    "title": "Dumas Beach — Kaali Reti Ka Raaz",
+    "name": "Dumas Beach",
+    "subtitle": "Kaali Reti Ka Raaz",
+    "location": "Surat, Gujarat",
+    "hook": "black sand, former cremation ground, whispered voices",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "dumas_beach"
+  },
+  {
+    "story_number": 50,
+    "title": "Jatinga Valley — Panchhiyon Ki Maut",
+    "name": "Jatinga Valley",
+    "subtitle": "Panchhiyon Ki Maut",
+    "location": "Assam",
+    "hook": "mysterious mass bird deaths at night, unexplained for decades",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "jatinga_valley"
+  },
+  {
+    "story_number": 51,
+    "title": "Sanjay Van forest — Jungle Ka Andhera",
+    "name": "Sanjay Van forest",
+    "subtitle": "Jungle Ka Andhera",
+    "location": "Delhi",
+    "hook": "reported apparitions among joggers in thick forest",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "sanjay_van_forest"
+  },
+  {
+    "story_number": 52,
+    "title": "Aleya Ghost Lights — Daldal Ki Roshni",
+    "name": "Aleya Ghost Lights",
+    "subtitle": "Daldal Ki Roshni",
+    "location": "Sundarbans, West Bengal",
+    "hook": "mysterious marsh lights said to lure fishermen to their deaths",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "aleya_ghost_lights"
+  },
+  {
+    "story_number": 53,
+    "title": "Vashi Creek — Pull Ke Neeche Ka Saya",
+    "name": "Vashi Creek",
+    "subtitle": "Pull Ke Neeche Ka Saya",
+    "location": "Navi Mumbai",
+    "hook": "reported strange lights and sounds at night",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "vashi_creek"
+  },
+  {
+    "story_number": 54,
+    "title": "Kanheri Caves forest — Gufaon Ka Rona",
+    "name": "Kanheri Caves forest",
+    "subtitle": "Gufaon Ka Rona",
+    "location": "Mumbai",
+    "hook": "old Buddhist caves with local ghost legends",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "kanheri_caves_forest"
+  },
+  {
+    "story_number": 55,
+    "title": "Aravalli forest belt near Bhangarh — Aravalli Ka Khauf",
+    "name": "Aravalli forest belt near Bhangarh",
+    "subtitle": "Aravalli Ka Khauf",
+    "location": "Rajasthan",
+    "hook": "surrounding jungle folklore and unexplained sounds",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "aravalli_forest_belt_near_bhangarh"
+  },
+  {
+    "story_number": 56,
+    "title": "Neelkanth forest area — Pahadi Raste Ka Bhram",
+    "name": "Neelkanth forest area",
+    "subtitle": "Pahadi Raste Ka Bhram",
+    "location": "Uttarakhand",
+    "hook": "trekker stories of disorientation and voices",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "neelkanth_forest_area"
+  },
+  {
+    "story_number": 57,
+    "title": "Cherrapunji caves — Meghalaya Ki Patal Gufa",
+    "name": "Cherrapunji caves",
+    "subtitle": "Meghalaya Ki Patal Gufa",
+    "location": "Meghalaya",
+    "hook": "local tribal legends of forest spirits",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "cherrapunji_caves"
+  },
+  {
+    "story_number": 58,
+    "title": "Baneshwar backwaters — Pani Ka Shraap",
+    "name": "Baneshwar backwaters",
+    "subtitle": "Pani Ka Shraap",
+    "location": "Rajasthan",
+    "hook": "folk tales of drowning spirits",
+    "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+    "slug": "baneshwar_backwaters"
+  },
+  {
+    "story_number": 59,
+    "title": "Victoria Boys' School, Dow Hill — Bina Sar Wala Bachha",
+    "name": "Victoria Boys' School, Dow Hill",
+    "subtitle": "Bina Sar Wala Bachha",
+    "location": "Kurseong, West Bengal",
+    "hook": "headless boy legend on Death Road",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "victoria_boys_school_dow_hill"
+  },
+  {
+    "story_number": 60,
+    "title": "La Martiniere — Hostel Ka Purana Kamra",
+    "name": "La Martiniere",
+    "subtitle": "Hostel Ka Purana Kamra",
+    "location": "Kolkata/Lucknow",
+    "hook": "colonial-era school ghost stories among students",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "la_martiniere"
+  },
+  {
+    "story_number": 61,
+    "title": "Christ Church School — Bell Tower Ka Sannata",
+    "name": "Christ Church School",
+    "subtitle": "Bell Tower Ka Sannata",
+    "location": "Shimla",
+    "hook": "old building with reported cold spots",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "christ_church_school"
+  },
+  {
+    "story_number": 62,
+    "title": "Sanawar School area — Boarding House Ka Saya",
+    "name": "Sanawar School area",
+    "subtitle": "Boarding House Ka Saya",
+    "location": "Himachal Pradesh",
+    "hook": "local legends among boarding students",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "sanawar_school_area"
+  },
+  {
+    "story_number": 63,
+    "title": "Ranchi Mental Asylum — Purane Ward Ki Cheekh",
+    "name": "Ranchi Mental Asylum",
+    "subtitle": "Purane Ward Ki Cheekh",
+    "location": "Jharkhand",
+    "hook": "colonial-era institution, staff folklore",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "ranchi_mental_asylum"
+  },
+  {
+    "story_number": 64,
+    "title": "JJ Hospital — Night Shift Ka Darr",
+    "name": "JJ Hospital",
+    "subtitle": "Night Shift Ka Darr",
+    "location": "Mumbai",
+    "hook": "night-shift staff stories in old ward",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "jj_hospital"
+  },
+  {
+    "story_number": 65,
+    "title": "Old AIIMS mortuary folklore — Mortuary Ka Raaz",
+    "name": "Old AIIMS mortuary folklore",
+    "subtitle": "Mortuary Ka Raaz",
+    "location": "Delhi",
+    "hook": "hospital-staff urban legends",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "old_aiims_mortuary_folklore"
+  },
+  {
+    "story_number": 66,
+    "title": "PGI Chandigarh — Corridor Ki Parchhai",
+    "name": "PGI Chandigarh",
+    "subtitle": "Corridor Ki Parchhai",
+    "location": "Punjab",
+    "hook": "staff-shared night stories in old block",
+    "category": "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+    "slug": "pgi_chandigarh"
+  },
+  {
+    "story_number": 67,
+    "title": "Nale Ba — Bangalore Ki Awaaz",
+    "name": "Nale Ba",
+    "subtitle": "Bangalore Ki Awaaz",
+    "location": "Bangalore, Karnataka",
+    "hook": "1980s come tomorrow chalk-writing panic",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "nale_ba"
+  },
+  {
+    "story_number": 68,
+    "title": "Ramoji Film City — Film Set Ka Bhoot",
+    "name": "Ramoji Film City",
+    "subtitle": "Film Set Ka Bhoot",
+    "location": "Hyderabad",
+    "hook": "crew stories of falling lights, mirror writings on sets",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "ramoji_film_city"
+  },
+  {
+    "story_number": 69,
+    "title": "Gudiya (The Doll) — Shraapit Gudiya",
+    "name": "Gudiya (The Doll)",
+    "subtitle": "Shraapit Gudiya",
+    "location": "Various cities, India",
+    "hook": "urban legend of a haunted doll passed between homes",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "gudiya_(the_doll)"
+  },
+  {
+    "story_number": 70,
+    "title": "The Vanishing Hitchhiker — Aadhi Raat Ki Aurat",
+    "name": "The Vanishing Hitchhiker",
+    "subtitle": "Aadhi Raat Ki Aurat",
+    "location": "Pan-India",
+    "hook": "recurring woman in white taxi legend across metros",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "the_vanishing_hitchhiker"
+  },
+  {
+    "story_number": 71,
+    "title": "Kamla Market underpass — Underpass Ka Saya",
+    "name": "Kamla Market underpass",
+    "subtitle": "Underpass Ka Saya",
+    "location": "Delhi",
+    "hook": "local auto-driver ghost stories",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "kamla_market_underpass"
+  },
+  {
+    "story_number": 72,
+    "title": "Mumbai local train phantom — Aakhri Local Ka Musafir",
+    "name": "Mumbai local train phantom",
+    "subtitle": "Aakhri Local Ka Musafir",
+    "location": "Mumbai",
+    "hook": "late-night commuter folklore on the last local",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "mumbai_local_train_phantom"
+  },
+  {
+    "story_number": 73,
+    "title": "Bangalore One-Tree-Hill — Pahadi Ka Akele Ped",
+    "name": "Bangalore One-Tree-Hill",
+    "subtitle": "Pahadi Ka Akele Ped",
+    "location": "Karnataka",
+    "hook": "hillside apparition stories",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "bangalore_one-tree-hill"
+  },
+  {
+    "story_number": 74,
+    "title": "Chennai Theosophical Society — Bargad Ka Saya",
+    "name": "Chennai Theosophical Society",
+    "subtitle": "Bargad Ka Saya",
+    "location": "Tamil Nadu",
+    "hook": "old folklore of a spirit under a giant banyan tree",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "chennai_theosophical_society"
+  },
+  {
+    "story_number": 75,
+    "title": "Kolkata tram depot — Depot Ki Aakhri Tram",
+    "name": "Kolkata tram depot",
+    "subtitle": "Depot Ki Aakhri Tram",
+    "location": "West Bengal",
+    "hook": "night-shift worker ghost stories",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "kolkata_tram_depot"
+  },
+  {
+    "story_number": 76,
+    "title": "Auto-rickshaw extra passenger — Auto Ka Teesra Musafir",
+    "name": "Auto-rickshaw extra passenger",
+    "subtitle": "Auto Ka Teesra Musafir",
+    "location": "Pan-India",
+    "hook": "recurring urban horror story format in auto meters",
+    "category": "URBAN LEGENDS & MODERN GHOST STORIES",
+    "slug": "auto-rickshaw_extra_passenger"
+  },
+  {
+    "story_number": 77,
+    "title": "Kuldhara — Ek Raat Mein Gayab Gaon",
+    "name": "Kuldhara",
+    "subtitle": "Ek Raat Mein Gayab Gaon",
+    "location": "Jaisalmer, Rajasthan",
+    "hook": "1500+ Paliwal Brahmins vanished overnight, curse legend",
+    "category": "ABANDONED VILLAGES & GHOST TOWNS",
+    "slug": "kuldhara"
+  },
+  {
+    "story_number": 78,
+    "title": "Khameda & Kuldhara clusters — 84 Gaon Ka Shraap",
+    "name": "Khameda & Kuldhara clusters",
+    "subtitle": "84 Gaon Ka Shraap",
+    "location": "Rajasthan",
+    "hook": "83 villages abandoned together, same curse legend",
+    "category": "ABANDONED VILLAGES & GHOST TOWNS",
+    "slug": "khameda_and_kuldhara_clusters"
+  },
+  {
+    "story_number": 79,
+    "title": "Dhanushkodi — Samandar Ka Ujda Shaher",
+    "name": "Dhanushkodi",
+    "subtitle": "Samandar Ka Ujda Shaher",
+    "location": "Tamil Nadu",
+    "hook": "town destroyed by 1964 cyclone, called a ghost town",
+    "category": "ABANDONED VILLAGES & GHOST TOWNS",
+    "slug": "dhanushkodi"
+  },
+  {
+    "story_number": 80,
+    "title": "Kayakalp village folklore — Sookhe Khet Ka Saya",
+    "name": "Kayakalp village folklore",
+    "subtitle": "Sookhe Khet Ka Saya",
+    "location": "Bundelkhand, MP/UP",
+    "hook": "drought-abandoned village legends",
+    "category": "ABANDONED VILLAGES & GHOST TOWNS",
+    "slug": "kayakalp_village_folklore"
+  },
+  {
+    "story_number": 81,
+    "title": "Bhangarh village ruins — Khandahar Basti Ka Khauf",
+    "name": "Bhangarh village ruins",
+    "subtitle": "Khandahar Basti Ka Khauf",
+    "location": "Rajasthan",
+    "hook": "extension of the fort curse story into outer ruins",
+    "category": "ABANDONED VILLAGES & GHOST TOWNS",
+    "slug": "bhangarh_village_ruins"
+  },
+  {
+    "story_number": 82,
+    "title": "Shettihalli submerged church — Dooba Hua Church",
+    "name": "Shettihalli submerged church",
+    "subtitle": "Dooba Hua Church",
+    "location": "Karnataka",
+    "hook": "church that resurfaces when dam water recedes",
+    "category": "ABANDONED VILLAGES & GHOST TOWNS",
+    "slug": "shettihalli_submerged_church"
+  },
+  {
+    "story_number": 83,
+    "title": "Jamali Kamali Mosque & Tomb — Mehrauli Ka Jinn",
+    "name": "Jamali Kamali Mosque & Tomb",
+    "subtitle": "Mehrauli Ka Jinn",
+    "location": "Delhi",
+    "hook": "jinn sightings reported by locals for decades",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "jamali_kamali_mosque_and_tomb"
+  },
+  {
+    "story_number": 84,
+    "title": "Karbala Graveyard — Andheri Qabristan",
+    "name": "Karbala Graveyard",
+    "subtitle": "Andheri Qabristan",
+    "location": "Delhi",
+    "hook": "one of Delhi 5 most haunted per local reporting",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "karbala_graveyard"
+  },
+  {
+    "story_number": 85,
+    "title": "Feroz Shah Kotla — Jinno Ki Dargah",
+    "name": "Feroz Shah Kotla",
+    "subtitle": "Jinno Ki Dargah",
+    "location": "Delhi",
+    "hook": "famous for jinn-worship rituals on Thursdays, letters left",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "feroz_shah_kotla"
+  },
+  {
+    "story_number": 86,
+    "title": "Agrasen ki Baoli — Kaale Pani Ki Baoli",
+    "name": "Agrasen ki Baoli",
+    "subtitle": "Kaale Pani Ki Baoli",
+    "location": "Delhi",
+    "hook": "stepwell legend of black water that lured people",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "agrasen_ki_baoli"
+  },
+  {
+    "story_number": 87,
+    "title": "Sewri Cemetery — Purani Gore Qabrein",
+    "name": "Sewri Cemetery",
+    "subtitle": "Purani Gore Qabrein",
+    "location": "Mumbai",
+    "hook": "old colonial graves, reported cold spots",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "sewri_cemetery"
+  },
+  {
+    "story_number": 88,
+    "title": "Golconda tombs area — Kutubshahi Maqbare",
+    "name": "Golconda tombs area",
+    "subtitle": "Kutubshahi Maqbare",
+    "location": "Hyderabad",
+    "hook": "Qutb Shahi tomb complex ghost folklore",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "golconda_tombs_area"
+  },
+  {
+    "story_number": 89,
+    "title": "Bada Imambara Bhulbhulaiya — Bada Imambara Ki Bhoolbhulaiya",
+    "name": "Bada Imambara Bhulbhulaiya",
+    "subtitle": "Bada Imambara Ki Bhoolbhulaiya",
+    "location": "Lucknow, UP",
+    "hook": "maze legend of people lost forever inside dark corridors",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "bada_imambara_bhulbhulaiya"
+  },
+  {
+    "story_number": 90,
+    "title": "Chor Minar folklore — Siro Wala Minar",
+    "name": "Chor Minar folklore",
+    "subtitle": "Siro Wala Minar",
+    "location": "Delhi",
+    "hook": "tower of holes said to have displayed executed heads",
+    "category": "GRAVEYARDS, TOMBS & RELIGIOUS SITES",
+    "slug": "chor_minar_folklore"
+  },
+  {
+    "story_number": 91,
+    "title": "One Tree Hill Cemetery — Shimla Ki Purani Qabr",
+    "name": "One Tree Hill Cemetery",
+    "subtitle": "Shimla Ki Purani Qabr",
+    "location": "Shimla, HP",
+    "hook": "old British graves, fog-linked sightings",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "one_tree_hill_cemetery"
+  },
+  {
+    "story_number": 92,
+    "title": "Rakh Bagh haveli — Purani Haveli Ka Raaz",
+    "name": "Rakh Bagh haveli",
+    "subtitle": "Purani Haveli Ka Raaz",
+    "location": "Punjab",
+    "hook": "old haveli local ghost story",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "rakh_bagh_haveli"
+  },
+  {
+    "story_number": 93,
+    "title": "Bhoot Bungalow, Kasauli — Pahadi Bungalow Ka Bhoot",
+    "name": "Bhoot Bungalow, Kasauli",
+    "subtitle": "Pahadi Bungalow Ka Bhoot",
+    "location": "Himachal Pradesh",
+    "hook": "colonial bungalow local legend",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "bhoot_bungalow_kasauli"
+  },
+  {
+    "story_number": 94,
+    "title": "Bijapur Gol Gumbaz — Gumbaz Ki Goonj",
+    "name": "Bijapur Gol Gumbaz",
+    "subtitle": "Gumbaz Ki Goonj",
+    "location": "Karnataka",
+    "hook": "echo phenomenon linked to old folklore",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "bijapur_gol_gumbaz"
+  },
+  {
+    "story_number": 95,
+    "title": "Cellular Jail — Kaala Pani Ki Cheekhein",
+    "name": "Cellular Jail",
+    "subtitle": "Kaala Pani Ki Cheekhein",
+    "location": "Andaman & Nicobar",
+    "hook": "reported cries of freedom fighters at night",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "cellular_jail"
+  },
+  {
+    "story_number": 96,
+    "title": "Warangal Fort — Pathhar Ke Darwaze",
+    "name": "Warangal Fort",
+    "subtitle": "Pathhar Ke Darwaze",
+    "location": "Telangana",
+    "hook": "ruins with local ghost stories",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "warangal_fort"
+  },
+  {
+    "story_number": 97,
+    "title": "Champaner-Pavagadh ruins — Shraapit Nagri",
+    "name": "Champaner-Pavagadh ruins",
+    "subtitle": "Shraapit Nagri",
+    "location": "Gujarat",
+    "hook": "abandoned historic city, night folklore",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "champaner-pavagadh_ruins"
+  },
+  {
+    "story_number": 98,
+    "title": "Rakshasa Tangadi battlefield — Talikota Ka Maidan",
+    "name": "Rakshasa Tangadi battlefield",
+    "subtitle": "Talikota Ka Maidan",
+    "location": "Karnataka",
+    "hook": "old battlefield ghost legends",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "rakshasa_tangadi_battlefield"
+  },
+  {
+    "story_number": 99,
+    "title": "Bijapur Ibrahim Rauza — Taj Mahal of Deccan Raaz",
+    "name": "Bijapur Ibrahim Rauza",
+    "subtitle": "Taj Mahal of Deccan Raaz",
+    "location": "Karnataka",
+    "hook": "tomb complex night stories",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "bijapur_ibrahim_rauza"
+  },
+  {
+    "story_number": 100,
+    "title": "Kanpur cantonment bungalows — Cantonment Ka Kothi",
+    "name": "Kanpur cantonment bungalows",
+    "subtitle": "Cantonment Ka Kothi",
+    "location": "UP",
+    "hook": "colonial-era residential ghost stories",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "kanpur_cantonment_bungalows"
+  },
+  {
+    "story_number": 101,
+    "title": "Nahargarh Fort — Nahar Singh Ka Saya",
+    "name": "Nahargarh Fort",
+    "subtitle": "Nahar Singh Ka Saya",
+    "location": "Jaipur, Rajasthan",
+    "hook": "named after prince spirit demolishing construction until appeased",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "nahargarh_fort"
+  },
+  {
+    "story_number": 102,
+    "title": "Ramnagar Fort — Ganga Kinare Ka Mehal",
+    "name": "Ramnagar Fort",
+    "subtitle": "Ganga Kinare Ka Mehal",
+    "location": "Varanasi, UP",
+    "hook": "riverside fort with local night-time legends",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "ramnagar_fort"
+  },
+  {
+    "story_number": 103,
+    "title": "Bara Imambara tunnels — Surang Ka Andhera",
+    "name": "Bara Imambara tunnels",
+    "subtitle": "Surang Ka Andhera",
+    "location": "Lucknow, UP",
+    "hook": "maze tunnels said to lead nowhere and trap explorers",
+    "category": "REGIONAL & LESSER-KNOWN LEGENDS",
+    "slug": "bara_imambara_tunnels"
+  }
+]
