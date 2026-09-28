@@ -90,6 +90,14 @@ def generate_beat_voiceovers(beats, default_voice, temp_dir):
     beat_audios = []
 
     pacing_rules = {
+        # Forensic Investigative Dossier Phases
+        "CASE_FILE_COLD_OPEN": {"rate": "-6%", "pitch": "-2Hz"},
+        "HISTORICAL_RECORD": {"rate": "-2%", "pitch": "-1Hz"},
+        "DOCUMENTED_ANOMALY": {"rate": "-4%", "pitch": "-1Hz"},
+        "THE_ENCOUNTER_TAPE": {"rate": "+4%", "pitch": "+0Hz"},
+        "UNRESOLVED_FORENSICS": {"rate": "-6%", "pitch": "-2Hz"},
+        "NEXT_ARCHIVE_HOOK": {"rate": "-5%", "pitch": "-2Hz"},
+        # Universal Aliases
         "INTRO": {"rate": "-6%", "pitch": "-2Hz"},
         "SETUP": {"rate": "-2%", "pitch": "-1Hz"},
         "BUILD-UP": {"rate": "-4%", "pitch": "-1Hz"},

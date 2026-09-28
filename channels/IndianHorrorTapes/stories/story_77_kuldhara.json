@@ -1,75 +1,89 @@
 {
   "story_number": 77,
-  "title": "Kuldhara — Ek Raat Mein Gayab Gaon",
+  "title": "Kuldhara: Is Khandar Mein Kadam Mat Rakhna ⚠️ Ep. 77 #Shorts",
+  "viral_titles": [
+    "Kuldhara: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 77 #Shorts",
+    "Kyu Indian Government Ne Kuldhara Ko Seal Kiya? 🔴 Ep. 77 #Shorts",
+    "Police FIR #7702: Kuldhara Ka Asli Sach 💀 #Shorts"
+  ],
   "name": "Kuldhara",
   "location": "Jaisalmer, Rajasthan",
+  "year": "1825",
   "tagline": "1500+ Paliwal Brahmins vanished overnight, curse legend",
   "category": "ABANDONED VILLAGES & GHOST TOWNS",
+  "archetype": "FORBIDDEN_ZONE_BREACH",
   "beats": [
     {
-      "beat": "INTRO",
+      "beat": "CASE_FILE_COLD_OPEN",
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
-      "visual_prompt": "Dark eerie establishing shot of Kuldhara, Jaisalmer, Rajasthan, blood red flickering glow, misty twilight, ruined deserted desert village of stone houses without roofs, dusty wind howling across empty courtyards, full moon casting skeletal shadows, 8k resolution, portrait 9:16",
-      "text_overlay": "VANISHED OVERNIGHT: JAISALMER",
-      "vo_text": "Ek aisi jagah jahan se ek hi raat mein sekdo log achanak gayab ho gaye... aur unka shraap aaj bhi wahan qayam hai.",
-      "sound_cue": "Low eerie sub-bass drone + slow heartbeat pulse"
+      "visual_prompt": "Forensic investigative 35mm documentary shot of Kuldhara, Jaisalmer, Rajasthan, heavy atmospheric mist, subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16",
+      "text_overlay": "RESTRICTED ZONE • KULDHARA",
+      "vo_text": "1825 ke forest department records clearly kehte hain... Jaisalmer, Rajasthan ke is border ke andar sunset ke baad kadam rakhna kanoon aur jaan dono ke khilaaf hai.",
+      "sound_cue": "Warning siren echo + heavy wind howling + low drone"
     },
     {
-      "beat": "SETUP",
-      "time_range": "0:08–0:30",
-      "target_dur": 22.0,
-      "visual_prompt": "Wide establishing cinematic shot of Kuldhara in Jaisalmer, Rajasthan, ruined deserted desert village of stone houses without roofs, dusty wind howling across empty courtyards, full moon casting skeletal shadows, 8k resolution, portrait 9:16",
-      "text_overlay": "JAISALMER — REAL LORE",
-      "vo_text": "Kaha jaata hai, Jaisalmer, Rajasthan ke is Kuldhara mein sadiyon se aisi taqaton ka dera hai jinka zikr purane dastawezon mein bhi milta hai. Ye wahi jagah hai jahan 1500+ paliwal brahmins vanished overnight, curse legend. Aaj bhi yahan ke locals kehte hain — din ke ujaale mein sab shant lagta hai, lekin aadhi raat ko is jagah ki hawa badal jaati hai.",
-      "sound_cue": "Distant wind howl with subtle atmospheric swell"
+      "beat": "HISTORICAL_RECORD",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "visual_prompt": "Wide atmospheric documentary establishing shot of Kuldhara, Jaisalmer, Rajasthan, authentic historical architecture, overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16",
+      "text_overlay": "CASE RECORD • YEAR 1825",
+      "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Jaisalmer Royal Court archives and 84 abandoned desert village ruins par darj hai. Thar desert ke beech 84 khushhaal gaon the jo apni architectural water harvesting ke liye pure desh mein mashhoor the. Lekin 1825 mein Salim Singh Diwan aur 1500 Paliwal Brahmin families ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone"
     },
     {
-      "beat": "BUILD-UP",
-      "time_range": "0:30–1:00",
+      "beat": "DOCUMENTED_ANOMALY",
+      "time_range": "0:32–1:02",
       "target_dur": 30.0,
-      "visual_prompt": "POV walking shot entering Kuldhara, dim eerie lantern, deep shadows, atmospheric mist, ruined deserted desert village of stone houses without roofs, dusty wind howling across empty courtyards, full moon casting skeletal shadows, 8k resolution, portrait 9:16",
-      "text_overlay": "WARNING SIGNS AT MIDNIGHT",
-      "vo_text": "Jo log yahan se shaam ke baad guzre hain, unka kehna hai ki jaise hi ghadi mein 12 bajte hain... sooni galiyon se bheed ke baat karne aur ro-ro kar gaon chhodne ki dheemi goonj aati hai.",
-      "sound_cue": "Slow approaching footsteps, faint metallic whisper, accelerating pulse"
+      "visual_prompt": "POV walking inside Kuldhara, handheld flashlight beam cutting through pitch-black heavy dust particles, distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... sham 6 baje ke baad hawa mein achanak ret ka bawandar uthta hai aur tuti hui deewaron se choodiyon ki khanak aur bacchon ke rone ki aawaz aati hai. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon.",
+      "sound_cue": "sukhi desert hawa ki cheekh aur soone aangan mein bartan girne ka clatter + slow accelerating heartbeat"
     },
     {
-      "beat": "THE INCIDENT",
-      "time_range": "1:00–1:35",
-      "target_dur": 35.0,
-      "visual_prompt": "Tense shaky camera shot at Kuldhara, sudden sinister shadow moving in darkness, high contrast horror lighting, 8k resolution, portrait 9:16",
-      "text_overlay": "THE REAL INCIDENT",
-      "vo_text": "Sabse darawani ghatna tab ghati jab drought se ujde is gaon ke sukhe kuen se raat ko paani chalne aur rone ki awaazein aati hain. Unke paas bhagne ke siva koi rasta nahi bacha tha!",
-      "sound_cue": "Sudden loud branch snap, aggressive riser, intense rapid heartbeat"
+      "beat": "THE_ENCOUNTER_TAPE",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "visual_prompt": "Dramatic tense shaky camera footage inside Kuldhara, sudden chilling appearance of an ominous tall shadowy figure in fog, high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "vo_text": "Sabse khaufnaak hadsa tab report hua jab Zalim diwan Salim Singh se apni beti ki izzat bachane ke liye 1500 parivar ek hi raat mein bina koi aahat kiye sab kuch chhod kar gayab ho gaye aur zameen ko shraap de gaye! Khandar ke pedon ke peeche se aisi parchhai nikli jiski unchai aam insaan se dugni thi aur wo seedha unki taraf daudne lagi! Unhone cheekh kar kaha: 'Subah sab ghar khali the, chulhe par daal pak rahi thi, lekin ek bhi insaan zinda nahi tha!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
     },
     {
-      "beat": "AFTERMATH",
-      "time_range": "1:35–1:50",
-      "target_dur": 15.0,
-      "visual_prompt": "Quiet eerie aftermath shot of Kuldhara, solitary flickering candle in pitch darkness, cold fog, 8k resolution, portrait 9:16",
-      "text_overlay": "STILL AVOIDED TODAY",
-      "vo_text": "Is hadse ke baad se yahan ka shraap itna taqatwar mana jaata hai ki aaj tak kisi ne yahan naya makaan banane ki jurrat nahi ki. Kuch raaz aise hote hain jinhe band darwazon ke peeche hi rehne dena behtar hai.",
-      "sound_cue": "Dead silence followed by cold hollow wind"
+      "beat": "UNRESOLVED_FORENSICS",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "visual_prompt": "Desolate aftermath cinematic shot of Kuldhara, solitary lantern flickering on cold ground, deep midnight shadows, eerie silence, 8k resolution, portrait 9:16",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "vo_text": "Is hadse ke baad se Pichle 200 saal mein jisne bhi Kuldhara mein raat guzarne ki koshish ki, wo ya toh pagal ho gaya ya usne hamesha ke liye bolna chhod diya. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
+      "sound_cue": "Sudden dead silence + chilling low wind gust"
     },
     {
-      "beat": "OUTRO",
+      "beat": "NEXT_ARCHIVE_HOOK",
       "time_range": "1:50–2:00",
       "target_dur": 10.0,
-      "visual_prompt": "Total black vignette background with blood red glowing mist, atmospheric cinematic horror, 8k resolution, portrait 9:16",
-      "text_overlay": "PART 78 → KHAMEDA & KULDHARA CLUSTERS",
-      "vo_text": "Agli kahani Rajasthan ke Khameda & Kuldhara clusters ki hai... jahan aisi cheekh sunayi di jo kisi insaan ki nahi thi. Follow for Part 78!",
-      "sound_cue": "Sub-bass drop into darkness"
+      "visual_prompt": "Vignette pitch black background with blood-red glowing smoke and dark silhouette of Khameda & Kuldhara clusters, cinematic forensic horror style, 8k resolution, portrait 9:16",
+      "text_overlay": "NEXT DOSSIER → PART 78: KHAMEDA & KULDHARA CLUSTERS",
+      "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Rajasthan ke Khameda & Kuldhara clusters ka hai... Follow for Part 78!",
+      "sound_cue": "Sub-bass drop into pitch darkness"
     }
   ],
   "tags": [
-    "kuldhara",
-    "indianhorror",
-    "realhorrorstories",
-    "horrorstorieshindi",
-    "paranormalinvestigation",
-    "hauntedplacesindia",
-    "ghoststories",
+    "indian horror tapes",
+    "real horror stories in hindi",
+    "haunted places in india",
+    "ghost stories hindi",
+    "paranormal investigation india",
+    "horror shorts hindi",
     "shorts",
-    "jaisalmer"
-  ]
+    "kuldhara",
+    "jaisalmer",
+    "kuldhara real story",
+    "bhoot ki kahani",
+    "unsolved mysteries india",
+    "mrballen hindi"
+  ],
+  "seo_description": "⚠️ EPISODE 77: Kuldhara — Ek Raat Mein Gayab Gaon\n📍 Real Location: Jaisalmer, Rajasthan\n📜 Archival Reference: Jaisalmer Royal Court archives and 84 abandoned desert village ruins (1825)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Kuldhara ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1825)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 78)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStoriesHindi #ParanormalInvestigation #jaisalmer\n",
+  "pinned_comment": "Agar aap aadhi raat ko Jaisalmer ke is ilaaqe mein akele hon aur aapki car achanak ruk jaye... toh aap kya karenge? 1. Darwaza kholkar madad mangenge ya 2. Car ke andar lock hokar subah ka wait karenge? Sach batana comments mein 👇",
+  "thumbnail_concept": "Ultra-high contrast horror portrait thumbnail, terrifying silhouette of Kuldhara under dark crimson and moonlight fog, single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
 }

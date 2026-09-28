@@ -127,11 +127,15 @@ def build_metadata(story_data, publish_time_iso=None):
     tagline = story_data.get("tagline", "")
     next_num = (num % 103) + 1
 
-    clean_title = f"{title_raw} | Ep. {num} #Shorts"
+    clean_title = title_raw
+    if "#Shorts" not in clean_title and "#shorts" not in clean_title:
+        clean_title = f"{clean_title} | Ep. {num} #Shorts"
     if len(clean_title) > 95:
         clean_title = clean_title[:95]
 
-    desc = f"""⚠️ EPISODE {num}: {title_raw}
+    desc = story_data.get("seo_description")
+    if not desc:
+        desc = f"""⚠️ EPISODE {num}: {title_raw}
 📍 Location: {loc}
 🕯️ Reality Behind The Legend: {tagline}
 
@@ -154,12 +158,19 @@ Subscribe to @IndianHorrorTapes for 100+ Real Indian Horror Stories & Paranormal
         "horror shorts hindi",
         "shorts"
     ]
+    seen = set()
+    dedup_tags = []
+    for t in tags:
+        t_clean = t.strip()
+        if t_clean.lower() not in seen:
+            seen.add(t_clean.lower())
+            dedup_tags.append(t_clean)
 
     body = {
         "snippet": {
             "title": clean_title,
             "description": desc,
-            "tags": tags[:30],
+            "tags": dedup_tags[:30],
             "categoryId": "24",
             "defaultLanguage": "hi",
             "defaultAudioLanguage": "hi"
@@ -177,8 +188,8 @@ Subscribe to @IndianHorrorTapes for 100+ Real Indian Horror Stories & Paranormal
 
     return body
 
-def upload_video(youtube, video_path, metadata, thumbnail_path=None):
-    """Uploads video to YouTube with automatic retry and thumbnail upload."""
+def upload_video(youtube, video_path, metadata, thumbnail_path=None, pinned_comment=None):
+    """Uploads video to YouTube with automatic retry, thumbnail upload, and pinned engagement comment."""
     print(f"\n🚀 Initiating YouTube Upload: {video_path}")
     print(f"📌 Title: {metadata['snippet']['title']}")
     if "publishAt" in metadata["status"]:
@@ -222,6 +233,27 @@ def upload_video(youtube, video_path, metadata, thumbnail_path=None):
             print("✅ Custom thumbnail attached successfully!")
         except Exception as te:
             print(f"Warning: Failed to set thumbnail: {te}")
+
+    # Post engagement comment if present
+    if pinned_comment:
+        try:
+            print("💬 Posting algorithm-boosting engagement comment...")
+            youtube.commentThreads().insert(
+                part="snippet",
+                body={
+                    "snippet": {
+                        "videoId": video_id,
+                        "topLevelComment": {
+                            "snippet": {
+                                "textOriginal": pinned_comment
+                            }
+                        }
+                    }
+                }
+            ).execute()
+            print("✅ Engagement comment posted successfully!")
+        except Exception as ce:
+            print(f"Notice: Could not post engagement comment: {ce}")
 
     return video_id, video_url
 
@@ -300,7 +332,8 @@ def run_schedule(story_number=None, quality="8k", force_immediate=False):
 
     youtube = get_youtube_service()
     if youtube:
-        video_id, video_url = upload_video(youtube, video_path, metadata, thumbnail_path=thumb_path)
+        pinned = story_data.get("pinned_comment")
+        video_id, video_url = upload_video(youtube, video_path, metadata, thumbnail_path=thumb_path, pinned_comment=pinned)
         update_state(story_number, video_id, publish_iso)
         return video_id, video_url
     else:

@@ -1,75 +1,89 @@
 {
   "story_number": 49,
-  "title": "Dumas Beach — Kaali Reti Ka Raaz",
+  "title": "Dumas Beach: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 49 #Shorts",
+  "viral_titles": [
+    "Dumas Beach: Raat Ko Kadam Mat Rakhna ⚠️ | Ep. 49 #Shorts",
+    "Kyu Indian Government Ne Dumas Beach Ko Seal Kiya? 🔴 Ep. 49",
+    "Police FIR #4902: Dumas Beach Ka Asli Sach 💀 #Shorts"
+  ],
   "name": "Dumas Beach",
   "location": "Surat, Gujarat",
+  "year": "Ancient",
   "tagline": "black sand, former cremation ground, whispered voices",
   "category": "HAUNTED BEACHES, WATER BODIES & FORESTS",
+  "archetype": "SOLITARY_TRAVELER_TAPE",
   "beats": [
     {
-      "beat": "INTRO",
+      "beat": "CASE_FILE_COLD_OPEN",
       "time_range": "0:00–0:08",
       "target_dur": 8.0,
-      "visual_prompt": "Dark eerie establishing shot of Dumas Beach, Surat, Gujarat, blood red flickering glow, misty twilight, dark eerie black sand beach, violent foaming nocturnal tide under bruised purple sky, twisted dead trees, swamp marsh lights, photorealistic horror, 8k resolution, portrait 9:16",
-      "text_overlay": "BLACK SAND SECRET: DUMAS BEACH",
-      "vo_text": "Dikhne mein ye Surat, Gujarat ka ek normal kinara hai... lekin iski reti kaali hai, aur iska raaz aur bhi zyada khaufnaak.",
-      "sound_cue": "Low eerie sub-bass drone + slow heartbeat pulse"
+      "visual_prompt": "Forensic investigative 35mm documentary shot of Dumas Beach, Surat, Gujarat, heavy atmospheric mist, subtle forensic camera timestamp in corner, chiaroscuro low key lighting, ominous architectural silhouette, 8k resolution, portrait 9:16",
+      "text_overlay": "RAILWAY DOSSIER • DUMAS BEACH",
+      "vo_text": "Indian Railways ke unclassified accident files mein Dumas Beach ke baare mein aisi report darj hai... jise padhkar drivers aaj bhi yahan horn bajakar maximum speed se nikalte hain.",
+      "sound_cue": "Low train horn echo + metal wheel squeal + sub-bass pulse"
     },
     {
-      "beat": "SETUP",
-      "time_range": "0:08–0:30",
-      "target_dur": 22.0,
-      "visual_prompt": "Wide establishing cinematic shot of Dumas Beach in Surat, Gujarat, dark eerie black sand beach, violent foaming nocturnal tide under bruised purple sky, twisted dead trees, swamp marsh lights, photorealistic horror, 8k resolution, portrait 9:16",
-      "text_overlay": "SURAT — REAL LORE",
-      "vo_text": "Kaha jaata hai, Surat, Gujarat ke is Dumas Beach mein sadiyon se aisi taqaton ka dera hai jinka zikr purane dastawezon mein bhi milta hai. Ye wahi jagah hai jahan Black sand, former cremation ground, whispered voices. Aaj bhi yahan ke locals kehte hain — din ke ujaale mein sab shant lagta hai, lekin aadhi raat ko is jagah ki hawa badal jaati hai.",
-      "sound_cue": "Distant wind howl with subtle atmospheric swell"
+      "beat": "HISTORICAL_RECORD",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "visual_prompt": "Wide atmospheric documentary establishing shot of Dumas Beach, Surat, Gujarat, authentic historical architecture, overcast moody twilight sky, authentic stone texture, hyper-realistic, photorealistic horror masterpiece, 8k resolution, portrait 9:16",
+      "text_overlay": "CASE RECORD • YEAR Ancient",
+      "vo_text": "Ye kahani kisi social media afwaah par nahi, balki Arabian Sea Black Sand Shoreline and Hindu Cremation Grounds par darj hai. Surat shahr ke log din mein yahan bhutta khane aur Arabian Sea ki hawa lene aate hain, reti aam beach se alag kaali dikhti hai. Lekin Ancient mein Surat Dumas Beach Shamshan Ghat & Local Fishermen ke sath ek aisi ghatna ghati jisne is poore ilaaqe ki taqdeer badal di.",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone"
     },
     {
-      "beat": "BUILD-UP",
-      "time_range": "0:30–1:00",
+      "beat": "DOCUMENTED_ANOMALY",
+      "time_range": "0:32–1:02",
       "target_dur": 30.0,
-      "visual_prompt": "POV walking shot entering Dumas Beach, dim eerie lantern, deep shadows, atmospheric mist, dark eerie black sand beach, violent foaming nocturnal tide under bruised purple sky, twisted dead trees, swamp marsh lights, photorealistic horror, 8k resolution, portrait 9:16",
-      "text_overlay": "WARNING SIGNS AT MIDNIGHT",
-      "vo_text": "Jo log yahan se shaam ke baad guzre hain, unka kehna hai ki jaise hi ghadi mein 12 bajte hain... paani ki lehron ke beech se kisi ke madad ke liye pukarne ki dheemi goonj sunayi deti hai.",
-      "sound_cue": "Slow approaching footsteps, faint metallic whisper, accelerating pulse"
+      "visual_prompt": "POV walking inside Dumas Beach, handheld flashlight beam cutting through pitch-black heavy dust particles, distorted eerie shadows stretching unnaturally on walls, intense psychological horror, 8k resolution, portrait 9:16",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "vo_text": "Jo log yahan se aadhi raat ko guzre hain, unhone bataya ki theek 12 bajte hi... suraj dhalne ke baad samandar ki lehrein achanak shant ho jati hain aur hawa mein phusphusahat shuru hoti hai jaise hazaaron log aapas mein baat kar rahe hon. Mobile phone ka battery percentage achanak zero ho jata hai aur tapman itna girta hai jaise aap kisi barfili ghaati mein khade hon.",
+      "sound_cue": "kaali lehron ka achanak thahar jana aur kaan ke bilkul paas sargoshi + slow accelerating heartbeat"
     },
     {
-      "beat": "THE INCIDENT",
-      "time_range": "1:00–1:35",
-      "target_dur": 35.0,
-      "visual_prompt": "Tense shaky camera shot at Dumas Beach, sudden sinister shadow moving in darkness, high contrast horror lighting, 8k resolution, portrait 9:16",
-      "text_overlay": "THE REAL INCIDENT",
-      "vo_text": "Sabse darawani ghatna tab ghati jab beach par walk karne gaye do doston ke mobile ka network achanak uda aur unke kaan mein unka naam pukara gaya. Unke paas bhagne ke siva koi rasta nahi bacha tha!",
-      "sound_cue": "Sudden loud branch snap, aggressive riser, intense rapid heartbeat"
+      "beat": "THE_ENCOUNTER_TAPE",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "visual_prompt": "Dramatic tense shaky camera footage inside Dumas Beach, sudden chilling appearance of an ominous tall shadowy figure in fog, high contrast rim lighting, heart-stopping psychological terror, photorealistic 8k, portrait 9:16",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "vo_text": "Sabse khaufnaak hadsa tab report hua jab kuch saal pehle morning walkers aadhi raat ko walk par nikle aur gayab ho gaye, unke phone recorder mein aakhri audio mili: 'Yahan se wapas mat jao... hum akele hain'! Tracks aur surang ke andhere se aisi aakriti achanak prakat hui jo bina zameen ko chhue hawa mein tair rahi thi! Unhone cheekh kar kaha: 'Reti par kadam ke nishaan the, lekin wo samandar ki taraf ja rahe the... wapas aane ka koi nishaan nahi tha!' — aur unke paas wahan se bhaagne ke siva koi rasta nahi bacha tha!",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp"
     },
     {
-      "beat": "AFTERMATH",
-      "time_range": "1:35–1:50",
-      "target_dur": 15.0,
-      "visual_prompt": "Quiet eerie aftermath shot of Dumas Beach, solitary flickering candle in pitch darkness, cold fog, 8k resolution, portrait 9:16",
-      "text_overlay": "STILL AVOIDED TODAY",
-      "vo_text": "Is hadse ke baad se aaj bhi machhuare suraj doobte hi apni naav kinare baandhkar wahan se nikal jaate hain. Kuch raaz aise hote hain jinhe band darwazon ke peeche hi rehne dena behtar hai.",
-      "sound_cue": "Dead silence followed by cold hollow wind"
+      "beat": "UNRESOLVED_FORENSICS",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "visual_prompt": "Desolate aftermath cinematic shot of Dumas Beach, solitary lantern flickering on cold ground, deep midnight shadows, eerie silence, 8k resolution, portrait 9:16",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "vo_text": "Is hadse ke baad se Surat Police ne beach entrance par warning boards lagaye hain aur raat ko beach par rukna punishable offence hai. Aaj tak forensic science aur local prashasan ke paas iska koi jawab nahi hai. Kuch raaz aise hote hain jinhe andhere mein hi dafan rehne dena chahiye.",
+      "sound_cue": "Sudden dead silence + chilling low wind gust"
     },
     {
-      "beat": "OUTRO",
+      "beat": "NEXT_ARCHIVE_HOOK",
       "time_range": "1:50–2:00",
       "target_dur": 10.0,
-      "visual_prompt": "Total black vignette background with blood red glowing mist, atmospheric cinematic horror, 8k resolution, portrait 9:16",
-      "text_overlay": "PART 50 → JATINGA VALLEY",
-      "vo_text": "Agli kahani Assam ke Jatinga Valley ki hai... jahan aisi cheekh sunayi di jo kisi insaan ki nahi thi. Follow for Part 50!",
-      "sound_cue": "Sub-bass drop into darkness"
+      "visual_prompt": "Vignette pitch black background with blood-red glowing smoke and dark silhouette of Jatinga Valley, cinematic forensic horror style, 8k resolution, portrait 9:16",
+      "text_overlay": "NEXT DOSSIER → PART 50: JATINGA VALLEY",
+      "vo_text": "Aaj raat jab aap apne kamre ki batti bujhayenge... toh ek baar darwaza zaroor check kar lena. Agla case file Assam ke Jatinga Valley ka hai... Follow for Part 50!",
+      "sound_cue": "Sub-bass drop into pitch darkness"
     }
   ],
   "tags": [
-    "dumasbeach",
-    "indianhorror",
-    "realhorrorstories",
-    "horrorstorieshindi",
-    "paranormalinvestigation",
-    "hauntedplacesindia",
-    "ghoststories",
+    "indian horror tapes",
+    "real horror stories in hindi",
+    "haunted places in india",
+    "ghost stories hindi",
+    "paranormal investigation india",
+    "horror shorts hindi",
     "shorts",
-    "surat"
-  ]
+    "dumasbeach",
+    "surat",
+    "dumas beach real story",
+    "bhoot ki kahani",
+    "unsolved mysteries india",
+    "mrballen hindi"
+  ],
+  "seo_description": "⚠️ EPISODE 49: Dumas Beach — Kaali Reti Ka Raaz\n📍 Real Location: Surat, Gujarat\n📜 Archival Reference: Arabian Sea Black Sand Shoreline and Hindu Cremation Grounds (Ancient)\n\nKehte hain India ki har purani deewar ke peeche ek aisi sachai dabi hai jise sunkar rooh kaanp jaye. Dumas Beach ke baare mein official records aur police files mein ek aisi ghatna darj hai jiska jawab modern science ke paas aaj bhi nahi hai...\n\n⏱️ CASE TIMESTAMPS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (Ancient)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 50)\n\n👉 New Declassified Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #IndianHorror #RealHorrorStories #HauntedIndia #GhostStoriesHindi #ParanormalInvestigation #surat\n",
+  "pinned_comment": "Agar aap aadhi raat ko Surat ke is ilaaqe mein akele hon aur aapki car achanak ruk jaye... toh aap kya karenge? 1. Darwaza kholkar madad mangenge ya 2. Car ke andar lock hokar subah ka wait karenge? Sach batana comments mein 👇",
+  "thumbnail_concept": "Ultra-high contrast horror portrait thumbnail, terrifying silhouette of Dumas Beach under dark crimson and moonlight fog, single ominous glowing window or eyes in the shadows, 35mm film grain, 8k resolution, portrait 9:16"
 }
