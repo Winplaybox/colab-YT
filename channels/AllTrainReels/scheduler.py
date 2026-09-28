@@ -236,9 +236,10 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
     if publish_mode != "render_only":
         video_id = upload_short(video_path, story, publish_mode=publish_mode)
 
-    # Update state.json progression
-    total_stories = state.get("total_stories", 30)
-    next_ep = (episode_number % total_stories) + 1
+    # Update state.json progression — episodes count up forever (no wrap)
+    # Episodes 1-30  -> story_bank.py (verified, hand-crafted stories)
+    # Episodes 31+   -> extended_generator.py (auto-generated new railway stories)
+    next_ep = episode_number + 1
     state["last_run"] = datetime.now().isoformat()
     state["last_uploaded_video_id"] = video_id
     state["current_story_number"] = next_ep
