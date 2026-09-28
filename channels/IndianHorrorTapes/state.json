@@ -1,9 +1,20 @@
 {
   "channel_id": "UCNRr8A9gVZQZJi1eMKiXIJw",
   "channel_name": "IndianHorrorTapes",
-  "current_story_number": 1,
+  "current_story_number": 9,
   "total_stories": 103,
-  "last_run": null,
-  "last_uploaded_video_id": null,
-  "history": []
+  "last_run": "2026-09-28T19:09:46.385833",
+  "last_uploaded_video_id": "n_N9mtunhxY",
+  "history": [
+    {
+      "story_number": 8,
+      "video_id": "n_N9mtunhxY",
+      "publish_at": "2026-09-30T15:30:00Z",
+      "uploaded_at": "2026-09-28T19:09:46.385833"
+    }
+  ],
+  "playlists": {
+    "HAUNTED FORTS & PALACES": "PLAVtBo3fof8g",
+    "ALL_EPISODES": "PLBIywThy8I34"
+  }
 }
