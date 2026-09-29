@@ -1,10 +1,18 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 1,
+  "current_story_number": 2,
   "total_stories": 3000,
-  "last_run": null,
-  "last_uploaded_video_id": null,
-  "history": [],
+  "last_run": "2026-09-29T08:19:01.812841",
+  "last_uploaded_video_id": "26p0F6iur6Y",
+  "history": [
+    {
+      "episode_number": 1,
+      "title": "Ye Train 603 km/h Chali! Bina Pahiye Ke 🤯",
+      "video_id": "26p0F6iur6Y",
+      "mode": "schedule",
+      "timestamp": "2026-09-29T08:19:01.812841"
+    }
+  ],
   "used_topic_ids": []
 }
