@@ -337,16 +337,19 @@ def generate_procedural_fallback(title, subtitle, output_path, width=1080, heigh
         print(f"Procedural canvas error: {e}")
         return False
 
-def generate_story_assets(story_json_path, target_shots=25):
+def generate_story_assets(story_input, target_shots=25):
     """
-    Generates high-pacing scene assets (default 25 shots, 3-5 sec cuts) for a story JSON file:
-    1. Primary Tier: Searches Wikimedia Commons for authentic real temple sculptures,
+    Generates high-pacing scene assets (default 25 shots, 3-5 sec cuts) from a story dictionary or JSON filepath:
+    1. Primary Tier: Searches The Met Open Access and Wikimedia Commons for authentic real temple sculptures,
        classical Indian paintings, and ancient heritage photography.
     2. Secondary Tier: AI generation via FLUX / Pollinations for rare scenes.
     3. Tertiary Tier: Procedural divine saffron canvas.
     """
-    with open(story_json_path, "r", encoding="utf-8") as f:
-        story_data = json.load(f)
+    if isinstance(story_input, dict):
+        story_data = story_input
+    else:
+        with open(story_input, "r", encoding="utf-8") as f:
+            story_data = json.load(f)
 
     story_id = story_data["story_id"]
     title = story_data["title"]

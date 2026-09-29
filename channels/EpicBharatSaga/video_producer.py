@@ -197,15 +197,18 @@ def split_script_into_subtitles(voiceover_text, target_count, fallback_shots=Non
             beats.append(beats[-1] if beats else "Sanatan Dharma")
     return beats[:target_count]
 
-def produce_train_video(story_json_path, quality="1080p"):
+def produce_train_video(story_input, quality="1080p"):
     """
-    Renders an end-to-end 9:16 YouTube Short from a story JSON file:
+    Renders an end-to-end 9:16 YouTube Short from a story dictionary or JSON filepath:
     - Eliminates -loop 1 -t frame explosion bug (uses single frame input + upscale to eliminate zoompan stutter)
     - Subtitles rendered in Shorts safe zone (y=1080-1350) via sanitized textfiles
     - Audio mixed via amix(normalize=0) and loudnorm(-16 LUFS)
     """
-    with open(story_json_path, "r", encoding="utf-8") as f:
-        story_data = json.load(f)
+    if isinstance(story_input, dict):
+        story_data = story_input
+    else:
+        with open(story_input, "r", encoding="utf-8") as f:
+            story_data = json.load(f)
 
     story_id = story_data["story_id"]
     title = story_data["title"]
@@ -231,7 +234,7 @@ def produce_train_video(story_json_path, quality="1080p"):
     # Ensure shot image assets exist (targets 25 shots for high-retention 3-4s visual cuts)
     from image_generator import generate_story_assets
     episode_assets_dir = os.path.join(assets_base, story_id)
-    generate_story_assets(story_json_path, target_shots=25)
+    generate_story_assets(story_data, target_shots=25)
 
     # Discover all available shot images
     shot_imgs = sorted([
