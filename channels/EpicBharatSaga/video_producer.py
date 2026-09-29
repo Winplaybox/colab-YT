@@ -223,12 +223,18 @@ def produce_train_video(story_input, quality="1080p"):
     print(f"==================================================")
 
     # Resolution settings (Safe from zoompan OOM)
+    # GitHub Actions runners have 7GB RAM limit. With 25 inputs, 8K exceeds memory limits (exit code 143).
+    is_ci = os.environ.get("GITHUB_ACTIONS") == "true" or os.environ.get("CI") == "true"
+    if is_ci and quality in ["8k", "4k"]:
+        print(f"⚠️ [Resource Guard] {quality.upper()} with 25 shots exceeds GitHub Actions 7GB RAM limit. Safe-scaling to 1080p (native Shorts resolution).")
+        quality = "1080p"
+
     res_map = {
         "1080p": (1080, 1920),
         "4k": (2160, 3840),
         "8k": (4320, 7680)
     }
-    w, h = res_map.get(quality, (2160, 3840))
+    w, h = res_map.get(quality, (1080, 1920))
     scale = w / 1080.0
 
     # Ensure shot image assets exist (targets 25 shots for high-retention 3-4s visual cuts)
@@ -329,9 +335,11 @@ def produce_train_video(story_input, quality="1080p"):
             f"setsar=1"
         )
 
-        # Scale 2x before zoompan to eliminate jitter/stutter
+        # Scale before zoompan to eliminate jitter/stutter (clamped to 2160x3840 max to prevent OOM)
+        zoom_w = min(w * 2, 2160)
+        zoom_h = min(h * 2, 3840)
         filter_chains.append(
-            f"[{i}:v]scale={w*2}:{h*2}:force_original_aspect_ratio=increase,crop={w*2}:{h*2},"
+            f"[{i}:v]scale={zoom_w}:{zoom_h}:force_original_aspect_ratio=increase,crop={zoom_w}:{zoom_h},"
             f"zoompan={zoom_expr}:d={frames}:s={w}x{h}:fps=30,"
             f"{sub_draw}[v{i}]"
         )
