@@ -82,22 +82,6 @@ jobs:
         run: |
           printf "%s" "${{ secrets.HF_TOKEN }}" > channels/EpicBharatSaga/credentials/hf_token.txt
 
-      - name: Determine Episode Number
-        id: episode
-        run: |
-          if [ -n "${{ github.event.inputs.episode_number }}" ]; then
-            EP_NUM="${{ github.event.inputs.episode_number }}"
-          else
-            EP_NUM=$(python -c "
-import json
-with open('channels/EpicBharatSaga/state.json') as f:
-    s = json.load(f)
-print(s.get('current_episode', 1))
-")
-          fi
-          echo "EP_NUM=${EP_NUM}" >> $GITHUB_OUTPUT
-          echo "Episode selected: ${EP_NUM}"
-
       - name: Run EpicBharatSaga Pipeline
         env:
           EPICBHARATSAGA_TOKEN_JSON: ${{ secrets.EPICBHARATSAGA_TOKEN_JSON }}
@@ -106,11 +90,16 @@ print(s.get('current_episode', 1))
         run: |
           QUALITY="${{ github.event.inputs.quality || '1080p' }}"
           MODE="${{ github.event.inputs.mode || 'scheduled' }}"
-          EP="${{ steps.episode.outputs.EP_NUM }}"
+          EP_INPUT="${{ github.event.inputs.episode_number }}"
 
-          echo "EpicBharatSaga Episode #${EP} | Quality: ${QUALITY} | Mode: ${MODE}"
+          EP_ARG=""
+          if [ -n "$EP_INPUT" ]; then
+            EP_ARG="--episode $EP_INPUT"
+          fi
+
+          echo "🔱 EpicBharatSaga Pipeline | Quality: ${QUALITY} | Mode: ${MODE} | Episode: ${EP_INPUT:-auto}"
           python channels/EpicBharatSaga/scheduler.py \
-            --episode "${EP}" \
+            $EP_ARG \
             --quality "${QUALITY}" \
             --mode "${MODE}"
 
@@ -130,5 +119,5 @@ print(s.get('current_episode', 1))
           git config --local user.name  "EpicBharatSaga Bot"
           git config --local user.email "epicbharat.official@gmail.com"
           git add channels/EpicBharatSaga/state.json channels/EpicBharatSaga/stories/ || true
-          git diff --staged --quiet || git commit -m "chore(EpicBharatSaga): ep #${{ steps.episode.outputs.EP_NUM }} state update [skip ci]"
+          git diff --staged --quiet || git commit -m "chore(EpicBharatSaga): automated episode release [skip ci]"
           git push || echo "Push skipped."
