@@ -3,11 +3,11 @@ EpicBharatSaga Hindu Mythology Photography & Asset Engine
 =====================================================
 - Primary Tier (Real Photos): Automatically searches Wikimedia Commons / Wikipedia
   for authentic, high-resolution public-domain Hindu mythology & temple photography.
-- Vertical Adaptation: Converts horizontal train photos into documentary 9:16 Shorts
+- Vertical Adaptation: Converts historical paintings & temple sculptures into documentary 9:16 Shorts
   assets with high-def centered subject and ambient cinematic blurred backdrop.
 - Secondary Tier: HuggingFace FLUX.1-schnell & Pollinations for conceptual / rare scenes.
-- Robust Fallback: Procedural navy/red canvas marked with .fallback so future runs auto-upgrade.
-- Zero Inauthentic Content Risk: Ensures each video has distinct, genuine railway imagery.
+- Robust Fallback: Procedural saffron/gold canvas marked with .fallback so future runs auto-upgrade.
+- Zero Inauthentic Content Risk: Ensures each video has authentic, classical Sanatan Dharma imagery.
 """
 
 import os
@@ -134,7 +134,7 @@ def fetch_wikimedia_images(search_queries, limit=25):
     return urls
 
 def extract_search_queries_for_story(story_data):
-    """Derives high-precision Wikimedia search terms from story metadata and sources."""
+    """Derives high-precision Wikimedia search terms from story metadata, deity, and sources."""
     queries = []
 
     # 1. From Wikipedia sources URL
@@ -144,19 +144,34 @@ def extract_search_queries_for_story(story_data):
             if slug:
                 queries.append(slug)
                 queries.append(f"{slug} Hindu mythology")
-        queries.append(f"{slug} India temple")
+                queries.append(f"{slug} India temple")
 
-    # 2. From story ID
-    sid = story_data.get("story_id", "").replace("train_", "").split("_")[2:]
-    if sid:
-        queries.append(" ".join(sid))
+    # 2. From Deity context
+    deity = story_data.get("deity", "")
+    if deity:
+        queries.append(f"{deity} Hindu art")
+        queries.append(f"{deity} temple sculpture")
+        queries.append(f"{deity} painting")
 
-    # 3. From tagline & title
+    # 3. From story ID
+    sid = story_data.get("story_id", "").replace("train_", "").split("_")
+    meaningful = [w for w in sid if not w.isdigit() and len(w) > 2]
+    if meaningful:
+        queries.append(" ".join(meaningful))
+
+    # 4. From tagline & title
     tagline = story_data.get("tagline", "")
     if tagline:
         queries.append(tagline)
 
-    # Clean queries
+    title = story_data.get("title", "")
+    if title:
+        # Extract title words without emojis
+        clean_title = "".join(c for c in title if c.isalnum() or c in " -_").strip()
+        if clean_title:
+            queries.append(clean_title)
+
+    # Clean queries and remove duplicates
     clean_queries = []
     for q in queries:
         cq = q.replace("record", "").replace("fastest", "").strip()
@@ -276,10 +291,11 @@ def generate_procedural_fallback(title, subtitle, output_path, width=1080, heigh
 
 def generate_story_assets(story_json_path):
     """
-    Generates all 5 scene assets for a story JSON file:
-    1. Primary Tier: Searches Wikimedia Commons for authentic real train photography.
-    2. Secondary Tier: AI generation via FLUX / Pollinations for missing shots.
-    3. Tertiary Tier: Procedural fallback canvas.
+    Generates all scene assets for a story JSON file:
+    1. Primary Tier: Searches Wikimedia Commons for authentic real temple sculptures,
+       classical Indian paintings, and ancient heritage photography.
+    2. Secondary Tier: AI generation via FLUX / Pollinations for rare scenes.
+    3. Tertiary Tier: Procedural divine saffron canvas.
     """
     with open(story_json_path, "r", encoding="utf-8") as f:
         story_data = json.load(f)
@@ -291,12 +307,12 @@ def generate_story_assets(story_json_path):
     episode_dir = os.path.join(assets_base, story_id)
     os.makedirs(episode_dir, exist_ok=True)
 
-    print(f"\n🚂 Processing Visual Assets for '{title}' ({len(shots)} shots)...")
+    print(f"\n🔱 Processing Visual Assets for '{title}' ({len(shots)} shots)...")
 
-    # Step 1: Query Wikimedia Commons for pool of real railway photos
+    # Step 1: Query Wikimedia Commons for pool of authentic mythology & temple photos
     queries = extract_search_queries_for_story(story_data)
     real_photo_urls = fetch_wikimedia_images(queries, limit=max(25, len(shots) + 5))
-    print(f"📸 [Wikimedia Commons] Discovered {len(real_photo_urls)} real authentic railway photos for: {queries[:3]}")
+    print(f"📸 [Wikimedia Commons] Discovered {len(real_photo_urls)} authentic heritage & classical artworks for: {queries[:3]}")
 
     for idx, shot in enumerate(shots, 1):
         shot_filename = f"shot_{idx:02d}.jpg"
