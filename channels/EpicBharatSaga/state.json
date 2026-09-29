@@ -1,11 +1,21 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 1,
+  "current_episode": 2,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": null,
-  "last_uploaded_video_id": null,
+  "last_run": "2026-09-29T17:06:33.886149",
+  "last_uploaded_video_id": "EJyGOlGvphs",
   "used_story_ids": [],
-  "history": []
+  "history": [
+    {
+      "episode_number": 1,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Neelkanth: Zeher Peeke Duniya Bachai! 🔱",
+      "video_id": "EJyGOlGvphs",
+      "mode": "scheduled",
+      "timestamp": "2026-09-29T17:06:33.886149"
+    }
+  ]
 }
