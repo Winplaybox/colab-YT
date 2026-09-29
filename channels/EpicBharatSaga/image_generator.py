@@ -86,6 +86,54 @@ def format_image_for_vertical_short(pil_img, target_width=1080, target_height=19
     canvas.paste(fg, (0, paste_y))
     return canvas
 
+def fetch_met_museum_images(search_queries, limit=12):
+    """
+    Queries The Metropolitan Museum of Art Open Access Collection (Dept 6: Asian Art).
+    Returns verified CC0 / Public Domain high-resolution museum image items.
+    """
+    session = requests.Session()
+    session.headers.update({"User-Agent": USER_AGENT})
+    items = []
+    seen = set()
+
+    for q in search_queries:
+        if len(items) >= limit:
+            break
+        q_enc = requests.utils.quote(q.strip())
+        api_url = f"https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=6&hasImages=true&q={q_enc}"
+        try:
+            resp = session.get(api_url, timeout=10)
+            if resp.status_code != 200:
+                continue
+            data = resp.json()
+            object_ids = data.get("objectIDs") or []
+            for oid in object_ids[:10]:
+                if len(items) >= limit:
+                    break
+                obj_url = f"https://collectionapi.metmuseum.org/public/collection/v1/objects/{oid}"
+                try:
+                    obj_resp = session.get(obj_url, timeout=8)
+                    if obj_resp.status_code == 200:
+                        obj_data = obj_resp.json()
+                        if obj_data.get("isPublicDomain"):
+                            img_url = obj_data.get("primaryImage") or obj_data.get("primaryImageSmall")
+                            if img_url and img_url not in seen:
+                                seen.add(img_url)
+                                items.append({
+                                    "url": img_url,
+                                    "source": "The Metropolitan Museum of Art",
+                                    "title": obj_data.get("title", ""),
+                                    "period": obj_data.get("period", ""),
+                                    "culture": obj_data.get("culture", "India"),
+                                    "license": "CC0 / Public Domain"
+                                })
+                except Exception:
+                    continue
+        except Exception:
+            continue
+
+    return items
+
 def fetch_wikimedia_images(search_queries, limit=25):
     """
     Queries Wikimedia Commons API across a list of query variations.
@@ -310,10 +358,24 @@ def generate_story_assets(story_json_path, target_shots=25):
 
     print(f"\n🔱 Processing Visual Assets for '{title}' ({num_to_generate} shots, high-retention pacing)...")
 
-    # Step 1: Query Wikimedia Commons for pool of authentic mythology & temple photos
+    # Step 1: Query The Met Museum Open Access (Dept 6: Asian Art)
     queries = extract_search_queries_for_story(story_data)
+    met_items = fetch_met_museum_images(queries[:4], limit=8)
+    if met_items:
+        print(f"🏛️ [The Met Open Access] Discovered {len(met_items)} CC0 museum masterworks for: {queries[:2]}")
+
+    # Step 2: Query Wikimedia Commons for pool of authentic heritage & classical photos
     real_photo_urls = fetch_wikimedia_images(queries, limit=max(35, num_to_generate + 5))
     print(f"📸 [Wikimedia Commons] Discovered {len(real_photo_urls)} authentic heritage & classical artworks for: {queries[:3]}")
+
+    # Unified curated image pool: Met Museum masterworks first, then Wikimedia Commons
+    curated_pool = []
+    for item in met_items:
+        curated_pool.append({"url": item["url"], "provenance": f"The Met ({item.get('title', '')})", "license": "CC0"})
+    for u in real_photo_urls:
+        curated_pool.append({"url": u, "provenance": "Wikimedia Commons", "license": "Public Domain / CC0"})
+
+    manifest = {"story_id": story_id, "title": title, "shots": []}
 
     for idx in range(1, num_to_generate + 1):
         shot_filename = f"shot_{idx:02d}.jpg"
@@ -321,18 +383,23 @@ def generate_story_assets(story_json_path, target_shots=25):
 
         if is_real_cached(shot_path):
             print(f"⏩ [Cached] Verified asset exists: shot_{idx:02d}.jpg")
+            manifest["shots"].append({"shot": idx, "filename": shot_filename, "status": "cached"})
             continue
 
-        # Documentary standard: Always use real Wikipedia photography
+        # Documentary standard: Use Museum & Archival photography
         photo_idx = idx - 1
         success = False
-        if real_photo_urls:
-            real_url = real_photo_urls[photo_idx % len(real_photo_urls)]
-            success = download_and_format_real_photo(real_url, shot_path)
-            if success:
-                print(f"✅ [Wikipedia Documentary Photo #{idx:02d}] Formatted {shot_filename} from Wikimedia Commons")
+        shot_meta = {"shot": idx, "filename": shot_filename, "source": "unknown"}
 
-        # Fallback to AI generation if real photo not available or download failed
+        if curated_pool:
+            target_entry = curated_pool[photo_idx % len(curated_pool)]
+            success = download_and_format_real_photo(target_entry["url"], shot_path)
+            if success:
+                prov = target_entry.get("provenance", "Museum Collection")
+                print(f"✅ [{prov} #{idx:02d}] Formatted {shot_filename}")
+                shot_meta.update({"source": prov, "license": target_entry.get("license", "CC0"), "url": target_entry["url"]})
+
+        # Fallback to AI generation if museum/real photo failed
         if not success:
             prompt = shots[idx - 1].get("prompt", title) if idx <= len(shots) else title
             hf_token = get_hf_token()
@@ -340,17 +407,30 @@ def generate_story_assets(story_json_path, target_shots=25):
                 success = generate_via_huggingface_flux(prompt, shot_path, hf_token)
                 if success:
                     print(f"✅ [FLUX Schnell #{idx:02d}] Generated {shot_filename}")
+                    shot_meta.update({"source": "FLUX.1-schnell", "prompt": prompt})
 
         if not success:
             prompt = shots[idx - 1].get("prompt", title) if idx <= len(shots) else title
             success = generate_via_pollinations(prompt, shot_path)
             if success:
                 print(f"✅ [Pollinations #{idx:02d}] Generated {shot_filename}")
+                shot_meta.update({"source": "Pollinations AI", "prompt": prompt})
 
         # Final safety net: procedural fallback
         if not success:
             sub = shots[idx - 1].get("subtitle", "") if idx <= len(shots) else ""
             generate_procedural_fallback(title, sub, shot_path)
+            shot_meta.update({"source": "Procedural Divine Canvas"})
+
+        manifest["shots"].append(shot_meta)
+
+    # Save asset provenance manifest
+    manifest_path = os.path.join(episode_dir, "asset_manifest.json")
+    try:
+        with open(manifest_path, "w", encoding="utf-8") as mf:
+            json.dump(manifest, mf, indent=2, ensure_ascii=False)
+    except Exception:
+        pass
 
     return episode_dir
 
