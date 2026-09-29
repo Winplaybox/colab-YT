@@ -98,13 +98,13 @@ def generate_voiceover(text, output_audio_path, voice="hi-IN-MadhurNeural", rate
         asyncio.run(_synth())
         print(f"🎙️ [Edge-TTS Fallback] Generated: {output_audio_path}")
 
-def synthesize_procedural_rail_audio(output_audio_path, duration=25.0):
+def synthesize_procedural_divine_audio(output_audio_path, duration=30.0):
     """
-    Synthesizes an authentic procedural railway soundscape via pure Python wave module:
-    - Rhythmic track clatter (ta-dak ta-dak low pulses)
-    - Distant resonant locomotive horn blast
-    - Low rail hum
-    100% robust, zero FFmpeg filter crashes.
+    Synthesizes an authentic divine soundscape via pure Python wave module:
+    - Resonant sacred Om fundamental frequency (136.1 Hz + harmonics)
+    - Gentle temple bell chime reverberating in the opening seconds
+    - Warm atmospheric meditative undertone
+    100% robust, zero external audio dependency.
     """
     import wave
     import struct
@@ -120,77 +120,82 @@ def synthesize_procedural_rail_audio(output_audio_path, duration=25.0):
     frames = bytearray()
     for n in range(total_samples):
         t = n / sample_rate
-        # 1. Distant horn (first 2 seconds)
-        horn = 0.0
-        if t < 2.0:
-            env = math.sin((t / 2.0) * math.pi)
-            horn = (math.sin(2 * math.pi * 329.63 * t) * 0.3 + math.sin(2 * math.pi * 440.0 * t) * 0.25) * env * 0.25
+        # 1. Gentle temple bell chime at start
+        bell = 0.0
+        if t < 4.0:
+            decay = math.exp(-t * 1.8)
+            bell = (math.sin(2 * math.pi * 587.33 * t) * 0.4 +
+                    math.sin(2 * math.pi * 880.0 * t) * 0.25 +
+                    math.sin(2 * math.pi * 1174.66 * t) * 0.15) * decay * 0.30
 
-        # 2. Rhythmic track clatter (two clicks every 0.6 seconds)
-        cycle_pos = t % 0.6
-        clatter = 0.0
-        if cycle_pos < 0.04:
-            clatter += math.sin(2 * math.pi * 90 * cycle_pos) * math.exp(-cycle_pos * 70) * 0.25
-        elif 0.12 < cycle_pos < 0.16:
-            p2 = cycle_pos - 0.12
-            clatter += math.sin(2 * math.pi * 110 * p2) * math.exp(-p2 * 70) * 0.18
+        # 2. Sacred Om drone (136.1 Hz fundamental + warm harmonics)
+        f0 = 136.1
+        drone = (math.sin(2 * math.pi * f0 * t) * 0.10 +
+                 math.sin(2 * math.pi * (f0 * 2) * t) * 0.05 +
+                 math.sin(2 * math.pi * (f0 * 3) * t) * 0.025 +
+                 math.sin(2 * math.pi * (f0 * 4) * t) * 0.012)
+        # Slow breathing amplitude modulation (0.15 Hz)
+        mod = 0.85 + 0.15 * math.sin(2 * math.pi * 0.15 * t)
+        drone *= mod
 
-        # 3. Low rumble
-        rumble = math.sin(2 * math.pi * 55 * t) * 0.05
-
-        sample = horn + clatter + rumble
+        sample = bell + drone
         sample = max(-0.95, min(0.95, sample))
         int_sample = int(sample * 32767)
         frames.extend(struct.pack("<hh", int_sample, int_sample))
 
     wav_file.writeframes(frames)
     wav_file.close()
-    print(f"🎵 [Procedural Rail Sound] Synthesized: {output_audio_path}")
+    print(f"🔱 [Divine Ambient Soundscape] Synthesized: {output_audio_path}")
     return True
 
-def build_railway_hud_filter(theme, w, h, font_arg, episode_num):
-    """Builds visual HUD overlay filters strictly avoiding the bottom Shorts safe zone."""
+def build_mythology_hud_filter(deity, season, w, h, font_arg, episode_num):
+    """Builds visual HUD overlay with divine saffron/gold branding in Shorts safe zone."""
     scale = w / 1080.0
+
+    deity_title = f"{deity.upper()} • S{season}" if deity else "SANATAN DHARMA"
 
     # Persistent brand banner on top (Safe zone: y=0 to 140)
     brand_filters = [
-        f"drawbox=x=0:y=0:w={w}:h={int(130*scale)}:color=0x0B1F3A@0.85:t=fill",
-        f"drawbox=x=0:y={int(130*scale)}:w={w}:h={int(6*scale)}:color=0xE63946@1.0:t=fill",
-        f"drawtext={font_arg}text='ALL TRAIN REELS':x={int(45*scale)}:y={int(35*scale)}:fontsize={int(32*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=2:shadowy=2",
+        f"drawbox=x=0:y=0:w={w}:h={int(130*scale)}:color=0x1A0A00@0.90:t=fill",
+        f"drawbox=x=0:y={int(130*scale)}:w={w}:h={int(6*scale)}:color=0xFF9933@1.0:t=fill",
+        f"drawtext={font_arg}text='EPIC BHARAT SAGA':x={int(45*scale)}:y={int(35*scale)}:fontsize={int(32*scale)}:fontcolor=0xFFD700:shadowcolor=black:shadowx=2:shadowy=2",
         f"drawtext={font_arg}text='EPISODE #{episode_num:02d}':x={w - int(240*scale)}:y={int(35*scale)}:fontsize={int(28*scale)}:fontcolor=0xF1F5F9:shadowcolor=black:shadowx=2:shadowy=2"
     ]
 
-    # Contextual top badge (y=150 to 220)
-    if theme == "SPEEDOMETER_HUD":
-        badge = [
-            f"drawbox=x={w - int(280*scale)}:y={int(150*scale)}:w={int(240*scale)}:h={int(60*scale)}:color=0x0B1F3A@0.85:t=fill",
-            f"drawbox=x={w - int(280*scale)}:y={int(150*scale)}:w={int(6*scale)}:h={int(60*scale)}:color=0xFFC300@1.0:t=fill",
-            f"drawtext={font_arg}text='HIGH-SPEED':x={w - int(255*scale)}:y={int(165*scale)}:fontsize={int(24*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=2:shadowy=2"
-        ]
-        return brand_filters + badge
+    # Contextual deity badge (y=150 to 220)
+    badge = [
+        f"drawbox=x={w - int(320*scale)}:y={int(150*scale)}:w={int(280*scale)}:h={int(60*scale)}:color=0x1A0A00@0.85:t=fill",
+        f"drawbox=x={w - int(320*scale)}:y={int(150*scale)}:w={int(6*scale)}:h={int(60*scale)}:color=0xFF9933@1.0:t=fill",
+        f"drawtext={font_arg}text='{deity_title}':x={w - int(300*scale)}:y={int(165*scale)}:fontsize={int(22*scale)}:fontcolor=0xFFD700:shadowcolor=black:shadowx=2:shadowy=2"
+    ]
+    return brand_filters + badge
 
-    elif theme == "SPLIT_VS_ARENA":
-        badge = [
-            f"drawbox=x={w//2 - int(60*scale)}:y={int(150*scale)}:w={int(120*scale)}:h={int(60*scale)}:color=0xE63946@0.95:t=fill",
-            f"drawtext={font_arg}text='VS':x={w//2 - int(22*scale)}:y={int(162*scale)}:fontsize={int(36*scale)}:fontcolor=0xFFFFFF:shadowcolor=black:shadowx=2:shadowy=2"
-        ]
-        return brand_filters + badge
+def split_script_into_subtitles(voiceover_text, target_count, fallback_shots=None):
+    """
+    Dynamically splits voiceover script into punchy, synchronized subtitles for each shot.
+    If shots already have rich granular subtitles matching target_count, uses them.
+    """
+    if fallback_shots and len(fallback_shots) >= target_count:
+        return [s.get("subtitle", "") for s in fallback_shots[:target_count]]
 
-    elif theme == "VINTAGE_STEAM_GAUGE":
-        badge = [
-            f"drawbox=x={int(40*scale)}:y={int(150*scale)}:w={int(260*scale)}:h={int(60*scale)}:color=0x2c1a0e@0.85:t=fill",
-            f"drawtext={font_arg}text='HERITAGE STEAM':x={int(55*scale)}:y={int(165*scale)}:fontsize={int(24*scale)}:fontcolor=0xE0A96D:shadowcolor=black:shadowx=2:shadowy=2"
-        ]
-        return brand_filters + badge
+    words = voiceover_text.replace("—", " ").replace("-", " ").split()
+    total_words = len(words)
+    if total_words == 0:
+        return ["Om Namah Shivaya"] * target_count
 
-    elif theme == "CABIN_POV_RADAR":
-        badge = [
-            f"drawbox=x={w - int(280*scale)}:y={int(150*scale)}:w={int(240*scale)}:h={int(60*scale)}:color=0x0B1F3A@0.85:t=fill",
-            f"drawtext={font_arg}text='CABIN VIEW':x={w - int(255*scale)}:y={int(165*scale)}:fontsize={int(24*scale)}:fontcolor=0x22C55E:shadowcolor=black:shadowx=2:shadowy=2"
-        ]
-        return brand_filters + badge
+    chunk_size = max(2, total_words // target_count)
+    beats = []
+    i = 0
+    while i < total_words:
+        chunk = " ".join(words[i:i + chunk_size])
+        beats.append(chunk)
+        i += chunk_size
 
-    return brand_filters
+    # Pad or trim to target_count
+    if len(beats) < target_count:
+        while len(beats) < target_count:
+            beats.append(beats[-1] if beats else "Sanatan Dharma")
+    return beats[:target_count]
 
 def produce_train_video(story_json_path, quality="1080p"):
     """
@@ -205,12 +210,13 @@ def produce_train_video(story_json_path, quality="1080p"):
     story_id = story_data["story_id"]
     title = story_data["title"]
     episode_num = story_data.get("episode_number", 1)
-    visual_theme = story_data.get("visual_theme", "SPEEDOMETER_HUD")
+    deity = story_data.get("deity", "Lord Shiva")
+    season = story_data.get("season", 1)
     voiceover_text = story_data.get("voiceover_script", "")
     shots = story_data.get("shots", [])
 
     print(f"\n==================================================")
-    print(f"🚂 PRODUCING ALLTRAINREELS SHORT #{episode_num:02d}: {title}")
+    print(f"🔱 PRODUCING EPICBHARATSAGA SHORT #{episode_num:02d}: {title}")
     print(f"==================================================")
 
     # Resolution settings (Safe from zoompan OOM)
@@ -222,26 +228,34 @@ def produce_train_video(story_json_path, quality="1080p"):
     w, h = res_map.get(quality, (2160, 3840))
     scale = w / 1080.0
 
-    # Ensure shot image assets exist
+    # Ensure shot image assets exist (targets 25 shots for high-retention 3-4s visual cuts)
     from image_generator import generate_story_assets
     episode_assets_dir = os.path.join(assets_base, story_id)
-    generate_story_assets(story_json_path)
+    generate_story_assets(story_json_path, target_shots=25)
+
+    # Discover all available shot images
+    shot_imgs = sorted([
+        os.path.join(episode_assets_dir, f)
+        for f in os.listdir(episode_assets_dir)
+        if f.startswith("shot_") and f.endswith(".jpg")
+    ])
+    num_shots = len(shot_imgs) if shot_imgs else max(24, len(shots))
 
     # Step 1: Voiceover Audio (pluggable TTS engine — no asyncio.run needed)
     voice_path = os.path.join(output_dir, f"{story_id}_voice.mp3")
     generate_voiceover(voiceover_text, voice_path)
     duration = get_audio_duration(voice_path)
-    print(f"⏱️ Audio Duration: {duration:.2f} seconds")
+    print(f"⏱️ Audio Duration: {duration:.2f} seconds | Shots: {num_shots} ({duration / num_shots:.2f}s per cut)")
 
-    # Step 2: Procedural Rail Soundscape
-    sfx_path = os.path.join(output_dir, f"{story_id}_rail_sfx.wav")
-    synthesize_procedural_rail_audio(sfx_path, duration=duration)
+    # Step 2: Divine Ambient Soundscape (Om drone + temple bell)
+    sfx_path = os.path.join(output_dir, f"{story_id}_divine_sfx.wav")
+    synthesize_procedural_divine_audio(sfx_path, duration=duration)
 
     # Step 3: Broadcast-standard Audio Mix (normalize=0, loudnorm)
     mixed_audio_path = os.path.join(output_dir, f"{story_id}_mixed_audio.wav")
     audio_filter = (
         "[0:a]volume=1.0[v];"
-        "[1:a]volume=0.10[s];"
+        "[1:a]volume=0.15[s];"
         "[v][s]amix=inputs=2:duration=first:normalize=0,"
         "loudnorm=I=-16:TP=-1.5:LRA=11[out]"
     )
@@ -256,20 +270,24 @@ def produce_train_video(story_json_path, quality="1080p"):
     subprocess.run(cmd_audio, check=True)
 
     # Step 4: Single-Frame Visual Assembly & Stutter-Free Zoompan
-    num_shots = len(shots)
     shot_duration = duration / num_shots
     frames = int(shot_duration * 30)
     font_file = resolve_font()
     font_arg = f"fontfile='{font_file}':" if font_file else ""
 
+    subtitles = split_script_into_subtitles(voiceover_text, num_shots, shots)
+
     input_args = []
     filter_chains = []
 
     for i in range(num_shots):
-        shot_img = os.path.join(episode_assets_dir, f"shot_{i+1:02d}.jpg")
-        if not os.path.exists(shot_img):
-            from image_generator import generate_procedural_fallback
-            generate_procedural_fallback(title, shots[i].get("subtitle", ""), shot_img, w, h)
+        if i < len(shot_imgs):
+            shot_img = shot_imgs[i]
+        else:
+            shot_img = os.path.join(episode_assets_dir, f"shot_{i+1:02d}.jpg")
+            if not os.path.exists(shot_img):
+                from image_generator import generate_procedural_fallback
+                generate_procedural_fallback(title, subtitles[i], shot_img, w, h)
 
         # Single-frame input (no -loop 1 -t)
         input_args.extend(["-i", shot_img])
@@ -291,7 +309,7 @@ def produce_train_video(story_json_path, quality="1080p"):
 
         # Sanitize subtitle text and write to external textfile
         sub_file = os.path.join(output_dir, f"{story_id}_sub{i}.txt")
-        clean_text = clean_sub(shots[i].get("subtitle", ""))
+        clean_text = clean_sub(subtitles[i])
         wrapped_sub = textwrap.fill(clean_text, width=28)
         with open(sub_file, "w", encoding="utf-8") as sf:
             sf.write(wrapped_sub)
@@ -320,7 +338,7 @@ def produce_train_video(story_json_path, quality="1080p"):
     concat_filter = f"{concat_inputs}concat=n={num_shots}:v=1:a=0[vconcat]"
 
     # HUD & Branding overlay
-    hud_filters = build_railway_hud_filter(visual_theme, w, h, font_arg, episode_num)
+    hud_filters = build_mythology_hud_filter(deity, season, w, h, font_arg, episode_num)
     hud_chain = ",".join(hud_filters)
     final_v_filter = f"[vconcat]{hud_chain}[vfinal]"
 

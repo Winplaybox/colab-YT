@@ -289,9 +289,9 @@ def generate_procedural_fallback(title, subtitle, output_path, width=1080, heigh
         print(f"Procedural canvas error: {e}")
         return False
 
-def generate_story_assets(story_json_path):
+def generate_story_assets(story_json_path, target_shots=25):
     """
-    Generates all scene assets for a story JSON file:
+    Generates high-pacing scene assets (default 25 shots, 3-5 sec cuts) for a story JSON file:
     1. Primary Tier: Searches Wikimedia Commons for authentic real temple sculptures,
        classical Indian paintings, and ancient heritage photography.
     2. Secondary Tier: AI generation via FLUX / Pollinations for rare scenes.
@@ -303,18 +303,19 @@ def generate_story_assets(story_json_path):
     story_id = story_data["story_id"]
     title = story_data["title"]
     shots = story_data.get("shots", [])
+    num_to_generate = max(target_shots, len(shots))
 
     episode_dir = os.path.join(assets_base, story_id)
     os.makedirs(episode_dir, exist_ok=True)
 
-    print(f"\n🔱 Processing Visual Assets for '{title}' ({len(shots)} shots)...")
+    print(f"\n🔱 Processing Visual Assets for '{title}' ({num_to_generate} shots, high-retention pacing)...")
 
     # Step 1: Query Wikimedia Commons for pool of authentic mythology & temple photos
     queries = extract_search_queries_for_story(story_data)
-    real_photo_urls = fetch_wikimedia_images(queries, limit=max(25, len(shots) + 5))
+    real_photo_urls = fetch_wikimedia_images(queries, limit=max(35, num_to_generate + 5))
     print(f"📸 [Wikimedia Commons] Discovered {len(real_photo_urls)} authentic heritage & classical artworks for: {queries[:3]}")
 
-    for idx, shot in enumerate(shots, 1):
+    for idx in range(1, num_to_generate + 1):
         shot_filename = f"shot_{idx:02d}.jpg"
         shot_path = os.path.join(episode_dir, shot_filename)
 
@@ -329,26 +330,27 @@ def generate_story_assets(story_json_path):
             real_url = real_photo_urls[photo_idx % len(real_photo_urls)]
             success = download_and_format_real_photo(real_url, shot_path)
             if success:
-                print(f"✅ [Wikipedia Documentary Photo #{idx}] Formatted {shot_filename} from Wikimedia Commons")
+                print(f"✅ [Wikipedia Documentary Photo #{idx:02d}] Formatted {shot_filename} from Wikimedia Commons")
 
         # Fallback to AI generation if real photo not available or download failed
         if not success:
-            prompt = shot.get("prompt", title)
+            prompt = shots[idx - 1].get("prompt", title) if idx <= len(shots) else title
             hf_token = get_hf_token()
             if hf_token:
                 success = generate_via_huggingface_flux(prompt, shot_path, hf_token)
                 if success:
-                    print(f"✅ [FLUX Schnell #{idx}] Generated {shot_filename}")
+                    print(f"✅ [FLUX Schnell #{idx:02d}] Generated {shot_filename}")
 
         if not success:
-            prompt = shot.get("prompt", title)
+            prompt = shots[idx - 1].get("prompt", title) if idx <= len(shots) else title
             success = generate_via_pollinations(prompt, shot_path)
             if success:
-                print(f"✅ [Pollinations #{idx}] Generated {shot_filename}")
+                print(f"✅ [Pollinations #{idx:02d}] Generated {shot_filename}")
 
         # Final safety net: procedural fallback
         if not success:
-            generate_procedural_fallback(title, shot.get("subtitle", ""), shot_path)
+            sub = shots[idx - 1].get("subtitle", "") if idx <= len(shots) else ""
+            generate_procedural_fallback(title, sub, shot_path)
 
     return episode_dir
 
