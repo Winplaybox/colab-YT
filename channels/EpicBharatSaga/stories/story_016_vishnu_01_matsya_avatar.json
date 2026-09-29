@@ -1,0 +1,72 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 16,
+  "season": 2,
+  "deity": "Lord Vishnu",
+  "story_id": "vishnu_01_matsya_avatar",
+  "story_hash": "60cce1ef4796d55a",
+  "format": "Avatar Story",
+  "title": "Matsya Avatar: Machli Bani Bhagwaan! 🐟",
+  "youtube_title": "Matsya Avatar: Machli Bani Bhagwaan! 🐟",
+  "tagline": "Vishnu Matsya avatar fish saves Vedas great flood Manu",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Matsya",
+    "https://en.wikipedia.org/wiki/Dashavatara"
+  ],
+  "verified_fact": "Matsya (fish) is the first of Vishnu's ten avatars (Dashavatara). Vishnu took this form to save the Vedas stolen by demon Hayagriva and to help sage Manu survive the great flood, similar to Noah's Ark narratives across cultures.",
+  "voiceover_script": "Vishnu ka pehla avatar — ek machli! Raja Satyavrata ke haath ek chhoti machli aayi. Machli boli — mujhe bada hone do, mahapralaya aane wali hai. Dhheere dheere machli itni badi hui ki saath le gayi samandar mein! Mahapralaya aayi. Manu ki naav ko Matsya ne apni seeng se kheencha — Vedas, sapt-rishiyon ko bachaya. Pralaya ke baad naya sansaar shuru. Kya Noah ki story aur ye story ek hi hai?",
+  "debate_question": "Matsya avatar aur Noah ki kahani — ek hi source hai kya?",
+  "pinned_comment": "🐟 Pehla avatar — machli! Mahapralaya se Vedas bachaye! Jai Vishnu!",
+  "description": "Matsya Avatar: Machli Bani Bhagwaan! 🐟\n\n🔱 Vishnu Matsya avatar fish saves Vedas great flood Manu\n\nMatsya (fish) is the first of Vishnu's ten avatars (Dashavatara). Vishnu took this form to save the Vedas stolen by demon Hayagriva and to help sage Manu survive the great flood, similar to Noah's Ark narratives across cultures.\n\n👉 Matsya avatar aur Noah ki kahani — ek hi source hai kya?\n\nSeason 2 — Lord Vishnu\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Matsya #Vishnu #Dashavatara #MahaPralaya #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Matsya",
+    "Vishnu",
+    "Dashavatara",
+    "MahaPralaya",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Vishnu ka pehla avatar — Matsya!",
+      "prompt": "Vishnu Matsya fish avatar giant divine golden cosmic ocean 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Chhoti machli raja ke haath aayi!",
+      "prompt": "King Satyavrata small fish in cupped hands divine moment 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Machli badhti gayi — samandar tak!",
+      "prompt": "Fish growing from tiny to giant ocean size divine 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Mahapralaya — sab kuch doob gaya!",
+      "prompt": "Great cosmic flood destruction mahapralaya all engulfed 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Matsya ne naav kheenchi seeng se!",
+      "prompt": "Giant Matsya fish pulling Manu boat with horn rope 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Vedas aur Saptarishi — bach gaye!",
+      "prompt": "Sages Vedas saved from flood Matsya divine protection 9:16"
+    }
+  ]
+}

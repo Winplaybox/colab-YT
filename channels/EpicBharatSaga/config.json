@@ -1,0 +1,48 @@
+{
+  "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
+  "channel_name": "EpicBharatSaga",
+  "channel_handle": "@EpicBharatSaga",
+  "channel_url": "https://www.youtube.com/channel/UCakmjqTBA6KgCF2F30Tnpjg",
+  "email": "epicbharat.official@gmail.com",
+  "tagline": "Jahan Sanatan Dharma Ki Gaatha Zinda Hai 🔱",
+  "niche": "Indian Mythology, Sanatan Dharma, Hindu Gods & Goddesses Stories in Hinglish",
+  "language": "Hinglish",
+  "format": "9:16 Portrait Shorts",
+  "target_duration_seconds": 120,
+  "default_category_id": "22",
+  "default_voice": "hi-IN-MadhurNeural",
+  "default_voice_female": "hi-IN-SwaraNeural",
+  "voice_rate": "+5%",
+  "voice_pitch": "+1Hz",
+  "schedule": {
+    "days_of_week": [0, 1, 2, 3, 4, 5, 6],
+    "days_names": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "time_ist": "19:00",
+    "time_utc": "13:30:00.000Z"
+  },
+  "resolutions": {
+    "8k":   { "width": 4320, "height": 7680 },
+    "4k":   { "width": 2160, "height": 3840 },
+    "1080p":{ "width": 1080, "height": 1920 }
+  },
+  "default_quality": "1080p",
+  "branding": {
+    "watermark": "@EpicBharatSaga",
+    "series_title": "EPIC BHARAT SAGA",
+    "primary_color": "0xFF6B00",
+    "accent_color": "0xFFD700",
+    "background_color": "0x1a0a00",
+    "text_color": "0xFFF8E7"
+  },
+  "seasons": {
+    "current_season": 1,
+    "current_deity": "Lord Shiva",
+    "season_order": [
+      "Lord Shiva", "Lord Vishnu", "Goddess Durga", "Lord Hanuman",
+      "Lord Ganesha", "Lord Krishna", "Lord Rama", "Goddess Lakshmi",
+      "Lord Venkateswara", "Lord Ayyappa", "Goddess Kali",
+      "Lord Kartikeya", "Goddess Saraswati", "Goddess Parvati",
+      "Lord Brahma", "Indra", "Surya", "Yama"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 25,
+  "season": 5,
+  "deity": "Lord Ganesha",
+  "story_id": "ganesha_01_elephant_head_origin",
+  "story_hash": "fdd6f331355c8bbf",
+  "format": "Origin Story",
+  "title": "Ganesha Ka Haathi Wala Sar — Asli Kahani! 🐘",
+  "youtube_title": "Ganesha Ka Haathi Wala Sar — Asli Kahani! 🐘",
+  "tagline": "Ganesha elephant head origin Parvati Shiva beheading",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Ganesha"
+  ],
+  "verified_fact": "Parvati created Ganesha from sandalwood paste and breathed life into him, appointing him as guard while she bathed. Shiva returned and didn't recognize his own son — Ganesha stopped him. An enraged Shiva beheaded him. A heartbroken Parvati demanded Shiva restore him. Shiva sent servants North and they brought back an elephant's head — the first living creature they found sleeping with its head pointing North.",
+  "voiceover_script": "Parvati snan ke liye jaana chahti thi. Mitti se banaya ek puttar — jaan di usme! Ganesha — Parvati ka putra. Ganesha ko darwaan banaya. Shiv aaye — Ganesha ne roka. Shiv ne sar kaat diya! Parvati ka vilaap sun ke Shiv ne wapas laane ka vada kiya. Devata North mein gaye — pehla praaṇi mila jo uttар disha mein sar karke so raha tha — haathi! Haathi ka sar lagaya — Ganesha zinda ho gaye!",
+  "debate_question": "Ganesha ke haathi wale sar ka kya symbol hai?",
+  "pinned_comment": "🐘 Haathi ka sar! Parvati ne banaya, Shiv ne wapas kiya! Jai Ganesha!",
+  "description": "Ganesha Ka Haathi Wala Sar — Asli Kahani! 🐘\n\n🔱 Ganesha elephant head origin Parvati Shiva beheading\n\nParvati created Ganesha from sandalwood paste and breathed life into him, appointing him as guard while she bathed. Shiva returned and didn't recognize his own son — Ganesha stopped him. An enraged Shiva beheaded him. A heartbroken Parvati demanded Shiva restore him. Shiva sent servants North and they brought back an elephant's head — the first living creature they found sleeping with its head pointing North.\n\n👉 Ganesha ke haathi wale sar ka kya symbol hai?\n\nSeason 5 — Lord Ganesha\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Ganesha #ElephantHead #Parvati #Shiva #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Ganesha",
+    "ElephantHead",
+    "Parvati",
+    "Shiva",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Parvati ne mitti se banaya putra!",
+      "prompt": "Parvati creating Ganesha from clay sandalwood paste divine mother 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Ganesha ne Shiv ko roka darwaze par!",
+      "prompt": "Young Ganesha stopping Shiva at doorway guard child 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Shiv ne sar kaat diya!",
+      "prompt": "Shiva cutting Ganesha head misunderstanding divine 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Parvati ka vilaap — Shiv ne vada kiya!",
+      "prompt": "Parvati grieving Shiva promising to restore son 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Pehla praaṇi — uttar disha mein soya haathi!",
+      "prompt": "Elephant sleeping North direction head servants approaching 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Haathi ka sar, naya Ganesha zinda!",
+      "prompt": "Lord Ganesha elephant head divine glow blessed by Shiva Parvati 9:16"
+    }
+  ]
+}

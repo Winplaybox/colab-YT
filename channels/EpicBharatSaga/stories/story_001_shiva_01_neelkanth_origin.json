@@ -1,0 +1,72 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 1,
+  "season": 1,
+  "deity": "Lord Shiva",
+  "story_id": "shiva_01_neelkanth_origin",
+  "story_hash": "37507d9828bce854",
+  "format": "Origin Story",
+  "title": "Neelkanth: Zeher Peeke Duniya Bachai! 🔱",
+  "youtube_title": "Neelkanth: Zeher Peeke Duniya Bachai! 🔱",
+  "tagline": "Samudra Manthan mein Shiva ne Halahala vish piya",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Samudra_manthan",
+    "https://en.wikipedia.org/wiki/Halahala"
+  ],
+  "verified_fact": "In the Samudra Manthan (churning of the cosmic ocean), deadly Halahala poison emerged. Shiva drank it to save the universe. Parvati stopped it at his throat, turning it blue — giving Shiva the name Neelkanth (blue-throated).",
+  "voiceover_script": "Devas aur Asuras ne milke samundar mantha — amrit ke liye. Lekin pehle nikla Halahala — duniya ka sabse khatarnak zeher. Ek drop se poori srishti nasht ho sakti thi. Tab aage aaye Mahadev. Bhole Nath ne wo zeher khud pee liya. Parvati ne haath se rok diya unka gala. Zeher neela pad gaya — aur tab se Shiv ka naam pada Neelkanth. Kya aisi kurbani aaj bhi possible hai?",
+  "debate_question": "Aisa koi hai jo duniya ke liye khud ko sacrifice kare?",
+  "pinned_comment": "🔱 Neelkanth! Duniya ke liye zeher piya Mahadev ne. Har Har Mahadev!",
+  "description": "Neelkanth: Zeher Peeke Duniya Bachai! 🔱\n\n🔱 Samudra Manthan mein Shiva ne Halahala vish piya\n\nIn the Samudra Manthan (churning of the cosmic ocean), deadly Halahala poison emerged. Shiva drank it to save the universe. Parvati stopped it at his throat, turning it blue — giving Shiva the name Neelkanth (blue-throated).\n\n👉 Aisa koi hai jo duniya ke liye khud ko sacrifice kare?\n\nSeason 1 — Lord Shiva\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Shiva #Neelkanth #SamudraManthan #HinduMythology #SanatanDharma #Mahadev #Shorts",
+  "tags": [
+    "Shiva",
+    "Neelkanth",
+    "SamudraManthan",
+    "HinduMythology",
+    "SanatanDharma",
+    "Mahadev",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Samudra Manthan — amrit ke liye!",
+      "prompt": "Gods and demons churning cosmic ocean Samudra Manthan divine illustration 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Nikla Halahala — sabse khatarnak zeher!",
+      "prompt": "Dark green poison Halahala emerging from churning ocean destructive energy 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Shiv ne khud pee liya wo zeher!",
+      "prompt": "Lord Shiva drinking cosmic poison Halahala to save universe divine art 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Parvati ne roka — gala neela pad gaya!",
+      "prompt": "Goddess Parvati stopping poison at Shiva throat divine couple 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Neelkanth — Neel Kantha Mahadev!",
+      "prompt": "Lord Shiva with blue throat Neelkanth glowing divine form Kailash 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Duniya ki raksha ke liye Mahadev ka tyaag!",
+      "prompt": "Shiva meditating Kailash mountain snow divine aura Om 9:16"
+    }
+  ]
+}
