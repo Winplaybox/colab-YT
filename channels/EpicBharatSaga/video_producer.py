@@ -383,6 +383,7 @@ def produce_train_video(story_json_path, quality="1080p"):
     return output_video_path
 
 if __name__ == "__main__":
-    ep1_json = os.path.join(stories_dir, "story_01_01_scmaglev_603kmh.json")
-    if os.path.exists(ep1_json):
+    story_files = [f for f in os.listdir(stories_dir) if f.startswith("story_") and f.endswith(".json")]
+    if story_files:
+        ep1_json = os.path.join(stories_dir, sorted(story_files)[0])
         produce_train_video(ep1_json, quality="1080p")
