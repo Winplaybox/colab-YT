@@ -66,6 +66,7 @@ jobs:
       - name: Restore EpicBharatSaga Credentials
         env:
           EPICBHARATSAGA_TOKEN_JSON: ${{ secrets.EPICBHARATSAGA_TOKEN_JSON }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           CHANNEL_DIR="channels/EpicBharatSaga"
           mkdir -p "${CHANNEL_DIR}/credentials"
@@ -76,11 +77,9 @@ jobs:
             echo "EPICBHARATSAGA_TOKEN_JSON secret is empty or not set!"
             exit 1
           fi
-
-      - name: Write HuggingFace Token (optional)
-        if: ${{ secrets.HF_TOKEN != '' }}
-        run: |
-          printf "%s" "${{ secrets.HF_TOKEN }}" > channels/EpicBharatSaga/credentials/hf_token.txt
+          if [ -n "$HF_TOKEN" ]; then
+            printf "%s" "$HF_TOKEN" > "${CHANNEL_DIR}/credentials/hf_token.txt"
+          fi
 
       - name: Run EpicBharatSaga Pipeline
         env:
