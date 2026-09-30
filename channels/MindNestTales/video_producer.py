@@ -209,7 +209,7 @@ def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch=
     print(f"Generated Voiceover: {output_audio_path} ({os.path.getsize(output_audio_path)} bytes)")
     return output_audio_path
 
-def produce_story_video(story_data, lang_code, output_video_path, quality="8k", target_duration=120.0):
+def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=120.0):
     """
     Renders the complete 9:16 portrait video for a specific language channel.
     - Synchronizes 3D Pixar-style visual scenes with localized neural voiceover.
@@ -230,7 +230,12 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
     title = translation["title"]
     handle = ch_config["handle"]
 
-    # Resolution Configuration
+    # Resolution Configuration (Resource Guard for CI/Batch)
+    is_ci = os.environ.get("GITHUB_ACTIONS") == "true" or os.environ.get("CI") == "true"
+    if is_ci and quality in ["8k"]:
+        print(f"⚠️ [Resource Guard] 8K with 11-channel batch exceeds GitHub Actions CPU/timeout limits. Safe-scaling to 1080p for stable batch processing.")
+        quality = "1080p"
+
     if quality == "8k":
         w, h = 4320, 7680
         scale = 4.0
@@ -421,8 +426,8 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="8k", 
     print(f"SUCCESS [{lang_code.upper()}]: Rendered {output_video_path} ({os.path.getsize(output_video_path)} bytes)")
     return output_video_path
 
-def produce_all_languages(story_number=1, output_dir="/tmp/mindnest_batch", quality="8k"):
-    """Produces the story video dubbed across all 11 languages at 8K/4K."""
+def produce_all_languages(story_number=1, output_dir="/tmp/mindnest_batch", quality="1080p"):
+    """Produces the story video dubbed across all 11 languages at 1080p/4K."""
     story = load_story(story_number)
     config = load_network_config()
     os.makedirs(output_dir, exist_ok=True)
@@ -443,6 +448,6 @@ def produce_all_languages(story_number=1, output_dir="/tmp/mindnest_batch", qual
 if __name__ == "__main__":
     story_no = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     lang = sys.argv[2] if len(sys.argv) > 2 else "en"
-    quality = sys.argv[3] if len(sys.argv) > 3 else "8k"
+    quality = sys.argv[3] if len(sys.argv) > 3 else "1080p"
     story = load_story(story_no)
     produce_story_video(story, lang, f"story_{story_no}_{lang}_{quality}.mp4", quality=quality)

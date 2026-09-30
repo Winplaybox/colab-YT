@@ -319,7 +319,7 @@ if __name__ == "__main__":
         auto_adv = False
 
     lang = sys.argv[2] if len(sys.argv) > 2 else "all"
-    quality = sys.argv[3] if len(sys.argv) > 3 else "8k"
+    quality = sys.argv[3] if len(sys.argv) > 3 else "1080p"
 
     run_mindnest_release(story_no, lang, quality=quality, auto_advance=auto_adv)
 
