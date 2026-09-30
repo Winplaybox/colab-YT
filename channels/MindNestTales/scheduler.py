@@ -303,6 +303,12 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
             long_path = os.path.join(work_dir, f"compilation_{story_number:02d}_{lang}_{quality}.mp4")
             try:
                 _, long_meta = produce_10min_compilation(story_ids, lang, long_path, quality=quality)
+                long_thumb = os.path.join(script_dir, "stories", "thumbnails", f"compilation_{story_number:02d}_thumbnail.jpg")
+                if not os.path.exists(long_thumb):
+                    long_thumb = os.path.join(script_dir, "stories", "thumbnails", f"story_{story_number:02d}_long_thumbnail.jpg")
+                if not os.path.exists(long_thumb):
+                    long_thumb = thumb_path
+
                 if youtube and os.path.exists(long_path):
                     long_id = upload_story_to_channel(
                         youtube,
@@ -310,7 +316,7 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                         long_meta["title"],
                         long_meta["description"],
                         long_meta["tags"],
-                        thumbnail_path=thumb_path,
+                        thumbnail_path=long_thumb,
                         publish_at=channel_publish_at
                     )
                     long_vid_url = f"https://youtu.be/{long_id}"
