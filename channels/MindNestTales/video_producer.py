@@ -28,6 +28,8 @@ except Exception:
     pass
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+if script_dir not in sys.path:
+    sys.path.insert(0, script_dir)
 
 MORAL_LABELS = {
     "en": "MORAL",
@@ -192,7 +194,7 @@ def get_audio_duration(audio_path):
         res = subprocess.run(cmd, capture_output=True, text=True, check=True)
         return float(res.stdout.strip())
     except Exception:
-        return 120.0
+        return 180.0
 
 def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch="+0Hz"):
     """Generates expressive, human-like animated storyteller speech via edge-tts."""
@@ -211,12 +213,12 @@ def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch=
     print(f"Generated Voiceover: {output_audio_path} ({os.path.getsize(output_audio_path)} bytes)")
     return output_audio_path
 
-def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=120.0):
+def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=180.0):
     """
     Renders the complete 9:16 portrait video for a specific language channel.
     - Synchronizes 3D Pixar-style visual scenes with localized neural voiceover.
     - Applies smooth cinematic xfade crossfade transitions between all clips.
-    - Default target runtime: 120.0 seconds (2:00 minutes).
+    - Default target runtime: 180.0 seconds (3:00 minutes).
     - Supports '8k' (4320x7680), '4k' (2160x3840), or '1080p' (1080x1920).
     """
     os.makedirs(os.path.dirname(output_video_path) if os.path.dirname(output_video_path) else ".", exist_ok=True)
@@ -259,21 +261,27 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     # 2. Check for 3D Pixar Scene Assets (Auto-generates via Free Tier if missing)
     story_no = story_data.get("story_number", 1)
     assets_dir = os.path.join(script_dir, "stories", "assets", f"story_{story_no:02d}")
-    scene_images = []
-    if os.path.exists(assets_dir):
+    try:
+        from image_generator import build_narrative_shots, ensure_story_assets
+        narrative_shots = build_narrative_shots(story_data)
+        existing = [
+            os.path.join(assets_dir, fn)
+            for fn, _ in narrative_shots
+            if os.path.exists(os.path.join(assets_dir, fn)) and os.path.getsize(os.path.join(assets_dir, fn)) > 10000
+        ]
+        if len(existing) >= 12:
+            scene_images = existing
+        else:
+            scene_images = ensure_story_assets(story_no)
+    except Exception as e:
+        print(f"Notice: Asset manager note: {e}")
+
+    if not scene_images and os.path.exists(assets_dir):
         scene_images = [
             os.path.join(assets_dir, f)
             for f in sorted(os.listdir(assets_dir))
             if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
         ]
-
-    # If missing or incomplete (< 8 scenes for proper 15s pacing), autonomously generate 3D Pixar scenes
-    if len(scene_images) < 8:
-        try:
-            from image_generator import ensure_story_assets
-            scene_images = ensure_story_assets(story_no)
-        except Exception as e:
-            print(f"Notice: Auto image generation error: {e}")
 
     # Fallback to thumbnail if scene assets are not yet downloaded
     if not scene_images:
@@ -402,8 +410,14 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         full_filter = f"[0:v]{overlay_filters}[v]"
         audio_idx = 1
 
-    # Ensure audio is padded smoothly to duration
-    audio_filter = f"[{audio_idx}:a]apad=whole_dur={duration:.2f}[a]"
+    # Ensure audio fits smoothly and finishes before video ends without clipping words
+    target_speech_dur = duration - 3.0
+    if raw_audio_dur > target_speech_dur:
+        speed_factor = raw_audio_dur / target_speech_dur
+        print(f"⏱️ Audio sync: Auto-adjusting narration tempo by {speed_factor:.2f}x to fit full story into {duration}s perfectly without clipping words.")
+        audio_filter = f"[{audio_idx}:a]atempo={speed_factor:.4f},apad=whole_dur={duration:.2f}[a]"
+    else:
+        audio_filter = f"[{audio_idx}:a]apad=whole_dur={duration:.2f}[a]"
     final_filter = f"{full_filter};{audio_filter}"
 
     ffmpeg_cmd = [
@@ -419,7 +433,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         output_video_path
     ]
 
-    print(f"🎬 Rendering [{lang_code.upper()}] at {quality.upper()} ({w}x{h}) for 2:00 runtime ({duration:.1f}s)...")
+    print(f"🎬 Rendering [{lang_code.upper()}] at {quality.upper()} ({w}x{h}) for 3:00 runtime ({duration:.1f}s)...")
     subprocess.run(ffmpeg_cmd, check=True)
 
     if os.path.exists(audio_file):

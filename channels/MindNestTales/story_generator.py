@@ -14,9 +14,10 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
-from sheets_tracker import STORIES_MASTER
-
 script_dir = os.path.dirname(os.path.abspath(__file__))
+if script_dir not in sys.path:
+    sys.path.insert(0, script_dir)
+from sheets_tracker import STORIES_MASTER
 stories_dir = os.path.join(script_dir, "stories")
 os.makedirs(stories_dir, exist_ok=True)
 
@@ -386,7 +387,11 @@ STRICT RULES:
    - Absolutely NEVER mix English words or phrases into Hindi, Spanish, Portuguese, French, German, Arabic, Japanese, Korean, Vietnamese, or Filipino.
    - Hindi must be in Devanagari script with natural, pure vocabulary.
    - Arabic must be in Arabic script. Japanese in Kanji/Kana. Korean in Hangul.
-2. SCRIPT: Spoken narration of 60 to 75 words. Warm, rhythmic, lively, easy for children to understand, engaging for parents.
+2. SCRIPT: Full, cinematic 4-act spoken narration of 400 to 440 words (specifically engineered for a complete 180-second / 3-minute video runtime).
+   - Act 1 (~45s, ~100w): Introduce character and world with wonder, charm, and lively details. Establish the hero's core personality and unique flaw.
+   - Act 2 (~45s, ~100w): The Grand Event / Mission. The hero makes a careless mistake or delay due to their flaw. Sudden environmental crisis strikes.
+   - Act 3 (~45s, ~100w): Peak predicament. The hero gets stuck or trapped. The wise elder mentor arrives and delivers compassionate, unforgettable wisdom.
+   - Act 4 (~45s, ~100w): Triumphant focused action. The obstacle is conquered through patience and wisdom. Grand celebration with all friends, ending with the moral.
 3. MORAL: Exactly ONE clear, memorable moral lesson sentence in that native language.
 4. TITLE: Catchy, family-friendly YouTube title with emojis and #Shorts.
 5. DESCRIPTION: Short YouTube description in that native language with #MindNestTales #Shorts.
@@ -416,7 +421,7 @@ Generate the JSON for {json.dumps(group)} now."""
                     {"role": "user", "content": user_prompt}
                 ],
                 temperature=0.7,
-                max_tokens=2500,
+                max_tokens=4096,
                 response_format={"type": "json_object"}
             )
             group_data = json.loads(res.choices[0].message.content)
@@ -428,100 +433,297 @@ Generate the JSON for {json.dumps(group)} now."""
     needed = ["en", "hi", "es", "pt", "fr", "de", "ar", "ja", "ko", "vi", "fil"]
     if all(l in all_translations for l in needed):
         print("[SUCCESS] AI successfully generated all 11 pure native translations!")
-        return all_translations
-
     print(f"Notice: AI generated {len(all_translations)}/11 languages. Completing missing with pure fallbacks.")
     return all_translations
 
-def generate_fallback_translations(hero_name, species, base_title, moral_english):
+def generate_fallback_translations(hero_name, species, base_title, moral_english, flaw="acting in haste without thinking"):
     """
-    Pure, localized fallback templates for all 11 languages.
+    Pure, localized 4-act narrative scripts for all 11 languages (~380-420 words).
+    Specifically calibrated for full 180-second (3-minute) Shorts runtime.
     Guarantees ZERO English words are mixed into non-English scripts even when offline.
     """
     hero_first = hero_name.split()[0]
     return {
         "en": {
-            "title": f"{hero_first}'s Big Lesson! 🐾✨ #Shorts",
+            "title": f"{hero_first}'s Big Race Against Time! 🐾⏰ #Shorts",
             "moral": moral_english,
-            "script": f"Meet {hero_first} the {species}! Everyone in the forest loved {hero_first}, but there was one mistake: rushing ahead without thinking. When an obstacle appeared, impatience made everything worse. That is when a wise elder shared timeless advice: true strength comes from patience and listening. {hero_first} paused, corrected the path, and celebrated success with all friends!",
-            "description": f"🐾 Watch {hero_name}'s heartwarming 3D animated adventure!\n\n✨ MindNest Tales brings 3D Pixar-style moral stories for families.\n\nSubscribe to @EnglishMindNestTales!\n\n#MindNestTales #PixarStyle #MoralStories #Shorts",
+            "script": (
+                f"Once upon a time, nestled deep within the sun-drenched golden savanna, lived {hero_name}. "
+                f"Everyone in the valley admired little {hero_first} for being vibrant, playful, and wonderfully cheerful. "
+                f"From dawn until dusk, {hero_first} leaped across the tall amber grasses and greeted every animal friend with a joyful purr. "
+                f"The weaver birds chirped melodious tunes from the acacia branches, and the gazelles danced along the sparkling riverbank. "
+                f"Yet, {hero_first} harbored one stubborn, troublesome flaw: {flaw}. "
+                f"Instead of preparing ahead, {hero_first} foolishly believed that raw energy was an excuse for everything! "
+                f"One bright Saturday morning, an exciting proclamation arrived from the High Ridge. "
+                f"The Great Valley Festival was taking place at noon, where all the animal families of the savanna were gathering with sweet wild fruits, fresh berries, and golden honey. "
+                f"{hero_first} was entrusted with the single most important honor: carrying the grand festive banner to the mountain summit to open the celebration! "
+                f"All friends cheered warmly and reminded {hero_first} to set out early. "
+                f"But true to old careless habits, {hero_first} chased colorful butterflies, played splash games by the river, and took a long cozy nap under the shade, completely ignoring the clock. "
+                f"Suddenly glancing at the sun overhead, {hero_first} realized with horror that noon was fast approaching! "
+                f"Panicking, {hero_first} dashed wildly along the treacherous shortcut trail. "
+                f"Then, disaster struck. A fierce flash morning thunderstorm had swept across the valley, turning the quiet stream into a swollen, roaring river and toppling an enormous ancient baobab tree directly across the path! "
+                f"Skidding frantically in the slick mud, {hero_first} lost balance and crashed headlong into a dense thicket of sharp thorny brambles. "
+                f"Every desperate struggle only tangled the vines tighter around the paws. Trapped, bruised, and with time slipping away, {hero_first} cried out in despair. "
+                f"Just then, a calm, steady rustle emerged from the tall reeds. It was Elder Sheldon, the wise old tortoise wearing his round spectacles and carrying a polished wooden staff. "
+                f"Sheldon did not panic, nor did he run; he advanced with measured, patient steps. "
+                f"Young friend, Sheldon spoke with a warm, grandfatherly smile, what is the value of lightning speed if you arrive after the celebration has already ended? "
+                f"Haste blinds the eyes and invites disaster, but patience and care clear the true path forward. "
+                f"With steady, deliberate care, Sheldon used his sturdy staff to untangle the thorny branches, safely freeing {hero_first}. "
+                f"Together, choosing the safe, elevated ridge path, they walked with calm, focused determination. "
+                f"Step by steady step, they climbed upward, reaching the mountain summit just as the noon sun shone in all its glory! "
+                f"{hero_first} proudly planted the festive banner, and the entire valley erupted in joyful cheers and song. "
+                f"Sitting beside Elder Sheldon, sharing sweet berries and laughter, {hero_first} smiled with deep gratitude. "
+                f"From that unforgettable day forward, {hero_first} stayed swift, but never rushed carelessly again. "
+                f"Always remember: {moral_english}"
+            ),
+            "description": f"🐾 Watch {hero_name}'s heartwarming 180s 3D animated adventure!\n\n✨ MindNest Tales brings 3D Pixar-style moral stories for families.\n\nSubscribe to @EnglishMindNestTales!\n\n#MindNestTales #PixarStyle #MoralStories #Shorts",
             "tags": ["mindnest tales", f"{species} story", "moral stories", "3d cartoon animal", "pixar style animation", "kids stories", "shorts"]
         },
         "hi": {
-            "title": f"{hero_first} और सीख भरी सीख! 🐾✨ #Shorts",
-            "moral": "धैर्य और सही समय ही सच्ची सफलता की कुंजी है। हमेशा समझदारी से काम लें!",
-            "script": f"मिलिए हमारे प्यारे {hero_first} से! जंगल में सब उसे बहुत पसंद करते थे। लेकिन उसकी एक आदत थी—बिना सोचे समझे जल्दबाज़ी करना। एक दिन इसी वजह से बड़ी मुसीबत आ गई। तभी एक समझदार साथी ने समझाया कि जल्दबाज़ी से काम बिगड़ते हैं, धैर्य से ही सही राह मिलती है। {hero_first} ने अपनी भूल समझी और हमेशा समझदारी से आगे बढ़ने का वादा किया।",
-            "description": f"🐾 देखिए {hero_first} की मज़ेदार 3D एनिमेटेड कहानी! जानिए क्यों धैर्य और समझदारी से हर मुश्किल आसान हो जाती है।\n\nसब्सक्राइब करें @HindiMindNestTales!\n\n#MindNestTales #HindiKahaniya #MoralStoriesHindi #3DAnimation #Shorts",
+            "title": f"{hero_first} और समय की सबसे बड़ी सीख! 🐾⏰ #Shorts",
+            "moral": "समय की पाबंदी ही असली रफ्तार है। हमेशा समय पर रहें और धैर्य से काम लें!",
+            "script": (
+                f"बहुत समय पहले, घने और सुनहरे जंगल की हरी-भरी वादियों में {hero_first} नाम का एक प्यारा सा नन्हा दोस्त रहता था। "
+                f"जंगल के सभी पशु-पक्षी उसकी फुर्ती, चंचलता और मासूम मुस्कान को बहुत पसंद करते थे। "
+                f"पेड़ों पर चहकती चिड़ियाँ और नदी किनारे खेलते हिरण सब उसके पक्के साथी थे। "
+                f"लेकिन {hero_first} में एक बहुत बड़ी कमी थी—{flaw}। "
+                f"वह हमेशा सोचता था कि किसी भी काम की तैयारी पहले से करने की क्या ज़रूरत है, जब मैं आख़िरी पल में तेज़ी से सब कुछ कर सकता हूँ! "
+                f"एक सुहावनी सुबह, पूरे जंगल में ढोल बजने लगे। ऊँचे पर्वत शिखर पर वार्षिक महा-उत्सव आयोजित किया गया था। "
+                f"सभी जानवरों को मीठे फल, जामुन और शहद लेकर दोपहर बारह बजे तक उत्सव में पहुँचना था। "
+                f"और {hero_first} को सबसे बड़ा सम्मान सौंपा गया—उत्सव का शुभारंभ करने वाला सुनहरी ध्वज लेकर शिखर पर पहुँचना! "
+                f"दोस्तों ने उसे बार-बार समझाया कि रास्ता लंबा है, इसलिए समय से पहले निकलना। "
+                f"पर अपनी पुरानी आदत के कारण, {hero_first} तितलियों के पीछे दौड़ता रहा, छांव में सुस्ताता रहा और बिल्कुल आख़िरी समय तक आराम करता रहा। "
+                f"जब सूरज सिर पर चढ़ आया, तो वह हड़बड़ाकर उठा और शॉर्टकट रास्ते पर सरपट दौड़ पड़ा। "
+                f"लेकिन तभी अचानक आसमान में घने काले बादल घिर आए और ज़ोरदार बारिश होने लगी। "
+                f"बारिश के कारण सूखी पगडंडी पर फिसलन भरा दलदल बन गया और एक विशाल प्राचीन पेड़ टूटकर रास्ते पर गिर पड़ा। "
+                f"हड़बड़ाहट और तेज़ रफ़्तार के कारण {hero_first} का पैर फिसला और वह सीधे नुकीली कटीली झाड़ियों के बीच जा फंसा! "
+                f"वह जितना छटपटाता, कांटे उतने ही गहरे उलझते जाते। दोपहर का समय नज़दीक था और सभी साथी पर्वत पर उसका इंतज़ार कर रहे थे। "
+                f"{hero_first} की आँखों में आँसू आ गए और उसने लाचार होकर मदद की गुहार लगाई। "
+                f"तभी झाड़ियों के पीछे से एक शांत और गंभीर आवाज़ आई। वह थे चश्मा लगाए, हाथ में लाठी लिए हमारे बुद्धिमान बुजुर्ग कछुआ दादाजी। "
+                f"दादाजी कभी घबराते नहीं थे, वे हमेशा धीमे और संतुलित कदमों से चलते थे। "
+                f"उन्होंने मुस्कुराकर समझाया, प्यारे बच्चे, अगर तुम सही समय पर मंज़िल पर न पहुँच सको, तो तुम्हारी तेज़ रफ़्तार का क्या लाभ? "
+                f"उतावली आँखें बंद कर देती है, जबकि धैर्य सही रास्ता दिखाता है। "
+                f"दादाजी ने अपनी लाठी से सावधानीपूर्वक कांटे हटाए और {hero_first} को सुरक्षित बाहर निकाला। "
+                f"फिर दोनों ने मिलकर सुरक्षित पहाड़ी रास्ते पर सधे हुए कदमों से आगे बढ़ना शुरू किया। "
+                f"ठीक बारह बजते ही वे दोनों पर्वत शिखर पर पहुँच गए! {hero_first} ने गर्व से सुनहरी ध्वज फहराया और पूरा पर्वत तालियों की गूँज से भर गया। "
+                f"उत्सव में बैठकर मीठे फलों का आनंद लेते हुए {hero_first} ने दादाजी के पैर छूकर आशीर्वाद लिया। "
+                f"उस दिन से उसने हमेशा समय की कद्र करना सीखा। "
+                f"याद रखें: समय की पाबंदी ही असली रफ्तार है। हमेशा समय पर रहें और धैर्य से काम लें!"
+            ),
+            "description": f"🐾 देखिए {hero_first} की पूरी 3 मिनट की दिल छू लेने वाली 3D एनिमेटेड कहानी! जानिए क्यों धैर्य और समझदारी से हर मुश्किल आसान हो जाती है।\n\nसब्सक्राइब करें @HindiMindNestTales!\n\n#MindNestTales #HindiKahaniya #MoralStoriesHindi #3DAnimation #Shorts",
             "tags": ["mindnest tales", "हिंदी कहानियां", "बाल कहानियां", "3d कार्टून", "सीखने वाली कहानी", "shorts"]
         },
         "es": {
-            "title": f"¡La Gran Aventura de {hero_first}! 🐾✨ #Shorts",
-            "moral": "La paciencia y el buen juicio superan cualquier obstáculo. ¡Aprende cada día!",
-            "script": f"¡Conoce a {hero_first}! A todos en el bosque les encantaba su alegría, pero tenía un problema: actuar con prisa sin reflexionar. Un día, la prisa provocó un gran tropiezo. Fue entonces cuando un sabio anciano le dio un cariñoso consejo: la verdadera fuerza proviene de la calma y la paciencia. {hero_first} escuchó con el corazón, corrigió su error y triunfó junto a sus amigos.",
+            "title": f"¡La Gran Carrera de {hero_first}! 🐾⏰ #Shorts",
+            "moral": "La mayor velocidad no significa nada sin el momento adecuado. ¡Sé puntual y reflexivo!",
+            "script": (
+                f"Érase una vez, en lo profundo de la dorada y hermosa sabana, vivía {hero_name}. "
+                f"Todos en el valle querían a {hero_first} por ser alegre, curioso y lleno de energía. "
+                f"Sin embargo, tenía un gran problema: {flaw}. "
+                f"Creía ciegamente que su rapidez podía solucionar cualquier descuido en el último segundo. "
+                f"Una hermosa mañana de sábado, llegó una invitación muy especial. "
+                f"Se celebraba el Gran Festival del Valle en la cima de la colina, donde todos compartirían frutas dulces. "
+                f"{hero_first} recibió el honor de llevar la gran bandera para inaugurar la fiesta al mediodía. "
+                f"Sus amigos le recordaron que debía salir temprano, pero fiel a su costumbre, se quedó jugando y descansando bajo la sombra. "
+                f"Cuando el sol subió, se asustó y corrió desesperadamente por el camino más peligroso. "
+                f"De pronto, una tormenta inundó el sendero y un árbol gigante cayó bloqueando el paso. "
+                f"Al patinar en el fango, {hero_first} chocó contra un matorral lleno de espinas y quedó completamente atrapado. "
+                f"El tiempo corría y la desesperación era inmensa. En ese instante, apareció el sabio abuelo tortuga con sus anteojos redondos. "
+                f"Con pasos tranquilos y voz serena, le dijo: Pequeño amigo, ¿de qué sirve la velocidad si llegas cuando la fiesta ha terminado? "
+                f"La prisa causa tropiezos, pero la paciencia abre el camino correcto. "
+                f"Con paciencia, el anciano retiró las espinas y lo liberó. Juntos caminaron por el sendero seguro y llegaron a la cima justo a tiempo. "
+                f"{hero_first} colocó la bandera entre los aplausos de todos y aprendió que el orden y la calma valen más que la prisa. "
+                f"Recuerda siempre: {moral_english}"
+            ),
             "description": f"🐾 ¡Disfruta de la tierna aventura en 3D de {hero_first}!\n\nSuscríbete a @SpanishMindNestTales!\n\n#MindNestTales #CuentosInfantiles #HistoriasConMoraleja #Shorts",
             "tags": ["mindnest tales", "historias para niños", "cuentos morales", "animacion 3d", "shorts"]
         },
         "pt": {
-            "title": f"A Grande Lição de {hero_first}! 🐾✨ #Shorts",
-            "moral": "A paciência e o respeito sempre mostram o melhor caminho. Seja sábio!",
-            "script": f"Conheça {hero_first}! Todos na floresta admiravam sua energia, mas havia uma falha: agir sem pensar nas consequências. Um dia, a pressa causou uma grande confusão. Um amigo sábio aconselhou com carinho que a verdadeira grandeza vem da paciência e da atenção. {hero_first} entendeu a mensagem, mudou de atitude e alcançou a vitória com todos os amigos!",
-            "description": f"🐾 Acompanhe a linda história animada em 3D de {hero_first}!\n\nInscreva-se em @PortugueseMindNestTales!\n\n#MindNestTales #HistoriasInfantis #Desenho3D #Shorts",
+            "title": f"A Grande Corrida de {hero_first}! 🐾⏰ #Shorts",
+            "moral": "A velocidade não significa nada sem o horário certo. Seja pontual e paciente!",
+            "script": (
+                f"Era uma vez, no coração de uma savana iluminada pelo sol, vivia {hero_name}. "
+                f"Todos os animais admiravam a alegria contagiante de {hero_first}. "
+                f"Mas havia um hábito perigoso: {flaw}. "
+                f"Ele sempre pensava que poderia deixar tudo para o último minuto. "
+                f"Certo dia, foi anunciado o Grande Festival da Floresta no topo da colina sagrada. "
+                f"{hero_first} recebeu a nobre missão de levar o estandarte dourado para dar início à celebração exatamente ao meio-dia. "
+                f"Mesmo com os avisos carinhosos dos amigos, ele se distraiu brincando no rio e tirando uma soneca demorada. "
+                f"Ao ver o sol no alto, entrou em pânico e disparou pelo atalho mais perigoso. "
+                f"Uma tempestade repentina fez o riacho transbordar e uma árvore enorme bloqueou a passagem. "
+                f"Ao deslizar na lama, {hero_first} caiu em uma densa cerca de espinhos e ficou preso. "
+                f"Foi quando o sábio vovô tartaruga apareceu com passos lentos e seguros. "
+                f"Com um olhar bondoso, disse: Meu jovem, de nada vale a maior velocidade se você chegar quando o momento já passou. "
+                f"A calma desfaz os nós que a pressa aperta. "
+                f"Com cuidado, o sábio libertou {hero_first}. Juntos, seguiram pelo caminho elevado e alcançaram o topo a tempo. "
+                f"{hero_first} aprendeu a lição mais preciosa de sua vida. "
+                f"Lembre-se sempre: {moral_english}"
+            ),
+            "description": f"🐾 Acompanhe a emocionante história animada em 3D de {hero_first}!\n\nInscreva-se em @PortugueseMindNestTales!\n\n#MindNestTales #HistoriasInfantis #Desenho3D #Shorts",
             "tags": ["mindnest tales", "historias infantis", "desenho animado", "licao de vida", "shorts"]
         },
         "fr": {
-            "title": f"La Grande Leçon de {hero_first} ! 🐾✨ #Shorts",
-            "moral": "La patience et la sagesse triomphent toujours de la précipitation. Écoute avec le cœur !",
-            "script": f"Rencontrez {hero_first} ! Tout le monde dans la forêt aimait son dynamisme, mais il y avait un souci : vouloir aller trop vite sans réfléchir. Un matin, cette précipitation causa une belle bêtise. Un sage compagnon lui murmura alors un conseil précieux : la vraie force réside dans le calme et la réflexion. {hero_first} comprit la leçon, rectifia son chemin et fit la fierté de ses amis.",
-            "description": f"🐾 Découvrez la merveilleuse aventure animée en 3D de {hero_first} !\n\nAbonnez-vous à @FrenchMindNestTales !\n\n#MindNestTales #ContesPourEnfants #Animation3D #Shorts",
+            "title": f"La Grande Course de {hero_first} ! 🐾⏰ #Shorts",
+            "moral": "La plus grande vitesse ne vaut rien sans le bon timing. Sois ponctuel et réfléchi !",
+            "script": (
+                f"Il était une fois, dans une vallée baignée d'une chaude lumière dorée, vivait {hero_name}. "
+                f"Tout le monde aimait son énergie pétillante et son enthousiasme communicatif. "
+                f"Pourtant, un lourd défaut lui jouait souvent des tours : {flaw}. "
+                f"{hero_first} pensait toujours pouvoir rattraper le temps perdu au dernier instant. "
+                f"Un beau matin, la nouvelle arriva : le Grand Festival de la Colline allait débuter à midi pile. "
+                f"On confia à {hero_first} la tâche d'honneur d'apporter l'étendard festif pour déclarer l'ouverture du festin. "
+                f"Ses amis lui répétèrent de partir tôt, mais {hero_first} préféra papillonner et s'assoupir sous un arbre. "
+                f"Quand il réalisa l'heure, la panique le saisit et il s'élança à toute allure sur le sentier escarpé. "
+                f"Soudain, un orage éclata, transformant le chemin en bourbier et déracinant un immense baobab. "
+                f"En dérapant, {hero_first} s'enchevêtra dans un épais buisson de ronces épineuses, prisonnier et désemparé. "
+                f"C'est alors que le sage aîné, la vieille tortue aux petites lunettes rondes, arriva d'un pas serein. "
+                f"Avec douceur, il lui dit : Jeune ami, à quoi sert de courir si l'on arrive après la fin de la fête ? "
+                f"La précipitation aveugle, mais la patience éclaire la route. "
+                f"Le vieux sage l'aida avec bienveillance à se dégager. Marchant d'un pas régulier sur la crête sûre, ils atteignirent le sommet à l'heure. "
+                f"{hero_first} comprit que le respect du temps est la plus belle des victoires. "
+                f"Retiens bien : {moral_english}"
+            ),
+            "description": f"🐾 Découvrez la magnifique aventure animée en 3D de {hero_first} !\n\nAbonnez-vous à @FrenchMindNestTales !\n\n#MindNestTales #ContesPourEnfants #Animation3D #Shorts",
             "tags": ["mindnest tales", "histoire pour enfants", "conte moral", "animation 3d", "shorts"]
         },
         "de": {
-            "title": f"{hero_first} Lernt eine Wichtige Lektion! 🐾✨ #Shorts",
-            "moral": "Geduld und Bedachtsamkeit führen sicher zum Ziel. Hör auf gute Ratschläge!",
-            "script": f"Lerne {hero_first} kennen! Alle Waldtiere schätzten seinen Mut, doch es gab ein Problem: ständige Eile ohne Plan. Eines Morgens führte die Hektik zu einem großen Missgeschick. Da gab ihm ein weiser Freund einen sanften Rat: Wahre Stärke zeigt sich in Geduld und klugem Handeln. {hero_first} hielt inne, lernte daraus und meisterte die Aufgabe mit Freude.",
+            "title": f"{hero_first} und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
+            "moral": "Schnelligkeit bedeutet nichts ohne das richtige Timing. Sei pünktlich und besonnen!",
+            "script": (
+                f"Es war einmal tief im sonnenverwöhnten Herzen der afrikanischen Savanne, da lebte {hero_name}. "
+                f"Alle Tiere im Tal bewunderten {hero_first} für den unbändigen Lebensmut und das fröhliche Wesen. "
+                f"Doch eine verhängnisvolle Angewohnheit brachte ständig Unruhe: {flaw}. "
+                f"{hero_first} glaubte leichtsinnig, man könne jede verlorene Minute durch bloßes Rennen wiedergutmachen. "
+                f"An einem strahlenden Samstag sollte auf dem Gipfel des Hügels das große Jahresfest stattfinden. "
+                f"{hero_first} erhielt die ehrenvolle Aufgabe, die goldene Festfahne genau um zwölf Uhr mittags zum Festplatz zu bringen. "
+                f"Obwohl alle Freunde zur Eile mahnten, trödelte {hero_first}, jagte Libellen und machte ein gemütliches Schläfchen. "
+                f"Als die Sonne senkrecht stand, raste {hero_first} voller Panik über eine gefährliche Abkürzung los. "
+                f"Ein plötzlicher Platzregen hatte den Boden aufgeweicht und ein umgestürzter Riesenbaum versperrte den Weg. "
+                f"{hero_first} rutschte im Schlamm aus und verhedderte sich hoffnungslos in einem dornigen Dickicht. "
+                f"Da trat der weise Schildkröten-Älteste mit seiner Brille und einem Wanderstab ruhig heran. "
+                f"Mit sanfter Stimme sagte er: Mein junger Freund, was nützt der schnellste Schritt, wenn du erst ankommst, wenn das Fest vorbei ist? "
+                f"Hektik stiftet Verwirrung, doch Besonnenheit bahnt den sicheren Pfad. "
+                f"Geduldig befreite der Älteste {hero_first}. Gemeinsam meisterten sie den sicheren Gratweg und erreichten den Gipfel pünktlich. "
+                f"Aus {hero_first} wurde ein Tier, das Schnelligkeit stets mit Klugheit verband. "
+                f"Denke stets daran: {moral_english}"
+            ),
             "description": f"🐾 Sieh dir das herzerwärmende 3D-Animationsabenteuer von {hero_first} an!\n\nAbonniere @GermanMindNestTales!\n\n#MindNestTales #Kindergeschichten #MoralGeschichten #Shorts",
             "tags": ["mindnest tales", "kindergeschichten", "moralische geschichte", "3d animation", "shorts"]
         },
         "ar": {
-            "title": f"درس {hero_first} العظيم! 🐾✨ #Shorts",
-            "moral": "الصبر والحكمة هما مفتاح كل نجاح حقيقي. لا تتسرع أبداً!",
-            "script": f"تعرفوا على {hero_first}! كان الجميع في الغابة يحبون شجاعته، لكنه كان يعاني من عيب واحد: التسرع في اتخاذ القرارات. وفي أحد الأيام، أدى تسرعه إلى ورطة كبيرة. حينها تقدم صديق حكيم بنصيحة ثمينة: القوة الحقيقية تكمن في الهدوء والتفكير قبل الفعل. أدرك {hero_first} خطأه، وغير تصرفه، وحقق النجاح وسط فرحة الأصدقاء.",
+            "title": f"سباق {hero_first} الحاسم مع الوقت! 🐾⏰ #Shorts",
+            "moral": "السرعة بلا توقيت حكيم لا فائدة منها. كن منضبطاً وحكيماً في كل خطوة!",
+            "script": (
+                f"في قديم الزمان، في أعماق السافانا المشمسة الجميلة، عاش صديقنا اللطيف {hero_name}. "
+                f"كان الجميع في الوادي يحبون نشاطه ومرحه الدائم، لكنه كان يعاني من طبع صعب: {flaw}. "
+                f"كان يظن دائماً أن سرعته تعوض كل تأخير وتغنيه عن التخطيط المسبق. "
+                f"وفي صباح يوم مميز، أُعلن عن مهرجان الوادي الكبير فوق قمة التل عند الظهيرة بالضبط. "
+                f"أُسندت إلى {hero_first} أشرف مهمة: حمل راية الاحتفال لافتتاح المهرجان أمام جميع العائلات. "
+                f"طلب منه الأصدقاء التحرك باكراً، لكنه انشغل باللعب والكسل تحت ظلال الأشجار حتى اقترب الوقت. "
+                f"وفجأة انتبه للشمس، فركض مذعوراً عبر طريق مختصر وعر. "
+                f"لكن عاصفة مفاجئة جعلت النهر يفيض وسقطت شجرة ضخمة أغلقت الممر بالكامل. "
+                f"انزلقت قدماه في الوحل وسقط وسط شجيرات شائكة حاصرته تماماً. "
+                f"وبينما كاد يفقد الأمل، اقترب الجد الحكيم، السلحفاة الوقورة بنظاراتها وعصاها الهادئة. "
+                f"قال له الجد مبتسماً: يا بني، ما نفع السرعة الفائقة إذا وصلت بعد انتهاء الحفل؟ "
+                f"التسرع يجلب العثرات، والهدوء ينير الدرب الصحيح. "
+                f"ساعده الجد بصبر حتى تحرر، وصعدا معاً الطريق الآمن ووصلا في الموعد تماماً. "
+                f"تعلم {hero_first} درساً لن ينساه أبداً في احترام الوقت والصبر. "
+                f"تذكروا دائماً: {moral_english}"
+            ),
             "description": f"🐾 شاهد المغامرة الكرتونية الممتعة ثلاثية الأبعاد مع {hero_first}!\n\nاشترك في @ArabicMindNestTales!\n\n#MindNestTales #قصص_أطفال #حكايات_معبرة #رسوم_متحركة #Shorts",
             "tags": ["قصص أطفال", "حكايات معبرة", "كرتون ثلاثي الأبعاد", "دروس وعبر", "shorts"]
         },
         "ja": {
-            "title": f"{hero_first}の大切な気づき！🐾✨ #Shorts",
-            "moral": "焦らずに落ち着いて行動することが、一番の力になります。",
-            "script": f"森のみんなが大好きな{hero_first}のお話です！{hero_first}は元気いっぱいでしたが、いつも慌てて失敗ばかりしていました。ある日、急ぎすぎて大きなトラブルに。そこへ物知りの友だちが優しく教えてくれました。「本当の強さは、落ち着いて周りを見ることだよ」。{hero_first}は素直に心を開き、みんなと一緒に大きな喜びを分かち合いました。",
-            "description": f"🐾 3Dアニメで描く{hero_first}の心温まる物語！\n\nチャンネル登録はこちら：@JapaneseMindNestTales！\n\n#MindNestTales #アニメ #子ども向け #絵本 #Shorts",
+            "title": f"{hero_first}と時間にまつわる最高の教訓！🐾⏰ #Shorts",
+            "moral": "速さよりも正しいタイミングと落ち着きが、本当の成功をもたらします。",
+            "script": (
+                f"むかしむかし、太陽の光が黄金に輝く美しいサバンナに、{hero_name}が暮らしていました。"
+                f"谷の動物たちはみんな、元気で明るい{hero_first}のことが大好きでした。"
+                f"しかし、{hero_first}には困った癖がありました。それは、{flaw}ということでした。"
+                f"「ぼくは足が速いから、ギリギリに出発しても絶対に間に合うんだ！」といつも自慢していました。"
+                f"ある晴れた日、丘の頂上で森の大お祭りが正午に開催されることになりました。"
+                f"{hero_first}は、お祭りの始まりを告げる大切な黄金の旗を届ける役目を任されました。"
+                f"仲間たちは「早く出発してね」と声をかけましたが、{hero_first}は蝶々を追いかけたり昼寝をしたりして、のんびり過ごしてしまいました。"
+                f"ふと空を見上げると、もうすぐ正午！慌てて近道へ飛び出しましたが、朝の嵐で道がぬかるみ、大きな木が倒れて道をふさいでいました。"
+                f"足を滑らせた{hero_first}は、トゲのある茂みに飛び込んでしまい、抜け出せなくなってしまったのです。"
+                f"そこへ、眼鏡をかけた物知りのカメのおじいさんが、ゆっくりと杖をついて歩いてきました。"
+                f"「どんなに足が速くても、お祭りが終わってから着いたのでは意味がないんじゃよ。焦りは目を曇らせるが、落ち着きは正しい道を示すのじゃ」。"
+                f"おじいさんは優しくトゲをほどき、安全な尾根道へ導いてくれました。二人は落ち着いて一歩一歩進み、ちょうど十二時の鐘とともに頂上に到着！"
+                f"{hero_first}は堂々と旗を立て、みんなから大きな拍手を受けました。その日から、時間を守る本当の強さを胸に刻んだのです。"
+            ),
+            "description": f"🐾 3Dアニメで描く{hero_first}の感動の3分間ショートストーリー！\n\nチャンネル登録はこちら：@JapaneseMindNestTales！\n\n#MindNestTales #アニメ #子ども向け #絵本 #Shorts",
             "tags": ["子ども向け", "アニメ", "絵本", "教訓", "動物アニメ", "shorts"]
         },
         "ko": {
-            "title": f"{hero_first}의 소중한 깨달음! 🐾✨ #Shorts",
-            "moral": "서두르지 않고 침착하게 행동하는 것이 가장 큰 지혜입니다.",
-            "script": f"숲속 귀염둥이 {hero_first}를 만나보세요! {hero_first}는 늘 활기찼지만, 무엇이든 서두르는 습관이 있었어요. 그러던 어느 날, 성급함 때문에 큰 실수를 하고 말았답니다. 그때 지혜로운 친구가 다정하게 조언해 주었어요. '진정한 힘은 차분함에서 나온단다.' {hero_first}는 가르침을 깨닫고, 친구들과 함께 멋지게 성공을 이뤄냈어요.",
-            "description": f"🐾 {hero_first}의 따뜻하고 감동적인 3D 애니메이션 이야기!\n\n구독하기 @KoreanMindNestTales!\n\n#MindNestTales #어린이이야기 #동화 #3D애니메이션 #Shorts",
+            "title": f"{hero_first}의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
+            "moral": "가장 빠른 속도보다 더 소중한 것은 약속 시간을 지키는 성실함과 침착함입니다.",
+            "script": (
+                f"옛날 옛적, 따스한 햇살이 황금빛으로 물드는 드넓은 초원에 귀여운 {hero_name}가 살고 있었어요. "
+                f"초원의 동물 친구들은 활기차고 다정한 {hero_first}를 무척 아끼고 사랑했답니다. "
+                f"하지만 {hero_first}에게는 한 가지 큰 결점이 있었는데, 바로 {flaw}였어요. "
+                f"미리 준비하지 않고, 항상 마지막 순간에 서두르면 모든 것이 해결될 거라 믿었던 것이지요. "
+                f"어느 화창한 주말, 언덕 정상에서 정오에 열리는 위대한 동물 축제 소식이 전해졌어요. "
+                f"{hero_first}는 축제의 시작을 알리는 가장 영예로운 황금 깃발을 전달하는 임무를 맡게 되었답니다. "
+                f"친구들은 일찍 출발하라고 당부했지만, {hero_first}는 강가에서 물장구를 치고 낮잠을 자며 시간을 보냈어요. "
+                f"하늘 높이 솟은 해를 보고 깜짝 놀란 {hero_first}는 허둥지둥 지름길로 내달리기 시작했어요. "
+                f"하지만 아침 폭우로 불어난 흙탕물과 거대한 쓰러진 나무가 길을 막고 있었지요. "
+                f"진흙탕에 미끄러진 {hero_first}는 날카로운 가시덤불 속에 갇혀 옴짝달싹할 수 없게 되었어요. "
+                f"그때 동그란 안경을 쓴 지혜로운 거북이 할아버지가 지팡이를 짚으며 차분하게 다가오셨어요. "
+                f"'얘야, 아무리 발이 빨라도 잔치가 다 끝난 뒤에 도착한다면 무슨 소용이 있겠니? 서두름은 실수를 낳지만, 차분함은 바른길을 열어준단다.' "
+                f"할아버지는 조심스럽게 가시를 풀어주셨고, 두 친구는 안전한 능선길을 함께 걸어올라 정각에 정상에 도착했어요! "
+                f"황금 깃발이 휘날리자 모두가 환호했고, {hero_first}는 서두르지 않는 참된 지혜를 배웠답니다."
+            ),
+            "description": f"🐾 {hero_first}의 따뜻하고 감동적인 3분 3D 애니메이션 동화 이야기!\n\n구독하기 @KoreanMindNestTales!\n\n#MindNestTales #어린이이야기 #동화 #3D애니메이션 #Shorts",
             "tags": ["어린이이야기", "교훈동화", "3d애니메이션", "동물이야기", "shorts"]
         },
         "vi": {
-            "title": f"Bài Học Tuyệt Vời Của {hero_first}! 🐾✨ #Shorts",
-            "moral": "Sự kiên nhẫn và bình tĩnh luôn dẫn lối đến thành công đích thực.",
-            "script": f"Hãy cùng làm quen với {hero_first}! Mọi người trong khu rừng đều yêu quý cậu ấy, nhưng cậu lại có tính vội vàng hấp tấp. Một ngày nọ, sự thiếu kiên nhẫn đã gây ra rắc rối lớn. Đúng lúc đó, một người bạn thông thái đã nhẹ nhàng nhắc nhở: Sức mạnh thật sự đến từ sự bình tâm và lắng nghe. {hero_first} nhận ra sai lầm, thay đổi thói quen và gặt hái thành công trọn vẹn.",
-            "description": f"🐾 Xem câu chuyện hoạt hình 3D ấm áp về {hero_first}!\n\nĐăng ký kênh @VietnameseMindNestTales!\n\n#MindNestTales #TruyenThieuNhi #HoatHinh3D #BaiHocCuocSong #Shorts",
+            "title": f"Cuộc Đua Kịp Giờ Của {hero_first}! 🐾⏰ #Shorts",
+            "moral": "Tốc độ nhanh nhất cũng không có ý nghĩa nếu không đúng lúc. Hãy kiên nhẫn và đúng giờ!",
+            "script": (
+                f"Ngày xửa ngày xưa, giữa đồng cỏ xavan ngập tràn ánh nắng vàng rực rỡ, có một chú {species} dễ thương tên là {hero_name}. "
+                f"Tất cả muông thú trong thung lũng đều yêu quý {hero_first} vì sự hoạt bát, vui vẻ và năng động. "
+                f"Tuy nhiên, cậu lại có một khuyết điểm rất lớn: {flaw}. "
+                f"Cậu luôn ỷ lại vào sức mạnh của mình và tin rằng đến phút chót vẫn có thể chạy kịp mọi việc. "
+                f"Một buổi sáng đẹp trời, lễ hội mùa quả ngọt được tổ chức trên đỉnh đồi vào đúng mười hai giờ trưa. "
+                f"{hero_first} vinh dự được giao nhiệm vụ quan trọng nhất: mang lá cờ lễ hội lên khai mạc ngày vui. "
+                f"Các bạn dặn dò cậu phải khởi hành sớm, nhưng tính nào tật nấy, cậu vẫn mãi chơi đùa và nằm ngủ dưới bóng cây. "
+                f"Khi mặt trời lên đến đỉnh đầu, cậu hốt hoảng lao thật nhanh vào con đường tắt nguy hiểm. "
+                f"Cơn mưa rào ban sáng đã làm con suối dâng cao và một thân cây cổ thụ ngã chắn ngang đường. "
+                f"Vì quá vội vàng trượt chân trên bùn lầy, {hero_first} ngã nhào vào bụi gai rậm rạp và bị mắc kẹt hoàn toàn. "
+                f"Đúng lúc tuyệt vọng nhất, cụ rùa thông thái đeo kính tròn khoan thai bước tới với cây gậy gỗ. "
+                f"Cụ ôn tồn bảo: Này cháu nhỏ, chạy nhanh đến đâu có ích gì nếu cháu đến nơi khi ngày vui đã tàn? Sự hấp tấp che mờ mắt, nhưng lòng kiên nhẫn mới mở ra đường đi đúng đắn. "
+                f"Cụ rùa nhẹ nhàng gỡ từng cành gai giải cứu {hero_first}, rồi cùng nhau bước đi vững chãi trên con đường an toàn. "
+                f"Họ lên tới đỉnh đồi đúng vào tiếng reo hò của muôn loài, mang lại bài học vô giá về sự đúng giờ và điềm tĩnh."
+            ),
+            "description": f"🐾 Xem trọn vẹn câu chuyện hoạt hình 3D 180 giây đầy xúc động của {hero_first}!\n\nĐăng ký kênh @VietnameseMindNestTales!\n\n#MindNestTales #TruyenThieuNhi #HoatHinh3D #BaiHocCuocSong #Shorts",
             "tags": ["truyện thiếu nhi", "hoạt hình 3d", "bài học ý nghĩa", "câu chuyện động vật", "shorts"]
         },
         "fil": {
-            "title": f"Ang Mahalagang Aral ni {hero_first}! 🐾✨ #Shorts",
-            "moral": "Ang pagtitimpi at pagiging maingat ay mas mabisa kaysa sa pagmamadali.",
-            "script": f"Kilalanin si {hero_first}! Minahal siya ng lahat ng hayop sa gubat, ngunit may isa siyang malaking pagkukulang: ang pagmamadali nang hindi nag-iisip. Isang araw, nagdulot ito ng malaking gusot. Dito lumapit ang isang matalinong kaibigan at nagpaalala: Ang tunay na lakas ay nasa hinahon at pakikinig. Nakinig si {hero_first}, inayos ang kanyang pagkakamali, at nagtagumpay kasama ang buong barkada.",
-            "description": f"🐾 Panoorin ang masayang 3D animated kwento ni {hero_first}!\n\nMag-subscribe sa @FilipinoMindNestTales!\n\n#MindNestTales #KwentongPambata #AralSaBuhay #3DAnimation #Shorts",
+            "title": f"Ang Malaking Karera Laban sa Oras ni {hero_first}! 🐾⏰ #Shorts",
+            "moral": "Ang tunay na bilis ay walang halaga kung huli ka sa takdang oras. Maging maagap at maingat!",
+            "script": (
+                f"Noong unang panahon, sa isang magandang kapatagan na puno ng ginintuang araw, naninirahan si {hero_name}. "
+                f"Lahat ng mga hayop ay humahanga sa kanyang sigla, saya, at kabaitan sa kapwa. "
+                f"Ngunit may isa siyang malaking kapintasan: {flaw}. "
+                f"Palagi niyang iniisip na dahil mabilis siya, maaari niyang ipagpaliban ang lahat hanggang sa huling minuto. "
+                f"Isang maaliwalas na umaga, inanunsyo ang Dakilang Pista ng Lambak sa tuktok ng burol ganap na alas-dose ng tanghali. "
+                f"Ipinagkaloob kay {hero_first} ang pinakamalaking karangalan: ang pagdadala ng bandila ng kapistahan upang simulan ang pagdiriwang. "
+                f"Pinaalalahanan siya ng kanyang mga kaibigan na umalis nang maaga, ngunit naglaro lamang siya at nagpahinga sa lilim ng puno. "
+                f"Nang mapansin niyang mataas na ang araw, nagmadali siyang tumakbo sa mapanganib na shortcut. "
+                f"Dahil sa biglaang bagyo kaninang umaga, bumaha ang ilog at may nagtumbahang malaking puno na humarang sa daan. "
+                f"Dumulas si {hero_first} sa putik at tuluyang sumabit sa makakapal na baging na may matatalim na tinik. "
+                f"Hindi siya makawala habang papalapit na ang oras ng pista. Sa sandaling iyon, dumating ang matalinong matandang pagong na may salamin at tungkod. "
+                f"Mabining sinabi ng matanda: Kaibigan, anong halaga ng bilis kung darating ka kung kailan tapos na ang lahat? Ang pagmamadali ay nagdudulot ng kapahamakan, ngunit ang hinahon ang nagtuturo ng tamang landas. "
+                f"Tinulungan siyang tanggalin ang mga tinik at magkasama silang umakyat sa ligtas na daan. Nakarating sila sa tamang oras at buong pusong nagdiwang ang lahat."
+            ),
+            "description": f"🐾 Panoorin ang masayang 3-minutong 3D animated kwento ni {hero_first}!\n\nMag-subscribe sa @FilipinoMindNestTales!\n\n#MindNestTales #KwentongPambata #AralSaBuhay #3DAnimation #Shorts",
             "tags": ["kwentong pambata", "aral sa buhay", "animation tagalog", "hayop kwento", "shorts"]
         }
     }
 
 def generate_dynamic_story(story_number, use_ai=True):
     """
-    Generates a complete new story definition with 12 clips and 11-language dubbing.
+    Generates a complete new story definition with 16 clips (180s runtime) and 11-language dubbing.
     - Story 1 to 51 match STORIES_MASTER directly.
     - Story 52+ dynamically selects from ANIMALS.
     - All 11 languages are 100% native with ZERO mixed English words.
@@ -532,7 +734,8 @@ def generate_dynamic_story(story_number, use_ai=True):
         species = name_parts[0].lower() if name_parts else "animal"
         hero_name = f"Chico the {species.title()}" if story_number == 1 else f"{name_parts[0]} the {species.title()}"
         slug = f"{species}_{story_number}"
-        summary = f"{hero_name} learned an important life lesson in the forest: {moral}"
+        flaw = "always rushing and arriving late" if story_number == 1 else "acting in haste without thinking"
+        summary = f"{hero_name} had a habit of {flaw}. Trouble arrived, but gentle wisdom helped: {moral}"
     else:
         idx = (story_number - len(STORIES_MASTER) - 1) % len(ANIMALS)
         animal_choice = ANIMALS[idx]
@@ -549,14 +752,15 @@ def generate_dynamic_story(story_number, use_ai=True):
         "base_title": base_title,
         "moral": moral,
         "playlist": playlist,
+        "target_duration_seconds": 180,
         "characters": {
             "hero": f"3D Pixar-style animated {species} named {hero_first} with expressive round eyes and cute cartoon proportions",
             "mentor": "3D Pixar-style animated wise tortoise elder with round spectacles and friendly grandfather smile"
         },
         "clips": [
-            {"clip_number": i, "time_range": f"{(i-1)*10}:00-{i*10}:00", "beat": f"Beat {i}",
-             "prompt": f"3D Pixar-style animated {species} named {hero_first}, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, savanna and forest setting, beat {i} of moral journey."}
-            for i in range(1, 13)
+            {"clip_number": i, "time_range": f"{(i-1)*11}:15-{i*11}:15", "beat": f"Beat {i}",
+             "prompt": f"3D Pixar-style animated {species} named {hero_first}, cinematic lighting, warm Disney Pixar aesthetic, portrait 9:16, beat {i} of 180s moral journey."}
+            for i in range(1, 17)
         ],
         "translations": {}
     }
@@ -567,7 +771,7 @@ def generate_dynamic_story(story_number, use_ai=True):
         ai_trans = generate_ai_multilingual_translations(base_title, hero_name, summary, moral)
 
     # 2. Complete with pure fallbacks if AI missed any language
-    fallback_trans = generate_fallback_translations(hero_name, species, base_title, moral)
+    fallback_trans = generate_fallback_translations(hero_name, species, base_title, moral, flaw)
     needed_langs = ["en", "hi", "es", "pt", "fr", "de", "ar", "ja", "ko", "vi", "fil"]
     
     for lang in needed_langs:

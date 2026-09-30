@@ -20,6 +20,8 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+if script_dir not in sys.path:
+    sys.path.insert(0, script_dir)
 stories_dir = os.path.join(script_dir, "stories")
 assets_base = os.path.join(stories_dir, "assets")
 thumbs_base = os.path.join(stories_dir, "thumbnails")
@@ -187,8 +189,8 @@ def generate_scene_image(prompt, output_path):
 
 def build_narrative_shots(story_data):
     """
-    Constructs an 8-scene cinematic narrative arc matching standard moral fable pacing:
-    15.0 seconds per shot across a 120s Short, with smooth 0.5s crossfade transitions.
+    Constructs a 16-scene cinematic narrative arc matching 180s (3-minute) Shorts pacing:
+    ~11.25 seconds per shot across a 180s runtime, with smooth 0.5s crossfade transitions.
     """
     story_number = story_data.get("story_number", 1)
     base_title = story_data.get("base_title", "Moral Story")
@@ -205,20 +207,28 @@ def build_narrative_shots(story_data):
 
     return [
         ("scene_01_intro.jpg", f"{hero_char}, introducing character in their vibrant natural habitat with curious wide eyes and cheerful smile, lush morning sunlight"),
-        ("scene_02_flaw.jpg", f"{hero_char}, displaying characteristic habit of {flaw}, dynamic playful action pose kicking up dust and rushing energetically"),
-        ("scene_03_obstacle.jpg", f"{hero_char} facing a grand winding pathway and unexpected nature obstacle ahead in the colorful landscape"),
-        ("scene_04_predicament.jpg", f"{hero_char} encountering a comical predicament from haste, stuck and surprised with big comical expressive eyes"),
-        ("scene_05_mentor.jpg", f"{mentor_char} arriving calmly with warm grandfatherly smile and gentle pointing gesture to guide {hero_char}"),
-        ("scene_06_realization.jpg", f"{hero_char} having a heartwarming moment of realization, thoughtful soft smile, peaceful calm breathing"),
-        ("scene_07_action.jpg", f"{hero_char} gracefully overcoming the challenge with thoughtful patience and focus, triumphant athletic movement"),
-        ("scene_08_celebration.jpg", f"{hero_char} joyfully celebrating alongside forest animal friends and {mentor_char} under a golden sunset, moral victory")
+        ("scene_02_friends.jpg", f"{hero_char}, happily interacting with friendly animal neighbors and birds under acacia trees in golden morning light"),
+        ("scene_03_pride.jpg", f"{hero_char}, showing off energetic personality and natural speed, sprinting playfully across the open fields"),
+        ("scene_04_flaw.jpg", f"{hero_char}, displaying characteristic habit of {flaw}, dynamic action pose kicking up dust and rushing carelessly"),
+        ("scene_05_announcement.jpg", f"{hero_char}, receiving invitation to the grand festival summit from joyful animal messengers"),
+        ("scene_06_procrastination.jpg", f"{hero_char}, relaxing lazily by the riverbank and ignoring the ticking clock, confident they can rush later"),
+        ("scene_07_the_storm.jpg", f"{hero_char}, facing a dramatic sudden thunderstorm gathering over the dark hills, wind sweeping across the trees"),
+        ("scene_08_obstacle.jpg", f"{hero_char}, encountering a swollen roaring river and huge fallen baobab tree blocking the shortcut trail"),
+        ("scene_09_predicament.jpg", f"{hero_char}, skidding into deep slippery mud and tangling into thorny bushes, wide panicked expressive eyes"),
+        ("scene_10_hopeless.jpg", f"{hero_char}, struggling fruitlessly to break free from the thorny vines as the midday sun climbs higher"),
+        ("scene_11_mentor_arrives.jpg", f"{mentor_char}, arriving with calm, dignified steps, wearing spectacles and holding a wooden walking staff"),
+        ("scene_12_wisdom.jpg", f"{mentor_char}, speaking warmly with gentle grandfather smile, pointing toward the patient high ridge path"),
+        ("scene_13_realization.jpg", f"{hero_char}, having an emotional lightbulb realization, taking a calm breath and listening humbly"),
+        ("scene_14_teamwork.jpg", f"{hero_char} and {mentor_char}, working together patiently to untangle the vines and step safely onto the ridge"),
+        ("scene_15_triumphant_arrival.jpg", f"{hero_char}, arriving proudly at the summit gathering just on time with the festive banner, crowd cheering"),
+        ("scene_16_celebration.jpg", f"{hero_char} and {mentor_char}, surrounded by all animal friends enjoying a joyful fruit banquet under a golden sunset, moral victory")
     ]
 
 def ensure_story_assets(story_number, force_regenerate=False):
     """
-    Ensures that all 8 cinematic 3D Pixar scene assets and thumbnail exist for the given story.
+    Ensures that all 16 cinematic 3D Pixar scene assets and thumbnail exist for the given story.
     If assets already exist, re-uses them.
-    If missing or incomplete, generates the complete 8-scene narrative sequence autonomously.
+    If missing or incomplete, generates the complete 16-scene narrative sequence autonomously.
     """
     story_dir = os.path.join(assets_base, f"story_{story_number:02d}")
     thumb_path = os.path.join(thumbs_base, f"story_{story_number:02d}_thumbnail.jpg")
@@ -235,14 +245,14 @@ def ensure_story_assets(story_number, force_regenerate=False):
         if os.path.exists(os.path.join(story_dir, filename)) and os.path.getsize(os.path.join(story_dir, filename)) > 10000
     ]
 
-    if len(existing_scenes) >= 7 and os.path.exists(thumb_path) and not force_regenerate:
+    if len(existing_scenes) >= 12 and os.path.exists(thumb_path) and not force_regenerate:
         print(f"✨ Found {len(existing_scenes)} existing 3D Pixar scenes for Story #{story_number}. Ready for production.")
         return existing_scenes
 
     print(f"\n=======================================================")
     print(f"🎬 AUTONOMOUS 3D PIXAR ASSET GENERATION: Story #{story_number}")
     print(f"Title: {story_data.get('base_title')}")
-    print(f"Shots: 8 Narrative Scenes (15s pacing for 120s Shorts)")
+    print(f"Shots: 16 Narrative Scenes (11s pacing for 180s Shorts)")
     print(f"=======================================================")
 
     generated_scenes = []
