@@ -269,8 +269,8 @@ def produce_10min_compilation(story_ids, lang_code, output_video_path, quality="
         # Dual-layer: blurred background filling 16:9 widescreen, with crisp centered hero visual
         scale_parts.append(
             f"[{idx}:v]split=2[bg_raw{idx}][fg_raw{idx}];"
-            f"[bg_raw{idx}]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},boxblur=20:5[bg{idx}];"
-            f"[fg_raw{idx}]scale=-1:{h}[fg{idx}];"
+            f"[bg_raw{idx}]scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},boxblur=20:5[bg{idx}];"
+            f"[fg_raw{idx}]scale=-1:{h}:flags=lanczos[fg{idx}];"
             f"[bg{idx}][fg{idx}]overlay=(W-w)/2:0,setsar=1,fps=30[s{idx}];"
         )
 
@@ -315,7 +315,7 @@ def produce_10min_compilation(story_ids, lang_code, output_video_path, quality="
         "-map", "[v]",
         "-map", f"{audio_idx}:a",
         "-t", f"{total_dur:.2f}",
-        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "21",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",
         output_video_path

@@ -383,7 +383,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
             clean_img = os.path.abspath(img).replace("\\", "/")
             ffmpeg_inputs.extend(["-loop", "1", "-t", f"{L:.3f}", "-i", clean_img])
             scale_parts.append(
-                f"[{i}:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1,fps=30[s{i}];"
+                f"[{i}:v]scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},setsar=1,fps=30[s{i}];"
             )
 
         prev = "s0"
@@ -402,7 +402,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         # Single Scene
         clean_img = os.path.abspath(scene_images[0]).replace("\\", "/")
         ffmpeg_inputs.extend(["-loop", "1", "-t", f"{duration:.3f}", "-i", clean_img])
-        full_filter = f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1,fps=30[vbase];[vbase]{overlay_filters}[v]"
+        full_filter = f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},setsar=1,fps=30[vbase];[vbase]{overlay_filters}[v]"
         audio_idx = 1
     else:
         # Fallback Dynamic Cinematic Gradient
@@ -427,7 +427,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         "-filter_complex", final_filter,
         "-map", "[v]", "-map", "[a]",
         "-t", f"{duration:.2f}",
-        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",
         output_video_path

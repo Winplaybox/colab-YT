@@ -31,21 +31,22 @@ os.makedirs(thumbs_base, exist_ok=True)
 
 def enhance_pixar_prompt(base_prompt):
     """
-    Enhances base prompt into a cinematic photorealistic 3D feature-film visual:
-    - Stylized expressive 3D character (Pixar/Disney charm and emotion)
-    - Combined with hyper-realistic physical materials, fur simulation, and tactile textures
-    - Real cinematic camera optics (shot on 35mm prime lens, natural lighting, soft atmospheric depth)
-    - High-production studio aesthetic that passes algorithmic and human quality standards
+    Enhances base prompt into a hyper-realistic ultra 8K detailed 3D animated visual:
+    - Stylized expressive 3D character (Pixar/Disney emotional depth)
+    - Hyper-realistic 8K physical materials, individual fur strands, and tactile textures
+    - Octane 8K raytracing, subsurface scattering, authentic volumetric lighting
+    - Shot on 35mm master prime lens, f/1.8 shallow depth of field, natural bokeh
+    - Studio-grade production quality
     """
     style_suffix = (
-        "cinematic photorealistic 3D animated feature film aesthetic, hyper-detailed expressive character, "
-        "physically-based tactile fur and skin textures, Octane fur simulation, natural cinematic sunlight, "
-        "volumetric god rays, shot on 35mm anamorphic prime lens, f/1.8 shallow depth of field, natural bokeh, "
-        "authentic animation studio render, Unreal Engine 5.4, rich color grading, vertical portrait 9:16"
+        "hyper-realistic 8k resolution, ultra-detailed 3D feature film animation masterpiece, "
+        "octane render 8k, raytracing, subsurface scattering, individual realistic fur strands, "
+        "tactile skin textures, cinematic lighting, volumetric god rays, shot on 35mm master prime lens, "
+        "f/1.8 shallow depth of field, authentic Disney Pixar character design, Unreal Engine 5.4, "
+        "rich cinematic color grading, photorealistic 8k uhd, vertical portrait 9:16"
     )
-    # Avoid repeating tokens
     clean = base_prompt.replace("portrait 9:16", "").replace("3D Pixar-style", "").strip()
-    return f"Photorealistic 3D cinematic animated {clean}, {style_suffix}"
+    return f"Hyper-realistic 8K photorealistic 3D cinematic animated {clean}, {style_suffix}"
 
 def get_hf_token():
     """Retrieves Hugging Face token from environment or local credentials file."""
@@ -63,10 +64,32 @@ def get_hf_token():
             pass
     return None
 
+def apply_8k_detail_enhancement(img):
+    """
+    Applies hyper-realistic 8K detail post-processing:
+    - High-fidelity Lanczos upscaling to 1080p+ portrait if needed
+    - Dynamic color & contrast pop
+    - Micro-fur unsharp mask for razor-sharp whisker details and eye sparkles
+    """
+    from PIL import ImageEnhance, ImageFilter, Image
+    w, h = img.size
+    if w < 1080 or h < 1920:
+        target_w = 1080
+        target_h = int(h * (target_w / w))
+        if target_h < 1920:
+            target_h = 1920
+            target_w = int(w * (target_h / h))
+        img = img.resize((target_w, target_h), Image.Resampling.LANCZOS)
+    
+    c = ImageEnhance.Color(img).enhance(1.08)
+    k = ImageEnhance.Contrast(c).enhance(1.06)
+    s = k.filter(ImageFilter.UnsharpMask(radius=1.8, percent=145, threshold=2))
+    return s
+
 def strip_and_save_clean_image(pil_or_bytes_or_path, output_path):
     """
     Strips 100% of EXIF, C2PA, generator headers, and software signatures.
-    Saves as an ultra-clean, uncompressed JPEG pixel stream (zero AI fingerprint).
+    Applies hyper-realistic 8K detail enhancement and saves as an ultra-clean JPEG.
     """
     import io
     from PIL import Image
@@ -77,7 +100,8 @@ def strip_and_save_clean_image(pil_or_bytes_or_path, output_path):
     else:
         img = pil_or_bytes_or_path
     clean = img.convert("RGB")
-    clean.save(output_path, "JPEG", quality=95, optimize=True)
+    enhanced = apply_8k_detail_enhancement(clean)
+    enhanced.save(output_path, "JPEG", quality=96, optimize=True)
 
 _gradio_client = None
 
