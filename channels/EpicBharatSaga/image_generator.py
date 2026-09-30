@@ -337,9 +337,9 @@ def generate_procedural_fallback(title, subtitle, output_path, width=1080, heigh
         print(f"Procedural canvas error: {e}")
         return False
 
-def generate_story_assets(story_input, target_shots=25):
+def generate_story_assets(story_input, target_shots=30):
     """
-    Generates high-pacing scene assets (default 25 shots, 3-5 sec cuts) from a story dictionary or JSON filepath:
+    Generates high-pacing scene assets (default 30 shots, ~6 sec cuts for 180s Shorts) from a story dictionary or JSON filepath:
     1. Primary Tier: Searches The Met Open Access and Wikimedia Commons for authentic real temple sculptures,
        classical Indian paintings, and ancient heritage photography.
     2. Secondary Tier: AI generation via FLUX / Pollinations for rare scenes.
@@ -359,16 +359,16 @@ def generate_story_assets(story_input, target_shots=25):
     episode_dir = os.path.join(assets_base, story_id)
     os.makedirs(episode_dir, exist_ok=True)
 
-    print(f"\n🔱 Processing Visual Assets for '{title}' ({num_to_generate} shots, high-retention pacing)...")
+    print(f"\n🔱 Processing Visual Assets for '{title}' ({num_to_generate} shots, 180s Shorts pacing)...")
 
     # Step 1: Query The Met Museum Open Access (Dept 6: Asian Art)
     queries = extract_search_queries_for_story(story_data)
-    met_items = fetch_met_museum_images(queries[:4], limit=8)
+    met_items = fetch_met_museum_images(queries[:4], limit=12)
     if met_items:
         print(f"🏛️ [The Met Open Access] Discovered {len(met_items)} CC0 museum masterworks for: {queries[:2]}")
 
     # Step 2: Query Wikimedia Commons for pool of authentic heritage & classical photos
-    real_photo_urls = fetch_wikimedia_images(queries, limit=max(35, num_to_generate + 5))
+    real_photo_urls = fetch_wikimedia_images(queries, limit=max(45, num_to_generate + 10))
     print(f"📸 [Wikimedia Commons] Discovered {len(real_photo_urls)} authentic heritage & classical artworks for: {queries[:3]}")
 
     # Unified curated image pool: Met Museum masterworks first, then Wikimedia Commons

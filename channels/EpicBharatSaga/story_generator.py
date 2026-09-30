@@ -64,7 +64,7 @@ def build_full_data(story, episode_number):
         "youtube_title": yt_title,
         "tagline": story["tagline"],
         "visual_theme": story.get("visual_theme", "DIVINE_MYTHOLOGY"),
-        "target_duration_seconds": story.get("target_duration", 95),
+        "target_duration_seconds": story.get("target_duration", 180),
         "review_status": story.get("review_status", "verified"),
         "sources": story.get("sources", []),
         "verified_fact": story["verified_fact"],

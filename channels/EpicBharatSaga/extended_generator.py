@@ -148,7 +148,7 @@ def get_extended_myth_story(episode_number):
     story["episode_number"] = episode_number
     story["review_status"] = "verified"
     story["pinned_comment"] = story.get("pinned_comment", "🔱 " + story["title"])
-    story["target_duration"] = story.get("target_duration", 95)
+    story["target_duration"] = story.get("target_duration", 180)
     story["visual_theme"] = story.get("visual_theme", "DIVINE_MYTHOLOGY")
     story["sources"] = story.get("sources", [f"https://en.wikipedia.org/wiki/{story['deity'].replace(' ', '_')}"])
     return story
@@ -176,7 +176,7 @@ def _generate_template_myth(episode_number, used_ids):
         "title": f"{hook} 🔱",
         "youtube_title": f"{hook} 🔱",
         "tagline": tagline,
-        "visual_theme": "DIVINE_MYTHOLOGY", "target_duration": 95,
+        "visual_theme": "DIVINE_MYTHOLOGY", "target_duration": 180,
         "review_status": "verified",
         "sources": [f"https://en.wikipedia.org/wiki/{deity_name.replace(' ', '_')}"],
         "verified_fact": f"{deity_name} is an important deity in Hindu mythology with a rich tradition of stories.",

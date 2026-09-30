@@ -237,10 +237,21 @@ def produce_train_video(story_input, quality="1080p"):
     w, h = res_map.get(quality, (1080, 1920))
     scale = w / 1080.0
 
-    # Ensure shot image assets exist (targets 25 shots for high-retention 3-4s visual cuts)
+    cfg = {}
+    config_file = os.path.join(script_dir, "config.json")
+    if os.path.exists(config_file):
+        try:
+            with open(config_file, "r", encoding="utf-8") as cf:
+                cfg = json.load(cf)
+        except Exception:
+            pass
+    target_duration = float(cfg.get("target_duration_seconds", 180.0))
+    target_shots = 30
+
+    # Ensure shot image assets exist (targets 30 shots for 180s Shorts with ~6.0s cuts)
     from image_generator import generate_story_assets
     episode_assets_dir = os.path.join(assets_base, story_id)
-    generate_story_assets(story_data, target_shots=25)
+    generate_story_assets(story_data, target_shots=target_shots)
 
     # Discover all available shot images
     shot_imgs = sorted([
@@ -248,23 +259,23 @@ def produce_train_video(story_input, quality="1080p"):
         for f in os.listdir(episode_assets_dir)
         if f.startswith("shot_") and f.endswith(".jpg")
     ])
-    num_shots = len(shot_imgs) if shot_imgs else max(24, len(shots))
+    num_shots = len(shot_imgs) if shot_imgs else max(target_shots, len(shots))
 
     # Step 1: Voiceover Audio (pluggable TTS engine — no asyncio.run needed)
     voice_path = os.path.join(output_dir, f"{story_id}_voice.mp3")
     generate_voiceover(voiceover_text, voice_path)
-    duration = get_audio_duration(voice_path)
-    print(f"⏱️ Audio Duration: {duration:.2f} seconds | Shots: {num_shots} ({duration / num_shots:.2f}s per cut)")
+    raw_duration = get_audio_duration(voice_path)
+    print(f"🎙️ Raw Voiceover: {raw_duration:.2f}s | Target Shorts Duration: {target_duration:.2f}s | Shots: {num_shots} ({target_duration / num_shots:.2f}s per cut)")
 
-    # Step 2: Divine Ambient Soundscape (Om drone + temple bell)
+    # Step 2: Divine Ambient Soundscape (Om drone + temple bell) for exact target duration
     sfx_path = os.path.join(output_dir, f"{story_id}_divine_sfx.wav")
-    synthesize_procedural_divine_audio(sfx_path, duration=duration)
+    synthesize_procedural_divine_audio(sfx_path, duration=target_duration)
 
-    # Step 3: Broadcast-standard Audio Mix (normalize=0, loudnorm)
+    # Step 3: Broadcast-standard Audio Mix (pad voice to exact target_duration with divine Om resonance)
     mixed_audio_path = os.path.join(output_dir, f"{story_id}_mixed_audio.wav")
     audio_filter = (
-        "[0:a]volume=1.0[v];"
-        "[1:a]volume=0.15[s];"
+        f"[0:a]apad=whole_dur={target_duration}:whole_len={int(target_duration*44100)},atrim=0:{target_duration},volume=1.0[v];"
+        f"[1:a]atrim=0:{target_duration},volume=0.15[s];"
         "[v][s]amix=inputs=2:duration=first:normalize=0,"
         "loudnorm=I=-16:TP=-1.5:LRA=11[out]"
     )
@@ -274,13 +285,19 @@ def produce_train_video(story_input, quality="1080p"):
         "-i", sfx_path,
         "-filter_complex", audio_filter,
         "-map", "[out]",
+        "-t", f"{target_duration:.3f}",
         mixed_audio_path
     ]
     subprocess.run(cmd_audio, check=True)
 
     # Step 4: Single-Frame Visual Assembly & Stutter-Free Zoompan
-    shot_duration = duration / num_shots
-    frames = int(shot_duration * 30)
+    # Guarantee exact frame total matching target_duration @ 30 fps (5400 frames for 180s)
+    fps = 30
+    total_target_frames = int(round(target_duration * fps))
+    base_frames = total_target_frames // num_shots
+    rem_frames = total_target_frames % num_shots
+    shot_frames_list = [base_frames + (1 if i < rem_frames else 0) for i in range(num_shots)]
+
     font_file = resolve_font()
     font_arg = f"fontfile='{font_file}':" if font_file else ""
 
@@ -290,6 +307,7 @@ def produce_train_video(story_input, quality="1080p"):
     filter_chains = []
 
     for i in range(num_shots):
+        frames = shot_frames_list[i]
         if i < len(shot_imgs):
             shot_img = shot_imgs[i]
         else:
@@ -370,7 +388,7 @@ def produce_train_video(story_input, quality="1080p"):
         "-pix_fmt", "yuv420p",
         "-c:a", "aac",
         "-b:a", "192k",
-        "-shortest",
+        "-t", f"{target_duration:.3f}",
         output_video_path
     ]
 
@@ -394,7 +412,17 @@ def produce_train_video(story_input, quality="1080p"):
     return output_video_path
 
 if __name__ == "__main__":
-    story_files = [f for f in os.listdir(stories_dir) if f.startswith("story_") and f.endswith(".json")]
-    if story_files:
-        ep1_json = os.path.join(stories_dir, sorted(story_files)[0])
-        produce_train_video(ep1_json, quality="1080p")
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("story_path", nargs="?", default=None, help="Path to story JSON")
+    parser.add_argument("--quality", default="1080p", choices=["1080p", "4k", "8k"])
+    args = parser.parse_args()
+
+    if args.story_path and os.path.exists(args.story_path):
+        target_json = args.story_path
+    else:
+        story_files = sorted([f for f in os.listdir(stories_dir) if f.startswith("story_") and f.endswith(".json")])
+        target_json = os.path.join(stories_dir, story_files[-1]) if story_files else None
+
+    if target_json:
+        produce_train_video(target_json, quality=args.quality)
