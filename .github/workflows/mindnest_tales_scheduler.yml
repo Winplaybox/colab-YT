@@ -19,6 +19,10 @@ on:
         description: 'Output quality: 1080p (recommended for CI batch), 4k, or 8k'
         required: false
         default: '1080p'
+      release_mode:
+        description: 'Release mode: dual (10-min + short trailer), short (180s short only), long (10-min compilation only), or analytics'
+        required: false
+        default: 'dual'
 
 
 permissions:
@@ -123,13 +127,15 @@ jobs:
           STORY_NUM="${{ github.event.inputs.story_number }}"
           TARGET_LANG="${{ github.event.inputs.target_language }}"
           QUALITY="${{ github.event.inputs.quality }}"
+          MODE="${{ github.event.inputs.release_mode }}"
 
           STORY_ARG="${STORY_NUM:-1}"
           LANG_ARG="${TARGET_LANG:-all}"
           QUAL_ARG="${QUALITY:-1080p}"
+          MODE_ARG="${MODE:-dual}"
 
-          echo "🚀 Triggering MindNest Tales: Story #${STORY_ARG} for Language(s): ${LANG_ARG} at ${QUAL_ARG}"
-          python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG" "$QUAL_ARG"
+          echo "🚀 Triggering MindNest Tales: Story #${STORY_ARG} for Language(s): ${LANG_ARG} at ${QUAL_ARG} in [${MODE_ARG}] mode"
+          python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG" "$QUAL_ARG" "$MODE_ARG"
 
       - name: Commit State / Logs
         if: always()

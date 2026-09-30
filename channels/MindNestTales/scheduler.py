@@ -31,6 +31,14 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, script_dir)
 from video_producer import produce_story_video, load_story, load_network_config
 try:
+    from compilation_producer import produce_10min_compilation
+except ImportError:
+    produce_10min_compilation = None
+try:
+    from analytics_engine import run_network_analytics_audit
+except ImportError:
+    run_network_analytics_audit = None
+try:
     from sheets_tracker import record_story_status, init_tracking_sheet
 except ImportError:
     def record_story_status(story_number, lang, status): pass
@@ -206,8 +214,41 @@ def save_state(state):
     with open(state_file, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2)
 
-def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto_advance=False, publish_at=None, work_dir="/tmp/mindnest_batch"):
-    """Executes production & upload for a specific language or all 11 channels at 8K/4K."""
+def post_pinned_comment(youtube, video_id, comment_text):
+    """Inserts a top-level pinned comment on an uploaded video."""
+    try:
+        res = youtube.commentThreads().insert(
+            part="snippet",
+            body={
+                "snippet": {
+                    "videoId": video_id,
+                    "topLevelComment": {
+                        "snippet": {
+                            "textOriginal": comment_text
+                        }
+                    }
+                }
+            }
+        ).execute()
+        return res.get("id")
+    except Exception as e:
+        print(f"Comment notice: {e}")
+        return None
+
+def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", auto_advance=False, publish_at=None, work_dir="/tmp/mindnest_batch", mode="dual"):
+    """
+    Executes production & upload for MindNest Tales:
+    - mode='dual': Renders 10-Minute Long Video + 180s Short with direct cross-linking CTA.
+    - mode='short': Renders 180s Short only.
+    - mode='long': Renders 10-Minute Long Video only.
+    - mode='analytics': Executes real-time algorithm audit across all 11 channels.
+    """
+    if mode == "analytics" or story_number == "analytics":
+        if run_network_analytics_audit:
+            return run_network_analytics_audit()
+        print("Analytics engine not found.")
+        return None
+
     state = load_state()
     if story_number is None:
         story_number = state.get("current_story", 1)
@@ -229,62 +270,107 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto
 
     results = []
     print(f"\n=======================================================")
-    print(f"🚀 RELEASING STORY #{story_number}: '{story['base_title']}' [{quality.upper()} SHORTS]")
+    print(f"🚀 RELEASING STORY #{story_number}: '{story['base_title']}' [MODE: {mode.upper()}]")
     print(f"Channels in this run: {len(channels_to_process)}")
     print(f"=======================================================")
 
     for ch in channels_to_process:
         lang = ch["lang_code"]
         ch_name = ch["channel_name"]
-        print(f"\n[{ch_name} - {lang.upper()}] Starting 8K Shorts production...")
-
-        record_story_status(story_number, lang, "Processing...")
-        video_path = os.path.join(work_dir, f"story_{story_number:02d}_{lang}_{quality}.mp4")
-        produce_story_video(story, lang, video_path, quality=quality)
-
-        # Upload
-        translation = story["translations"].get(lang, story["translations"]["en"])
-        title = translation["title"]
-        if "#Shorts" not in title and "#shorts" not in title:
-            title = f"{title} #Shorts"
-
         youtube = get_channel_youtube_service(
             lang,
             expected_channel_id=ch.get("channel_id"),
             expected_name=ch_name
         )
-        if youtube:
+
+        channel_publish_at = publish_at
+        if not channel_publish_at and ch.get("publish_time_utc"):
+            channel_publish_at = compute_next_publish_time(ch.get("publish_time_utc", "03:30"))
+
+        long_vid_url = None
+
+        # -----------------------------------------------------------------
+        # 1. 10-MINUTE LONG-FORM VIDEO (If dual or long mode)
+        # -----------------------------------------------------------------
+        if mode in ("dual", "long") and produce_10min_compilation:
+            total_stories = state.get("total_stories", 51)
+            story_ids = [
+                story_number,
+                (story_number % total_stories) + 1,
+                ((story_number + 1) % total_stories) + 1
+            ]
+            print(f"\n[{ch_name} - {lang.upper()}] 🎬 Producing 10-Minute Compilation (Stories {story_ids})...")
+            long_path = os.path.join(work_dir, f"compilation_{story_number:02d}_{lang}_{quality}.mp4")
             try:
-                # Compute channel-specific scheduled publish time (Sat, Sun, Wed at target local time)
-                channel_publish_at = publish_at
-                if not channel_publish_at and ch.get("publish_time_utc"):
-                    channel_publish_at = compute_next_publish_time(ch.get("publish_time_utc", "03:30"))
-                    print(f"📅 Auto-Scheduled release for {ch_name}: {channel_publish_at} (UTC) / {ch.get('publish_time_ist')} IST")
+                _, long_meta = produce_10min_compilation(story_ids, lang, long_path, quality=quality)
+                if youtube and os.path.exists(long_path):
+                    long_id = upload_story_to_channel(
+                        youtube,
+                        long_path,
+                        long_meta["title"],
+                        long_meta["description"],
+                        long_meta["tags"],
+                        thumbnail_path=thumb_path,
+                        publish_at=channel_publish_at
+                    )
+                    long_vid_url = f"https://youtu.be/{long_id}"
+                    results.append({"channel": ch_name, "lang": lang, "type": "10-MIN", "status": "UPLOADED", "url": long_vid_url})
+                    state.setdefault("compilations", {})[f"story_{story_number:02d}_{lang}"] = long_vid_url
+            except Exception as le:
+                print(f"Notice: Long-form build note: {le}")
+            finally:
+                if os.path.exists(long_path):
+                    os.remove(long_path)
 
-                vid = upload_story_to_channel(
-                    youtube,
-                    video_path,
-                    title,
-                    translation["description"],
-                    translation["tags"],
-                    thumbnail_path=thumb_path,
-                    publish_at=channel_publish_at
-                )
-                status_label = f"Scheduled ({channel_publish_at})" if channel_publish_at else f"Uploaded ({vid})"
-                results.append({"channel": ch_name, "lang": lang, "status": status_label, "url": f"https://youtu.be/{vid}"})
-                record_story_status(story_number, lang, status_label)
-            except Exception as e:
-                print(f"Upload failed for {ch_name}: {e}")
-                results.append({"channel": ch_name, "lang": lang, "status": "FAILED", "error": str(e)})
-                record_story_status(story_number, lang, f"Failed: {str(e)[:25]}")
-        else:
-            results.append({"channel": ch_name, "lang": lang, "status": "RENDERED_LOCAL", "path": video_path})
-            record_story_status(story_number, lang, "Rendered Local")
+        # -----------------------------------------------------------------
+        # 2. 180-SECOND SHORT (If dual or short mode)
+        # -----------------------------------------------------------------
+        if mode in ("dual", "short"):
+            print(f"\n[{ch_name} - {lang.upper()}] 📱 Producing 180s Short...")
+            record_story_status(story_number, lang, "Processing...")
+            video_path = os.path.join(work_dir, f"story_{story_number:02d}_{lang}_{quality}.mp4")
+            produce_story_video(story, lang, video_path, quality=quality)
 
-        # Automatically clean up rendered video to keep disk and repository light
-        if os.path.exists(video_path):
-            os.remove(video_path)
+            translation = story["translations"].get(lang, story["translations"]["en"])
+            title = translation["title"]
+            if "#Shorts" not in title and "#shorts" not in title:
+                title = f"{title} #Shorts"
 
+            # If long video was uploaded, link it on the top line of description
+            desc = translation["description"]
+            if long_vid_url:
+                desc = f"🎬 WATCH FULL 10-MINUTE EPISODE: {long_vid_url}\n\n" + desc
+
+            if youtube and os.path.exists(video_path):
+                try:
+                    vid = upload_story_to_channel(
+                        youtube,
+                        video_path,
+                        title,
+                        desc,
+                        translation["tags"],
+                        thumbnail_path=thumb_path,
+                        publish_at=channel_publish_at
+                    )
+                    short_url = f"https://youtu.be/{vid}"
+                    status_label = f"Scheduled ({channel_publish_at})" if channel_publish_at else f"Uploaded ({vid})"
+                    results.append({"channel": ch_name, "lang": lang, "type": "SHORT", "status": status_label, "url": short_url})
+                    record_story_status(story_number, lang, status_label)
+
+                    if long_vid_url:
+                        pin_text = f"👉 Watch the full 10-minute 3-story special here: {long_vid_url} 💛"
+                        post_pinned_comment(youtube, vid, pin_text)
+
+                except Exception as e:
+                    print(f"Upload failed for {ch_name}: {e}")
+                    results.append({"channel": ch_name, "lang": lang, "type": "SHORT", "status": "FAILED", "error": str(e)})
+                    record_story_status(story_number, lang, f"Failed: {str(e)[:25]}")
+            else:
+                results.append({"channel": ch_name, "lang": lang, "type": "SHORT", "status": "RENDERED_LOCAL", "path": video_path})
+                record_story_status(story_number, lang, "Rendered Local")
+
+            if os.path.exists(video_path):
+                os.remove(video_path)
 
     # Update state tracker
     today_str = datetime.now().strftime("%Y-%m-%d")
@@ -300,9 +386,9 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="8k", auto
     save_state(state)
 
     print("\n" + "="*60)
-    print(f"🎉 BATCH COMPLETE FOR STORY #{story_number}:")
+    print(f"🎉 BATCH COMPLETE FOR STORY #{story_number} [{mode.upper()}]:")
     for r in results:
-        print(f" - [{r['lang'].upper()}] {r['channel']}: {r.get('url', r.get('status'))}")
+        print(f" - [{r['lang'].upper()}] ({r.get('type')}) {r['channel']}: {r.get('url', r.get('status'))}")
     print("="*60)
     return results
 
@@ -311,6 +397,10 @@ if __name__ == "__main__":
     default_story = state.get("current_story", 1)
 
     story_arg = sys.argv[1] if len(sys.argv) > 1 else "auto"
+    if story_arg == "analytics":
+        run_mindnest_release(mode="analytics")
+        sys.exit(0)
+
     if story_arg == "auto" or not story_arg.isdigit():
         story_no = default_story
         auto_adv = True
@@ -320,7 +410,8 @@ if __name__ == "__main__":
 
     lang = sys.argv[2] if len(sys.argv) > 2 else "all"
     quality = sys.argv[3] if len(sys.argv) > 3 else "1080p"
+    mode = sys.argv[4] if len(sys.argv) > 4 else "dual"
 
-    run_mindnest_release(story_no, lang, quality=quality, auto_advance=auto_adv)
+    run_mindnest_release(story_no, lang, quality=quality, auto_advance=auto_adv, mode=mode)
 
 

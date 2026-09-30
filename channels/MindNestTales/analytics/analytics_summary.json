@@ -1,0 +1,278 @@
+{
+  "timestamp": "2026-09-30T16:14:33.024765+00:00",
+  "total_network_subscribers": 0,
+  "total_network_views": 524,
+  "total_network_videos": 6,
+  "channel_reports": {
+    "hi": {
+      "lang_code": "hi",
+      "channel_name": "Hindi MindNest Tales",
+      "handle": "@hindimindnesttales",
+      "subscribers": 0,
+      "total_views": 0,
+      "video_count": 0,
+      "videos": []
+    },
+    "en": {
+      "lang_code": "en",
+      "channel_name": "English MindNest Tales",
+      "handle": "@englishmindnesttales",
+      "subscribers": 0,
+      "total_views": 10,
+      "video_count": 4,
+      "videos": [
+        {
+          "video_id": "YJx_wE0XUE8",
+          "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+          "duration_seconds": 121,
+          "format": "Short (3 Min)",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "engagement_rate_pct": 0.0,
+          "views_per_hour": 0.0,
+          "published_at": "2026-09-30T13:23:41Z",
+          "url": "https://youtu.be/YJx_wE0XUE8"
+        },
+        {
+          "video_id": "3zuz3me0l18",
+          "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+          "duration_seconds": 121,
+          "format": "Short (3 Min)",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "engagement_rate_pct": 0.0,
+          "views_per_hour": 0.0,
+          "published_at": "2026-09-30T13:00:23Z",
+          "url": "https://youtu.be/3zuz3me0l18"
+        },
+        {
+          "video_id": "lnQu4jWWJIM",
+          "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+          "duration_seconds": 121,
+          "format": "Short (3 Min)",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "engagement_rate_pct": 0.0,
+          "views_per_hour": 0.0,
+          "published_at": "2026-09-27T13:00:23Z",
+          "url": "https://youtu.be/lnQu4jWWJIM"
+        },
+        {
+          "video_id": "hQ8bBkC7Wkk",
+          "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+          "duration_seconds": 121,
+          "format": "Short (3 Min)",
+          "views": 2,
+          "likes": 0,
+          "comments": 0,
+          "engagement_rate_pct": 0.0,
+          "views_per_hour": 0.03,
+          "published_at": "2026-09-27T13:00:04Z",
+          "url": "https://youtu.be/hQ8bBkC7Wkk"
+        },
+        {
+          "video_id": "SL39hrBPvXA",
+          "title": "The Cheetah Who Was Always Late! 🐆⏰ (Pixar Story) #Shorts",
+          "duration_seconds": 121,
+          "format": "Short (3 Min)",
+          "views": 9,
+          "likes": 0,
+          "comments": 0,
+          "engagement_rate_pct": 0.0,
+          "views_per_hour": 0.09,
+          "published_at": "2026-09-26T13:00:18Z",
+          "url": "https://youtu.be/SL39hrBPvXA"
+        },
+        {
+          "video_id": "HD5MpASYsSk",
+          "title": "[Animal Story Name] 🐆 | Funny Animal Story + Life Lesson | MindNest Tales",
+          "duration_seconds": 73,
+          "format": "Short (3 Min)",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "engagement_rate_pct": 0.0,
+          "views_per_hour": 0.0,
+          "published_at": "2026-07-11T13:46:02Z",
+          "url": "https://youtu.be/HD5MpASYsSk"
+        }
+      ]
+    },
+    "es": {
+      "lang_code": "es",
+      "channel_name": "Spanish MindNest Tales",
+      "handle": "@spanishmindnesttales",
+      "subscribers": 0,
+      "total_views": 19,
+      "video_count": 1,
+      "videos": []
+    },
+    "pt": {
+      "lang_code": "pt",
+      "channel_name": "Portuguese MindNest Tales",
+      "handle": "@portuguesemindnesttales",
+      "subscribers": 0,
+      "total_views": 15,
+      "video_count": 1,
+      "videos": []
+    },
+    "fr": {
+      "lang_code": "fr",
+      "channel_name": "French MindNest Tales",
+      "handle": "@frenchmindnesttales",
+      "subscribers": 0,
+      "total_views": 12,
+      "video_count": 0,
+      "videos": []
+    },
+    "de": {
+      "lang_code": "de",
+      "channel_name": "German MindNest Tales",
+      "handle": "@germanmindnesttales",
+      "subscribers": 0,
+      "total_views": 13,
+      "video_count": 0,
+      "videos": []
+    },
+    "ar": {
+      "lang_code": "ar",
+      "channel_name": "Arabic MindNest Tales",
+      "handle": "@arabicmindnesttales",
+      "subscribers": 0,
+      "total_views": 35,
+      "video_count": 0,
+      "videos": []
+    },
+    "ja": {
+      "lang_code": "ja",
+      "channel_name": "Japanese MindNest Tales",
+      "handle": "@japanesemindnesttales",
+      "subscribers": 0,
+      "total_views": 307,
+      "video_count": 0,
+      "videos": []
+    },
+    "ko": {
+      "lang_code": "ko",
+      "channel_name": "Korean MindNest Tales",
+      "handle": "@koreanmindnesttales",
+      "subscribers": 0,
+      "total_views": 45,
+      "video_count": 0,
+      "videos": []
+    },
+    "vi": {
+      "lang_code": "vi",
+      "channel_name": "Vietnamese MindNest Tales",
+      "handle": "@vietnamesemindnesttales",
+      "subscribers": 0,
+      "total_views": 47,
+      "video_count": 0,
+      "videos": []
+    },
+    "fil": {
+      "lang_code": "fil",
+      "channel_name": "Filipino MindNest Tales",
+      "handle": "@filipinomindnesttales",
+      "subscribers": 0,
+      "total_views": 21,
+      "video_count": 0,
+      "videos": []
+    }
+  },
+  "top_performing_videos": [
+    {
+      "video_id": "SL39hrBPvXA",
+      "title": "The Cheetah Who Was Always Late! 🐆⏰ (Pixar Story) #Shorts",
+      "duration_seconds": 121,
+      "format": "Short (3 Min)",
+      "views": 9,
+      "likes": 0,
+      "comments": 0,
+      "engagement_rate_pct": 0.0,
+      "views_per_hour": 0.09,
+      "published_at": "2026-09-26T13:00:18Z",
+      "url": "https://youtu.be/SL39hrBPvXA"
+    },
+    {
+      "video_id": "hQ8bBkC7Wkk",
+      "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+      "duration_seconds": 121,
+      "format": "Short (3 Min)",
+      "views": 2,
+      "likes": 0,
+      "comments": 0,
+      "engagement_rate_pct": 0.0,
+      "views_per_hour": 0.03,
+      "published_at": "2026-09-27T13:00:04Z",
+      "url": "https://youtu.be/hQ8bBkC7Wkk"
+    },
+    {
+      "video_id": "YJx_wE0XUE8",
+      "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+      "duration_seconds": 121,
+      "format": "Short (3 Min)",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "engagement_rate_pct": 0.0,
+      "views_per_hour": 0.0,
+      "published_at": "2026-09-30T13:23:41Z",
+      "url": "https://youtu.be/YJx_wE0XUE8"
+    },
+    {
+      "video_id": "3zuz3me0l18",
+      "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+      "duration_seconds": 121,
+      "format": "Short (3 Min)",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "engagement_rate_pct": 0.0,
+      "views_per_hour": 0.0,
+      "published_at": "2026-09-30T13:00:23Z",
+      "url": "https://youtu.be/3zuz3me0l18"
+    },
+    {
+      "video_id": "lnQu4jWWJIM",
+      "title": "The Cheetah Who Was Always Late 🐆 #Shorts",
+      "duration_seconds": 121,
+      "format": "Short (3 Min)",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "engagement_rate_pct": 0.0,
+      "views_per_hour": 0.0,
+      "published_at": "2026-09-27T13:00:23Z",
+      "url": "https://youtu.be/lnQu4jWWJIM"
+    },
+    {
+      "video_id": "HD5MpASYsSk",
+      "title": "[Animal Story Name] 🐆 | Funny Animal Story + Life Lesson | MindNest Tales",
+      "duration_seconds": 73,
+      "format": "Short (3 Min)",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "engagement_rate_pct": 0.0,
+      "views_per_hour": 0.0,
+      "published_at": "2026-07-11T13:46:02Z",
+      "url": "https://youtu.be/HD5MpASYsSk"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "Format Dynamics",
+      "insight": "Shorts generated 11 views while Long videos generated 0 views.",
+      "action": "Ensure all Shorts have an active 'Related Video' link pinned to the 10-minute compilation in YouTube Studio to convert viral swipe traffic into watch-hour gold."
+    },
+    {
+      "category": "High-Retention Themes",
+      "insight": "Top performing video: 'The Cheetah Who Was Always Late! 🐆⏰ (Pixar Story) #Shorts' (9 views, 0.0% engagement).",
+      "action": "Produce follow-up episodes featuring the same lead animal and pacing style in the next 10-minute anthology."
+    }
+  ]
+}
