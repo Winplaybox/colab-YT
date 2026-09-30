@@ -37,6 +37,10 @@ from video_producer import (
     sanitize_ffmpeg_text
 )
 from image_generator import build_narrative_shots, ensure_story_assets
+try:
+    from generate_thumbnail import generate_10min_master_thumbnail
+except ImportError:
+    generate_10min_master_thumbnail = None
 
 CHAPTER_LABELS = {
     "en": "CHAPTER",
@@ -138,6 +142,16 @@ def produce_10min_compilation(story_ids, lang_code, output_video_path, quality="
         w, h = 1920, 1080
 
     meta = build_compilation_metadata(story_ids, lang_code)
+
+    # Auto-ensure 16:9 Master Landscape Thumbnail
+    thumb_path = os.path.join(script_dir, "stories", "thumbnails", f"compilation_{story_ids[0]:02d}_thumbnail.jpg")
+    if not os.path.exists(thumb_path) and generate_10min_master_thumbnail:
+        hero_img = os.path.join(script_dir, "stories", "assets", f"story_{story_ids[0]:02d}", "scene_03_pride.jpg")
+        if not os.path.exists(hero_img):
+            hero_img = os.path.join(script_dir, "stories", "assets", f"story_{story_ids[0]:02d}", "scene_01_intro.jpg")
+        if os.path.exists(hero_img):
+            generate_10min_master_thumbnail(hero_img, thumb_path)
+
     print(f"\n=======================================================")
     print(f"🎬 PRODUCING 10-MINUTE MASTER COMPILATION [{lang_code.upper()}]")
     print(f"Stories: {story_ids}")
