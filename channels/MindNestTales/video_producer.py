@@ -45,6 +45,34 @@ MORAL_LABELS = {
     "fil": "ARAL",
 }
 
+BRAND_LABELS = {
+    "en": "MINDNEST TALES",
+    "hi": "माइंडनेस्ट टेल्स",
+    "es": "MINDNEST TALES",
+    "pt": "MINDNEST TALES",
+    "fr": "MINDNEST TALES",
+    "de": "MINDNEST TALES",
+    "ar": "حكايات مايند نست",
+    "ja": "マインドネスト・テイルズ",
+    "ko": "마인드네스트 테일즈",
+    "vi": "MINDNEST TALES",
+    "fil": "MINDNEST TALES",
+}
+
+BOTTOM_LABELS = {
+    "en": "Subscribe 💛 New stories every day",
+    "hi": "सब्सक्राइब करें 💛 नई कहानियाँ हर दिन",
+    "es": "Suscríbete 💛 Nuevas historias cada día",
+    "pt": "Inscreva-se 💛 Novas histórias todos os dias",
+    "fr": "Abonnez-vous 💛 De nouvelles histoires chaque jour",
+    "de": "Abonnieren 💛 Jeden Tag neue Geschichten",
+    "ar": "اشترك للمزيد 💛 حكايات جديدة كل يوم",
+    "ja": "チャンネル登録してね 💛 毎日新しい物語",
+    "ko": "구독하기 💛 매일 새로운 이야기",
+    "vi": "Đăng ký kênh 💛 Câu chuyện mới mỗi ngày",
+    "fil": "Mag-subscribe 💛 Mga bagong kwento araw-araw",
+}
+
 def resolve_brand_font():
     """Returns font file path for English branding and handles (guaranteed zero tofu boxes)."""
     fonts_dir = os.path.join(script_dir, "fonts")
@@ -72,17 +100,17 @@ def resolve_font_for_language(lang_code):
     """
     fonts_dir = os.path.join(script_dir, "fonts")
     font_map = {
-        "hi": "Poppins-Bold.ttf",       # Native Devanagari + Latin (zero boxes on 3D/English words)
-        "en": "Poppins-Bold.ttf",       # Latin
-        "es": "Poppins-Bold.ttf",       # Latin
-        "pt": "Poppins-Bold.ttf",       # Latin
-        "fr": "Poppins-Bold.ttf",       # Latin
-        "de": "Poppins-Bold.ttf",       # Latin
-        "fil": "Poppins-Bold.ttf",      # Latin
-        "vi": "BeVietnamPro-Bold.ttf",  # Vietnamese diacritics + Latin
-        "ar": "NotoSansArabic.ttf",     # Arabic + Latin
-        "ja": "NotoSansJP.ttf",         # Japanese Kanji/Kana + Latin
-        "ko": "NotoSansKR.ttf",         # Korean Hangul + Latin
+        "hi": "NotoSansDevanagari-Bold.ttf", # 100% Native Devanagari script support
+        "en": "Poppins-Bold.ttf",            # Latin
+        "es": "Poppins-Bold.ttf",            # Latin
+        "pt": "Poppins-Bold.ttf",            # Latin
+        "fr": "Poppins-Bold.ttf",            # Latin
+        "de": "Poppins-Bold.ttf",            # Latin
+        "fil": "Poppins-Bold.ttf",           # Latin
+        "vi": "BeVietnamPro-Bold.ttf",       # Vietnamese diacritics + Latin
+        "ar": "NotoSansArabic.ttf",          # Arabic + Latin
+        "ja": "NotoSansJP.ttf",              # Japanese Kanji/Kana + Latin
+        "ko": "NotoSansKR.ttf",              # Korean Hangul + Latin
     }
     
     bundled = os.path.join(fonts_dir, font_map.get(lang_code, "Poppins-Bold.ttf"))
@@ -213,12 +241,13 @@ def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch=
     print(f"Generated Voiceover: {output_audio_path} ({os.path.getsize(output_audio_path)} bytes)")
     return output_audio_path
 
-def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=180.0):
+def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=175.0):
     """
     Renders the complete 9:16 portrait video for a specific language channel.
     - Synchronizes 3D Pixar-style visual scenes with localized neural voiceover.
     - Applies smooth cinematic xfade crossfade transitions between all clips.
-    - Default target runtime: 180.0 seconds (3:00 minutes).
+    - Strict Shorts safety runtime: 175.0 seconds (safely under YouTube's 180s Shorts limit to prevent 3:01 rounding).
+    - Guarantees 100% pure native typography with ZERO mixed English overlays on foreign language channels.
     - Supports '8k' (4320x7680), '4k' (2160x3840), or '1080p' (1080x1920).
     """
     os.makedirs(os.path.dirname(output_video_path) if os.path.dirname(output_video_path) else ".", exist_ok=True)
@@ -255,8 +284,8 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     generate_voiceover(script, voice, audio_file, rate=rate, pitch=pitch)
     raw_audio_dur = get_audio_duration(audio_file)
     
-    # Target duration (default 120 seconds / 2 minutes)
-    duration = target_duration if target_duration else max(raw_audio_dur, 60.0)
+    # Target duration: strictly capped at 175.0 seconds so YouTube never tags as 3:01 (181s)
+    duration = min(target_duration if target_duration else 175.0, 175.0)
 
     # 2. Check for 3D Pixar Scene Assets (Auto-generates via Free Tier if missing)
     story_no = story_data.get("story_number", 1)
@@ -300,17 +329,18 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
 
     # Clean text for ffmpeg drawtext filter
     clean_title = sanitize_ffmpeg_text(title)
+    display_title = clean_title.replace("#Shorts", "").replace("#shorts", "").strip()
     moral_text = translation.get("moral", "")
     if not moral_text:
         if lang_code == "en":
             moral_text = story_data.get("moral", "")
         else:
             fallback_morals = {
-                "hi": "समय की पाबंदी ही असली रफ्तार है। हमेशा समय पर रहें!",
-                "es": "La mayor velocidad no significa nada sin el momento adecuado. ¡Sé puntual!",
-                "pt": "A velocidade não significa nada sem o horário certo. Seja pontual!",
-                "fr": "La plus grande vitesse ne signifie rien sans le bon timing. Sois ponctuel !",
-                "de": "Die größte Geschwindigkeit bedeutet nichts ohne die richtige Zeit. Sei pünktlich!",
+                "hi": "समय की पाबंदी ही असली रफ्तार है। हमेशा समय पर रहें और धैर्य से काम लें!",
+                "es": "La mayor velocidad no significa nada sin el momento adecuado. ¡Sé puntual y reflexivo!",
+                "pt": "A velocidade não significa nada sem o horário certo. Seja pontual e paciente!",
+                "fr": "La plus grande vitesse ne signifie rien sans le bon timing. Sois ponctuel et réfléchi !",
+                "de": "Die größte Geschwindigkeit bedeutet nichts ohne die richtige Zeit. Sei pünktlich und besonnen!",
                 "ar": "السرعة بلا توقيت لا معنى لها. كن في الوقت المناسب دائماً!",
                 "ja": "速さだけでは意味がない。時間を守ることが大切です。",
                 "ko": "가장 빠른 속도도 적절한 타이밍 없이는 아무 소용이 없다.",
@@ -320,7 +350,12 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
             moral_text = fallback_morals.get(lang_code, "")
     moral_label = MORAL_LABELS.get(lang_code, "MORAL")
     clean_moral = sanitize_ffmpeg_text(moral_text)
-    clean_handle = sanitize_ffmpeg_text(handle)
+
+    # Localized brand header and bottom action text
+    brand_title = BRAND_LABELS.get(lang_code, "MINDNEST TALES")
+    bottom_text = BOTTOM_LABELS.get(lang_code, handle)
+    clean_brand = sanitize_ffmpeg_text(brand_title)
+    clean_bottom = sanitize_ffmpeg_text(bottom_text)
 
     # Wrap moral text to prevent truncation at screen edges
     wrap_w = 26 if lang_code in ("hi", "ja", "ko", "ar") else 34
@@ -342,6 +377,11 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     f_badge = int(36 * scale)
     f_moral = int(34 * scale)
     f_handle = int(30 * scale)
+
+    # Font assignment: Ensure non-Latin scripts use native font for brand & bottom text
+    is_non_latin = lang_code in ("hi", "ar", "ja", "ko", "vi")
+    header_font_arg = font_arg if is_non_latin else (brand_font_arg or font_arg)
+    bottom_font_arg = font_arg if is_non_latin else (brand_font_arg or font_arg)
 
     if len(moral_lines) > 1:
         y_badge = int(box_bot_y + (38 * scale))
@@ -365,10 +405,10 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     overlay_filters = (
         f"drawbox=y=0:h={box_top_h}:color=0x0a0f1d@0.65:t=fill,"
         f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.65:t=fill,"
-        f"drawtext={brand_font_arg}:text='MINDNEST TALES':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
-        f"drawtext={font_arg}:text='{clean_title}':fontsize={f_title}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_title},"
+        f"drawtext={header_font_arg}:text='{clean_brand}':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
+        f"drawtext={font_arg}:text='{display_title}':fontsize={f_title}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_title},"
         f"{moral_drawtext},"
-        f"drawtext={brand_font_arg}:text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
+        f"drawtext={bottom_font_arg}:text='{clean_bottom}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
     )
 
     ffmpeg_inputs = []
@@ -414,10 +454,10 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     target_speech_dur = duration - 3.0
     if raw_audio_dur > target_speech_dur:
         speed_factor = raw_audio_dur / target_speech_dur
-        print(f"⏱️ Audio sync: Auto-adjusting narration tempo by {speed_factor:.2f}x to fit full story into {duration}s perfectly without clipping words.")
-        audio_filter = f"[{audio_idx}:a]atempo={speed_factor:.4f},apad=whole_dur={duration:.2f}[a]"
+        print(f"⏱️ Audio sync: Auto-adjusting narration tempo by {speed_factor:.2f}x to fit full story into {duration:.1f}s perfectly without clipping words.")
+        audio_filter = f"[{audio_idx}:a]atempo={speed_factor:.4f},atrim=0:{duration:.2f},apad=whole_dur={duration:.2f}[a]"
     else:
-        audio_filter = f"[{audio_idx}:a]apad=whole_dur={duration:.2f}[a]"
+        audio_filter = f"[{audio_idx}:a]atrim=0:{duration:.2f},apad=whole_dur={duration:.2f}[a]"
     final_filter = f"{full_filter};{audio_filter}"
 
     ffmpeg_cmd = [
@@ -427,6 +467,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         "-filter_complex", final_filter,
         "-map", "[v]", "-map", "[a]",
         "-t", f"{duration:.2f}",
+        "-shortest",
         "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",

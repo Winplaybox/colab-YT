@@ -32,20 +32,23 @@ LOCALIZED_THUMBNAIL_DATA = {
         "l1": "CHICO THE CHEETAH",
         "l2": "LEARNS A BIG LESSON",
         "font_family": "latin",
+        "brand_title": "MINDNEST TALES",
         "brand_sub": "ORIGINAL"
     },
     "hi": {
-        "badge": "10 MIN",
+        "badge": "10 मिनट",
         "l1": "चीकू चीता",
         "l2": "ने सीखी एक बड़ी सीख",
         "font_family": "devanagari",
-        "brand_sub": "ORIGINAL"
+        "brand_title": "माइंडनेस्ट टेल्स",
+        "brand_sub": "मूल रचना"
     },
     "es": {
         "badge": "10 MIN",
         "l1": "CHICO EL GUEPARDO",
         "l2": "APRENDE UNA GRAN LECCIÓN",
         "font_family": "latin",
+        "brand_title": "MINDNEST TALES",
         "brand_sub": "ORIGINAL"
     },
     "pt": {
@@ -53,6 +56,7 @@ LOCALIZED_THUMBNAIL_DATA = {
         "l1": "CHICO O GUEPARDO",
         "l2": "APRENDE UMA GRANDE LIÇÃO",
         "font_family": "latin",
+        "brand_title": "MINDNEST TALES",
         "brand_sub": "ORIGINAL"
     },
     "fr": {
@@ -60,6 +64,7 @@ LOCALIZED_THUMBNAIL_DATA = {
         "l1": "CHICO LE GUÉPARD",
         "l2": "APPREND UNE GRANDE LEÇON",
         "font_family": "latin",
+        "brand_title": "MINDNEST TALES",
         "brand_sub": "ORIGINAL"
     },
     "de": {
@@ -67,6 +72,7 @@ LOCALIZED_THUMBNAIL_DATA = {
         "l1": "CHICO DER GEPARD",
         "l2": "LERNT EINE GROSSE LEKTION",
         "font_family": "latin",
+        "brand_title": "MINDNEST TALES",
         "brand_sub": "ORIGINAL"
     },
     "ar": {
@@ -74,42 +80,48 @@ LOCALIZED_THUMBNAIL_DATA = {
         "l1": "الفهد شيكو",
         "l2": "يتعلم درسا كبيرا",
         "font_family": "arabic",
-        "brand_sub": "ORIGINAL"
+        "brand_title": "حكايات مايند نست",
+        "brand_sub": "أصلي"
     },
     "ja": {
         "badge": "10分",
         "l1": "チーターのチコ",
         "l2": "たいせつな気づき",
         "font_family": "japanese",
-        "brand_sub": "ORIGINAL"
+        "brand_title": "マインドネスト・テイルズ",
+        "brand_sub": "オリジナル"
     },
     "ko": {
         "badge": "10분",
         "l1": "치타 치코",
         "l2": "소중한 교훈을 배우다",
         "font_family": "korean",
-        "brand_sub": "ORIGINAL"
+        "brand_title": "마인드네스트 테일즈",
+        "brand_sub": "오리지널"
     },
     "vi": {
         "badge": "10 PHÚT",
         "l1": "BÁO CON CHICO",
         "l2": "BÀI HỌC ĐẦU ĐỜI Ý NGHĨA",
         "font_family": "vietnamese",
-        "brand_sub": "ORIGINAL"
+        "brand_title": "MINDNEST TALES",
+        "brand_sub": "CHÍNH THỨC"
     },
     "fil": {
         "badge": "10 MIN",
         "l1": "SI CHICO ANG CHEETAH",
         "l2": "NATUTO NG MAHALAGANG ARAL",
         "font_family": "latin",
-        "brand_sub": "ORIGINAL"
+        "brand_title": "MINDNEST TALES",
+        "brand_sub": "ORIHINAL"
     },
     "ru": {
         "badge": "10 МИН",
         "l1": "ГЕПАРД ЧИКО",
         "l2": "УЧИТ ВАЖНЫЙ УРОК",
         "font_family": "cyrillic",
-        "brand_sub": "ORIGINAL"
+        "brand_title": "МАЙНДНЕСТ ТЕЙЛЗ",
+        "brand_sub": "ОРИГИНАЛ"
     }
 }
 
@@ -196,13 +208,13 @@ def fit_font_size(text, font_path, max_width, initial_size, min_size=20, step=2)
     except Exception:
         return ImageFont.load_default(), min_size
 
-def draw_mindnest_brand_elements(draw, overlay, panel_left, panel_width, sep_y, W=1280, H=720):
+def draw_mindnest_brand_elements(draw, overlay, panel_left, panel_width, sep_y, W=1280, H=720, lang_code="en"):
     """
     Renders the official MindNest Tales brand elements:
     1. Elegant glowing gold separator line with center diamond accent.
     2. Official MindNest Tales global logo (woven nest, teal paw, open book).
-    3. 'MINDNEST TALES' with a geometric vector diamond separator and 'ORIGINAL'.
-    Centered inside the dark panel safe zone.
+    3. Pure localized Brand Name with a geometric vector diamond separator and localized 'ORIGINAL' label.
+    Centered inside the dark panel safe zone with ZERO tofu boxes or mixed English letters.
     """
     # 1. Luminous Gold Separator Line
     sep_width = min(panel_width, 480)
@@ -229,17 +241,24 @@ def draw_mindnest_brand_elements(draw, overlay, panel_left, panel_width, sep_y, 
     if not os.path.exists(logo_path):
         logo_path = os.path.join(script_dir, "logo.png")
 
-    latin_font_path = resolve_font_path("latin")
-    if latin_font_path:
-        try:
-            font_brand = ImageFont.truetype(latin_font_path, 19)
-        except Exception:
-            font_brand = ImageFont.load_default()
-    else:
+    lang_info = LOCALIZED_THUMBNAIL_DATA.get(lang_code, LOCALIZED_THUMBNAIL_DATA["en"])
+    font_fam = lang_info.get("font_family", "latin")
+    brand_font_path = resolve_font_path(font_fam)
+    if not brand_font_path or not os.path.exists(brand_font_path):
+        brand_font_path = resolve_font_path("latin")
+
+    font_sz = 17 if font_fam in ("devanagari", "japanese", "korean", "arabic") else 19
+    try:
+        font_brand = ImageFont.truetype(brand_font_path, font_sz)
+    except Exception:
         font_brand = ImageFont.load_default()
 
-    t1 = "MINDNEST TALES"
-    t2 = "ORIGINAL"
+    t1 = lang_info.get("brand_title", "MINDNEST TALES")
+    t2 = lang_info.get("brand_sub", "ORIGINAL")
+    if font_fam == "arabic":
+        t1 = shape_text(t1, "arabic")
+        t2 = shape_text(t2, "arabic")
+
     bbox_t1 = font_brand.getbbox(t1)
     w_t1 = bbox_t1[2] - bbox_t1[0]
     bbox_t2 = font_brand.getbbox(t2)
@@ -418,7 +437,7 @@ def generate_10min_master_thumbnail(
 
     # 7. Official MindNest Tales Brand Touches (Centered Separator + Official Global Logo)
     sep_y = 430
-    draw_mindnest_brand_elements(draw, overlay, panel_left, panel_width, sep_y, W=W, H=H)
+    draw_mindnest_brand_elements(draw, overlay, panel_left, panel_width, sep_y, W=W, H=H, lang_code=lang_code)
 
     # Composite & Save Thumbnail at high 95 quality
     final_canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay).convert("RGB")

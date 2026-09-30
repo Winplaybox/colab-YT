@@ -34,13 +34,28 @@ from video_producer import (
     get_audio_duration,
     resolve_brand_font,
     resolve_font_for_language,
-    sanitize_ffmpeg_text
+    sanitize_ffmpeg_text,
+    BOTTOM_LABELS
 )
 from image_generator import build_narrative_shots, ensure_story_assets
 try:
     from generate_thumbnail import generate_10min_master_thumbnail
 except ImportError:
     generate_10min_master_thumbnail = None
+
+COMPILATION_BANNERS = {
+    "en": "MINDNEST TALES  -  10 MINUTE BEDTIME SPECIAL",
+    "hi": "माइंडनेस्ट टेल्स  -  10 मिनट विशेष कहानी संग्रह",
+    "es": "MINDNEST TALES  -  ESPECIAL DE 10 MINUTOS",
+    "pt": "MINDNEST TALES  -  ESPECIAL DE 10 MINUTOS",
+    "fr": "MINDNEST TALES  -  SPÉCIAL 10 MINUTES",
+    "de": "MINDNEST TALES  -  10 MINUTEN SPEZIAL",
+    "ar": "حكايات مايند نست  -  حلقة خاصة 10 دقائق",
+    "ja": "マインドネスト・テイルズ  -  10分特別編",
+    "ko": "마인드네스트 테일즈  -  10분 특별 에피소드",
+    "vi": "MINDNEST TALES  -  TẬP ĐẶC BIỆT 10 PHÚT",
+    "fil": "MINDNEST TALES  -  10-MINUTONG ESPESYAL",
+}
 
 CHAPTER_LABELS = {
     "en": "CHAPTER",
@@ -81,35 +96,84 @@ def build_compilation_metadata(story_ids, lang_code="en"):
 
     full_title = localized_titles.get(lang_code, localized_titles["en"])
 
-    # Timestamps (0:00 Cold Open, ~0:15 Story 1, ~3:25 Story 2, ~6:35 Story 3, ~9:40 Outro)
+    intro_descs = {
+        "en": "Discover 3 heartwarming 3D animated moral stories that teach children and families the true value of patience, honesty, and wisdom.",
+        "hi": "देखिए 3 सीख देने वाली दिल छू लेने वाली 3D एनिमेटेड कहानियां, जो बच्चों और परिवारों को धैर्य, सच्चाई और समझदारी का अनमोल पाठ सिखाती हैं।",
+        "es": "Descubre 3 hermosos cuentos animados en 3D que enseñan a niños y familias el verdadero valor de la paciencia, la honestidad y la sabiduría.",
+        "pt": "Descubra 3 lindas histórias animadas em 3D que ensinam a crianças e famílias o verdadeiro valor da paciência, honestidade e sabedoria.",
+        "fr": "Découvrez 3 magnifiques contes animés en 3D qui enseignent aux enfants et aux familles la vraie valeur de la patience, de l'honnêteté et de la sagesse.",
+        "de": "Entdecken Sie 3 herzerwärmende 3D-animierte Gutenachtgeschichten mit wertvollen Lebensweisheiten über Geduld, Ehrlichkeit und Klugheit.",
+        "ar": "اكتشف 3 قصص كرتونية ثلاثية الأبعاد مؤثرة وهادفة تعلم الأطفال والعائلات القيمة الحقيقية للصبر والصدق والحكمة.",
+        "ja": "子どもたちの心を豊かに育てる、思いやりと忍耐、知恵を学べる心温まる3つの3Dアニメーション物語をお届けします。",
+        "ko": "아이들과 온 가족에게 인내, 정직, 지혜의 참된 가치를 전하는 마음 따뜻한 3가지 3D 애니메이션 동화입니다.",
+        "vi": "Khám phá 3 câu chuyện hoạt hình 3D cảm động dạy con về lòng kiên nhẫn, sự trung thực và bài học cuộc sống sâu sắc.",
+        "fil": "Panoorin ang 3 nakaaantig na 3D animated kwento na nagtuturo sa mga bata at pamilya ng kahalagahan ng pagtitiyaga, katapatan, at karunungan."
+    }
+
+    ts_labels = {
+        "en": ("TIMESTAMPS:", "Introduction", "Chapter", "Life Lessons (Outro)"),
+        "hi": ("समय सूची (TIMESTAMPS):", "प्रस्तावना", "अध्याय", "जीवन की सीख (निष्कर्ष)"),
+        "es": ("MARCAS DE TIEMPO:", "Introducción", "Capítulo", "Lecciones de Vida (Conclusión)"),
+        "pt": ("MARCADORES DE TEMPO:", "Introdução", "Capítulo", "Lições de Vida (Conclusão)"),
+        "fr": ("CHAPITRES :", "Introduction", "Chapitre", "Leçons de Vie (Conclusion)"),
+        "de": ("ZEITSTEMPEL:", "Einführung", "Kapitel", "Lebensweisheiten (Fazit)"),
+        "ar": ("فصول الحلقة:", "المقدمة", "الفصل", "الدروس المستفادة"),
+        "ja": ("タイムスタンプ:", "オープニング", "第", "教訓とまとめ"),
+        "ko": ("타임스탬프:", "도입", "제", "교훈과 마무리"),
+        "vi": ("MỐC THỜI GIAN:", "Mở đầu", "Chương", "Bài học cuộc sống"),
+        "fil": ("MGA BAHAGI:", "Panimula", "Kabanata", "Aral sa Buhay (Pagtatapos)"),
+    }
+
+    t_header, t_intro, t_chap, t_outro = ts_labels.get(lang_code, ts_labels["en"])
+
     desc_lines = [
-        f"Discover 3 heartwarming 3D animated moral stories that teach children, families, and viewers the true value of patience, honesty, and wisdom.",
-        f"",
-        f"TIMESTAMPS:",
-        f"0:00 - The Warning You Must Never Ignore (Introduction)",
-        f"0:15 - Chapter 1: {titles[0]}",
-        f"3:25 - Chapter 2: {titles[1]}",
-        f"6:35 - Chapter 3: {titles[2]}",
-        f"9:40 - The Golden Moral of the Valley (Life Lessons)",
-        f"",
-        f"MORALS IN THIS EPISODE:",
-        f"• Story 1: {morals[0]}",
-        f"• Story 2: {morals[1]}",
-        f"• Story 3: {morals[2]}",
-        f"",
-        f"✨ MindNest Tales produces world-class 3D Pixar-style moral animation across 11 languages.",
-        f"Subscribe to follow our weekly adventures every Wednesday, Saturday, and Sunday!",
-        f"",
-        f"#MindNestTales #BedtimeStories #MoralStories #KidsStories #3DAnimation #CartoonStories"
+        intro_descs.get(lang_code, intro_descs["en"]),
+        "",
+        t_header,
+        f"0:00 - {t_intro}",
+        f"0:15 - {t_chap} 1: {titles[0]}",
+        f"3:25 - {t_chap} 2: {titles[1]}",
+        f"6:35 - {t_chap} 3: {titles[2]}",
+        f"9:40 - {t_outro}",
+        "",
+        "MORALS / सीख / LECCIONES:" if lang_code == "hi" else ("MORALS IN THIS EPISODE:" if lang_code == "en" else "MORALEJA / LIÇÃO / LEHRE:"),
+        f"• 1: {morals[0]}",
+        f"• 2: {morals[1]}",
+        f"• 3: {morals[2]}",
+        "",
+        "✨ " + (
+            "माइंडनेस्ट टेल्स आपके लिए लाता है 3D एनीमेशन वाली प्रेरक नैतिक कहानियां।" if lang_code == "hi" else (
+                "MindNest Tales produces world-class 3D Pixar-style moral animation across 11 languages." if lang_code == "en" else
+                "MindNest Tales ofrece hermosas historias animadas en 3D con moraleja para toda la familia."
+            )
+        ),
+        "सब्सक्राइब करें और घंटी बजाएं!" if lang_code == "hi" else ("Subscribe to follow our weekly adventures every Wednesday, Saturday, and Sunday!" if lang_code == "en" else "¡Suscríbete para disfrutar de nuevas historias cada semana!"),
+        "",
+        "#हिंदीकहानियां #बालकहानियां #नैतिककहानियां #माइंडनेस्टटेल्स #3Dएनीमेशन" if lang_code == "hi" else (
+            "#MindNestTales #BedtimeStories #MoralStories #KidsStories #3DAnimation" if lang_code == "en" else
+            "#CuentosInfantiles #HistoriasConMoraleja #Animacion3D #MindNestTales"
+        )
     ]
     description = "\n".join(desc_lines)
 
-    tags = [
+    localized_tag_sets = {
+        "hi": ["माइंडनेस्ट टेल्स", "हिंदी कहानियां", "बाल कहानियां", "नैतिक कहानियां", "बच्चों की कहानियां", "3d कार्टून", "सीखने वाली कहानी", "पंचतंत्र की कहानियां"],
+        "es": ["mindnest tales", "cuentos infantiles", "historias con moraleja", "cuentos para dormir", "animacion 3d", "valores para niños"],
+        "pt": ["mindnest tales", "historias infantis", "historias com licao", "desenho animado 3d", "historias para dormir"],
+        "fr": ["mindnest tales", "contes pour enfants", "histoires avec morale", "animation 3d", "histoires du soir"],
+        "de": ["mindnest tales", "gutenachtgeschichten", "geschichten mit lehre", "3d animation kinder", "kindergeschichten"],
+        "ar": ["حكايات مايند نست", "قصص اطفال", "قصص قبل النوم", "رسوم متحركة 3d", "قصص هادفة"],
+        "ja": ["マインドネストテイルズ", "子ども向けアニメ", "絵本アニメ", "心温まる物語", "3dアニメーション"],
+        "ko": ["마인드네스트", "어린이 동화", "지혜로운 동화", "3d 애니메이션", "수면 동화"],
+        "vi": ["mindnest tales", "truyen thieu nhi", "hoat hinh 3d", "bai hoc cuoc song", "truyen ke be nghe"],
+        "fil": ["mindnest tales", "kwentong pambata", "aral sa buhay", "3d animation", "pambatang palabas"]
+    }
+
+    tags = localized_tag_sets.get(lang_code, [
         "mindnest tales", "bedtime stories for kids", "10 minute bedtime stories",
         "moral stories in english", "kids cartoon stories", "pixar style 3d animation",
-        "life lessons for children", "animal stories with moral", "family cartoon compilation",
-        "educational stories", "sleep bedtime story", "character building stories"
-    ]
+        "life lessons for children", "animal stories with moral", "family cartoon compilation"
+    ])
 
     return {
         "title": full_title[:100],
@@ -284,12 +348,18 @@ def produce_10min_compilation(story_ids, lang_code, output_video_path, quality="
         )
         prev = out_tag
 
-    # Overlay: Top Cinema Banner + Channel Handle + Bottom Chapter Indicator
+    # Overlay: Top Cinema Banner + Localized Action + Bottom Safe Zone
     brand_font = resolve_brand_font()
     brand_font_arg = f":fontfile='{brand_font}'" if brand_font else ""
     lang_font = resolve_font_for_language(lang_code)
     lang_font_arg = f":fontfile='{lang_font}'" if lang_font else ""
-    clean_handle = sanitize_ffmpeg_text(handle)
+
+    is_non_latin = lang_code in ("hi", "ar", "ja", "ko", "vi")
+    header_font_arg = lang_font_arg if is_non_latin else (brand_font_arg or lang_font_arg)
+    bottom_font_arg = lang_font_arg if is_non_latin else (brand_font_arg or lang_font_arg)
+
+    banner_text = sanitize_ffmpeg_text(COMPILATION_BANNERS.get(lang_code, COMPILATION_BANNERS["en"]))
+    bottom_text = sanitize_ffmpeg_text(BOTTOM_LABELS.get(lang_code, handle))
 
     box_top_h = int(120 * (h / 1080))
     box_bot_h = int(100 * (h / 1080))
@@ -300,8 +370,8 @@ def produce_10min_compilation(story_ids, lang_code, output_video_path, quality="
     overlay_filters = (
         f"drawbox=y=0:h={box_top_h}:color=0x0a0f1d@0.60:t=fill,"
         f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.60:t=fill,"
-        f"drawtext={brand_font_arg}:text='MINDNEST TALES  -  10 MINUTE BEDTIME SPECIAL':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={int(45*(h/1080))},"
-        f"drawtext={brand_font_arg}:text='{clean_handle}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={int(box_bot_y + 35*(h/1080))}"
+        f"drawtext={header_font_arg}:text='{banner_text}':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={int(45*(h/1080))},"
+        f"drawtext={bottom_font_arg}:text='{bottom_text}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={int(box_bot_y + 35*(h/1080))}"
     )
 
     full_video_filter = f"{''.join(scale_parts)}{''.join(xfade_parts)}[vbase]{overlay_filters}[v]"

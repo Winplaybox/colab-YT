@@ -345,23 +345,37 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                     os.remove(long_path)
 
         # -----------------------------------------------------------------
-        # 2. 180-SECOND SHORT (If dual or short mode)
+        # 2. 175-SECOND SHORT (Strictly < 180s to prevent YouTube 3:01 limit)
         # -----------------------------------------------------------------
         if mode in ("dual", "short"):
-            print(f"\n[{ch_name} - {lang.upper()}] 📱 Producing 180s Short...")
+            print(f"\n[{ch_name} - {lang.upper()}] 📱 Producing 175s Short (strict < 180s)...")
             record_story_status(story_number, lang, "Processing...")
             video_path = os.path.join(work_dir, f"story_{story_number:02d}_{lang}_{quality}.mp4")
-            produce_story_video(story, lang, video_path, quality=quality)
+            produce_story_video(story, lang, video_path, quality=quality, target_duration=175.0)
 
             translation = story["translations"].get(lang, story["translations"]["en"])
             title = translation["title"]
             if "#Shorts" not in title and "#shorts" not in title:
                 title = f"{title} #Shorts"
 
-            # If long video was uploaded, link it on the top line of description
+            # If long video was uploaded, link it on the top line of description in pure native language
             desc = translation["description"]
             if long_vid_url:
-                desc = f"🎬 WATCH FULL 10-MINUTE EPISODE: {long_vid_url}\n\n" + desc
+                watch_labels = {
+                    "en": "🎬 WATCH FULL 10-MINUTE EPISODE",
+                    "hi": "🎬 पूरा 10 मिनट का विशेष एपिसोड यहाँ देखें",
+                    "es": "🎬 MIRA EL EPISODIO COMPLETO DE 10 MINUTOS",
+                    "pt": "🎬 ASSISTA AO EPISÓDIO COMPLETO DE 10 MINUTOS",
+                    "fr": "🎬 REGARDEZ L'ÉPISODE COMPLET DE 10 MINUTES",
+                    "de": "🎬 GANZE 10-MINÜTIGE FOLGE ANSEHEN",
+                    "ar": "🎬 شاهد الحلقة الكاملة لمدة 10 دقائق",
+                    "ja": "🎬 10分間の完全版エピソードを見る",
+                    "ko": "🎬 10분 전체 에피소드 시청하기",
+                    "vi": "🎬 XEM TRỌN VẸN TẬP ĐẶC BIỆT 10 PHÚT",
+                    "fil": "🎬 PANOORIN ANG BUONG 10-MINUTONG EPISODE",
+                }
+                w_lbl = watch_labels.get(lang, "🎬 WATCH FULL 10-MINUTE EPISODE")
+                desc = f"{w_lbl}: {long_vid_url}\n\n" + desc
 
             if youtube and os.path.exists(video_path):
                 try:
@@ -380,7 +394,21 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                     record_story_status(story_number, lang, status_label)
 
                     if long_vid_url:
-                        pin_text = f"👉 Watch the full 10-minute 3-story special here: {long_vid_url} 💛"
+                        pin_labels = {
+                            "en": "👉 Watch the full 10-minute 3-story special here:",
+                            "hi": "👉 पूरा 10 मिनट का 3-कहानियों का विशेष एपिसोड यहाँ देखें:",
+                            "es": "👉 Mira el especial completo de 10 minutos con 3 historias aquí:",
+                            "pt": "👉 Assista ao especial completo de 10 minutos com 3 histórias aqui:",
+                            "fr": "👉 Regardez l'épisode spécial de 10 minutes avec 3 histoires ici :",
+                            "de": "👉 Hier die komplette 10-minütige Sonderfolge ansehen:",
+                            "ar": "👉 شاهد الحلقة الخاصة الكاملة المكونة من 3 قصص هنا:",
+                            "ja": "👉 3つの物語が入った10分特別エピソードはこちら:",
+                            "ko": "👉 3가지 이야기가 담긴 10분 스페셜 영상 바로보기:",
+                            "vi": "👉 Xem trọn vẹn tập 10 phút gồm 3 câu chuyện ý nghĩa tại đây:",
+                            "fil": "👉 Panoorin ang buong 10-minutong espesyal na 3 kwento rito:",
+                        }
+                        p_lbl = pin_labels.get(lang, "👉 Watch the full 10-minute 3-story special here:")
+                        pin_text = f"{p_lbl} {long_vid_url} 💛"
                         post_pinned_comment(youtube, vid, pin_text)
 
                 except Exception as e:

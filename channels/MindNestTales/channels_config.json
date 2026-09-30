@@ -1,8 +1,8 @@
 {
   "network_name": "MindNest Tales",
   "style": "3D Pixar/Disney style cute cartoon animals | Comedy + Documentary tone | Classic moral ending",
-  "format": "Portrait 9:16 (1080x1920 / 2160x3840 4K UHD | 180s / 3:00 Shorts)",
-  "target_duration_seconds": 180,
+  "format": "Portrait 9:16 (1080x1920 / 2160x3840 4K UHD | 175s Shorts < 3:00)",
+  "target_duration_seconds": 175,
   "total_stories": 51,
   "schedule_days": [
     "Saturday",
