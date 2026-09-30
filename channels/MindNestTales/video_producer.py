@@ -198,7 +198,9 @@ def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch=
     """Generates expressive, human-like animated storyteller speech via edge-tts."""
     os.makedirs(os.path.dirname(output_audio_path) if os.path.dirname(output_audio_path) else ".", exist_ok=True)
     cmd = [
-        "edge-tts",
+        sys.executable,
+        "-m",
+        "edge_tts",
         "--voice", voice,
         f"--rate={rate}",
         f"--pitch={pitch}",
@@ -265,8 +267,8 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
             if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
         ]
 
-    # If missing, autonomously generate 8K Pixar scenes via Free AI (FLUX / Pollinations)
-    if not scene_images:
+    # If missing or incomplete (< 8 scenes for proper 15s pacing), autonomously generate 3D Pixar scenes
+    if len(scene_images) < 8:
         try:
             from image_generator import ensure_story_assets
             scene_images = ensure_story_assets(story_no)
