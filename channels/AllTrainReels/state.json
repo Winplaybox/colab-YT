@@ -1,10 +1,10 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 3,
+  "current_story_number": 4,
   "total_stories": 3000,
-  "last_run": "2026-09-29T18:31:47.179176",
-  "last_uploaded_video_id": "hyM7xfbFXKY",
+  "last_run": "2026-09-30T18:18:54.909718",
+  "last_uploaded_video_id": "KawyqZlN5K0",
   "history": [
     {
       "episode_number": 1,
@@ -19,6 +19,13 @@
       "video_id": "hyM7xfbFXKY",
       "mode": "schedule",
       "timestamp": "2026-09-29T18:31:47.179176"
+    },
+    {
+      "episode_number": 3,
+      "title": "42 Saal Band Raha Ye Station: Begunkodor 👻",
+      "video_id": "KawyqZlN5K0",
+      "mode": "schedule",
+      "timestamp": "2026-09-30T18:18:54.909718"
     }
   ],
   "used_topic_ids": []
