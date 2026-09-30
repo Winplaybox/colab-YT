@@ -3,6 +3,11 @@ BuzzStormNow - Blog Automation Configuration
 ===========================================
 Target Blog: https://buzzstormnow.blogspot.com
 Blog ID: 7128783356419391680
+
+Brand Identity:
+"BuzzStormNow is your premier destination for viral stories, trending news, and breaking updates
+from around the world. We leverage cutting-edge AI technology to bring you the most engaging
+and relevant content, curated and delivered 24/7."
 """
 
 import os
@@ -18,40 +23,40 @@ BLOG_ID = os.environ.get("BLOGGER_BLOG_ID", "7128783356419391680")
 BLOG_NAME = "BuzzStormNow"
 BLOG_URL = "https://buzzstormnow.blogspot.com"
 
-# 3 Optimal Daily Posting Windows for Indian Market & Global Finance
-# Times in IST (Indian Standard Time, UTC+5:30)
+# 3 Optimal Daily Posting Windows for Peak Engagement (IST = UTC+5:30)
 DAILY_POSTING_SLOTS = [
     {
         "slot_id": "morning_bell",
         "name": "Morning Bell & Pre-Market Setup",
         "target_time_ist": "08:15",
         "target_time_utc": "02:45",
-        "primary_categories": ["Market Analysis", "Breaking News", "Pre-Market Cues"],
-        "tagline": "Morning Pulse: What You Need To Know Before The Market Opens 🔔",
-        "hook_focus": "overnight developments, gift nifty cues, global market signals, key stocks in radar"
+        "primary_categories": ["Market Analysis", "Breaking News", "Technology & AI"],
+        "tagline": "Morning Pulse: What You Need To Know Before The Day Begins 🔔",
+        "hook_focus": "overnight developments, market signals, breaking tech breakthroughs, key stories to watch"
     },
     {
         "slot_id": "midday_movers",
-        "name": "Mid-Day Movers & Board Actions",
+        "name": "Mid-Day Movers & Viral Surge",
         "target_time_ist": "13:00",
         "target_time_utc": "07:30",
-        "primary_categories": ["Board Meetings", "Official Announcements", "Corporate Actions"],
-        "tagline": "Mid-Day Surge: Breaking Deals, Boardroom Decisions & Movers 🔥",
-        "hook_focus": "breaking earnings, board meeting resolutions, massive volume breakouts, corporate shakeups"
+        "primary_categories": ["Viral Content", "Official Announcements", "Board Meetings", "Technology & AI"],
+        "tagline": "Mid-Day Surge: Stories Taking The Internet By Storm 🔥",
+        "hook_focus": "trending internet sensations, corporate decisions, product launches, midday breakthroughs"
     },
     {
         "slot_id": "closing_wrap",
-        "name": "Closing Bell Wrap & Tomorrow's Radar",
+        "name": "Evening Deep Dive & World Radar",
         "target_time_ist": "17:30",
         "target_time_utc": "12:00",
-        "primary_categories": ["Circulars", "Market Analysis", "Corporate News"],
-        "tagline": "Closing Bell: Market Scorecard, Big Secrets & Tomorrow's Playbook 📈",
-        "hook_focus": "NSE circulars, daily closing sentiment, institutional buying/selling, tomorrow's strategy"
+        "primary_categories": ["Circulars", "World News", "Entertainment", "Market Analysis"],
+        "tagline": "Evening Wrap: Global Recap, Big Reveals & Tomorrow's Radar 🌐",
+        "hook_focus": "major daily recaps, official regulatory circulars, global entertainment & tomorrow's watchlist"
     }
 ]
 
-# Curated High-Authority RSS Feeds
+# Curated High-Authority Multi-Niche Feeds for BuzzStormNow
 FEEDS = [
+    # 1. Market Analysis & Official Exchange Filings
     {
         "name": "Economic Times Markets",
         "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
@@ -80,34 +85,53 @@ FEEDS = [
         "name": "Livemint Markets",
         "url": "https://www.livemint.com/rss/markets",
         "category": "Market Trends",
-        "priority": 2
+        "priority": 1
     },
-    {
-        "name": "Livemint Companies",
-        "url": "https://www.livemint.com/rss/companies",
-        "category": "Corporate News",
-        "priority": 2
-    },
+    # 2. Breaking News & Top Stories
     {
         "name": "Economic Times Top Stories",
         "url": "https://economictimes.indiatimes.com/rssfeedstopstories.cms",
         "category": "Breaking News",
         "priority": 2
+    },
+    # 3. Technology & AI Trends
+    {
+        "name": "TechCrunch Latest",
+        "url": "https://techcrunch.com/feed/",
+        "category": "Technology & AI",
+        "priority": 2
+    },
+    {
+        "name": "The Verge Tech & AI",
+        "url": "https://www.theverge.com/rss/index.xml",
+        "category": "Technology & AI",
+        "priority": 2
+    },
+    # 4. Viral Stories & Pop Culture Trends
+    {
+        "name": "India Today Trending",
+        "url": "https://www.indiatoday.in/rss/1206584",
+        "category": "Viral Content",
+        "priority": 2
     }
 ]
 
-# Editorial Tone & Branding Settings
+# Editorial Tone & Branding Settings (Aligned with BuzzStormNow Mission)
 EDITORIAL_SETTINGS = {
-    "author": "BuzzStormNow Editorial Team",
     "site_title": "BuzzStormNow",
+    "site_tagline": "AI-Powered Viral Stories, Breaking News & What's Buzzing 24/7",
+    "mission": (
+        "BuzzStormNow is your premier destination for viral stories, trending news, and breaking updates "
+        "from around the world. We leverage cutting-edge AI technology to bring you the most engaging "
+        "and relevant content, curated and delivered 24/7."
+    ),
     "brand_color": "#ff4500",
-    "secondary_color": "#1e293b",
+    "secondary_color": "#0f172a",
     "accent_gold": "#f59e0b",
-    "default_tags": ["Stock Market", "BuzzStormNow", "Business", "Investing", "India"],
+    "default_tags": ["BuzzStormNow", "Viral News", "Trending", "Breaking News"],
     "disclaimer": (
-        "Disclaimer: This article is published for informational and educational purposes only. "
-        "It does not constitute financial, investment, or legal advice. "
-        "Stock market investments are subject to market risks. Please consult a SEBI-registered "
-        "financial advisor before making any investment decisions."
+        "Disclaimer: This article is curated and published by the BuzzStormNow Editorial Team for "
+        "informational and educational purposes. Where financial or market matters are discussed, "
+        "it does not constitute financial or investment advice. Always verify with official sources."
     )
 }

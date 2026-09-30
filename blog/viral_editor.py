@@ -43,36 +43,58 @@ def clean_subject_line(title):
 def craft_viral_title(item):
     """
     Constructs an irresistible, high-CTR headline optimized for Google Discover & social buzz.
+    Supports Markets, Tech & AI, Viral Trends, Entertainment, Sports, and Breaking News.
     """
     raw_title = item.get("title", "")
-    category = item.get("category", "Market Analysis")
+    category = item.get("category", "Trending")
     desc = item.get("description", "")
     combined = f"{raw_title} {desc}".lower()
-
-    # Rule-based contextual title engineering
-    if "multibagger" in combined or "400%" in combined or "surge" in combined:
-        return f"Multibagger Explosion: {clean_subject_line(raw_title)} — Is The Massive Rally Sustainable? 🚀"
-    
-    if "reliance" in combined or "ambani" in combined:
-        return f"₹10,000 Crore Shocker: Inside The Massive Shakeup & What It Means For Investors! 💥"
-    
-    if "crash" in combined or "bleed" in combined or "falls" in combined or "plunge" in combined:
-        return f"Market Alert: Dalal Street Bleeds As Key Support Cracks — 4 Warning Signs To Watch! ⚠️📉"
-
-    if "agm" in combined or "expansion" in combined or "proceedings" in combined:
-        return f"Big Expansion Ahead? {clean_subject_line(raw_title)} Reveals Strategic Masterplan! 💼"
-
-    if "circular" in combined or "limits" in combined or "sebi" in combined or "rbi" in combined:
-        return f"Regulatory Bombshell: New Exchange Directives That Will Change Trading Rules! ⚡"
-
-    if "ipo" in combined or "listing" in combined:
-        return f"IPO Frenzy: {clean_subject_line(raw_title)} Makes Waves — Key Allotment & Listing Breakdown! 🎯"
-
-    # Default viral editorial hook
     core = clean_subject_line(raw_title)
     if len(core) < 15:
-        core = raw_title[:60]
-    return f"{core}: What Every Smart Investor Needs To Know Right Now! 🔥"
+        core = raw_title[:65]
+
+    # 1. Technology & AI (strict word boundaries to avoid false positives on words like 'gaining', 'remains')
+    if re.search(r"\b(ai|artificial intelligence|chatgpt|openai|nvidia|gemini|deepseek|robot|robotics|quantum|llm)\b", combined):
+        return f"AI Shockwave: {core} — The Game-Changing Breakthrough That Changes Everything! 🤖⚡"
+
+    # 2. Viral Content & Internet Sensations
+    if any(k in combined for k in ["viral", "crazy", "unbelievable", "shocking", "internet", "social media", "storm"]):
+        return f"The Internet Goes Wild: {core} — Why Everyone Is Talking About This! 🌪️🔥"
+
+    # 3. Entertainment & Pop Culture
+    if any(k in combined for k in ["movie", "cinema", "actor", "celebrity", "hollywood", "bollywood", "trailer", "box office"]):
+        return f"Blockbuster Buzz: {core} — Big Revelations That Have Fans Stunned! 🎬✨"
+
+    # 4. Sports & Athletic Milestones
+    if any(k in combined for k in ["cricket", "match", "tournament", "ipl", "world cup", "champion", "sports"]):
+        return f"Historic Milestone: {core} — The Masterclass That Left Fans Speechless! 🏆⚡"
+
+    # 5. Financial Multibaggers & Rallies
+    if "multibagger" in combined or "400%" in combined or "surge" in combined:
+        return f"Multibagger Explosion: {core} — Is The Massive Rally Sustainable? 🚀"
+    
+    # 6. Corporate Mega Deals & Shakeups
+    if "reliance" in combined or "ambani" in combined or "tata" in combined or "deal" in combined:
+        return f"Mega Shakeup: {core} — Key Details & Massive Impact Revealed! 💥"
+    
+    # 7. Market Volatility & Warnings
+    if "crash" in combined or "bleed" in combined or "falls" in combined or "plunge" in combined:
+        return f"Market Alert: Dalal Street Shudders As Key Support Cracks — 4 Warning Signs To Watch! ⚠️📉"
+
+    # 8. AGMs & Corporate Expansion
+    if "agm" in combined or "expansion" in combined or "proceedings" in combined:
+        return f"Big Expansion Ahead? {core} Reveals Strategic Masterplan! 💼"
+
+    # 9. Regulatory & Exchange Directives
+    if "circular" in combined or "limits" in combined or "sebi" in combined or "rbi" in combined:
+        return f"Regulatory Bombshell: New Directives That Will Reshape The Rules! ⚡"
+
+    # 10. IPOs & New Listings
+    if "ipo" in combined or "listing" in combined:
+        return f"IPO Frenzy: {core} Makes Waves — Key Allotment & Listing Breakdown! 🎯"
+
+    # Default High-CTR Viral Hook
+    return f"{core}: What You Need To Know Right Now Before It Goes Viral! 🔥"
 
 def craft_meta_description(viral_title, item):
     """Produces a punchy 140-160 character snippet engineered for high click-through rates."""
@@ -80,13 +102,13 @@ def craft_meta_description(viral_title, item):
     clean_snippet = re.sub(r"\s+", " ", raw_desc).strip()
     if clean_snippet and len(clean_snippet) > 40:
         snippet = clean_snippet[:110]
-        meta = f"{snippet}... Get the complete breakdown and market impact analysis on BuzzStormNow."
+        meta = f"{snippet}... Get the complete breakdown and trending analysis on BuzzStormNow."
     else:
-        meta = f"Breaking market intelligence: {viral_title[:90]}. Explore the full analysis, numbers, and investor strategy on BuzzStormNow."
+        meta = f"Breaking viral story: {viral_title[:90]}. Explore the full analysis, deep dive, and public reaction on BuzzStormNow."
     return meta[:160]
 
 def extract_smart_tags(item):
-    """Builds targeted SEO labels for Blogger."""
+    """Builds targeted SEO labels for Blogger across all BuzzStormNow niches."""
     raw = f"{item.get('title', '')} {item.get('description', '')}".lower()
     tags = list(EDITORIAL_SETTINGS["default_tags"])
     
@@ -95,22 +117,23 @@ def extract_smart_tags(item):
         tags.append(category)
 
     keywords_to_tags = {
-        "nifty": "Nifty 50",
-        "sensex": "Sensex",
-        "reliance": "Reliance Industries",
-        "tata": "Tata Group",
-        "hero": "Hero Motors",
-        "ipo": "IPO News",
-        "multibagger": "Multibagger Stocks",
-        "sebi": "SEBI",
-        "rbi": "RBI",
-        "dividend": "Dividends & Bonus",
-        "earnings": "Quarterly Earnings",
-        "circular": "NSE Circulars"
+        r"\b(ai|artificial intelligence)\b": "Artificial Intelligence",
+        r"\b(chatgpt|openai)\b": "Tech & AI",
+        r"\btech\b": "Technology",
+        r"\bnifty\b": "Stock Market",
+        r"\bsensex\b": "Dalal Street",
+        r"\breliance\b": "Reliance",
+        r"\btata\b": "Tata Group",
+        r"\bhero\b": "Automobile",
+        r"\bipo\b": "IPO News",
+        r"\b(multibagger|rally|surge)\b": "Investing",
+        r"\b(movie|cinema|actor)\b": "Entertainment",
+        r"\b(cricket|match|ipl)\b": "Sports",
+        r"\bcircular\b": "Official Announcements"
     }
 
-    for kw, tg in keywords_to_tags.items():
-        if kw in raw and tg not in tags:
+    for pattern, tg in keywords_to_tags.items():
+        if re.search(pattern, raw) and tg not in tags:
             tags.append(tg)
 
     return tags[:8]
@@ -217,20 +240,25 @@ def build_rich_html_content(viral_title, item, image_url, meta_desc, tags):
     </a>
   </p>
 
-  <!-- Interactive Call to Action -->
-  <div style="background: #1e293b; color: #f8fafc; border-radius: 12px; padding: 24px; margin: 36px 0; text-align: center;">
-    <h3 style="margin-top: 0; color: #ffffff; font-size: 20px;">💬 What Is Your Take On This Move?</h3>
-    <p style="color: #cbd5e1; font-size: 15px; margin-bottom: 16px;">
-      Are you bullish on this development, or do you expect further consolidation? Drop your thoughts in the comments section below!
+  <!-- Interactive Call to Action & BuzzStormNow Mission -->
+  <div style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #f8fafc; border-radius: 12px; padding: 26px 28px; margin: 36px 0; text-align: center; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);">
+    <h3 style="margin-top: 0; color: #ffffff; font-size: 21px; font-weight: 800;">💬 Join The Conversation!</h3>
+    <p style="color: #cbd5e1; font-size: 15px; margin-bottom: 18px; line-height: 1.6;">
+      What is your perspective on this development? Are you seeing this as an unprecedented opportunity or a sign of things to come? Share your thoughts below!
     </p>
-    <div style="color: #f59e0b; font-weight: 700; font-size: 14px;">
-      ⚡ Follow BuzzStormNow for Real-Time Dalal Street Alerts & Market Intelligence
+    <div style="background: rgba(255, 69, 0, 0.15); border: 1px solid rgba(255, 69, 0, 0.4); border-radius: 8px; padding: 12px 16px; margin-bottom: 14px;">
+      <div style="color: #ffedd5; font-size: 13px; line-height: 1.5;">
+        🎯 <strong>BuzzStormNow Mission:</strong> Curating viral stories, breaking updates, and cutting-edge insights from around the globe — 24/7.
+      </div>
+    </div>
+    <div style="color: #f59e0b; font-weight: 700; font-size: 14px; letter-spacing: 0.3px;">
+      ⚡ Stay ahead of the curve with BuzzStormNow
     </div>
   </div>
 
   <!-- Regulatory Disclaimer -->
   <div style="background: #f1f5f9; border-radius: 8px; padding: 14px 18px; margin-top: 32px; font-size: 12px; color: #64748b; line-height: 1.5;">
-    <strong>Statutory Notice:</strong> {EDITORIAL_SETTINGS['disclaimer']}
+    <strong>Notice:</strong> {EDITORIAL_SETTINGS['disclaimer']}
   </div>
 
 </div>

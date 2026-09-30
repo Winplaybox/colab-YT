@@ -12,41 +12,49 @@ from PIL import Image, ImageDraw, ImageFont
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-THEME_KEYWORDS_MAP = {
-    "bull_rally": ["surge", "rally", "soar", "jump", "record", "high", "multibagger", "400%", "gain"],
-    "bear_crash": ["crash", "fall", "plunge", "bleed", "slump", "loss", "tumble", "bleed", "down"],
-    "corporate_deal": ["acquisition", "merger", "deal", "ambani", "tata", "reliance", "crore", "billion", "stake", "buyout"],
-    "regulatory_sebi": ["sebi", "rbi", "penalty", "circular", "warning", "rules", "order", "board", "agm"],
-    "ipo_market": ["ipo", "listing", "sme", "allotment", "subscription", "shares"],
-    "macro_rates": ["inflation", "yields", "bond", "interest", "rate", "fed", "central bank"]
+THEME_PATTERNS = {
+    "tech_ai": r"\b(ai|artificial intelligence|chatgpt|openai|nvidia|gemini|robot|quantum|cyber|software)\b",
+    "viral_trend": r"\b(viral|trending|crazy|unbelievable|shocking|mystery|storm|bizarre|internet)\b",
+    "entertainment": r"\b(movie|cinema|actor|hollywood|bollywood|celebrity|music|song|trailer)\b",
+    "sports": r"\b(cricket|football|match|tournament|champion|olympics|world cup|goal|wicket)\b",
+    "bull_rally": r"\b(surge|rally|soar|jump|record|multibagger|400%|gain)\b",
+    "bear_crash": r"\b(crash|fall|plunge|bleed|slump|loss|tumble|down)\b",
+    "corporate_deal": r"\b(acquisition|merger|deal|ambani|tata|reliance|crore|billion|stake|buyout)\b",
+    "regulatory_sebi": r"\b(sebi|rbi|penalty|circular|warning|rules|order|board|agm)\b",
+    "ipo_market": r"\b(ipo|listing|sme|allotment|subscription|shares)\b",
+    "macro_rates": r"\b(inflation|yields|bond|interest|rate|fed|central bank)\b"
 }
 
 def determine_visual_theme(title, description):
     """Categorizes the news into visual motifs to generate context-matched imagery."""
     combined = f"{title} {description}".lower()
-    for theme, keywords in THEME_KEYWORDS_MAP.items():
-        if any(kw in combined for kw in keywords):
+    for theme, pattern in THEME_PATTERNS.items():
+        if re.search(pattern, combined):
             return theme
-    return "general_market"
+    return "general_news"
 
 def generate_featured_image_url(title, category="Market Analysis"):
     """
-    Constructs an ultra-crisp 16:9 8K-styled financial banner URL using Flux/Pollinations CDN.
+    Constructs an ultra-crisp 16:9 8K-styled visual banner URL using Flux/Pollinations CDN.
     Guaranteed high-speed, direct CDN URL that Blogger parses seamlessly for open-graph and thumbnails.
     """
     theme = determine_visual_theme(title, category)
 
     prompts = {
+        "tech_ai": "futuristic glowing artificial intelligence neural brain, quantum computing holographic interfaces, sleek cyberpunk neon, ultra-detailed 8k, cinematic photorealistic lighting, tech viral hero image",
+        "viral_trend": "glowing viral digital explosion, vibrant modern internet data pulse, holographic world map, high-energy trending news aesthetic, 8k cinematic lighting",
+        "entertainment": "dramatic cinematic premiere lighting, luxury golden entertainment stage, stylish neon lights, photorealistic 8k render, viral pop culture banner",
+        "sports": "high-octane futuristic sports stadium arena packed with cheering crowd, dramatic floodlights, athletic motion energy, 8k cinematic masterpiece",
         "bull_rally": "hyper-realistic stock market bull charging forward, glowing neon green candlestick charts, 3D golden coins explosion, cinematic lighting, ultra-detailed 8k, bloom effect, octane render, financial news hero banner",
         "bear_crash": "dramatic stock market crash, glowing red candlestick charts plunging down, financial district in dark stormy atmosphere, digital market red numbers, 8k resolution, cinematic photorealistic lighting",
         "corporate_deal": "modern high-tech glass skyscraper boardroom overlooking financial district at sunset, golden handshake silhouettes, luxury corporate architecture, 8k photorealistic, Bloomberg style",
         "regulatory_sebi": "official financial regulatory modern headquarters, digital security shield, holographic stock market data streams, blue and gold corporate aesthetic, hyper-realistic 8k",
         "ipo_market": "massive stock exchange opening bell ceremony, glowing green ticker tape, IPO launch celebration, digital trading floor screens, cinematic lighting, 8k render",
         "macro_rates": "central bank gold vault with glowing digital treasury bond charts, global currency exchange holographic map, dramatic lighting, financial market masterpiece 8k",
-        "general_market": "futuristic modern stock exchange trading desk, dual curved monitors displaying vibrant market charts, depth of field, 8k photorealism, editorial finance hero image"
+        "general_news": "futuristic modern breaking news studio, digital globe holographic display, glowing cyan and amber broadcast lighting, depth of field, 8k photorealism, editorial hero image"
     }
 
-    base_prompt = prompts.get(theme, prompts["general_market"])
+    base_prompt = prompts.get(theme, prompts["general_news"])
     # Clean title for clean URL seed
     clean_seed = abs(hash(title)) % 999999
     encoded_prompt = urllib.parse.quote(base_prompt)
