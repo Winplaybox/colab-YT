@@ -303,7 +303,23 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
             long_path = os.path.join(work_dir, f"compilation_{story_number:02d}_{lang}_{quality}.mp4")
             try:
                 _, long_meta = produce_10min_compilation(story_ids, lang, long_path, quality=quality)
-                long_thumb = os.path.join(script_dir, "stories", "thumbnails", f"compilation_{story_number:02d}_thumbnail.jpg")
+                # Prioritize language-specific localized 16:9 thumbnail
+                long_thumb = os.path.join(script_dir, "stories", "thumbnails", f"compilation_{story_number:02d}_thumbnail_{lang}.jpg")
+                if not os.path.exists(long_thumb):
+                    long_thumb = os.path.join(script_dir, "stories", "thumbnails", f"compilation_{story_number:02d}_thumbnail.jpg")
+                if not os.path.exists(long_thumb):
+                    try:
+                        from generate_thumbnail import generate_all_language_thumbnails
+                        hero_img = os.path.join(script_dir, "stories", "assets", f"story_{story_number:02d}", "scene_03_pride.jpg")
+                        if not os.path.exists(hero_img):
+                            hero_img = thumb_path
+                        if os.path.exists(hero_img):
+                            generate_all_language_thumbnails(hero_img, story_number=story_number)
+                            cand = os.path.join(script_dir, "stories", "thumbnails", f"compilation_{story_number:02d}_thumbnail_{lang}.jpg")
+                            if os.path.exists(cand):
+                                long_thumb = cand
+                    except Exception as ge:
+                        print(f"Thumbnail auto-gen note: {ge}")
                 if not os.path.exists(long_thumb):
                     long_thumb = os.path.join(script_dir, "stories", "thumbnails", f"story_{story_number:02d}_long_thumbnail.jpg")
                 if not os.path.exists(long_thumb):
