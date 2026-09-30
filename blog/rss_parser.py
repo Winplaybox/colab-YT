@@ -160,6 +160,20 @@ def fetch_feed_items(feed_config):
             g_node = find_node(elem, "guid", "id", "{http://www.w3.org/2005/Atom}id")
             guid = g_node.text if g_node is not None and g_node.text else link
 
+            # Real Official Press Image Extraction (from enclosure, media:content, or <img>)
+            raw_img_url = ""
+            for child in elem:
+                ctag = child.tag.lower()
+                if "content" in ctag or "thumbnail" in ctag or "enclosure" in ctag:
+                    u = child.get("url") or child.get("href")
+                    if u and u.startswith("http") and any(ext in u.lower() for ext in [".jpg", ".jpeg", ".png", ".webp", "image", "photo", "cms", "img"]):
+                        raw_img_url = u
+                        break
+            if not raw_img_url and raw_desc:
+                img_match = re.search(r'<img[^>]+src=[\'"]([^\'"]+)[\'"]', raw_desc)
+                if img_match and img_match.group(1).startswith("http"):
+                    raw_img_url = img_match.group(1)
+
             buzz_score = calculate_buzz_score(clean_title, clean_desc)
 
             items.append({
@@ -169,6 +183,7 @@ def fetch_feed_items(feed_config):
                 "link": link,
                 "guid": guid,
                 "description": clean_desc,
+                "raw_image_url": raw_img_url,
                 "published_at": pub_date,
                 "buzz_score": buzz_score
             })

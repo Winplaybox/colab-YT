@@ -20,7 +20,7 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 from config import EDITORIAL_SETTINGS, BLOG_NAME, BLOG_URL
-from image_generator import generate_featured_image_url
+from image_generator import resolve_best_image_url
 
 VIRAL_HOOK_PATTERNS = [
     "{subject}: What Every Investor Must Know Before Tomorrow's Bell 🔔",
@@ -273,7 +273,7 @@ def transform_news_into_viral_article(item):
     viral_title = craft_viral_title(item)
     meta_desc = craft_meta_description(viral_title, item)
     tags = extract_smart_tags(item)
-    image_url = generate_featured_image_url(viral_title, item.get("category", "Market Analysis"))
+    image_url = resolve_best_image_url(item)
     content_html = build_rich_html_content(viral_title, item, image_url, meta_desc, tags)
 
     return {

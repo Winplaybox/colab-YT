@@ -54,7 +54,7 @@ DAILY_POSTING_SLOTS = [
     }
 ]
 
-# Curated High-Authority Multi-Niche Feeds for BuzzStormNow
+# Curated High-Authority Multi-Niche Feeds for BuzzStormNow (24/7 Fresh Viral Coverage)
 FEEDS = [
     # 1. Market Analysis & Official Exchange Filings
     {
@@ -87,14 +87,32 @@ FEEDS = [
         "category": "Market Trends",
         "priority": 1
     },
-    # 2. Breaking News & Top Stories
+    # 2. Breaking News & Top Headlines
+    {
+        "name": "Google News India",
+        "url": "https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en",
+        "category": "Breaking News",
+        "priority": 1
+    },
+    {
+        "name": "NDTV Top Stories",
+        "url": "https://feeds.feedburner.com/ndtvnews-top-stories",
+        "category": "Breaking News",
+        "priority": 1
+    },
     {
         "name": "Economic Times Top Stories",
         "url": "https://economictimes.indiatimes.com/rssfeedstopstories.cms",
         "category": "Breaking News",
         "priority": 2
     },
-    # 3. Technology & AI Trends
+    # 3. Technology & AI Breakthroughs
+    {
+        "name": "Google News Technology",
+        "url": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-IN&gl=IN&ceid=IN:en",
+        "category": "Technology & AI",
+        "priority": 1
+    },
     {
         "name": "TechCrunch Latest",
         "url": "https://techcrunch.com/feed/",
@@ -107,12 +125,19 @@ FEEDS = [
         "category": "Technology & AI",
         "priority": 2
     },
-    # 4. Viral Stories & Pop Culture Trends
+    # 4. Entertainment & Pop Culture Buzz
     {
-        "name": "India Today Trending",
-        "url": "https://www.indiatoday.in/rss/1206584",
-        "category": "Viral Content",
-        "priority": 2
+        "name": "Google News Entertainment",
+        "url": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-IN&gl=IN&ceid=IN:en",
+        "category": "Entertainment",
+        "priority": 1
+    },
+    # 5. Sports & Cricket Highlights
+    {
+        "name": "Google News Sports",
+        "url": "https://news.google.com/rss/headlines/section/topic/SPORTS?hl=en-IN&gl=IN&ceid=IN:en",
+        "category": "Sports",
+        "priority": 1
     }
 ]
 
