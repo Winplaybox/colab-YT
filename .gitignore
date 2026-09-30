@@ -4,6 +4,7 @@ youtube_client_secret.json
 token*.pickle
 token*.json
 credentials/
+blog/credentials/
 *cookies*.txt
 *cookie*.txt
 
