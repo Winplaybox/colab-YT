@@ -1,9 +1,17 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 1,
+  "current_episode": 2,
   "total_episodes": 54,
-  "history": [],
+  "history": [
+    {
+      "episode_number": 1,
+      "video_id": "nynnfAHL144",
+      "title": "एक पक्षी की मौत से कैसे रचा गया पूरा इतिहास? 🏹 (Ep 01)",
+      "uploaded_at": "2026-10-01T23:46:10.701689",
+      "publish_at": "2026-10-04T03:00:00Z"
+    }
+  ],
   "playlists": {
     "MASTER_SERIES": "PLbWfS48ZCfwU",
     "BALA_KANDA": "PLO21MMTdx3vc",
