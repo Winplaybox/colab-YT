@@ -18,47 +18,31 @@ import json
 script_dir = os.path.dirname(os.path.abspath(__file__))
 state_file = os.path.join(script_dir, "state.json")
 
-# Master Thematic Playlists Definition
+# Master Thematic Playlists Definition (Directly mapped to Channel Playlists)
 THEMATIC_PLAYLISTS = {
     "HAUNTED FORTS & PALACES": {
-        "title": "🏰 Haunted Forts & Palaces of India | Real Horror Tapes",
+        "title": "🏰 HAUNTED FORTS & PALACES",
         "description": "Declassified paranormal investigations and historical curses inside India's most ancient forts, royal palaces, and citadel ruins. ASI-banned sites, royal court murders, and declassified records."
     },
-    "HAUNTED ROADS & HIGHWAYS": {
-        "title": "🛣️ Haunted Highways & Desolate Roads (Night Patrol Tapes)",
-        "description": "True eyewitness encounters, police dashcam logs, and accident-prone highway stretches across India. What happens on NH-8, Delhi Cantt, and Kashedi Ghat after 2:00 AM."
+    "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS": {
+        "title": "🏫 HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS",
+        "description": "Medical wings locked for decades, abandoned schools, lunatic asylums, and unclosed coroner files from the British Raj to modern day."
     },
-    "HAUNTED RAILWAY STATIONS & TUNNELS": {
-        "title": "🚂 Ghost Stations & Cursed Railway Tunnels of India",
-        "description": "Unclassified Indian Railways accident logs, abandoned platforms, and cursed railway tunnels. Featuring Begunkodor's 42-year shutdown, Tunnel 33, and Rabindra Sarobar."
-    },
-    "HAUNTED BEACHES & WATER BODIES": {
-        "title": "🌊 Dark Shores & Haunted Waters of India",
+    "HAUNTED BEACHES, WATER BODIES & FORESTS": {
+        "title": "🌊 HAUNTED BEACHES, WATER BODIES & FORESTS",
         "description": "Black sand beaches, crematorium coastlines, and cursed lakes. The chilling truth behind Dumas Beach, Kasara Ghat waterfalls, and Arabian Sea anomalies."
     },
-    "HAUNTED VILLAGES & TOWNS": {
-        "title": "🏚️ Cursed Villages & Ghost Towns of India",
-        "description": "Entire settlements abandoned overnight. The 200-year curse of Kuldhara, the Paliwal Brahmins, and the forgotten ruins of the Thar Desert."
+    "HAUNTED RAILWAY STATIONS & TUNNELS": {
+        "title": "🚂 HAUNTED RAILWAY STATIONS & TUNNELS",
+        "description": "Unclassified Indian Railways accident logs, abandoned platforms, and cursed railway tunnels. Begunkodor, Tunnel 33, and Rabindra Sarobar."
     },
-    "HAUNTED HOSPITALS & ASYLUMS": {
-        "title": "🏥 Sealed Asylums & Colonial Mortuaries",
-        "description": "Medical wings locked for decades, abandoned lunatic asylums, and unclosed coroner files from the British Raj to modern day."
+    "HAUNTED ROADS & HIGHWAYS": {
+        "title": "HAUNTED ROADS & HIGHWAYS",
+        "description": "True eyewitness encounters, police dashcam logs, and accident-prone highway stretches across India. What happens on NH-8, Delhi Cantt, and Kashedi Ghat after 2:00 AM."
     },
-    "HAUNTED FORESTS, HILLS & NATURAL SITES": {
-        "title": "🌲 Forbidden Forests & Haunted Hills of India",
-        "description": "Dense mountain corridors, headless sentries, and mass animal anomalies. Dow Hill Kurseong, Jatinga bird suicides, and Sanjay Van."
-    },
-    "HAUNTED HOUSES & BUNGALOWS": {
-        "title": "🚪 Haunted Bungalows & Colonial Mansions of India",
-        "description": "Sealed British bungalows, heritage estates, and cursed residences with dark histories of poison, murder, and restless spirits."
-    },
-    "HAUNTED MINES, MILLS & INDUSTRIAL SITES": {
-        "title": "🏭 Abandoned Mines & Industrial Ruins of India",
-        "description": "Disused textile mills, flooded coal mines, and industrial disasters where trapped voices still linger in the rusted machinery."
-    },
-    "URBAN LEGENDS & PARANORMAL PHENOMENA": {
-        "title": "👁️ Unsolved Indian Paranormal Legends & Entities",
-        "description": "Documented urban panic, Nale Ba, Churel sightings, and folklore verified through municipal records and newspaper headlines."
+    "HAUNTED HOUSES, COLONIES & BUILDINGS": {
+        "title": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+        "description": "Sealed British bungalows, heritage estates, ghost towns, and cursed residences with dark histories of poison, murder, and restless spirits."
     },
     "ALL_EPISODES": {
         "title": "🔴 Indian Horror Tapes — Complete Series (All Episodes)",
@@ -184,14 +168,23 @@ def sync_video_to_playlists(youtube, video_id, category):
         return
 
     # 1. Category Playlist
-    cat_key = category.upper().strip() if category else "ALL_EPISODES"
+    cat_upper = category.upper() if category else ""
     matched_key = None
-    for k in THEMATIC_PLAYLISTS:
-        if k in cat_key or cat_key in k:
-            matched_key = k
-            break
-    if not matched_key:
-        matched_key = "ALL_EPISODES"
+
+    if any(w in cat_upper for w in ["FORT", "PALACE", "KILA", "MAHAL"]):
+        matched_key = "HAUNTED FORTS & PALACES"
+    elif any(w in cat_upper for w in ["SCHOOL", "HOSPITAL", "ASYLUM", "INSTITUTION", "COLLEGE", "MORTUARY"]):
+        matched_key = "HAUNTED SCHOOLS, HOSPITALS & INSTITUTIONS"
+    elif any(w in cat_upper for w in ["BEACH", "WATER", "FOREST", "HILL", "JUNGLE", "LAKE", "RIVER", "NATURE"]):
+        matched_key = "HAUNTED BEACHES, WATER BODIES & FORESTS"
+    elif any(w in cat_upper for w in ["RAILWAY", "STATION", "TUNNEL", "TRAIN", "TRACK"]):
+        matched_key = "HAUNTED RAILWAY STATIONS & TUNNELS"
+    elif any(w in cat_upper for w in ["ROAD", "HIGHWAY", "GHAT", "STRETCH", "EXPRESSWAY"]):
+        matched_key = "HAUNTED ROADS & HIGHWAYS"
+    elif any(w in cat_upper for w in ["HOUSE", "COLONY", "BUILDING", "BUNGALOW", "TOWN", "VILLAGE", "RUIN"]):
+        matched_key = "HAUNTED HOUSES, COLONIES & BUILDINGS"
+    else:
+        matched_key = "HAUNTED FORTS & PALACES"
 
     cat_p_id = get_or_create_playlist(youtube, matched_key)
     if cat_p_id:
