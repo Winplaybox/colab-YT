@@ -3,7 +3,7 @@ name: AllTrainReels Autonomous Scheduler
 on:
   schedule:
     # Runs Daily at 13:00 UTC (6:30 PM IST)
-    # Renders ultra-detailed 9:16 portrait train short and schedules to go live daily at 6:30 PM IST!
+    # Renders 4K/8K 9:16 portrait train short and schedules to go live daily at 6:30 PM IST!
     - cron: '0 13 * * *'
   workflow_dispatch:
     inputs:
@@ -12,9 +12,9 @@ on:
         required: false
         default: ''
       quality:
-        description: 'Output quality: 1080p (1080x1920), 4k (2160x3840), or 8k (4320x7680)'
+        description: 'Output quality: 4k (2160x3840), 8k (4320x7680), or 1080p'
         required: false
-        default: '1080p'
+        default: '4k'
       immediate:
         description: 'Publish immediately as Public? (true / false)'
         required: false
@@ -24,8 +24,77 @@ permissions:
   contents: write
 
 jobs:
-  produce-and-upload:
-    name: Generate & Schedule AllTrainReels Episode
+  # =========================================================================
+  # STAGE 1: Asset Preparation & Narration Synthesis
+  # =========================================================================
+  prepare-assets:
+    name: "Stage 1: Generate Train Visual Assets & Story"
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install edge-tts requests huggingface_hub pillow static-ffmpeg
+          fi
+
+      - name: Pre-Generate Train Story & Image Assets
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
+        run: |
+          EP_INPUT="${{ github.event.inputs.story_number }}"
+          python -c "
+          import sys, os, json
+          sys.path.insert(0, 'channels/AllTrainReels')
+          from story_generator import get_or_create_story
+          from image_generator import ensure_story_assets
+
+          ep_num = int('$EP_INPUT') if '$EP_INPUT'.isdigit() else None
+          if not ep_num:
+              try:
+                  with open('channels/AllTrainReels/state.json', 'r') as f:
+                      st = json.load(f)
+                      ep_num = st.get('current_story_number', 1)
+              except Exception:
+                  ep_num = 1
+
+          print(f'Stage 1: Pre-caching assets for AllTrainReels Episode #{ep_num}...')
+          story = get_or_create_story(ep_num)
+          ensure_story_assets(ep_num)
+          print('✅ Railway assets generated.')
+          "
+
+      - name: Upload Prepared Assets as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: alltrainreels-assets
+          path: |
+            channels/AllTrainReels/stories/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  # =========================================================================
+  # STAGE 2: 4K/8K Video Rendering & YouTube Scheduling
+  # =========================================================================
+  render-and-schedule:
+    name: "Stage 2: 4K/8K Composite & YouTube Upload"
+    needs: prepare-assets
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -55,6 +124,12 @@ jobs:
             pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 requests static-ffmpeg huggingface_hub pillow
           fi
 
+      - name: Download Prepared Assets from Stage 1
+        uses: actions/download-artifact@v4
+        with:
+          name: alltrainreels-assets
+          path: channels/AllTrainReels/stories/
+
       - name: Restore AllTrainReels Credentials
         env:
           TRAIN_TOKEN: ${{ secrets.ALLTRAINREELS_TOKEN_JSON }}
@@ -77,7 +152,7 @@ jobs:
             echo "Installed AllTrainReels YouTube client secret."
           fi
 
-      - name: Execute AllTrainReels Production & Scheduling
+      - name: Execute 4K/8K AllTrainReels Production & Scheduling
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
@@ -85,20 +160,19 @@ jobs:
           ALLTRAINREELS_CLIENT_SECRET_JSON: ${{ secrets.ALLTRAINREELS_CLIENT_SECRET_JSON }}
         run: |
           STORY_NUM="${{ github.event.inputs.story_number }}"
-          QUALITY="${{ github.event.inputs.quality }}"
+          QUALITY="${{ github.event.inputs.quality || '4k' }}"
           IMMEDIATE="${{ github.event.inputs.immediate }}"
 
-          QUAL_ARG="${QUALITY:-1080p}"
           IMM_FLAG=""
           if [ "$IMMEDIATE" = "true" ]; then
             IMM_FLAG="--immediate"
           fi
 
-          echo "🚀 Triggering AllTrainReels Production at ${QUAL_ARG}..."
+          echo "🚀 Triggering AllTrainReels Production at ${QUALITY}..."
           if [ -n "$STORY_NUM" ]; then
-            python "channels/AllTrainReels/scheduler.py" "$STORY_NUM" "$QUAL_ARG" $IMM_FLAG
+            python "channels/AllTrainReels/scheduler.py" "$STORY_NUM" "$QUALITY" $IMM_FLAG
           else
-            python "channels/AllTrainReels/scheduler.py" "" "$QUAL_ARG" $IMM_FLAG
+            python "channels/AllTrainReels/scheduler.py" "" "$QUALITY" $IMM_FLAG
           fi
 
       - name: Upload Output Video Artifact
@@ -118,4 +192,5 @@ jobs:
           git config --local user.name "AllTrainReels Autonomous Bot"
           git add channels/AllTrainReels/state.json channels/AllTrainReels/stories/
           git diff --staged --quiet || git commit -m "chore(AllTrainReels): automated episode release [skip ci]"
+          git pull --rebase origin main || true
           git push || echo "Push skipped or no new commits to push."

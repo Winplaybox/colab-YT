@@ -3,36 +3,75 @@ name: MindNest Tales Multi-Language 11-Channel Scheduler
 on:
   schedule:
     # Autonomous batch release on Wednesday, Saturday, Sunday at 02:00 UTC (7:30 AM IST)
-    # The engine renders and auto-schedules each video via YouTube publishAt for its target local time!
+    # The engine renders 4K/8K and auto-schedules each video via YouTube publishAt for its target local time!
     - cron: '0 2 * * 0,3,6'
   workflow_dispatch:
     inputs:
       story_number:
-        description: 'Story number to produce and schedule (1 - 51)'
-        required: true
-        default: '1'
+        description: 'Story number to produce and schedule (1 - 51, or empty for next)'
+        required: false
+        default: 'auto'
       target_language:
-        description: 'Target language code (all, hi, en, es, pt, fr, de, ar, ja, ko, vi, fil)'
-        required: true
+        description: 'Target language (all = run all 11 channels in parallel matrix, or hi, en, es, pt, fr, de, ar, ja, ko, vi, fil)'
+        required: false
         default: 'all'
       quality:
-        description: 'Output quality: 1080p (recommended for CI batch), 4k, or 8k'
+        description: 'Output quality: 4k (2160x3840), 8k (4320x7680), or 1080p'
         required: false
-        default: '1080p'
+        default: '4k'
       release_mode:
-        description: 'Release mode: dual (10-min + short trailer), short (180s short only), long (10-min compilation only), or analytics'
+        description: 'Release mode: dual (10-min + short trailer), short (180s short only), or long (10-min only)'
         required: false
         default: 'dual'
-
 
 permissions:
   contents: write
 
 jobs:
-  run-mindnest-batch:
-    name: Generate & Publish MindNest Tales
+  # =========================================================================
+  # STAGE 1: Parallel Render & Upload Across All 11 Target Channels (Matrix)
+  # =========================================================================
+  render-and-publish:
+    name: ${{ matrix.language.name }} (${{ matrix.language.code }}) 4K/8K Pipeline
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        language:
+          - code: hi
+            name: "Hindi"
+            token_secret: MINDNEST_TOKEN_HI_JSON
+          - code: en
+            name: "English"
+            token_secret: MINDNEST_TOKEN_EN_JSON
+          - code: es
+            name: "Spanish"
+            token_secret: MINDNEST_TOKEN_ES_JSON
+          - code: pt
+            name: "Portuguese"
+            token_secret: MINDNEST_TOKEN_PT_JSON
+          - code: fr
+            name: "French"
+            token_secret: MINDNEST_TOKEN_FR_JSON
+          - code: de
+            name: "German"
+            token_secret: MINDNEST_TOKEN_DE_JSON
+          - code: ar
+            name: "Arabic"
+            token_secret: MINDNEST_TOKEN_AR_JSON
+          - code: ja
+            name: "Japanese"
+            token_secret: MINDNEST_TOKEN_JA_JSON
+          - code: ko
+            name: "Korean"
+            token_secret: MINDNEST_TOKEN_KO_JSON
+          - code: vi
+            name: "Vietnamese"
+            token_secret: MINDNEST_TOKEN_VI_JSON
+          - code: fil
+            name: "Filipino"
+            token_secret: MINDNEST_TOKEN_FIL_JSON
 
     steps:
       - name: Checkout Repository
@@ -40,43 +79,48 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check Filter (Skip if specific language requested)
+        id: filter-check
+        run: |
+          REQ_LANG="${{ github.event.inputs.target_language || 'all' }}"
+          CURR_LANG="${{ matrix.language.code }}"
+          if [ "$REQ_LANG" != "all" ] && [ "$REQ_LANG" != "$CURR_LANG" ]; then
+            echo "Skipping ${CURR_LANG} because user requested: ${REQ_LANG}"
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          else
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Set up Python 3.11
+        if: steps.filter-check.outputs.should_run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install System Dependencies (FFmpeg & Global Fonts)
+      - name: Install System Dependencies (FFmpeg & Global Multi-Language Fonts)
+        if: steps.filter-check.outputs.should_run == 'true'
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-cjk libraqm0 libraqm-dev
+          sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-cjk libraqm0 libraqm-dev fonts-dejavu-core
 
       - name: Install Python Dependencies
+        if: steps.filter-check.outputs.should_run == 'true'
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
-            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 gspread requests pandas static-ffmpeg
+            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 gspread requests pandas static-ffmpeg pillow arabic-reshaper python-bidi huggingface_hub
           fi
 
-      - name: Restore MindNest Tales Multi-Channel Credentials
+      - name: Restore Channel Credentials
+        if: steps.filter-check.outputs.should_run == 'true'
         env:
           MINDNEST_TOKEN: ${{ secrets.MINDNEST_TOKEN_JSON }}
           MINDNEST_SECRET: ${{ secrets.MINDNEST_CLIENT_SECRET_JSON }}
           FALLBACK_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
-          # Language-specific tokens (if configured individually)
-          TOKEN_HI: ${{ secrets.MINDNEST_TOKEN_HI_JSON }}
-          TOKEN_EN: ${{ secrets.MINDNEST_TOKEN_EN_JSON }}
-          TOKEN_ES: ${{ secrets.MINDNEST_TOKEN_ES_JSON }}
-          TOKEN_PT: ${{ secrets.MINDNEST_TOKEN_PT_JSON }}
-          TOKEN_FR: ${{ secrets.MINDNEST_TOKEN_FR_JSON }}
-          TOKEN_DE: ${{ secrets.MINDNEST_TOKEN_DE_JSON }}
-          TOKEN_AR: ${{ secrets.MINDNEST_TOKEN_AR_JSON }}
-          TOKEN_JA: ${{ secrets.MINDNEST_TOKEN_JA_JSON }}
-          TOKEN_KO: ${{ secrets.MINDNEST_TOKEN_KO_JSON }}
-          TOKEN_VI: ${{ secrets.MINDNEST_TOKEN_VI_JSON }}
-          TOKEN_FIL: ${{ secrets.MINDNEST_TOKEN_FIL_JSON }}
+          LANG_TOKEN: ${{ secrets[matrix.language.token_secret] }}
         run: |
           CHANNEL_DIR="channels/MindNestTales"
           CREDS_DIR="${CHANNEL_DIR}/credentials"
@@ -85,63 +129,42 @@ jobs:
           # Master token for MindNest Tales
           if [ -n "$MINDNEST_TOKEN" ]; then
             printf "%s" "$MINDNEST_TOKEN" > "${CHANNEL_DIR}/token.json"
-            echo "Master YouTube token installed for MindNest Tales."
           fi
 
-          # Individual language tokens if present
-          [ -n "$TOKEN_HI" ] && printf "%s" "$TOKEN_HI" > "${CREDS_DIR}/token_hi.json"
-          [ -n "$TOKEN_EN" ] && printf "%s" "$TOKEN_EN" > "${CREDS_DIR}/token_en.json"
-          [ -n "$TOKEN_ES" ] && printf "%s" "$TOKEN_ES" > "${CREDS_DIR}/token_es.json"
-          [ -n "$TOKEN_PT" ] && printf "%s" "$TOKEN_PT" > "${CREDS_DIR}/token_pt.json"
-          [ -n "$TOKEN_FR" ] && printf "%s" "$TOKEN_FR" > "${CREDS_DIR}/token_fr.json"
-          [ -n "$TOKEN_DE" ] && printf "%s" "$TOKEN_DE" > "${CREDS_DIR}/token_de.json"
-          [ -n "$TOKEN_AR" ] && printf "%s" "$TOKEN_AR" > "${CREDS_DIR}/token_ar.json"
-          [ -n "$TOKEN_JA" ] && printf "%s" "$TOKEN_JA" > "${CREDS_DIR}/token_ja.json"
-          [ -n "$TOKEN_KO" ] && printf "%s" "$TOKEN_KO" > "${CREDS_DIR}/token_ko.json"
-          [ -n "$TOKEN_VI" ] && printf "%s" "$TOKEN_VI" > "${CREDS_DIR}/token_vi.json"
-          [ -n "$TOKEN_FIL" ] && printf "%s" "$TOKEN_FIL" > "${CREDS_DIR}/token_fil.json"
+          # Language specific token
+          if [ -n "$LANG_TOKEN" ]; then
+            printf "%s" "$LANG_TOKEN" > "${CREDS_DIR}/token_${{ matrix.language.code }}.json"
+            echo "Installed dedicated token for ${{ matrix.language.name }}."
+          fi
 
           SECRET_DATA="${MINDNEST_SECRET:-$FALLBACK_SECRET}"
           if [ -n "$SECRET_DATA" ]; then
             printf "%s" "$SECRET_DATA" > "${CHANNEL_DIR}/youtube_client_secret.json"
           fi
 
-      - name: Execute MindNest Tales Production & Upload
+      - name: Execute 4K/8K Story Pipeline for ${{ matrix.language.name }}
+        if: steps.filter-check.outputs.should_run == 'true'
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
-          MINDNEST_ALL_TOKENS_JSON: ${{ secrets.MINDNEST_ALL_TOKENS_JSON }}
           MINDNEST_TOKEN_JSON: ${{ secrets.MINDNEST_TOKEN_JSON }}
-          MINDNEST_TOKEN_HI_JSON: ${{ secrets.MINDNEST_TOKEN_HI_JSON }}
-          MINDNEST_TOKEN_EN_JSON: ${{ secrets.MINDNEST_TOKEN_EN_JSON }}
-          MINDNEST_TOKEN_ES_JSON: ${{ secrets.MINDNEST_TOKEN_ES_JSON }}
-          MINDNEST_TOKEN_PT_JSON: ${{ secrets.MINDNEST_TOKEN_PT_JSON }}
-          MINDNEST_TOKEN_FR_JSON: ${{ secrets.MINDNEST_TOKEN_FR_JSON }}
-          MINDNEST_TOKEN_DE_JSON: ${{ secrets.MINDNEST_TOKEN_DE_JSON }}
-          MINDNEST_TOKEN_AR_JSON: ${{ secrets.MINDNEST_TOKEN_AR_JSON }}
-          MINDNEST_TOKEN_JA_JSON: ${{ secrets.MINDNEST_TOKEN_JA_JSON }}
-          MINDNEST_TOKEN_KO_JSON: ${{ secrets.MINDNEST_TOKEN_KO_JSON }}
-          MINDNEST_TOKEN_VI_JSON: ${{ secrets.MINDNEST_TOKEN_VI_JSON }}
-          MINDNEST_TOKEN_FIL_JSON: ${{ secrets.MINDNEST_TOKEN_FIL_JSON }}
         run: |
           STORY_NUM="${{ github.event.inputs.story_number }}"
-          TARGET_LANG="${{ github.event.inputs.target_language }}"
-          QUALITY="${{ github.event.inputs.quality }}"
-          MODE="${{ github.event.inputs.release_mode }}"
+          QUALITY="${{ github.event.inputs.quality || '4k' }}"
+          MODE="${{ github.event.inputs.release_mode || 'dual' }}"
 
-          STORY_ARG="${STORY_NUM:-1}"
-          LANG_ARG="${TARGET_LANG:-all}"
-          QUAL_ARG="${QUALITY:-1080p}"
-          MODE_ARG="${MODE:-dual}"
+          STORY_ARG="${STORY_NUM:-auto}"
+          LANG_ARG="${{ matrix.language.code }}"
 
-          echo "🚀 Triggering MindNest Tales: Story #${STORY_ARG} for Language(s): ${LANG_ARG} at ${QUAL_ARG} in [${MODE_ARG}] mode"
-          python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG" "$QUAL_ARG" "$MODE_ARG"
+          echo "🚀 Parallel Pipeline Running: ${{ matrix.language.name }} | Story: ${STORY_ARG} | Quality: ${QUALITY} | Mode: ${MODE}"
+          python "channels/MindNestTales/scheduler.py" "$STORY_ARG" "$LANG_ARG" "$QUALITY" "$MODE"
 
-      - name: Commit State / Logs
-        if: always()
+      - name: Commit State / Logs Safely
+        if: always() && steps.filter-check.outputs.should_run == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "MindNest Tales Autonomous Bot"
           git add channels/MindNestTales/state.json channels/MindNestTales/stories/ || true
-          git diff --staged --quiet || git commit -m "chore(MindNestTales): automated release run [skip ci]"
+          git diff --staged --quiet || git commit -m "chore(MindNestTales): automated release run [${{ matrix.language.code }}] [skip ci]"
+          git pull --rebase origin main || true
           git push || echo "Push skipped or no new commits to push."

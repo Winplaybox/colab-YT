@@ -11,9 +11,9 @@ on:
         required: false
         default: ''
       quality:
-        description: 'Output quality: 1080p, 4k, or 8k'
+        description: 'Output quality: 4k (2160x3840), 8k (4320x7680), or 1080p'
         required: false
-        default: '1080p'
+        default: '4k'
       mode:
         description: 'Publish mode: scheduled, immediate, or render_only'
         required: false
@@ -23,10 +23,73 @@ permissions:
   contents: write
 
 jobs:
-  run_epicbharat_scheduler:
-    name: Generate & Schedule EpicBharatSaga Episode
+  # =========================================================================
+  # STAGE 1: Mythology Visual Assets & Story Script Generation
+  # =========================================================================
+  prepare-assets:
+    name: "Stage 1: Generate AI Mythological Assets"
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install edge-tts requests huggingface_hub pillow
+
+      - name: Pre-Generate Mythological Episode & Visuals
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          EP_INPUT="${{ github.event.inputs.episode_number }}"
+          python -c "
+          import sys, os, json
+          sys.path.insert(0, 'channels/EpicBharatSaga')
+          from story_generator import get_or_create_story
+          from image_generator import ensure_story_assets
+
+          ep_num = int('$EP_INPUT') if '$EP_INPUT'.isdigit() else None
+          if not ep_num:
+              try:
+                  with open('channels/EpicBharatSaga/state.json', 'r') as f:
+                      st = json.load(f)
+                      ep_num = st.get('current_story_number', 1)
+              except Exception:
+                  ep_num = 1
+
+          print(f'Stage 1: Pre-caching assets for EpicBharatSaga Episode #{ep_num}...')
+          story = get_or_create_story(ep_num)
+          ensure_story_assets(ep_num)
+          print('✅ Mythological visual assets generated.')
+          "
+
+      - name: Upload Prepared Assets as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: epicbharat-assets
+          path: channels/EpicBharatSaga/stories/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  # =========================================================================
+  # STAGE 2: 4K/8K Composite & YouTube Upload
+  # =========================================================================
+  render-and-schedule:
+    name: "Stage 2: 4K/8K Composite & YouTube Upload"
+    needs: prepare-assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
 
     steps:
       - name: Checkout Repository
@@ -60,8 +123,13 @@ jobs:
             numpy \
             imageio \
             imageio-ffmpeg \
-            huggingface_hub \
-            pyttsx3
+            huggingface_hub
+
+      - name: Download Prepared Assets from Stage 1
+        uses: actions/download-artifact@v4
+        with:
+          name: epicbharat-assets
+          path: channels/EpicBharatSaga/stories/
 
       - name: Restore EpicBharatSaga Credentials
         env:
@@ -81,13 +149,13 @@ jobs:
             printf "%s" "$HF_TOKEN" > "${CHANNEL_DIR}/credentials/hf_token.txt"
           fi
 
-      - name: Run EpicBharatSaga Pipeline
+      - name: Run 4K/8K EpicBharatSaga Pipeline
         env:
           EPICBHARATSAGA_TOKEN_JSON: ${{ secrets.EPICBHARATSAGA_TOKEN_JSON }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           PYTHONIOENCODING: utf-8
         run: |
-          QUALITY="${{ github.event.inputs.quality || '1080p' }}"
+          QUALITY="${{ github.event.inputs.quality || '4k' }}"
           MODE="${{ github.event.inputs.mode || 'scheduled' }}"
           EP_INPUT="${{ github.event.inputs.episode_number }}"
 
@@ -98,25 +166,25 @@ jobs:
 
           echo "🔱 EpicBharatSaga Pipeline | Quality: ${QUALITY} | Mode: ${MODE} | Episode: ${EP_INPUT:-auto}"
           python channels/EpicBharatSaga/scheduler.py \
-            $EP_ARG \
-            --quality "${QUALITY}" \
-            --mode "${MODE}"
+            --quality "$QUALITY" \
+            --mode "$MODE" \
+            $EP_ARG
 
       - name: Upload Output Video Artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: epicbharat-episodes
-          path: |
-            channels/EpicBharatSaga/output/*.mp4
+          path: channels/EpicBharatSaga/output/*.mp4
           if-no-files-found: ignore
           retention-days: 7
 
-      - name: Commit Updated State
+      - name: Commit State Changes
         if: always()
         run: |
-          git config --local user.name  "EpicBharatSaga Bot"
-          git config --local user.email "epicbharat.official@gmail.com"
+          git config --local user.email "action@github.com"
+          git config --local user.name "EpicBharatSaga Bot"
           git add channels/EpicBharatSaga/state.json channels/EpicBharatSaga/stories/ || true
-          git diff --staged --quiet || git commit -m "chore(EpicBharatSaga): automated episode release [skip ci]"
-          git push || echo "Push skipped."
+          git diff --staged --quiet || git commit -m "chore(EpicBharatSaga): advance episode state [skip ci]"
+          git pull --rebase origin main || true
+          git push || echo "Push skipped or no new commits."

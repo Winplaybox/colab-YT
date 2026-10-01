@@ -264,12 +264,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     title = translation.get("short_title") or translation.get("title")
     handle = ch_config["handle"]
 
-    # Resolution Configuration (Resource Guard for CI/Batch)
-    is_ci = os.environ.get("GITHUB_ACTIONS") == "true" or os.environ.get("CI") == "true"
-    if is_ci and quality in ["8k"]:
-        print(f"⚠️ [Resource Guard] 8K with 11-channel batch exceeds GitHub Actions CPU/timeout limits. Safe-scaling to 1080p for stable batch processing.")
-        quality = "1080p"
-
+    # Resolution Configuration
     if quality == "8k":
         w, h = 4320, 7680
         scale = 4.0

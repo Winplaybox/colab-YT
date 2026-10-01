@@ -3,7 +3,7 @@ name: IndianHorrorTapes Autonomous Scheduler
 on:
   schedule:
     # Runs Wednesday and Sunday at 14:00 UTC (7:30 PM IST)
-    # Renders 8K 9:16 portrait horror video and auto-schedules to go live at 9:00 PM IST (15:30 UTC)!
+    # Renders 4K/8K 9:16 portrait horror video and auto-schedules to go live at 9:00 PM IST (15:30 UTC)!
     - cron: '0 14 * * 0,3'
   workflow_dispatch:
     inputs:
@@ -12,7 +12,7 @@ on:
         required: false
         default: ''
       quality:
-        description: 'Output quality: 4k (2160x3840), 1080p (1080x1920), or 8k (4320x7680)'
+        description: 'Output quality: 4k (2160x3840), 8k (4320x7680), or 1080p'
         required: false
         default: '4k'
       immediate:
@@ -24,10 +24,81 @@ permissions:
   contents: write
 
 jobs:
-  produce-and-upload:
-    name: Generate & Schedule IndianHorrorTapes Episode
+  # =========================================================================
+  # STAGE 1: Asset Preparation & Soundscape Synthesis (Fast & Lightweight)
+  # =========================================================================
+  prepare-assets:
+    name: "Stage 1: Generate AI Visuals & Audio Tracks"
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Asset Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install edge-tts requests huggingface_hub pillow static-ffmpeg
+          fi
+
+      - name: Generate Story Assets, Voiceover & 8K Thumbnails
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
+        run: |
+          STORY_NUM="${{ github.event.inputs.story_number }}"
+          python -c "
+          import sys, os
+          sys.path.insert(0, 'channels/IndianHorrorTapes')
+          from story_generator import get_or_create_story
+          from image_generator import ensure_story_assets
+
+          s_num = int('$STORY_NUM') if '$STORY_NUM'.isdigit() else None
+          if not s_num:
+              import json
+              try:
+                  with open('channels/IndianHorrorTapes/state.json', 'r') as f:
+                      st = json.load(f)
+                      s_num = st.get('current_story_number', 1)
+              except Exception:
+                  s_num = 1
+
+          print(f'Stage 1: Pre-caching visual assets for Story #{s_num}...')
+          story = get_or_create_story(s_num)
+          ensure_story_assets(s_num)
+          print('✅ Assets generated and cached successfully.')
+          "
+
+      - name: Upload Prepared Assets as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: indian-horror-assets
+          path: |
+            channels/IndianHorrorTapes/stories/assets/
+            channels/IndianHorrorTapes/stories/thumbnails/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  # =========================================================================
+  # STAGE 2: 4K/8K Video Rendering & YouTube Scheduling (High Compute)
+  # =========================================================================
+  render-and-schedule:
+    name: "Stage 2: 4K/8K Composite & YouTube Upload"
+    needs: prepare-assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
 
     steps:
       - name: Checkout Repository
@@ -52,8 +123,14 @@ jobs:
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
-            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 requests static-ffmpeg huggingface_hub
+            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 requests static-ffmpeg huggingface_hub pillow
           fi
+
+      - name: Download Prepared Assets from Stage 1
+        uses: actions/download-artifact@v4
+        with:
+          name: indian-horror-assets
+          path: channels/IndianHorrorTapes/stories/
 
       - name: Restore IndianHorrorTapes Credentials
         env:
@@ -75,7 +152,7 @@ jobs:
             echo "Installed YouTube client secret."
           fi
 
-      - name: Execute IndianHorrorTapes Production & Scheduling
+      - name: Execute 4K/8K Video Rendering & Scheduling
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
@@ -83,20 +160,19 @@ jobs:
           INDIANHORRORTAPES_CLIENT_SECRET_JSON: ${{ secrets.INDIANHORRORTAPES_CLIENT_SECRET_JSON }}
         run: |
           STORY_NUM="${{ github.event.inputs.story_number }}"
-          QUALITY="${{ github.event.inputs.quality }}"
+          QUALITY="${{ github.event.inputs.quality || '4k' }}"
           IMMEDIATE="${{ github.event.inputs.immediate }}"
 
-          QUAL_ARG="${QUALITY:-4k}"
           IMM_FLAG=""
           if [ "$IMMEDIATE" = "true" ]; then
             IMM_FLAG="--immediate"
           fi
 
-          echo "🚀 Triggering IndianHorrorTapes Production at ${QUAL_ARG}..."
+          echo "🚀 Triggering IndianHorrorTapes Production at ${QUALITY}..."
           if [ -n "$STORY_NUM" ]; then
-            python "channels/IndianHorrorTapes/scheduler.py" "$STORY_NUM" "$QUAL_ARG" $IMM_FLAG
+            python "channels/IndianHorrorTapes/scheduler.py" "$STORY_NUM" --quality "$QUALITY" $IMM_FLAG
           else
-            python "channels/IndianHorrorTapes/scheduler.py" --quality "$QUAL_ARG" $IMM_FLAG
+            python "channels/IndianHorrorTapes/scheduler.py" --quality "$QUALITY" $IMM_FLAG
           fi
 
       - name: Upload Output Video & Subtitles Artifact
