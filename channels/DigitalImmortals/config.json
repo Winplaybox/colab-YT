@@ -1,0 +1,31 @@
+{
+  "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
+  "channel_name": "Digital Immortals",
+  "channel_handle": "@DigitalImmortals",
+  "channel_url": "https://www.youtube.com/channel/UCO_AVV1aoIjGEgbj50HTJLw",
+  "niche": "Hindu Mythology Explained, Ancient Indian Epics & Declassified Vedic Lore",
+  "format": "16:9 Landscape Cinematic Short Movies / Docu-Epics",
+  "target_duration_minutes": 22,
+  "language": "Pure Classical Hindi (शुद्ध देवनागरी हिंदी)",
+  "voice_style": "Deep Baritone Resonant Epic Narrator",
+  "default_quality": "8k",
+  "resolutions": {
+    "8k": {
+      "width": 7680,
+      "height": 4320
+    },
+    "4k": {
+      "width": 3840,
+      "height": 2160
+    },
+    "1080p": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "series": {
+    "title": "वाल्मीकि रामायण — संपूर्ण महागाथा (Valmiki Ramayana Definitive Uncut)",
+    "total_episodes": 54,
+    "source_text": "Valmiki Ramayanam (Prof. Y.V. Chalapathi, Tirumala Tirupati Devasthanams - TTD)"
+  }
+}
