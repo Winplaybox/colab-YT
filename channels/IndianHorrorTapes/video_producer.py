@@ -449,49 +449,44 @@ def produce_horror_short(story_data, output_video_path, quality="8k", voice="hi-
         full_vfilter = f"[0:v]{overlay_filters}[v]"
         audio_in_idx = 1
 
-    # 6. Audio inputs: Master narration + Procedurally synthesized horror ambient drone & heartbeat
+    # 6. Audio Pre-mix: Master narration + Procedurally synthesized horror ambient drone & heartbeat
     clean_vo = os.path.abspath(master_vo).replace("\\", "/")
-    ffmpeg_inputs.extend(["-i", clean_vo])
+    mixed_audio_path = os.path.join(temp_dir, f"horror_audio_{story_no}.m4a")
+    print("🔊 Pre-mixing horror soundscape (Narration VO + Sub-drone + Heartbeat pulse)...")
+    audio_cmd = [
+        "ffmpeg", "-y",
+        "-i", clean_vo,
+        "-f", "lavfi", "-t", f"{total_duration:.2f}", "-i", "sine=frequency=45",
+        "-f", "lavfi", "-t", f"{total_duration:.2f}", "-i", "sine=frequency=55",
+        "-filter_complex", (
+            f"[1:a]lowpass=f=200,volume=0.14[adrone];"
+            f"[2:a]lowpass=f=120,tremolo=f=1.2:d=0.8,volume=0.09[apulse];"
+            f"[0:a]volume=1.0[avo];"
+            f"[avo][adrone][apulse]amix=inputs=3:duration=first:dropout_transition=2,apad,atrim=0:{total_duration:.2f}[a]"
+        ),
+        "-map", "[a]",
+        "-c:a", "aac", "-b:a", "256k",
+        "-t", f"{total_duration:.2f}",
+        mixed_audio_path
+    ]
+    subprocess.run(audio_cmd, check=True)
 
-    # Procedural ambient low drone generator (45Hz sine with tremolo)
-    drone_idx = audio_in_idx + 1
-    ffmpeg_inputs.extend([
-        "-f", "lavfi",
-        "-i", f"sine=frequency=45:duration={total_duration:.2f}"
-    ])
-
-    # Procedural heartbeat pulse generator (55Hz repeating pulse with volume tremolo)
-    pulse_idx = audio_in_idx + 2
-    ffmpeg_inputs.extend([
-        "-f", "lavfi",
-        "-i", f"sine=frequency=55:duration={total_duration:.2f}"
-    ])
-
-    # Audio mixing filter: VO (volume 1.0) + Ambient Drone (volume 0.14) + Heartbeat Pulse (volume 0.08)
-    audio_mix_filter = (
-        f"[{drone_idx}:a]lowpass=f=200,volume=0.14[adrone];"
-        f"[{pulse_idx}:a]lowpass=f=120,tremolo=f=1.2:d=0.8,volume=0.09[apulse];"
-        f"[{audio_in_idx}:a]volume=1.0[avo];"
-        f"[avo][adrone][apulse]amix=inputs=3:duration=first:dropout_transition=2,apad=whole_dur={total_duration:.2f}[a]"
-    )
-
-    filter_complex = f"{full_vfilter};{audio_mix_filter}"
-
+    # 7. Final 4K/8K Video Composite & Fast Output
     cmd = [
         "ffmpeg", "-y",
         *ffmpeg_inputs,
-        "-filter_complex", filter_complex,
+        "-i", mixed_audio_path,
+        "-filter_complex", full_vfilter,
         "-map", "[v]",
-        "-map", "[a]",
+        "-map", f"{audio_in_idx}:a",
         "-c:v", "libx264",
         "-preset", "ultrafast",
         "-crf", "20",
         "-threads", "0",
         "-sws_flags", "fast_bilinear",
         "-pix_fmt", "yuv420p",
-        "-c:a", "aac",
-        "-b:a", "256k",
-        "-t", f"{total_duration:.2f}",
+        "-c:a", "copy",
+        "-shortest",
         output_video_path
     ]
 
