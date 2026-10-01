@@ -223,20 +223,29 @@ Subscribe to @IndianHorrorTapes for 100+ Real Indian Horror Stories & Paranormal
     tags = story_data.get("tags", []) + viral_horror_tags
     seen = set()
     dedup_tags = []
-    total_len = 0
+    running_str = ""
+
     for t in tags:
-        t_clean = t.strip()
+        # YouTube prohibits commas and angle brackets in tags
+        t_clean = t.replace(",", "").replace("<", "").replace(">", "").strip()
+        if not t_clean:
+            continue
         if t_clean.lower() not in seen:
-            if total_len + len(t_clean) + 1 <= 480: # YouTube 500-char limit safety
+            quoted_repr = f'"{t_clean}"' if ' ' in t_clean else t_clean
+            test_str = f"{running_str},{quoted_repr}" if running_str else quoted_repr
+            # YouTube enforces max 500-char/byte internal comma-quoted limit
+            if len(test_str) <= 380 and len(test_str.encode("utf-8")) <= 380:
                 seen.add(t_clean.lower())
                 dedup_tags.append(t_clean)
-                total_len += len(t_clean) + 1
+                running_str = test_str
+            if len(dedup_tags) >= 20:
+                break
 
     body = {
         "snippet": {
             "title": clean_title,
             "description": desc,
-            "tags": dedup_tags[:30],
+            "tags": dedup_tags,
             "categoryId": "24",
             "defaultLanguage": "hi",
             "defaultAudioLanguage": "hi"
