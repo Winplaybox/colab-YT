@@ -273,15 +273,21 @@ def generate_procedural_fallback(title, subtitle, output_path, width=1080, heigh
         print(f"Procedural canvas error: {e}")
         return False
 
-def generate_story_assets(story_json_path):
+def generate_story_assets(story_input):
     """
-    Generates all 5 scene assets for a story JSON file:
+    Generates all scene assets for a story (story dict, episode int, or JSON filepath):
     1. Primary Tier: Searches Wikimedia Commons for authentic real train photography.
     2. Secondary Tier: AI generation via FLUX / Pollinations for missing shots.
     3. Tertiary Tier: Procedural fallback canvas.
     """
-    with open(story_json_path, "r", encoding="utf-8") as f:
-        story_data = json.load(f)
+    if isinstance(story_input, dict):
+        story_data = story_input
+    elif isinstance(story_input, int) or (isinstance(story_input, str) and story_input.isdigit()):
+        from story_generator import get_or_create_story
+        story_data = get_or_create_story(int(story_input))
+    else:
+        with open(story_input, "r", encoding="utf-8") as f:
+            story_data = json.load(f)
 
     story_id = story_data["story_id"]
     title = story_data["title"]
@@ -334,6 +340,10 @@ def generate_story_assets(story_json_path):
             generate_procedural_fallback(title, shot.get("subtitle", ""), shot_path)
 
     return episode_dir
+
+def ensure_story_assets(story_input):
+    """Workflow compatibility alias"""
+    return generate_story_assets(story_input)
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1].endswith(".json"):
