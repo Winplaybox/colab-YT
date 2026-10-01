@@ -337,9 +337,9 @@ def generate_procedural_fallback(title, subtitle, output_path, width=1080, heigh
         print(f"Procedural canvas error: {e}")
         return False
 
-def generate_story_assets(story_input, target_shots=30):
+def generate_story_assets(story_input, target_shots=12):
     """
-    Generates high-pacing scene assets (default 30 shots, ~6 sec cuts for 180s Shorts) from a story dictionary or JSON filepath:
+    Generates high-pacing scene assets (default 12 shots for 58s Shorts) from a story dictionary, JSON filepath, or episode number:
     1. Primary Tier: Searches The Met Open Access and Wikimedia Commons for authentic real temple sculptures,
        classical Indian paintings, and ancient heritage photography.
     2. Secondary Tier: AI generation via FLUX / Pollinations for rare scenes.
@@ -347,6 +347,9 @@ def generate_story_assets(story_input, target_shots=30):
     """
     if isinstance(story_input, dict):
         story_data = story_input
+    elif isinstance(story_input, int) or (isinstance(story_input, str) and story_input.isdigit()):
+        from story_generator import get_or_create_story
+        story_data = get_or_create_story(int(story_input))
     else:
         with open(story_input, "r", encoding="utf-8") as f:
             story_data = json.load(f)
@@ -436,6 +439,10 @@ def generate_story_assets(story_input, target_shots=30):
         pass
 
     return episode_dir
+
+def ensure_story_assets(story_input, target_shots=12):
+    """Alias for generate_story_assets."""
+    return generate_story_assets(story_input, target_shots=target_shots)
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1].endswith(".json"):
