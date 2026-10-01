@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 2,
+  "current_episode": 3,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-09-29T17:06:33.886149",
-  "last_uploaded_video_id": "EJyGOlGvphs",
+  "last_run": "2026-10-01T14:26:59.855742",
+  "last_uploaded_video_id": "dHwy248dxws",
   "used_story_ids": [],
   "history": [
     {
@@ -16,6 +16,15 @@
       "video_id": "EJyGOlGvphs",
       "mode": "scheduled",
       "timestamp": "2026-09-29T17:06:33.886149"
+    },
+    {
+      "episode_number": 2,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Tandava: Jab Shiv Ka Dance Srishti Hilaae! 💃",
+      "video_id": "dHwy248dxws",
+      "mode": "scheduled",
+      "timestamp": "2026-10-01T14:26:59.855742"
     }
   ]
 }
