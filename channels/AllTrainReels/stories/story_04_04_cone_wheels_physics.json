@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 4,
+  "story_id": "train_04_cone_wheels_physics",
+  "story_hash": "a097a7a63518f273",
+  "format": "Insane Facts",
+  "title": "Train Ke Pahiye Flat Kyun Nahi Hote? ⚙️",
+  "youtube_title": "Train Ke Pahiye Flat Kyun Nahi Hote? ⚙️",
+  "title_variations": [
+    "Train Ke Pahiye Flat Kyun Nahi Hote? ⚙️",
+    "Conical wheel self-centering physics 🚂",
+    "Train Ke Pahiye Flat Kyun Nahi Hote? ⚙️ #Shorts",
+    "The Real Story: Conical wheel self-centering physics"
+  ],
+  "tagline": "Conical wheel self-centering physics",
+  "visual_theme": "ARCHITECTURAL_BLUEPRINT",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Wheelset_(rail_transport)",
+    "https://www.scienceabc.com/eyeopeners/why-are-train-wheels-conical-not-cylindrical.html"
+  ],
+  "verified_fact": "Train wheels have a conical taper (1:20 ratio), allowing differential wheel radii on curves for self-centering without mechanical differentials; the wheel flange acts as a secondary safety barrier.",
+  "voiceover_script": "Train ke pahiye flat cylinder nahi, balki cone shape ke hote hain! Agar pahiye seedhe flat hote, toh turns par wheel slips aur metal wear bahut zyada hota. Conical taper ki wajah se jab train mod leti hai, bahar wala pahiya bade diameter par chalta hai aur andar wala chhote par. Isse train bina differential gear ke khud-b-khud turn le leti hai, aur flange sirf safety border ka kaam karta hai! Engineering ka ye chamatkar kaisa laga?",
+  "debate_question": "Kya aapko train wheels ki ye conical science pehle pata thi?",
+  "pinned_comment": "⚙️ 1:20 ka conical angle train ko turns pe self-center karta hai! Science pasand aayi toh share karo!",
+  "description": "Train Ke Pahiye Flat Kyun Nahi Hote? ⚙️\n\n🚂 Conical wheel self-centering physics\n\nTrain wheels have a conical taper (1:20 ratio), allowing differential wheel radii on curves for self-centering without mechanical differentials; the wheel flange acts as a secondary safety barrier.\n\n👉 Kya aapko train wheels ki ye conical science pehle pata thi?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#TrainPhysics #Engineering #Locomotive #IndianRailways #ScienceFacts #Shorts",
+  "tags": [
+    "TrainPhysics",
+    "Engineering",
+    "Locomotive",
+    "IndianRailways",
+    "ScienceFacts",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Train pahiye flat nahi, CONE shape ke hote hain!",
+      "sound_cue": "rail_glide",
+      "prompt": "Close-up macro photography of heavy steel train wheel on shiny polished steel rail, distinct conical taper angle visible, metallic sheen, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Flat pahiye hote toh turn lena mushkil hota.",
+      "sound_cue": "metal_groan",
+      "prompt": "Mechanical schematic diagram illustrating conical wheel profile resting on rail crown, clean technical engineering drawing, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Conical angle turns par auto-steer karta hai!",
+      "sound_cue": "smooth_motion",
+      "prompt": "Train bogie taking a smooth curved track in scenic countryside, perfect balance on curved polished rails, dynamic angle, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Flange sirf safety border ka kaam karta hai!",
+      "sound_cue": "wheel_clatter",
+      "prompt": "Detailed mechanical view of rotating wheelset axle beneath train chassis in motion, steel suspension and springs, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Engineering ka ye chamatkar kaisa laga?",
+      "sound_cue": "horn_outro",
+      "prompt": "Passenger train moving gracefully through green open fields along curved rails at sunset, cinematic lighting, 9:16 vertical portrait"
+    }
+  ]
+}
