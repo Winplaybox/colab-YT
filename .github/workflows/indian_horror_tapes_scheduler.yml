@@ -96,7 +96,7 @@ jobs:
           if [ -n "$STORY_NUM" ]; then
             python "channels/IndianHorrorTapes/scheduler.py" "$STORY_NUM" "$QUAL_ARG" $IMM_FLAG
           else
-            python "channels/IndianHorrorTapes/scheduler.py" "" "$QUAL_ARG" $IMM_FLAG
+            python "channels/IndianHorrorTapes/scheduler.py" --quality "$QUAL_ARG" $IMM_FLAG
           fi
 
       - name: Upload Output Video & Subtitles Artifact
@@ -116,6 +116,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "IndianHorrorTapes Autonomous Bot"
-          git add -A
+          git add channels/IndianHorrorTapes/state.json channels/IndianHorrorTapes/stories/ || true
           git diff --staged --quiet || git commit -m "chore(IndianHorrorTapes): automated episode release [skip ci]"
+          git pull --rebase origin main || true
           git push || echo "Push skipped or no new commits to push."

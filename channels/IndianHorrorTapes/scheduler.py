@@ -457,7 +457,22 @@ def run_schedule(story_number=None, quality="4k", force_immediate=False):
         return None, video_path
 
 if __name__ == "__main__":
-    s_arg = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else None
-    q_arg = sys.argv[2] if len(sys.argv) > 2 else "4k"
-    imm_arg = "--immediate" in sys.argv
-    run_schedule(story_number=s_arg, quality=q_arg, force_immediate=imm_arg)
+    import argparse
+    parser = argparse.ArgumentParser(description="IndianHorrorTapes Autonomous Scheduler")
+    parser.add_argument("story_number", nargs="?", default=None, help="Story number (int) or empty")
+    parser.add_argument("quality_pos", nargs="?", default=None, help="Quality positional (1080p, 4k, 8k)")
+    parser.add_argument("--quality", default=None, help="Output quality (1080p, 4k, 8k)")
+    parser.add_argument("--immediate", action="store_true", help="Publish immediately as Public")
+
+    args = parser.parse_args()
+
+    s_num = None
+    if args.story_number and args.story_number.strip().isdigit():
+        s_num = int(args.story_number.strip())
+
+    # Resolve quality from --quality or positional
+    q_val = args.quality or args.quality_pos or "4k"
+    if q_val.startswith("--"):
+        q_val = "4k"
+
+    run_schedule(story_number=s_num, quality=q_val, force_immediate=args.immediate)
