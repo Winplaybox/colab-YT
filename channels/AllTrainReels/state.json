@@ -8,32 +8,39 @@
   "history": [
     {
       "episode_number": 1,
-      "title": "Ye Train 603 km/h Chali! Bina Pahiye Ke 🤯",
+      "title": "Ye Train 603 km/h Chali! Bina Pahiye Ke \ud83e\udd2f",
       "video_id": "26p0F6iur6Y",
       "mode": "schedule",
       "timestamp": "2026-09-29T08:19:01.812841"
     },
     {
       "episode_number": 2,
-      "title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
+      "title": "Duniya Ki Sabse Lambi Train: 7 KM! \ud83d\ude33",
       "video_id": "hyM7xfbFXKY",
       "mode": "schedule",
       "timestamp": "2026-09-29T18:31:47.179176"
     },
     {
       "episode_number": 3,
-      "title": "42 Saal Band Raha Ye Station: Begunkodor 👻",
+      "title": "42 Saal Band Raha Ye Station: Begunkodor \ud83d\udc7b",
       "video_id": "KawyqZlN5K0",
       "mode": "schedule",
       "timestamp": "2026-09-30T18:18:54.909718"
     },
     {
       "episode_number": 4,
-      "title": "Train Ke Pahiye Flat Kyun Nahi Hote? ⚙️",
+      "title": "Train Ke Pahiye Flat Kyun Nahi Hote? \u2699\ufe0f",
       "video_id": "qjxjhEWpMf0",
       "mode": "schedule",
       "timestamp": "2026-10-01T14:45:52.786014"
     }
   ],
-  "used_topic_ids": []
+  "used_topic_ids": [],
+  "playlists": {
+    "MASTER_SERIES": "PLM24RkzG7bOk",
+    "BULLET_TRAINS": "PLasaPnujHgDE",
+    "EXTREME_TRAINS": "PLbE_MWHYEeOw",
+    "ENGINEERING_SECRETS": "PLO4ZMfBSd7bE",
+    "GHOST_STATIONS": "PLCYy7UaAyhP4"
+  }
 }
