@@ -222,19 +222,12 @@ def produce_train_video(story_input, quality="1080p"):
     print(f"🔱 PRODUCING EPICBHARATSAGA SHORT #{episode_num:02d}: {title}")
     print(f"==================================================")
 
-    # Resolution settings (Safe from zoompan OOM)
-    # GitHub Actions runners have 7GB RAM limit. With 25 inputs, 8K exceeds memory limits (exit code 143).
-    is_ci = os.environ.get("GITHUB_ACTIONS") == "true" or os.environ.get("CI") == "true"
-    if is_ci and quality in ["8k", "4k"]:
-        print(f"⚠️ [Resource Guard] {quality.upper()} with 25 shots exceeds GitHub Actions 7GB RAM limit. Safe-scaling to 1080p (native Shorts resolution).")
-        quality = "1080p"
-
     res_map = {
         "1080p": (1080, 1920),
         "4k": (2160, 3840),
         "8k": (4320, 7680)
     }
-    w, h = res_map.get(quality, (1080, 1920))
+    w, h = res_map.get(quality, (2160, 3840))
     scale = w / 1080.0
 
     cfg = {}
@@ -245,10 +238,12 @@ def produce_train_video(story_input, quality="1080p"):
                 cfg = json.load(cf)
         except Exception:
             pass
-    target_duration = float(cfg.get("target_duration_seconds", 180.0))
-    target_shots = 30
+    target_duration = float(cfg.get("target_duration_seconds", 58.0))
+    if target_duration > 60.0:
+        target_duration = 58.0 # Strict YouTube Shorts <= 60 seconds constraint
+    target_shots = 12
 
-    # Ensure shot image assets exist (targets 30 shots for 180s Shorts with ~6.0s cuts)
+    # Ensure shot image assets exist (targets 12 shots for 58s Shorts with ~4.8s cuts)
     from image_generator import generate_story_assets
     episode_assets_dir = os.path.join(assets_base, story_id)
     generate_story_assets(story_data, target_shots=target_shots)
@@ -265,6 +260,10 @@ def produce_train_video(story_input, quality="1080p"):
     voice_path = os.path.join(output_dir, f"{story_id}_voice.mp3")
     generate_voiceover(voiceover_text, voice_path)
     raw_duration = get_audio_duration(voice_path)
+
+    # Ensure Shorts duration fits voiceover or caps at 58.0 seconds
+    if raw_duration > 10.0:
+        target_duration = min(max(raw_duration + 1.5, 30.0), 58.0)
     print(f"🎙️ Raw Voiceover: {raw_duration:.2f}s | Target Shorts Duration: {target_duration:.2f}s | Shots: {num_shots} ({target_duration / num_shots:.2f}s per cut)")
 
     # Step 2: Divine Ambient Soundscape (Om drone + temple bell) for exact target duration

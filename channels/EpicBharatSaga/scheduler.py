@@ -250,6 +250,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--episode", type=int, default=None)
     parser.add_argument("--mode", default="scheduled", choices=["scheduled", "immediate", "render_only"])
-    parser.add_argument("--quality", default="1080p", choices=["1080p", "4k", "8k"])
+    parser.add_argument("--quality", default="4k", choices=["1080p", "4k", "8k"])
     args = parser.parse_args()
     run_episode(episode_number=args.episode, publish_mode=args.mode, quality=args.quality)
