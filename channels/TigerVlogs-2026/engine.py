@@ -65,6 +65,20 @@ def download_youtube_video(video_url, output_path='downloaded_videos', file_pref
         print(f"Warning: yt-dlp download failed for {video_url}: {e}")
         return None
 
+def prepare_optimized_single_image(img_path, target_w, target_h):
+    try:
+        from PIL import Image, ImageOps
+        if not img_path or not os.path.exists(img_path):
+            return img_path, False
+        opt_path = os.path.splitext(img_path)[0] + f"_{target_w}x{target_h}_opt.jpg"
+        with Image.open(img_path) as im:
+            im = im.convert("RGB")
+            fitted = ImageOps.fit(im, (target_w, target_h), method=Image.Resampling.LANCZOS)
+            fitted.save(opt_path, format="JPEG", quality=95)
+        return opt_path, True
+    except Exception:
+        return img_path, False
+
 def generate_original_longform_video(
     hook_headline,
     hinglish_script,
@@ -94,9 +108,11 @@ def generate_original_longform_video(
     clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
 
     if fetched_img and os.path.exists(fetched_img):
-        img_input = ["-loop", "1", "-i", fetched_img]
+        opt_img, is_opt = prepare_optimized_single_image(fetched_img, 3840, 2160)
+        img_input = ["-loop", "1", "-i", opt_img]
+        scale_op = "" if is_opt else "scale=3840:2160:force_original_aspect_ratio=increase,crop=3840:2160,"
         filter_complex = (
-            "[0:v]scale=3840:2160:force_original_aspect_ratio=increase,crop=3840:2160,"
+            f"[0:v]{scale_op}"
             "unsharp=5:5:0.8:5:5:0.0,"
             "drawbox=y=0:h=360:color=0x0a0f1d@0.88:t=fill,"
             "drawbox=y=1760:h=400:color=0x0a0f1d@0.88:t=fill,"
@@ -121,6 +137,8 @@ def generate_original_longform_video(
         "-filter_complex", filter_complex,
         "-map", "[v]", "-map", "1:a",
         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
+        "-threads", "0",
+        "-sws_flags", "fast_bilinear",
         "-c:a", "aac", "-b:a", "192k",
         "-shortest", "-pix_fmt", "yuv420p",
         output_file
@@ -161,9 +179,11 @@ def generate_original_short(
     clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
 
     if fetched_img and os.path.exists(fetched_img):
-        img_input = ["-loop", "1", "-i", fetched_img]
+        opt_img, is_opt = prepare_optimized_single_image(fetched_img, 2160, 3840)
+        img_input = ["-loop", "1", "-i", opt_img]
+        scale_op = "" if is_opt else "scale=2160:3840:force_original_aspect_ratio=increase,crop=2160:3840,"
         filter_complex = (
-            "[0:v]scale=2160:3840:force_original_aspect_ratio=increase,crop=2160:3840,"
+            f"[0:v]{scale_op}"
             "unsharp=3:3:0.8:3:3:0.0,"
             "drawbox=y=320:h=440:color=0x1e293b@0.95:t=fill,"
             f"drawtext=text='{clean_hook}':fontsize=104:fontcolor=0xfacc15:x=(w-text_w)/2:y=490,"
@@ -184,6 +204,8 @@ def generate_original_short(
         "-filter_complex", filter_complex,
         "-map", "[v]", "-map", "1:a",
         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
+        "-threads", "0",
+        "-sws_flags", "fast_bilinear",
         "-c:a", "aac", "-b:a", "192k",
         "-shortest", "-pix_fmt", "yuv420p",
         output_file

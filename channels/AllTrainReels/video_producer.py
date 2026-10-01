@@ -265,14 +265,31 @@ def produce_train_video(story_json_path, quality="1080p"):
     input_args = []
     filter_chains = []
 
+    def prepare_optimized_shot(img_path, target_w, target_h, cache_dir):
+        try:
+            from PIL import Image, ImageOps
+            out_path = os.path.join(cache_dir, f"opt_{target_w}x{target_h}_" + os.path.basename(img_path))
+            if os.path.exists(out_path):
+                return out_path
+            with Image.open(img_path) as im:
+                im = im.convert("RGB")
+                fitted = ImageOps.fit(im, (target_w, target_h), method=Image.Resampling.LANCZOS)
+                fitted.save(out_path, format="JPEG", quality=95)
+            return out_path
+        except Exception:
+            return img_path
+
+    zoom_w = min(int(w * 1.25), 2160)
+    zoom_h = min(int(h * 1.25), 3840)
+
     for i in range(num_shots):
         shot_img = os.path.join(episode_assets_dir, f"shot_{i+1:02d}.jpg")
         if not os.path.exists(shot_img):
             from image_generator import generate_procedural_fallback
             generate_procedural_fallback(title, shots[i].get("subtitle", ""), shot_img, w, h)
 
-        # Single-frame input (no -loop 1 -t)
-        input_args.extend(["-i", shot_img])
+        opt_shot = prepare_optimized_shot(shot_img, zoom_w, zoom_h, output_dir)
+        input_args.extend(["-i", opt_shot])
 
         # 4-style alternating zoom/pan for visual variety
         style = i % 4
@@ -308,10 +325,9 @@ def produce_train_video(story_json_path, quality="1080p"):
             f"setsar=1"
         )
 
-        # Scale 2x before zoompan to eliminate jitter/stutter
+        # Hardware-efficient zoompan on pre-scaled image
         filter_chains.append(
-            f"[{i}:v]scale={w*2}:{h*2}:force_original_aspect_ratio=increase,crop={w*2}:{h*2},"
-            f"zoompan={zoom_expr}:d={frames}:s={w}x{h}:fps=30,"
+            f"[{i}:v]zoompan={zoom_expr}:d={frames}:s={w}x{h}:fps=30,"
             f"{sub_draw}[v{i}]"
         )
 
@@ -339,6 +355,7 @@ def produce_train_video(story_json_path, quality="1080p"):
         "-preset", "ultrafast",
         "-crf", "20",
         "-threads", "0",
+        "-sws_flags", "fast_bilinear",
         "-pix_fmt", "yuv420p",
         "-c:a", "aac",
         "-b:a", "192k",

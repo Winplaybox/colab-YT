@@ -448,7 +448,32 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         f"{endcard_drawtext}"
     )
 
+    def prepare_optimized_scene_images(scenes, target_w, target_h, cache_dir):
+        try:
+            from PIL import Image, ImageOps
+            opt_dir = os.path.join(cache_dir, "optimized_scenes")
+            os.makedirs(opt_dir, exist_ok=True)
+            optimized = []
+            for idx, img in enumerate(scenes):
+                if not os.path.exists(img):
+                    continue
+                out_path = os.path.join(opt_dir, f"opt_{idx:02d}_{target_w}x{target_h}_" + os.path.basename(img))
+                if os.path.exists(out_path):
+                    optimized.append(out_path)
+                    continue
+                with Image.open(img) as im:
+                    im = im.convert("RGB")
+                    fitted = ImageOps.fit(im, (target_w, target_h), method=Image.Resampling.LANCZOS)
+                    fitted.save(out_path, format="PNG", optimize=False)
+                optimized.append(out_path)
+            if len(optimized) == len(scenes):
+                return optimized, True
+        except Exception:
+            pass
+        return scenes, False
+
     ffmpeg_inputs = []
+    temp_render_dir = os.path.dirname(output_video_path)
     if len(scene_images) > 1:
         # Multi-Scene with Smooth Cinematic Crossfade Transitions (Paced for 60-90s)
         max_scenes = 8
@@ -458,16 +483,18 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         else:
             selected_scenes = scene_images
 
-        num_scenes = len(selected_scenes)
+        optimized_scenes, is_opt = prepare_optimized_scene_images(selected_scenes, w, h, temp_render_dir)
+        scale_op = "" if is_opt else f"scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},"
+        num_scenes = len(optimized_scenes)
         fade_dur = 0.5
         L = (duration + (num_scenes - 1) * fade_dur) / num_scenes
 
         scale_parts = []
-        for i, img in enumerate(selected_scenes):
+        for i, img in enumerate(optimized_scenes):
             clean_img = os.path.abspath(img).replace("\\", "/")
             ffmpeg_inputs.extend(["-loop", "1", "-t", f"{L:.3f}", "-i", clean_img])
             scale_parts.append(
-                f"[{i}:v]scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},setsar=1,fps=30[s{i}];"
+                f"[{i}:v]{scale_op}setsar=1,fps=30[s{i}];"
             )
 
         prev = "s0"
@@ -484,9 +511,11 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         audio_idx = num_scenes
     elif len(scene_images) == 1:
         # Single Scene
-        clean_img = os.path.abspath(scene_images[0]).replace("\\", "/")
+        optimized_scenes, is_opt = prepare_optimized_scene_images(scene_images, w, h, temp_render_dir)
+        scale_op = "" if is_opt else f"scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},"
+        clean_img = os.path.abspath(optimized_scenes[0]).replace("\\", "/")
         ffmpeg_inputs.extend(["-loop", "1", "-t", f"{duration:.3f}", "-i", clean_img])
-        full_filter = f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},setsar=1,fps=30[vbase];[vbase]{overlay_filters}[v]"
+        full_filter = f"[0:v]{scale_op}setsar=1,fps=30[vbase];[vbase]{overlay_filters}[v]"
         audio_idx = 1
     else:
         # Fallback Dynamic Cinematic Gradient
@@ -512,7 +541,9 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         "-map", "[v]", "-map", "[a]",
         "-t", f"{duration:.2f}",
         "-shortest",
-        "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20",
+        "-threads", "0",
+        "-sws_flags", "fast_bilinear",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",
         output_video_path
