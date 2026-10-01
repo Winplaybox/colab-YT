@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 3,
+  "current_episode": 4,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-01T14:26:59.855742",
-  "last_uploaded_video_id": "dHwy248dxws",
+  "last_run": "2026-10-01T19:03:12.462112",
+  "last_uploaded_video_id": "CHogQB_w3QQ",
   "used_story_ids": [],
   "history": [
     {
@@ -25,6 +25,15 @@
       "video_id": "dHwy248dxws",
       "mode": "scheduled",
       "timestamp": "2026-10-01T14:26:59.855742"
+    },
+    {
+      "episode_number": 3,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Sati Ka Yagna Mein Aatmadah — Shiv Ka Vilaap! 😢",
+      "video_id": "CHogQB_w3QQ",
+      "mode": "scheduled",
+      "timestamp": "2026-10-01T19:03:12.462112"
     }
   ]
 }
