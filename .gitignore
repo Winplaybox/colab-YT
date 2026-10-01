@@ -26,6 +26,8 @@ channels/AllTrainReels/stories/assets/
 channels/AllTrainReels/stories/thumbnails/
 channels/EpicBharatSaga/stories/assets/
 channels/EpicBharatSaga/stories/thumbnails/
+channels/DigitalImmortals/episodes/*/assets/
+channels/DigitalImmortals/thumbnails/
 *.srt
 *.vtt
 
