@@ -1,38 +1,45 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 5,
+  "current_story_number": 6,
   "total_stories": 3000,
-  "last_run": "2026-10-01T14:45:52.786014",
-  "last_uploaded_video_id": "qjxjhEWpMf0",
+  "last_run": "2026-10-01T18:48:45.004892",
+  "last_uploaded_video_id": "crPgaSZwnzw",
   "history": [
     {
       "episode_number": 1,
-      "title": "Ye Train 603 km/h Chali! Bina Pahiye Ke \ud83e\udd2f",
+      "title": "Ye Train 603 km/h Chali! Bina Pahiye Ke 🤯",
       "video_id": "26p0F6iur6Y",
       "mode": "schedule",
       "timestamp": "2026-09-29T08:19:01.812841"
     },
     {
       "episode_number": 2,
-      "title": "Duniya Ki Sabse Lambi Train: 7 KM! \ud83d\ude33",
+      "title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
       "video_id": "hyM7xfbFXKY",
       "mode": "schedule",
       "timestamp": "2026-09-29T18:31:47.179176"
     },
     {
       "episode_number": 3,
-      "title": "42 Saal Band Raha Ye Station: Begunkodor \ud83d\udc7b",
+      "title": "42 Saal Band Raha Ye Station: Begunkodor 👻",
       "video_id": "KawyqZlN5K0",
       "mode": "schedule",
       "timestamp": "2026-09-30T18:18:54.909718"
     },
     {
       "episode_number": 4,
-      "title": "Train Ke Pahiye Flat Kyun Nahi Hote? \u2699\ufe0f",
+      "title": "Train Ke Pahiye Flat Kyun Nahi Hote? ⚙️",
       "video_id": "qjxjhEWpMf0",
       "mode": "schedule",
       "timestamp": "2026-10-01T14:45:52.786014"
+    },
+    {
+      "episode_number": 5,
+      "title": "Patri Pe Ye Pathar Kyun Hote Hain? 🪨",
+      "video_id": "crPgaSZwnzw",
+      "mode": "schedule",
+      "timestamp": "2026-10-01T18:48:45.004892"
     }
   ],
   "used_topic_ids": [],
