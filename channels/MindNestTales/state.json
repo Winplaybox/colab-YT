@@ -1,7 +1,9 @@
 {
   "current_story": 1,
-  "last_run_date": null,
+  "last_run_date": "2026-10-01",
   "total_stories": 51,
-  "completed_stories": [],
+  "completed_stories": [
+    2
+  ],
   "auto_increment": true
 }
