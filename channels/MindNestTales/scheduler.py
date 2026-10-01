@@ -345,16 +345,16 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                     os.remove(long_path)
 
         # -----------------------------------------------------------------
-        # 2. 175-SECOND SHORT (Strictly < 180s to prevent YouTube 3:01 limit)
+        # 2. 60-90s SHORT (High-Retention Trailer Funnel to 10-Min Video)
         # -----------------------------------------------------------------
         if mode in ("dual", "short"):
-            print(f"\n[{ch_name} - {lang.upper()}] 📱 Producing 175s Short (strict < 180s)...")
+            print(f"\n[{ch_name} - {lang.upper()}] 📱 Producing 60-90s Short (Trailer Funnel)...")
             record_story_status(story_number, lang, "Processing...")
             video_path = os.path.join(work_dir, f"story_{story_number:02d}_{lang}_{quality}.mp4")
-            produce_story_video(story, lang, video_path, quality=quality, target_duration=175.0)
+            produce_story_video(story, lang, video_path, quality=quality, target_duration=75.0)
 
             translation = story["translations"].get(lang, story["translations"]["en"])
-            title = translation["title"]
+            title = translation.get("short_title", translation.get("title"))
             if "#Shorts" not in title and "#shorts" not in title:
                 title = f"{title} #Shorts"
 

@@ -241,12 +241,12 @@ def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch=
     print(f"Generated Voiceover: {output_audio_path} ({os.path.getsize(output_audio_path)} bytes)")
     return output_audio_path
 
-def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=175.0):
+def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=75.0):
     """
     Renders the complete 9:16 portrait video for a specific language channel.
     - Synchronizes 3D Pixar-style visual scenes with localized neural voiceover.
     - Applies smooth cinematic xfade crossfade transitions between all clips.
-    - Strict Shorts safety runtime: 175.0 seconds (safely under YouTube's 180s Shorts limit to prevent 3:01 rounding).
+    - Strict Shorts safety runtime: 60-90 seconds (default 75.0s) for high-retention trailer funnel.
     - Guarantees 100% pure native typography with ZERO mixed English overlays on foreign language channels.
     - Supports '8k' (4320x7680), '4k' (2160x3840), or '1080p' (1080x1920).
     """
@@ -259,8 +259,9 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     voice = ch_config["voice"]
     rate = ch_config.get("voice_rate", "+2%")
     pitch = ch_config.get("voice_pitch", "+0Hz")
-    script = translation["script"]
-    title = translation["title"]
+    # Script selection: For Shorts, prioritize the 60-90s Hook/Trailer short_script
+    script = translation.get("short_script") or translation.get("script")
+    title = translation.get("short_title") or translation.get("title")
     handle = ch_config["handle"]
 
     # Resolution Configuration (Resource Guard for CI/Batch)
@@ -279,13 +280,17 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         w, h = 1080, 1920
         scale = 1.0
 
-    # 1. Generate Voiceover in native language
+    # 1. Generate Voiceover in native language (60-90s trailer pacing)
     audio_file = os.path.splitext(output_video_path)[0] + f"_{lang_code}_voice.mp3"
     generate_voiceover(script, voice, audio_file, rate=rate, pitch=pitch)
     raw_audio_dur = get_audio_duration(audio_file)
     
-    # Target duration: strictly capped at 175.0 seconds so YouTube never tags as 3:01 (181s)
-    duration = min(target_duration if target_duration else 175.0, 175.0)
+    # Target duration for Shorts: Strictly 60-90 seconds (default 75.0s) for high-retention trailer funnel
+    if target_duration and 50.0 <= target_duration <= 90.0:
+        duration = target_duration
+    else:
+        # Dynamically fit narration comfortably inside 60-88s window
+        duration = min(max(raw_audio_dur + 1.5, 65.0), 88.0)
 
     # 2. Check for 3D Pixar Scene Assets (Auto-generates via Free Tier if missing)
     story_no = story_data.get("story_number", 1)
@@ -298,7 +303,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
             for fn, _ in narrative_shots
             if os.path.exists(os.path.join(assets_dir, fn)) and os.path.getsize(os.path.join(assets_dir, fn)) > 10000
         ]
-        if len(existing) >= 12:
+        if len(existing) >= 8:
             scene_images = existing
         else:
             scene_images = ensure_story_assets(story_no)
@@ -357,6 +362,28 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     clean_brand = sanitize_ffmpeg_text(brand_title)
     clean_bottom = sanitize_ffmpeg_text(bottom_text)
 
+    # End-Card CTA (Last 4.5 seconds): Funnel viewer to the 10-Minute Full Episode
+    cta_start_t = max(0.0, duration - 4.5)
+    default_ctas = {
+        "en": ("What happens next? 👉", "Full story link in description"),
+        "hi": ("आगे क्या हुआ? 👉", "पूरी कहानी देखें लिंक नीचे है"),
+        "es": ("¿Qué pasó después? 👉", "Historia completa en descripción"),
+        "pt": ("O que acontece a seguir? 👉", "História completa no link"),
+        "fr": ("Que se passe-t-il ensuite ? 👉", "Histoire complète en description"),
+        "de": ("Wie geht es weiter? 👉", "Ganze Geschichte im Link"),
+        "ar": ("ماذا حدث بعد ذلك؟ 👉", "القصة الكاملة في الرابط بالأسفل"),
+        "ja": ("続きはどうなる？ 👉", "完全版は概要欄のリンクから！"),
+        "ko": ("다음 이야기는? 👉", "설명란 링크에서 전체 감상!"),
+        "vi": ("Chuyện gì xảy ra tiếp theo? 👉", "Xem trọn vẹn tại mô tả nhé!"),
+        "fil": ("Ano ang susunod na mangyayari? 👉", "Panoorin ang buong kwento sa description!"),
+    }
+    cta_l1, cta_l2 = default_ctas.get(lang_code, default_ctas["en"])
+    if translation.get("short_cta_text"):
+        cta_l2 = translation["short_cta_text"]
+
+    clean_cta_l1 = sanitize_ffmpeg_text(cta_l1)
+    clean_cta_l2 = sanitize_ffmpeg_text(cta_l2)
+
     # Wrap moral text to prevent truncation at screen edges
     wrap_w = 26 if lang_code in ("hi", "ja", "ko", "ar") else 34
     moral_lines = textwrap.wrap(clean_moral, width=wrap_w)
@@ -378,10 +405,18 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     f_moral = int(34 * scale)
     f_handle = int(30 * scale)
 
+    f_cta_h = int(40 * scale)
+    f_cta_sub = int(28 * scale)
+    y_cta_1 = int(box_bot_y + (48 * scale))
+    y_cta_2 = int(box_bot_y + (125 * scale))
+
     # Font assignment: Ensure non-Latin scripts use native font for brand & bottom text
     is_non_latin = lang_code in ("hi", "ar", "ja", "ko", "vi")
     header_font_arg = font_arg if is_non_latin else (brand_font_arg or font_arg)
     bottom_font_arg = font_arg if is_non_latin else (brand_font_arg or font_arg)
+
+    normal_enable = f":enable='between(t,0,{cta_start_t:.2f})'"
+    cta_enable = f":enable='between(t,{cta_start_t:.2f},{duration:.2f})'"
 
     if len(moral_lines) > 1:
         y_badge = int(box_bot_y + (38 * scale))
@@ -389,37 +424,51 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
         y_moral_2 = int(box_bot_y + (138 * scale))
         y_handle = int(box_bot_y + (192 * scale))
         moral_drawtext = (
-            f"drawtext={font_arg}:text='- {moral_label} -':fontsize={f_badge}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_badge},"
-            f"drawtext={font_arg}:text='{moral_lines[0]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_1},"
-            f"drawtext={font_arg}:text='{moral_lines[1]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_2}"
+            f"drawtext={font_arg}:text='- {moral_label} -':fontsize={f_badge}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_badge}{normal_enable},"
+            f"drawtext={font_arg}:text='{moral_lines[0]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_1}{normal_enable},"
+            f"drawtext={font_arg}:text='{moral_lines[1]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_2}{normal_enable}"
         )
     else:
         y_badge = int(box_bot_y + (50 * scale))
         y_moral_1 = int(box_bot_y + (110 * scale))
         y_handle = int(box_bot_y + (182 * scale))
         moral_drawtext = (
-            f"drawtext={font_arg}:text='- {moral_label} -':fontsize={f_badge}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_badge},"
-            f"drawtext={font_arg}:text='{moral_lines[0]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_1}"
+            f"drawtext={font_arg}:text='- {moral_label} -':fontsize={f_badge}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_badge}{normal_enable},"
+            f"drawtext={font_arg}:text='{moral_lines[0]}':fontsize={f_moral}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_moral_1}{normal_enable}"
         )
+
+    endcard_drawtext = (
+        f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0xb45309@0.92:t=fill{cta_enable},"
+        f"drawtext={header_font_arg}:text='{clean_cta_l1}':fontsize={f_cta_h}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_cta_1}{cta_enable},"
+        f"drawtext={bottom_font_arg}:text='{clean_cta_l2}':fontsize={f_cta_sub}:fontcolor=0xfef08a:x=(w-text_w)/2:y={y_cta_2}{cta_enable}"
+    )
 
     overlay_filters = (
         f"drawbox=y=0:h={box_top_h}:color=0x0a0f1d@0.65:t=fill,"
-        f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.65:t=fill,"
+        f"drawbox=y={box_bot_y}:h={box_bot_h}:color=0x0a0f1d@0.65:t=fill{normal_enable},"
         f"drawtext={header_font_arg}:text='{clean_brand}':fontsize={f_brand}:fontcolor=0xf59e0b:x=(w-text_w)/2:y={y_brand},"
         f"drawtext={font_arg}:text='{display_title}':fontsize={f_title}:fontcolor=0xffffff:x=(w-text_w)/2:y={y_title},"
         f"{moral_drawtext},"
-        f"drawtext={bottom_font_arg}:text='{clean_bottom}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}"
+        f"drawtext={bottom_font_arg}:text='{clean_bottom}':fontsize={f_handle}:fontcolor=0x94a3b8:x=(w-text_w)/2:y={y_handle}{normal_enable},"
+        f"{endcard_drawtext}"
     )
 
     ffmpeg_inputs = []
     if len(scene_images) > 1:
-        # Multi-Scene with Smooth Cinematic Crossfade Transitions
-        num_scenes = len(scene_images)
+        # Multi-Scene with Smooth Cinematic Crossfade Transitions (Paced for 60-90s)
+        max_scenes = 8
+        if len(scene_images) > max_scenes:
+            step = len(scene_images) / max_scenes
+            selected_scenes = [scene_images[int(i * step)] for i in range(max_scenes)]
+        else:
+            selected_scenes = scene_images
+
+        num_scenes = len(selected_scenes)
         fade_dur = 0.5
         L = (duration + (num_scenes - 1) * fade_dur) / num_scenes
 
         scale_parts = []
-        for i, img in enumerate(scene_images):
+        for i, img in enumerate(selected_scenes):
             clean_img = os.path.abspath(img).replace("\\", "/")
             ffmpeg_inputs.extend(["-loop", "1", "-t", f"{L:.3f}", "-i", clean_img])
             scale_parts.append(

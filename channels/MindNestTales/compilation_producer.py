@@ -234,7 +234,7 @@ def produce_10min_compilation(story_ids, lang_code, output_video_path, quality="
         s_data = load_story(sid)
         ensure_story_assets(sid)
         s_trans = s_data["translations"].get(lang_code, s_data["translations"]["en"])
-        s_script = s_trans["script"]
+        s_script = s_trans.get("long_script") or s_trans.get("script")
         
         # Audio
         s_audio_path = os.path.join(temp_dir, f"story_{sid}_audio.mp3")

@@ -438,8 +438,10 @@ Generate the JSON for {json.dumps(group)} now."""
 
 def generate_fallback_translations(hero_name, species, base_title, moral_english, flaw="acting in haste without thinking"):
     """
-    Pure, localized 4-act narrative scripts for all 11 languages (~380-420 words).
-    Specifically calibrated for 175-second Shorts runtime (< 180s to prevent YouTube 3:01 limit).
+    Dual-script pure localized translations for all 11 languages:
+    1. short_script: 60-90s fast-paced trailer funnel script (~140-180 words) leading to cliffhanger crisis.
+       Includes short_cta_voice & short_cta_text for the last 3-5 seconds End-Card CTA.
+    2. long_script: ~400-440 words full 4-act narration with mentor arrival and moral victory for 10-min compilation.
     Guarantees 100% PURE NATIVE LANGUAGE: ZERO English words in non-English scripts.
     """
     species_lower = species.lower()
@@ -493,8 +495,26 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
     return {
         "en": {
             "title": f"{n_en}'s Big Race Against Time! 🐾⏰ #Shorts",
+            "short_title": f"{n_en}'s Big Race Against Time! 🐾⏰ #Shorts",
+            "long_title": f"{hero_name} and the Great Lesson 🐾 (Full 10-Min Story)",
             "moral": morals["en"],
-            "script": (
+            "short_cta_voice": f"But did little {n_en} escape the thorny brambles and reach the summit in time? Watch the full story — link in description!",
+            "short_cta_text": "What happens next? 👉 Full story link in description",
+            "short_script": (
+                f"Deep within the sun-drenched golden savanna lived {n_en}. "
+                f"Everyone in the valley loved little {n_en} for being cheerful and energetic, but he had one troublesome flaw: {flaws['en']}. "
+                f"He foolishly believed that his lightning speed was an excuse to leave everything until the very last second! "
+                f"One morning, the Great Valley Festival was called at noon on the mountain summit. "
+                f"{n_en} was given the single highest honor: carrying the golden festival banner! "
+                f"All his animal friends cheered and warned him to start early. "
+                f"Yet true to his careless habits, {n_en} played splash games by the river and took a cozy nap under the shade. "
+                f"Suddenly glancing up, he gasped with horror: it was almost noon! "
+                f"Panicking, {n_en} dashed into a treacherous shortcut trail. "
+                f"Then disaster struck. A flash thunderstorm flooded the path, and an enormous ancient baobab tree crashed directly in front of him! "
+                f"Skidding in the slick mud, {n_en} crashed headlong into a dense thicket of sharp thorny brambles, hopelessly trapped as the clock ticked down! "
+                f"But did {n_en} really escape in time to reach the mountain summit? Watch the full story now — link in description!"
+            ),
+            "long_script": (
                 f"Once upon a time, nestled deep within the sun-drenched golden savanna, lived {hero_name}. "
                 f"Everyone in the valley admired little {n_en} for being vibrant, playful, and wonderfully cheerful. "
                 f"From dawn until dusk, {n_en} leaped across the tall amber grasses and greeted every animal friend with a joyful purr. "
@@ -523,13 +543,41 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"From that unforgettable day forward, {n_en} stayed swift, but never rushed carelessly again. "
                 f"Always remember: {morals['en']}"
             ),
-            "description": f"🐾 Watch {hero_name}'s heartwarming 175s 3D animated adventure!\n\n✨ MindNest Tales brings 3D Pixar-style moral stories for families.\n\nSubscribe to @EnglishMindNestTales!\n\n#MindNestTales #PixarStyle #MoralStories #Shorts",
+            "script": (
+                f"Deep within the sun-drenched golden savanna lived {n_en}. "
+                f"Everyone in the valley loved little {n_en} for being cheerful and energetic, but he had one troublesome flaw: {flaws['en']}. "
+                f"One morning, the Great Valley Festival was called at noon on the mountain summit. "
+                f"{n_en} was given the single highest honor: carrying the golden festival banner! "
+                f"Instead of leaving early, {n_en} played and napped until the clock was almost at noon! "
+                f"Panicking, {n_en} dashed into a dangerous shortcut where an ancient tree collapsed in a storm! "
+                f"Trapped in sharp thorns, {n_en} cried for help as the clock ticked down! "
+                f"But did {n_en} really escape in time to reach the mountain summit? Watch the full story now — link in description!"
+            ),
+            "description": f"🐾 Watch {hero_name}'s thrilling 3D Shorts adventure!\n\n🎬 Watch the FULL 10-Minute Episode with the complete resolution and moral lesson!\n\nSubscribe to @EnglishMindNestTales!\n\n#MindNestTales #PixarStyle #MoralStories #Shorts",
             "tags": ["mindnest tales", f"{species} story", "moral stories", "3d cartoon animal", "pixar style animation", "kids stories", "shorts"]
         },
         "hi": {
             "title": f"{n_hi} और समय की सबसे बड़ी सीख! 🐾⏰ #Shorts",
+            "short_title": f"{n_hi} और समय की सबसे बड़ी सीख! 🐾⏰ #Shorts",
+            "long_title": f"{n_hi} और समय की पाबंदी 🐾 (पूरा 10 मिनट एपिसोड)",
             "moral": morals["hi"],
-            "script": (
+            "short_cta_voice": f"लेकिन क्या नन्हा {n_hi} कटीली झाड़ियों से निकलकर समय पर उत्सव में पहुँच पाया? आगे क्या हुआ, जानने के लिए पूरी कहानी अभी देखें — लिंक नीचे दिया है!",
+            "short_cta_text": "आगे क्या हुआ? 👉 पूरी कहानी देखें (लिंक विवरण में)",
+            "short_script": (
+                f"सुनहरे जंगल की हरी-भरी वादियों में {n_hi} नाम का एक प्यारा सा नन्हा दोस्त रहता था। "
+                f"जंगल के सभी पशु-पक्षी उसकी फुर्ती और मासूमियत को पसंद करते थे, पर उसमें एक बड़ी कमी थी—{flaws['hi']}! "
+                f"वह सोचता था कि जब मैं तेज़ दौड़ सकता हूँ, तो पहले से तैयारी करने की क्या ज़रूरत है! "
+                f"एक सुबह, पहाड़ के ऊँचे शिखर पर दोपहर बारह बजे महा-उत्सव आयोजित हुआ। "
+                f"{n_hi} को सबसे बड़ा सम्मान मिला—उत्सव की सुनहरी ध्वज लेकर शिखर पर पहुँचना! "
+                f"दोस्तों ने समझाया कि रास्ता लंबा है और समय से निकलना। "
+                f"पर अपनी पुरानी आदत के कारण, वह नदी किनारे तितलियों के पीछे दौड़ता रहा और छांव में सो गया। "
+                f"अचानक आँख खुली तो देखा दोपहर होने वाली है! वह घबराकर जोखिम भरे छोटे रास्ते पर सरपट दौड़ा। "
+                f"तभी अचानक मूसलाधार बारिश शुरू हो गई और एक विशाल पेड़ टूटकर रास्ते पर गिर पड़ा! "
+                f"फिसलन भरे कीचड़ में पैर फिसलते ही {n_hi} सीधे नुकीली कटीली झाड़ियों के बीच जा फंसा! "
+                f"वह जितना छटपटाता, कांटे उतने गहरे उलझते जाते। "
+                f"लेकिन क्या नन्हा {n_hi} कटीली झाड़ियों से निकलकर समय पर उत्सव में पहुँच पाया? आगे क्या हुआ, जानने के लिए पूरी कहानी अभी देखें — लिंक नीचे दिया है!"
+            ),
+            "long_script": (
                 f"बहुत समय पहले, घने और सुनहरे जंगल की हरी-भरी वादियों में {n_hi} नाम का एक प्यारा सा नन्हा दोस्त रहता था। "
                 f"जंगल के सभी पशु-पक्षी उसकी फुर्ती, चंचलता और मासूम मुस्कान को बहुत पसंद करते थे। "
                 f"पेड़ों पर चहकती चिड़ियाँ और नदी किनारे खेलते हिरण सब उसके पक्के साथी थे। "
@@ -557,13 +605,36 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"उस दिन से उसने हमेशा समय की कद्र करना सीखा। "
                 f"याद रखें: {morals['hi']}"
             ),
-            "description": f"🐾 देखिए {n_hi} की पूरी दिल छू लेने वाली 3D एनिमेटेड कहानी! जानिए क्यों धैर्य और समझदारी से हर मुश्किल आसान हो जाती है।\n\nसब्सक्राइब करें @HindiMindNestTales!\n\n#MindNestTales #HindiKahaniya #MoralStoriesHindi #3DAnimation #Shorts",
-            "tags": ["mindnest tales", "हिंदी कहानियां", "बाल कहानियां", "3d कार्टून", "सीखने वाली कहानी", "shorts"]
+            "script": (
+                f"सुनहरे जंगल की हरी-भरी वादियों में {n_hi} नाम का एक प्यारा सा नन्हा दोस्त रहता था। "
+                f"जंगल के सभी पशु-पक्षी उसकी फुर्ती को पसंद करते थे, पर उसमें एक बड़ी कमी थी—{flaws['hi']}! "
+                f"एक सुबह पर्वत शिखर पर महा-उत्सव आयोजित हुआ और {n_hi} को सुनहरी ध्वज ले जाने की ज़िम्मेदारी मिली। "
+                f"पर अपनी आदत के कारण वह देर तक खेलता रहा और जब दौड़ा तो कटीली झाड़ियों में फंस गया! "
+                f"लेकिन क्या नन्हा {n_hi} कटीली झाड़ियों से निकलकर समय पर उत्सव में पहुँच पाया? आगे क्या हुआ, जानने के लिए पूरी कहानी अभी देखें — लिंक नीचे दिया है!"
+            ),
+            "description": f"🐾 देखिए {n_hi} की रोमांचक 3D एनिमेटेड कहानी!\n\n🎬 पूरा 10 मिनट का विशेष एपिसोड यहाँ देखें!\n\nसब्सक्राइब करें @HindiMindNestTales!\n\n#माइंडनेस्टटेल्स #हिंदीकहानियां #बालकहानियां #नैतिककहानियां #Shorts",
+            "tags": ["माइंडनेस्ट टेल्स", "हिंदी कहानियां", "बाल कहानियां", "3d कार्टून", "सीखने वाली कहानी", "shorts"]
         },
         "es": {
             "title": f"¡La Gran Carrera de {n_es}! 🐾⏰ #Shorts",
+            "short_title": f"¡La Gran Carrera de {n_es}! 🐾⏰ #Shorts",
+            "long_title": f"{n_es} y la Gran Lección 🐾 (Especial 10 Min)",
             "moral": morals["es"],
-            "script": (
+            "short_cta_voice": f"Pero, ¿logró {n_es} liberarse de las espinas y llegar a tiempo a la cima? ¡Descubre qué pasó en la historia completa — enlace en la descripción!",
+            "short_cta_text": "¿Qué pasó después? 👉 Historia completa en la descripción",
+            "short_script": (
+                f"En lo profundo de la dorada sabana vivía el pequeño {n_es}. "
+                f"Todos en el valle lo querían por su alegría, pero tenía un gran defecto: {flaws['es']}. "
+                f"Pensaba que su gran agilidad le permitiría solucionar cualquier descuido en el último segundo. "
+                f"Una hermosa mañana, se anunció el Gran Festival del Valle en la cima de la montaña al mediodía. "
+                f"A {n_es} se le otorgó el mayor honor: ¡llevar el estandarte dorado para abrir la fiesta! "
+                f"Sus amigos le rogaron que saliera temprano, pero se quedó jugando en el río y durmiendo la siesta. "
+                f"Al ver el sol en lo alto, entró en pánico y corrió desesperado por un atajo peligroso. "
+                f"De pronto, una tormenta inundó el camino y un árbol milenario se desplomó frente a él. "
+                f"Al resbalar en el lodo, {n_es} chocó de cabeza contra un espeso matorral de espinas afiladas y quedó atrapado. "
+                f"Pero, ¿logró {n_es} liberarse de las espinas y llegar a tiempo a la cima? ¡Descubre qué pasó en la historia completa — enlace en la descripción!"
+            ),
+            "long_script": (
                 f"Érase una vez, en lo profundo de la dorada sabana, vivía {n_es}. "
                 f"Todos en el valle querían a {n_es} por ser alegre, curioso y lleno de energía. "
                 f"Sin embargo, tenía un gran problema: {flaws['es']}. "
@@ -581,13 +652,36 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"{n_es} colocó la bandera entre los aplausos de todos y aprendió que el orden y la calma valen más que la prisa. "
                 f"Recuerda siempre: {morals['es']}"
             ),
-            "description": f"🐾 ¡Disfruta de la tierna aventura en 3D de {n_es}!\n\nSuscríbete a @SpanishMindNestTales!\n\n#MindNestTales #CuentosInfantiles #HistoriasConMoraleja #Shorts",
+            "script": (
+                f"En lo profundo de la dorada sabana vivía el pequeño {n_es}. "
+                f"Todos lo querían por su alegría, pero tenía un defecto: {flaws['es']}. "
+                f"Elegido para llevar la bandera al festival del mediodía en la cima, se quedó jugando. "
+                f"Al correr por un atajo con tormenta, resbaló en el lodo y quedó atrapado en espinas afiladas. "
+                f"Pero, ¿logró {n_es} liberarse de las espinas y llegar a tiempo a la cima? ¡Descubre qué pasó en la historia completa — enlace en la descripción!"
+            ),
+            "description": f"🐾 ¡Disfruta de la emocionante aventura de {n_es}!\n\n🎬 ¡Mira el episodio completo de 10 minutos con la moraleja final aquí!\n\n¡Suscríbete a @SpanishMindNestTales!\n\n#CuentosInfantiles #HistoriasConMoraleja #Animacion3D #Shorts",
             "tags": ["mindnest tales", "historias para niños", "cuentos morales", "animacion 3d", "shorts"]
         },
         "pt": {
             "title": f"A Grande Corrida de {n_pt}! 🐾⏰ #Shorts",
+            "short_title": f"A Grande Corrida de {n_pt}! 🐾⏰ #Shorts",
+            "long_title": f"{n_pt} e a Grande Lição 🐾 (Especial 10 Min)",
             "moral": morals["pt"],
-            "script": (
+            "short_cta_voice": f"Mas será que {n_pt} conseguiu se soltar dos espinhos e chegar a tempo ao festival? Descubra o final na história completa — link na descrição!",
+            "short_cta_text": "O que acontece a seguir? 👉 História completa no link",
+            "short_script": (
+                f"No coração de uma linda savana ensolarada vivia o pequeno {n_pt}. "
+                f"Todos os animais admiravam sua energia, mas havia um hábito perigoso: {flaws['pt']}. "
+                f"Ele sempre achava que sua velocidade resolveria qualquer atraso no último minuto. "
+                f"Certo dia, foi convocado o Grande Festival da Floresta no topo da montanha ao meio-dia. "
+                f"{n_pt} recebeu a nobre missão de levar o estandarte dourado para abrir a celebração! "
+                f"Os amigos avisaram para sair cedo, mas ele se distraiu brincando e tirando uma longa soneca. "
+                f"Ao olhar para o sol no céu, percebeu apavorado que faltavam poucos minutos! "
+                f"Correndo por um atalho perigoso, uma tempestade repentina fez a terra desmoronar e uma enorme árvore bloqueou a trilha. "
+                f"Ao deslizar na lama, Chico caiu direto em uma cerca de espinhos pontiagudos e ficou completamente preso. "
+                f"Mas será que {n_pt} conseguiu se soltar dos espinhos e chegar a tempo ao festival? Descubra o final na história completa — link na descrição!"
+            ),
+            "long_script": (
                 f"Era uma vez, no coração de uma savana ensolarada, vivia {n_pt}. "
                 f"Todos os animais admiravam a alegria contagiante de {n_pt}. "
                 f"Mas havia um hábito perigoso: {flaws['pt']}. "
@@ -605,13 +699,36 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"{n_pt} aprendeu a lição mais preciosa de sua vida. "
                 f"Lembre-se sempre: {morals['pt']}"
             ),
-            "description": f"🐾 Acompanhe a emocionante história animada em 3D de {n_pt}!\n\nInscreva-se em @PortugueseMindNestTales!\n\n#MindNestTales #HistoriasInfantis #Desenho3D #Shorts",
+            "script": (
+                f"No coração de uma savana ensolarada vivia o pequeno {n_pt}. "
+                f"Todos admiravam sua energia, mas havia um hábito: {flaws['pt']}. "
+                f"Encarregado de levar o estandarte ao festival ao meio-dia, atrasou-se brincando. "
+                f"Em um atalho perigoso durante um temporal, deslizou na lama e ficou preso em espinhos afiados! "
+                f"Mas será que {n_pt} conseguiu se soltar dos espinhos e chegar a tempo ao festival? Descubra o final na história completa — link na descrição!"
+            ),
+            "description": f"🐾 Acompanhe a emocionante história animada de {n_pt}!\n\n🎬 Assista ao episódio completo de 10 minutos com o final e a lição de vida!\n\nInscreva-se em @PortugueseMindNestTales!\n\n#MindNestTales #HistoriasInfantis #Desenho3D #Shorts",
             "tags": ["mindnest tales", "historias infantis", "desenho animado", "licao de vida", "shorts"]
         },
         "fr": {
             "title": f"La Grande Course de {n_fr} ! 🐾⏰ #Shorts",
+            "short_title": f"La Grande Course de {n_fr} ! 🐾⏰ #Shorts",
+            "long_title": f"{n_fr} et la Grande Leçon 🐾 (Épisode Complet 10 Min)",
             "moral": morals["fr"],
-            "script": (
+            "short_cta_voice": f"Mais {n_fr} a-t-il réussi à se libérer des ronces pour sauver le festival à temps ? Découvrez la suite dans l'épisode complet — lien en description !",
+            "short_cta_text": "Que se passe-t-il ensuite ? 👉 Histoire complète en description",
+            "short_script": (
+                f"Dans une vallée baignée d'une chaude lumière vivait le jeune {n_fr}. "
+                f"Tout le monde l'adorait pour sa vivacité, mais il avait un défaut fatal : {flaws['fr']}. "
+                f"Il pensait pouvoir toujours rattraper le temps perdu au tout dernier instant ! "
+                f"Un matin, le Grand Festival fut proclamé au sommet de la colline à midi pile. "
+                f"{n_fr} reçut le plus bel honneur : porter l'étendard festif pour inaugurer la fête ! "
+                f"Ses amis lui dirent de partir tôt, mais il préféra s'amuser et s'assoupir à l'ombre. "
+                f"Quand le soleil fut au zénith, la panique le saisit et il fila sur un sentier escarpé. "
+                f"Soudain, un orage éclata et un immense baobab s'effondra sur la piste ! "
+                f"Glissant dans la boue, {n_fr} chuta dans un buisson de ronces épineuses, pris au piège alors que l'heure tournait ! "
+                f"Mais {n_fr} a-t-il réussi à se libérer des ronces pour sauver le festival à temps ? Découvrez la suite dans l'épisode complet — lien en description !"
+            ),
+            "long_script": (
                 f"Il était une fois, dans une vallée baignée d'une chaude lumière dorée, vivait {n_fr}. "
                 f"Tout le monde aimait son énergie pétillante et son enthousiasme communicatif. "
                 f"Pourtant, un lourd défaut lui jouait souvent des tours : {flaws['fr']}. "
@@ -629,13 +746,37 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"{n_fr} comprit que le respect du temps est la plus belle des victoires. "
                 f"Retiens bien : {morals['fr']}"
             ),
-            "description": f"🐾 Découvrez la magnifique aventure animée en 3D de {n_fr} !\n\nAbonnez-vous à @FrenchMindNestTales !\n\n#MindNestTales #ContesPourEnfants #Animation3D #Shorts",
+            "script": (
+                f"Dans une vallée baignée de lumière vivait {n_fr}. "
+                f"Tout le monde l'aimait, mais il avait un défaut : {flaws['fr']}. "
+                f"Chargé de porter l'étendard au festival de midi, il préféra s'amuser et s'assoupir. "
+                f"Pris de panique, il courut par un raccourci où un baobab venait de s'effondrer. "
+                f"Glissant dans la boue, il tomba dans un buisson d'épines ! "
+                f"Mais {n_fr} a-t-il réussi à se libérer des ronces pour sauver le festival à temps ? Découvrez la suite dans l'épisode complet — lien en description !"
+            ),
+            "description": f"🐾 Découvrez la magnifique aventure animée de {n_fr} !\n\n🎬 Regardez l'épisode complet de 10 minutes avec toute l'histoire et la morale ici !\n\nAbonnez-vous à @FrenchMindNestTales !\n\n#MindNestTales #ContesPourEnfants #Animation3D #Shorts",
             "tags": ["mindnest tales", "histoire pour enfants", "conte moral", "animation 3d", "shorts"]
         },
         "de": {
             "title": f"{n_de} und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
+            "short_title": f"{n_de} und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
+            "long_title": f"{n_de} und die Große Lektion 🐾 (Komplette 10-Min Episode)",
             "moral": morals["de"],
-            "script": (
+            "short_cta_voice": f"Aber konnte sich {n_de} aus den Dornen befreien und rechtzeitig den Gipfel erreichen? Schau dir das ganze Abenteuer an — Link in der Beschreibung!",
+            "short_cta_text": "Wie geht es weiter? 👉 Ganze Geschichte im Link",
+            "short_script": (
+                f"Tief im sonnigen Herzen der Savanne lebte der kleine {n_de}. "
+                f"Alle Tiere liebten seine Fröhlichkeit, doch er hatte eine fatale Schwäche: {flaws['de']}. "
+                f"Er glaubte leichtsinnig, seine Schnelligkeit könne jede Verspätung in letzter Sekunde wettmachen. "
+                f"An einem strahlenden Morgen wurde das Große Jahresfest auf dem Berggipfel für Punkt zwölf Uhr mittags verkündet. "
+                f"{n_de} erhielt die große Ehre, die goldene Festfahne zum Gipfel zu bringen! "
+                f"Alle mahnten ihn zur Eile, doch er trödelte am Fluss und hielt ein gemütliches Nickerchen. "
+                f"Als er zur Mittagssonne aufblickte, packte ihn das Entsetzen: Es war fast zwölf Uhr! "
+                f"In Panik raste er über eine gefährliche Abkürzung. Ein Platzregen weichte den Boden auf, und ein riesiger Baum stürzte quer über den Pfad! "
+                f"{n_de} rutschte im Schlamm aus und verfing sich hilflos in einem dornigen Dickicht! "
+                f"Aber konnte sich {n_de} aus den Dornen befreien und rechtzeitig den Gipfel erreichen? Schau dir das ganze Abenteuer an — Link in der Beschreibung!"
+            ),
+            "long_script": (
                 f"Es war einmal tief im sonnenverwöhnten Herzen der afrikanischen Savanne, da lebte {n_de}. "
                 f"Alle Tiere im Tal bewunderten {n_de} für den unbändigen Lebensmut und das fröhliche Wesen. "
                 f"Doch eine verhängnisvolle Angewohnheit brachte ständig Unruhe: {flaws['de']}. "
@@ -653,13 +794,36 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"Aus {n_de} wurde ein Tier, das Schnelligkeit stets mit Klugheit verband. "
                 f"Denke stets daran: {morals['de']}"
             ),
-            "description": f"🐾 Sieh dir das herzerwärmende 3D-Animationsabenteuer von {n_de} an!\n\nAbonniere @GermanMindNestTales!\n\n#MindNestTales #Kindergeschichten #MoralGeschichten #Shorts",
+            "script": (
+                f"Tief in der Savanne lebte der fröhliche {n_de}. "
+                f"Doch er hatte eine Schwäche: {flaws['de']}. "
+                f"Als er die Festfahne zum Berggipfel bringen sollte, trödelte er bis zur letzten Minute! "
+                f"Auf einer gefährlichen Abkürzung stürzte ein Baum um, und {n_de} fiel mitten in dornige Ranken! "
+                f"Aber konnte sich {n_de} aus den Dornen befreien und rechtzeitig den Gipfel erreichen? Schau dir das ganze Abenteuer an — Link in der Beschreibung!"
+            ),
+            "description": f"🐾 Sieh dir das herzerwärmende 3D-Animationsabenteuer von {n_de} an!\n\n🎬 Sieh dir hier die komplette 10-Minuten-Folge mit dem vollen Ende an!\n\nAbonniere @GermanMindNestTales!\n\n#MindNestTales #Kindergeschichten #MoralGeschichten #Shorts",
             "tags": ["mindnest tales", "kindergeschichten", "moralische geschichte", "3d animation", "shorts"]
         },
         "ar": {
             "title": f"سباق {n_ar} الحاسم مع الوقت! 🐾⏰ #Shorts",
+            "short_title": f"سباق {n_ar} الحاسم مع الوقت! 🐾⏰ #Shorts",
+            "long_title": f"{n_ar} والدرس الكبير 🐾 (الحلقة الكاملة 10 دقائق)",
             "moral": morals["ar"],
-            "script": (
+            "short_cta_voice": f"ولكن هل استطاع {n_ar} النجاة من الأشواك والوصول إلى القمة في الوقت المناسب؟ شاهد القصة الكاملة الآن — الرابط في صندوق الوصف!",
+            "short_cta_text": "ماذا حدث بعد ذلك؟ 👉 القصة الكاملة في الرابط بالأسفل",
+            "short_script": (
+                f"في أعماق السافانا المشمسة الجميلة، عاش صديقنا {n_ar}. "
+                f"كان الجميع يحبون حيويته، لكنه كان يعاني من طبع صعب: {flaws['ar']}. "
+                f"كان يظن دائماً أن سرعته تعوض كل تأخير دون تخطيط مسبق! "
+                f"وفي صباح مميز، أُعلن عن مهرجان الوادي الكبير فوق قمة التل عند الظهيرة بالضبط. "
+                f"أُسندت إلى {n_ar} المهمة الأهم: حمل راية الاحتفال لافتتاح المهرجان! "
+                f"نصحه الأصدقاء بالانطلاق مبكراً، لكنه انشغل باللعب والكسل تحت ظلال الأشجار. "
+                f"وفجأة انتبه إلى أن الظهيرة اقتربت، فركض مذعوراً في طريق مختصر وعر. "
+                f"لكن عاصفة مفاجئة جعلت النهر يفيض وسقطت شجرة ضخمة أغلقت الممر! "
+                f"انزلقت قدماه في الوحل وسقط في شجيرات شائكة حاصرته تماماً والوقت ينفد! "
+                f"ولكن هل استطاع {n_ar} النجاة من الأشواك والوصول إلى القمة في الوقت المناسب؟ شاهد القصة الكاملة الآن — الرابط في صندوق الوصف!"
+            ),
+            "long_script": (
                 f"في قديم الزمان، في أعماق السافانا المشمسة الجميلة، عاش صديقنا {n_ar}. "
                 f"كان الجميع في الوادي يحبون نشاطه ومرحه الدائم، لكنه كان يعاني من طبع صعب: {flaws['ar']}. "
                 f"كان يظن دائماً أن سرعته تعوض كل تأخير وتغنيه عن التخطيط المسبق. "
@@ -676,13 +840,35 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"تعلم {n_ar} درساً لن ينساه أبداً في احترام الوقت والصبر. "
                 f"تذكروا دائماً: {morals['ar']}"
             ),
-            "description": f"🐾 شاهد المغامرة الكرتونية الممتعة ثلاثية الأبعاد مع {n_ar}!\n\nاشترك في @ArabicMindNestTales!\n\n#MindNestTales #قصص_أطفال #حكايات_معبرة #رسوم_متحركة #Shorts",
+            "script": (
+                f"في أعماق السافانا الجميلة عاش {n_ar}. "
+                f"كان الجميع يحبونه لكنه كان يعاني من: {flaws['ar']}. "
+                f"كُلف بحمل راية المهرجان عند الظهيرة، لكنه انشغل باللعب حتى اللحظة الأخيرة. "
+                f"وأثناء ركضه في طريق وعر هبت عاصفة وسقطت شجرة، فانزلق في شجيرات شائكة حاصرته تماماً! "
+                f"ولكن هل استطاع {n_ar} النجاة من الأشواك والوصول إلى القمة في الوقت المناسب؟ شاهد القصة الكاملة الآن — الرابط في صندوق الوصف!"
+            ),
+            "description": f"🐾 شاهد المغامرة الكرتونية الممتعة ثلاثية الأبعاد مع {n_ar}!\n\n🎬 شاهد الحلقة الكاملة 10 دقائق مع نهاية القصة والحكمة الكاملة هنا!\n\nاشترك في @ArabicMindNestTales!\n\n#MindNestTales #قصص_أطفال #حكايات_معبرة #رسوم_متحركة #Shorts",
             "tags": ["قصص أطفال", "حكايات معبرة", "كرتون ثلاثي الأبعاد", "دروس وعبر", "shorts"]
         },
         "ja": {
             "title": f"{n_ja}と時間にまつわる最高の教訓！🐾⏰ #Shorts",
+            "short_title": f"{n_ja}と時間にまつわる最高の教訓！🐾⏰ #Shorts",
+            "long_title": f"{n_ja}と大切な約束 🐾 (完全版10分ストーリー)",
             "moral": morals["ja"],
-            "script": (
+            "short_cta_voice": f"果たして{n_ja}はトゲの茂みから抜け出し、お祭りに間に合うのでしょうか？続きは概要欄のリンクから完全版を見てね！",
+            "short_cta_text": "続きはどうなる？ 👉 完全版は概要欄のリンクから！",
+            "short_script": (
+                f"黄金色に輝くサバンナに、元気いっぱいの{n_ja}が暮らしていました。"
+                f"谷の動物たちはみんな{n_ja}が大好きでしたが、たった一つ困った癖がありました。それは、{flaws['ja']}！"
+                f"「ぼくは足が速いからギリギリでも大丈夫！」と信じ込んでいたのです。"
+                f"ある晴れた日、丘の頂上で正午から大お祭りが開かれることになりました。"
+                f"{n_ja}は、始まりを告げる大切な黄金の旗を届ける大役を任されました。"
+                f"仲間たちから「早く出発してね」と言われていたのに、川で遊んで昼寝をしてしまいました。"
+                f"ハッと空を見るともうすぐ正午！慌てて近道へ飛び出しましたが、朝の嵐で大木が倒れ、道はぬかるみの泥だらけ！"
+                f"足を滑らせた{n_ja}は、トゲのある茂みに飛び込んでしまい、身動きが取れなくなってしまいました！"
+                f"果たして{n_ja}はトゲの茂みから抜け出し、お祭りに間に合うのでしょうか？続きは概要欄のリンクから完全版を見てね！"
+            ),
+            "long_script": (
                 f"むかしむかし、太陽の光が黄金に輝く美しいサバンナに、{n_ja}が暮らしていました。"
                 f"谷の動物たちはみんな、元気で明るい{n_ja}のことが大好きでした。"
                 f"しかし、{n_ja}には困った癖がありました。それは、{flaws['ja']}ということでした。"
@@ -697,13 +883,34 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"おじいさんは優しくトゲをほどき、安全な尾根道へ導いてくれました。二人は落ち着いて一歩一歩進み、ちょうど十二時の鐘とともに頂上に到着！"
                 f"{n_ja}は堂々と旗を立て、みんなから大きな拍手を受けました。その日から、時間を守る本当の強さを胸に刻んだのです。"
             ),
-            "description": f"🐾 3Dアニメで描く{n_ja}の感動の3分間ショートストーリー！\n\nチャンネル登録はこちら：@JapaneseMindNestTales！\n\n#MindNestTales #アニメ #子ども向け #絵本 #Shorts",
+            "script": (
+                f"サバンナに暮らす元気な{n_ja}には、{flaws['ja']}という困った癖がありました。"
+                f"大お祭りの旗を届ける大切な役目を任されたのに、ギリギリまで昼寝をしてしまいました。"
+                f"慌てて近道を走ると、嵐で倒れた大木に阻まれ、トゲの茂みに突っ込んで抜け出せなくなってしまいました！"
+                f"果たして{n_ja}はトゲの茂みから抜け出し、お祭りに間に合うのでしょうか？続きは概要欄のリンクから完全版を見てね！"
+            ),
+            "description": f"🐾 3Dアニメで描く{n_ja}のドキドキ ショートアニメ！\n\n🎬 10分間の完全版エピソードと感動の結末はこちらから！\n\nチャンネル登録はこちら：@JapaneseMindNestTales！\n\n#MindNestTales #アニメ #子ども向け #絵本 #Shorts",
             "tags": ["子ども向け", "アニメ", "絵本", "教訓", "動物アニメ", "shorts"]
         },
         "ko": {
             "title": f"{n_ko}의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
+            "short_title": f"{n_ko}의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
+            "long_title": f"{n_ko}와 시간의 소중함 🐾 (10분 풀버전)",
             "moral": morals["ko"],
-            "script": (
+            "short_cta_voice": f"하지만 과연 {n_ko}는 날카로운 가시덤불에서 빠져나와 제시간에 정상에 도착할 수 있을까요? 지금 바로 설명란 링크에서 전체 이야기를 감상해보세요!",
+            "short_cta_text": "다음 이야기는? 👉 설명란 링크에서 전체 감상!",
+            "short_script": (
+                f"황금빛 햇살이 쏟아지는 아름다운 초원에 귀여운 {n_ko}가 살고 있었어요. "
+                f"친구들은 모두 {n_ko}를 좋아했지만, 한 가지 치명적인 결점이 있었지요. 바로 {flaws['ko']}! "
+                f"발이 빠르다는 자신감만 믿고 무엇이든 마지막 순간까지 미루는 버릇이었어요. "
+                f"어느 화창한 날, 언덕 정상에서 정오에 열리는 위대한 축제가 발표되었어요. "
+                f"{n_ko}는 축제의 시작을 알리는 영예로운 황금 깃발을 전달하는 임무를 맡았답니다. "
+                f"친구들이 일찍 출발하라고 당부했지만, {n_ko}는 강가에서 물장구를 치고 낮잠을 잤어요. "
+                f"하늘 높이 솟은 해를 보고 깜짝 놀란 {n_ko}는 허둥지둥 험한 지름길로 내달렸어요. "
+                f"하지만 갑작스러운 폭우로 거대한 나무가 길을 막았고, 진흙탕에 미끄러져 날카로운 가시덤불 속에 갇히고 말았어요! "
+                f"하지만 과연 {n_ko}는 날카로운 가시덤불에서 빠져나와 제시간에 정상에 도착할 수 있을까요? 지금 바로 설명란 링크에서 전체 이야기를 감상해보세요!"
+            ),
+            "long_script": (
                 f"옛날 옛적, 따스한 햇살이 황금빛으로 물드는 드넓은 초원에 귀여운 {n_ko}가 살고 있었어요. "
                 f"초원의 동물 친구들은 활기차고 다정한 {n_ko}를 무척 아끼고 사랑했답니다. "
                 f"하지만 {n_ko}에게는 한 가지 큰 결점이 있었는데, 바로 {flaws['ko']}였어요. "
@@ -719,13 +926,35 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"할아버지는 조심스럽게 가시를 풀어주셨고, 두 친구는 안전한 능선길을 함께 걸어올라 정각에 정상에 도착했어요! "
                 f"황금 깃발이 휘날리자 모두가 환호했고, {n_ko}는 서두르지 않는 참된 지혜를 배웠답니다."
             ),
-            "description": f"🐾 {n_ko}의 따뜻하고 감동적인 3D 애니메이션 동화 이야기!\n\n구독하기 @KoreanMindNestTales!\n\n#MindNestTales #어린이이야기 #동화 #3D애니메이션 #Shorts",
+            "script": (
+                f"초원에 사는 {n_ko}에게는 {flaws['ko']}라는 결점이 있었어요. "
+                f"축제 깃발을 전달하는 임무를 맡고도 낮잠을 자다가 뒤늦게 지름길로 내달렸지요. "
+                f"폭우로 쓰러진 나무에 걸려 날카로운 가시덤불 속에 갇히고 말았어요! "
+                f"하지만 과연 {n_ko}는 날카로운 가시덤불에서 빠져나와 제시간에 정상에 도착할 수 있을까요? 지금 바로 설명란 링크에서 전체 이야기를 감상해보세요!"
+            ),
+            "description": f"🐾 {n_ko}의 흥미진진한 3D 애니메이션 쇼츠 이야기!\n\n🎬 지혜로운 거북이 할아버지와 함께하는 10분 풀버전 영상은 여기서 감상하세요!\n\n구독하기 @KoreanMindNestTales!\n\n#MindNestTales #어린이이야기 #동화 #3D애니메이션 #Shorts",
             "tags": ["어린이이야기", "교훈동화", "3d애니메이션", "동물이야기", "shorts"]
         },
         "vi": {
             "title": f"Cuộc Đua Kịp Giờ Của {n_vi}! 🐾⏰ #Shorts",
+            "short_title": f"Cuộc Đua Kịp Giờ Của {n_vi}! 🐾⏰ #Shorts",
+            "long_title": f"{n_vi} và Bài Học Về Thời Gian 🐾 (Bản Đầy Đủ 10 Phút)",
             "moral": morals["vi"],
-            "script": (
+            "short_cta_voice": f"Liệu {n_vi} có kịp thoát khỏi bụi gai để mang cờ tới khai mạc lễ hội đúng giờ? Xem ngay trọn vẹn câu chuyện qua đường link dưới phần mô tả nhé!",
+            "short_cta_text": "Chuyện gì xảy ra tiếp theo? 👉 Xem trọn vẹn tại mô tả nhé!",
+            "short_script": (
+                f"Giữa đồng cỏ xavan rực rỡ ánh nắng có một chú {species} đáng yêu tên là {n_vi}. "
+                f"Muông thú đều yêu quý {n_vi}, nhưng cậu có một khuyết điểm lớn: {flaws['vi']}. "
+                f"Cậu luôn tự tin mình chạy nhanh nên cứ chần chừ đến phút chót mới chịu bắt đầu! "
+                f"Một buổi sáng, Lễ Hội Thung Lũng được công bố trên đỉnh núi vào đúng mười hai giờ trưa. "
+                f"{n_vi} được trao vinh dự cao quý nhất: mang lá cờ lễ hội lên khai mạc ngày hội! "
+                f"Các bạn nhắc cậu đi sớm, nhưng cậu lại mải mê đuổi bướm và ngủ quên dưới bóng râm. "
+                f"Giật mình nhìn lên, mặt trời đã sắp đứng bóng! Cậu hốt hoảng lao vào con đường tắt nguy hiểm. "
+                f"Cơn mưa lớn bất ngờ làm đổ một thân cây cổ thụ chắn ngang đường. "
+                f"Trượt chân trên bùn lầy, {n_vi} ngã nhào vào bụi gai nhọn và mắc kẹt hoàn toàn khi giờ G đã điểm! "
+                f"Liệu {n_vi} có kịp thoát khỏi bụi gai để mang cờ tới khai mạc lễ hội đúng giờ? Xem ngay trọn vẹn câu chuyện qua đường link dưới phần mô tả nhé!"
+            ),
+            "long_script": (
                 f"Ngày xửa ngày xưa, giữa đồng cỏ xavan ngập tràn ánh nắng vàng rực rỡ, có một chú {species} dễ thương tên là {n_vi}. "
                 f"Tất cả muông thú trong thung lũng đều yêu quý {n_vi} vì sự hoạt bát, vui vẻ và năng động. "
                 f"Tuy nhiên, cậu lại có một khuyết điểm rất lớn: {flaws['vi']}. "
@@ -737,17 +966,39 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"Cơn mưa rào ban sáng đã làm con suối dâng cao và một thân cây cổ thụ ngã chắn ngang đường. "
                 f"Vì quá vội vàng trượt chân trên bùn lầy, {n_vi} ngã nhào vào bụi gai rậm rạp và bị mắc kẹt hoàn toàn. "
                 f"Đúng lúc tuyệt vọng nhất, cụ rùa thông thái đeo kính tròn khoan thai bước tới với cây gậy gỗ. "
-                f"Cụ ôn tồn bảo: Này cháu nhỏ, chạy nhanh đến đâu có ích gì nếu cháu đến nơi khi ngày vui đã tàn? Sự hấp tấp che mờ mắt, nhưng lòng kiên nhẫn mới mở ra đường đi đúng đắn. "
+                f"Cụ ôn tồn bảo: Này cháu nhỏ, chạy nhanh đến đâu có ích gì nếu cháu đến nơi khi ngày vui đã tàn? Sự hấp tấp che mờ mắt, लेकिन lòng kiên nhẫn mới mở ra đường đi đúng đắn. "
                 f"Cụ rùa nhẹ nhàng gỡ từng cành gai giải cứu {n_vi}, rồi cùng nhau bước đi vững chãi trên con đường an toàn. "
                 f"Họ lên tới đỉnh đồi đúng vào tiếng reo hò của muôn loài, mang lại bài học vô giá về sự đúng giờ và điềm tĩnh."
             ),
-            "description": f"🐾 Xem trọn vẹn câu chuyện hoạt hình 3D đầy xúc động của {n_vi}!\n\nĐăng ký kênh @VietnameseMindNestTales!\n\n#MindNestTales #TruyenThieuNhi #HoatHinh3D #BaiHocCuocSong #Shorts",
+            "script": (
+                f"Chú {species} {n_vi} luôn có tật xấu: {flaws['vi']}. "
+                f"Được giao mang cờ lên lễ hội trưa, cậu mải chơi ngủ quên đến sát giờ mới cuống cuồng chạy tắt. "
+                f"Gặp mưa to cây đổ, {n_vi} ngã nhào vào bụi gai nhọn và mắc kẹt hoàn toàn! "
+                f"Liệu {n_vi} có kịp thoát khỏi bụi gai để mang cờ tới khai mạc lễ hội đúng giờ? Xem ngay trọn vẹn câu chuyện qua đường link dưới phần mô tả nhé!"
+            ),
+            "description": f"🐾 Xem trọn vẹn câu chuyện hoạt hình 3D của {n_vi}!\n\n🎬 Đón xem tập phim đầy đủ 10 phút với bài học ý nghĩa tại đây!\n\nĐăng ký kênh @VietnameseMindNestTales!\n\n#MindNestTales #TruyenThieuNhi #HoatHinh3D #BaiHocCuocSong #Shorts",
             "tags": ["truyện thiếu nhi", "hoạt hình 3d", "bài học ý nghĩa", "câu chuyện động vật", "shorts"]
         },
         "fil": {
             "title": f"Ang Malaking Karera Laban sa Oras ni {n_fil}! 🐾⏰ #Shorts",
+            "short_title": f"Ang Malaking Karera Laban sa Oras ni {n_fil}! 🐾⏰ #Shorts",
+            "long_title": f"Si {n_fil} at ang Mahalagang Aral 🐾 (Buong 10 Min Kwento)",
             "moral": morals["fil"],
-            "script": (
+            "short_cta_voice": f"Ngunit makakawala kaya si {n_fil} sa matitinik na baging upang marating ang tuktok sa takdang oras? Panoorin ang kapana-panabik na buong kwento — link sa description!",
+            "short_cta_text": "Ano ang susunod na mangyayari? 👉 Panoorin ang buong kwento sa description!",
+            "short_script": (
+                f"Sa gitna ng ginintuang kapatagan, naninirahan ang masayahing si {n_fil}. "
+                f"Minamahal siya ng lahat ng hayop, ngunit may isa siyang malaking kapintasan: {flaws['fil']}. "
+                f"Inakala niyang sapat na ang kanyang bilis upang ipagpaliban ang lahat hanggang sa huling minuto! "
+                f"Isang umaga, inanunsyo ang Dakilang Pista sa tuktok ng bundok ganap na alas-dose ng tanghali. "
+                f"Ipinagkaloob kay {n_fil} ang pinakamalaking karangalan: ang pagdadala ng bandila ng pista! "
+                f"Pinaalalahanan siya ng mga kaibigan na magsimula nang maaga, ngunit naglaro at natulog lamang siya sa lilim. "
+                f"Nang mapansin niyang tanghali na, natarantang tumakbo si {n_fil} sa mapanganib na shortcut. "
+                f"Biglang bumuhos ang malakas na ulan at humarang ang isang malaking punong natumba! "
+                f"Dumulas siya sa putik at sumabit sa makakapal na tinik, huling-huli sa oras! "
+                f"Ngunit makakawala kaya si {n_fil} sa matitinik na baging upang marating ang tuktok sa takdang oras? Panoorin ang kapana-panabik na buong kwento — link sa description!"
+            ),
+            "long_script": (
                 f"Noong unang panahon, sa isang magandang kapatagan na puno ng ginintuang araw, naninirahan si {n_fil}. "
                 f"Lahat ng mga hayop ay humahanga sa kanyang sigla, saya, at kabaitan sa kapwa. "
                 f"Ngunit may isa siyang malaking kapintasan: {flaws['fil']}. "
@@ -762,14 +1013,22 @@ def generate_fallback_translations(hero_name, species, base_title, moral_english
                 f"Mabining sinabi ng matanda: Kaibigan, anong halaga ng bilis kung darating ka kung kailan tapos na ang lahat? Ang pagmamadali ay nagdudulot ng kapahamakan, ngunit ang hinahon ang nagtuturo ng tamang landas. "
                 f"Tinulungan siyang tanggalin ang mga tinik at magkasama silang umakyat sa ligtas na daan. Nakarating sila sa tamang oras at buong pusong nagdiwang ang lahat."
             ),
-            "description": f"🐾 Panoorin ang masayang 3D animated kwento ni {n_fil}!\n\nMag-subscribe sa @FilipinoMindNestTales!\n\n#MindNestTales #KwentongPambata #AralSaBuhay #3DAnimation #Shorts",
+            "script": (
+                f"Si {n_fil} ay masipag ngunit may kapintasan: {flaws['fil']}. "
+                f"Dapat niyang dalhin ang bandila sa pista ng alas-dose, ngunit naglaro siya hanggang sa huling minuto. "
+                f"Dumaan sa mapanganib na shortcut sa ulan, dumulas sa putik at nasabit sa matatalim na tinik! "
+                f"Ngunit makakawala kaya si {n_fil} sa matitinik na baging upang marating ang tuktok sa takdang oras? Panoorin ang kapana-panabik na buong kwento — link sa description!"
+            ),
+            "description": f"🐾 Panoorin ang masayang 3D animated kwento ni {n_fil}!\n\n🎬 Panoorin ang buong 10 minutong episode na may kumpletong aral dito!\n\nMag-subscribe sa @FilipinoMindNestTales!\n\n#MindNestTales #KwentongPambata #AralSaBuhay #3DAnimation #Shorts",
             "tags": ["kwentong pambata", "aral sa buhay", "animation tagalog", "hayop kwento", "shorts"]
         }
     }
 
 def generate_dynamic_story(story_number, use_ai=True):
     """
-    Generates a complete new story definition with 16 clips (180s runtime) and 11-language dubbing.
+    Generates a complete new story definition with 16 clips and 11-language dual-script dubbing:
+    1. short_script: 60-90s Shorts trailer funnel.
+    2. long_script: full 10-minute 4-act story resolution.
     - Story 1 to 51 match STORIES_MASTER directly.
     - Story 52+ dynamically selects from ANIMALS.
     - All 11 languages are 100% native with ZERO mixed English words.
@@ -798,7 +1057,9 @@ def generate_dynamic_story(story_number, use_ai=True):
         "base_title": base_title,
         "moral": moral,
         "playlist": playlist,
-        "target_duration_seconds": 175,
+        "target_duration_seconds": 75,
+        "short_target_duration_seconds": 75,
+        "long_target_duration_seconds": 600,
         "characters": {
             "hero": f"3D Pixar-style animated {species} named {hero_first} with expressive round eyes and cute cartoon proportions",
             "mentor": "3D Pixar-style animated wise tortoise elder with round spectacles and friendly grandfather smile"
