@@ -50,42 +50,66 @@ def get_next_optimal_publish_time():
     Returns optimal ISO 8601 UTC publish time:
     - Sundays at 08:30 AM IST (03:00 UTC) -> Historic Ramayana Family Slot
     - Tuesdays at 18:30 PM IST (13:00 UTC) -> Auspicious Hanumanji / Evening Slot
+    Ensures scheduling occurs strictly AFTER the most recently scheduled episode in state.json.
     """
-    now = datetime.utcnow()
-    # Schedule for upcoming Sunday or Tuesday
-    for days_ahead in range(1, 8):
-        candidate = now + timedelta(days=days_ahead)
+    base_time = datetime.utcnow()
+    try:
+        if os.path.exists(state_file):
+            with open(state_file, "r", encoding="utf-8") as f:
+                sdata = json.load(f)
+            history = sdata.get("history", [])
+            scheduled_times = []
+            for h in history:
+                pat = h.get("publish_at")
+                if pat and pat != "IMMEDIATE":
+                    try:
+                        scheduled_times.append(datetime.strptime(pat, "%Y-%m-%dT%H:%M:%SZ"))
+                    except Exception:
+                        pass
+            if scheduled_times:
+                latest = max(scheduled_times)
+                if latest > base_time:
+                    base_time = latest
+    except Exception as e:
+        print(f"[WARN] Error reading state history for scheduling: {e}")
+
+    # Search for next Sunday or Tuesday after base_time
+    for days_ahead in range(1, 14):
+        candidate = base_time + timedelta(days=days_ahead)
         weekday = candidate.weekday() # 1 = Tuesday, 6 = Sunday
-        if weekday == 6: # Sunday
+        if weekday == 6: # Sunday 08:30 AM IST (03:00 UTC)
             target_utc = candidate.replace(hour=3, minute=0, second=0, microsecond=0)
-            if target_utc > now:
+            if target_utc > base_time:
                 return target_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
-        elif weekday == 1: # Tuesday
+        elif weekday == 1: # Tuesday 18:30 PM IST (13:00 UTC)
             target_utc = candidate.replace(hour=13, minute=0, second=0, microsecond=0)
-            if target_utc > now:
+            if target_utc > base_time:
                 return target_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
-    
-    # Fallback to tomorrow 13:00 UTC
-    return (now + timedelta(days=1)).replace(hour=13, minute=0, second=0, microsecond=0).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    return (base_time + timedelta(days=2)).replace(hour=13, minute=0, second=0, microsecond=0).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 from googleapiclient.http import MediaFileUpload
 
-def build_episode_description(episode_num, scenes, scene_durations):
+def build_episode_description(episode_num, scenes, scene_durations, ep_data=None):
     """Dynamically builds high-retention 22-minute description with exact chapter timestamps."""
+    hook = ep_data.get("description_hook", "") if ep_data else ""
+    kanda = ep_data.get("kanda", "बालकाण्ड (Bala Kanda)") if ep_data else "बालकाण्ड"
+    title_hindi = ep_data.get("title_hindi", f"एपिसोड {episode_num:02d}") if ep_data else ""
+
     desc_lines = [
-        "क्या रामायण का पहला श्लोक वास्तव में एक शिकारी को दिया गया भयंकर शाप था? वाल्मीकि रामायण की इस ऐतिहासिक और प्रामाणिक शृंखला के पहले एपिसोड में जानिए वह सत्य, जो सदियों से इतिहास के पन्नों में दबा रहा।",
+        hook,
         "",
-        "तिरुमाला तिरुपति देवस्थानम (TTD) द्वारा संरक्षित मूल वाल्मीकि रामायण के बालकाण्ड (सर्ग 1 से 10) पर आधारित यह 22-मिनट का भव्य चलचित्र महर्षि वाल्मीकि के तपोवन, क्रौंच पक्षी के वध, विश्व के प्रथम अनुष्टुप श्लोक के प्राकट्य और अयोध्या के चक्रवर्ती सम्राट दशरथ के गुप्त संकट को सजीव करता है।",
+        f"तिरुमाला तिरुपति देवस्थानम (TTD) द्वारा संरक्षित मूल वाल्मीकि रामायण के {kanda} पर आधारित यह 22-मिनट का भव्य चलचित्र सनातन धर्म के सबसे पावन इतिहास और रहस्यों को सजीव करता है।",
         "",
         "प्रकरण सूची (Timestamps):"
     ]
-    
+
     current_sec = 0.0
     for sc in scenes:
         sc_id = sc["scene_id"]
         title = sc["title"]
         dur = scene_durations.get(sc_id, 35.0)
-        
+
         # Add timestamps for major milestones / key scenes
         if sc_id in [1, 2, 4, 6, 8, 11, 13, 15, 17, 21, 24, 26, 29, 30]:
             mins = int(current_sec // 60)
@@ -112,7 +136,7 @@ def upload_episode_to_youtube(youtube, episode_num, video_path, thumbnail_path=N
         ep_data = json.load(f)
 
     scenes = ep_data.get("scenes", [])
-    
+
     # Calculate scene durations
     scene_durations = {}
     assets_dir = os.path.join(episodes_dir, f"episode_{episode_num:02d}", "assets")
@@ -122,10 +146,15 @@ def upload_episode_to_youtube(youtube, episode_num, video_path, thumbnail_path=N
         v_file = os.path.join(assets_dir, f"scene_{sc_id:02d}_voice.mp3")
         scene_durations[sc_id] = get_audio_duration(v_file)
 
-    title = "रामायण का पहला श्लोक या भयंकर शाप? 🏹 (Ep 01)"
-    desc = build_episode_description(episode_num, scenes, scene_durations)
+    title = ep_data.get("title_youtube", f"वाल्मीकि रामायण: रहस्यमयी गाथा (Ep {episode_num:02d})")
+    desc = build_episode_description(episode_num, scenes, scene_durations, ep_data)
 
-    tags = ["valmiki ramayan", "valmiki ramayana explained", "ramayan in hindi", "ramayan episode 1", "digital immortals", "hindu mythology explained", "krauncha vadha", "maharishi valmiki", "ayodhya king dasharatha", "brahma and valmiki", "vedic stories", "ancient indian history", "4k ramayan movie"]
+    tags = [
+        "valmiki ramayan", "ramayan in hindi", f"ramayan episode {episode_num}",
+        "digital immortals", "hindu mythology explained", "sanatan dharma",
+        "putrakameshti yajna" if episode_num == 2 else "krauncha vadha",
+        "king dasharatha", "ayodhya", "4k ramayan movie", "ancient indian history"
+    ]
 
     body = {
         "snippet": {
@@ -187,7 +216,13 @@ def upload_episode_to_youtube(youtube, episode_num, video_path, thumbnail_path=N
         print(f"Notice: Playlist sync error: {pe}")
 
     # Post Pinned Community Engagement Comment
-    pinned_comment = "🏹 क्या आप जानते थे कि रामायण का पहला श्लोक वास्तव में एक शिकारी के लिए शाप था? कमेंट में 'जय श्री राम' लिखकर बताइए कि क्या आप इस 54-एपिसोड की पूरी अखंड यात्रा के लिए तैयार हैं? 👇 (हर सच्चे सनातनी का कमेंट पिन किया जाएगा!)"
+    if episode_num == 1:
+        pinned_comment = "🏹 क्या आप जानते थे कि रामायण का पहला श्लोक वास्तव में एक शिकारी के लिए शाप था? कमेंट में 'जय श्री राम' लिखकर बताइए कि क्या आप इस 54-एपिसोड की पूरी अखंड यात्रा के लिए तैयार हैं? 👇 (हर सच्चे सनातनी का कमेंट पिन किया जाएगा!)"
+    elif episode_num == 2:
+        pinned_comment = "🔥 क्या आप जानते थे कि यज्ञ कुंड से निकले उस स्वर्ण पात्र में भरी खीर से ही प्रभु श्री राम का अवतार संभव हुआ? कमेंट में 'जय श्री राम' लिखकर बताइए कि क्या आप प्रभु श्री राम के जन्मोत्सव (Ep 03) के लिए तैयार हैं? 👇 (हर सच्चे सनातनी का कमेंट लाइक और पिन किया जाएगा!)"
+    else:
+        pinned_comment = f"🏹 वाल्मीकि रामायण के इस अलौकिक एपिसोड {episode_num:02d} से जुड़ने के लिए धन्यवाद! कमेंट में 'जय श्री राम' लिखकर प्रभु की वंदना करें।"
+
     try:
         print("💬 Posting Pinned Engagement Comment...")
         youtube.commentThreads().insert(

@@ -38,27 +38,62 @@ def find_devanagari_font():
             return c
     return None
 
-def generate_master_thumbnail(episode_num=1, line1="पहला श्लोक", line2="या भयंकर शाप?"):
+EPISODE_THUMBNAIL_CONFIG = {
+    1: {
+        "line1": "पहला श्लोक",
+        "line2": "या भयंकर शाप?",
+        "subhook": "वाल्मीकि रामायण रहस्य",
+        "anchor_pref": ["valmiki_narada_dialogue_1790916626818.jpg", "valmiki_scene_test_1790916603573.jpg"]
+    },
+    2: {
+        "line1": "यज्ञ से प्रकट हुआ",
+        "line2": "दैवीय अमृत!",
+        "subhook": "पुत्रकामेष्टि यज्ञ का सच",
+        "anchor_pref": ["putrakameshti_purusha.jpg", "scene_23.jpg", "scene_01.jpg"]
+    }
+}
+
+def generate_master_thumbnail(episode_num=1, line1=None, line2=None):
     """
     Renders the high-CTR 16:9 Landscape thumbnail.
     """
     width, height = 1280, 720
     out_path = os.path.join(thumbnails_dir, f"thumbnail_ep{episode_num:02d}.jpg")
 
-    # Base background: Load pristine generated artwork or scene asset
-    brain_dir = os.path.abspath(os.path.join(script_dir, "..", "..", "..", ".gemini", "antigravity-ide", "brain", "e1e3a393-5c06-41cb-a159-f895fa0649aa"))
+    cfg = EPISODE_THUMBNAIL_CONFIG.get(episode_num, {
+        "line1": f"महा-रहस्य Ep {episode_num:02d}",
+        "line2": "वाल्मीकि रामायण",
+        "subhook": "प्रामाणिक इतिहास",
+        "anchor_pref": []
+    })
+
+    if line1 is None:
+        line1 = cfg["line1"]
+    if line2 is None:
+        line2 = cfg["line2"]
+    subhook_text = cfg.get("subhook", "वाल्मीकि रामायण")
+
+    ep_dir = os.path.join(script_dir, "episodes", f"episode_{episode_num:02d}")
     candidate_arts = [
-        os.path.join(brain_dir, "valmiki_narada_dialogue_1790916626818.jpg"),
-        os.path.join(brain_dir, "valmiki_scene_test_1790916603573.jpg"),
-        os.path.join(brain_dir, "valmiki_first_scene_1790916418297.jpg"),
-        os.path.join(script_dir, "episodes", f"episode_{episode_num:02d}", "assets", "scene_01.jpg")
+        os.path.join(ep_dir, "assets", "anchors", pref) for pref in cfg.get("anchor_pref", [])
+    ] + [
+        os.path.join(ep_dir, "assets", pref) for pref in cfg.get("anchor_pref", [])
+    ] + [
+        os.path.join(ep_dir, "assets", "scene_23.jpg"),
+        os.path.join(ep_dir, "assets", "scene_01.jpg")
     ]
-    
+
     base_img = None
     for art in candidate_arts:
         if os.path.exists(art):
             try:
-                base_img = Image.open(art).convert("RGB").resize((width, height), Image.Resampling.LANCZOS)
+                raw = Image.open(art).convert("RGB")
+                # If image is very wide, crop to focal area
+                rw, rh = raw.size
+                if rw > rh * 1.5:
+                    crop_box = (0, 0, int(rh * 1.777), rh)
+                    raw = raw.crop(crop_box)
+                base_img = raw.resize((width, height), Image.Resampling.LANCZOS)
                 print(f"[THUMBNAIL] Using base artwork: {os.path.basename(art)}")
                 break
             except Exception:
@@ -71,9 +106,9 @@ def generate_master_thumbnail(episode_num=1, line1="पहला श्लोक
     gradient = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     g_draw = ImageDraw.Draw(gradient)
 
-    split_x = int(width * 0.48)
+    split_x = int(width * 0.46)
     for x in range(split_x, width):
-        alpha = int(245 * ((x - split_x) / (width - split_x)) ** 0.8)
+        alpha = int(248 * ((x - split_x) / (width - split_x)) ** 0.8)
         g_draw.line([(x, 0), (x, height)], fill=(8, 5, 12, alpha))
 
     base_img = Image.alpha_composite(base_img.convert("RGBA"), gradient).convert("RGB")
@@ -82,43 +117,41 @@ def generate_master_thumbnail(episode_num=1, line1="पहला श्लोक
     font_path = find_devanagari_font()
     print(f"[THUMBNAIL] Loaded Devanagari font: {font_path}")
     try:
-        title_font = ImageFont.truetype(font_path, 76) if font_path else ImageFont.load_default()
-        sub_font = ImageFont.truetype(font_path, 68) if font_path else ImageFont.load_default()
+        title_font = ImageFont.truetype(font_path, 72) if font_path else ImageFont.load_default()
+        sub_font = ImageFont.truetype(font_path, 66) if font_path else ImageFont.load_default()
         badge_font = ImageFont.truetype(font_path, 34) if font_path else ImageFont.load_default()
     except Exception as e:
         print(f"[WARN] Font load issue: {e}")
         title_font = sub_font = badge_font = ImageFont.load_default()
 
-    # Draw Corner Pill Badge: 'EPISODE 01'
-    badge_x, badge_y = int(width * 0.58), 60
+    # Draw Corner Pill Badge: 'EPISODE 02'
+    badge_x, badge_y = int(width * 0.56), 60
     badge_w, badge_h = 240, 54
     draw.rounded_rectangle([badge_x, badge_y, badge_x + badge_w, badge_y + badge_h], radius=14, fill=(185, 28, 28))
     badge_text = f"EPISODE {episode_num:02d}"
     draw.text((badge_x + 30, badge_y + 8), badge_text, fill=(255, 255, 255), font=badge_font)
 
-    # Draw Line 1 (Golden Glow): 'पहला श्लोक'
-    text_x = int(width * 0.55)
-    y1 = 200
-    # Shadow offset
+    # Draw Line 1 (Golden Glow): 'यज्ञ से प्रकट हुआ'
+    text_x = int(width * 0.52)
+    y1 = 195
     draw.text((text_x + 4, y1 + 4), line1, fill=(0, 0, 0), font=title_font)
     draw.text((text_x, y1), line1, fill=(255, 215, 0), font=title_font)
 
-    # Draw Line 2 (Crisp Blood Red / Diamond White): 'या भयंकर शाप?'
-    y2 = 320
+    # Draw Line 2 (Crisp Blood Red / Diamond White): 'दैवीय अमृत!'
+    y2 = 315
     draw.text((text_x + 4, y2 + 4), line2, fill=(0, 0, 0), font=sub_font)
     draw.text((text_x, y2), line2, fill=(255, 255, 255), font=sub_font)
 
-    # Sub-hook (Valmiki Ramayana authenticity badge)
-    subhook_text = "वाल्मीकि रामायण रहस्य"
+    # Sub-hook
     try:
         subhook_font = ImageFont.truetype(font_path, 38)
-        draw.text((text_x + 2, 452), subhook_text, fill=(0, 0, 0), font=subhook_font)
-        draw.text((text_x, 450), subhook_text, fill=(255, 180, 50), font=subhook_font)
+        draw.text((text_x + 2, 442), subhook_text, fill=(0, 0, 0), font=subhook_font)
+        draw.text((text_x, 440), subhook_text, fill=(255, 180, 50), font=subhook_font)
     except Exception:
         pass
 
     # Channel Tagline / Branding: DIGITAL IMMORTALS
-    draw.text((text_x, 560), "DIGITAL IMMORTALS", fill=(218, 165, 32), font=badge_font)
+    draw.text((text_x, 555), "DIGITAL IMMORTALS", fill=(218, 165, 32), font=badge_font)
 
     base_img.save(out_path, "JPEG", quality=98)
     print(f"[OK] Generated High-CTR Master Thumbnail: {out_path} ({width}x{height})")
@@ -129,3 +162,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 2 and sys.argv[1] == "--episode":
         ep = int(sys.argv[2])
     generate_master_thumbnail(ep)
+

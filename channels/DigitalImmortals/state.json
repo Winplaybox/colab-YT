@@ -1,22 +1,22 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 2,
+  "current_episode": 3,
   "total_episodes": 54,
   "history": [
-    {
-      "episode_number": 1,
-      "video_id": "nynnfAHL144",
-      "title": "एक पक्षी की मौत से कैसे रचा गया पूरा इतिहास? 🏹 (Ep 01)",
-      "uploaded_at": "2026-10-01T23:46:10.701689",
-      "publish_at": "2026-10-04T03:00:00Z"
-    },
     {
       "episode_number": 1,
       "video_id": "L8jGWS6o_iI",
       "title": "रामायण का पहला श्लोक या भयंकर शाप? 🏹 (Ep 01)",
       "uploaded_at": "2026-10-02T10:39:38.665007",
       "publish_at": "2026-10-04T03:00:00Z"
+    },
+    {
+      "episode_number": 2,
+      "video_id": "gQ6BNMzJLDY",
+      "title": "यज्ञ की अग्नि से वो कौन प्रकट हुआ? 🔥 (Ep 02)",
+      "uploaded_at": "2026-10-02T11:59:44.900601",
+      "publish_at": "2026-10-06T13:00:00Z"
     }
   ],
   "playlists": {
@@ -30,12 +30,12 @@
   },
   "last_audit": {
     "episode_number": 1,
-    "video_id": "nynnfAHL144",
+    "video_id": "L8jGWS6o_iI",
     "views": 0,
     "likes": 0,
     "comments": 0,
     "like_ratio": 0,
-    "audited_at": "2026-10-02T10:38:58.438044",
+    "audited_at": "2026-10-02T11:58:56.680085",
     "sentiment": "⚠️ LOW ENGAGEMENT: Increase emotional stakes and refine thumbnail hook."
   }
 }
