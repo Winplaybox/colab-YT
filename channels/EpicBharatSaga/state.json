@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 4,
+  "current_episode": 5,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-01T19:03:12.462112",
-  "last_uploaded_video_id": "CHogQB_w3QQ",
+  "last_run": "2026-10-02T18:41:20.477390",
+  "last_uploaded_video_id": "0VOwrQOPmXM",
   "used_story_ids": [],
   "history": [
     {
@@ -34,6 +34,15 @@
       "video_id": "CHogQB_w3QQ",
       "mode": "scheduled",
       "timestamp": "2026-10-01T19:03:12.462112"
+    },
+    {
+      "episode_number": 4,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Ganga Ko Shiv Ne Apni Jataon Mein Sameta! 🌊",
+      "video_id": "0VOwrQOPmXM",
+      "mode": "scheduled",
+      "timestamp": "2026-10-02T18:41:20.477390"
     }
   ]
 }
