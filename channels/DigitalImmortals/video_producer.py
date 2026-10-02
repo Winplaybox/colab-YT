@@ -2,9 +2,10 @@
 DigitalImmortals Hardware-Accelerated Video Rendering Engine
 =============================================================
 - Optimized for Intel Core i9-12900H (14 cores) + NVIDIA GPU (h264_nvenc)
-- Generates speech narration audio via edge_tts for each scene
-- Synthesizes 432Hz/136.1Hz sacred Vedic ambient drone + temple bell
-- Encodes 16:9 Landscape widescreen output (1080p / 4K) at 200+ FPS
+- Generates speech narration audio via edge_tts for all 30 scenes
+- Synthesizes 432Hz/136.1Hz sacred Vedic ambient drone + temple bells
+- Encodes 16:9 Landscape widescreen output (1080p) with GPU NVENC at 200+ FPS
+- Generates timed SRT subtitles for YouTube upload
 """
 
 import os
@@ -15,6 +16,12 @@ import math
 import asyncio
 import subprocess
 import edge_tts
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 try:
     import static_ffmpeg
@@ -65,7 +72,7 @@ def synthesize_vedic_drone(output_wav, duration=30.0):
         mod = 0.85 + 0.15 * math.sin(2 * math.pi * 0.15 * t)
         drone *= mod
 
-        sample_val = int(max(-32767, min(32767, (bell + drone) * 32767 * 0.5)))
+        sample_val = int(max(-32767, min(32767, (bell + drone) * 32767 * 0.4)))
         frames.extend(sample_val.to_bytes(2, byteorder='little', signed=True))
         frames.extend(sample_val.to_bytes(2, byteorder='little', signed=True))
 
@@ -89,10 +96,18 @@ def get_audio_duration(file_path):
     except Exception:
         return 10.0
 
+def format_srt_time(seconds):
+    millis = int((seconds % 1) * 1000)
+    secs = int(seconds) % 60
+    mins = int(seconds // 60) % 60
+    hours = int(seconds // 3600)
+    return f"{hours:02d}:{mins:02d}:{secs:02d},{millis:03d}"
+
 def render_episode_video(episode_num=1, target_quality="1080p"):
     ep_dir = os.path.join(episodes_dir, f"episode_{episode_num:02d}")
     assets_dir = os.path.join(ep_dir, "assets")
     output_mp4 = os.path.join(output_dir, f"DigitalImmortals_Ep{episode_num:02d}_{target_quality}.mp4")
+    srt_path = os.path.join(output_dir, f"DigitalImmortals_Ep{episode_num:02d}.srt")
 
     json_path = os.path.join(episodes_dir, f"episode_{episode_num:02d}.json")
     with open(json_path, "r", encoding="utf-8") as f:
@@ -101,9 +116,26 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
     scenes = data.get("scenes", [])
     print(f"\n🎬 [RENDER ENGINE] Preparing {len(scenes)} Scenes for Episode {episode_num:02d}...")
 
+    # Pre-generate any missing voice audio asynchronously
+    async def prepare_all_voices():
+        tasks = []
+        for sc in scenes:
+            sc_id = sc["scene_id"]
+            audio_path = os.path.join(assets_dir, f"scene_{sc_id:02d}_voice.mp3")
+            if not os.path.exists(audio_path) or os.path.getsize(audio_path) < 1000:
+                print(f"🎙️ Generating voice for Scene {sc_id:02d}...")
+                tasks.append(generate_scene_speech(sc["narration"], audio_path))
+        if tasks:
+            await asyncio.gather(*tasks)
+
+    asyncio.run(prepare_all_voices())
+
     scene_video_parts = []
     encoder = detect_best_encoder()
     enc_opts = ["-c:v", "h264_nvenc", "-preset", "p4", "-cq", "24"] if encoder == "h264_nvenc" else ["-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-sws_flags", "fast_bilinear"]
+
+    srt_entries = []
+    current_time = 0.0
 
     for sc in scenes:
         sc_id = sc["scene_id"]
@@ -112,36 +144,44 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
         audio_path = os.path.join(assets_dir, f"scene_{sc_id:02d}_voice.mp3")
         part_mp4 = os.path.join(assets_dir, f"part_{sc_id:02d}.mp4")
 
-        # 1. Generate Voice Narration if needed
-        if not os.path.exists(audio_path) or os.path.getsize(audio_path) < 1000:
-            print(f"🎙️ Generating voice for Scene {sc_id:02d}...")
-            asyncio.run(generate_scene_speech(narration_text, audio_path))
-
         duration = get_audio_duration(audio_path)
-        print(f"  Scene {sc_id:02d}: duration={duration:.2f}s | audio: {os.path.basename(audio_path)}")
+        print(f"  Scene {sc_id:02d}: duration={duration:.2f}s | image: {os.path.basename(img_path)}")
 
-        # 2. Render Scene Segment
-        cmd = [
-            "ffmpeg", "-y",
-            "-loop", "1", "-i", img_path,
-            "-i", audio_path,
-            "-t", f"{duration:.2f}",
-            "-vf", "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
-            *enc_opts,
-            "-c:a", "aac", "-b:a", "192k",
-            "-r", "30",
-            part_mp4
-        ]
-        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # Build SRT entry
+        start_srt = format_srt_time(current_time)
+        end_srt = format_srt_time(current_time + duration)
+        srt_entries.append(f"{sc_id}\n{start_srt} --> {end_srt}\n{narration_text}\n")
+        current_time += duration
+
+        # Render Scene Segment if not already rendered
+        if not os.path.exists(part_mp4) or os.path.getsize(part_mp4) < 5000:
+            cmd = [
+                "ffmpeg", "-y",
+                "-loop", "1", "-i", img_path,
+                "-i", audio_path,
+                "-t", f"{duration:.2f}",
+                "-vf", "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
+                *enc_opts,
+                "-c:a", "aac", "-b:a", "192k",
+                "-r", "30",
+                part_mp4
+            ]
+            subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
         scene_video_parts.append(part_mp4)
 
-    # 3. Concatenate Scene Segments into Full Video
+    # Save SRT Subtitles
+    with open(srt_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(srt_entries))
+    print(f"📝 Timed SRT subtitles saved to: {srt_path}")
+
+    # Concatenate Scene Segments into Full Video
     concat_list = os.path.join(ep_dir, "parts_concat.txt")
     with open(concat_list, "w", encoding="utf-8") as f:
         for p in scene_video_parts:
             f.write(f"file '{p.replace(chr(92), '/')}'\n")
 
-    print(f"🔗 Muxing all scenes into Master Video: {output_mp4}...")
+    print(f"🔗 Muxing all scenes into Master Video: {output_mp4} (Est. Duration: {current_time/60:.2f} min)...")
     full_cmd = [
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0", "-i", concat_list,
@@ -151,7 +191,12 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
     ]
     subprocess.run(full_cmd, check=True)
 
-    print(f"🎉 MASTER VIDEO RENDERED! Path: {output_mp4} ({os.path.getsize(output_mp4):,} bytes)")
+    final_duration = get_audio_duration(output_mp4)
+    file_size_mb = os.path.getsize(output_mp4) / (1024 * 1024)
+    print(f"\n🎉 MASTER VIDEO RENDERED!")
+    print(f"   Path: {output_mp4}")
+    print(f"   Duration: {final_duration/60:.2f} minutes ({final_duration:.1f}s)")
+    print(f"   Size: {file_size_mb:.2f} MB")
     return output_mp4
 
 if __name__ == "__main__":

@@ -12,8 +12,15 @@ import sys
 import json
 from datetime import datetime, timedelta
 
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 output_dir = os.path.join(script_dir, "output")
+episodes_dir = os.path.join(script_dir, "episodes")
 state_file = os.path.join(script_dir, "state.json")
 config_file = os.path.join(script_dir, "config.json")
 token_file = os.path.join(script_dir, "token.json")
@@ -63,25 +70,60 @@ def get_next_optimal_publish_time():
 
 from googleapiclient.http import MediaFileUpload
 
+def build_episode_description(episode_num, scenes, scene_durations):
+    """Dynamically builds high-retention 22-minute description with exact chapter timestamps."""
+    desc_lines = [
+        "क्या रामायण का पहला श्लोक वास्तव में एक शिकारी को दिया गया भयंकर शाप था? वाल्मीकि रामायण की इस ऐतिहासिक और प्रामाणिक शृंखला के पहले एपिसोड में जानिए वह सत्य, जो सदियों से इतिहास के पन्नों में दबा रहा।",
+        "",
+        "तिरुमाला तिरुपति देवस्थानम (TTD) द्वारा संरक्षित मूल वाल्मीकि रामायण के बालकाण्ड (सर्ग 1 से 10) पर आधारित यह 22-मिनट का भव्य चलचित्र महर्षि वाल्मीकि के तपोवन, क्रौंच पक्षी के वध, विश्व के प्रथम अनुष्टुप श्लोक के प्राकट्य और अयोध्या के चक्रवर्ती सम्राट दशरथ के गुप्त संकट को सजीव करता है।",
+        "",
+        "प्रकरण सूची (Timestamps):"
+    ]
+    
+    current_sec = 0.0
+    for sc in scenes:
+        sc_id = sc["scene_id"]
+        title = sc["title"]
+        dur = scene_durations.get(sc_id, 35.0)
+        
+        # Add timestamps for major milestones / key scenes
+        if sc_id in [1, 2, 4, 6, 8, 11, 13, 15, 17, 21, 24, 26, 29, 30]:
+            mins = int(current_sec // 60)
+            secs = int(current_sec % 60)
+            desc_lines.append(f"{mins:02d}:{secs:02d} - {title}")
+        current_sec += dur
+
+    desc_lines.extend([
+        "",
+        "🎧 सर्वोत्तम अनुभव के लिए हेडफ़ोन (Headphones) का उपयोग करें।",
+        "",
+        "इस पावन शृंखला के सभी 54 प्रामाणिक एपिसोड्स देखने के लिए हमारे आधिकारिक प्लेलिस्ट को सेव करें:",
+        "🔗 Master Ramayana Series: https://www.youtube.com/playlist?list=PLbWfS48ZCfwU",
+        "🔗 Bala Kanda Playlist: https://www.youtube.com/playlist?list=PLO21MMTdx3vc",
+        "",
+        "#ValmikiRamayan #Ramayana #DigitalImmortals #BalaKanda #ShriRam #Ayodhya #SanatanDharma #HinduMythology #EpicStories"
+    ])
+    return "\n".join(desc_lines)
+
 def upload_episode_to_youtube(youtube, episode_num, video_path, thumbnail_path=None, publish_at=None, force_immediate=False):
-    """Uploads the rendered episode to YouTube with metadata, thumbnail, and playlist sync."""
-    title = "एक पक्षी की मौत से कैसे रचा गया पूरा इतिहास? 🏹 (Ep 01)"
-    desc = """क्या रामायण का पहला श्लोक वास्तव में एक शिकारी को दिया गया भयंकर शाप था? वाल्मीकि रामायण की इस ऐतिहासिक और प्रामाणिक शृंखला के पहले एपिसोड में जानिए वह सत्य, जो सदियों से इतिहास के पन्नों में दबा रहा।
+    """Uploads the rendered 22-min episode to YouTube with metadata, thumbnail, and playlist sync."""
+    json_path = os.path.join(episodes_dir, f"episode_{episode_num:02d}.json")
+    with open(json_path, "r", encoding="utf-8") as f:
+        ep_data = json.load(f)
 
-तिरुमाला तिरुपति देवस्थानम (TTD) द्वारा संरक्षित मूल वाल्मीकि रामायण के आधार पर, यह शृंखला महर्षि वाल्मीकि के तपोवन, क्रौंच पक्षी के वध, आदि-कवि की उत्पत्ति और अयोध्या के चक्रवर्ती सम्राट दशरथ के वैभव को 8K सिनेमैटिक प्रारूप में सजीव करती है।
+    scenes = ep_data.get("scenes", [])
+    
+    # Calculate scene durations
+    scene_durations = {}
+    assets_dir = os.path.join(episodes_dir, f"episode_{episode_num:02d}", "assets")
+    from video_producer import get_audio_duration
+    for sc in scenes:
+        sc_id = sc["scene_id"]
+        v_file = os.path.join(assets_dir, f"scene_{sc_id:02d}_voice.mp3")
+        scene_durations[sc_id] = get_audio_duration(v_file)
 
-प्रकरण सूची (Timestamps):
-00:00 - प्रलयंकारी प्रस्तावना (The Ultimate Hook)
-00:22 - देवर्षि नारद का दिव्य आगमन (The 16 Divine Virtues)
-00:57 - तमसा नदी का पावन तट और निषाद का क्रूर बाण
-01:30 - आदि-श्लोक का प्रकटीकरण: 'मा निषाद प्रतिष्ठां...'
-02:03 - परमपिता ब्रह्मा का साक्षात प्रकटीकरण
-02:42 - सूर्यवंशी अयोध्या का दिव्य साम्राज्य
-03:15 - महा-उत्सुकता पूर्ण समापन (The Cliffhanger)
-
-🎧 सर्वोत्तम अनुभव के लिए हेडफ़ोन (Headphones) का उपयोग करें।
-
-#ValmikiRamayan #HinduMythology #RamayanExplained #DigitalImmortals #Ayodhya #SanatanDharma #SriRama #MaharishiValmiki"""
+    title = "रामायण का पहला श्लोक या भयंकर शाप? 🏹 (Ep 01)"
+    desc = build_episode_description(episode_num, scenes, scene_durations)
 
     tags = ["valmiki ramayan", "valmiki ramayana explained", "ramayan in hindi", "ramayan episode 1", "digital immortals", "hindu mythology explained", "krauncha vadha", "maharishi valmiki", "ayodhya king dasharatha", "brahma and valmiki", "vedic stories", "ancient indian history", "4k ramayan movie"]
 

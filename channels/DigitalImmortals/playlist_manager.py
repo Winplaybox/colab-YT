@@ -11,6 +11,12 @@ import os
 import sys
 import json
 
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 state_file = os.path.join(script_dir, "state.json")
 
