@@ -50,6 +50,12 @@ EPISODE_THUMBNAIL_CONFIG = {
         "line2": "दैवीय अमृत!",
         "subhook": "पुत्रकामेष्टि यज्ञ का सच",
         "anchor_pref": ["putrakameshti_purusha.jpg", "scene_23.jpg", "scene_01.jpg"]
+    },
+    3: {
+        "line1": "१२ बजे प्रकट हुए",
+        "line2": "साक्षात प्रभु राम!",
+        "subhook": "अयोध्या महा-उत्सव",
+        "anchor_pref": ["birth_of_princes_lacma.jpg", "birth_of_rama_keshava.webp", "dasharatha_celebrating_princes.jpg", "scene_06.jpg"]
     }
 }
 

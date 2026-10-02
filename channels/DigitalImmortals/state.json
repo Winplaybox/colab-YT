@@ -1,7 +1,7 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 3,
+  "current_episode": 4,
   "total_episodes": 54,
   "history": [
     {
@@ -17,6 +17,13 @@
       "title": "यज्ञ की अग्नि से वो कौन प्रकट हुआ? 🔥 (Ep 02)",
       "uploaded_at": "2026-10-02T11:59:44.900601",
       "publish_at": "2026-10-06T13:00:00Z"
+    },
+    {
+      "episode_number": 3,
+      "video_id": "cC7pPFIr4-0",
+      "title": "यज्ञ के बाद जब 12 बजे प्रभु राम जन्मे! 👑 (Ep 03)",
+      "uploaded_at": "2026-10-02T13:06:59.096112",
+      "publish_at": "2026-10-11T03:00:00Z"
     }
   ],
   "playlists": {
@@ -29,13 +36,13 @@
     "YUDDHA_KANDA": "PLZOYymeIpB3Y"
   },
   "last_audit": {
-    "episode_number": 1,
-    "video_id": "L8jGWS6o_iI",
-    "views": 0,
+    "episode_number": 2,
+    "video_id": "gQ6BNMzJLDY",
+    "views": 1,
     "likes": 0,
     "comments": 0,
-    "like_ratio": 0,
-    "audited_at": "2026-10-02T11:58:56.680085",
+    "like_ratio": 0.0,
+    "audited_at": "2026-10-02T13:05:39.685656",
     "sentiment": "⚠️ LOW ENGAGEMENT: Increase emotional stakes and refine thumbnail hook."
   }
 }

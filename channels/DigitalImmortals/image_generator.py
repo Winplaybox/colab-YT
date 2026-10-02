@@ -63,11 +63,26 @@ def get_master_anchors(episode_num=1):
         if os.path.exists(brahma_path):
             anchors["brahmaloka"] = Image.open(brahma_path).convert("RGB")
 
+    elif episode_num == 3:
+        rama_path = os.path.join(anchors_dir, "birth_of_rama_keshava.webp")
+        if os.path.exists(rama_path):
+            anchors["birth_rama"] = Image.open(rama_path).convert("RGB")
+        princes_path = os.path.join(anchors_dir, "birth_of_princes_lacma.jpg")
+        if os.path.exists(princes_path):
+            anchors["birth_princes"] = Image.open(princes_path).convert("RGB")
+        court_path = os.path.join(anchors_dir, "dasharatha_celebrating_princes.jpg")
+        if os.path.exists(court_path):
+            anchors["dasharatha_celebrating"] = Image.open(court_path).convert("RGB")
+        # Reuse Ayodhya panoramic from previous episode if available
+        ayodhya_ep2 = os.path.join(script_dir, "episodes", "episode_02", "assets", "anchors", "ayodhya_city.jpg")
+        if os.path.exists(ayodhya_ep2):
+            anchors["ayodhya"] = Image.open(ayodhya_ep2).convert("RGB")
+
     # Safe fallbacks
     all_imgs = [v for v in anchors.values() if v is not None]
     if all_imgs:
         fallback = all_imgs[0]
-        for k in ["purusha", "rishyasringa", "queens", "ayodhya", "brahmaloka", "narada", "valmiki_tree", "ashram", "dasharatha"]:
+        for k in ["birth_rama", "birth_princes", "dasharatha_celebrating", "purusha", "rishyasringa", "queens", "ayodhya", "brahmaloka", "narada", "valmiki_tree", "ashram", "dasharatha"]:
             if k not in anchors:
                 anchors[k] = fallback
 
@@ -343,6 +358,177 @@ def generate_scene_asset(scene, anchors, output_path, target_w=1920, target_h=10
     print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
     return True
 
+def generate_scene_asset_ep3(scene, anchors, output_path, target_w=1920, target_h=1080):
+    """Creates a distinct 1920x1080 16:9 cinematic shot for Episode 3 scenes."""
+    sc_id = scene["scene_id"]
+    act = scene.get("act", 1)
+
+    rama_img = anchors.get("birth_rama")
+    princes_img = anchors.get("birth_princes")
+    court_img = anchors.get("dasharatha_celebrating")
+    ayodhya_img = anchors.get("ayodhya") or court_img
+
+    if act == 1: # Astrological Alignment & Cosmic Setup (scenes 1-4)
+        if sc_id == 1: # 0-5s Hook: Celestial Rama with Golden Halo
+            base = rama_img or princes_img
+            w, h = base.size
+            crop_box = (0, int(h * 0.15), w, int(h * 0.85))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            # Golden cosmic brilliance
+            overlay = Image.new("RGB", (target_w, target_h), (255, 215, 0))
+            img = Image.blend(img, overlay, 0.08)
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(1.2)
+        elif sc_id in [2, 3]: # Seasons waiting & Chaitra Navami muhurta
+            base = ayodhya_img or court_img
+            w, h = base.size
+            crop_box = (0, int(h * 0.2), w, int(h * 0.85))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 200, 100))
+            img = Image.blend(img, overlay, 0.07)
+        else: # 4: 5 exalted planets
+            base = rama_img or court_img
+            w, h = base.size
+            crop_box = (0, 0, w, int(h * 0.8))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            # Cosmic blue and gold grade
+            overlay = Image.new("RGB", (target_w, target_h), (40, 80, 200))
+            img = Image.blend(img, overlay, 0.10)
+            enhancer = ImageEnhance.Brightness(img)
+            img = enhancer.enhance(1.15)
+
+    elif act == 2: # Manifestation of Sri Rama (scenes 5-8)
+        if sc_id == 5: # Kausalya's inner palace radiance
+            base = princes_img
+            w, h = base.size
+            crop_box = (int(w * 0.1), int(h * 0.15), int(w * 0.65), int(h * 0.9))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 220, 80))
+            img = Image.blend(img, overlay, 0.10)
+        elif sc_id == 6: # Birth at 12 noon
+            base = rama_img
+            w, h = base.size
+            crop_box = (0, 0, w, h)
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            enhancer = ImageEnhance.Color(img)
+            img = enhancer.enhance(1.15)
+        elif sc_id == 7: # Kausalya's ecstasy
+            base = princes_img
+            w, h = base.size
+            crop_box = (0, int(h * 0.2), int(w * 0.55), h)
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        else: # 8: Dasharatha receiving news
+            base = court_img
+            w, h = base.size
+            crop_box = (0, int(h * 0.1), int(w * 0.7), int(h * 0.85))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(1.15)
+
+    elif act == 3: # Birth of the Three Brothers (scenes 9-12)
+        base = princes_img
+        w, h = base.size
+        if sc_id == 9: # Bharata to Kaikeyi
+            crop_box = (int(w * 0.35), int(h * 0.1), int(w * 0.8), int(h * 0.9))
+        elif sc_id == 10: # Lakshmana & Shatrughna to Sumitra
+            crop_box = (int(w * 0.2), int(h * 0.3), int(w * 0.9), h)
+        elif sc_id == 11: # Mystery of 4 avatars
+            crop_box = (0, 0, w, h)
+        else: # 12: Dasharatha beholding the 4 cradles
+            crop_box = (0, int(h * 0.1), w, int(h * 0.9))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Color(img)
+        img = enhancer.enhance(1.1)
+
+    elif act == 4: # Celestial Celebrations (scenes 13-16)
+        if sc_id in [13, 14]: # Parijata flower shower & Gandharvas
+            base = rama_img
+            w, h = base.size
+            crop_box = (0, 0, w, int(h * 0.75))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 210, 120))
+            img = Image.blend(img, overlay, 0.08)
+        else: # 15, 16: Sarayu river & Ayodhya decorated
+            base = ayodhya_img or court_img
+            w, h = base.size
+            crop_box = (0, int(h * 0.2), w, int(h * 0.85))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 190, 80))
+            img = Image.blend(img, overlay, 0.08)
+
+    elif act == 5: # Dasharatha's Unprecedented Charity (scenes 17-20)
+        base = court_img
+        w, h = base.size
+        if sc_id == 17: # Golden-horned cows
+            crop_box = (int(w * 0.1), int(h * 0.2), int(w * 0.85), h)
+        elif sc_id == 18: # Gold and gem distribution
+            crop_box = (0, int(h * 0.15), int(w * 0.75), int(h * 0.9))
+        elif sc_id == 19: # 11-day continuous feasts
+            crop_box = (0, 0, w, int(h * 0.85))
+        else: # 20: Citizens singing
+            crop_box = (int(w * 0.2), int(h * 0.1), w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.15)
+
+    elif act == 6: # Vedic Naming Ceremony by Vasishtha (scenes 21-24)
+        if sc_id in [21, 22]: # Muhurta & Naming Rama
+            base = court_img
+            w, h = base.size
+            crop_box = (int(w * 0.15), int(h * 0.1), int(w * 0.75), int(h * 0.85))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 215, 0))
+            img = Image.blend(img, overlay, 0.08)
+        else: # 23, 24: Naming Bharata, Lakshmana & Shatrughna
+            base = princes_img
+            w, h = base.size
+            crop_box = (int(w * 0.1), 0, int(w * 0.85), int(h * 0.9))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+
+    elif act == 7: # Inseparable Brotherly Love (scenes 25-27)
+        base = court_img
+        w, h = base.size
+        if sc_id == 25: # Rama & Lakshmana
+            crop_box = (int(w * 0.2), int(h * 0.15), int(w * 0.7), int(h * 0.8))
+        elif sc_id == 26: # Bharata & Shatrughna
+            crop_box = (int(w * 0.35), int(h * 0.2), int(w * 0.85), h)
+        else: # 27: Childhood anklets
+            crop_box = (0, int(h * 0.2), int(w * 0.8), h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 200, 100))
+        img = Image.blend(img, overlay, 0.06)
+
+    elif act == 8: # Education & Martial Prowess (scenes 28-29)
+        base = court_img
+        w, h = base.size
+        crop_box = (0, 0, w, int(h * 0.85))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.2)
+
+    else: # Act 9: Cliffhanger for Episode 04 (scene 30: Vishwamitra arrives)
+        base = court_img
+        w, h = base.size
+        crop_box = (int(w * 0.1), int(h * 0.1), w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        # Intense dramatic tension grade (dark shadows, fiery warmth)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.3)
+        overlay = Image.new("RGB", (target_w, target_h), (200, 50, 20))
+        img = Image.blend(img, overlay, 0.07)
+
+    # Subtle cinematic vignette
+    vignette = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
+    v_draw = ImageDraw.Draw(vignette)
+    for i in range(15):
+        alpha = int(4 * (15 - i))
+        v_draw.rectangle([i * 4, i * 4, target_w - i * 4, target_h - i * 4], outline=(0, 0, 0, alpha))
+    img = Image.alpha_composite(img.convert("RGBA"), vignette).convert("RGB")
+
+    img.save(output_path, "JPEG", quality=95)
+    print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
+    return True
+
 def generate_episode_images(episode_num=1):
     json_path = os.path.join(episodes_dir, f"episode_{episode_num:02d}.json")
     if not os.path.exists(json_path):
@@ -365,6 +551,8 @@ def generate_episode_images(episode_num=1):
         out_file = os.path.join(assets_dir, f"scene_{sc_id:02d}.jpg")
         if episode_num == 2:
             generate_scene_asset_ep2(sc, anchors, out_file)
+        elif episode_num == 3:
+            generate_scene_asset_ep3(sc, anchors, out_file)
         else:
             generate_scene_asset(sc, anchors, out_file)
 
