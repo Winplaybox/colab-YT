@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 5,
+  "current_episode": 6,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-02T18:41:20.477390",
-  "last_uploaded_video_id": "0VOwrQOPmXM",
+  "last_run": "2026-10-03T17:34:37.593099",
+  "last_uploaded_video_id": "PG7oSCRIyLI",
   "used_story_ids": [],
   "history": [
     {
@@ -43,6 +43,15 @@
       "video_id": "0VOwrQOPmXM",
       "mode": "scheduled",
       "timestamp": "2026-10-02T18:41:20.477390"
+    },
+    {
+      "episode_number": 5,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Bhasmasura Ne Shiv Ko Hi Jalaane Ki Koshi Ki! 😱",
+      "video_id": "PG7oSCRIyLI",
+      "mode": "scheduled",
+      "timestamp": "2026-10-03T17:34:37.593099"
     }
   ]
 }
