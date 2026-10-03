@@ -143,8 +143,11 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
         for sc in scenes:
             sc_id = sc["scene_id"]
             audio_path = os.path.join(assets_dir, f"scene_{sc_id:02d}_voice.mp3")
-            if not os.path.exists(audio_path) or os.path.getsize(audio_path) < 1000:
-                tasks.append(sem_task(sc_id, sc["narration"], audio_path))
+            narration = sc.get("narration", "")
+            word_count = len(narration.split())
+            min_expected_size = max(5000, word_count * 450) # Expected ~500 bytes per word for MP3 audio
+            if not os.path.exists(audio_path) or os.path.getsize(audio_path) < min_expected_size:
+                tasks.append(sem_task(sc_id, narration, audio_path))
         if tasks:
             await asyncio.gather(*tasks)
 

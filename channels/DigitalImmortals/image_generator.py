@@ -92,6 +92,20 @@ def get_master_anchors(episode_num=1):
         if os.path.exists(rama_path):
             anchors["rama"] = Image.open(rama_path).convert("RGB")
 
+    elif episode_num == 5:
+        y_path = os.path.join(anchors_dir, "siddhashrama_yajna.jpg")
+        if os.path.exists(y_path):
+            anchors["siddhashrama"] = Image.open(y_path).convert("RGB")
+        v_path = os.path.join(script_dir, "episodes", "episode_04", "assets", "anchors", "vishwamitra_arrival_court.jpg")
+        if os.path.exists(v_path):
+            anchors["vishwamitra"] = Image.open(v_path).convert("RGB")
+        court_path = os.path.join(script_dir, "episodes", "episode_03", "assets", "anchors", "dasharatha_celebrating_princes.jpg")
+        if os.path.exists(court_path):
+            anchors["court"] = Image.open(court_path).convert("RGB")
+        ashram_ep1 = os.path.join(script_dir, "episodes", "episode_01", "assets", "anchors", "valmiki_first_scene_1790916418297.jpg")
+        if os.path.exists(ashram_ep1):
+            anchors["ashram"] = Image.open(ashram_ep1).convert("RGB")
+
     # Safe fallbacks
     all_imgs = [v for v in anchors.values() if v is not None]
     if all_imgs:

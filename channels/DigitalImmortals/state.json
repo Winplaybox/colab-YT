@@ -1,7 +1,7 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 5,
+  "current_episode": 6,
   "total_episodes": 54,
   "history": [
     {
@@ -31,6 +31,13 @@
       "title": "16 साल के राम को क्यों मांगा एक खूंखार राक्षस से लड़ने? 🏹 (Ep 04)",
       "uploaded_at": "2026-10-03T15:09:37.191794",
       "publish_at": "2026-10-13T13:00:00Z"
+    },
+    {
+      "episode_number": 5,
+      "video_id": "lcgkCiBW3DY",
+      "title": "यज्ञ पर जब बरसी खून की भयानक बारिश! 🏹 (Ep 05)",
+      "uploaded_at": "2026-10-03T15:22:38.044190",
+      "publish_at": "2026-10-18T03:00:00Z"
     }
   ],
   "playlists": {
@@ -43,13 +50,13 @@
     "YUDDHA_KANDA": "PLZOYymeIpB3Y"
   },
   "last_audit": {
-    "episode_number": 3,
-    "video_id": "cC7pPFIr4-0",
-    "views": 1,
+    "episode_number": 4,
+    "video_id": "b30X91vj6BQ",
+    "views": 0,
     "likes": 0,
     "comments": 0,
-    "like_ratio": 0.0,
-    "audited_at": "2026-10-03T15:00:37.410508",
+    "like_ratio": 0,
+    "audited_at": "2026-10-03T15:12:04.277024",
     "sentiment": "⚠️ LOW ENGAGEMENT: Increase emotional stakes and refine thumbnail hook."
   }
 }

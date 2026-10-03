@@ -85,6 +85,16 @@ HISTORICAL_ART_CATALOG = {
             "title": "File:Rama and Lakshman at Vishvamitra's hermitage.jpg",
             "desc": "Maharishi Vishwamitra taking Rama and Lakshmana to protect the sacred yajna"
         }
+    ],
+
+    # Episode 05: Siddhashrama Yajna Protection & Subahu Annihilation
+    5: [
+        {
+            "name": "siddhashrama_yajna",
+            "title": "File:Rama and Lakshman at Vishvamitra's hermitage.jpg",
+            "fallback_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Rama_and_Lakshman_at_Vishvamitra%27s_hermitage.jpg",
+            "desc": "Rama and Lakshmana defending the sacred sacrificial fire of Siddhashrama"
+        }
     ]
 }
 
