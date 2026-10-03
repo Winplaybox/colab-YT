@@ -68,6 +68,24 @@ EPISODE_THUMBNAIL_CONFIG = {
         "line2": "सुबाहु का महा-संहार!",
         "subhook": "श्री राम का पहला दिव्य बाण",
         "anchor_pref": ["scene_15.jpg", "scene_01.jpg"]
+    },
+    6: {
+        "line1": "स्वर्ग से पृथ्वी पर",
+        "line2": "गंगा का महा-अवतरण!",
+        "subhook": "भगीरथ की अमर तपस्या",
+        "anchor_pref": ["ganga_descent.jpg", "scene_15.jpg", "scene_01.jpg"]
+    },
+    7: {
+        "line1": "पत्थर बनी अहल्या",
+        "line2": "प्रभु चरणों से उद्धार!",
+        "subhook": "गौतम ऋषि का शाप",
+        "anchor_pref": ["ahalya_uddhar.jpg", "scene_20.jpg", "scene_01.jpg"]
+    },
+    8: {
+        "line1": "शिव धनुष भंग",
+        "line2": "सीता-राम महाविवाह!",
+        "subhook": "परशुराम का भयंकर क्रोध",
+        "anchor_pref": ["shiva_dhanush_broken.jpg", "sita_ram_vivah.jpg", "scene_25.jpg"]
     }
 }
 
