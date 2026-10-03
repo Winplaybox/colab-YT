@@ -56,6 +56,18 @@ EPISODE_THUMBNAIL_CONFIG = {
         "line2": "साक्षात प्रभु राम!",
         "subhook": "अयोध्या महा-उत्सव",
         "anchor_pref": ["birth_of_princes_lacma.jpg", "birth_of_rama_keshava.webp", "dasharatha_celebrating_princes.jpg", "scene_06.jpg"]
+    },
+    4: {
+        "line1": "१६ वर्ष के राम को",
+        "line2": "राक्षस वध की चुनौती!",
+        "subhook": "विश्वामित्र का भयंकर क्रोध",
+        "anchor_pref": ["vishwamitra_arrival_court.jpg", "scene_29.jpg", "scene_01.jpg"]
+    },
+    5: {
+        "line1": "सिद्धाश्रम महा-यज्ञ",
+        "line2": "सुबाहु का महा-संहार!",
+        "subhook": "श्री राम का पहला दिव्य बाण",
+        "anchor_pref": ["scene_15.jpg", "scene_01.jpg"]
     }
 }
 

@@ -79,9 +79,23 @@ def synthesize_vedic_drone(output_wav, duration=30.0):
     wav_file.writeframes(frames)
     wav_file.close()
 
-async def generate_scene_speech(text, output_mp3):
-    communicate = edge_tts.Communicate(text, voice="hi-IN-MadhurNeural", rate="-2%")
-    await communicate.save(output_mp3)
+async def generate_scene_speech(text, output_mp3, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            if os.path.exists(output_mp3) and os.path.getsize(output_mp3) < 1000:
+                try:
+                    os.remove(output_mp3)
+                except Exception:
+                    pass
+            communicate = edge_tts.Communicate(text, voice="hi-IN-MadhurNeural", rate="-2%")
+            await communicate.save(output_mp3)
+            if os.path.exists(output_mp3) and os.path.getsize(output_mp3) > 1000:
+                return True
+        except Exception as e:
+            if attempt == max_retries - 1:
+                print(f"[WARN] Failed generating voice for {os.path.basename(output_mp3)}: {e}")
+            await asyncio.sleep(1.5 * (attempt + 1))
+    return False
 
 def get_audio_duration(file_path):
     cmd = [
@@ -116,15 +130,21 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
     scenes = data.get("scenes", [])
     print(f"\n🎬 [RENDER ENGINE] Preparing {len(scenes)} Scenes for Episode {episode_num:02d}...")
 
-    # Pre-generate any missing voice audio asynchronously
+    # Pre-generate any missing voice audio with controlled concurrency (Semaphore=2)
     async def prepare_all_voices():
+        sem = asyncio.Semaphore(2)
+        async def sem_task(sc_id, narration, path):
+            async with sem:
+                print(f"🎙️ Generating voice for Scene {sc_id:02d}...")
+                await generate_scene_speech(narration, path)
+                await asyncio.sleep(0.3)
+
         tasks = []
         for sc in scenes:
             sc_id = sc["scene_id"]
             audio_path = os.path.join(assets_dir, f"scene_{sc_id:02d}_voice.mp3")
             if not os.path.exists(audio_path) or os.path.getsize(audio_path) < 1000:
-                print(f"🎙️ Generating voice for Scene {sc_id:02d}...")
-                tasks.append(generate_scene_speech(sc["narration"], audio_path))
+                tasks.append(sem_task(sc_id, sc["narration"], audio_path))
         if tasks:
             await asyncio.gather(*tasks)
 

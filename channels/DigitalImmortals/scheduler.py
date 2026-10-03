@@ -260,6 +260,15 @@ def upload_episode_to_youtube(youtube, episode_num, video_path, thumbnail_path=N
 
     return video_id, video_url
 
+def upload_and_schedule_episode(episode_num, video_path, thumbnail_path=None, force_immediate=False):
+    yt = get_youtube_client()
+    if not yt:
+        raise RuntimeError("YouTube client could not be initialized.")
+    publish_at = None if force_immediate else get_next_optimal_publish_time()
+    return upload_episode_to_youtube(
+        yt, episode_num, video_path, thumbnail_path, publish_at=publish_at, force_immediate=force_immediate
+    )
+
 def run_pipeline(force_immediate=False, quality="1080p"):
     print("=" * 75)
     print("🏹 DIGITAL IMMORTALS (@DigitalImmortals) — AUTONOMOUS PIPELINE")

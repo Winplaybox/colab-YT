@@ -78,6 +78,20 @@ def get_master_anchors(episode_num=1):
         if os.path.exists(ayodhya_ep2):
             anchors["ayodhya"] = Image.open(ayodhya_ep2).convert("RGB")
 
+    elif episode_num == 4:
+        v_path = os.path.join(anchors_dir, "vishwamitra_arrival_court.jpg")
+        if os.path.exists(v_path):
+            anchors["vishwamitra"] = Image.open(v_path).convert("RGB")
+        court_path = os.path.join(script_dir, "episodes", "episode_03", "assets", "anchors", "dasharatha_celebrating_princes.jpg")
+        if os.path.exists(court_path):
+            anchors["court"] = Image.open(court_path).convert("RGB")
+        ayodhya_ep2 = os.path.join(script_dir, "episodes", "episode_02", "assets", "anchors", "ayodhya_city.jpg")
+        if os.path.exists(ayodhya_ep2):
+            anchors["ayodhya"] = Image.open(ayodhya_ep2).convert("RGB")
+        rama_path = os.path.join(script_dir, "episodes", "episode_03", "assets", "anchors", "birth_of_rama_keshava.webp")
+        if os.path.exists(rama_path):
+            anchors["rama"] = Image.open(rama_path).convert("RGB")
+
     # Safe fallbacks
     all_imgs = [v for v in anchors.values() if v is not None]
     if all_imgs:
@@ -529,6 +543,162 @@ def generate_scene_asset_ep3(scene, anchors, output_path, target_w=1920, target_
     print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
     return True
 
+
+def generate_scene_asset_ep4(scene, anchors, output_path, target_w=1920, target_h=1080):
+    """Creates a distinct 1920x1080 16:9 cinematic shot for Episode 4 scenes."""
+    sc_id = scene["scene_id"]
+    act = scene.get("act", 1)
+
+    vishwamitra_img = anchors.get("vishwamitra")
+    court_img = anchors.get("court")
+    ayodhya_img = anchors.get("ayodhya")
+    rama_img = anchors.get("rama") or court_img
+
+    if act == 1: # The Ominous Arrival (scenes 1-4)
+        base = vishwamitra_img or court_img
+        w, h = base.size
+        if sc_id == 1: # Hook: Extreme dramatic tension
+            crop_box = (int(w * 0.1), int(h * 0.1), int(w * 0.9), int(h * 0.9))
+        elif sc_id == 2: # Ayodhya morning court
+            base = ayodhya_img or court_img
+            w, h = base.size
+            crop_box = (0, 0, w, int(h * 0.85))
+        elif sc_id == 3: # Door-keeper announcement
+            base = court_img or vishwamitra_img
+            w, h = base.size
+            crop_box = (int(w * 0.2), 0, w, h)
+        else: # Vishwamitra fierce power
+            crop_box = (0, 0, int(w * 0.75), h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.2)
+
+    elif act == 2: # Royal Welcome & Solemn Promise (scenes 5-7)
+        base = court_img or vishwamitra_img
+        w, h = base.size
+        if sc_id == 5: # Dasharatha prostrating
+            crop_box = (0, int(h * 0.15), int(w * 0.85), h)
+        elif sc_id == 6: # Dasharatha welcome speech
+            crop_box = (int(w * 0.15), 0, int(w * 0.85), int(h * 0.9))
+        else: # Dasharatha oath
+            crop_box = (int(w * 0.2), int(h * 0.1), w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 215, 0))
+        img = Image.blend(img, overlay, 0.06)
+
+    elif act == 3: # The Shocking Demand (scenes 8-10)
+        base = vishwamitra_img or court_img
+        w, h = base.size
+        if sc_id == 8: # Siddhashrama yajna
+            crop_box = (0, int(h * 0.2), w, h)
+        elif sc_id == 9: # Maricha and Subahu menace
+            crop_box = (int(w * 0.3), 0, w, int(h * 0.85))
+        else: # Demand for young Rama
+            crop_box = (int(w * 0.1), 0, int(w * 0.75), h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        # Ominous warm red/amber grade
+        overlay = Image.new("RGB", (target_w, target_h), (200, 50, 20))
+        img = Image.blend(img, overlay, 0.08)
+
+    elif act == 4: # Dasharatha Collapse & Refusal (scenes 11-14)
+        base = court_img or vishwamitra_img
+        w, h = base.size
+        if sc_id == 11: # Dasharatha fainting
+            crop_box = (0, int(h * 0.25), int(w * 0.75), h)
+        elif sc_id == 12: # Lotus-eyed Rama plea
+            base = rama_img or court_img
+            w, h = base.size
+            crop_box = (int(w * 0.15), 0, int(w * 0.85), int(h * 0.85))
+        elif sc_id == 13: # Marching army offer
+            crop_box = (int(w * 0.2), int(h * 0.1), w, h)
+        else: # Taraka terror
+            crop_box = (0, 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Color(img)
+        img = enhancer.enhance(0.9) # Slightly desaturated grief
+
+    elif act == 5: # Vishwamitra Rage & Vashistha Intervention (scenes 15-18)
+        base = vishwamitra_img or court_img
+        w, h = base.size
+        if sc_id in [15, 16]: # Fiery eyes and rage
+            crop_box = (0, 0, int(w * 0.8), int(h * 0.9))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (240, 60, 20))
+            img = Image.blend(img, overlay, 0.10)
+        else: # Vashistha divine wisdom
+            crop_box = (int(w * 0.2), int(h * 0.1), w, h)
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 230, 140))
+            img = Image.blend(img, overlay, 0.08)
+
+    elif act == 6: # The Departure (scenes 19-21)
+        base = court_img or rama_img
+        w, h = base.size
+        if sc_id == 19: # Calling Rama & Lakshmana
+            crop_box = (int(w * 0.1), 0, int(w * 0.8), int(h * 0.85))
+        elif sc_id == 20: # Mothers blessing
+            crop_box = (0, int(h * 0.15), int(w * 0.8), h)
+        else: # Marching with bows
+            base = vishwamitra_img or rama_img
+            w, h = base.size
+            crop_box = (0, 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.15)
+
+    elif act == 7: # Bala and Atibala Mantras (scenes 22-24)
+        base = vishwamitra_img or rama_img
+        w, h = base.size
+        crop_box = (int(w * 0.15), int(h * 0.1), int(w * 0.85), int(h * 0.9))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        # Divine celestial glow
+        overlay = Image.new("RGB", (target_w, target_h), (80, 160, 255))
+        img = Image.blend(img, overlay, 0.09)
+
+    elif act == 8: # The Cursed Forest (scenes 25-27)
+        base = vishwamitra_img or ayodhya_img
+        w, h = base.size
+        if sc_id == 25: # Kamashrama confluence
+            crop_box = (0, 0, w, int(h * 0.85))
+        else: # 26, 27: Skeletal trees and desolate silence
+            crop_box = (int(w * 0.2), int(h * 0.2), w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Color(img)
+        img = enhancer.enhance(0.75) # Gloomy eerie atmosphere
+        brightness = ImageEnhance.Brightness(img)
+        img = brightness.enhance(0.85)
+
+    elif act == 9: # Battle with Tataka (scenes 28-29)
+        base = vishwamitra_img or court_img
+        w, h = base.size
+        if sc_id == 28: # Twang of divine bow
+            crop_box = (int(w * 0.1), 0, int(w * 0.9), int(h * 0.85))
+        else: # Tataka dust storm attack
+            crop_box = (int(w * 0.25), int(h * 0.15), w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.3)
+
+    else: # Act 10: Grand Cliffhanger (scene 30)
+        base = vishwamitra_img or rama_img
+        w, h = base.size
+        crop_box = (0, 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 180, 50))
+        img = Image.blend(img, overlay, 0.08)
+
+    # Subtle cinematic vignette
+    vignette = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
+    v_draw = ImageDraw.Draw(vignette)
+    for i in range(15):
+        alpha = int(4 * (15 - i))
+        v_draw.rectangle([i * 4, i * 4, target_w - i * 4, target_h - i * 4], outline=(0, 0, 0, alpha))
+    img = Image.alpha_composite(img.convert("RGBA"), vignette).convert("RGB")
+
+    img.save(output_path, "JPEG", quality=95)
+    print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
+    return True
+
 def generate_episode_images(episode_num=1):
     json_path = os.path.join(episodes_dir, f"episode_{episode_num:02d}.json")
     if not os.path.exists(json_path):
@@ -553,6 +723,8 @@ def generate_episode_images(episode_num=1):
             generate_scene_asset_ep2(sc, anchors, out_file)
         elif episode_num == 3:
             generate_scene_asset_ep3(sc, anchors, out_file)
+        elif episode_num == 4:
+            generate_scene_asset_ep4(sc, anchors, out_file)
         else:
             generate_scene_asset(sc, anchors, out_file)
 

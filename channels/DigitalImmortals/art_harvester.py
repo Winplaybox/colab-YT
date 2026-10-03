@@ -125,12 +125,12 @@ def query_commons_image_url(file_title):
 def download_file(url, target_path):
     """Downloads an image file with browser-like user agent."""
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        "User-Agent": "DigitalImmortalsStudio/1.0 (https://youtube.com/@DigitalImmortals; bot@digitalimmortals.media)",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
     }
     req = urllib.request.Request(url, headers=headers)
     try:
-        time.sleep(1.0)
+        time.sleep(1.5)
         with urllib.request.urlopen(req, timeout=30) as resp, open(target_path, "wb") as out:
             out.write(resp.read())
         return True
