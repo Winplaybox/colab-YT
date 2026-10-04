@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 8,
+  "story_id": "train_08_gotthard_longest_tunnel",
+  "story_hash": "de0fd3aa17346087",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "Pahad Ke Andar 57 KM Lamba Rail Tunnel! 🏔️",
+  "youtube_title": "Pahad Ke Andar 57 KM Lamba Rail Tunnel! 🏔️",
+  "title_variations": [
+    "Pahad Ke Andar 57 KM Lamba Rail Tunnel! 🏔️",
+    "Gotthard Base Tunnel Switzerland 57 km 🚂",
+    "Pahad Ke Andar 57 KM Lamba Rail Tunnel! 🏔️ #Shorts",
+    "The Real Story: Gotthard Base Tunnel Switzerland 57 km"
+  ],
+  "tagline": "Gotthard Base Tunnel Switzerland 57 km",
+  "visual_theme": "CABIN_POV_RADAR",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Gotthard_Base_Tunnel",
+    "https://www.alptransit.ch"
+  ],
+  "verified_fact": "Gotthard Base Tunnel in Switzerland is 57.09 km long, reaching depths of 2,450 m under the Alps; regular passenger trains operate up to 200 km/h taking ~20 minutes to transit.",
+  "voiceover_script": "Swiss Alps ke vishal pahadon ke 2 kilometer neeche bana hai 57 kilometer lamba tunnel! Switzerland ka Gotthard Base Tunnel duniya ka sabse lamba aur gehra railway tunnel hai. Isko khodne mein 17 saal aur 28 million ton se zyada pathar nikale gaye the. Passenger trains ise 200 km/h ki speed se lagbhag 20 minute mein cross karti hain. Sochiye, 20 minute tak sirf pahad ke andar safar!",
+  "debate_question": "Pahad ke 2 km neeche 20 minute tak tunnel mein safar karna kaisa lagega?",
+  "pinned_comment": "🏔️ 57 KM lamba tunnel Swiss Alps ke 2400 meter neeche! 20 minute lagte hain ise cross karne mein.",
+  "description": "Pahad Ke Andar 57 KM Lamba Rail Tunnel! 🏔️\n\n🚂 Gotthard Base Tunnel Switzerland 57 km\n\nGotthard Base Tunnel in Switzerland is 57.09 km long, reaching depths of 2,450 m under the Alps; regular passenger trains operate up to 200 km/h taking ~20 minutes to transit.\n\n👉 Pahad ke 2 km neeche 20 minute tak tunnel mein safar karna kaisa lagega?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#GotthardTunnel #Switzerland #SwissAlps #LongestTunnel #Engineering #Shorts",
+  "tags": [
+    "GotthardTunnel",
+    "Switzerland",
+    "SwissAlps",
+    "LongestTunnel",
+    "Engineering",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Pahad ke 2 KM neeche... 57 KM lamba tunnel!",
+      "sound_cue": "tunnel_whoosh",
+      "prompt": "Massive concrete circular portal entrance of Gotthard Base Tunnel carved into snow-covered Swiss Alps mountains, high-speed train entering, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Switzerland ka Gotthard Base Tunnel!",
+      "sound_cue": "low_hum",
+      "prompt": "Cutaway geological illustration of Alpine mountain peaks above and a thin subterranean railway tunnel cutting straight through the deep rock base, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "17 saal aur 28 million ton pathar nikale gaye!",
+      "sound_cue": "tunnel_rumble",
+      "prompt": "Industrial view of giant Tunnel Boring Machine cutterhead inside rock tunnel excavation during construction, dramatic work lights, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Trains ise 200 km/h se 20 minute mein paar karti hain!",
+      "sound_cue": "high_speed_subway",
+      "prompt": "Driver cabin point of view looking down an illuminated clean concrete single-track tube tunnel at high speed, emergency lights passing, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "20 minute tak pahad ke pet mein safar!",
+      "sound_cue": "exit_sunlight",
+      "prompt": "Sleek red and white Swiss passenger train emerging from mountain tunnel into radiant sunny Alpine valley with pine trees, 9:16 vertical portrait"
+    }
+  ]
+}
