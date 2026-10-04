@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 6,
+  "current_episode": 7,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-03T17:34:37.593099",
-  "last_uploaded_video_id": "PG7oSCRIyLI",
+  "last_run": "2026-10-04T17:50:19.039117",
+  "last_uploaded_video_id": "f22J9iT1XdI",
   "used_story_ids": [],
   "history": [
     {
@@ -52,6 +52,15 @@
       "video_id": "PG7oSCRIyLI",
       "mode": "scheduled",
       "timestamp": "2026-10-03T17:34:37.593099"
+    },
+    {
+      "episode_number": 6,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Ardhanarishvara: Aadha Shiv Aadhi Parvati! ☯️",
+      "video_id": "f22J9iT1XdI",
+      "mode": "scheduled",
+      "timestamp": "2026-10-04T17:50:19.039117"
     }
   ]
 }
