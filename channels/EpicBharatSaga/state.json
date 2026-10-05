@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 7,
+  "current_episode": 8,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-04T17:50:19.039117",
-  "last_uploaded_video_id": "f22J9iT1XdI",
+  "last_run": "2026-10-05T21:15:03.769133",
+  "last_uploaded_video_id": "0Ys4GjiIfTc",
   "used_story_ids": [],
   "history": [
     {
@@ -61,6 +61,15 @@
       "video_id": "f22J9iT1XdI",
       "mode": "scheduled",
       "timestamp": "2026-10-04T17:50:19.039117"
+    },
+    {
+      "episode_number": 7,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Kailash — Shiv Ka Ghar, Ab Tak Unclimbed! ⛰️",
+      "video_id": "0Ys4GjiIfTc",
+      "mode": "scheduled",
+      "timestamp": "2026-10-05T21:15:03.769133"
     }
   ]
 }

@@ -1,0 +1,71 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 7,
+  "season": 1,
+  "deity": "Lord Shiva",
+  "story_id": "shiva_07_kailash_mount",
+  "story_hash": "8ddf541f7d5e054c",
+  "format": "Sacred Place",
+  "title": "Kailash — Shiv Ka Ghar, Ab Tak Unclimbed! ⛰️",
+  "youtube_title": "Kailash — Shiv Ka Ghar, Ab Tak Unclimbed! ⛰️",
+  "tagline": "Mount Kailash unconquered Hindu sacred mountain Shiva abode",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Kailash"
+  ],
+  "verified_fact": "Mount Kailash (6,638 m) in Tibet has never been climbed. China banned all attempts since 2001. It is considered the abode of Shiva in Hindu tradition, and sacred to Jain, Buddhist and Bon traditions too. The mountain forms a perfect pyramid shape, unusual for natural formations.",
+  "voiceover_script": "Duniya ka ek pahad jo kabhi nahi chadhha gaya — Kailash! 6,638 meter uncha ye pahad Tibet mein hai. China ne 2001 mein climbing ban kar diya. Hindu manyata mein ye Mahadev ka niwas hai. Ajeeb baat — ye pahad bilkul pyramid shape ka hai jo natural formation mein bahut rare hai. 4 major rivers yahaan se shuru hoti hain: Ganga, Brahmaputra, Indus, Sutlej. Divya sthaan!",
+  "debate_question": "Kailash Mansarovar yatra — kab karenge?",
+  "pinned_comment": "⛰️ Kailash — Shiv ka ghar! Ab tak unclimbed. Har Har Mahadev!",
+  "description": "Kailash — Shiv Ka Ghar, Ab Tak Unclimbed! ⛰️\n\n🔱 Mount Kailash unconquered Hindu sacred mountain Shiva abode\n\nMount Kailash (6,638 m) in Tibet has never been climbed. China banned all attempts since 2001. It is considered the abode of Shiva in Hindu tradition, and sacred to Jain, Buddhist and Bon traditions too. The mountain forms a perfect pyramid shape, unusual for natural formations.\n\n👉 Kailash Mansarovar yatra — kab karenge?\n\nSeason 1 — Lord Shiva\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Kailash #Shiva #MountKailash #Pilgrimage #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Kailash",
+    "Shiva",
+    "MountKailash",
+    "Pilgrimage",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Kailash — duniya ka sabse rahasyamayi pahad!",
+      "prompt": "Mount Kailash Tibet perfect pyramid snow sacred mountain 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "6,638 meter — ab tak koi nahi chadha!",
+      "prompt": "Kailash mountain unconquered peak dramatic sky clouds 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Shiv ka niwas — 4 nadiyon ka udgam!",
+      "prompt": "Four rivers Ganges Brahmaputra Indus Sutlej source Kailash map 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Pyramid shape — nature mein bahut rare!",
+      "prompt": "Mount Kailash symmetric pyramid shape unusual natural formation 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "China ne 2001 mein climbing ban kiya!",
+      "prompt": "Kailash Mansarovar pilgrims prostrating snow sacred route 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Hindu, Jain, Buddha, Bon — sabka sacred!",
+      "prompt": "Kailash Mansarovar lake reflection snow mountain spiritual 9:16"
+    }
+  ]
+}
