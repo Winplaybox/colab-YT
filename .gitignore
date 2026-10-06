@@ -28,8 +28,12 @@ channels/EpicBharatSaga/stories/assets/
 channels/EpicBharatSaga/stories/thumbnails/
 channels/DigitalImmortals/episodes/*/assets/
 channels/DigitalImmortals/thumbnails/
+channels/MindNestTales/stories/assets/
+channels/MindNestTales/stories/thumbnails/
+channels/*/output/
 *.srt
 *.vtt
+*.log
 
 
 

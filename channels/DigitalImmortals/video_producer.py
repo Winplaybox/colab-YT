@@ -80,21 +80,27 @@ def synthesize_vedic_drone(output_wav, duration=30.0):
     wav_file.close()
 
 async def generate_scene_speech(text, output_mp3, max_retries=3):
+    voices = ["hi-IN-MadhurNeural", "hi-IN-SwaraNeural"]
+    rates = ["-2%", None]
     for attempt in range(max_retries):
-        try:
-            if os.path.exists(output_mp3) and os.path.getsize(output_mp3) < 1000:
+        for v in voices:
+            for r in rates:
                 try:
-                    os.remove(output_mp3)
+                    if os.path.exists(output_mp3) and os.path.getsize(output_mp3) < 1000:
+                        try:
+                            os.remove(output_mp3)
+                        except Exception:
+                            pass
+                    kwargs = {"voice": v}
+                    if r: kwargs["rate"] = r
+                    communicate = edge_tts.Communicate(text, **kwargs)
+                    await communicate.save(output_mp3)
+                    if os.path.exists(output_mp3) and os.path.getsize(output_mp3) > 1000:
+                        return True
                 except Exception:
-                    pass
-            communicate = edge_tts.Communicate(text, voice="hi-IN-MadhurNeural", rate="-2%")
-            await communicate.save(output_mp3)
-            if os.path.exists(output_mp3) and os.path.getsize(output_mp3) > 1000:
-                return True
-        except Exception as e:
-            if attempt == max_retries - 1:
-                print(f"[WARN] Failed generating voice for {os.path.basename(output_mp3)}: {e}")
-            await asyncio.sleep(1.5 * (attempt + 1))
+                    continue
+        await asyncio.sleep(1.0 * (attempt + 1))
+    print(f"[WARN] Failed generating voice for {os.path.basename(output_mp3)}")
     return False
 
 def get_audio_duration(file_path):
@@ -129,6 +135,9 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
 
     scenes = data.get("scenes", [])
     print(f"\n🎬 [RENDER ENGINE] Preparing {len(scenes)} Scenes for Episode {episode_num:02d}...")
+
+    if not scenes:
+        raise ValueError(f"Cannot render video: Episode {episode_num:02d} has 0 scenes in {json_path}!")
 
     # Pre-generate any missing voice audio with controlled concurrency (Semaphore=2)
     async def prepare_all_voices():
@@ -197,6 +206,9 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
     with open(srt_path, "w", encoding="utf-8") as f:
         f.write("\n".join(srt_entries))
     print(f"📝 Timed SRT subtitles saved to: {srt_path}")
+
+    if not scene_video_parts:
+        raise ValueError(f"No scene video parts generated for Episode {episode_num:02d}. Cannot concatenate.")
 
     # Concatenate Scene Segments into Full Video
     concat_list = os.path.join(ep_dir, "parts_concat.txt")

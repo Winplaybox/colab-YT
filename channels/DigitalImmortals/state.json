@@ -1,7 +1,7 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 6,
+  "current_episode": 7,
   "total_episodes": 54,
   "history": [
     {
@@ -38,6 +38,13 @@
       "title": "यज्ञ पर जब बरसी खून की भयानक बारिश! 🏹 (Ep 05)",
       "uploaded_at": "2026-10-03T15:22:38.044190",
       "publish_at": "2026-10-18T03:00:00Z"
+    },
+    {
+      "episode_number": 6,
+      "video_id": "uCIlsq--hmQ",
+      "title": "स्वर्ग से धरती पर कैसे उतरीं मां गंगा? 🌊 भगीरथ की अमर तपस्या (Ep 06)",
+      "uploaded_at": "2026-10-06T18:31:35.723638",
+      "publish_at": "2026-10-20T13:00:00Z"
     }
   ],
   "playlists": {
@@ -50,13 +57,13 @@
     "YUDDHA_KANDA": "PLZOYymeIpB3Y"
   },
   "last_audit": {
-    "episode_number": 4,
-    "video_id": "b30X91vj6BQ",
+    "episode_number": 6,
+    "video_id": "uCIlsq--hmQ",
     "views": 0,
     "likes": 0,
     "comments": 0,
     "like_ratio": 0,
-    "audited_at": "2026-10-03T15:12:04.277024",
+    "audited_at": "2026-10-06T20:31:40.820786",
     "sentiment": "⚠️ LOW ENGAGEMENT: Increase emotional stakes and refine thumbnail hook."
   }
 }

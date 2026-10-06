@@ -73,7 +73,7 @@ EPISODE_THUMBNAIL_CONFIG = {
         "line1": "स्वर्ग से पृथ्वी पर",
         "line2": "गंगा का महा-अवतरण!",
         "subhook": "भगीरथ की अमर तपस्या",
-        "anchor_pref": ["ganga_descent.jpg", "scene_15.jpg", "scene_01.jpg"]
+        "anchor_pref": ["shiva_ganga_descent.jpg", "bhagiratha_tapasya.jpg", "ganga_descent.jpg", "scene_15.jpg", "scene_01.jpg"]
     },
     7: {
         "line1": "पत्थर बनी अहल्या",

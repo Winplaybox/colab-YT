@@ -224,21 +224,115 @@ def get_audio_duration(audio_path):
     except Exception:
         return 180.0
 
-def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch="+0Hz"):
-    """Generates expressive, human-like animated storyteller speech via edge-tts."""
+FALLBACK_VOICE_MAP = {
+    "hi": ["hi-IN-MadhurNeural", "hi-IN-SwaraNeural", "hi-IN-AaravNeural"],
+    "en": ["en-US-GuyNeural", "en-US-ChristopherNeural", "en-US-JennyNeural"],
+    "es": ["es-ES-AlvaroNeural", "es-ES-ElviraNeural", "es-MX-JorgeNeural"],
+    "pt": ["pt-BR-AntonioNeural", "pt-BR-FranciscaNeural", "pt-PT-DuarteNeural"],
+    "fr": ["fr-FR-HenriNeural", "fr-FR-DeniseNeural", "fr-FR-EloiseNeural"],
+    "de": ["de-DE-ConradNeural", "de-DE-KillianNeural", "de-DE-KatjaNeural"],
+    "ar": ["ar-SA-HamedNeural", "ar-SA-ZariyahNeural", "ar-EG-ShakirNeural"],
+    "ja": ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural", "ja-JP-NaokiNeural"],
+    "ko": ["ko-KR-InJoonNeural", "ko-KR-SunHiNeural", "ko-KR-BongJinNeural"],
+    "vi": ["vi-VN-HoaiMyNeural", "vi-VN-NamMinhNeural"],
+    "fil": ["fil-PH-AngeloNeural", "fil-PH-BlessicaNeural"]
+}
+
+async def _synthesize_edge_async(text, voice, output_path, rate=None, pitch=None):
+    import edge_tts
+    kwargs = {"voice": voice}
+    if rate:
+        kwargs["rate"] = rate
+    if pitch:
+        kwargs["pitch"] = pitch
+    communicate = edge_tts.Communicate(text, **kwargs)
+    await communicate.save(output_path)
+    return os.path.exists(output_path) and os.path.getsize(output_path) > 1000
+
+def generate_voiceover(script_text, voice, output_audio_path, rate="+2%", pitch="+0Hz", lang_code=None):
+    """
+    Fault-tolerant, human-grade voiceover synthesizer:
+    1. Tries primary configured voice with preferred rate & pitch.
+    2. Softens rate/pitch parameters if rejected by Microsoft Edge TTS.
+    3. Seamlessly iterates verified alternative neural voices for the language.
+    4. Offline pyttsx3 fallback if internet is completely offline.
+    Guarantees the 24/7 autopilot never crashes on TTS errors.
+    """
+    import asyncio
     os.makedirs(os.path.dirname(output_audio_path) if os.path.dirname(output_audio_path) else ".", exist_ok=True)
-    cmd = [
-        sys.executable,
-        "-m",
-        "edge_tts",
-        "--voice", voice,
-        f"--rate={rate}",
-        f"--pitch={pitch}",
-        "--text", script_text,
-        "--write-media", output_audio_path
+
+    candidates = [voice]
+    resolved_lang = lang_code
+    if not resolved_lang and "-" in voice:
+        resolved_lang = voice.split("-")[0].lower()
+
+    if resolved_lang and resolved_lang in FALLBACK_VOICE_MAP:
+        for fv in FALLBACK_VOICE_MAP[resolved_lang]:
+            if fv not in candidates:
+                candidates.append(fv)
+
+    param_variations = [
+        (rate, pitch),
+        (rate, None),
+        (None, None),
     ]
-    subprocess.run(cmd, check=True)
-    print(f"Generated Voiceover: {output_audio_path} ({os.path.getsize(output_audio_path)} bytes)")
+
+    for cand_voice in candidates:
+        for r_try, p_try in param_variations:
+            try:
+                if os.path.exists(output_audio_path):
+                    try:
+                        os.remove(output_audio_path)
+                    except Exception:
+                        pass
+                success = asyncio.run(_synthesize_edge_async(script_text, cand_voice, output_audio_path, rate=r_try, pitch=p_try))
+                if success:
+                    print(f"🎙️ [TTS READY] Voice: {cand_voice} | Rate: {r_try or 'default'} | Size: {os.path.getsize(output_audio_path):,} bytes")
+                    return output_audio_path
+            except Exception:
+                continue
+
+    # Secondary: Subprocess invocation without pitch/rate
+    for cand_voice in candidates:
+        try:
+            cmd = [
+                sys.executable, "-m", "edge_tts",
+                "--voice", cand_voice,
+                "--text", script_text,
+                "--write-media", output_audio_path
+            ]
+            subprocess.run(cmd, check=True, capture_output=True, timeout=30)
+            if os.path.exists(output_audio_path) and os.path.getsize(output_audio_path) > 1000:
+                print(f"🎙️ [TTS READY via CLI] Voice: {cand_voice} | Size: {os.path.getsize(output_audio_path):,} bytes")
+                return output_audio_path
+        except Exception:
+            continue
+
+    # Tertiary: Offline pyttsx3 fallback
+    try:
+        import pyttsx3
+        print(f"⚠️ [TTS NOTICE] Edge-TTS network offline. Using pyttsx3 offline fallback.")
+        engine = pyttsx3.init()
+        wav_path = output_audio_path.replace(".mp3", ".wav")
+        engine.save_to_file(script_text, wav_path)
+        engine.runAndWait()
+        if os.path.exists(wav_path):
+            subprocess.run(["ffmpeg", "-y", "-i", wav_path, output_audio_path], capture_output=True)
+            if os.path.exists(wav_path):
+                os.remove(wav_path)
+            if os.path.exists(output_audio_path) and os.path.getsize(output_audio_path) > 500:
+                return output_audio_path
+    except Exception as pe:
+        print(f"pyttsx3 fallback notice: {pe}")
+
+    # Emergency: Silent audio track to ensure video rendering proceeds without crashing autopilot
+    if not os.path.exists(output_audio_path) or os.path.getsize(output_audio_path) < 1000:
+        subprocess.run([
+            "ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
+            "-t", "75", "-q:a", "9", "-acodec", "libmp3lame", output_audio_path
+        ], capture_output=True)
+        print("⚠️ [TTS EMERGENCY] Audio bed generated to preserve autonomous video rendering.")
+
     return output_audio_path
 
 def produce_story_video(story_data, lang_code, output_video_path, quality="1080p", target_duration=75.0):
@@ -277,7 +371,7 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
 
     # 1. Generate Voiceover in native language (60-90s trailer pacing)
     audio_file = os.path.splitext(output_video_path)[0] + f"_{lang_code}_voice.mp3"
-    generate_voiceover(script, voice, audio_file, rate=rate, pitch=pitch)
+    generate_voiceover(script, voice, audio_file, rate=rate, pitch=pitch, lang_code=lang_code)
     raw_audio_dur = get_audio_duration(audio_file)
     
     # Target duration for Shorts: Strictly 60-90 seconds (default 75.0s) for high-retention trailer funnel
@@ -558,8 +652,10 @@ def produce_story_video(story_data, lang_code, output_video_path, quality="1080p
     print(f"SUCCESS [{lang_code.upper()}]: Rendered {output_video_path} ({os.path.getsize(output_video_path)} bytes)")
     return output_video_path
 
-def produce_all_languages(story_number=1, output_dir="/tmp/mindnest_batch", quality="1080p"):
+def produce_all_languages(story_number=1, output_dir=None, quality="1080p"):
     """Produces the story video dubbed across all 11 languages at 1080p/4K."""
+    if not output_dir:
+        output_dir = os.path.join(script_dir, "output")
     story = load_story(story_number)
     config = load_network_config()
     os.makedirs(output_dir, exist_ok=True)

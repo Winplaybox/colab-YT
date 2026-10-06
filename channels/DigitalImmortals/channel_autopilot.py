@@ -93,6 +93,11 @@ def produce_and_schedule_episode(episode_num, dry_run=False):
     # Stage 2: Canonical Script Generation (Valmiki Ramayana 22-min format)
     print(f"\n[Stage 2/6] Generating Canonical 22-Minute Script for Episode {episode_num:02d}...")
     script_path = story_generator.save_episode_json(episode_num)
+    with open(script_path, "r", encoding="utf-8") as f:
+        script_data = json.load(f)
+    if not script_data.get("scenes"):
+        print(f"⚠️ [NOTICE] Episode {episode_num:02d} has no authored scenes yet in story_generator.py. Halting production cleanly.")
+        return False
 
     # Stage 3: Public Domain Museum Art Harvesting & 30 Scenes
     print(f"\n[Stage 3/6] Sourcing Authentic Museum Artworks & Generating Visuals...")

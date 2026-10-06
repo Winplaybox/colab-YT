@@ -74,13 +74,26 @@ def synthesize_edge_tts(text, output_path,
                         rate=CHHUKKU_RATE,
                         pitch=CHHUKKU_PITCH):
     """
-    Synthesizes narration using Microsoft Edge-TTS.
+    Synthesizes narration using Microsoft Edge-TTS with multi-tier fallback.
     Zero cost, no per-video billing, neural quality.
     """
     try:
-        import edge_tts  # noqa — validates install
-        asyncio.run(_edge_tts_async(text, output_path, voice, rate, pitch))
-        return True
+        import edge_tts
+        voices = [voice, "hi-IN-MadhurNeural", "hi-IN-SwaraNeural"]
+        param_variations = [
+            (rate, pitch),
+            (rate, None),
+            (None, None)
+        ]
+        for v in voices:
+            for r_try, p_try in param_variations:
+                try:
+                    asyncio.run(_edge_tts_async(text, output_path, v, r_try, p_try))
+                    if os.path.exists(output_path) and os.path.getsize(output_path) > 1000:
+                        return True
+                except Exception:
+                    continue
+        return False
     except ImportError:
         raise RuntimeError("edge-tts not installed. Run: pip install edge-tts")
     except Exception as e:

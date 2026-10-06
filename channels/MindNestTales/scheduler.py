@@ -45,24 +45,48 @@ except ImportError:
     def init_tracking_sheet(): pass
 
 
-def compute_next_publish_time(publish_time_utc="03:30", schedule_days=[2, 5, 6]):
+def compute_next_publish_time(publish_time_utc="03:30", schedule_days=[2, 5, 6], base_time_utc=None, lang_code=None):
     """
     Computes next Saturday, Sunday, or Wednesday publish timestamp in ISO 8601 UTC.
     Days: Wednesday=2, Saturday=5, Sunday=6.
-    Ensures at least 15 minutes in advance for YouTube scheduling API.
+    Ensures scheduling occurs strictly AFTER base_time_utc (or now + 15 min).
     """
     try:
         from datetime import timezone
         now_utc = datetime.now(timezone.utc)
         target_hour, target_min = map(int, publish_time_utc.split(":"))
-        
-        for days_ahead in range(8):
-            candidate_date = (now_utc + timedelta(days=days_ahead)).date()
+        min_time = now_utc + timedelta(minutes=15)
+
+        # Check existing state history for the latest scheduled release on this language
+        if not base_time_utc and lang_code:
+            try:
+                state_file = os.path.join(script_dir, "state.json")
+                if os.path.exists(state_file):
+                    with open(state_file, "r", encoding="utf-8") as f:
+                        sdata = json.load(f)
+                    for item in sdata.get("history", []):
+                        if item.get("language") == lang_code:
+                            pat = item.get("publish_at")
+                            if pat and pat != "IMMEDIATE":
+                                try:
+                                    dt = datetime.strptime(pat, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+                                    if dt > min_time:
+                                        min_time = dt
+                                except Exception:
+                                    pass
+            except Exception:
+                pass
+
+        if base_time_utc and base_time_utc > min_time:
+            min_time = base_time_utc
+
+        for days_ahead in range(1, 35):
+            candidate_date = (min_time + timedelta(days=days_ahead)).date()
             candidate_dt = datetime(
                 candidate_date.year, candidate_date.month, candidate_date.day,
                 target_hour, target_min, 0, tzinfo=timezone.utc
             )
-            if candidate_dt.weekday() in schedule_days and candidate_dt > now_utc + timedelta(minutes=15):
+            if candidate_dt.weekday() in schedule_days and candidate_dt > min_time:
                 return candidate_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
     except Exception as e:
         print(f"Schedule calculation error: {e}")
@@ -235,7 +259,39 @@ def post_pinned_comment(youtube, video_id, comment_text):
         print(f"Comment notice: {e}")
         return None
 
-def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", auto_advance=False, publish_at=None, work_dir="/tmp/mindnest_batch", mode="dual"):
+def print_mindnest_status():
+    state = load_state()
+    config = load_network_config()
+    history = state.get("history", [])
+    current_story = state.get("current_story", 1)
+    
+    print("\n" + "=" * 78)
+    print("🦁 MINDNEST TALES — 11-CHANNEL AUTONOMOUS NETWORK STATUS")
+    print("=" * 78)
+    print(f"📊 Total Stories in Master Roadmap: {state.get('total_stories', 51)}")
+    print(f"🎯 Current Story in Queue: Story #{current_story:02d}")
+    print(f"✅ Completed Stories: {state.get('completed_stories', [])}")
+    print(f"📁 Scheduled / Uploaded Videos: {len(history)}")
+    print("-" * 78)
+    print(f"{'Code':<6} {'Channel Name':<28} {'Slot (UTC)':<12} {'Auth Token'}")
+    print("-" * 78)
+    creds_dir = os.path.join(script_dir, "credentials")
+    for ch in config.get("channels", []):
+        lang = ch["lang_code"]
+        name = ch["channel_name"][:26]
+        slot = ch.get("publish_time_utc", "03:30")
+        tok = os.path.join(creds_dir, f"token_{lang}.json")
+        has_tok = "✅ Ready" if os.path.exists(tok) else "❌ No token"
+        print(f"{lang.upper():<6} {name:<28} {slot:<12} {has_tok}")
+    
+    if history:
+        print("-" * 78)
+        print("Recent Release History (Last 5):")
+        for h in history[-5:]:
+            print(f" - Story #{h.get('story_number'):02d} [{h.get('language', '').upper()}] {h.get('type')}: {h.get('publish_at', 'Immediate')} (ID: {h.get('video_id')})")
+    print("=" * 78 + "\n")
+
+def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", auto_advance=False, publish_at=None, work_dir=None, mode="dual", dry_run=False):
     """
     Executes production & upload for MindNest Tales:
     - mode='dual': Renders 10-Minute Long Video + 180s Short with direct cross-linking CTA.
@@ -249,12 +305,23 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
         print("Analytics engine not found.")
         return None
 
+    # Stage 0: Live YouTube Ground Truth Audit & Synchronization
+    if story_number is None:
+        try:
+            from youtube_syncer import sync_mindnest_from_youtube
+            next_unreleased, completed, _ = sync_mindnest_from_youtube(verbose=True)
+            story_number = next_unreleased
+        except Exception as se:
+            print(f"Notice: YouTube pre-flight sync skipped: {se}")
+
     state = load_state()
     if story_number is None:
         story_number = state.get("current_story", 1)
 
     config = load_network_config()
     story = load_story(story_number)
+    if not work_dir:
+        work_dir = os.path.join(script_dir, "output")
     os.makedirs(work_dir, exist_ok=True)
 
     # Locate thumbnail if present
@@ -271,13 +338,20 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
     results = []
     print(f"\n=======================================================")
     print(f"🚀 RELEASING STORY #{story_number}: '{story['base_title']}' [MODE: {mode.upper()}]")
-    print(f"Channels in this run: {len(channels_to_process)}")
+    print(f"Channels in this run: {len(channels_to_process)} | Quality: {quality.upper()} | Dry Run: {dry_run}")
     print(f"=======================================================")
 
     for ch in channels_to_process:
         lang = ch["lang_code"]
         ch_name = ch["channel_name"]
-        youtube = get_channel_youtube_service(
+
+        # Channel-level duplicate protection
+        ch_progress = state.get("channels_progress", {}).get(lang, {})
+        if story_number in ch_progress.get("completed_stories", []):
+            print(f"\n[{ch_name} - {lang.upper()}] ⏭️ Story #{story_number:02d} already verified on YouTube. Skipping to prevent duplicate.")
+            continue
+
+        youtube = None if dry_run else get_channel_youtube_service(
             lang,
             expected_channel_id=ch.get("channel_id"),
             expected_name=ch_name
@@ -285,7 +359,7 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
 
         channel_publish_at = publish_at
         if not channel_publish_at and ch.get("publish_time_utc"):
-            channel_publish_at = compute_next_publish_time(ch.get("publish_time_utc", "03:30"))
+            channel_publish_at = compute_next_publish_time(ch.get("publish_time_utc", "03:30"), lang_code=lang)
 
         long_vid_url = None
 
@@ -325,7 +399,10 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                 if not os.path.exists(long_thumb):
                     long_thumb = thumb_path
 
-                if youtube and os.path.exists(long_path):
+                if dry_run:
+                    print(f"🔍 [DRY RUN] 10-Min Video rendered locally: {long_path}")
+                    results.append({"channel": ch_name, "lang": lang, "type": "10-MIN", "status": "DRY_RUN", "path": long_path})
+                elif youtube and os.path.exists(long_path):
                     long_id = upload_story_to_channel(
                         youtube,
                         long_path,
@@ -338,10 +415,20 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                     long_vid_url = f"https://youtu.be/{long_id}"
                     results.append({"channel": ch_name, "lang": lang, "type": "10-MIN", "status": "UPLOADED", "url": long_vid_url})
                     state.setdefault("compilations", {})[f"story_{story_number:02d}_{lang}"] = long_vid_url
+                    state.setdefault("history", []).append({
+                        "story_number": story_number,
+                        "language": lang,
+                        "channel": ch_name,
+                        "type": "10-MIN",
+                        "video_id": long_id,
+                        "title": long_meta["title"],
+                        "publish_at": channel_publish_at,
+                        "uploaded_at": datetime.utcnow().isoformat()
+                    })
             except Exception as le:
                 print(f"Notice: Long-form build note: {le}")
             finally:
-                if os.path.exists(long_path):
+                if not dry_run and os.path.exists(long_path):
                     os.remove(long_path)
 
         # -----------------------------------------------------------------
@@ -377,7 +464,11 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                 w_lbl = watch_labels.get(lang, "🎬 WATCH FULL 10-MINUTE EPISODE")
                 desc = f"{w_lbl}: {long_vid_url}\n\n" + desc
 
-            if youtube and os.path.exists(video_path):
+            if dry_run:
+                print(f"🔍 [DRY RUN] Short rendered locally: {video_path}")
+                results.append({"channel": ch_name, "lang": lang, "type": "SHORT", "status": "DRY_RUN", "path": video_path})
+                record_story_status(story_number, lang, "Dry Run")
+            elif youtube and os.path.exists(video_path):
                 try:
                     vid = upload_story_to_channel(
                         youtube,
@@ -392,6 +483,27 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                     status_label = f"Scheduled ({channel_publish_at})" if channel_publish_at else f"Uploaded ({vid})"
                     results.append({"channel": ch_name, "lang": lang, "type": "SHORT", "status": status_label, "url": short_url})
                     record_story_status(story_number, lang, status_label)
+                    state.setdefault("history", []).append({
+                        "story_number": story_number,
+                        "language": lang,
+                        "channel": ch_name,
+                        "type": "SHORT",
+                        "video_id": vid,
+                        "title": title,
+                        "publish_at": channel_publish_at,
+                        "uploaded_at": datetime.utcnow().isoformat()
+                    })
+
+                    # Update per-channel progress in state
+                    if "channels_progress" in state and lang in state["channels_progress"]:
+                        cp = state["channels_progress"][lang]
+                        if story_number not in cp.get("completed_stories", []):
+                            cp.setdefault("completed_stories", []).append(story_number)
+                            cp["completed_stories"].sort()
+                        for s in range(1, 52):
+                            if s not in cp["completed_stories"]:
+                                cp["next_story"] = s
+                                break
 
                     if long_vid_url:
                         pin_labels = {
@@ -419,20 +531,28 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                 results.append({"channel": ch_name, "lang": lang, "type": "SHORT", "status": "RENDERED_LOCAL", "path": video_path})
                 record_story_status(story_number, lang, "Rendered Local")
 
-            if os.path.exists(video_path):
+            if not dry_run and os.path.exists(video_path):
                 os.remove(video_path)
 
     # Update state tracker
     today_str = datetime.now().strftime("%Y-%m-%d")
     state["last_run_date"] = today_str
-    if story_number not in state.get("completed_stories", []):
-        state.setdefault("completed_stories", []).append(story_number)
 
-    if auto_advance:
-        total = state.get("total_stories", 51)
-        next_story = (story_number % total) + 1
-        state["current_story"] = next_story
-        print(f"State updated: Next story in pipeline is Story #{next_story}")
+    if "channels_progress" in state and state["channels_progress"]:
+        all_comp = set.intersection(*(set(p.get("completed_stories", [])) for p in state["channels_progress"].values()))
+        state["completed_stories"] = sorted(list(all_comp))
+        all_next = [p.get("next_story", 1) for p in state["channels_progress"].values()]
+        state["current_story"] = min(all_next) if all_next else 1
+        print(f"State updated: Next story across network is Story #{state['current_story']:02d}")
+    else:
+        if story_number not in state.get("completed_stories", []):
+            state.setdefault("completed_stories", []).append(story_number)
+        if auto_advance:
+            total = state.get("total_stories", 51)
+            next_story = (story_number % total) + 1
+            state["current_story"] = next_story
+            print(f"State updated: Next story in pipeline is Story #{next_story:02d}")
+
     save_state(state)
 
     print("\n" + "="*60)
@@ -443,25 +563,52 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
     return results
 
 if __name__ == "__main__":
-    state = load_state()
-    default_story = state.get("current_story", 1)
+    import argparse
+    parser = argparse.ArgumentParser(description="MindNest Tales Multi-Language 11-Channel Scheduler")
+    parser.add_argument("story_pos", nargs="?", default=None, help="Story number or 'auto'")
+    parser.add_argument("lang_pos", nargs="?", default=None, help="Language code or 'all'")
+    parser.add_argument("quality_pos", nargs="?", default=None, help="1080p, 4k, or 8k")
+    parser.add_argument("mode_pos", nargs="?", default=None, help="dual, short, long, analytics")
+    parser.add_argument("--story", type=str, default=None, help="Story number to release (e.g. 1 or 'auto')")
+    parser.add_argument("--lang", type=str, default="all", help="Target language code or 'all'")
+    parser.add_argument("--quality", type=str, default="1080p", help="Target resolution (1080p, 4k, 8k)")
+    parser.add_argument("--mode", type=str, default="dual", help="Release mode: 'dual', 'short', 'long', 'analytics'")
+    parser.add_argument("--status", action="store_true", help="Display network status and channel auth")
+    parser.add_argument("--dry-run", action="store_true", help="Render assets locally without uploading")
 
-    story_arg = sys.argv[1] if len(sys.argv) > 1 else "auto"
-    if story_arg == "analytics":
+    args = parser.parse_args()
+
+    if args.status:
+        print_mindnest_status()
+        sys.exit(0)
+
+    # Reconcile positional vs named args
+    story_input = args.story_pos or args.story or "auto"
+    target_lang = args.lang_pos or args.lang or "all"
+    target_quality = args.quality_pos or args.quality or "1080p"
+    target_mode = args.mode_pos or args.mode or "dual"
+
+    if story_input == "analytics" or target_mode == "analytics":
         run_mindnest_release(mode="analytics")
         sys.exit(0)
 
-    if story_arg == "auto" or not story_arg.isdigit():
+    state = load_state()
+    default_story = state.get("current_story", 1)
+
+    if story_input == "auto" or not str(story_input).isdigit():
         story_no = default_story
         auto_adv = True
     else:
-        story_no = int(story_arg)
+        story_no = int(story_input)
         auto_adv = False
 
-    lang = sys.argv[2] if len(sys.argv) > 2 else "all"
-    quality = sys.argv[3] if len(sys.argv) > 3 else "1080p"
-    mode = sys.argv[4] if len(sys.argv) > 4 else "dual"
-
-    run_mindnest_release(story_no, lang, quality=quality, auto_advance=auto_adv, mode=mode)
+    run_mindnest_release(
+        story_number=story_no,
+        target_lang=target_lang,
+        quality=target_quality,
+        auto_advance=auto_adv,
+        mode=target_mode,
+        dry_run=args.dry_run
+    )
 
 

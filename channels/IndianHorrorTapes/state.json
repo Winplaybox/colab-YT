@@ -1,10 +1,10 @@
 {
   "channel_id": "UCNRr8A9gVZQZJi1eMKiXIJw",
   "channel_name": "IndianHorrorTapes",
-  "current_story_number": 11,
+  "current_story_number": 13,
   "total_stories": 103,
-  "last_run": "2026-10-04T18:06:54.025200",
-  "last_uploaded_video_id": "eQBOzVMIi00",
+  "last_run": "2026-10-06T19:08:07.277395",
+  "last_uploaded_video_id": "uc-caBoDgNQ",
   "history": [
     {
       "story_number": 8,
@@ -20,9 +20,21 @@
     },
     {
       "story_number": 10,
-      "video_id": "eQBOzVMIi00",
+      "video_id": "zZ3o3DZKkv8",
       "publish_at": "2026-10-07T15:30:00Z",
-      "uploaded_at": "2026-10-04T18:06:54.025200"
+      "uploaded_at": "2026-10-06T16:58:40.197798"
+    },
+    {
+      "story_number": 11,
+      "video_id": "KphPDPCbknw",
+      "publish_at": "2026-10-07T15:30:00Z",
+      "uploaded_at": "2026-10-06T18:05:06.357609"
+    },
+    {
+      "story_number": 12,
+      "video_id": "uc-caBoDgNQ",
+      "publish_at": "2026-10-07T15:30:00Z",
+      "uploaded_at": "2026-10-06T19:08:07.277395"
     }
   ],
   "playlists": {

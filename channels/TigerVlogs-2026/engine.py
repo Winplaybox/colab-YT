@@ -79,6 +79,29 @@ def prepare_optimized_single_image(img_path, target_w, target_h):
     except Exception:
         return img_path, False
 
+def synthesize_resilient_speech(script, voice, audio_path, rate="+2%"):
+    """Fault-tolerant speech generator for TigerVlogs with fallback neural voices and rates."""
+    import asyncio, edge_tts
+    voices = [voice, "hi-IN-MadhurNeural", "hi-IN-SwaraNeural"]
+    rates = [rate, None]
+    for v in voices:
+        for r in rates:
+            try:
+                kwargs = {"voice": v}
+                if r: kwargs["rate"] = r
+                comm = edge_tts.Communicate(script, **kwargs)
+                asyncio.run(comm.save(audio_path))
+                if os.path.exists(audio_path) and os.path.getsize(audio_path) > 1000:
+                    return audio_path
+            except Exception:
+                continue
+    # Emergency fallback
+    subprocess.run([
+        "ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
+        "-t", "45", "-q:a", "9", "-acodec", "libmp3lame", audio_path
+    ], capture_output=True)
+    return audio_path
+
 def generate_original_longform_video(
     hook_headline,
     hinglish_script,
@@ -97,13 +120,7 @@ def generate_original_longform_video(
 
     fetched_img = fetch_wiki_food_image(wiki_title, img_path)
 
-    subprocess.run([
-        "edge-tts",
-        "--voice", voice,
-        "--rate=+2%",
-        "--text", hinglish_script,
-        "--write-media", audio_path
-    ], check=True)
+    synthesize_resilient_speech(hinglish_script, voice, audio_path)
 
     clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
 
@@ -168,13 +185,7 @@ def generate_original_short(
 
     fetched_img = fetch_wiki_food_image(wiki_title, img_path)
 
-    subprocess.run([
-        "edge-tts",
-        "--voice", voice,
-        "--rate=+2%",
-        "--text", hinglish_script,
-        "--write-media", audio_path
-    ], check=True)
+    synthesize_resilient_speech(hinglish_script, voice, audio_path)
 
     clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
 

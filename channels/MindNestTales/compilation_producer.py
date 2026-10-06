@@ -238,7 +238,7 @@ def produce_10min_compilation(story_ids, lang_code, output_video_path, quality="
         
         # Audio
         s_audio_path = os.path.join(temp_dir, f"story_{sid}_audio.mp3")
-        generate_voiceover(s_script, voice, s_audio_path, rate=rate, pitch=pitch)
+        generate_voiceover(s_script, voice, s_audio_path, rate=rate, pitch=pitch, lang_code=lang_code)
         dur = get_audio_duration(s_audio_path)
         story_audios.append((s_audio_path, dur))
 
