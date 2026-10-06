@@ -164,11 +164,20 @@ def audit_and_sync_all(sync_state=True):
                     st = json.load(sf)
                 updated = False
 
-                if ctype == "DigitalImmortals" and highest_ep:
-                    if st.get("current_episode", 1) <= highest_ep:
-                        st["current_episode"] = highest_ep + 1
+                if ctype == "DigitalImmortals":
+                    saga_eps = []
+                    for u in audit_res.get("uploads", []):
+                        det = u.get("detected_number")
+                        raw_title = u.get("title", "").lower()
+                        if det and 1 <= det <= 54:
+                            # Must belong to Valmiki Ramayana series and not legacy generic narrated tests
+                            if ("रामायण" in raw_title or "ramayan" in raw_title or "(ep" in raw_title) and "narrated" not in raw_title:
+                                saga_eps.append(det)
+                    if saga_eps:
+                        max_saga = max(saga_eps)
+                        st["current_episode"] = max_saga + 1
                         updated = True
-                        print(f"   🔄 Synchronized state.json -> next episode: Ep {highest_ep + 1:02d}")
+                        print(f"   🔄 Synchronized state.json -> next episode: Ep {max_saga + 1:02d}")
 
                 elif ctype == "EpicBharatSaga" and highest_ep:
                     if st.get("current_episode", 1) <= highest_ep:
