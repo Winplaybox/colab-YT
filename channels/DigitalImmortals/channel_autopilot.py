@@ -81,6 +81,31 @@ def produce_and_schedule_episode(episode_num, dry_run=False):
     print(f"🎬 [AUTOPILOT] STARTING COMPLETE PRODUCTION FOR EPISODE {episode_num:02d} / 54")
     print("#" * 78)
 
+    # Stage 0: Universal Live YouTube Duplicate Protection
+    try:
+        try:
+            from channels.common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..", "..")))
+            from channels.common.youtube_duplicate_checker import check_existing_upload
+
+        yt = scheduler.get_youtube_client()
+        if yt:
+            dup = check_existing_upload(yt, episode_number=episode_num, channel_type="DigitalImmortals")
+            if dup.get("exists"):
+                print(f"\n🛑 [LIVE YOUTUBE CHECK] Episode {episode_num:02d} is ALREADY uploaded on YouTube!")
+                print(f"   Video ID: {dup.get('video_id')} | Title: '{dup.get('title')}'")
+                print(f"   ⏩ Skipping complete production to avoid duplicates. Advancing episode pointer.\n")
+                state = get_current_state()
+                if state.get("current_episode", 1) <= episode_num:
+                    state["current_episode"] = episode_num + 1
+                    state_file = os.path.join(script_dir, "state.json")
+                    with open(state_file, "w", encoding="utf-8") as f:
+                        json.dump(state, f, indent=2, ensure_ascii=False)
+                return True
+    except Exception as d_err:
+        print(f"Notice: Live duplicate pre-check: {d_err}")
+
     # Stage 1: Algorithmic & Retention Audit
     print(f"\n[Stage 1/6] Auditing Channel Performance...")
     try:
