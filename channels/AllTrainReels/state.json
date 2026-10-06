@@ -1,10 +1,10 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 9,
+  "current_story_number": 10,
   "total_stories": 3000,
-  "last_run": "2026-10-04T17:20:29.078194",
-  "last_uploaded_video_id": "4tKARhyEF8Y",
+  "last_run": "2026-10-06T11:41:05.539314",
+  "last_uploaded_video_id": "WblUj3Bytsw",
   "history": [
     {
       "episode_number": 1,
@@ -61,6 +61,13 @@
       "video_id": "4tKARhyEF8Y",
       "mode": "schedule",
       "timestamp": "2026-10-04T17:20:29.078194"
+    },
+    {
+      "episode_number": 9,
+      "title": "Samundar Ke Neeche Daudti Hai Ye Train! 🌊",
+      "video_id": "WblUj3Bytsw",
+      "mode": "schedule",
+      "timestamp": "2026-10-06T11:41:05.539314"
     }
   ],
   "used_topic_ids": [],
