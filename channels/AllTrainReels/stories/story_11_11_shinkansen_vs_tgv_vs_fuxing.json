@@ -1,0 +1,89 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 11,
+  "story_id": "train_11_shinkansen_vs_tgv_vs_fuxing",
+  "story_hash": "eb31344dbc602111",
+  "format": "Vs / Comparison",
+  "title": "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡",
+  "youtube_title": "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡",
+  "title_variations": [
+    "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡",
+    "Top 3 high-speed bullet trains compared 🚂",
+    "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡ #Shorts",
+    "The Real Story: Top 3 high-speed bullet trains compared"
+  ],
+  "tagline": "Top 3 high-speed bullet trains compared",
+  "visual_theme": "SPLIT_VS_ARENA",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/TGV_world_speed_record",
+    "https://en.wikipedia.org/wiki/Fuxing_(train)",
+    "https://en.wikipedia.org/wiki/Shinkansen"
+  ],
+  "verified_fact": "France's TGV holds the modified steel-wheel record (574.8 km/h in 2007), China's Fuxing CR400 operates highest commercial speed (350 km/h), while Japan's Shinkansen boasts 60 years with zero passenger fatalities from derailments/collisions.",
+  "voiceover_script": "Duniya ki teen sabse famous bullet trains: kisme kya khaas hai? France ki TGV ke naam 574.8 km/h ka steel-wheel speed record hai. China ki Fuxing train roz 350 km/h ki commercial speed par passengers ko le jaati hai. Aur Japan ki Shinkansen pichhle 60 saal se chal rahi hai bina kisi derailment ya collision fatal accident ke! Speed mein TGV aage, daily operational speed mein Fuxing, aur safety record mein Shinkansen.",
+  "debate_question": "Aapki nazar mein kaunsi bullet train sabse impressive hai?",
+  "pinned_comment": "⚡ TGV = Record Speed (574.8 km/h) | Fuxing = Daily Speed (350 km/h) | Shinkansen = 60 Saal Zero Fatal Accidents! Kaunsi best hai?",
+  "description": "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡\n\n🚂 Top 3 high-speed bullet trains compared\n\nFrance's TGV holds the modified steel-wheel record (574.8 km/h in 2007), China's Fuxing CR400 operates highest commercial speed (350 km/h), while Japan's Shinkansen boasts 60 years with zero passenger fatalities from derailments/collisions.\n\n👉 Aapki nazar mein kaunsi bullet train sabse impressive hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#BulletTrain #TGV #Shinkansen #Fuxing #HighSpeedRail #Comparison #Shorts",
+  "tags": [
+    "BulletTrain",
+    "TGV",
+    "Shinkansen",
+    "Fuxing",
+    "HighSpeedRail",
+    "Comparison",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Duniya ki 3 sabse famous bullet trains!",
+      "sound_cue": "versus_intro",
+      "prompt": "Three-way diagonal split visual featuring aerodynamic noses of French TGV, Japanese Shinkansen, and Chinese Fuxing bullet train, high speed stance, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "France TGV: 574.8 km/h steel-wheel record!",
+      "sound_cue": "jet_whoosh",
+      "prompt": "French TGV high-speed train racing down open test tracks in French countryside, sparks from pantograph overhead wire, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "China Fuxing: Roz 350 km/h commercial speed!",
+      "sound_cue": "electric_glide",
+      "prompt": "Sleek red and silver Chinese Fuxing CR400 bullet train gliding past modern cityscape viaduct, evening twilight, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Japan Shinkansen: 60 saal, zero fatal crashes!",
+      "sound_cue": "safety_chime",
+      "prompt": "Japanese Shinkansen N700S bullet train passing snow-capped Mount Fuji in spring with cherry blossom trees, iconic pristine beauty, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Speed, daily run, ya safety: aapki choice?",
+      "sound_cue": "whoosh_outro",
+      "prompt": "High speed bullet train tracks converging into distance at golden sunset, clean railway engineering, 9:16 vertical portrait"
+    }
+  ]
+}

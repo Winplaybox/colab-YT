@@ -1,10 +1,10 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 11,
+  "current_story_number": 12,
   "total_stories": 3000,
-  "last_run": "2026-10-06T11:45:30.755998",
-  "last_uploaded_video_id": "Z4sx4NSndvc",
+  "last_run": "2026-10-06T19:05:01.906990",
+  "last_uploaded_video_id": "8h9z3O7tp8k",
   "history": [
     {
       "episode_number": 1,
@@ -75,6 +75,13 @@
       "video_id": "Z4sx4NSndvc",
       "mode": "schedule",
       "timestamp": "2026-10-06T11:45:30.755998"
+    },
+    {
+      "episode_number": 11,
+      "title": "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡",
+      "video_id": "8h9z3O7tp8k",
+      "mode": "schedule",
+      "timestamp": "2026-10-06T19:05:01.906990"
     }
   ],
   "used_topic_ids": [],
