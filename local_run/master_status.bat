@@ -9,6 +9,9 @@ echo.
 
 cd /d "%~dp0.."
 python master_dual_autopilot.py --status
+echo.
+echo Checking Live YouTube Duplicate Ground Truth across all channels...
+python channels/common/audit_all_channels.py
 
 echo.
 echo ==============================================================================

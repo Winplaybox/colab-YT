@@ -1,7 +1,7 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 7,
+  "current_episode": 81,
   "total_episodes": 54,
   "history": [
     {
@@ -59,11 +59,11 @@
   "last_audit": {
     "episode_number": 6,
     "video_id": "uCIlsq--hmQ",
-    "views": 0,
+    "views": 1,
     "likes": 0,
     "comments": 0,
-    "like_ratio": 0,
-    "audited_at": "2026-10-06T20:31:40.820786",
+    "like_ratio": 0.0,
+    "audited_at": "2026-10-06T21:31:43.728701",
     "sentiment": "⚠️ LOW ENGAGEMENT: Increase emotional stakes and refine thumbnail hook."
   }
 }

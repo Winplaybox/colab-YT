@@ -154,6 +154,27 @@ def upload_short(video_path, story, publish_mode="scheduled"):
     print(f"\n🔱 Uploading EpicBharatSaga Ep #{ep_num:03d} | Season {season} — {deity}")
     print(f"   Title: {story['youtube_title']}")
 
+    # Live YouTube duplicate check
+    try:
+        try:
+            from common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+            from common.youtube_duplicate_checker import check_existing_upload
+
+        dup = check_existing_upload(youtube, candidate_title=story["youtube_title"], episode_number=ep_num, channel_type="EpicBharatSaga")
+        if dup.get("exists"):
+            existing_id = dup["video_id"]
+            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on Epic Bharat YouTube!")
+            print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
+            print(f"   Reason:         {dup.get('reason')}")
+            print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
+            print(f"   YouTube Link:   https://youtu.be/{existing_id}")
+            print(f"   ⏭️ Skipping upload to prevent duplicate content on YouTube.\n")
+            return existing_id
+    except Exception as ce:
+        print(f"Notice: Duplicate check notice: {ce}")
+
     media = MediaFileUpload(video_path, mimetype="video/mp4", resumable=True, chunksize=256 * 1024)
     insert = youtube.videos().insert(part="snippet,status", body=request_body, media_body=media)
 
@@ -199,7 +220,32 @@ def run_episode(episode_number=None, publish_mode="scheduled", quality="1080p"):
     print(f"🔱 EpicBharatSaga — Episode #{episode_number:03d}")
     print(f"{'='*70}\n")
 
-    # 1. Generate story
+    # 1. Pre-render Live YouTube Check: skip stories already uploaded on YouTube
+    creds = load_credentials()
+    if creds and HAS_GOOGLE_CLIENT:
+        try:
+            try:
+                from common.youtube_duplicate_checker import check_existing_upload
+            except ImportError:
+                sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+                from common.youtube_duplicate_checker import check_existing_upload
+
+            yt = build("youtube", "v3", credentials=creds)
+            while True:
+                cand_story = generate_story_from_bank(episode_number)
+                dup = check_existing_upload(yt, candidate_title=cand_story.get("youtube_title"), episode_number=episode_number, channel_type="EpicBharatSaga")
+                if dup.get("exists"):
+                    print(f"🛑 [LIVE YOUTUBE CHECK] Episode #{episode_number:03d} ({cand_story.get('title')}) is ALREADY on YouTube ({dup['video_id']}).")
+                    print(f"   ⏩ Skipping render/upload. Advancing to Episode #{episode_number + 1:03d}...")
+                    episode_number += 1
+                    state["current_episode"] = episode_number
+                    save_state(state)
+                else:
+                    break
+        except Exception as e:
+            print(f"Notice: Pre-check duplicate notice: {e}")
+
+    # Generate active story
     story = generate_story_from_bank(episode_number)
     print(f"\n📖 Story: [{story.get('deity', '')} S{story.get('season', 1)}] {story['youtube_title']}")
 

@@ -273,6 +273,28 @@ def upload_video(youtube, video_path, metadata, thumbnail_path=None, pinned_comm
     else:
         print("⚡ Publishing Immediately as Public!")
 
+    # Live YouTube Duplicate Protection
+    try:
+        try:
+            from common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+            from common.youtube_duplicate_checker import check_existing_upload
+
+        cand_title = metadata.get("snippet", {}).get("title", "")
+        dup = check_existing_upload(youtube, candidate_title=cand_title, channel_type="IndianHorrorTapes")
+        if dup.get("exists"):
+            existing_id = dup["video_id"]
+            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on Indian Horror Tapes YouTube!")
+            print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
+            print(f"   Reason:         {dup.get('reason')}")
+            print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
+            print(f"   YouTube Link:   https://youtu.be/{existing_id}")
+            print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
+            return existing_id, f"https://www.youtube.com/shorts/{existing_id}"
+    except Exception as ce:
+        print(f"Notice: Duplicate checker notice: {ce}")
+
     media = MediaFileUpload(
         video_path,
         chunksize=1024 * 1024 * 8, # 8MB chunks
@@ -423,8 +445,37 @@ def run_schedule(story_number=None, quality="4k", force_immediate=False):
         except Exception:
             story_number = 1
 
-    if story_number is None:
-        story_number = 1
+    # Pre-render check: inspect live YouTube to skip already uploaded stories
+    yt_svc = get_youtube_service()
+    if yt_svc:
+        try:
+            try:
+                from common.youtube_duplicate_checker import check_existing_upload
+            except ImportError:
+                sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+                from common.youtube_duplicate_checker import check_existing_upload
+
+            while True:
+                cand_data = get_or_create_story(story_number)
+                cand_title = f"{cand_data['title']} 💀 #Shorts"
+                dup = check_existing_upload(yt_svc, candidate_title=cand_title, story_number=story_number, channel_type="IndianHorrorTapes")
+                if dup.get("exists"):
+                    print(f"🛑 [LIVE YOUTUBE CHECK] Story #{story_number:02d} ({cand_data['title']}) is ALREADY on YouTube ({dup['video_id']}).")
+                    print(f"   ⏩ Skipping render. Advancing to Story #{story_number + 1:02d}...")
+                    story_number = (story_number % 103) + 1
+                    if os.path.exists(state_file):
+                        try:
+                            with open(state_file, "r", encoding="utf-8") as f:
+                                st = json.load(f)
+                            st["current_story_number"] = story_number
+                            with open(state_file, "w", encoding="utf-8") as f:
+                                json.dump(st, f, indent=2)
+                        except Exception:
+                            pass
+                else:
+                    break
+        except Exception as pe_err:
+            print(f"Notice: Pre-check duplicate notice: {pe_err}")
 
     story_data = get_or_create_story(story_number)
     output_dir = os.path.join(script_dir, "output")

@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 8,
+  "current_episode": 9,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-05T21:15:03.769133",
-  "last_uploaded_video_id": "0Ys4GjiIfTc",
+  "last_run": "2026-10-06T21:18:22.545148",
+  "last_uploaded_video_id": "orvtHC3clns",
   "used_story_ids": [],
   "history": [
     {
@@ -70,6 +70,15 @@
       "video_id": "0Ys4GjiIfTc",
       "mode": "scheduled",
       "timestamp": "2026-10-05T21:15:03.769133"
+    },
+    {
+      "episode_number": 8,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "12 Jyotirlinga: Brahma-Vishnu Ki Test Mein Shiv Jeete! 🌟",
+      "video_id": "orvtHC3clns",
+      "mode": "scheduled",
+      "timestamp": "2026-10-06T21:18:22.545148"
     }
   ]
 }

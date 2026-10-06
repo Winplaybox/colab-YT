@@ -146,6 +146,28 @@ def upload_short(video_path, story_data, publish_mode="schedule"):
     else:
         body["status"]["privacyStatus"] = "unlisted"
 
+    # Live YouTube Duplicate Protection
+    try:
+        try:
+            from common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+            from common.youtube_duplicate_checker import check_existing_upload
+
+        ep_num = story_data.get("story_number") or story_data.get("episode_number")
+        dup = check_existing_upload(youtube, candidate_title=title, episode_number=ep_num, channel_type="AllTrainReels")
+        if dup.get("exists"):
+            existing_id = dup["video_id"]
+            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on All Train Reels YouTube!")
+            print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
+            print(f"   Reason:         {dup.get('reason')}")
+            print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
+            print(f"   YouTube Link:   https://youtu.be/{existing_id}")
+            print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
+            return existing_id
+    except Exception as ce:
+        print(f"Notice: Duplicate checker notice: {ce}")
+
     media = MediaFileUpload(video_path, chunksize=10*1024*1024, resumable=True, mimetype="video/mp4")
     request = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
 
@@ -223,6 +245,32 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
         episode_number = int(episode_number)
 
     print(f"\n🚀 [AllTrainReels Workflow Trigger] Processing Episode #{episode_number:02d} ({quality})...")
+
+    # Pre-render live YouTube check
+    yt_svc = get_youtube_service()
+    if yt_svc:
+        try:
+            try:
+                from common.youtube_duplicate_checker import check_existing_upload
+            except ImportError:
+                sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+                from common.youtube_duplicate_checker import check_existing_upload
+
+            from story_generator import get_or_create_story
+            while True:
+                cand_story = get_or_create_story(episode_number)
+                cand_title = cand_story.get("youtube_title", cand_story.get("title", ""))
+                dup = check_existing_upload(yt_svc, candidate_title=cand_title, episode_number=episode_number, channel_type="AllTrainReels")
+                if dup.get("exists"):
+                    print(f"🛑 [LIVE YOUTUBE CHECK] Episode #{episode_number:02d} ({cand_title}) is ALREADY on YouTube ({dup['video_id']}).")
+                    print(f"   ⏩ Skipping render. Advancing to Episode #{episode_number + 1:02d}...")
+                    episode_number += 1
+                    state["current_story_number"] = episode_number
+                    save_state(state)
+                else:
+                    break
+        except Exception as pe_err:
+            print(f"Notice: Pre-check duplicate notice: {pe_err}")
 
     # Generate single episode on-demand
     from story_generator import get_or_create_story

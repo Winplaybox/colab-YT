@@ -181,8 +181,29 @@ def get_channel_youtube_service(lang_code, expected_channel_id=None, expected_na
         print(f"Auth error for {lang_code.upper()}: {e}")
         return None
 
-def upload_story_to_channel(youtube, video_file, title, description, tags, thumbnail_path=None, publish_at=None, category_id="1"):
+def upload_story_to_channel(youtube, video_file, title, description, tags, thumbnail_path=None, publish_at=None, category_id="1", story_number=None):
     """Uploads story video to target channel (Category 1: Film & Animation) and attaches custom thumbnail."""
+    # 0. Live YouTube duplicate pre-flight check
+    try:
+        try:
+            from common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+            from common.youtube_duplicate_checker import check_existing_upload
+
+        dup = check_existing_upload(youtube, candidate_title=title, story_number=story_number, channel_type="MindNestTales")
+        if dup.get("exists"):
+            existing_vid = dup["video_id"]
+            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on this YouTube channel!")
+            print(f"   Existing Title: '{dup['title']}'")
+            print(f"   Reason:         {dup['reason']}")
+            print(f"   Video ID:       {existing_vid} ({dup.get('status', 'unknown')})")
+            print(f"   YouTube Link:   https://youtu.be/{existing_vid}")
+            print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
+            return existing_vid
+    except Exception as ce:
+        print(f"Notice: Duplicate checker notice: {ce}")
+
     status = {
         "privacyStatus": "private",
         "selfDeclaredMadeForKids": False
@@ -360,6 +381,26 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
         channel_publish_at = publish_at
         if not channel_publish_at and ch.get("publish_time_utc"):
             channel_publish_at = compute_next_publish_time(ch.get("publish_time_utc", "03:30"), lang_code=lang)
+
+        # Pre-check live YouTube directly to avoid redundant video rendering & compilation
+        if youtube and not dry_run:
+            try:
+                try:
+                    from common.youtube_duplicate_checker import check_existing_upload
+                except ImportError:
+                    sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+                    from common.youtube_duplicate_checker import check_existing_upload
+                dup = check_existing_upload(youtube, story_number=story_number, channel_type="MindNestTales")
+                if dup.get("exists"):
+                    print(f"\n[{ch_name} - {lang.upper()}] ⏭️ Story #{story_number:02d} verified on live YouTube (ID: {dup['video_id']}, Title: '{dup['title']}'). Skipping duplicate production.")
+                    if "channels_progress" not in state: state["channels_progress"] = {}
+                    if lang not in state["channels_progress"]: state["channels_progress"][lang] = {"completed_stories": []}
+                    if story_number not in state["channels_progress"][lang]["completed_stories"]:
+                        state["channels_progress"][lang]["completed_stories"].append(story_number)
+                        save_state(state)
+                    continue
+            except Exception as d_err:
+                print(f"Notice: Pre-check duplicate notice: {d_err}")
 
         long_vid_url = None
 

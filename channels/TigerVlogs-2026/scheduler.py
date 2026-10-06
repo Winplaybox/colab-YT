@@ -95,6 +95,27 @@ def upload_video_to_youtube(
         "status": status
     }
 
+    # Live YouTube Duplicate Protection
+    try:
+        try:
+            from common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+            from common.youtube_duplicate_checker import check_existing_upload
+
+        dup = check_existing_upload(youtube, candidate_title=title, channel_type="TigerVlogs")
+        if dup.get("exists"):
+            existing_id = dup["video_id"]
+            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on Tiger Vlogs YouTube!")
+            print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
+            print(f"   Reason:         {dup.get('reason')}")
+            print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
+            print(f"   YouTube Link:   https://youtu.be/{existing_id}")
+            print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
+            return existing_id
+    except Exception as ce:
+        print(f"Notice: Duplicate checker notice: {ce}")
+
     insert_request = youtube.videos().insert(
         part="snippet,status",
         body=body,

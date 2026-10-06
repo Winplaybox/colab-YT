@@ -181,6 +181,40 @@ def upload_episode_to_youtube(youtube, episode_num, video_path, thumbnail_path=N
         body["status"]["privacyStatus"] = "unlisted"
         print(f"🔒 Uploading as UNLISTED for pre-screening...")
 
+    # Universal Live YouTube Duplicate Protection
+    try:
+        try:
+            from channels.common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..", "..")))
+            from channels.common.youtube_duplicate_checker import check_existing_upload
+
+        dup = check_existing_upload(youtube, candidate_title=title, episode_number=episode_num, channel_type="DigitalImmortals")
+        if dup.get("exists"):
+            existing_id = dup["video_id"]
+            print(f"\n🛑 [DUPLICATE PREVENTED] Episode #{episode_num:02d} ALREADY exists on YouTube!")
+            print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
+            print(f"   Reason:         {dup.get('reason')}")
+            print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
+            print(f"   YouTube Link:   https://youtu.be/{existing_id}")
+            print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
+
+            # Advance state.json pointer so pipeline never gets stuck in a loop
+            try:
+                with open(state_file, "r", encoding="utf-8") as f:
+                    sdata = json.load(f)
+                if sdata.get("current_episode", 1) <= episode_num:
+                    sdata["current_episode"] = episode_num + 1
+                    with open(state_file, "w", encoding="utf-8") as f:
+                        json.dump(sdata, f, indent=2, ensure_ascii=False)
+                    print(f"📈 Advanced state.json to next episode: Ep {episode_num + 1:02d}")
+            except Exception as se:
+                print(f"Notice: State update notice: {se}")
+
+            return existing_id, f"https://www.youtube.com/watch?v={existing_id}"
+    except Exception as d_err:
+        print(f"Notice: Duplicate checker notice: {d_err}")
+
     print(f"⬆️ Uploading Master Video: {video_path} ({os.path.getsize(video_path):,} bytes)...")
     media = MediaFileUpload(video_path, chunksize=1024 * 1024 * 8, resumable=True, mimetype="video/mp4")
     req = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
@@ -281,11 +315,39 @@ def run_pipeline(force_immediate=False, quality="1080p"):
     # 1. Pre-Upload Algorithmic Analytics Audit
     audit_data = audit_previous_episode(yt)
 
-    # 2. State & Episode Resolution
+    # 2. State & Episode Resolution (Synchronized with Live YouTube)
     with open(state_file, "r", encoding="utf-8") as f:
         state = json.load(f)
 
     current_ep = state.get("current_episode", 1)
+
+    # Automatically check live YouTube to skip already uploaded episodes
+    try:
+        try:
+            from channels.common.youtube_duplicate_checker import check_existing_upload
+        except ImportError:
+            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..", "..")))
+            from channels.common.youtube_duplicate_checker import check_existing_upload
+
+        while current_ep <= 54:
+            dup = check_existing_upload(yt, episode_number=current_ep, channel_type="DigitalImmortals")
+            if dup.get("exists"):
+                print(f"🛑 [LIVE YOUTUBE CHECK] Episode {current_ep:02d} is ALREADY uploaded on YouTube!")
+                print(f"   Video ID: {dup.get('video_id')} | Title: '{dup.get('title')}'")
+                print(f"   ⏩ Skipping render/upload. Advancing to Episode {current_ep + 1:02d}...")
+                current_ep += 1
+                state["current_episode"] = current_ep
+                with open(state_file, "w", encoding="utf-8") as f:
+                    json.dump(state, f, indent=2, ensure_ascii=False)
+            else:
+                break
+    except Exception as pe_err:
+        print(f"Notice: Pre-check duplicate notice: {pe_err}")
+
+    if current_ep > 54:
+        print("🎉 All 54 episodes of Valmiki Ramayana are uploaded on YouTube! Complete.")
+        return None, None
+
     print(f"\n🎬 Processing Episode {current_ep:02d} / 54...")
 
     video_path = os.path.join(output_dir, f"DigitalImmortals_Ep{current_ep:02d}_{quality}.mp4")
