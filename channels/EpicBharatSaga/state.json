@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 10,
+  "current_episode": 11,
   "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-06T19:02:58.825280",
-  "last_uploaded_video_id": "uNyuW7Bbzfc",
+  "last_run": "2026-10-07T19:37:34.306041",
+  "last_uploaded_video_id": "BtSISK2l3QE",
   "used_story_ids": [],
   "history": [
     {
@@ -88,6 +88,15 @@
       "video_id": "uNyuW7Bbzfc",
       "mode": "scheduled",
       "timestamp": "2026-10-06T19:02:58.825280"
+    },
+    {
+      "episode_number": 10,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Mahashivaratri Kyun Manate Hain? Asli Story! 🙏",
+      "video_id": "BtSISK2l3QE",
+      "mode": "scheduled",
+      "timestamp": "2026-10-07T19:37:34.306041"
     }
   ]
 }
