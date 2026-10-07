@@ -1,10 +1,10 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 12,
+  "current_story_number": 13,
   "total_stories": 3000,
-  "last_run": "2026-10-06T19:05:01.906990",
-  "last_uploaded_video_id": "8h9z3O7tp8k",
+  "last_run": "2026-10-07T19:16:09.157478",
+  "last_uploaded_video_id": "ojuygWoxBJk",
   "history": [
     {
       "episode_number": 1,
@@ -82,6 +82,13 @@
       "video_id": "8h9z3O7tp8k",
       "mode": "schedule",
       "timestamp": "2026-10-06T19:05:01.906990"
+    },
+    {
+      "episode_number": 12,
+      "title": "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳",
+      "video_id": "ojuygWoxBJk",
+      "mode": "schedule",
+      "timestamp": "2026-10-07T19:16:09.157478"
     }
   ],
   "used_topic_ids": [],
