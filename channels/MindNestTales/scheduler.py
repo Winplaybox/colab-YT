@@ -327,16 +327,16 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
         return None
 
     # Stage 0: Live YouTube Ground Truth Audit & Synchronization
-    if story_number is None:
+    if story_number is None or story_number == "auto":
         try:
             from youtube_syncer import sync_mindnest_from_youtube
-            next_unreleased, completed, _ = sync_mindnest_from_youtube(verbose=True)
+            next_unreleased, completed, _ = sync_mindnest_from_youtube(target_lang=target_lang, verbose=True)
             story_number = next_unreleased
         except Exception as se:
             print(f"Notice: YouTube pre-flight sync skipped: {se}")
 
     state = load_state()
-    if story_number is None:
+    if story_number is None or story_number == "auto":
         story_number = state.get("current_story", 1)
 
     config = load_network_config()
@@ -637,7 +637,7 @@ if __name__ == "__main__":
     default_story = state.get("current_story", 1)
 
     if story_input == "auto" or not str(story_input).isdigit():
-        story_no = default_story
+        story_no = None
         auto_adv = True
     else:
         story_no = int(story_input)
