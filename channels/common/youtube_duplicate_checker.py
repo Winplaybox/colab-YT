@@ -106,6 +106,7 @@ def get_channel_all_uploads(youtube, max_results=150, force_refresh=False):
         uploads_id = ch_item["contentDetails"]["relatedPlaylists"]["uploads"]
 
         videos = []
+        seen_ids = set()
         next_page = None
         while len(videos) < max_results:
             batch_size = min(50, max_results - len(videos))
@@ -118,6 +119,10 @@ def get_channel_all_uploads(youtube, max_results=150, force_refresh=False):
 
             for it in pl_res.get("items", []):
                 vid = it["contentDetails"]["videoId"]
+                if vid in seen_ids:
+                    continue
+                seen_ids.add(vid)
+
                 raw_title = it["snippet"].get("title", "")
                 raw_desc = it["snippet"].get("description", "")
                 pub_at = it["snippet"].get("publishedAt")
@@ -346,18 +351,27 @@ def audit_channel_uploads(youtube, max_results=200):
 
     duplicate_groups = []
     for norm, items in by_norm_title.items():
-        if len(items) > 1:
-            # Sort by published_at (oldest is canonical)
-            canonical = items[-1] # Usually playlist items are ordered newest first, so last is oldest
-            duplicate_groups.append({
-                "title": items[0]["title"],
-                "normalized_title": norm,
-                "count": len(items),
-                "canonical_id": canonical["video_id"],
-                "all_video_ids": [it["video_id"] for it in items],
-                "duplicate_video_ids": [it["video_id"] for it in items if it["video_id"] != canonical["video_id"]],
-                "items": items
-            })
+        # Deduplicate items by video_id
+        unique_items = []
+        seen = set()
+        for it in items:
+            if it["video_id"] not in seen:
+                seen.add(it["video_id"])
+                unique_items.append(it)
+
+        if len(unique_items) > 1:
+            canonical = unique_items[-1] # Oldest uploaded is canonical
+            dup_ids = [it["video_id"] for it in unique_items if it["video_id"] != canonical["video_id"]]
+            if dup_ids:
+                duplicate_groups.append({
+                    "title": unique_items[0]["title"],
+                    "normalized_title": norm,
+                    "count": len(unique_items),
+                    "canonical_id": canonical["video_id"],
+                    "all_video_ids": [it["video_id"] for it in unique_items],
+                    "duplicate_video_ids": dup_ids,
+                    "items": unique_items
+                })
 
     return {
         "channel_title": ch_title,
