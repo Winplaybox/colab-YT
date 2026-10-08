@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 12,
+  "story_id": "train_12_vande_bharat_vs_shatabdi",
+  "story_hash": "0ba4c928f7f30d38",
+  "format": "Vs / Comparison",
+  "title": "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳",
+  "youtube_title": "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳",
+  "title_variations": [
+    "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳",
+    "Distributed power Train 18 vs locomotive hauled 🚂",
+    "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳 #Shorts",
+    "The Real Story: Distributed power Train 18 vs locomotive hauled"
+  ],
+  "tagline": "Distributed power Train 18 vs locomotive hauled",
+  "visual_theme": "SPLIT_VS_ARENA",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Vande_Bharat_(trainset)",
+    "https://indianrailways.gov.in"
+  ],
+  "verified_fact": "Vande Bharat uses semi-high speed EMU distributed traction power, accelerating 0-100 km/h in 52 seconds; traditional Shatabdi uses a separate WAP-7 locomotive taking ~90 seconds.",
+  "voiceover_script": "Vande Bharat aur Shatabdi mein sabse bada technical farak kya hai? Shatabdi ko aage laga ek WAP-7 locomotive kheenchta hai. Lekin Vande Bharat mein koi alag locomotive nahi hota! Isme Distributed Traction Power hai—har do dabbe ke neeche electric motors lagi hain. Is wajah se 400 ton ki ye train sirf 52 second mein 100 km/h ki speed pakad leti hai, jabki traditional trains ko 90 second lagte the. Faster acceleration se travel time bachta hai!",
+  "debate_question": "Shatabdi ka nostalgia ya Vande Bharat ki acceleration: kya chunenge?",
+  "pinned_comment": "🚄 400 Ton ki train 0-100 sirf 52 second mein! Distributed traction motor ka kamaal. Vande Bharat ka safar kaisa raha aapka?",
+  "description": "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳\n\n🚂 Distributed power Train 18 vs locomotive hauled\n\nVande Bharat uses semi-high speed EMU distributed traction power, accelerating 0-100 km/h in 52 seconds; traditional Shatabdi uses a separate WAP-7 locomotive taking ~90 seconds.\n\n👉 Shatabdi ka nostalgia ya Vande Bharat ki acceleration: kya chunenge?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#VandeBharat #Shatabdi #IndianRailways #Train18 #Comparison #Shorts",
+  "tags": [
+    "VandeBharat",
+    "Shatabdi",
+    "IndianRailways",
+    "Train18",
+    "Comparison",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Vande Bharat vs Shatabdi: Asli farak kya hai?",
+      "sound_cue": "versus_whoosh",
+      "prompt": "Split screen comparison: white aerodynamic Vande Bharat nose on left, traditional red and cream Shatabdi locomotive on right, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Shatabdi ko aage se alag engine kheenchta hai.",
+      "sound_cue": "loco_pantograph",
+      "prompt": "WAP-7 electric locomotive hauling blue LHB Shatabdi express coaches across scenic railway bridge, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Vande Bharat: Distributed traction motors!",
+      "sound_cue": "electric_whine",
+      "prompt": "Cutaway technical view showing electric traction motors mounted beneath passenger coaches of Vande Bharat trainset, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "0 se 100 km/h sirf 52 second mein!",
+      "sound_cue": "acceleration",
+      "prompt": "Vande Bharat train departing platform smoothly and accelerating rapidly with station lights blurring behind, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Faster acceleration se travel time bachta hai!",
+      "sound_cue": "vande_horn",
+      "prompt": "Vande Bharat express gliding over scenic river bridge in India at golden hour, calm river reflection, 9:16 vertical portrait"
+    }
+  ]
+}
