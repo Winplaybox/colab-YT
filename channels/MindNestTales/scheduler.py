@@ -181,28 +181,29 @@ def get_channel_youtube_service(lang_code, expected_channel_id=None, expected_na
         print(f"Auth error for {lang_code.upper()}: {e}")
         return None
 
-def upload_story_to_channel(youtube, video_file, title, description, tags, thumbnail_path=None, publish_at=None, category_id="1", story_number=None):
+def upload_story_to_channel(youtube, video_file, title, description, tags, thumbnail_path=None, publish_at=None, category_id="1", story_number=None, force=False):
     """Uploads story video to target channel (Category 1: Film & Animation) and attaches custom thumbnail."""
     # 0. Live YouTube duplicate pre-flight check
-    try:
+    if not force:
         try:
-            from common.youtube_duplicate_checker import check_existing_upload
-        except ImportError:
-            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
-            from common.youtube_duplicate_checker import check_existing_upload
+            try:
+                from common.youtube_duplicate_checker import check_existing_upload
+            except ImportError:
+                sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+                from common.youtube_duplicate_checker import check_existing_upload
 
-        dup = check_existing_upload(youtube, candidate_title=title, story_number=story_number, channel_type="MindNestTales")
-        if dup.get("exists"):
-            existing_vid = dup["video_id"]
-            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on this YouTube channel!")
-            print(f"   Existing Title: '{dup['title']}'")
-            print(f"   Reason:         {dup['reason']}")
-            print(f"   Video ID:       {existing_vid} ({dup.get('status', 'unknown')})")
-            print(f"   YouTube Link:   https://youtu.be/{existing_vid}")
-            print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
-            return existing_vid
-    except Exception as ce:
-        print(f"Notice: Duplicate checker notice: {ce}")
+            dup = check_existing_upload(youtube, candidate_title=title, story_number=story_number, channel_type="MindNestTales")
+            if dup.get("exists"):
+                existing_vid = dup["video_id"]
+                print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on this YouTube channel!")
+                print(f"   Existing Title: '{dup['title']}'")
+                print(f"   Reason:         {dup['reason']}")
+                print(f"   Video ID:       {existing_vid} ({dup.get('status', 'unknown')})")
+                print(f"   YouTube Link:   https://youtu.be/{existing_vid}")
+                print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
+                return existing_vid
+        except Exception as ce:
+            print(f"Notice: Duplicate checker notice: {ce}")
 
     status = {
         "privacyStatus": "private",
@@ -312,7 +313,7 @@ def print_mindnest_status():
             print(f" - Story #{h.get('story_number'):02d} [{h.get('language', '').upper()}] {h.get('type')}: {h.get('publish_at', 'Immediate')} (ID: {h.get('video_id')})")
     print("=" * 78 + "\n")
 
-def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", auto_advance=False, publish_at=None, work_dir=None, mode="dual", dry_run=False):
+def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", auto_advance=False, publish_at=None, work_dir=None, mode="dual", dry_run=False, force=False):
     """
     Executes production & upload for MindNest Tales:
     - mode='dual': Renders 10-Minute Long Video + 180s Short with direct cross-linking CTA.
@@ -359,7 +360,7 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
     results = []
     print(f"\n=======================================================")
     print(f"🚀 RELEASING STORY #{story_number}: '{story['base_title']}' [MODE: {mode.upper()}]")
-    print(f"Channels in this run: {len(channels_to_process)} | Quality: {quality.upper()} | Dry Run: {dry_run}")
+    print(f"Channels in this run: {len(channels_to_process)} | Quality: {quality.upper()} | Dry Run: {dry_run} | Force: {force}")
     print(f"=======================================================")
 
     for ch in channels_to_process:
@@ -368,7 +369,7 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
 
         # Channel-level duplicate protection
         ch_progress = state.get("channels_progress", {}).get(lang, {})
-        if story_number in ch_progress.get("completed_stories", []):
+        if not force and story_number in ch_progress.get("completed_stories", []):
             print(f"\n[{ch_name} - {lang.upper()}] ⏭️ Story #{story_number:02d} already verified on YouTube. Skipping to prevent duplicate.")
             continue
 
@@ -383,7 +384,7 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
             channel_publish_at = compute_next_publish_time(ch.get("publish_time_utc", "03:30"), lang_code=lang)
 
         # Pre-check live YouTube directly to avoid redundant video rendering & compilation
-        if youtube and not dry_run:
+        if youtube and not dry_run and not force:
             try:
                 try:
                     from common.youtube_duplicate_checker import check_existing_upload
@@ -451,7 +452,8 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                         long_meta["description"],
                         long_meta["tags"],
                         thumbnail_path=long_thumb,
-                        publish_at=channel_publish_at
+                        publish_at=channel_publish_at,
+                        force=force
                     )
                     long_vid_url = f"https://youtu.be/{long_id}"
                     results.append({"channel": ch_name, "lang": lang, "type": "10-MIN", "status": "UPLOADED", "url": long_vid_url})
@@ -518,7 +520,8 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
                         desc,
                         translation["tags"],
                         thumbnail_path=thumb_path,
-                        publish_at=channel_publish_at
+                        publish_at=channel_publish_at,
+                        force=force
                     )
                     short_url = f"https://youtu.be/{vid}"
                     status_label = f"Scheduled ({channel_publish_at})" if channel_publish_at else f"Uploaded ({vid})"
@@ -616,6 +619,8 @@ if __name__ == "__main__":
     parser.add_argument("--mode", type=str, default="dual", help="Release mode: 'dual', 'short', 'long', 'analytics'")
     parser.add_argument("--status", action="store_true", help="Display network status and channel auth")
     parser.add_argument("--dry-run", action="store_true", help="Render assets locally without uploading")
+    parser.add_argument("--force", action="store_true", help="Force production/upload even if already detected on YouTube")
+    parser.add_argument("--auto-advance", action="store_true", help="Automatically advance queue after completion")
 
     args = parser.parse_args()
 
@@ -641,7 +646,7 @@ if __name__ == "__main__":
         auto_adv = True
     else:
         story_no = int(story_input)
-        auto_adv = False
+        auto_adv = args.auto_advance
 
     run_mindnest_release(
         story_number=story_no,
@@ -649,7 +654,8 @@ if __name__ == "__main__":
         quality=target_quality,
         auto_advance=auto_adv,
         mode=target_mode,
-        dry_run=args.dry_run
+        dry_run=args.dry_run,
+        force=args.force
     )
 
 

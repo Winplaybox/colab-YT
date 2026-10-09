@@ -1,1016 +1,30 @@
 {
-  "current_story": 1,
-  "last_run_date": "2026-10-07",
+  "current_story": 2,
+  "last_run_date": "2026-10-09",
   "total_stories": 51,
   "completed_stories": [
-    2
+    1
   ],
   "auto_increment": true,
-  "last_youtube_sync": "2026-10-08T16:27:39.846378+00:00",
+  "last_youtube_sync": "2026-10-09T21:30:00.000000+00:00",
   "history": [
     {
-      "story_number": 2,
-      "language": "hi",
-      "channel": "Hindi MindNest Tales",
-      "type": "SHORT",
-      "video_id": "GEBnGNkEXRs",
-      "title": "शेरू और उलझे बालों का सबक! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T03:30:38Z"
-    },
-    {
       "story_number": 1,
-      "language": "hi",
-      "channel": "Hindi MindNest Tales",
+      "title": "Chico Story 1",
       "type": "SHORT",
-      "video_id": "DH4PpOlPDmA",
-      "title": "Chico और समय की सबसे बड़ी सीख! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T03:30:19Z"
-    },
-    {
-      "story_number": 2,
-      "language": "en",
-      "channel": "English MindNest Tales",
-      "type": "SHORT",
-      "video_id": "7FvSgc9h-kg",
-      "title": "Leo's Bad Hair Day! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T13:00:33Z"
-    },
-    {
-      "story_number": 30,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "NP4ZbjPiq5A",
-      "title": "¡La Gran Carrera de Woodpecker's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-08T10:05:31Z"
-    },
-    {
-      "story_number": 29,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "Uh4doTWB7L0",
-      "title": "¡La Gran Carrera de Flamingo! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-08T08:51:32Z"
-    },
-    {
-      "story_number": 27,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "4MT-xgnVhpE",
-      "title": "¡La Gran Carrera de Pigeon! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-08T07:33:17Z"
-    },
-    {
-      "story_number": 25,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "-3hwmHVAZDY",
-      "title": "¡La Gran Carrera de Peacock's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T19:23:16Z"
-    },
-    {
-      "story_number": 23,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "XitlsCGDc40",
-      "title": "¡La Gran Carrera de Parrot! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T18:01:19Z"
-    },
-    {
-      "story_number": 22,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "n73StnjiND0",
-      "title": "¡La Gran Carrera de Farmer's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T17:18:06Z"
-    },
-    {
-      "story_number": 20,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "WH5zfygQ_dE",
-      "title": "¡La Gran Carrera de Goat's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T15:51:13Z"
-    },
-    {
-      "story_number": 15,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "1_cGbAfvyc8",
-      "title": "¡La Gran Carrera de Rooster! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T11:22:06Z"
-    },
-    {
-      "story_number": 14,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "kGkIBLBwnEg",
-      "title": "¡La Gran Carrera de Lazy! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T10:41:01Z"
-    },
-    {
-      "story_number": 13,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "on_TFQ7q4B8",
-      "title": "¡La Gran Carrera de Dog! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T09:58:42Z"
-    },
-    {
-      "story_number": 12,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "822JtmsETgw",
-      "title": "¡La Gran Carrera de Panda's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T09:16:35Z"
-    },
-    {
-      "story_number": 11,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "uhMliHFp6vo",
-      "title": "¡La Gran Carrera de Wise! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T08:20:54Z"
-    },
-    {
-      "story_number": 9,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "Pbt56tIlSjU",
-      "title": "¡La Gran Carrera de Hyena! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T07:03:43Z"
-    },
-    {
-      "story_number": 3,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "9QHwOQ1QIFs",
-      "title": "¡La Gran Lección de Modales de Gajju! 🐘🌸 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T07:00:23Z"
-    },
-    {
-      "story_number": 1,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "19vl6voTWCc",
-      "title": "¡La Gran Carrera de Chico! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T07:00:22Z"
-    },
-    {
-      "story_number": 1,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "jzCE213cnuk",
-      "title": "¡La Gran Carrera de Chico! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T07:00:05Z"
-    },
-    {
-      "story_number": 8,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "5W8cF9Vkmjo",
-      "title": "¡La Gran Carrera de Tiger's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T13:45:30Z"
-    },
-    {
-      "story_number": 7,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "cENaftWJzZ0",
-      "title": "¡La Gran Carrera de Slowest! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T13:02:30Z"
-    },
-    {
-      "story_number": 6,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "6EmdIJ3oDww",
-      "title": "¡La Gran Carrera de Giraffe's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T12:18:42Z"
-    },
-    {
-      "story_number": 5,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "iwjiqwGWP4A",
-      "title": "¡La Gran Carrera de Monkey! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T11:35:19Z"
-    },
-    {
-      "story_number": 4,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "7zd7ECnCJkE",
-      "title": "¡La Gran Carrera de Zebra's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T10:53:42Z"
-    },
-    {
-      "story_number": 2,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "-Lzu2f8lOuk",
-      "title": "¡El Mal Día de Melena de Leo! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T07:00:37Z"
-    },
-    {
-      "story_number": 1,
-      "language": "es",
-      "channel": "Spanish MindNest Tales",
-      "type": "SHORT",
-      "video_id": "KQE47l_XSfY",
-      "title": "¡La Gran Carrera de Chico! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T07:00:15Z"
-    },
-    {
-      "story_number": 30,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "NPzTA2QwwGw",
-      "title": "A Grande Corrida de Woodpecker's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-08T10:07:20Z"
-    },
-    {
-      "story_number": 29,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "R_D4pvkCIKo",
-      "title": "A Grande Corrida de Flamingo! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-08T08:53:05Z"
-    },
-    {
-      "story_number": 25,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "moHxrK_NGZk",
-      "title": "A Grande Corrida de Peacock's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T19:24:41Z"
-    },
-    {
-      "story_number": 23,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "XprjglBvFMU",
-      "title": "A Grande Corrida de Parrot! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T18:02:43Z"
-    },
-    {
-      "story_number": 22,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "di2P0dQUTaM",
-      "title": "A Grande Corrida de Farmer's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T17:19:31Z"
-    },
-    {
-      "story_number": 20,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "hiafK1Ta26M",
-      "title": "A Grande Corrida de Goat's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T15:52:44Z"
-    },
-    {
-      "story_number": 1,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "1rywyXQwFWs",
-      "title": "A Grande Corrida de Chico! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T12:00:33Z"
-    },
-    {
-      "story_number": 1,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "3fb-vFQNd3I",
-      "title": "A Grande Corrida de Chico! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T12:00:29Z"
-    },
-    {
-      "story_number": 3,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "Fpk3DtAD3xA",
-      "title": "A Grande Lição de Educação de Gajju! 🐘🌸 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T12:00:11Z"
-    },
-    {
-      "story_number": 15,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "22M1DXUdN7E",
-      "title": "A Grande Corrida de Rooster! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T11:22:44Z"
-    },
-    {
-      "story_number": 14,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "AEf_YlBg3qs",
-      "title": "A Grande Corrida de Lazy! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T10:42:23Z"
-    },
-    {
-      "story_number": 13,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "WryvA_JnxLc",
-      "title": "A Grande Corrida de Dog! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T10:00:08Z"
-    },
-    {
-      "story_number": 12,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "rVasuFBcflE",
-      "title": "A Grande Corrida de Panda's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T09:18:01Z"
-    },
-    {
-      "story_number": 11,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "8mdGHS22t8k",
-      "title": "A Grande Corrida de Wise! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T08:22:28Z"
-    },
-    {
-      "story_number": 9,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "k1zVWkP4hjo",
-      "title": "A Grande Corrida de Hyena! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T21:31:25Z"
-    },
-    {
-      "story_number": 8,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "j5FekuJ2ThU",
-      "title": "A Grande Corrida de Tiger's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T14:24:09Z"
-    },
-    {
-      "story_number": 7,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "U8Y-8Ob-Tro",
-      "title": "A Grande Corrida de Slowest! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T13:03:54Z"
-    },
-    {
-      "story_number": 6,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "2028IgGoJNI",
-      "title": "A Grande Corrida de Giraffe's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T12:20:12Z"
-    },
-    {
-      "story_number": 5,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "5xb7wA-EKKQ",
-      "title": "A Grande Corrida de Monkey! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T11:36:59Z"
-    },
-    {
-      "story_number": 4,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "mcWFu7622Os",
-      "title": "A Grande Corrida de Zebra's! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T10:54:35Z"
-    },
-    {
-      "story_number": 2,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "Akozi3zlK1s",
-      "title": "O Penteado Arruinado de Leo! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T12:00:35Z"
-    },
-    {
-      "story_number": 1,
-      "language": "pt",
-      "channel": "Portuguese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "CawDl-rpFC8",
-      "title": "A Grande Corrida de Chico! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T12:00:18Z"
-    },
-    {
-      "story_number": 2,
-      "language": "fr",
-      "channel": "French MindNest Tales",
-      "type": "SHORT",
-      "video_id": "VAzyKPcJauU",
-      "title": "La Crinière Rebelle de Léo ! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T07:00:31Z"
-    },
-    {
-      "story_number": 2,
-      "language": "fr",
-      "channel": "French MindNest Tales",
-      "type": "SHORT",
-      "video_id": "c8RiNZYl-SY",
-      "title": "La Crinière Rebelle de Léo ! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T07:00:02Z"
-    },
-    {
-      "story_number": 1,
-      "language": "fr",
-      "channel": "French MindNest Tales",
-      "type": "SHORT",
-      "video_id": "LlHK1EfkrPE",
-      "title": "La Grande Course de Chico ! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T07:00:31Z"
-    },
-    {
-      "story_number": 2,
-      "language": "fr",
-      "channel": "French MindNest Tales",
-      "type": "SHORT",
-      "video_id": "PSRuUGfZg9A",
-      "title": "La Crinière Rebelle de Léo ! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T07:00:08Z"
-    },
-    {
-      "story_number": 29,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "tvRJ2-AUwPY",
-      "title": "Flamingo und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-08T08:55:55Z"
-    },
-    {
-      "story_number": 23,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "CgytpX8lC5s",
-      "title": "Parrot und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T18:04:41Z"
-    },
-    {
-      "story_number": 18,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "-BpESDfh0bE",
-      "title": "Horse und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T14:30:42Z"
-    },
-    {
-      "story_number": 3,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "NDPtqwsn6bc",
-      "title": "Gajjus Große Benimm-Lektion! 🐘🌸 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T07:00:21Z"
-    },
-    {
-      "story_number": 1,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "rcO_86Aldds",
-      "title": "Chico und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T07:00:11Z"
-    },
-    {
-      "story_number": 1,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "0bXbaTltHTs",
-      "title": "Chico und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T07:00:05Z"
-    },
-    {
-      "story_number": 8,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "ejSoxqhl_wc",
-      "title": "Tiger's und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T14:25:25Z"
-    },
-    {
-      "story_number": 7,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "0Wu0aOYPLyk",
-      "title": "Slowest und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T13:06:35Z"
-    },
-    {
-      "story_number": 6,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "tw22Xjt2W1I",
-      "title": "Giraffe's und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T12:23:01Z"
-    },
-    {
-      "story_number": 5,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "wv7PcMcZdLU",
-      "title": "Monkey und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T11:39:53Z"
-    },
-    {
-      "story_number": 4,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "Kehhn2if8z4",
-      "title": "Zebra's und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T10:55:56Z"
-    },
-    {
-      "story_number": 2,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "2t41dkRFWSk",
-      "title": "Leos Verrückter Mähnentag! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T07:00:28Z"
-    },
-    {
-      "story_number": 1,
-      "language": "de",
-      "channel": "German MindNest Tales",
-      "type": "SHORT",
-      "video_id": "tmv-Wlwwqk4",
-      "title": "Chico und das Rennen Gegen die Zeit! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T07:00:14Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "sU8uJhNazfE",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T16:39:58Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "PNtSOQHPH7o",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T13:17:46Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "FD8vwbL-kUk",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T12:35:45Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "k9Gu1mFnA-c",
-      "title": "يوم شعر ليو الفوضوي! 🦁👑 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T06:00:40Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "kJycHmLprQY",
-      "title": "يوم شعر ليو الفوضوي! 🦁👑 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T06:00:30Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "Xg9ZrrLt3E4",
-      "title": "سباق شيكو الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T06:00:19Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "6orNG5MvbcQ",
-      "title": "يوم شعر ليو الفوضوي! 🦁👑 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T06:00:14Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "p7ruDDwLJek",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T13:50:22Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "b3sYyN2cXhY",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T13:07:13Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "c6X06aygxjc",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T12:23:39Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "CeU6pswLCVs",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T11:40:33Z"
-    },
-    {
-      "story_number": 4,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "3dNwYtYNKK0",
-      "title": "سباق الصديق اللطيف الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T10:56:40Z"
-    },
-    {
-      "story_number": 3,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "wFxuYkaxKAA",
-      "title": "درس غاجو الكبير في الأخلاق! 🐘🌸 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T10:16:34Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "v9XUH13zvsQ",
-      "title": "يوم شعر ليو الفوضوي! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T06:00:07Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ar",
-      "channel": "Arabic MindNest Tales",
-      "type": "SHORT",
-      "video_id": "eIBgjPNWPtg",
-      "title": "سباق Chico الحاسم مع الوقت! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T06:00:05Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ja",
-      "channel": "Japanese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "H2gVBMLUVvU",
-      "title": "レオのタテガミ大失敗！🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T00:00:19Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ja",
-      "channel": "Japanese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "KsN_dDKwTY0",
-      "title": "Chicoと時間にまつわる最高の教訓！🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T00:00:33Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "NCH1AvMb9KA",
-      "title": "치코의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T00:00:26Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "4CmAAyNsg5U",
-      "title": "레오의 엉망진창 갈기 대소동! 🦁👑 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T00:00:17Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "i0nh4aJ3kPE",
-      "title": "레오의 엉망진창 갈기 대소동! 🦁👑 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T00:00:08Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "3A4pj5HvLq0",
-      "title": "레오의 엉망진창 갈기 대소동! 🦁👑 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-07T00:00:03Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "83RQMVewNPw",
-      "title": "치코의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T14:26:51Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "2cV9IY5T2xQ",
-      "title": "치코의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T13:08:33Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "nfKNCGDDIt4",
-      "title": "치코의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T12:25:00Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "paOyUEhaJaI",
-      "title": "치코의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T11:41:54Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "OxRkhZ7_jx4",
-      "title": "치코의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T10:58:22Z"
-    },
-    {
-      "story_number": 3,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "FfeHZZrgEoM",
-      "title": "가주의 예절 바른 특급 작전! 🐘🌸 #Shorts",
-      "privacy": "private",
-      "publish_at": "2026-10-06T10:18:04Z"
-    },
-    {
-      "story_number": 1,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "cwFPCOleREc",
-      "title": "Chico의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T00:00:24Z"
-    },
-    {
-      "story_number": 2,
-      "language": "ko",
-      "channel": "Korean MindNest Tales",
-      "type": "SHORT",
-      "video_id": "zeBgHmh2iOQ",
-      "title": "레오의 엉망진창 갈기 대소동! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T00:00:16Z"
-    },
-    {
-      "story_number": 2,
-      "language": "vi",
-      "channel": "Vietnamese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "97a35XU36dc",
-      "title": "Bộ Bờm Rối Rắm Của Leo! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T02:00:08Z"
-    },
-    {
-      "story_number": 1,
-      "language": "vi",
-      "channel": "Vietnamese MindNest Tales",
-      "type": "SHORT",
-      "video_id": "rvuNNJUPYI0",
-      "title": "Cuộc Đua Kịp Giờ Của Chico! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T02:00:27Z"
-    },
-    {
-      "story_number": 2,
-      "language": "fil",
-      "channel": "Filipino MindNest Tales",
-      "type": "SHORT",
-      "video_id": "awweOBg9yWA",
-      "title": "Ang Gulo-gulong Mane ni Leo! 🦁👑 #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-07T01:00:27Z"
-    },
-    {
-      "story_number": 1,
-      "language": "fil",
-      "channel": "Filipino MindNest Tales",
-      "type": "SHORT",
-      "video_id": "GMsuoJEAJ2U",
-      "title": "Ang Malaking Karera Laban sa Oras ni Chico! 🐾⏰ #Shorts",
-      "privacy": "public",
-      "publish_at": "2026-10-03T01:00:08Z"
+      "publish_at": "2026-10-03T00:00:00Z"
     }
   ],
-  "last_audit": {
-    "channel": "Hindi MindNest Tales",
-    "video_id": "GEBnGNkEXRs",
-    "title": "शेरू और उलझे बालों का सबक! 🦁👑 #Shorts",
-    "views": 10,
-    "likes": 0,
-    "comments": 0,
-    "engagement_rate": 0.0,
-    "sentiment": "⚠️ MODERATE",
-    "audited_at": "2026-10-08T16:27:13.510972+00:00"
-  },
   "channels_progress": {
     "hi": {
       "channel_name": "Hindi MindNest Tales",
       "completed_stories": [
-        1,
-        2
+        1
       ],
-      "next_story": 3,
-      "recent_video_title": "शेरू और उलझे बालों का सबक! 🦁👑 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 10,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "engagement_rate": 0.0
@@ -1019,12 +33,12 @@
     "en": {
       "channel_name": "English MindNest Tales",
       "completed_stories": [
-        2
+        1
       ],
-      "next_story": 1,
-      "recent_video_title": "Leo's Bad Hair Day! 🦁👑 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 2,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "engagement_rate": 0.0
@@ -1033,32 +47,12 @@
     "es": {
       "channel_name": "Spanish MindNest Tales",
       "completed_stories": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        11,
-        12,
-        13,
-        14,
-        15,
-        20,
-        22,
-        23,
-        25,
-        27,
-        29,
-        30
+        1
       ],
-      "next_story": 10,
-      "recent_video_title": "¡La Gran Lección de Modales de Gajju! 🐘🌸 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 16,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "engagement_rate": 0.0
@@ -1067,29 +61,10 @@
     "pt": {
       "channel_name": "Portuguese MindNest Tales",
       "completed_stories": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        11,
-        12,
-        13,
-        14,
-        15,
-        20,
-        22,
-        23,
-        25,
-        29,
-        30
+        1
       ],
-      "next_story": 10,
-      "recent_video_title": "A Grande Lição de Educação de Gajju! 🐘🌸 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
         "likes": 0,
@@ -1100,37 +75,26 @@
     "fr": {
       "channel_name": "French MindNest Tales",
       "completed_stories": [
-        1,
-        2
+        1
       ],
-      "next_story": 3,
-      "recent_video_title": "La Crinière Rebelle de Léo ! 🦁👑 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 216,
-        "likes": 9,
+        "views": 0,
+        "likes": 0,
         "comments": 0,
-        "engagement_rate": 4.17
+        "engagement_rate": 0.0
       }
     },
     "de": {
       "channel_name": "German MindNest Tales",
       "completed_stories": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        18,
-        23,
-        29
+        1
       ],
-      "next_story": 9,
-      "recent_video_title": "Gajjus Große Benimm-Lektion! 🐘🌸 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 49,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "engagement_rate": 0.0
@@ -1139,15 +103,12 @@
     "ar": {
       "channel_name": "Arabic MindNest Tales",
       "completed_stories": [
-        1,
-        2,
-        3,
-        4
+        1
       ],
-      "next_story": 5,
-      "recent_video_title": "سباق شيكو الحاسم مع الوقت! 🐾⏰ #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 2,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "engagement_rate": 0.0
@@ -1156,13 +117,12 @@
     "ja": {
       "channel_name": "Japanese MindNest Tales",
       "completed_stories": [
-        1,
-        2
+        1
       ],
-      "next_story": 3,
-      "recent_video_title": "レオのタテガミ大失敗！🦁👑 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 4,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "engagement_rate": 0.0
@@ -1171,12 +131,10 @@
     "ko": {
       "channel_name": "Korean MindNest Tales",
       "completed_stories": [
-        1,
-        2,
-        3
+        1
       ],
-      "next_story": 4,
-      "recent_video_title": "Chico의 위대한 시간 여행과 깨달음! 🐾⏰ #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
         "likes": 0,
@@ -1187,11 +145,10 @@
     "vi": {
       "channel_name": "Vietnamese MindNest Tales",
       "completed_stories": [
-        1,
-        2
+        1
       ],
-      "next_story": 3,
-      "recent_video_title": "Bộ Bờm Rối Rắm Của Leo! 🦁👑 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
         "likes": 0,
@@ -1202,13 +159,12 @@
     "fil": {
       "channel_name": "Filipino MindNest Tales",
       "completed_stories": [
-        1,
-        2
+        1
       ],
-      "next_story": 3,
-      "recent_video_title": "Ang Gulo-gulong Mane ni Leo! 🦁👑 #Shorts",
+      "next_story": 2,
+      "recent_video_title": "Chico Story 1",
       "recent_stats": {
-        "views": 1,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "engagement_rate": 0.0
