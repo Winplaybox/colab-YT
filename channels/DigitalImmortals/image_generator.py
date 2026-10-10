@@ -123,6 +123,24 @@ def get_master_anchors(episode_num=1):
         if os.path.exists(v_path):
             anchors["vishwamitra"] = Image.open(v_path).convert("RGB")
 
+    elif episode_num == 7:
+        ahalya_path = os.path.join(anchors_dir, "ahalya_uddhar.jpg")
+        if os.path.exists(ahalya_path):
+            anchors["ahalya_uddhar"] = Image.open(ahalya_path).convert("RGB")
+        gautama_path = os.path.join(anchors_dir, "gautama_curse.jpg")
+        if os.path.exists(gautama_path):
+            anchors["gautama_curse"] = Image.open(gautama_path).convert("RGB")
+        mithila_path = os.path.join(anchors_dir, "mithila_janaka.jpg")
+        if os.path.exists(mithila_path):
+            anchors["mithila_janaka"] = Image.open(mithila_path).convert("RGB")
+        v_path = os.path.join(anchors_dir, "vishwamitra_arrival_court.jpg")
+        if os.path.exists(v_path):
+            anchors["vishwamitra"] = Image.open(v_path).convert("RGB")
+            anchors["vishwamitra_arrival_court"] = anchors["vishwamitra"]
+        y_path = os.path.join(anchors_dir, "siddhashrama_yajna.jpg")
+        if os.path.exists(y_path):
+            anchors["siddhashrama"] = Image.open(y_path).convert("RGB")
+
     else:
         # Load any anchors present in current or previous episodes
         if os.path.exists(anchors_dir):
@@ -145,7 +163,7 @@ def get_master_anchors(episode_num=1):
     all_imgs = [v for v in anchors.values() if v is not None]
     if all_imgs:
         fallback = all_imgs[0]
-        for k in ["shiva_ganga", "bhagiratha", "kapila", "siddhashrama", "vishwamitra", "birth_rama", "birth_princes", "dasharatha_celebrating", "purusha", "rishyasringa", "queens", "ayodhya", "brahmaloka", "narada", "valmiki_tree", "ashram", "dasharatha"]:
+        for k in ["ahalya_uddhar", "gautama_curse", "mithila_janaka", "shiva_ganga", "bhagiratha", "kapila", "siddhashrama", "vishwamitra", "birth_rama", "birth_princes", "dasharatha_celebrating", "purusha", "rishyasringa", "queens", "ayodhya", "brahmaloka", "narada", "valmiki_tree", "ashram", "dasharatha"]:
             if k not in anchors:
                 anchors[k] = fallback
 
@@ -900,6 +918,178 @@ def generate_scene_asset_ep6(scene, anchors, output_path, target_w=1920, target_
     print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
     return True
 
+
+def generate_scene_asset_ep7(scene, anchors, output_path, target_w=1920, target_h=1080):
+    """Creates a distinct 1920x1080 16:9 cinematic shot for Episode 7 scenes."""
+    sc_id = scene["scene_id"]
+    act = scene.get("act", 1)
+
+    ahalya_img = anchors.get("ahalya_uddhar")
+    gautama_img = anchors.get("gautama_curse")
+    mithila_img = anchors.get("mithila_janaka")
+    vish_img = anchors.get("vishwamitra") or ahalya_img
+
+    if act == 1: # The City of Vishala & Journey (scenes 1-4)
+        if sc_id == 1: # 0-5s Hook: Sacred feet & glowing Ahalya
+            base = ahalya_img
+            w, h = base.size
+            crop_box = (int(w * 0.1), int(h * 0.15), int(w * 0.85), int(h * 0.95))
+        elif sc_id == 2: # Crossing Ganga to Vishala
+            base = vish_img or ahalya_img
+            w, h = base.size
+            crop_box = (0, 0, w, h)
+        elif sc_id == 3: # King Sumati greeting Vishwamitra
+            base = mithila_img or vish_img
+            w, h = base.size
+            crop_box = (0, int(h * 0.1), int(w * 0.7), h)
+        else: # Journey resumption towards Mithila
+            base = ahalya_img
+            w, h = base.size
+            crop_box = (int(w * 0.2), 0, w, int(h * 0.85))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 210, 100))
+        img = Image.blend(img, overlay, 0.05)
+
+    elif act == 2: # Gautama Hermitage & Sri Rama's Inquiry (scenes 5-7)
+        if sc_id == 5: # Deserted silent hermitage
+            base = ahalya_img
+            w, h = base.size
+            crop_box = (0, 0, int(w * 0.8), int(h * 0.85))
+        elif sc_id == 6: # Sri Rama inquiring from Vishwamitra
+            base = ahalya_img
+            w, h = base.size
+            crop_box = (int(w * 0.35), 0, int(w * 0.95), int(h * 0.85))
+        else: # Vishwamitra revealing Gautama's ashram
+            base = gautama_img
+            w, h = base.size
+            crop_box = (0, 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.15)
+
+    elif act == 3: # Creation & Purity of Ahalya (scenes 8-10)
+        if sc_id == 8: # Flawless Ahalya created by Brahma
+            base = ahalya_img
+            w, h = base.size
+            crop_box = (int(w * 0.15), int(h * 0.35), int(w * 0.5), int(h * 0.85))
+        elif sc_id == 9: # Gautama circumambulating Kamadhenu
+            base = gautama_img
+            w, h = base.size
+            crop_box = (int(w * 0.3), 0, w, h)
+        else: # Righteous Vedic marriage & harmony
+            base = ahalya_img
+            w, h = base.size
+            crop_box = (0, 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (240, 220, 160))
+        img = Image.blend(img, overlay, 0.07)
+
+    elif act == 4: # Indra's Deception (scenes 11-13)
+        base = gautama_img
+        w, h = base.size
+        if sc_id == 11: # Indra watching with lust from clouds
+            crop_box = (0, 0, w, int(h * 0.7))
+        elif sc_id == 12: # Indra disguising as Gautama at dawn
+            crop_box = (int(w * 0.1), int(h * 0.2), int(w * 0.6), h)
+        else: # Gautama returning from river
+            crop_box = (int(w * 0.3), 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (40, 40, 80))
+        img = Image.blend(img, overlay, 0.12)
+
+    elif act == 5: # Gautama's Wrath & Cosmic Curse (scenes 14-17)
+        base = gautama_img
+        w, h = base.size
+        if sc_id == 14: # Ascetic fire in Gautama's eyes
+            crop_box = (int(w * 0.4), 0, int(w * 0.85), int(h * 0.75))
+        elif sc_id == 15: # Cursing Indra
+            crop_box = (0, int(h * 0.1), int(w * 0.75), h)
+        elif sc_id == 16: # Ahalya cursed to invisible stone on air & ashes
+            crop_box = (0, 0, w, h)
+        else: # The prophecy of Rama's arrival
+            base = ahalya_img
+            crop_box = (int(w * 0.3), 0, int(w * 0.8), int(h * 0.8))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.25)
+
+    elif act == 6: # Millennia of Silent Penance (scenes 18-20)
+        base = ahalya_img
+        w, h = base.size
+        if sc_id == 18: # Cold stone weathering through millennia
+            crop_box = (int(w * 0.1), int(h * 0.45), int(w * 0.55), h)
+        elif sc_id == 19: # Longing for Rama's footsteps
+            crop_box = (0, int(h * 0.2), int(w * 0.6), int(h * 0.9))
+        else: # Vishwamitra directing Rama to enter
+            crop_box = (int(w * 0.5), 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (120, 140, 160))
+        img = Image.blend(img, overlay, 0.08)
+
+    elif act == 7: # Divine Redemption (Ahalya Uddhar) (scenes 21-24)
+        base = ahalya_img
+        w, h = base.size
+        if sc_id == 21: # Rama stepping inside
+            crop_box = (int(w * 0.35), 0, int(w * 0.8), h)
+        elif sc_id == 22: # Golden light bursting from stone
+            crop_box = (int(w * 0.1), int(h * 0.25), int(w * 0.75), h)
+        elif sc_id == 23: # Ahalya manifesting like pure smoke-free fire
+            crop_box = (int(w * 0.05), int(h * 0.25), int(w * 0.65), int(h * 0.95))
+        else: # Rama & Lakshmana revering mother Ahalya
+            crop_box = (0, 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Brightness(img)
+        img = enhancer.enhance(1.15)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 230, 120))
+        img = Image.blend(img, overlay, 0.08)
+
+    elif act == 8: # Celestial Shower & Gautama's Return (scenes 25-26)
+        if sc_id == 25: # Parijata flowers raining from heavens
+            base = ahalya_img
+            w, h = base.size
+            crop_box = (0, 0, w, int(h * 0.85))
+        else: # Gautama returning and welcoming Ahalya
+            base = gautama_img
+            w, h = base.size
+            crop_box = (int(w * 0.15), 0, int(w * 0.9), h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 240, 200))
+        img = Image.blend(img, overlay, 0.07)
+
+    elif act == 9: # Entry into Mithila & Royal Welcome (scenes 27-28)
+        base = mithila_img
+        w, h = base.size
+        if sc_id == 27: # Golden Mithila architecture & gates
+            crop_box = (0, 0, w, int(h * 0.75))
+        else: # King Janaka greeting Vishwamitra and princes
+            crop_box = (0, 0, int(w * 0.65), h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 190, 80))
+        img = Image.blend(img, overlay, 0.06)
+
+    else: # Act 10: Shatananda's Tears & Pinaka Bow Cliffhanger (scenes 29-30)
+        base = mithila_img
+        w, h = base.size
+        if sc_id == 29: # Shatananda weeping in joy
+            crop_box = (int(w * 0.1), int(h * 0.15), int(w * 0.6), h)
+        else: # 30: Colossal eight-wheeled iron chest housing Shiva Dhanush
+            crop_box = (int(w * 0.45), int(h * 0.2), w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.20)
+
+    # Subtle cinematic vignette
+    vignette = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
+    v_draw = ImageDraw.Draw(vignette)
+    for i in range(15):
+        alpha = int(4 * (15 - i))
+        v_draw.rectangle([i * 4, i * 4, target_w - i * 4, target_h - i * 4], outline=(0, 0, 0, alpha))
+    img = Image.alpha_composite(img.convert("RGBA"), vignette).convert("RGB")
+
+    img.save(output_path, "JPEG", quality=95)
+    print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
+    return True
+
 def generate_episode_images(episode_num=1):
     json_path = os.path.join(episodes_dir, f"episode_{episode_num:02d}.json")
     if not os.path.exists(json_path):
@@ -928,6 +1118,8 @@ def generate_episode_images(episode_num=1):
             generate_scene_asset_ep4(sc, anchors, out_file)
         elif episode_num == 6:
             generate_scene_asset_ep6(sc, anchors, out_file)
+        elif episode_num == 7:
+            generate_scene_asset_ep7(sc, anchors, out_file)
         else:
             generate_scene_asset(sc, anchors, out_file)
 

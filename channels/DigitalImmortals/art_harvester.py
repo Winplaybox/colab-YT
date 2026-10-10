@@ -95,6 +95,24 @@ HISTORICAL_ART_CATALOG = {
             "fallback_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Rama_and_Lakshman_at_Vishvamitra%27s_hermitage.jpg",
             "desc": "Rama and Lakshmana defending the sacred sacrificial fire of Siddhashrama"
         }
+    ],
+
+    # Episode 06: Holy Ganga Descent & Bhagiratha Tapasya
+    6: [
+        {
+            "name": "shiva_ganga_descent",
+            "title": "File:Shiva catching Ganga in his locks.jpg",
+            "desc": "Lord Shiva catching celestial river Ganga in his matted dreadlocks"
+        }
+    ],
+
+    # Episode 07: Ahalya Uddhar & Divine Pinaka Bow in Mithila
+    7: [
+        {
+            "name": "ahalya_uddhar",
+            "title": "File:Rama redeems Ahalya from Gautama's curse.jpg",
+            "desc": "Lord Rama redeeming Mata Ahalya with his sacred lotus footsteps"
+        }
     ]
 }
 
