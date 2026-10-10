@@ -1,9 +1,15 @@
 {
-  "current_story": 2,
-  "last_run_date": "2026-10-09",
+  "current_story": 8,
+  "last_run_date": "2026-10-10",
   "total_stories": 51,
   "completed_stories": [
-    1
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
   ],
   "auto_increment": true,
   "last_youtube_sync": "2026-10-09T21:30:00.000000+00:00",
@@ -13,15 +19,681 @@
       "title": "Chico Story 1",
       "type": "SHORT",
       "publish_at": "2026-10-03T00:00:00Z"
+    },
+    {
+      "story_number": 2,
+      "language": "hi",
+      "channel": "Hindi MindNest Tales",
+      "type": "SHORT",
+      "video_id": "X_tyIAajPK0",
+      "title": "\u0936\u0947\u0930\u0942 \u0914\u0930 \u0909\u0932\u091d\u0947 \u092c\u093e\u0932\u094b\u0902 \u0915\u093e \u0938\u092c\u0915! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T03:30:00Z",
+      "uploaded_at": "2026-10-09T16:17:40.587461"
+    },
+    {
+      "story_number": 2,
+      "language": "en",
+      "channel": "English MindNest Tales",
+      "type": "SHORT",
+      "video_id": "N0dAV_Ox218",
+      "title": "Leo's Bad Hair Day! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T13:00:00Z",
+      "uploaded_at": "2026-10-09T16:18:36.201333"
+    },
+    {
+      "story_number": 2,
+      "language": "es",
+      "channel": "Spanish MindNest Tales",
+      "type": "SHORT",
+      "video_id": "CqhPs6zXRc0",
+      "title": "\u00a1El Mal D\u00eda de Melena de Leo! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:19:31.966105"
+    },
+    {
+      "story_number": 2,
+      "language": "pt",
+      "channel": "Portuguese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "WeHt8QMhFUU",
+      "title": "O Penteado Arruinado de Leo! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T12:00:00Z",
+      "uploaded_at": "2026-10-09T16:20:17.542623"
+    },
+    {
+      "story_number": 2,
+      "language": "fr",
+      "channel": "French MindNest Tales",
+      "type": "SHORT",
+      "video_id": "h55qPCidfBs",
+      "title": "La Crini\u00e8re Rebelle de L\u00e9o ! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:21:03.050594"
+    },
+    {
+      "story_number": 2,
+      "language": "de",
+      "channel": "German MindNest Tales",
+      "type": "SHORT",
+      "video_id": "3LLz04kt1lQ",
+      "title": "Leos Verr\u00fcckter M\u00e4hnentag! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:21:59.054915"
+    },
+    {
+      "story_number": 2,
+      "language": "ar",
+      "channel": "Arabic MindNest Tales",
+      "type": "SHORT",
+      "video_id": "3ILxtPRWy80",
+      "title": "\u064a\u0648\u0645 \u0634\u0639\u0631 \u0644\u064a\u0648 \u0627\u0644\u0641\u0648\u0636\u0648\u064a! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T06:00:00Z",
+      "uploaded_at": "2026-10-09T16:22:49.271511"
+    },
+    {
+      "story_number": 2,
+      "language": "ja",
+      "channel": "Japanese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "daouHx-ePVE",
+      "title": "\u30ec\u30aa\u306e\u30bf\u30c6\u30ac\u30df\u5927\u5931\u6557\uff01\ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T00:00:00Z",
+      "uploaded_at": "2026-10-09T16:23:34.408381"
+    },
+    {
+      "story_number": 2,
+      "language": "ko",
+      "channel": "Korean MindNest Tales",
+      "type": "SHORT",
+      "video_id": "Ln6vnmTXE4g",
+      "title": "\ub808\uc624\uc758 \uc5c9\ub9dd\uc9c4\ucc3d \uac08\uae30 \ub300\uc18c\ub3d9! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T00:00:00Z",
+      "uploaded_at": "2026-10-09T16:24:21.694689"
+    },
+    {
+      "story_number": 2,
+      "language": "vi",
+      "channel": "Vietnamese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "X1r6wbU_Kc0",
+      "title": "B\u1ed9 B\u1eddm R\u1ed1i R\u1eafm C\u1ee7a Leo! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T02:00:00Z",
+      "uploaded_at": "2026-10-09T16:25:03.504609"
+    },
+    {
+      "story_number": 2,
+      "language": "fil",
+      "channel": "Filipino MindNest Tales",
+      "type": "SHORT",
+      "video_id": "QiBkYPGeKbA",
+      "title": "Ang Gulo-gulong Mane ni Leo! \ud83e\udd81\ud83d\udc51 #Shorts",
+      "publish_at": "2026-10-10T01:00:00Z",
+      "uploaded_at": "2026-10-09T16:25:52.782400"
+    },
+    {
+      "story_number": 3,
+      "language": "hi",
+      "channel": "Hindi MindNest Tales",
+      "type": "SHORT",
+      "video_id": "PL4ejabXSb0",
+      "title": "\u0917\u091c\u0930\u093e\u091c \u0914\u0930 \u092e\u0940\u0920\u0940 \u092c\u094b\u0932\u0940 \u0915\u093e \u0938\u092c\u0915! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T03:30:00Z",
+      "uploaded_at": "2026-10-09T16:32:26.671358"
+    },
+    {
+      "story_number": 3,
+      "language": "en",
+      "channel": "English MindNest Tales",
+      "type": "SHORT",
+      "video_id": "7xyp4_0YOS4",
+      "title": "Gajju's Big Manners Lesson! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T13:00:00Z",
+      "uploaded_at": "2026-10-09T16:32:57.850803"
+    },
+    {
+      "story_number": 3,
+      "language": "es",
+      "channel": "Spanish MindNest Tales",
+      "type": "SHORT",
+      "video_id": "KAyaLEri6Cw",
+      "title": "\u00a1La Gran Lecci\u00f3n de Modales de Gajju! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:33:28.762185"
+    },
+    {
+      "story_number": 3,
+      "language": "pt",
+      "channel": "Portuguese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "StcbrU7iVQc",
+      "title": "A Grande Li\u00e7\u00e3o de Educa\u00e7\u00e3o de Gajju! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T12:00:00Z",
+      "uploaded_at": "2026-10-09T16:34:01.206252"
+    },
+    {
+      "story_number": 3,
+      "language": "fr",
+      "channel": "French MindNest Tales",
+      "type": "SHORT",
+      "video_id": "Xxba1TZ03Yg",
+      "title": "La Grande Le\u00e7on de Politesse de Gajju ! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:34:35.188264"
+    },
+    {
+      "story_number": 3,
+      "language": "de",
+      "channel": "German MindNest Tales",
+      "type": "SHORT",
+      "video_id": "5DqUn2_R2k8",
+      "title": "Gajjus Gro\u00dfe Benimm-Lektion! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:35:11.620866"
+    },
+    {
+      "story_number": 3,
+      "language": "ar",
+      "channel": "Arabic MindNest Tales",
+      "type": "SHORT",
+      "video_id": "Fuch6Ww6FrQ",
+      "title": "\u062f\u0631\u0633 \u063a\u0627\u062c\u0648 \u0627\u0644\u0643\u0628\u064a\u0631 \u0641\u064a \u0627\u0644\u0623\u062e\u0644\u0627\u0642! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T06:00:00Z",
+      "uploaded_at": "2026-10-09T16:35:44.655783"
+    },
+    {
+      "story_number": 3,
+      "language": "ja",
+      "channel": "Japanese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "n2tJvyUCfJ8",
+      "title": "\u30ac\u30b8\u30e5\u306e\u3042\u3044\u3055\u3064\u5927\u4f5c\u6226\uff01\ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T00:00:00Z",
+      "uploaded_at": "2026-10-09T16:36:19.915874"
+    },
+    {
+      "story_number": 3,
+      "language": "ko",
+      "channel": "Korean MindNest Tales",
+      "type": "SHORT",
+      "video_id": "SksV2G2Q7vA",
+      "title": "\uac00\uc8fc\uc758 \uc608\uc808 \ubc14\ub978 \ud2b9\uae09 \uc791\uc804! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T00:00:00Z",
+      "uploaded_at": "2026-10-09T16:36:53.927593"
+    },
+    {
+      "story_number": 3,
+      "language": "vi",
+      "channel": "Vietnamese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "MW3ZQ5zKo3w",
+      "title": "B\u00e0i H\u1ecdc L\u1ec5 Ph\u00e9p C\u1ee7a Gajju! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T02:00:00Z",
+      "uploaded_at": "2026-10-09T16:37:27.213842"
+    },
+    {
+      "story_number": 3,
+      "language": "fil",
+      "channel": "Filipino MindNest Tales",
+      "type": "SHORT",
+      "video_id": "-CKj_Qz_xRo",
+      "title": "Ang Magandang Asal ni Gajju! \ud83d\udc18\ud83c\udf38 #Shorts",
+      "publish_at": "2026-10-11T01:00:00Z",
+      "uploaded_at": "2026-10-09T16:38:01.538308"
+    },
+    {
+      "story_number": 4,
+      "language": "hi",
+      "channel": "Hindi MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f5l0wENPUfQ",
+      "title": "\u0928\u0928\u094d\u0939\u093e \u0926\u094b\u0938\u094d\u0924 \u0914\u0930 \u0938\u092e\u092f \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0938\u0940\u0916! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T03:30:00Z",
+      "uploaded_at": "2026-10-09T16:42:17.872357"
+    },
+    {
+      "story_number": 4,
+      "language": "en",
+      "channel": "English MindNest Tales",
+      "type": "SHORT",
+      "video_id": "MS9ilVfdAjU",
+      "title": "Zebra's's Big Race Against Time! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T13:00:00Z",
+      "uploaded_at": "2026-10-09T16:42:48.889670"
+    },
+    {
+      "story_number": 4,
+      "language": "es",
+      "channel": "Spanish MindNest Tales",
+      "type": "SHORT",
+      "video_id": "3EQNWaTfvmI",
+      "title": "\u00a1La Gran Carrera de Zebra's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:43:19.315542"
+    },
+    {
+      "story_number": 4,
+      "language": "pt",
+      "channel": "Portuguese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "czwV6J8Q0Eg",
+      "title": "A Grande Corrida de Zebra's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T12:00:00Z",
+      "uploaded_at": "2026-10-09T16:43:50.049882"
+    },
+    {
+      "story_number": 4,
+      "language": "fr",
+      "channel": "French MindNest Tales",
+      "type": "SHORT",
+      "video_id": "5pM4o_du-Ew",
+      "title": "La Grande Course de Zebra's ! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:44:21.529333"
+    },
+    {
+      "story_number": 4,
+      "language": "de",
+      "channel": "German MindNest Tales",
+      "type": "SHORT",
+      "video_id": "DWS6f7Dobww",
+      "title": "Zebra's und das Rennen Gegen die Zeit! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T07:00:00Z",
+      "uploaded_at": "2026-10-09T16:44:55.474749"
+    },
+    {
+      "story_number": 4,
+      "language": "ar",
+      "channel": "Arabic MindNest Tales",
+      "type": "SHORT",
+      "video_id": "PNtSOQHPH7o",
+      "title": "\u0633\u0628\u0627\u0642 \u0627\u0644\u0635\u062f\u064a\u0642 \u0627\u0644\u0644\u0637\u064a\u0641 \u0627\u0644\u062d\u0627\u0633\u0645 \u0645\u0639 \u0627\u0644\u0648\u0642\u062a! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T06:00:00Z",
+      "uploaded_at": "2026-10-09T16:45:17.226757"
+    },
+    {
+      "story_number": 4,
+      "language": "ja",
+      "channel": "Japanese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "xEenu5DmKc8",
+      "title": "\u30c1\u30b3\u3068\u6642\u9593\u306b\u307e\u3064\u308f\u308b\u6700\u9ad8\u306e\u6559\u8a13\uff01\ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T00:00:00Z",
+      "uploaded_at": "2026-10-09T16:45:51.935712"
+    },
+    {
+      "story_number": 4,
+      "language": "ko",
+      "channel": "Korean MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f7vdEv8MBF8",
+      "title": "\uce58\ucf54\uc758 \uc704\ub300\ud55c \uc2dc\uac04 \uc5ec\ud589\uacfc \uae68\ub2ec\uc74c! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T00:00:00Z",
+      "uploaded_at": "2026-10-09T16:46:25.809991"
+    },
+    {
+      "story_number": 4,
+      "language": "vi",
+      "channel": "Vietnamese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "2VfL2fUmexU",
+      "title": "Cu\u1ed9c \u0110ua K\u1ecbp Gi\u1edd C\u1ee7a Zebra's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T02:00:00Z",
+      "uploaded_at": "2026-10-09T16:47:58.610505"
+    },
+    {
+      "story_number": 4,
+      "language": "fil",
+      "channel": "Filipino MindNest Tales",
+      "type": "SHORT",
+      "video_id": "Wqcth514IDs",
+      "title": "Ang Malaking Karera Laban sa Oras ni Zebra's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-14T01:00:00Z",
+      "uploaded_at": "2026-10-09T16:48:29.655045"
+    },
+    {
+      "story_number": 5,
+      "language": "hi",
+      "channel": "Hindi MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f5l0wENPUfQ",
+      "title": "\u0928\u0928\u094d\u0939\u093e \u0926\u094b\u0938\u094d\u0924 \u0914\u0930 \u0938\u092e\u092f \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0938\u0940\u0916! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T03:30:00Z",
+      "uploaded_at": "2026-10-10T12:45:26.775888"
+    },
+    {
+      "story_number": 5,
+      "language": "en",
+      "channel": "English MindNest Tales",
+      "type": "SHORT",
+      "video_id": "wuEvampvD2g",
+      "title": "Monkey's Big Race Against Time! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T13:00:00Z",
+      "uploaded_at": "2026-10-10T12:46:08.713438"
+    },
+    {
+      "story_number": 5,
+      "language": "es",
+      "channel": "Spanish MindNest Tales",
+      "type": "SHORT",
+      "video_id": "7cIpI5JUUN4",
+      "title": "\u00a1La Gran Carrera de Monkey! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T07:00:00Z",
+      "uploaded_at": "2026-10-10T12:46:45.816264"
+    },
+    {
+      "story_number": 5,
+      "language": "pt",
+      "channel": "Portuguese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "wNRk1cKLBW8",
+      "title": "A Grande Corrida de Monkey! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T12:00:00Z",
+      "uploaded_at": "2026-10-10T12:47:22.149896"
+    },
+    {
+      "story_number": 5,
+      "language": "fr",
+      "channel": "French MindNest Tales",
+      "type": "SHORT",
+      "video_id": "IJJGOFmf1PQ",
+      "title": "La Grande Course de Monkey ! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T07:00:00Z",
+      "uploaded_at": "2026-10-10T12:48:17.023602"
+    },
+    {
+      "story_number": 5,
+      "language": "de",
+      "channel": "German MindNest Tales",
+      "type": "SHORT",
+      "video_id": "Os-li0y_awc",
+      "title": "Monkey und das Rennen Gegen die Zeit! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T07:00:00Z",
+      "uploaded_at": "2026-10-10T12:48:57.937337"
+    },
+    {
+      "story_number": 5,
+      "language": "ar",
+      "channel": "Arabic MindNest Tales",
+      "type": "SHORT",
+      "video_id": "PNtSOQHPH7o",
+      "title": "\u0633\u0628\u0627\u0642 \u0627\u0644\u0635\u062f\u064a\u0642 \u0627\u0644\u0644\u0637\u064a\u0641 \u0627\u0644\u062d\u0627\u0633\u0645 \u0645\u0639 \u0627\u0644\u0648\u0642\u062a! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T06:00:00Z",
+      "uploaded_at": "2026-10-10T12:49:36.284798"
+    },
+    {
+      "story_number": 5,
+      "language": "ja",
+      "channel": "Japanese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "xEenu5DmKc8",
+      "title": "\u30c1\u30b3\u3068\u6642\u9593\u306b\u307e\u3064\u308f\u308b\u6700\u9ad8\u306e\u6559\u8a13\uff01\ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T00:00:00Z",
+      "uploaded_at": "2026-10-10T12:50:19.806253"
+    },
+    {
+      "story_number": 5,
+      "language": "ko",
+      "channel": "Korean MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f7vdEv8MBF8",
+      "title": "\uce58\ucf54\uc758 \uc704\ub300\ud55c \uc2dc\uac04 \uc5ec\ud589\uacfc \uae68\ub2ec\uc74c! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T00:00:00Z",
+      "uploaded_at": "2026-10-10T12:51:03.790445"
+    },
+    {
+      "story_number": 5,
+      "language": "vi",
+      "channel": "Vietnamese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "C6UvWxwzwus",
+      "title": "Cu\u1ed9c \u0110ua K\u1ecbp Gi\u1edd C\u1ee7a Monkey! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T02:00:00Z",
+      "uploaded_at": "2026-10-10T12:51:55.859744"
+    },
+    {
+      "story_number": 5,
+      "language": "fil",
+      "channel": "Filipino MindNest Tales",
+      "type": "SHORT",
+      "video_id": "GMsuoJEAJ2U",
+      "title": "Ang Malaking Karera Laban sa Oras ni Monkey! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-17T01:00:00Z",
+      "uploaded_at": "2026-10-10T12:52:52.278151"
+    },
+    {
+      "story_number": 6,
+      "language": "hi",
+      "channel": "Hindi MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f5l0wENPUfQ",
+      "title": "\u0928\u0928\u094d\u0939\u093e \u0926\u094b\u0938\u094d\u0924 \u0914\u0930 \u0938\u092e\u092f \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0938\u0940\u0916! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T03:30:00Z",
+      "uploaded_at": "2026-10-10T13:23:29.733961"
+    },
+    {
+      "story_number": 6,
+      "language": "en",
+      "channel": "English MindNest Tales",
+      "type": "SHORT",
+      "video_id": "78_xQUKAilM",
+      "title": "Giraffe's's Big Race Against Time! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T13:00:00Z",
+      "uploaded_at": "2026-10-10T13:24:16.199404"
+    },
+    {
+      "story_number": 6,
+      "language": "es",
+      "channel": "Spanish MindNest Tales",
+      "type": "SHORT",
+      "video_id": "d3pkezP1NzA",
+      "title": "\u00a1La Gran Carrera de Giraffe's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T07:00:00Z",
+      "uploaded_at": "2026-10-10T13:24:58.147895"
+    },
+    {
+      "story_number": 6,
+      "language": "pt",
+      "channel": "Portuguese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "bxBeQWx_LpA",
+      "title": "A Grande Corrida de Giraffe's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T12:00:00Z",
+      "uploaded_at": "2026-10-10T13:25:40.500567"
+    },
+    {
+      "story_number": 6,
+      "language": "fr",
+      "channel": "French MindNest Tales",
+      "type": "SHORT",
+      "video_id": "TS4j-t-amhE",
+      "title": "La Grande Course de Giraffe's ! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T07:00:00Z",
+      "uploaded_at": "2026-10-10T13:26:23.625612"
+    },
+    {
+      "story_number": 6,
+      "language": "de",
+      "channel": "German MindNest Tales",
+      "type": "SHORT",
+      "video_id": "DWS6f7Dobww",
+      "title": "Giraffe's und das Rennen Gegen die Zeit! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T07:00:00Z",
+      "uploaded_at": "2026-10-10T13:26:59.149412"
+    },
+    {
+      "story_number": 6,
+      "language": "ar",
+      "channel": "Arabic MindNest Tales",
+      "type": "SHORT",
+      "video_id": "PNtSOQHPH7o",
+      "title": "\u0633\u0628\u0627\u0642 \u0627\u0644\u0635\u062f\u064a\u0642 \u0627\u0644\u0644\u0637\u064a\u0641 \u0627\u0644\u062d\u0627\u0633\u0645 \u0645\u0639 \u0627\u0644\u0648\u0642\u062a! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T06:00:00Z",
+      "uploaded_at": "2026-10-10T13:27:36.015078"
+    },
+    {
+      "story_number": 6,
+      "language": "ja",
+      "channel": "Japanese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "xEenu5DmKc8",
+      "title": "\u30c1\u30b3\u3068\u6642\u9593\u306b\u307e\u3064\u308f\u308b\u6700\u9ad8\u306e\u6559\u8a13\uff01\ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T00:00:00Z",
+      "uploaded_at": "2026-10-10T13:28:14.476782"
+    },
+    {
+      "story_number": 6,
+      "language": "ko",
+      "channel": "Korean MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f7vdEv8MBF8",
+      "title": "\uce58\ucf54\uc758 \uc704\ub300\ud55c \uc2dc\uac04 \uc5ec\ud589\uacfc \uae68\ub2ec\uc74c! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T00:00:00Z",
+      "uploaded_at": "2026-10-10T13:28:52.487063"
+    },
+    {
+      "story_number": 6,
+      "language": "vi",
+      "channel": "Vietnamese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "2i4dN5CPJ6s",
+      "title": "Cu\u1ed9c \u0110ua K\u1ecbp Gi\u1edd C\u1ee7a Giraffe's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T02:00:00Z",
+      "uploaded_at": "2026-10-10T13:29:35.440767"
+    },
+    {
+      "story_number": 6,
+      "language": "fil",
+      "channel": "Filipino MindNest Tales",
+      "type": "SHORT",
+      "video_id": "Wqcth514IDs",
+      "title": "Ang Malaking Karera Laban sa Oras ni Giraffe's! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-18T01:00:00Z",
+      "uploaded_at": "2026-10-10T13:30:09.569113"
+    },
+    {
+      "story_number": 7,
+      "language": "hi",
+      "channel": "Hindi MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f5l0wENPUfQ",
+      "title": "\u0928\u0928\u094d\u0939\u093e \u0926\u094b\u0938\u094d\u0924 \u0914\u0930 \u0938\u092e\u092f \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0938\u0940\u0916! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T03:30:00Z",
+      "uploaded_at": "2026-10-10T14:00:40.183101"
+    },
+    {
+      "story_number": 7,
+      "language": "en",
+      "channel": "English MindNest Tales",
+      "type": "SHORT",
+      "video_id": "r4RK_7NTu6k",
+      "title": "Slowest's Big Race Against Time! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T13:00:00Z",
+      "uploaded_at": "2026-10-10T14:01:15.063056"
+    },
+    {
+      "story_number": 7,
+      "language": "es",
+      "channel": "Spanish MindNest Tales",
+      "type": "SHORT",
+      "video_id": "M1L8BoyL16A",
+      "title": "\u00a1La Gran Carrera de Slowest! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T07:00:00Z",
+      "uploaded_at": "2026-10-10T14:01:53.412786"
+    },
+    {
+      "story_number": 7,
+      "language": "pt",
+      "channel": "Portuguese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "JNIbngCpqAU",
+      "title": "A Grande Corrida de Slowest! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T12:00:00Z",
+      "uploaded_at": "2026-10-10T14:02:41.596808"
+    },
+    {
+      "story_number": 7,
+      "language": "fr",
+      "channel": "French MindNest Tales",
+      "type": "SHORT",
+      "video_id": "TcFkGzu5B4g",
+      "title": "La Grande Course de Slowest ! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T07:00:00Z",
+      "uploaded_at": "2026-10-10T14:03:21.706022"
+    },
+    {
+      "story_number": 7,
+      "language": "de",
+      "channel": "German MindNest Tales",
+      "type": "SHORT",
+      "video_id": "OlzXF5XyhoU",
+      "title": "Slowest und das Rennen Gegen die Zeit! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T07:00:00Z",
+      "uploaded_at": "2026-10-10T14:04:05.300230"
+    },
+    {
+      "story_number": 7,
+      "language": "ar",
+      "channel": "Arabic MindNest Tales",
+      "type": "SHORT",
+      "video_id": "PNtSOQHPH7o",
+      "title": "\u0633\u0628\u0627\u0642 \u0627\u0644\u0635\u062f\u064a\u0642 \u0627\u0644\u0644\u0637\u064a\u0641 \u0627\u0644\u062d\u0627\u0633\u0645 \u0645\u0639 \u0627\u0644\u0648\u0642\u062a! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T06:00:00Z",
+      "uploaded_at": "2026-10-10T14:04:36.115778"
+    },
+    {
+      "story_number": 7,
+      "language": "ja",
+      "channel": "Japanese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "xEenu5DmKc8",
+      "title": "\u30c1\u30b3\u3068\u6642\u9593\u306b\u307e\u3064\u308f\u308b\u6700\u9ad8\u306e\u6559\u8a13\uff01\ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T00:00:00Z",
+      "uploaded_at": "2026-10-10T14:05:09.321829"
+    },
+    {
+      "story_number": 7,
+      "language": "ko",
+      "channel": "Korean MindNest Tales",
+      "type": "SHORT",
+      "video_id": "f7vdEv8MBF8",
+      "title": "\uce58\ucf54\uc758 \uc704\ub300\ud55c \uc2dc\uac04 \uc5ec\ud589\uacfc \uae68\ub2ec\uc74c! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T00:00:00Z",
+      "uploaded_at": "2026-10-10T14:05:45.973121"
+    },
+    {
+      "story_number": 7,
+      "language": "vi",
+      "channel": "Vietnamese MindNest Tales",
+      "type": "SHORT",
+      "video_id": "RK7kIB8Fvcg",
+      "title": "Cu\u1ed9c \u0110ua K\u1ecbp Gi\u1edd C\u1ee7a Slowest! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T02:00:00Z",
+      "uploaded_at": "2026-10-10T14:06:25.706962"
+    },
+    {
+      "story_number": 7,
+      "language": "fil",
+      "channel": "Filipino MindNest Tales",
+      "type": "SHORT",
+      "video_id": "GMsuoJEAJ2U",
+      "title": "Ang Malaking Karera Laban sa Oras ni Slowest! \ud83d\udc3e\u23f0 #Shorts",
+      "publish_at": "2026-10-21T01:00:00Z",
+      "uploaded_at": "2026-10-10T14:06:57.847194"
     }
   ],
   "channels_progress": {
     "hi": {
       "channel_name": "Hindi MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -33,9 +705,15 @@
     "en": {
       "channel_name": "English MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -47,9 +725,15 @@
     "es": {
       "channel_name": "Spanish MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -61,9 +745,15 @@
     "pt": {
       "channel_name": "Portuguese MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -75,9 +765,15 @@
     "fr": {
       "channel_name": "French MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -89,9 +785,15 @@
     "de": {
       "channel_name": "German MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -103,9 +805,15 @@
     "ar": {
       "channel_name": "Arabic MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -117,9 +825,15 @@
     "ja": {
       "channel_name": "Japanese MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -131,9 +845,15 @@
     "ko": {
       "channel_name": "Korean MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -145,9 +865,15 @@
     "vi": {
       "channel_name": "Vietnamese MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
@@ -159,9 +885,15 @@
     "fil": {
       "channel_name": "Filipino MindNest Tales",
       "completed_stories": [
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
       ],
-      "next_story": 2,
+      "next_story": 8,
       "recent_video_title": "Chico Story 1",
       "recent_stats": {
         "views": 0,
