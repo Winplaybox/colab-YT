@@ -115,6 +115,16 @@ def get_or_create_story(episode_number=1, force_refresh=False):
     return full_data
 
 
+def peek_story(episode_number=1):
+    """Returns story dictionary in-memory without saving any file to disk."""
+    bank = load_bank()
+    matching = [s for s in bank if s.get("episode_number") == episode_number]
+    if matching:
+        return matching[0]
+    from extended_generator import get_extended_myth_story
+    return get_extended_myth_story(episode_number)
+
+
 def generate_story_from_bank(episode_number):
     """Alias for on-demand generation with force refresh."""
     return get_or_create_story(episode_number=episode_number, force_refresh=True)

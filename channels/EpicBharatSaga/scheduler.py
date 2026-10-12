@@ -30,7 +30,7 @@ except ImportError:
 script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, script_dir)
 
-from story_generator import generate_story_from_bank
+from story_generator import generate_story_from_bank, peek_story
 from video_producer import produce_train_video   # reuses same producer logic
 
 EXPECTED_CHANNEL_ID = "UCakmjqTBA6KgCF2F30Tnpjg"
@@ -116,7 +116,7 @@ def save_state(state):
         json.dump(state, f, indent=2, ensure_ascii=False)
 
 
-def upload_short(video_path, story, publish_mode="scheduled"):
+def upload_short(video_path, story, publish_mode="scheduled", force=False):
     """Uploads the mythology Short to EpicBharatSaga YouTube channel."""
     if not HAS_GOOGLE_CLIENT:
         print("[WARN] google-api-python-client not available. Skipping upload.")
@@ -155,25 +155,28 @@ def upload_short(video_path, story, publish_mode="scheduled"):
     print(f"   Title: {story['youtube_title']}")
 
     # Live YouTube duplicate check
-    try:
+    if not force:
         try:
-            from common.youtube_duplicate_checker import check_existing_upload
-        except ImportError:
-            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
-            from common.youtube_duplicate_checker import check_existing_upload
+            try:
+                from common.youtube_duplicate_checker import check_existing_upload
+            except ImportError:
+                sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+                from common.youtube_duplicate_checker import check_existing_upload
 
-        dup = check_existing_upload(youtube, candidate_title=story["youtube_title"], episode_number=ep_num, channel_type="EpicBharatSaga")
-        if dup.get("exists"):
-            existing_id = dup["video_id"]
-            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on Epic Bharat YouTube!")
-            print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
-            print(f"   Reason:         {dup.get('reason')}")
-            print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
-            print(f"   YouTube Link:   https://youtu.be/{existing_id}")
-            print(f"   ⏭️ Skipping upload to prevent duplicate content on YouTube.\n")
-            return existing_id
-    except Exception as ce:
-        print(f"Notice: Duplicate check notice: {ce}")
+            dup = check_existing_upload(youtube, candidate_title=story["youtube_title"], episode_number=ep_num, channel_type="EpicBharatSaga")
+            if dup.get("exists"):
+                existing_id = dup["video_id"]
+                print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on Epic Bharat YouTube!")
+                print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
+                print(f"   Reason:         {dup.get('reason')}")
+                print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
+                print(f"   YouTube Link:   https://youtu.be/{existing_id}")
+                print(f"   ⏭️ Skipping upload to prevent duplicate content on YouTube.\n")
+                return existing_id
+        except Exception as ce:
+            print(f"Notice: Duplicate check notice: {ce}")
+    else:
+        print(f"⚡ [FORCE MODE] Live YouTube duplicate check bypassed for upload.")
 
     media = MediaFileUpload(video_path, mimetype="video/mp4", resumable=True, chunksize=256 * 1024)
     insert = youtube.videos().insert(part="snippet,status", body=request_body, media_body=media)
@@ -211,10 +214,11 @@ def upload_short(video_path, story, publish_mode="scheduled"):
     return video_id
 
 
-def run_episode(episode_number=None, publish_mode="scheduled", quality="1080p"):
+def run_episode(episode_number=None, publish_mode="scheduled", quality="1080p", force=False):
     """Full pipeline: story → images → TTS → video → upload."""
     state = load_state()
-    episode_number = episode_number or state.get("current_episode", 1)
+    if episode_number is None:
+        episode_number = state.get("current_episode", 36)
 
     print(f"\n{'='*70}")
     print(f"🔱 EpicBharatSaga — Episode #{episode_number:03d}")
@@ -222,7 +226,7 @@ def run_episode(episode_number=None, publish_mode="scheduled", quality="1080p"):
 
     # 1. Pre-render Live YouTube Check: skip stories already uploaded on YouTube
     creds = load_credentials()
-    if creds and HAS_GOOGLE_CLIENT:
+    if creds and HAS_GOOGLE_CLIENT and not force:
         try:
             try:
                 from common.youtube_duplicate_checker import check_existing_upload
@@ -231,19 +235,29 @@ def run_episode(episode_number=None, publish_mode="scheduled", quality="1080p"):
                 from common.youtube_duplicate_checker import check_existing_upload
 
             yt = build("youtube", "v3", credentials=creds)
-            while True:
-                cand_story = generate_story_from_bank(episode_number)
+            max_checks = 25
+            attempts = 0
+            while attempts < max_checks:
+                cand_story = peek_story(episode_number)
                 dup = check_existing_upload(yt, candidate_title=cand_story.get("youtube_title"), episode_number=episode_number, channel_type="EpicBharatSaga")
                 if dup.get("exists"):
-                    print(f"🛑 [LIVE YOUTUBE CHECK] Episode #{episode_number:03d} ({cand_story.get('title')}) is ALREADY on YouTube ({dup['video_id']}).")
-                    print(f"   ⏩ Skipping render/upload. Advancing to Episode #{episode_number + 1:03d}...")
+                    attempts += 1
+                    print(f"🛑 [LIVE YOUTUBE CHECK] Episode #{episode_number:03d} ('{cand_story.get('title')}') is ALREADY on YouTube ({dup['video_id']}).")
+                    print(f"   ⏩ Skipping duplicate candidate. Checking Episode #{episode_number + 1:03d}...")
                     episode_number += 1
-                    state["current_episode"] = episode_number
-                    save_state(state)
                 else:
                     break
+
+            if attempts >= max_checks:
+                print(f"⚠️ [SAFETY STOP] Checked {max_checks} episodes and all matched existing YouTube videos. Halting to avoid runaway execution.")
+                return None
+
+            state["current_episode"] = episode_number
+            save_state(state)
         except Exception as e:
             print(f"Notice: Pre-check duplicate notice: {e}")
+    elif force:
+        print("⚡ [FORCE MODE] Duplicate pre-check bypassed.")
 
     # Generate active story
     story = generate_story_from_bank(episode_number)
@@ -268,34 +282,41 @@ def run_episode(episode_number=None, publish_mode="scheduled", quality="1080p"):
     # 4. Upload
     video_id = None
     if publish_mode != "render_only":
-        video_id = upload_short(video_path, story, publish_mode=publish_mode)
+        video_id = upload_short(video_path, story, publish_mode=publish_mode, force=force)
 
     # 5. Update state
-    next_ep = episode_number + 1
-    state["last_run"] = datetime.now().isoformat()
-    state["last_uploaded_video_id"] = video_id
-    state["current_episode"] = next_ep
-    state["current_deity"] = story.get("deity", "Lord Shiva")
-    state["current_season"] = story.get("season", 1)
-    state["history"].append({
-        "episode_number": episode_number,
-        "deity": story.get("deity"),
-        "season": story.get("season"),
-        "title": story["title"],
-        "video_id": video_id,
-        "mode": publish_mode,
-        "timestamp": state["last_run"]
-    })
-    save_state(state)
-    print(f"\n🎉 Episode #{episode_number:03d} done! Next: #{next_ep:03d} [{story.get('deity', '')}]")
+    if publish_mode != "render_only":
+        next_ep = episode_number + 1
+        state["last_run"] = datetime.now().isoformat()
+        state["last_uploaded_video_id"] = video_id
+        state["current_episode"] = next_ep
+        state["current_deity"] = story.get("deity", "Lord Shiva")
+        state["current_season"] = story.get("season", 1)
+        if story.get("story_id") and story["story_id"] not in state.get("used_story_ids", []):
+            state.setdefault("used_story_ids", []).append(story["story_id"])
+
+        state.setdefault("history", []).append({
+            "episode_number": episode_number,
+            "deity": story.get("deity"),
+            "season": story.get("season"),
+            "title": story["title"],
+            "video_id": video_id,
+            "mode": publish_mode,
+            "timestamp": state["last_run"]
+        })
+        save_state(state)
+        print(f"\n🎉 Episode #{episode_number:03d} done! Next: #{next_ep:03d} [{story.get('deity', '')}]")
+    else:
+        print(f"\n🎉 Episode #{episode_number:03d} render complete (render_only mode). State preserved at Episode #{episode_number:03d}.")
     return video_path
 
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--episode", type=int, default=None)
-    parser.add_argument("--mode", default="scheduled", choices=["scheduled", "immediate", "render_only"])
-    parser.add_argument("--quality", default="4k", choices=["1080p", "4k", "8k"])
+    parser = argparse.ArgumentParser(description="EpicBharatSaga Autonomous Scheduler & Uploader")
+    parser.add_argument("--episode", "--story", dest="episode", type=int, default=None, help="Specific episode/story number to run")
+    parser.add_argument("--mode", default="scheduled", choices=["scheduled", "immediate", "render_only"], help="Publish mode")
+    parser.add_argument("--quality", default="4k", choices=["1080p", "4k", "8k"], help="Video render quality")
+    parser.add_argument("--force", action="store_true", help="Force production/upload and bypass duplicate checks")
     args = parser.parse_args()
-    run_episode(episode_number=args.episode, publish_mode=args.mode, quality=args.quality)
+    run_episode(episode_number=args.episode, publish_mode=args.mode, quality=args.quality, force=args.force)

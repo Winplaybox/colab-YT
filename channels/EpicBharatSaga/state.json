@@ -1,12 +1,39 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 11,
-  "current_season": 1,
+  "current_episode": 36,
+  "current_season": 4,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-07T19:37:34.306041",
-  "last_uploaded_video_id": "BtSISK2l3QE",
-  "used_story_ids": [],
+  "last_run": "2026-10-12T10:00:00.000000",
+  "last_uploaded_video_id": "LvhqNuPKBoU",
+  "used_story_ids": [
+    "shiva_01_neelkanth_origin",
+    "shiva_02_tandava_nataraja",
+    "shiva_03_daksha_yagna_sati",
+    "shiva_04_ganga_avatarana",
+    "shiva_05_bhasmasura_curse",
+    "shiva_06_ardhanarishvara",
+    "shiva_07_kailash_mount",
+    "shiva_08_jyotirlinga_origin",
+    "shiva_09_parvati_tapasya",
+    "shiva_10_mahashivaratri_origin",
+    "shiva_11_tripurasura_destruction",
+    "shiva_12_amarnath_cave",
+    "shiva_13_bhairava_form",
+    "shiva_14_mahadev_vs_yama",
+    "shiva_15_shiv_parvati_game",
+    "vishnu_01_matsya_avatar",
+    "vishnu_02_kurma_avatar",
+    "vishnu_03_narasimha_hiranyakashipu",
+    "vishnu_04_vamana_bali",
+    "vishnu_05_sudarshana_chakra",
+    "durga_01_mahishasura_mardini",
+    "durga_02_navdurga_nine_forms",
+    "hanuman_01_sun_fruit",
+    "hanuman_02_sanjeevani",
+    "ganesha_01_elephant_head_origin",
+    "ganesha_02_race_around_world"
+  ],
   "history": [
     {
       "episode_number": 1,
@@ -15,7 +42,7 @@
       "title": "Neelkanth: Zeher Peeke Duniya Bachai! 🔱",
       "video_id": "EJyGOlGvphs",
       "mode": "scheduled",
-      "timestamp": "2026-09-29T17:06:33.886149"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 2,
@@ -24,7 +51,7 @@
       "title": "Tandava: Jab Shiv Ka Dance Srishti Hilaae! 💃",
       "video_id": "dHwy248dxws",
       "mode": "scheduled",
-      "timestamp": "2026-10-01T14:26:59.855742"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 3,
@@ -33,7 +60,7 @@
       "title": "Sati Ka Yagna Mein Aatmadah — Shiv Ka Vilaap! 😢",
       "video_id": "CHogQB_w3QQ",
       "mode": "scheduled",
-      "timestamp": "2026-10-01T19:03:12.462112"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 4,
@@ -42,7 +69,7 @@
       "title": "Ganga Ko Shiv Ne Apni Jataon Mein Sameta! 🌊",
       "video_id": "0VOwrQOPmXM",
       "mode": "scheduled",
-      "timestamp": "2026-10-02T18:41:20.477390"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 5,
@@ -51,7 +78,7 @@
       "title": "Bhasmasura Ne Shiv Ko Hi Jalaane Ki Koshi Ki! 😱",
       "video_id": "PG7oSCRIyLI",
       "mode": "scheduled",
-      "timestamp": "2026-10-03T17:34:37.593099"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 6,
@@ -60,7 +87,7 @@
       "title": "Ardhanarishvara: Aadha Shiv Aadhi Parvati! ☯️",
       "video_id": "f22J9iT1XdI",
       "mode": "scheduled",
-      "timestamp": "2026-10-04T17:50:19.039117"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 7,
@@ -69,7 +96,7 @@
       "title": "Kailash — Shiv Ka Ghar, Ab Tak Unclimbed! ⛰️",
       "video_id": "0Ys4GjiIfTc",
       "mode": "scheduled",
-      "timestamp": "2026-10-05T21:15:03.769133"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 8,
@@ -78,7 +105,7 @@
       "title": "12 Jyotirlinga: Brahma-Vishnu Ki Test Mein Shiv Jeete! 🌟",
       "video_id": "orvtHC3clns",
       "mode": "scheduled",
-      "timestamp": "2026-10-06T21:18:22.545148"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 9,
@@ -87,7 +114,7 @@
       "title": "Parvati Ki Tapasya — Shiv Ka Dil Jeeta! ❤️",
       "video_id": "uNyuW7Bbzfc",
       "mode": "scheduled",
-      "timestamp": "2026-10-06T19:02:58.825280"
+      "timestamp": "2026-10-11T13:30:00Z"
     },
     {
       "episode_number": 10,
@@ -96,7 +123,232 @@
       "title": "Mahashivaratri Kyun Manate Hain? Asli Story! 🙏",
       "video_id": "BtSISK2l3QE",
       "mode": "scheduled",
-      "timestamp": "2026-10-07T19:37:34.306041"
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 11,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Teen Nagar Ek Teer Se — Tripurantaka! 🏹",
+      "video_id": "goZ_XcSd3fo",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 12,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Amarnath: Jahan Shiv Ne Parvati Ko Bathai Amar Katha! 🕉️",
+      "video_id": "yUai9NoH7M0",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 13,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Kaal Bhairava — Shiv Ka Sabse Ugra Roop! 😤",
+      "video_id": "vkkbKCoQl3E",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 14,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Mahadev Ne Yama Se Chheen Li Markandey Ki Zindagi! ⚡",
+      "video_id": "Qmwl2j6bGFU",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 15,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Shiv-Parvati Ka Dice Game — Koi Nahi Jeeta! 😂",
+      "video_id": "QG-HFmOhvTE",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 16,
+      "deity": "Lord Vishnu",
+      "season": 2,
+      "title": "Matsya Avatar: Machli Bani Bhagwaan! 🐟",
+      "video_id": "0wFjwy0pios",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 17,
+      "deity": "Lord Vishnu",
+      "season": 2,
+      "title": "Kurma Avatar: Kachua Bana Vishnu! 🐢",
+      "video_id": "7ocDJI8YUIo",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 18,
+      "deity": "Lord Vishnu",
+      "season": 2,
+      "title": "Narasimha: Asur Ka Har Loophole Band Kiya! 🦁",
+      "video_id": "g106A87sPLo",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 19,
+      "deity": "Lord Vishnu",
+      "season": 2,
+      "title": "Vamana: Teen Kadam Mein Teen Lok! 👣",
+      "video_id": "G3v_UHIyjxo",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 20,
+      "deity": "Lord Vishnu",
+      "season": 2,
+      "title": "Sudarshana Chakra — Vishnu Ka Nuclear Weapon! ⚙️",
+      "video_id": "t3t2f7X88BM",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 21,
+      "deity": "Goddess Durga",
+      "season": 3,
+      "title": "Mahishasura Ko Durga Ne 9 Din Mein Khatam Kiya! 🔱",
+      "video_id": "EHBB5FJ2GrE",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 22,
+      "deity": "Goddess Durga",
+      "season": 3,
+      "title": "Nav Durga: 9 Roop, 9 Shaktiyan! 🌟",
+      "video_id": "Z41PREMpwrQ",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 23,
+      "deity": "Lord Hanuman",
+      "season": 4,
+      "title": "Hanuman Ne Suraj Ko Phal Samjha Liya! ☀️",
+      "video_id": "J2ON5ViGZhQ",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 24,
+      "deity": "Lord Hanuman",
+      "season": 4,
+      "title": "Sanjeevani Ke Liye Pura Pahad Utha Laaye! 🌿",
+      "video_id": "DWdHyMVYOoY",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 25,
+      "deity": "Lord Ganesha",
+      "season": 5,
+      "title": "Ganesha Ka Haathi Wala Sar — Asli Kahani! 🐘",
+      "video_id": "_A5CTfFmyFo",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 26,
+      "deity": "Lord Ganesha",
+      "season": 5,
+      "title": "Ganesha Ne Muush Par Baap Ko Haraaya! 🏆",
+      "video_id": "Mdx8mx0yTcw",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 27,
+      "deity": "Agni",
+      "season": 11,
+      "title": "Agni Dev — devataoron ka messenger! 🔱",
+      "video_id": "aAZgK4G6XNI",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 28,
+      "deity": "Vayu",
+      "season": 12,
+      "title": "Vayu Dev — Hanuman aur Bhima ke pita! 🔱",
+      "video_id": "B8fj5JybNUw",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 29,
+      "deity": "Indra",
+      "season": 7,
+      "title": "Indra Dev ka ahankaar — baar baar hara! 🔱",
+      "video_id": "vuH0MpoK2ZQ",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 30,
+      "deity": "Lord Jagannath",
+      "season": 14,
+      "title": "Jagannath Rath Yatra ka divya rahasya! 🔱",
+      "video_id": "7IE093udMLo",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 31,
+      "deity": "Surya",
+      "season": 8,
+      "title": "Surya Dev — Karna aur Shani ke pita! 🔱",
+      "video_id": "f6g3Us-8LSk",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 32,
+      "deity": "Kubera",
+      "season": 10,
+      "title": "Kubera — Ravana ka bhai! 🔱",
+      "video_id": "6_XWj3bI7RY",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 33,
+      "deity": "Nandi",
+      "season": 1,
+      "title": "Nandi — Shiv ka sabse bada bhakt! 🔱",
+      "video_id": "jz-XTZ3Ekck",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 34,
+      "deity": "Saraswati",
+      "season": 13,
+      "title": "Saraswati — Brahma ki beti, gyaan ki devi! 🔱",
+      "video_id": "QYQoXTlTwqI",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 35,
+      "deity": "Yama",
+      "season": 9,
+      "title": "Nachiketa aur Yama ka gyaan! 🔱",
+      "video_id": "LvhqNuPKBoU",
+      "mode": "scheduled",
+      "timestamp": "2026-10-11T13:30:00Z"
     }
   ]
 }

@@ -1,0 +1,72 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 24,
+  "season": 4,
+  "deity": "Lord Hanuman",
+  "story_id": "hanuman_02_sanjeevani",
+  "story_hash": "fee64bccab15e001",
+  "format": "Heroic Act",
+  "title": "Sanjeevani Ke Liye Pura Pahad Utha Laaye! 🌿",
+  "youtube_title": "Sanjeevani Ke Liye Pura Pahad Utha Laaye! 🌿",
+  "tagline": "Hanuman carried Dronagiri mountain Sanjeevani Laxman life",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Hanuman",
+    "https://en.wikipedia.org/wiki/Dronagiri"
+  ],
+  "verified_fact": "When Lakshmana was gravely injured in battle, Hanuman was sent to bring Sanjeevani herb from the Himalayan Dronagiri mountain. Unable to identify the exact herb, Hanuman lifted the entire mountain and brought it to Lanka. After Lakshmana was healed, Hanuman returned the mountain.",
+  "voiceover_script": "Lanka mein Laxman ko Meghnaad ne Shakti se ghaayal kiya — haalat thi naajogh! Vaidya Sushen ne bataaya — Dronagiri pahad par hai Sanjeevani booti — sirf yahi bachayegi. Hanuman pahad par gaye. Itni saari bootiyaan — kaunsi Sanjeevani hai pata nahi! Isliye poore Dronagiri pahad ko hi utha liya — haath mein! Aur le aaye Lanka! Laxman thik ho gaye. Wahi Dronagiri pahad aaj bhi Uttarakhand mein khada hai!",
+  "debate_question": "Hanuman ki jagah aap kya karte — poori pahad ya ek booti?",
+  "pinned_comment": "🌿 Pura pahad utha laaye! Laxman zinda rahe! Jai Hanuman!",
+  "description": "Sanjeevani Ke Liye Pura Pahad Utha Laaye! 🌿\n\n🔱 Hanuman carried Dronagiri mountain Sanjeevani Laxman life\n\nWhen Lakshmana was gravely injured in battle, Hanuman was sent to bring Sanjeevani herb from the Himalayan Dronagiri mountain. Unable to identify the exact herb, Hanuman lifted the entire mountain and brought it to Lanka. After Lakshmana was healed, Hanuman returned the mountain.\n\n👉 Hanuman ki jagah aap kya karte — poori pahad ya ek booti?\n\nSeason 4 — Lord Hanuman\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Hanuman #Sanjeevani #Laxman #Ramayana #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Hanuman",
+    "Sanjeevani",
+    "Laxman",
+    "Ramayana",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Laxman ghaayal — Sanjeevani hi bachayegi!",
+      "prompt": "Lakshmana gravely injured Lanka battlefield Rama grief 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Hanuman gaye Dronagiri pahad par!",
+      "prompt": "Hanuman flying toward Himalayan Dronagiri mountain dawn 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Kaunsi booti? — Poora pahad utha liya!",
+      "prompt": "Hanuman unable to identify herb lifting entire Dronagiri mountain 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Pahad hath mein — Lanka ki taraf!",
+      "prompt": "Giant Hanuman flying with mountain in hand across ocean 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Sanjeevani se Laxman thik ho gaye!",
+      "prompt": "Lakshmana healing Sanjeevani herb vaidya divine medicine 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Dronagiri aaj bhi Uttarakhand mein!",
+      "prompt": "Dronagiri mountain Uttarakhand Himalayan range sacred herbs 9:16"
+    }
+  ]
+}

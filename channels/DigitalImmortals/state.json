@@ -1,7 +1,7 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 7,
+  "current_episode": 8,
   "total_episodes": 54,
   "history": [
     {
@@ -45,6 +45,13 @@
       "title": "स्वर्ग से धरती पर कैसे उतरीं मां गंगा? 🌊 भगीरथ की अमर तपस्या (Ep 06)",
       "uploaded_at": "2026-10-06T18:31:35.723638",
       "publish_at": "2026-10-20T13:00:00Z"
+    },
+    {
+      "episode_number": 7,
+      "video_id": "ned8gKC0zfE",
+      "title": "पत्थर बनी अहल्या का उद्धार! 🪨✨ मिथिला में शिव धनुष का रहस्य (Ep 07)",
+      "uploaded_at": "2026-10-12T15:48:19.537210",
+      "publish_at": "2026-10-25T03:00:00Z"
     }
   ],
   "playlists": {
@@ -59,11 +66,11 @@
   "last_audit": {
     "episode_number": 6,
     "video_id": "uCIlsq--hmQ",
-    "views": 1,
+    "views": 0,
     "likes": 0,
     "comments": 0,
-    "like_ratio": 0.0,
-    "audited_at": "2026-10-10T20:18:10.508059",
+    "like_ratio": 0,
+    "audited_at": "2026-10-12T15:47:11.006605",
     "sentiment": "⚠️ LOW ENGAGEMENT: Increase emotional stakes and refine thumbnail hook."
   }
 }

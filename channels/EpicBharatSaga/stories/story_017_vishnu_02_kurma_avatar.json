@@ -1,0 +1,71 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 17,
+  "season": 2,
+  "deity": "Lord Vishnu",
+  "story_id": "vishnu_02_kurma_avatar",
+  "story_hash": "d080ee7c3e60fbc7",
+  "format": "Avatar Story",
+  "title": "Kurma Avatar: Kachua Bana Vishnu! 🐢",
+  "youtube_title": "Kurma Avatar: Kachua Bana Vishnu! 🐢",
+  "tagline": "Vishnu Kurma turtle avatar Samudra Manthan base support",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Kurma"
+  ],
+  "verified_fact": "During Samudra Manthan (churning of the ocean), Mount Mandara was used as the churning rod but kept sinking. Vishnu took the Kurma (turtle) avatar and served as the base, holding Mandara on his back in the ocean.",
+  "voiceover_script": "Samudra Manthan ke liye Mandara parvat ko churning rod banaya. Par parvat samandar mein doobne laga! Tab Vishnu ne liya Kurma avatar — virat kachua bana! Mandara parvat ko apni peeth par tika liya. Devas aur Asuras dono taraf se manthan karte rahe — Vishnu neeche kachua bane baitha raha. Is tyaag ke bina amrit nahi milta. Pura Samudra Manthan Vishnu ki peeth par tika tha!",
+  "debate_question": "Aise neta hote hain jo khud neeche rahe aur doosron ko utha rakhe!",
+  "pinned_comment": "🐢 Kurma avatar — peeth par duniya thaami! Jai Shri Vishnu!",
+  "description": "Kurma Avatar: Kachua Bana Vishnu! 🐢\n\n🔱 Vishnu Kurma turtle avatar Samudra Manthan base support\n\nDuring Samudra Manthan (churning of the ocean), Mount Mandara was used as the churning rod but kept sinking. Vishnu took the Kurma (turtle) avatar and served as the base, holding Mandara on his back in the ocean.\n\n👉 Aise neta hote hain jo khud neeche rahe aur doosron ko utha rakhe!\n\nSeason 2 — Lord Vishnu\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Kurma #Vishnu #Dashavatara #SamudraManthan #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Kurma",
+    "Vishnu",
+    "Dashavatara",
+    "SamudraManthan",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Samudra Manthan mein crisis — Mandara doob raha!",
+      "prompt": "Mount Mandara churning rod sinking ocean Samudra Manthan 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Vishnu ne liya Kurma avatar!",
+      "prompt": "Vishnu transforming into giant turtle Kurma divine avatar 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Mandara parvat ko peeth par tika liya!",
+      "prompt": "Giant divine turtle Kurma holding Mount Mandara ocean base 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Devas aur Asuras dono manthan karte rahe!",
+      "prompt": "Gods and demons churning ocean on Vishnu Kurma back 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Vishnu neeche — sab ki nींv bane!",
+      "prompt": "Kurma turtle beneath ocean supporting cosmic churning 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Asli neta woh jo neeche se thaame!",
+      "prompt": "Amrit emerging from ocean Samudra Manthan success divine 9:16"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 11,
+  "season": 1,
+  "deity": "Lord Shiva",
+  "story_id": "shiva_11_tripurasura_destruction",
+  "story_hash": "04db3586ed2509aa",
+  "format": "Battle Legend",
+  "title": "Teen Nagar Ek Teer Se — Tripurantaka! 🏹",
+  "youtube_title": "Teen Nagar Ek Teer Se — Tripurantaka! 🏹",
+  "tagline": "Tripurasura three demon cities destroyed Shiva single arrow",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Tripurasura"
+  ],
+  "verified_fact": "Tripurasura brothers built three indestructible flying cities (Tripura) from gold, silver and iron. The cities were immune to all weapons unless struck simultaneously when they aligned. Shiva used the entire universe as his bow-and-arrow apparatus and destroyed all three cities in one shot at the alignment moment.",
+  "voiceover_script": "Teen bhai asuro ne banaye teen ude hue shehar — sone, chaandi, lohe ke! Koi hatyar kaam nahi karta tha — bus ek hi teer se teen shehar ek saath tab jab teen ek line mein aate! Brahma ne bow ki zaroorat batayi. Shiv ne Meru parvat ko dhanush banaya, Shesha ko string, Surya-Chandra ko chariot! Ek teer — teen shehar nast. Isi se Shiv ka naam pada Tripurantaka!",
+  "debate_question": "Aisi impossible shot — science mein possible hai kya?",
+  "pinned_comment": "🏹 Ek teer teen shehar! Tripurantaka Shiva! Har Har Mahadev!",
+  "description": "Teen Nagar Ek Teer Se — Tripurantaka! 🏹\n\n🔱 Tripurasura three demon cities destroyed Shiva single arrow\n\nTripurasura brothers built three indestructible flying cities (Tripura) from gold, silver and iron. The cities were immune to all weapons unless struck simultaneously when they aligned. Shiva used the entire universe as his bow-and-arrow apparatus and destroyed all three cities in one shot at the alignment moment.\n\n👉 Aisi impossible shot — science mein possible hai kya?\n\nSeason 1 — Lord Shiva\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Tripurasura #Shiva #Tripurantaka #BattleLegend #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Tripurasura",
+    "Shiva",
+    "Tripurantaka",
+    "BattleLegend",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Teen asuro ke teen ude hue shehar!",
+      "prompt": "Three demon flying cities gold silver iron sky Tripura 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Koi hatyar kaam nahi karta!",
+      "prompt": "Gods army weapons useless against Tripura flying cities 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Meru dhanush, Shesha bowstring, Surya-Chandra chariot!",
+      "prompt": "Shiva cosmic bow Mount Meru serpent bowstring chariot 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Teen shehar ek line mein aaye!",
+      "prompt": "Three cities aligning in sky cosmic alignment rare moment 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Ek teer — teen shehar nast!",
+      "prompt": "Shiva shooting cosmic arrow three cities destroyed divine fire 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Tripurantaka — Shiv ka naam!",
+      "prompt": "Tripurantaka Shiva destroyer of three cities divine victorious 9:16"
+    }
+  ]
+}

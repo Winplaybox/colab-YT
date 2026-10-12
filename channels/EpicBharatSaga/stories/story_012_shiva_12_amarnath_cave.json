@@ -1,0 +1,71 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 12,
+  "season": 1,
+  "deity": "Lord Shiva",
+  "story_id": "shiva_12_amarnath_cave",
+  "story_hash": "dae9960ee17e4a63",
+  "format": "Sacred Pilgrimage",
+  "title": "Amarnath: Jahan Shiv Ne Parvati Ko Bathai Amar Katha! 🕉️",
+  "youtube_title": "Amarnath: Jahan Shiv Ne Parvati Ko Bathai Amar Katha! 🕉️",
+  "tagline": "Amarnath cave Shiva immortality story Parvati ice linga",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Amarnath_temple"
+  ],
+  "verified_fact": "Amarnath cave in Kashmir at 3,888 m houses a naturally formed ice Shivalinga that waxes and wanes with the moon. Legend: Shiva told Parvati the secret of immortality (Amar Katha) here — two doves overheard and became immortal, still said to inhabit the cave.",
+  "voiceover_script": "3,888 meter ki unchaai par ek gupha — jahaan Mahadev ne Parvati ko bathaai Amar Katha — amar hone ka rahasya! Ye thi Amarnath gupha. Shiv socha — koi nahi sun raha. Par do kabootar chhup ke sun rahe the — wo bhi amar ho gaye! Kaha jaata hai aaj bhi wo kabootar wahan milte hain. Aur gupha mein ice ka Shivalinga — Poornima par badata hai, Amavasya par ghatta hai!",
+  "debate_question": "Amarnath yatra aap kab karenge?",
+  "pinned_comment": "🕉️ Ice Shivalinga — moon ke saath badata-ghatta hai! Har Har Mahadev!",
+  "description": "Amarnath: Jahan Shiv Ne Parvati Ko Bathai Amar Katha! 🕉️\n\n🔱 Amarnath cave Shiva immortality story Parvati ice linga\n\nAmarnath cave in Kashmir at 3,888 m houses a naturally formed ice Shivalinga that waxes and wanes with the moon. Legend: Shiva told Parvati the secret of immortality (Amar Katha) here — two doves overheard and became immortal, still said to inhabit the cave.\n\n👉 Amarnath yatra aap kab karenge?\n\nSeason 1 — Lord Shiva\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Amarnath #Shiva #Kashmir #Pilgrimage #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Amarnath",
+    "Shiva",
+    "Kashmir",
+    "Pilgrimage",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Amarnath — 3,888m par divya gupha!",
+      "prompt": "Amarnath cave entrance Kashmir snow mountains glaciers 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Shiv ne Parvati ko bathai Amar Katha!",
+      "prompt": "Shiva telling Parvati immortality secret Amarnath cave divine 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Do kabootar ne suna — amar ho gaye!",
+      "prompt": "Two white doves hidden listening immortality secret cave 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Ice Shivalinga — moon ke saath badata hai!",
+      "prompt": "Amarnath ice Shivalinga natural formation cave divine glow 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Poornima par bada, Amavasya par chhota!",
+      "prompt": "Ice linga waxing waning with moon phases Amarnath 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Har saal lakho yatri — divya darshan!",
+      "prompt": "Amarnath yatra pilgrims trekking snow Himalayan path 9:16"
+    }
+  ]
+}
