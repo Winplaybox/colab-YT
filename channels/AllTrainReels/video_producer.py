@@ -255,15 +255,16 @@ def produce_train_video(story_json_path, quality="1080p"):
     ]
     subprocess.run(cmd_audio, check=True)
 
-    # Step 4: Single-Frame Visual Assembly & Stutter-Free Zoompan
+    # Step 4: Visual Assembly with Broadcast Cockpit HUD & Zero-Tofu Subtitles
+    from hud_overlay import generate_shot_hud
+
     num_shots = len(shots)
     shot_duration = duration / num_shots
     frames = int(shot_duration * 30)
-    font_file = resolve_font()
-    font_arg = f"fontfile='{font_file}':" if font_file else ""
 
     input_args = []
     filter_chains = []
+    hud_files_to_clean = []
 
     def prepare_optimized_shot(img_path, target_w, target_h, cache_dir):
         try:
@@ -279,8 +280,8 @@ def produce_train_video(story_json_path, quality="1080p"):
         except Exception:
             return img_path
 
-    zoom_w = min(int(w * 1.25), 2160)
-    zoom_h = min(int(h * 1.25), 3840)
+    zoom_w = min(int(w * 1.15), 2160)
+    zoom_h = min(int(h * 1.15), 3840)
 
     for i in range(num_shots):
         shot_img = os.path.join(episode_assets_dir, f"shot_{i+1:02d}.jpg")
@@ -289,58 +290,40 @@ def produce_train_video(story_json_path, quality="1080p"):
             generate_procedural_fallback(title, shots[i].get("subtitle", ""), shot_img, w, h)
 
         opt_shot = prepare_optimized_shot(shot_img, zoom_w, zoom_h, output_dir)
-        input_args.extend(["-i", opt_shot])
+        
+        # Generate pixel-perfect broadcast HUD overlay for this shot
+        hud_png_path = os.path.join(output_dir, f"{story_id}_hud_{i}.png")
+        generate_shot_hud(story_data, i, shots[i].get("subtitle", ""), hud_png_path)
+        hud_files_to_clean.append(hud_png_path)
 
-        # 4-style alternating zoom/pan for visual variety
+        # Input 2*i: image, Input 2*i + 1: HUD overlay
+        input_args.extend(["-i", opt_shot, "-i", hud_png_path])
+
+        # 4-style alternating subtle zoom/pan for visual variety
         style = i % 4
         if style == 0:
-            # Slow zoom-in from center
-            zoom_expr = f"zoom='min(zoom+0.0015,1.18)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+            zoom_expr = f"zoom='min(zoom+0.0008,1.06)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
         elif style == 1:
-            # Slow pan right with mild zoom
-            zoom_expr = f"zoom='min(zoom+0.0010,1.12)':x='(iw-iw/zoom)*(on/{frames})':y='ih/2-(ih/zoom/2)'"
+            zoom_expr = f"zoom='min(zoom+0.0006,1.05)':x='(iw-iw/zoom)*(on/{frames})':y='ih/2-(ih/zoom/2)'"
         elif style == 2:
-            # Slow pan left with mild zoom
-            zoom_expr = f"zoom='min(zoom+0.0010,1.12)':x='(iw-iw/zoom)*(1-on/{frames})':y='ih/2-(ih/zoom/2)'"
+            zoom_expr = f"zoom='min(zoom+0.0006,1.05)':x='(iw-iw/zoom)*(1-on/{frames})':y='ih/2-(ih/zoom/2)'"
         else:
-            # Slow tilt up (pan vertically)
-            zoom_expr = f"zoom='min(zoom+0.0012,1.15)':x='iw/2-(iw/zoom/2)':y='(ih-ih/zoom)*(on/{frames})'"
+            zoom_expr = f"zoom='min(zoom+0.0007,1.05)':x='iw/2-(iw/zoom/2)':y='(ih-ih/zoom)*(on/{frames})'"
 
-        # Sanitize subtitle text and write to external textfile
-        sub_file = os.path.join(output_dir, f"{story_id}_sub{i}.txt")
-        clean_text = clean_sub(shots[i].get("subtitle", ""))
-        wrapped_sub = textwrap.fill(clean_text, width=28)
-        with open(sub_file, "w", encoding="utf-8") as sf:
-            sf.write(wrapped_sub)
-
-        # Subtitles in Shorts safe zone (y=1080 to 1340)
-        box_y = int(1080 * scale)
-        box_h = int(240 * scale)
-        text_y = int(1110 * scale)
-
-        sub_draw = (
-            f"drawbox=x=0:y={box_y}:w={w}:h={box_h}:color=0x000000@0.70:t=fill,"
-            f"drawtext={font_arg}textfile='{ff_path(sub_file)}':x=(w-text_w)/2:y={text_y}:"
-            f"fontsize={int(48*scale)}:fontcolor=0xFFC300:shadowcolor=black:shadowx=3:shadowy=3:line_spacing=14,"
-            f"setsar=1"
-        )
-
-        # Hardware-efficient zoompan on pre-scaled image
+        # Composite: image zoompan + HUD overlay
+        img_idx = 2 * i
+        hud_idx = 2 * i + 1
         filter_chains.append(
-            f"[{i}:v]zoompan={zoom_expr}:d={frames}:s={w}x{h}:fps=30,"
-            f"{sub_draw}[v{i}]"
+            f"[{img_idx}:v]zoompan={zoom_expr}:d={frames}:s={w}x{h}:fps=30[bg{i}];"
+            f"[bg{i}][{hud_idx}:v]overlay=0:0[v{i}]"
         )
 
     # Concatenate all visual segments
     concat_inputs = "".join(f"[v{i}]" for i in range(num_shots))
-    concat_filter = f"{concat_inputs}concat=n={num_shots}:v=1:a=0[vconcat]"
+    concat_filter = f"{concat_inputs}concat=n={num_shots}:v=1:a=0[vfinal]"
 
-    # HUD & Branding overlay
-    hud_filters = build_railway_hud_filter(visual_theme, w, h, font_arg, episode_num)
-    hud_chain = ",".join(hud_filters)
-    final_v_filter = f"[vconcat]{hud_chain}[vfinal]"
-
-    full_filter = ";".join(filter_chains + [concat_filter, final_v_filter])
+    full_filter = ";".join(filter_chains + [concat_filter])
+    audio_idx = 2 * num_shots
 
     output_video_path = os.path.join(output_dir, f"{story_id}_{quality}.mp4")
 
@@ -350,7 +333,7 @@ def produce_train_video(story_json_path, quality="1080p"):
         "-i", mixed_audio_path,
         "-filter_complex", full_filter,
         "-map", "[vfinal]",
-        "-map", f"{num_shots}:a",
+        "-map", f"{audio_idx}:a",
         "-c:v", "libx264",
         "-preset", "ultrafast",
         "-crf", "20",
@@ -363,16 +346,14 @@ def produce_train_video(story_json_path, quality="1080p"):
         output_video_path
     ]
 
-    print(f"🎬 Rendering Short ({quality})...")
+    print(f"🎬 Rendering Short ({quality}) with Broadcast Railway Cockpit HUD...")
     subprocess.run(cmd_render, check=True)
 
     size_mb = os.path.getsize(output_video_path) / (1024 * 1024)
     print(f"✅ VIDEO READY: {output_video_path} ({size_mb:.2f} MB)")
 
-    # Automatically purge intermediate scratch audio and text files
-    intermediate_files = [voice_path, sfx_path, mixed_audio_path] + [
-        os.path.join(output_dir, f"{story_id}_sub{i}.txt") for i in range(num_shots)
-    ]
+    # Automatically purge intermediate scratch audio and HUD files
+    intermediate_files = [voice_path, sfx_path, mixed_audio_path] + hud_files_to_clean
     for temp_f in intermediate_files:
         try:
             if os.path.exists(temp_f):

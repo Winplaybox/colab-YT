@@ -50,13 +50,15 @@ def format_image_for_vertical_short(pil_img, target_width=1080, target_height=19
     """
     Formats any image into a broadcast-quality 9:16 vertical Short:
     - If already vertical: center crop & scale to fill.
-    - If landscape: creates a cinematic blurred ambient background with
-      the sharp, uncompressed original photo centered in full detail.
+    - If landscape: intelligently fits the image into the 1000x870 Hero Cinema
+      window on a sleek, dark futuristic railway cockpit blueprint background,
+      with illuminated glowing borders and corner reticles. ZERO ugly blurred mud!
     """
+    from PIL import ImageDraw, ImageOps
     orig_w, orig_h = pil_img.size
     aspect = orig_w / orig_h
 
-    # Tall vertical image
+    # Tall vertical image: full bleed fill
     if aspect <= 0.65:
         scale = max(target_width / orig_w, target_height / orig_h)
         new_w = int(orig_w * scale)
@@ -66,24 +68,56 @@ def format_image_for_vertical_short(pil_img, target_width=1080, target_height=19
         top = (new_h - target_height) // 2
         return resized.crop((left, top, left + target_width, top + target_height))
 
-    # Landscape / horizontal photo: documentary blurred letterbox
-    bg_scale = max(target_width / orig_w, target_height / orig_h)
-    bg_w = int(orig_w * bg_scale)
-    bg_h = int(orig_h * bg_scale)
-    bg = pil_img.resize((bg_w, bg_h), Image.Resampling.LANCZOS)
-    bg_left = (bg_w - target_width) // 2
-    bg_top = (bg_h - target_height) // 2
-    bg_crop = bg.crop((bg_left, bg_top, bg_left + target_width, bg_top + target_height))
-    bg_blur = bg_crop.filter(ImageFilter.GaussianBlur(radius=40))
-    bg_dark = ImageEnhance.Brightness(bg_blur).enhance(0.50)
+    # Landscape / horizontal photo:
+    # 1. Base Canvas: Dark Futuristic Railway Cockpit (Deep Slate Navy #0A101E)
+    canvas = Image.new("RGB", (target_width, target_height), color=(10, 16, 30))
+    draw = ImageDraw.Draw(canvas)
 
-    fg_w = target_width
-    fg_h = int(orig_h * (target_width / orig_w))
-    fg = pil_img.resize((fg_w, fg_h), Image.Resampling.LANCZOS)
+    # Subtle blueprint railway grid lines
+    grid_spacing = int(60 * (target_width / 1080.0))
+    for y in range(0, target_height, grid_spacing):
+        draw.line([(0, y), (target_width, y)], fill=(16, 26, 46), width=1)
+    for x in range(0, target_width, grid_spacing):
+        draw.line([(x, 0), (x, target_height)], fill=(16, 26, 46), width=1)
 
-    canvas = bg_dark.copy()
-    paste_y = (target_height - fg_h) // 2
-    canvas.paste(fg, (0, paste_y))
+    # 2. Hero Screen dimensions (y = 305 to 1175 at 1080p)
+    scale_factor = target_width / 1080.0
+    card_x1 = int(40 * scale_factor)
+    card_y1 = int(305 * scale_factor)
+    card_w = int(1000 * scale_factor)
+    card_h = int(870 * scale_factor)
+
+    # Intelligently fit image inside the Hero Cinema window
+    fitted = ImageOps.fit(pil_img, (card_w, card_h), method=Image.Resampling.LANCZOS, centering=(0.5, 0.5))
+
+    # Mask for rounded corners
+    radius = int(18 * scale_factor)
+    mask = Image.new("L", (card_w, card_h), 0)
+    mask_draw = ImageDraw.Draw(mask)
+    mask_draw.rounded_rectangle([(0, 0), (card_w, card_h)], radius=radius, fill=255)
+
+    # Paste fitted image with rounded corners
+    canvas.paste(fitted, (card_x1, card_y1), mask)
+
+    # Illuminated chassis frame
+    draw.rounded_rectangle([(card_x1, card_y1), (card_x1 + card_w, card_y1 + card_h)], radius=radius, outline=(56, 189, 248), width=int(3 * scale_factor))
+
+    # Tech corner brackets [   ]
+    b_len = int(40 * scale_factor)
+    b_w = int(4 * scale_factor)
+    # Top-left
+    draw.line([(card_x1 + 10, card_y1 + 10), (card_x1 + 10 + b_len, card_y1 + 10)], fill=(255, 195, 0), width=b_w)
+    draw.line([(card_x1 + 10, card_y1 + 10), (card_x1 + 10, card_y1 + 10 + b_len)], fill=(255, 195, 0), width=b_w)
+    # Top-right
+    draw.line([(card_x1 + card_w - 10, card_y1 + 10), (card_x1 + card_w - 10 - b_len, card_y1 + 10)], fill=(255, 195, 0), width=b_w)
+    draw.line([(card_x1 + card_w - 10, card_y1 + 10), (card_x1 + card_w - 10, card_y1 + 10 + b_len)], fill=(255, 195, 0), width=b_w)
+    # Bottom-left
+    draw.line([(card_x1 + 10, card_y1 + card_h - 10), (card_x1 + 10 + b_len, card_y1 + card_h - 10)], fill=(255, 195, 0), width=b_w)
+    draw.line([(card_x1 + 10, card_y1 + card_h - 10), (card_x1 + 10, card_y1 + card_h - 10 - b_len)], fill=(255, 195, 0), width=b_w)
+    # Bottom-right
+    draw.line([(card_x1 + card_w - 10, card_y1 + card_h - 10), (card_x1 + card_w - 10 - b_len, card_y1 + card_h - 10)], fill=(255, 195, 0), width=b_w)
+    draw.line([(card_x1 + card_w - 10, card_y1 + card_h - 10), (card_x1 + card_w - 10, card_y1 + card_h - 10 - b_len)], fill=(255, 195, 0), width=b_w)
+
     return canvas
 
 def fetch_wikimedia_images(search_queries, limit=25):
