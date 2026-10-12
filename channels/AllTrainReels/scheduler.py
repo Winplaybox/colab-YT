@@ -30,7 +30,7 @@ except ImportError:
 script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, script_dir)
 
-from story_generator import generate_story_from_bank
+from story_generator import generate_story_from_bank, get_or_create_story, peek_story
 from video_producer import produce_train_video
 
 def compute_next_publish_time(publish_time_utc="13:00"):
@@ -109,7 +109,7 @@ def get_youtube_service():
         print(f"Failed to build YouTube service: {e}")
         return None
 
-def upload_short(video_path, story_data, publish_mode="schedule"):
+def upload_short(video_path, story_data, publish_mode="schedule", force=False):
     """Uploads and configures YouTube Short with tags and pinned comment."""
     youtube = get_youtube_service()
     if not youtube:
@@ -133,7 +133,7 @@ def upload_short(video_path, story_data, publish_mode="schedule"):
         }
     }
 
-    if publish_mode == "schedule":
+    if publish_mode in ("schedule", "scheduled"):
         next_pub = compute_next_publish_time()
         if next_pub:
             body["status"]["privacyStatus"] = "private"
@@ -141,32 +141,35 @@ def upload_short(video_path, story_data, publish_mode="schedule"):
             print(f"📅 Scheduled for: {next_pub}")
         else:
             body["status"]["privacyStatus"] = "unlisted"
-    elif publish_mode == "public":
+    elif publish_mode in ("public", "immediate"):
         body["status"]["privacyStatus"] = "public"
     else:
         body["status"]["privacyStatus"] = "unlisted"
 
     # Live YouTube Duplicate Protection
-    try:
+    if not force:
         try:
-            from common.youtube_duplicate_checker import check_existing_upload
-        except ImportError:
-            sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
-            from common.youtube_duplicate_checker import check_existing_upload
+            try:
+                from common.youtube_duplicate_checker import check_existing_upload
+            except ImportError:
+                sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
+                from common.youtube_duplicate_checker import check_existing_upload
 
-        ep_num = story_data.get("story_number") or story_data.get("episode_number")
-        dup = check_existing_upload(youtube, candidate_title=title, episode_number=ep_num, channel_type="AllTrainReels")
-        if dup.get("exists"):
-            existing_id = dup["video_id"]
-            print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on All Train Reels YouTube!")
-            print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
-            print(f"   Reason:         {dup.get('reason')}")
-            print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
-            print(f"   YouTube Link:   https://youtu.be/{existing_id}")
-            print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
-            return existing_id
-    except Exception as ce:
-        print(f"Notice: Duplicate checker notice: {ce}")
+            ep_num = story_data.get("story_number") or story_data.get("episode_number")
+            dup = check_existing_upload(youtube, candidate_title=title, episode_number=ep_num, channel_type="AllTrainReels")
+            if dup.get("exists"):
+                existing_id = dup["video_id"]
+                print(f"\n🛑 [DUPLICATE PREVENTED] Video ALREADY exists on All Train Reels YouTube!")
+                print(f"   Existing Title: '{dup.get('matched_title', dup.get('title'))}'")
+                print(f"   Reason:         {dup.get('reason')}")
+                print(f"   Video ID:       {existing_id} ({dup.get('status', 'unknown')})")
+                print(f"   YouTube Link:   https://youtu.be/{existing_id}")
+                print(f"   ⏭️ Skipping upload to avoid creating duplicate content on YouTube.\n")
+                return existing_id
+        except Exception as ce:
+            print(f"Notice: Duplicate checker notice: {ce}")
+    else:
+        print("⚡ [FORCE MODE] Live YouTube duplicate check bypassed for upload.")
 
     media = MediaFileUpload(video_path, chunksize=10*1024*1024, resumable=True, mimetype="video/mp4")
     request = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
@@ -229,7 +232,7 @@ def save_state(state):
         json.dump(state, f, indent=2, ensure_ascii=False)
     print(f"💾 Updated state.json (Next episode queued: #{state['current_story_number']})")
 
-def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
+def run_episode(episode_number=None, quality="1080p", publish_mode="scheduled", force=False):
     """
     Runs complete episodic release workflow for AllTrainReels:
     1. Determines episode number from state.json if not specified
@@ -240,7 +243,7 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
     """
     state = load_state()
     if episode_number is None or str(episode_number).strip() == "":
-        episode_number = state.get("current_story_number", 1)
+        episode_number = state.get("current_story_number", 13)
     else:
         episode_number = int(episode_number)
 
@@ -248,7 +251,7 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
 
     # Pre-render live YouTube check
     yt_svc = get_youtube_service()
-    if yt_svc:
+    if yt_svc and not force:
         try:
             try:
                 from common.youtube_duplicate_checker import check_existing_upload
@@ -256,24 +259,32 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
                 sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
                 from common.youtube_duplicate_checker import check_existing_upload
 
-            from story_generator import get_or_create_story
-            while True:
-                cand_story = get_or_create_story(episode_number)
+            max_checks = 25
+            attempts = 0
+            while attempts < max_checks:
+                cand_story = peek_story(episode_number)
                 cand_title = cand_story.get("youtube_title", cand_story.get("title", ""))
                 dup = check_existing_upload(yt_svc, candidate_title=cand_title, episode_number=episode_number, channel_type="AllTrainReels")
                 if dup.get("exists"):
-                    print(f"🛑 [LIVE YOUTUBE CHECK] Episode #{episode_number:02d} ({cand_title}) is ALREADY on YouTube ({dup['video_id']}).")
-                    print(f"   ⏩ Skipping render. Advancing to Episode #{episode_number + 1:02d}...")
+                    attempts += 1
+                    print(f"🛑 [LIVE YOUTUBE CHECK] Episode #{episode_number:02d} ('{cand_title}') is ALREADY on YouTube ({dup['video_id']}).")
+                    print(f"   ⏩ Skipping duplicate candidate. Checking Episode #{episode_number + 1:02d}...")
                     episode_number += 1
-                    state["current_story_number"] = episode_number
-                    save_state(state)
                 else:
                     break
+
+            if attempts >= max_checks:
+                print(f"⚠️ [SAFETY STOP] Checked {max_checks} episodes and all matched existing YouTube videos. Halting to avoid runaway execution.")
+                return None
+
+            state["current_story_number"] = episode_number
+            save_state(state)
         except Exception as pe_err:
             print(f"Notice: Pre-check duplicate notice: {pe_err}")
+    elif force:
+        print("⚡ [FORCE MODE] Live YouTube duplicate pre-check bypassed.")
 
     # Generate single episode on-demand
-    from story_generator import get_or_create_story
     story = get_or_create_story(episode_number)
 
     slug = story['story_id'].replace('train_', '')
@@ -282,30 +293,48 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="schedule"):
 
     video_id = None
     if publish_mode != "render_only":
-        video_id = upload_short(video_path, story, publish_mode=publish_mode)
+        video_id = upload_short(video_path, story, publish_mode=publish_mode, force=force)
 
     # Update state.json progression — episodes count up forever (no wrap)
-    # Episodes 1-30  -> story_bank.py (verified, hand-crafted stories)
-    # Episodes 31+   -> extended_generator.py (auto-generated new railway stories)
-    next_ep = episode_number + 1
-    state["last_run"] = datetime.now().isoformat()
-    state["last_uploaded_video_id"] = video_id
-    state["current_story_number"] = next_ep
-    state["history"].append({
-        "episode_number": episode_number,
-        "title": story["title"],
-        "video_id": video_id,
-        "mode": publish_mode,
-        "timestamp": state["last_run"]
-    })
-    save_state(state)
+    if publish_mode != "render_only":
+        next_ep = episode_number + 1
+        state["last_run"] = datetime.now().isoformat()
+        state["last_uploaded_video_id"] = video_id
+        state["current_story_number"] = next_ep
+        state.setdefault("history", []).append({
+            "episode_number": episode_number,
+            "title": story["title"],
+            "video_id": video_id,
+            "mode": publish_mode,
+            "timestamp": state["last_run"]
+        })
+        save_state(state)
+        print(f"\n🎉 Episode #{episode_number:02d} workflow completed! Next episode queued: #{next_ep:02d}")
+    else:
+        print(f"\n🎉 Episode #{episode_number:02d} render complete (render_only mode). State preserved at Episode #{episode_number:02d}.")
 
-    print(f"\n🎉 Episode #{episode_number:02d} workflow completed! Next episode queued: #{next_ep:02d}")
     return video_path
 
-if __name__ == "__main__":
-    ep_arg = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1].isdigit() else None
-    qual_arg = sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] in ["1080p", "4k", "8k"] else "4k"
-    mode_arg = "public" if "--immediate" in sys.argv else ("render_only" if "--render-only" in sys.argv else "schedule")
 
-    run_episode(episode_number=ep_arg, quality=qual_arg, publish_mode=mode_arg)
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="AllTrainReels Autonomous Scheduler & Uploader")
+    parser.add_argument("--episode", "--story", dest="episode", type=int, default=None, help="Episode number to run")
+    parser.add_argument("--mode", default="scheduled", choices=["scheduled", "schedule", "immediate", "public", "render_only"], help="Publish mode")
+    parser.add_argument("--quality", default="1080p", choices=["1080p", "4k", "8k"], help="Video render quality")
+    parser.add_argument("--force", action="store_true", help="Force production/upload and bypass duplicate checks")
+    args, unknown = parser.parse_known_args()
+
+    ep = args.episode
+    if ep is None and len(sys.argv) > 1 and sys.argv[1].isdigit():
+        ep = int(sys.argv[1])
+    quality = args.quality
+    if len(sys.argv) > 2 and sys.argv[2] in ["1080p", "4k", "8k"]:
+        quality = sys.argv[2]
+    mode = args.mode
+    if "--immediate" in sys.argv or "--public" in sys.argv:
+        mode = "public"
+    elif "--render-only" in sys.argv:
+        mode = "render_only"
+
+    run_episode(episode_number=ep, quality=quality, publish_mode=mode, force=args.force)

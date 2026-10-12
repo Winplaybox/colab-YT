@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 13,
+  "story_id": "train_13_steam_vs_diesel_vs_electric",
+  "story_hash": "9f5ebd8c55f4f26e",
+  "format": "Vs / Comparison",
+  "title": "Steam vs Diesel vs Electric: Kaun Powerful? 🚂",
+  "youtube_title": "Steam vs Diesel vs Electric: Kaun Powerful? 🚂",
+  "title_variations": [
+    "Steam vs Diesel vs Electric: Kaun Powerful? 🚂",
+    "Traction evolution and WAG-12 12,000 HP 🚂",
+    "Steam vs Diesel vs Electric: Kaun Powerful? 🚂 #Shorts",
+    "The Real Story: Traction evolution and WAG-12 12,000 HP"
+  ],
+  "tagline": "Traction evolution and WAG-12 12,000 HP",
+  "visual_theme": "SPLIT_VS_ARENA",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Indian_locomotive_class_WAG-12",
+    "https://indianrailways.gov.in"
+  ],
+  "verified_fact": "Steam locomotives had 6-8% thermal efficiency; modern diesels offer ~35% efficiency and 4,500 HP; Indian Railways twin-section WAG-12B electric locomotive delivers 12,000 HP directly from 25 kV AC overhead catenary.",
+  "voiceover_script": "Steam, Diesel, ya Electric: power ka asli king kaun hai? Purane steam engines sirf lagbhag 8 percent fuel energy use kar paate the, baaki heat dhuein mein nikal jaati thi. Diesel engines ne aakar 4500 horsepower tak ki dependable taaqat di. Lekin asli power monster hai Electric locomotive! Indian Railways ka twin-section WAG-12B engine 12,000 horsepower deliver karta hai, jo 6000 ton ki freight train ko akele pahadon par kheench sakta hai.",
+  "debate_question": "Steam ka classic charm ya Electric ki 12,000 horsepower: aapka favorite kaunsa hai?",
+  "pinned_comment": "🚂 Steam = 8% Efficiency | Diesel = 4500 HP | WAG-12 Electric = 12,000 HP monster! Kaisa laga ye comparison?",
+  "description": "Steam vs Diesel vs Electric: Kaun Powerful? 🚂\n\n🚂 Traction evolution and WAG-12 12,000 HP\n\nSteam locomotives had 6-8% thermal efficiency; modern diesels offer ~35% efficiency and 4,500 HP; Indian Railways twin-section WAG-12B electric locomotive delivers 12,000 HP directly from 25 kV AC overhead catenary.\n\n👉 Steam ka classic charm ya Electric ki 12,000 horsepower: aapka favorite kaunsa hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Locomotives #SteamEngine #DieselTrain #WAG12 #IndianRailways #Shorts",
+  "tags": [
+    "Locomotives",
+    "SteamEngine",
+    "DieselTrain",
+    "WAG12",
+    "IndianRailways",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Steam, Diesel, ya Electric: Kaun sabse powerful?",
+      "sound_cue": "engine_clash",
+      "prompt": "Three generations of rail power: vintage black steam engine, orange diesel locomotive, and modern green electric locomotive side by side, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Steam: Sirf ~8% thermal efficiency!",
+      "sound_cue": "steam_chug",
+      "prompt": "Vintage steam locomotive with polished brass bands and driving rods churning, white steam billows in cold morning air, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Diesel: 4,500 HP ka reliable torque!",
+      "sound_cue": "diesel_turbo",
+      "prompt": "WDP-4D diesel locomotive hauling express train through open desert plains, heat shimmering, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "WAG-12B: 12,000 Horsepower ka electric beast!",
+      "sound_cue": "electric_hum",
+      "prompt": "Indian Railways green and yellow twin-section WAG-12B electric locomotive hauling long container freight train on Dedicated Freight Corridor, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "6,000 Ton ki train ko akela kheenchta hai!",
+      "sound_cue": "horn_power",
+      "prompt": "Powerful electric locomotive charging down twin tracks at dusk under catenary wires, bright headlights beam, 9:16 vertical portrait"
+    }
+  ]
+}

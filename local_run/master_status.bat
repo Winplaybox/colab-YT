@@ -16,6 +16,7 @@ python channels/common/audit_all_channels.py
 echo.
 echo ==============================================================================
 echo   To launch a channel, run the corresponding .bat file in this folder:
+echo     - alltrainreels_run_once.bat     ^| alltrainreels_autopilot.bat
 echo     - digitalimmortals_run_once.bat  ^| digitalimmortals_autopilot.bat
 echo     - mindnesttales_run_once.bat     ^| mindnesttales_autopilot.bat
 echo     - epicbharatsaga_run_once.bat    ^| epicbharatsaga_autopilot.bat
