@@ -58,31 +58,55 @@ def log(msg: str):
     print(f"[{now} IST] {msg}", flush=True)
 
 
-def call_gemini(prompt: str, api_key: str) -> str:
-    """Zero-dependency Gemini API caller with automatic model fallback."""
+def call_llm(prompt: str, api_key: str = None) -> str:
+    """Multi-provider LLM caller (Groq 14,400 free req/day + Google Gemini)."""
+    groq_key = os.environ.get("GROQ_API_KEY")
+    if groq_key:
+        try:
+            url = "https://api.groq.com/openai/v1/chat/completions"
+            payload = {
+                "model": "openai/gpt-oss-120b",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.7
+            }
+            req = urllib.request.Request(
+                url, data=json.dumps(payload).encode("utf-8"),
+                headers={"Content-Type": "application/json", "Authorization": f"Bearer {groq_key}", "User-Agent": "Mozilla/5.0"}
+            )
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                res = json.loads(resp.read().decode("utf-8"))
+                return res["choices"][0]["message"]["content"].strip()
+        except Exception:
+            pass
+
+    # Fallback to Google Gemini
+    gem_key = api_key or os.environ.get("GEMINI_API_KEY")
+    if not gem_key:
+        raise RuntimeError("No LLM key available. Provide GROQ_API_KEY or GEMINI_API_KEY in .env.")
+
     models = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
     last_err = ""
     for model in models:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={gem_key}"
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {
-                "temperature": 0.7,
-                "maxOutputTokens": 1000,
-            }
+            "generationConfig": {"temperature": 0.7, "maxOutputTokens": 1000}
         }
-        data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+        req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
         try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with urllib.request.urlopen(req, timeout=25) as resp:
                 res = json.loads(resp.read().decode("utf-8"))
                 return res["candidates"][0]["content"]["parts"][0]["text"].strip()
         except urllib.error.HTTPError as e:
             last_err = e.read().decode("utf-8")
-            if e.code in (429, 404):
+            if e.code in (429, 404, 503):
                 continue
             raise RuntimeError(f"Gemini API Error {e.code}: {last_err}")
-    raise RuntimeError(f"Gemini API quota exceeded or error: {last_err}")
+    raise RuntimeError(f"All LLM APIs failed. Last error: {last_err}")
+
+
+def call_gemini(prompt: str, api_key: str = None) -> str:
+    return call_llm(prompt, api_key)
 
 
 def generate_script(brief: dict, api_key: str) -> str:
