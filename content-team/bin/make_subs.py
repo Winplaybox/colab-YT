@@ -27,11 +27,16 @@ def ts(sec: float) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("episode", type=Path)
+    ap.add_argument("episode", nargs="?", type=Path, default=None)
+    ap.add_argument("--episode", dest="episode_opt", type=Path, default=None)
     ap.add_argument("--words", type=int, default=4)
     a = ap.parse_args()
 
-    segs = json.loads((a.episode / "voice_segments.json").read_text(encoding="utf-8"))
+    ep_dir = a.episode_opt or a.episode
+    if not ep_dir:
+        sys.exit("usage: make_subs.py <episode_dir>")
+
+    segs = json.loads((ep_dir / "voice_segments.json").read_text(encoding="utf-8"))
     cues = []
     for s in segs:
         words = s["text"].split()

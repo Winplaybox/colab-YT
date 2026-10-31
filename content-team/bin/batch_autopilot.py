@@ -318,7 +318,7 @@ Fix the issues and output ONLY the corrected script:"""
 
         # 4. Make Subtitles
         log("📝 Generating burned subtitles (subs.srt)...")
-        sub_cmd = [py_exe, str(BIN / "make_subs.py"), "--episode", str(ep_dir)]
+        sub_cmd = [py_exe, str(BIN / "make_subs.py"), str(ep_dir)]
         run_cmd(sub_cmd)
         log("✅ Subtitles ready!")
 
