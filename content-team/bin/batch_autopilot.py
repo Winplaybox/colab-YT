@@ -325,6 +325,7 @@ Fix the issues and output ONLY the corrected script:"""
         # 5. Metadata Generation
         log("🏷️ Generating YouTube SEO Title, Description & Tags...")
         metadata = generate_metadata(brief, script_file.read_text(encoding="utf-8"), api_key)
+        (ep_dir / "meta.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
         (ep_dir / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"✅ Metadata saved: '{metadata.get('title')}'")
 

@@ -125,7 +125,10 @@ def main():
     video = d / "video.mp4"
     if not video.exists():
         fail("video.mp4 nahi hai")
-    title, desc, tags = check_meta(json.loads((d / "meta.json").read_text(encoding="utf-8")), pc)
+    meta_p = (d / "meta.json") if (d / "meta.json").exists() else (d / "metadata.json")
+    if not meta_p.exists():
+        fail(f"meta.json / metadata.json nahi mila: {d}")
+    title, desc, tags = check_meta(json.loads(meta_p.read_text(encoding="utf-8")), pc)
 
     status = {"privacyStatus": "private",
               "selfDeclaredMadeForKids": bool(pc.get("made_for_kids", False)),
