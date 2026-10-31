@@ -474,14 +474,23 @@ def run_schedule(story_number=None, quality="4k", force_immediate=False):
                 sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..")))
                 from common.youtube_duplicate_checker import check_existing_upload
 
+            visited = set()
+            bank_size = 103
             while True:
+                if story_number in visited or len(visited) >= bank_size:
+                    print(f"\n🎉 [STORY BANK COMPLETE] All {len(visited)} stories from stories_bank.json are already live on YouTube!")
+                    print("   To upload more, expand stories_bank.json or add new investigation locations.")
+                    return None, None
+                visited.add(story_number)
+
                 cand_data = get_or_create_story(story_number)
                 cand_title = f"{cand_data['title']} 💀 #Shorts"
                 dup = check_existing_upload(yt_svc, candidate_title=cand_title, story_number=story_number, channel_type="IndianHorrorTapes")
                 if dup.get("exists"):
                     print(f"🛑 [LIVE YOUTUBE CHECK] Story #{story_number:02d} ({cand_data['title']}) is ALREADY on YouTube ({dup['video_id']}).")
-                    print(f"   ⏩ Skipping render. Advancing to Story #{story_number + 1:02d}...")
-                    story_number = (story_number % 103) + 1
+                    next_story = (story_number % bank_size) + 1
+                    print(f"   ⏩ Skipping render. Advancing to Story #{next_story:02d}...")
+                    story_number = next_story
                     if os.path.exists(state_file):
                         try:
                             with open(state_file, "r", encoding="utf-8") as f:
