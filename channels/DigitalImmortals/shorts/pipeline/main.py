@@ -8,6 +8,12 @@ import argparse
 import datetime as dt
 import json
 import shutil
+import sys
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 from . import config, images, render, script_gen, tts
 
