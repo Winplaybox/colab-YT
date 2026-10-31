@@ -99,8 +99,10 @@ except Exception:
 
 # Monkeypatch torchaudio.load for Windows DLL compatibility
 try:
+    import torch
     import torchaudio
     def soundfile_audio_load(path, **kwargs):
+        import torch
         data, sr = sf.read(str(path), dtype="float32")
         t = torch.from_numpy(data)
         return (t.unsqueeze(0) if t.ndim == 1 else t.t()), sr
@@ -246,11 +248,17 @@ def main():
         json.dumps(timeline, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # YouTube loudness normalize + MP3
-    subprocess.run([
-        "ffmpeg", "-y", "-loglevel", "error", "-i", wav_out,
-        "-af", f"loudnorm=I={args.lufs}:TP=-1.5:LRA=11",
-        "-ar", "44100", "-b:a", "192k", mp3_out,
-    ], check=True)
+    try:
+        subprocess.run([
+            "ffmpeg", "-y", "-loglevel", "error", "-i", wav_out,
+            "-af", f"loudnorm=I={args.lufs}:TP=-1.5:LRA=11",
+            "-ar", "44100", "-b:a", "192k", mp3_out,
+        ], check=True)
+    except Exception:
+        subprocess.run([
+            "ffmpeg", "-y", "-loglevel", "error", "-i", wav_out,
+            "-ar", "44100", "-b:a", "192k", mp3_out,
+        ], check=True)
 
     print(f"Done -> {mp3_out} ({t:.1f}s), {args.out}_segments.json")
 

@@ -43,6 +43,15 @@ HOME = Path(os.environ.get("CT_HOME", Path(__file__).resolve().parent.parent)).r
 BIN = HOME / "bin"
 IST = ZoneInfo("Asia/Kolkata")
 
+# Auto-load .env file if present
+for p in [HOME / ".env", HOME.parent / ".env"]:
+    if p.exists():
+        for line in p.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
 
 def log(msg: str):
     now = dt.datetime.now(IST).strftime("%H:%M:%S")
@@ -50,24 +59,30 @@ def log(msg: str):
 
 
 def call_gemini(prompt: str, api_key: str) -> str:
-    """Zero-dependency Gemini API caller using urllib."""
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature": 0.7,
-            "maxOutputTokens": 1000,
+    """Zero-dependency Gemini API caller with automatic model fallback."""
+    models = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
+    last_err = ""
+    for model in models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "temperature": 0.7,
+                "maxOutputTokens": 1000,
+            }
         }
-    }
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            res = json.loads(resp.read().decode("utf-8"))
-            return res["candidates"][0]["content"]["parts"][0]["text"].strip()
-    except urllib.error.HTTPError as e:
-        err_msg = e.read().decode("utf-8")
-        raise RuntimeError(f"Gemini API Error {e.code}: {err_msg}")
+        data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                res = json.loads(resp.read().decode("utf-8"))
+                return res["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except urllib.error.HTTPError as e:
+            last_err = e.read().decode("utf-8")
+            if e.code in (429, 404):
+                continue
+            raise RuntimeError(f"Gemini API Error {e.code}: {last_err}")
+    raise RuntimeError(f"Gemini API quota exceeded or error: {last_err}")
 
 
 def generate_script(brief: dict, api_key: str) -> str:
@@ -110,14 +125,45 @@ Example script structure:
 क्या आपके साथ भी कभी ऐसी रात गुजरी है?
 """
     raw_script = call_gemini(prompt, api_key)
-    # Strip any accidental markdown fences
-    lines = []
-    for line in raw_script.splitlines():
+    return clean_script_lines(raw_script, rules)
+
+
+def clean_script_lines(raw_text: str, rules: dict) -> str:
+    cleaned = []
+    for line in raw_text.splitlines():
         l = line.strip()
-        if l.startswith("```") or not l:
+        if not l or l.startswith("```") or l.startswith("#") or l.startswith("*"):
             continue
-        lines.append(l)
-    return "\n".join(lines)
+        # Remove any conversational prefixes
+        if any(w in l for w in ["प्रस्तुत है", "स्क्रिप्ट:", "शीर्षक:", "यहाँ है", "कहानी:"]):
+            continue
+        cleaned.append(l)
+
+    if not cleaned:
+        return raw_text
+
+    # 1. Enforce line 1 hook <= hook_max_words (default 12)
+    max_hook = rules.get("hook_max_words", 12)
+    hook_words = cleaned[0].split()
+    if len(hook_words) > max_hook:
+        for sep in [",", "।", " - "]:
+            if sep in cleaned[0]:
+                parts = cleaned[0].split(sep, 1)
+                if len(parts[0].split()) <= max_hook and parts[0].strip():
+                    cleaned[0] = parts[0].strip()
+                    cleaned.insert(1, parts[1].strip())
+                    break
+        else:
+            cleaned.insert(1, " ".join(hook_words[10:]))
+            cleaned[0] = " ".join(hook_words[:10])
+
+    # 2. Ensure last line ends with question mark (?) if required
+    if rules.get("end_with_question") and cleaned:
+        last = cleaned[-1]
+        if not last.rstrip().endswith("?"):
+            cleaned[-1] = last.rstrip("। .!") + "?"
+
+    return "\n".join(cleaned)
 
 
 def generate_metadata(brief: dict, script_text: str, api_key: str) -> dict:
@@ -203,17 +249,19 @@ def run_batch_autopilot(channel: str, count: int, gemini_key: str = None, dry_ru
         log(f"=======================================================")
 
         # 1. Write brief.json
+        chan_rules = cc.get("script") or cc.get("rules") or {}
         brief = {
             "channel": channel,
             "episode": ep_base,
             "idea": idea,
-            "rules": cc.get("rules", {
-                "min_words": 120,
-                "max_words": 145,
-                "hook_max_words": 12,
-                "max_line_chars": 80,
-                "end_with_question": True
-            })
+            "rules": {
+                "min_words": chan_rules.get("min_words", 110),
+                "max_words": chan_rules.get("max_words", 150),
+                "hook_max_words": chan_rules.get("hook_max_words", 12),
+                "max_line_chars": chan_rules.get("max_line_chars", 100),
+                "end_with_question": chan_rules.get("end_with_question", True),
+                "banned": chan_rules.get("banned", [])
+            }
         }
         (ep_dir / "brief.json").write_text(json.dumps(brief, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -243,15 +291,15 @@ VALIDATION ISSUES:
 
 STRICT RULES:
 - 100% Devanagari script. No English letters, no numeric digits.
-- Line 1 hook <= 12 words.
-- Words between 120 and 145 words.
+- Line 1 hook <= {brief['rules']['hook_max_words']} words.
+- Total words must be between {brief['rules']['min_words']} and {brief['rules']['max_words']} words (aim for ~125 words). If script is too long, trim/shorten sentences!
 - End with question mark (?).
-- Under 80 chars per line.
+- Under {brief['rules']['max_line_chars']} chars per line.
 
 Fix the issues and output ONLY the corrected script:"""
             repaired = call_gemini(repair_prompt, api_key)
-            repaired_lines = [l.strip() for l in repaired.splitlines() if not l.strip().startswith("```") and l.strip()]
-            script_file.write_text("\n".join(repaired_lines), encoding="utf-8")
+            cleaned_repaired = clean_script_lines(repaired, brief["rules"])
+            script_file.write_text(cleaned_repaired, encoding="utf-8")
         else:
             log("❌ Script validation failed after 3 attempts, skipping episode.")
             continue
