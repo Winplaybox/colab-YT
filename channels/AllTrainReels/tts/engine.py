@@ -107,7 +107,7 @@ def synthesize_pyttsx3_offline(text, output_path):
         engine.save_to_file(text, wav_path)
         engine.runAndWait()
         if output_path.endswith(".mp3") and os.path.exists(wav_path):
-            os.rename(wav_path, output_path)
+            os.replace(wav_path, output_path)
         return os.path.exists(output_path)
     except ImportError:
         return False

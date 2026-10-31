@@ -101,6 +101,11 @@ async def generate_scene_speech(text, output_mp3, max_retries=3):
                     continue
         await asyncio.sleep(1.0 * (attempt + 1))
     print(f"[WARN] Failed generating voice for {os.path.basename(output_mp3)}")
+    if os.path.exists(output_mp3) and os.path.getsize(output_mp3) < 1000:
+        try:
+            os.remove(output_mp3)
+        except Exception:
+            pass
     return False
 
 def get_audio_duration(file_path):
@@ -185,6 +190,14 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
         srt_entries.append(f"{sc_id}\n{start_srt} --> {end_srt}\n{narration_text}\n")
         current_time += duration
 
+        # Ensure audio file exists and is valid (> 1000 bytes)
+        if not os.path.exists(audio_path) or os.path.getsize(audio_path) < 1000:
+            print(f"  ⚠️ Voice missing or corrupt for Scene {sc_id:02d}, synthesizing silent fallback...")
+            subprocess.run([
+                "ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
+                "-t", f"{duration:.2f}", "-q:a", "9", "-acodec", "libmp3lame", audio_path
+            ], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
         # Render Scene Segment if not already rendered
         if not os.path.exists(part_mp4) or os.path.getsize(part_mp4) < 5000:
             cmd = [
@@ -198,7 +211,27 @@ def render_episode_video(episode_num=1, target_quality="1080p"):
                 "-r", "30",
                 part_mp4
             ]
-            subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                subprocess.run(cmd, check=True, capture_output=True)
+            except subprocess.CalledProcessError as e:
+                if encoder == "h264_nvenc":
+                    print(f"  ⚠️ NVENC failed on Scene {sc_id:02d}, falling back to CPU libx264...")
+                    fallback_cmd = [
+                        "ffmpeg", "-y",
+                        "-loop", "1", "-i", img_path,
+                        "-i", audio_path,
+                        "-t", f"{duration:.2f}",
+                        "-vf", "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
+                        "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-sws_flags", "fast_bilinear",
+                        "-c:a", "aac", "-b:a", "192k",
+                        "-r", "30",
+                        part_mp4
+                    ]
+                    subprocess.run(fallback_cmd, check=True)
+                else:
+                    stderr_msg = e.stderr.decode("utf-8", errors="replace") if e.stderr else str(e)
+                    print(f"❌ FFmpeg error on Scene {sc_id:02d}: {stderr_msg}")
+                    raise
 
         scene_video_parts.append(part_mp4)
 
