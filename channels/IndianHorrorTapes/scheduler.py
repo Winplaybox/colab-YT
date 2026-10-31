@@ -29,6 +29,20 @@ except ImportError:
     HAS_GOOGLE_CLIENT = False
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+def _yt_brain():
+    """Shared metadata brain (channels/common/yt_brain.py). Returns module or None."""
+    try:
+        root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common import yt_brain
+        return yt_brain
+    except Exception as e:
+        print(f"yt_brain unavailable: {e}")
+        return None
+
 sys.path.insert(0, script_dir)
 
 from story_generator import get_or_create_story
@@ -302,6 +316,9 @@ def upload_video(youtube, video_path, metadata, thumbnail_path=None, pinned_comm
         mimetype="video/mp4"
     )
 
+    _b = _yt_brain()
+    if _b:
+        metadata = _b.before_insert("IndianHorrorTapes", youtube, metadata, is_short=True)
     request = youtube.videos().insert(
         part="snippet,status",
         body=metadata,
@@ -317,6 +334,8 @@ def upload_video(youtube, video_path, metadata, thumbnail_path=None, pinned_comm
 
     video_id = response.get("id")
     video_url = f"https://www.youtube.com/shorts/{video_id}"
+    if _b:
+        _b.after_insert("IndianHorrorTapes", youtube, video_id)
     print(f"\n🎉 UPLOAD COMPLETE! Video ID: {video_id}")
     print(f"🔗 YouTube Link: {video_url}")
 

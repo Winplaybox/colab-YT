@@ -1,0 +1,282 @@
+{
+  "story_number": 45,
+  "title": "इस स्टेशन पर कभी मत उतरना ⚠️ #Shorts",
+  "location": "Delhi",
+  "category": "HAUNTED RAILWAY STATIONS & TUNNELS",
+  "tagline": "night-shift staff reports of footsteps on old platform",
+  "narrative_angle": "SOLITARY_TRAVELER_ACCOUNT",
+  "hook_type": "UNEXPLAINED_SERVICE_SHUTDOWN",
+  "planted_detail": "प्लेटफ़ॉर्म के कोने में लगा पुराना पीतल का घंटा",
+  "claims": [
+    {
+      "text": "Delhi Cantt Railway Station (Delhi Cantt Railway स्टेशन) Delhi में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 1999 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा सुरंग और पटरियों से अचानक अजीब सी भारी कंपन उठने लगती है और दूर अंधेरे से बिना किसी रेलगाड़ी के तीखी सीटी सुनाई देती है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • DELHI CANTT RAILWAY STATION",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Delhi Cantt Railway Station in Delhi, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Delhi Cantt Railway Station, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Delhi Cantt Railway Station in Delhi, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि Delhi Cantt Railway स्टेशन की पुरानी वीरान पटरियों और जंग लगे सिग्नल कक्ष में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ प्लेटफ़ॉर्म के कोने में लगा पुराना पीतल का घंटा आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, दिन में हज़ारों यात्री इस स्टेशन से गुज़रते हैं, लेकिन आधी रात के बारह बजकर पैंतालीस मिनट पर आखिरी गाड़ी निकलने के बाद चबूतरे पर अंधेरा छा जाता है।",
+      "text_overlay": "CASE RECORD • YEAR 1999",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि Delhi Cantt Railway स्टेशन की पुरानी वीरान पटरियों और जंग लगे सिग्नल कक्ष में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Delhi Cantt Railway Station, authentic 1999 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ प्लेटफ़ॉर्म के कोने में लगा पुराना पीतल का घंटा आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of प्लेटफ़ॉर्म के कोने में लगा पुराना पीतल का घंटा, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, दिन में हज़ारों यात्री इस स्टेशन से गुज़रते हैं, लेकिन आधी रात के बारह बजकर पैंतालीस मिनट पर आखिरी गाड़ी निकलने के बाद चबूतरे पर अंधेरा छा जाता है।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Delhi Cantt Railway Station, authentic 1999 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में पटरियों पर लोहे के घिसटने की तीखी आवाज़ और दूर से आती सीटी। और सबसे हैरान करने वाली बात यह है कि अचानक सुरंग और पटरियों से अचानक अजीब सी भारी कंपन उठने लगती है और दूर अंधेरे से बिना किसी रेलगाड़ी के तीखी सीटी सुनाई देती है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "पटरियों पर लोहे के घिसटने की तीखी आवाज़ और दूर से आती सीटी + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में पटरियों पर लोहे के घिसटने की तीखी आवाज़ और दूर से आती सीटी।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Delhi Cantt Railway Station, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक सुरंग और पटरियों से अचानक अजीब सी भारी कंपन उठने लगती है और दूर अंधेरे से बिना किसी रेलगाड़ी के तीखी सीटी सुनाई देती है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Delhi Cantt Railway Station, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब लाइनमैन ने अपनी डायरी में दर्ज किया कि लाल बत्ती होने के बावजूद पटरियों से एक बिना रोशनी वाली रहस्यमयी गाड़ी बिना आवाज़ के गुज़र गई। पटरियों और सुरंग के अंधेरे से एक ऐसी परछाई प्रकट हुई जो बिना ज़मीन छुए आगे बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'मैंने टॉर्च जलाई तो पटरियों पर कोई ट्रेन नहीं थी... सिर्फ़ दो पैर हवा में दौड़ रहे थे!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब लाइनमैन ने अपनी डायरी में दर्ज किया कि लाल बत्ती होने के बावजूद पटरियों से एक बिना रोशनी वाली रहस्यमयी गाड़ी बिना आवाज़ के गुज़र गई।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Delhi Cantt Railway Station, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "पटरियों और सुरंग के अंधेरे से एक ऐसी परछाई प्रकट हुई जो बिना ज़मीन छुए आगे बढ़ रही थी! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'मैंने टॉर्च जलाई तो पटरियों पर कोई ट्रेन नहीं थी... सिर्फ़ दो पैर हवा में दौड़ रहे थे!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Delhi Cantt Railway Station, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी रेलवे प्रशासन ने इस पूरे इलाके में रात के समय अकेले कर्मचारी की गश्त पर पूरी तरह पाबंदी लगा दी है। और उस रात के बाद से, प्लेटफ़ॉर्म के कोने में लगा पुराना पीतल का घंटा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी रेलवे प्रशासन ने इस पूरे इलाके में रात के समय अकेले कर्मचारी की गश्त पर पूरी तरह पाबंदी लगा दी है।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Delhi Cantt Railway Station in Delhi, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, प्लेटफ़ॉर्म के कोने में लगा पुराना पीतल का घंटा हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of प्लेटफ़ॉर्म के कोने में लगा पुराना पीतल का घंटा showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Delhi Cantt Railway Station in Delhi, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान कोलकाता के Howrah Bridge ghats के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 46: HOWRAH BRIDGE GHATS",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान कोलकाता के Howrah Bridge ghats के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Howrah Bridge ghats, Kolkata engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Howrah Bridge ghats, Kolkata engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "इस स्टेशन पर कभी मत उतरना ⚠️ #Shorts",
+    "first_frame_text": "Delhi Ca का सच",
+    "description": "⚠️ Delhi Cantt Railway Station (Delhi Cantt Railway स्टेशन) Real Horror Story in Hindi | Delhi Paranormal Incident (1999)\nक्या सच में Delhi Cantt Railway स्टेशन में Old Platform 2 Ki Aahat का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: Delhi Cantt Railway स्टेशन की पुरानी वीरान पटरियों और जंग लगे सिग्नल कक्ष (1999)\nDelhi के Delhi Cantt Railway Station से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1999 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1999)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 46)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #delhi\n",
+    "search_phrases": [
+      "delhi cantt railway station horror story",
+      "delhi cantt railway station real story",
+      "delhi cantt railway station mystery",
+      "Delhi Cantt Railway स्टेशन की असली कहानी",
+      "Delhi Cantt Railway स्टेशन का रहस्य",
+      "delhi horror stories",
+      "haunted places in delhi"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#delhi"
+    ],
+    "tags": [
+      "delhi cantt railway station horror story",
+      "delhi cantt railway station real story",
+      "delhi cantt railway station haunted",
+      "delhi cantt railway station ghost",
+      "delhi cantt railway station mystery in hindi",
+      "delhi cantt railway station incident",
+      "delhi cantt railway station ka sach",
+      "Delhi Cantt Railway स्टेशन की असली कहानी",
+      "Delhi Cantt Railway स्टेशन का भूत",
+      "Delhi Cantt Railway स्टेशन का रहस्य",
+      "delhi horror stories",
+      "haunted places in delhi",
+      "delhi haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "क्या आप मानते हैं कि Delhi Cantt Railway स्टेशन पर जो देखा गया वो सिर्फ़ आंखों का धोखा था या सच में कोई परलौकिक शक्ति? कमेंट्स में अपनी राय ज़रूर दें 👇",
+    "playlist": "HAUNTED RAILWAY STATIONS & TUNNELS",
+    "instagram_caption": "⚠️ Delhi Cantt Railway Station (Delhi Cantt Railway स्टेशन) — Old Platform 2 Ki Aahat\nक्या आप मानते हैं कि Delhi Cantt Railway स्टेशन पर जो देखा गया वो सिर्फ़ आंखों का धोखा था या सच में कोई परलौकिक शक्ति? कमेंट्स में अपनी राय ज़रूर दें 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#delhi",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Delhi Cantt Railway Station",
+  "year": "1999",
+  "viral_titles": [
+    "इस स्टेशन पर कभी मत उतरना ⚠️ #Shorts",
+    "Delhi Cantt Railway  का खौफ़नाक सच 💀 #Shorts",
+    "रेलवे ने इसे क्यों बंद किया? 🔴 #Shorts",
+    "Delhi Cantt Railway : 1999 की खौफ़नाक रात 💀 #Shorts",
+    "Delhi Cantt Railway  Real Horror Incident 💀 #Shorts"
+  ],
+  "seo_description": "⚠️ Delhi Cantt Railway Station (Delhi Cantt Railway स्टेशन) Real Horror Story in Hindi | Delhi Paranormal Incident (1999)\nक्या सच में Delhi Cantt Railway स्टेशन में Old Platform 2 Ki Aahat का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: Delhi Cantt Railway स्टेशन की पुरानी वीरान पटरियों और जंग लगे सिग्नल कक्ष (1999)\nDelhi के Delhi Cantt Railway Station से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 1999 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (1999)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 46)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #delhi\n",
+  "pinned_comment": "क्या आप मानते हैं कि Delhi Cantt Railway स्टेशन पर जो देखा गया वो सिर्फ़ आंखों का धोखा था या सच में कोई परलौकिक शक्ति? कमेंट्स में अपनी राय ज़रूर दें 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Delhi Cantt Railway Station in Delhi framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
+  "tags": [
+    "delhi cantt railway station horror story",
+    "delhi cantt railway station real story",
+    "delhi cantt railway station haunted",
+    "delhi cantt railway station ghost",
+    "delhi cantt railway station mystery in hindi",
+    "delhi cantt railway station incident",
+    "delhi cantt railway station ka sach",
+    "Delhi Cantt Railway स्टेशन की असली कहानी",
+    "Delhi Cantt Railway स्टेशन का भूत",
+    "Delhi Cantt Railway स्टेशन का रहस्य",
+    "delhi horror stories",
+    "haunted places in delhi",
+    "delhi haunted",
+    "indian horror tapes",
+    "bhoot ki kahani",
+    "real horror stories in hindi",
+    "haunted places in india",
+    "ghost stories hindi",
+    "paranormal investigation india",
+    "horror shorts hindi",
+    "chudail ki kahani",
+    "sacchi ghatna horror",
+    "khauf",
+    "darr",
+    "bhoot pret",
+    "scary horror stories",
+    "khooni raaz",
+    "unsolved mysteries hindi",
+    "trending horror shorts",
+    "viral horror shorts",
+    "shorts"
+  ]
+}

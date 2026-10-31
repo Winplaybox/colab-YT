@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 14,
+  "story_id": "train_14_mumbai_local_vs_tokyo_metro",
+  "story_hash": "f075a58f30ac07a1",
+  "format": "Vs / Comparison",
+  "title": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥",
+  "youtube_title": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥",
+  "title_variations": [
+    "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥",
+    "High-density commuter networks compared 🚂",
+    "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥 #Shorts",
+    "The Real Story: High-density commuter networks compared"
+  ],
+  "tagline": "High-density commuter networks compared",
+  "visual_theme": "SPLIT_VS_ARENA",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Mumbai_Suburban_Railway",
+    "https://en.wikipedia.org/wiki/Tokyo_Metro"
+  ],
+  "verified_fact": "Mumbai Suburban Railway carries over 7.5 million passengers daily across 3,000+ train trips; Tokyo Metro carries ~6.8 million daily on its single 9-line subway network (though Greater Tokyo's combined rail system handles 40M+).",
+  "voiceover_script": "Duniya ke do sabse dense commuter networks: Mumbai Local aur Tokyo Metro! Tokyo Metro mein rush hour par 'Oshiya' pushers passengers ko train ke andar dhakelte hain taaki automatic gates band ho sakein. Wahin Mumbai Suburban Railway par roz 75 lakh se zyada log safar karte hain—yahan koi pushers nahi, log khud extraordinary coordination se train mein chadhte hain. Tokyo punctuality aur discipline ke liye jaana jaata hai, toh Mumbai apni unstoppable speed aur spirit ke liye!",
+  "debate_question": "Tokyo Metro ka discipline ya Mumbai Local ki spirit: kaunsa network zyada fascinating hai?",
+  "pinned_comment": "👥 75 Lakh commuters roz Mumbai mein, aur Tokyo mein pushers! Dono networks ka apna alag charm hai.",
+  "description": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥\n\n🚂 High-density commuter networks compared\n\nMumbai Suburban Railway carries over 7.5 million passengers daily across 3,000+ train trips; Tokyo Metro carries ~6.8 million daily on its single 9-line subway network (though Greater Tokyo's combined rail system handles 40M+).\n\n👉 Tokyo Metro ka discipline ya Mumbai Local ki spirit: kaunsa network zyada fascinating hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#MumbaiLocal #TokyoMetro #Mumbai #TrainTravel #Commuters #Shorts",
+  "tags": [
+    "MumbaiLocal",
+    "TokyoMetro",
+    "Mumbai",
+    "TrainTravel",
+    "Commuters",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Mumbai Local vs Tokyo Metro: Bheed ka comparison!",
+      "sound_cue": "crowd_surge",
+      "prompt": "Side by side visual: busy bustling Mumbai local station platform during morning rush on left, clean crowded Tokyo subway platform on right, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Tokyo mein pushers logon ko andar push karte hain.",
+      "sound_cue": "subway_bell",
+      "prompt": "Uniformed Japanese station staff with white gloves standing near train doorway at busy Tokyo metro platform, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Mumbai Suburban: Roz 75 LAKH commuters!",
+      "sound_cue": "local_horn",
+      "prompt": "Suburban local train arriving at Dadar Mumbai station, sea of morning commuters, authentic daily Mumbai pulse, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Tokyo ki punctuality vs Mumbai ka jazba!",
+      "sound_cue": "train_wind",
+      "prompt": "Open doorways of Mumbai local train crossing creek bridge with passengers feeling sea breeze, morning sunrise, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Dono networks apne aap mein anokhe hain!",
+      "sound_cue": "departure_chime",
+      "prompt": "Illuminated Chhatrapati Shivaji Maharaj Terminus heritage facade in golden evening lights with trains alongside, 9:16 vertical portrait"
+    }
+  ]
+}

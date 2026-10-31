@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 42,
+  "story_id": "train_ext_trans_siberian",
+  "story_hash": "fde538bf274789b4",
+  "format": "World Railways",
+  "title": "9,000 KM Ki Train Journey! 7 Din! 🌍",
+  "youtube_title": "9,000 KM Ki Train Journey! 7 Din! 🌍",
+  "title_variations": [
+    "9,000 KM Ki Train Journey! 7 Din! 🌍",
+    "Trans-Siberian Railway 9,289 km world longest rail line 🚂",
+    "9,000 KM Ki Train Journey! 7 Din! 🌍 #Shorts",
+    "The Real Story: Trans-Siberian Railway 9,289 km world longest rail line"
+  ],
+  "tagline": "Trans-Siberian Railway 9,289 km world longest rail line",
+  "visual_theme": "CABIN_POV_RADAR",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Trans-Siberian_railway"
+  ],
+  "verified_fact": "The Trans-Siberian Railway at 9,289 km is the world's longest railway line, connecting Moscow to Vladivostok across 8 time zones and taking about 7 days.",
+  "voiceover_script": "Moscow se chalo aur 7 din baad Vladivostok pahuncho — 9,289 kilometer ki duniya ki sabse lambi train journey! Trans-Siberian Railway 8 time zones cross karti hai, Siberia ke frozen jungle, Baikal jheel ke kinare, aur Mongolian steppes ke beech se. 1916 mein complete hui ye railway Russia ka backbone hai aaj bhi.",
+  "debate_question": "7 din ki train journey — akele ya saath?",
+  "pinned_comment": "🌍 Moscow to Vladivostok! 9,289 km, 7 din, 8 time zones. Ye hai asli adventure!",
+  "description": "9,000 KM Ki Train Journey! 7 Din! 🌍\n\n🚂 Trans-Siberian Railway 9,289 km world longest rail line\n\nThe Trans-Siberian Railway at 9,289 km is the world's longest railway line, connecting Moscow to Vladivostok across 8 time zones and taking about 7 days.\n\n👉 7 din ki train journey — akele ya saath?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#TransSiberian #Russia #LongestRailway #WorldTrains #TrainJourney #Siberia #Shorts",
+  "tags": [
+    "TransSiberian",
+    "Russia",
+    "LongestRailway",
+    "WorldTrains",
+    "TrainJourney",
+    "Siberia",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "9,289 km — duniya ki sabse lambi rail journey!",
+      "prompt": "Trans-Siberian train crossing vast Siberian snow forest tundra aerial 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "7 din, 8 time zones!",
+      "prompt": "Train window showing changing Siberian landscape birch forest 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Baikal jheel ke kinare se guzarti hai!",
+      "prompt": "Trans-Siberian train alongside frozen Lake Baikal winter 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Moscow se Vladivostok!",
+      "prompt": "Map Russia showing Trans-Siberian Railway route 9289 km 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "1916 mein complete ki gayi!",
+      "prompt": "Historic Trans-Siberian steam locomotive 1916 era photograph 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Russia ka backbone rail line!",
+      "prompt": "Modern Russian passenger train heading into Siberian wilderness sunset 9:16"
+    }
+  ]
+}

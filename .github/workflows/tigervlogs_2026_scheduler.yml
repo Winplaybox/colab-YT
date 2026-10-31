@@ -14,6 +14,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: tigervlogs-2026
+  cancel-in-progress: false
+
 jobs:
   # =========================================================================
   # STAGE 1: Media Asset Preparation & Audio Synthesizer
@@ -38,9 +42,17 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp edge-tts requests static-ffmpeg pillow
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install yt-dlp edge-tts requests static-ffmpeg pillow anthropic google-genai openai
+          fi
 
       - name: Pre-Cache Media & Audio Narration
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           TARGET_DATE="${{ github.event.inputs.target_date }}"
           python -c "
@@ -55,10 +67,10 @@ jobs:
           "
 
   # =========================================================================
-  # STAGE 2: 4K Ultra-Vertical & 16:9 Composite & YouTube Upload
+  # STAGE 2: 1080p Composite & YouTube Upload
   # =========================================================================
   render-and-schedule:
-    name: "Stage 2: 4K Render & Daily 3-Video Scheduling"
+    name: "Stage 2: 1080p Render & Daily 2-Video Scheduling"
     needs: prepare-assets
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -85,7 +97,7 @@ jobs:
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
-            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 gspread requests pandas static-ffmpeg pillow
+            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 gspread requests pandas static-ffmpeg pillow anthropic google-genai openai
           fi
 
       - name: Restore TigerVlogs-2026 Credentials
@@ -114,10 +126,17 @@ jobs:
             echo "Successfully restored youtube_client_secret.json"
           fi
 
-      - name: Execute 4K TigerVlogs-2026 Daily Batch
+      - name: Execute TigerVlogs-2026 Daily Batch
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          YT_BRAIN: ${{ vars.YT_BRAIN || 'on' }}
+          TIGERVLOGS_TOKEN_JSON: ${{ secrets.TIGERVLOGS_TOKEN_JSON }}
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
         run: |
           TARGET_DATE="${{ github.event.inputs.target_date }}"
-          echo "Executing TigerVlogs-2026 4K Batch Runner..."
+          echo "Executing TigerVlogs-2026 1080p Batch Runner..."
           if [ -n "$TARGET_DATE" ]; then
             python "channels/TigerVlogs-2026/scheduler.py" "$TARGET_DATE"
           else
@@ -125,11 +144,23 @@ jobs:
           fi
 
       - name: Commit State / Logs
-        if: always()
+        if: success()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "TigerVlogs-2026 Autonomous Bot"
           git add channels/TigerVlogs-2026/ || true
-          git diff --staged --quiet || git commit -m "chore(TigerVlogs-2026): automated daily upload run [skip ci]"
-          git pull --rebase origin main || true
-          git push || echo "Push skipped or no new commits to push."
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(TigerVlogs-2026): automated daily upload run [skip ci]"
+            pushed=0
+            for i in 1 2 3 4 5; do
+              echo "Push attempt $i..."
+              git pull --rebase origin main && git push && pushed=1 && break
+              sleep $((i * 3))
+            done
+            if [ "$pushed" -ne 1 ]; then
+              echo "::error::Failed to push TigerVlogs state after 5 attempts!"
+              exit 1
+            fi
+          else
+            echo "No changes to state."
+          fi

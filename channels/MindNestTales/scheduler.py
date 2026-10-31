@@ -28,6 +28,20 @@ except ImportError:
 
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+def _yt_brain():
+    """Shared metadata brain (channels/common/yt_brain.py). Returns module or None."""
+    try:
+        root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common import yt_brain
+        return yt_brain
+    except Exception as e:
+        print(f"yt_brain unavailable: {e}")
+        return None
+
 sys.path.insert(0, script_dir)
 from video_producer import produce_story_video, load_story, load_network_config
 try:
@@ -222,6 +236,9 @@ def upload_story_to_channel(youtube, video_file, title, description, tags, thumb
         "status": status
     }
 
+    _b = _yt_brain()
+    if _b:
+        body = _b.before_insert("MindNestTales", youtube, body, is_short=None)
     insert_request = youtube.videos().insert(
         part="snippet,status",
         body=body,
@@ -232,6 +249,8 @@ def upload_story_to_channel(youtube, video_file, title, description, tags, thumb
     response = insert_request.execute()
     vid = response.get("id")
     print(f"SUCCESS: Video published! ID: {vid} (https://youtu.be/{vid})")
+    if _b:
+        _b.after_insert("MindNestTales", youtube, vid)
 
     # Set custom thumbnail if available
     if thumbnail_path and os.path.exists(thumbnail_path):

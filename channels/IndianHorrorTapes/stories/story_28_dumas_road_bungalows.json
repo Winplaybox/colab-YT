@@ -1,0 +1,282 @@
+{
+  "story_number": 28,
+  "title": "Police FIR #2802: खौफ़नाक सच 💀 #Shorts",
+  "location": "Surat, Gujarat",
+  "category": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+  "tagline": "private homes near the beach with reported disturbances",
+  "narrative_angle": "POLICE_DISPATCH_RECORD",
+  "hook_type": "MIDNIGHT_LIFT_WARNING",
+  "planted_detail": "सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 28",
+  "claims": [
+    {
+      "text": "Dumas Road bungalows (Dumas मार्ग bungalows) Surat, Gujarat में स्थित एक ऐतिहासिक स्थल है जिसकी स्थापना 2002 के आसपास हुई थी।",
+      "type": "documented",
+      "confidence": "high"
+    },
+    {
+      "text": "स्थानीय लोगों और रात्रि गश्त दलों द्वारा गाड़ी की रफ़्तार अचानक अस्सी पर जम जाती है, बत्तियों की रोशनी मद्धम पड़ जाती है और डैशबोर्ड की घड़ी तीन बजकर चौदह मिनट पर रुक जाती है का अनुभव दर्ज किया गया है।",
+      "type": "reported",
+      "confidence": "high"
+    },
+    {
+      "text": "जनश्रुतियों के अनुसार, यहाँ घटित पुरानी त्रासदी के कारण रात के समय असामान्य घटनाएं होती हैं।",
+      "type": "folklore",
+      "confidence": "medium"
+    }
+  ],
+  "sensitivity_flags": [],
+  "beats": [
+    {
+      "beat": "INTRO",
+      "time_range": "0:00–0:08",
+      "target_dur": 8.0,
+      "vo_text": "रात ढलते ही इस जगह की हवा बदल जाती है। लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+      "text_overlay": "DOSSIER • DUMAS ROAD BUNGALOWS",
+      "sound_cue": "Ancient temple bell muffled chime + 45Hz sub-bass tremor",
+      "shots": [
+        {
+          "vo_line": "रात ढलते ही इस जगह की हवा बदल जाती है।",
+          "duration": 4.0,
+          "visual_prompt": "Wide establishing cinematic shot of Dumas Road bungalows in Surat, Gujarat, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन सवाल यह है कि आखिर उस रात यहाँ क्या हुआ था?",
+          "duration": 4.0,
+          "visual_prompt": "Low-angle camera looking up at the massive cracked ancient doorway of Dumas Road bungalows, solitary flickering amber lantern light, long eerie shadow stretching across floor, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide establishing cinematic shot of Dumas Road bungalows in Surat, Gujarat, dense cold midnight blue mist rising from ground, stark silhouettes, zero monsters, high-contrast atmospheric photography, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "SETUP",
+      "time_range": "0:08–0:32",
+      "target_dur": 24.0,
+      "vo_text": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि Dumas मार्ग bungalows के सुनसान दुर्घटनाग्रस्त मार्ग और मील के पत्थर संख्या चौदह में दर्ज है। दिन में यहाँ सैलानी आते हैं, जहाँ सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 28 आज भी मौजूद है। लेकिन जैसे ही सूरज ढलता है, दिखने में यह सूरत का एक सामान्य रास्ता है जहाँ दिन में गाड़ियाँ और बसें निकलती हैं, लेकिन आधी रात के दो बजते ही यहाँ सन्नाटा छा जाता है।",
+      "text_overlay": "CASE RECORD • YEAR 2002",
+      "sound_cue": "Distant hollow wind + eerie ambient string drone",
+      "shots": [
+        {
+          "vo_line": "यह घटना इंटरनेट की अफ़वाह नहीं, बल्कि Dumas मार्ग bungalows के सुनसान दुर्घटनाग्रस्त मार्ग और मील के पत्थर संख्या चौदह में दर्ज है।",
+          "duration": 8.0,
+          "visual_prompt": "High-angle architectural establishing view of Dumas Road bungalows, authentic 2002 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "दिन में यहाँ सैलानी आते हैं, जहाँ सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 28 आज भी मौजूद है।",
+          "duration": 8.0,
+          "visual_prompt": "Extreme close-up macro photography of सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 28, rusted weathered texture, cold atmospheric dust motes, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "लेकिन जैसे ही सूरज ढलता है, दिखने में यह सूरत का एक सामान्य रास्ता है जहाँ दिन में गाड़ियाँ और बसें निकलती हैं, लेकिन आधी रात के दो बजते ही यहाँ सन्नाटा छा जाता है।",
+          "duration": 8.0,
+          "visual_prompt": "Medium low-angle shot of the restricted boundary perimeter under blood-red sunset horizon fading into darkness, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "High-angle architectural establishing view of Dumas Road bungalows, authentic 2002 stone textures, decaying arches, overcast twilight, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "BUILD-UP",
+      "time_range": "0:32–1:02",
+      "target_dur": 30.0,
+      "vo_text": "ठीक बारह बजते ही, सन्नाटे में सन्नाटे में हवा की तेज़ सांय-सांय और गाड़ी के इंजन का अचानक थम जाना। और सबसे हैरान करने वाली बात यह है कि अचानक गाड़ी की रफ़्तार अचानक अस्सी पर जम जाती है, बत्तियों की रोशनी मद्धम पड़ जाती है और डैशबोर्ड की घड़ी तीन बजकर चौदह मिनट पर रुक जाती है। फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+      "text_overlay": "ANOMALY: SUDDEN TEMP CRASH",
+      "sound_cue": "सन्नाटे में हवा की तेज़ सांय-सांय और गाड़ी के इंजन का अचानक थम जाना + slow accelerating heartbeat",
+      "shots": [
+        {
+          "vo_line": "ठीक बारह बजते ही, सन्नाटे में सन्नाटे में हवा की तेज़ सांय-सांय और गाड़ी के इंजन का अचानक थम जाना।",
+          "duration": 10.0,
+          "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Dumas Road bungalows, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और सबसे हैरान करने वाली बात यह है कि अचानक गाड़ी की रफ़्तार अचानक अस्सी पर जम जाती है, बत्तियों की रोशनी मद्धम पड़ जाती है और डैशबोर्ड की घड़ी तीन बजकर चौदह मिनट पर रुक जाती है।",
+          "duration": 10.0,
+          "visual_prompt": "Close-up of cold condensation vapor rapidly forming on ancient stone surfaces, freezing atmospheric dread, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "फ़ोन अचानक बंद हो जाता है और ऐसा लगता है मानो कोई अदृश्य साया आपको घूर रहा हो।",
+          "duration": 10.0,
+          "visual_prompt": "POV handheld camera shaking slightly, an elongated dark silhouette cast against a decaying sandstone wall without any human visible, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "First-person POV looking down a pitch-black subterranean corridor of Dumas Road bungalows, single dying flashlight beam reflecting off damp stone walls, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "THE INCIDENT",
+      "time_range": "1:02–1:36",
+      "target_dur": 34.0,
+      "vo_text": "सबसे भयानक मंज़र तब सामने आया जब एक वाहन चालक ने पुलिस को बताया कि मोड़ पर बत्तियों के सामने अचानक एक साया प्रकट हुआ और शीशे पर हाथ मारकर हवा में ग़ायब हो गया। गाड़ी की रोशनी में सामने अचानक एक ऐसा साया आकर खड़ा हो गया जिसने रास्ता पूरी तरह रोक दिया था! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'गाड़ी के शीशे पर खूनी हाथ का निशान छप गया और पीछे दूर-दूर तक कोई इंसान नहीं था!'। वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+      "text_overlay": "EYEWITNESS TAPE: RECOVERED",
+      "sound_cue": "Aggressive tension riser + rapid heavy heart pulse + sudden breath gasp",
+      "shots": [
+        {
+          "vo_line": "सबसे भयानक मंज़र तब सामने आया जब एक वाहन चालक ने पुलिस को बताया कि मोड़ पर बत्तियों के सामने अचानक एक साया प्रकट हुआ और शीशे पर हाथ मारकर हवा में ग़ायब हो गया।",
+          "duration": 11.0,
+          "visual_prompt": "Low-angle wide shot of the inner perimeter of Dumas Road bungalows, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "गाड़ी की रोशनी में सामने अचानक एक ऐसा साया आकर खड़ा हो गया जिसने रास्ता पूरी तरह रोक दिया था! प्रत्यक्षदर्शियों ने कांपते हुए कहा: 'गाड़ी के शीशे पर खूनी हाथ का निशान छप गया और पीछे दूर-दूर तक कोई इंसान नहीं था!'।",
+          "duration": 12.0,
+          "visual_prompt": "Dutch-angle medium shot, cold cyan moonlight illuminating fresh unnatural impressions on the damp ground, swirling mist, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "वहाँ से उल्टे पैर भागने के सिवा कोई चारा नहीं था। सिर्फ़ सन्नाटा बचा था।",
+          "duration": 11.0,
+          "visual_prompt": "Extreme close-up of cracked stone ground with an abandoned flashlight, its beam fading into deep shadows, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Low-angle wide shot of the inner perimeter of Dumas Road bungalows, dense swirling midnight fog, cold moonlight cutting through cracked stone archways, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "AFTERMATH",
+      "time_range": "1:36–1:50",
+      "target_dur": 14.0,
+      "vo_text": "आज भी यातायात पुलिस ने इस मोड़ पर चेतावनी पटल लगाए हैं और रात में अकेले वाहन चालकों को यहाँ रुकने से सख़्ती से मना किया है। और उस रात के बाद से, सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 28 हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+      "text_overlay": "STATUS: UNRESOLVED & SEALED",
+      "sound_cue": "Sudden dead silence + chilling low wind gust",
+      "shots": [
+        {
+          "vo_line": "आज भी यातायात पुलिस ने इस मोड़ पर चेतावनी पटल लगाए हैं और रात में अकेले वाहन चालकों को यहाँ रुकने से सख़्ती से मना किया है।",
+          "duration": 7.0,
+          "visual_prompt": "Wide cinematic dawn shot of Dumas Road bungalows in Surat, Gujarat, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "और उस रात के बाद से, सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 28 हमेशा के लिए मुड़ा हुआ मिला। फैसला आपका है।",
+          "duration": 7.0,
+          "visual_prompt": "Macro close-up of सड़क किनारे मील का पुराना टूटा हुआ पत्थर संख्या 28 showing the physical alteration, morning dew droplets, eerie silence, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Wide cinematic dawn shot of Dumas Road bungalows in Surat, Gujarat, thick morning mist clearing over ancient stone fortress walls and modern rusted iron padlock, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    },
+    {
+      "beat": "OUTRO",
+      "time_range": "1:50–2:00",
+      "target_dur": 10.0,
+      "vo_text": "हमारी अगली दास्तान मसूरी के सेवॉय होटल के खौफ़नाक रहस्य की है। क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+      "text_overlay": "NEXT DOSSIER → PART 29: SAVOY HOTEL",
+      "sound_cue": "Sub-bass drop into pitch darkness",
+      "shots": [
+        {
+          "vo_line": "हमारी अगली दास्तान मसूरी के सेवॉय होटल के खौफ़नाक रहस्य की है।",
+          "duration": 5.0,
+          "visual_prompt": "Ominous distant architectural silhouette of Savoy Hotel, Mussoorie, Uttarakhand engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        },
+        {
+          "vo_line": "क्या आप इस रहस्य पर यकीन करते हैं? सब्सक्राइब करें।",
+          "duration": 5.0,
+          "visual_prompt": "Minimalist dark cinematic closing title card featuring @IndianHorrorTapes branding watermark and forensic seal, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+        }
+      ],
+      "visual_prompt": "Ominous distant architectural silhouette of Savoy Hotel, Mussoorie, Uttarakhand engulfed in midnight fog and blood-red rim lighting, award-winning cinematic dark horror photography, 35mm Arri Alexa lens, volumetric cold mist, chiaroscuro rim lighting, atmospheric dread, hyper-realistic, intricate 8k photorealistic textures, Unreal Engine 5 render, cinematic masterwork, 9:16 vertical portrait"
+    }
+  ],
+  "seo": {
+    "youtube_title": "Police FIR #2802: खौफ़नाक सच 💀 #Shorts",
+    "first_frame_text": "Dumas मा का सच",
+    "description": "⚠️ Dumas Road bungalows (Dumas मार्ग bungalows) Real Horror Story in Hindi | Surat, Gujarat Paranormal Incident (2002)\nक्या सच में Dumas मार्ग bungalows में Samandar Kinare Ka Khel का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: Dumas मार्ग bungalows के सुनसान दुर्घटनाग्रस्त मार्ग और मील के पत्थर संख्या चौदह (2002)\nSurat, Gujarat के Dumas Road bungalows से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 2002 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (2002)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 29)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #surat\n",
+    "search_phrases": [
+      "dumas road bungalows horror story",
+      "dumas road bungalows real story",
+      "dumas road bungalows mystery",
+      "Dumas मार्ग bungalows की असली कहानी",
+      "Dumas मार्ग bungalows का रहस्य",
+      "surat, gujarat horror stories",
+      "haunted places in surat, gujarat"
+    ],
+    "hashtags": [
+      "#Shorts",
+      "#IndianHorrorTapes",
+      "#surat"
+    ],
+    "tags": [
+      "dumas road bungalows horror story",
+      "dumas road bungalows real story",
+      "dumas road bungalows haunted",
+      "dumas road bungalows ghost",
+      "dumas road bungalows mystery in hindi",
+      "dumas road bungalows incident",
+      "dumas road bungalows ka sach",
+      "Dumas मार्ग bungalows की असली कहानी",
+      "Dumas मार्ग bungalows का भूत",
+      "Dumas मार्ग bungalows का रहस्य",
+      "surat, gujarat horror stories",
+      "haunted places in surat, gujarat",
+      "surat haunted",
+      "indian horror tapes",
+      "bhoot ki kahani",
+      "real horror stories in hindi",
+      "haunted places in india",
+      "ghost stories hindi",
+      "paranormal investigation india",
+      "horror shorts hindi",
+      "chudail ki kahani",
+      "sacchi ghatna horror",
+      "khauf",
+      "darr",
+      "bhoot pret",
+      "scary horror stories",
+      "khooni raaz",
+      "unsolved mysteries hindi",
+      "trending horror shorts",
+      "viral horror shorts",
+      "shorts"
+    ],
+    "pinned_comment": "अगर रात 3 बजे सूरत के इस सुनसान रास्ते पर आपकी गाड़ी के सामने कोई लिफ़्ट मांगे... तो आप क्या करेंगे? 1. गाड़ी रोकेंगे या 2. रफ़्तार बढ़ाकर सीधे निकल जाएंगे? कमेंट्स में सच बताएं 👇",
+    "playlist": "HAUNTED HOUSES, COLONIES & BUILDINGS",
+    "instagram_caption": "⚠️ Dumas Road bungalows (Dumas मार्ग bungalows) — Samandar Kinare Ka Khel\nअगर रात 3 बजे सूरत के इस सुनसान रास्ते पर आपकी गाड़ी के सामने कोई लिफ़्ट मांगे... तो आप क्या करेंगे? 1. गाड़ी रोकेंगे या 2. रफ़्तार बढ़ाकर सीधे निकल जाएंगे? कमेंट्स में सच बताएं 👇\n\n👉 Follow @IndianHorrorTapes for 100+ declassified Indian horror archives.",
+    "instagram_hashtags": [
+      "#indianhorrortapes",
+      "#surat",
+      "#horrorstorieshindi",
+      "#hauntedindia",
+      "#horrorreels",
+      "#bhootkikahani",
+      "#paranormalindia",
+      "#reelsindia"
+    ],
+    "synthetic_media_disclosure": false
+  },
+  "name": "Dumas Road bungalows",
+  "year": "2002",
+  "viral_titles": [
+    "रात 3 बजे यहाँ लिफ़्ट मत देना ⚠️ #Shorts",
+    "Dumas मार्ग bungalow का खौफ़नाक सच 💀 #Shorts",
+    "Police FIR #2802: खौफ़नाक सच 💀 #Shorts",
+    "Dumas मार्ग bungalow: 2002 की खौफ़नाक रात 💀 #Shorts",
+    "Dumas Road bungalows Real Horror Incident 💀 #Shorts"
+  ],
+  "seo_description": "⚠️ Dumas Road bungalows (Dumas मार्ग bungalows) Real Horror Story in Hindi | Surat, Gujarat Paranormal Incident (2002)\nक्या सच में Dumas मार्ग bungalows में Samandar Kinare Ka Khel का खौफ़नाक साया आज भी भटकता है? जानिए ASI और पुलिस फाइलों में दर्ज रूह कंपा देने वाला अनसुलझा सच।\n\n📜 ऐतिहासिक संदर्भ एवं अभिलेख: Dumas मार्ग bungalows के सुनसान दुर्घटनाग्रस्त मार्ग और मील के पत्थर संख्या चौदह (2002)\nSurat, Gujarat के Dumas Road bungalows से जुड़े आधिकारिक दस्तावेज़ों और प्रत्यक्षदर्शियों के अनुसार, वर्ष 2002 में घटी यह घटना आज भी आधुनिक विज्ञान और स्थानीय प्रशासन के लिए एक चुनौती बनी हुई है। सूरज ढलते ही यहाँ घटित होने वाली संवेदी असामान्यताओं के बाद प्रशासन ने रात के समय गश्त पर रोक लगा दी थी।\n(नोट: यह प्रस्तुति वास्तविक ऐतिहासिक स्थल पर आधारित है; विवरण लोक-कथाओं और स्थानीय अभिलेखों पर आधारित हैं।)\n\n⏱️ CASE FILE CHAPTERS:\n0:00 - Declassified Warning & Cold Open\n0:08 - The Historical Dossier (2002)\n0:32 - The Documented Sensory Anomaly\n1:02 - Eyewitness Collision Tape\n1:36 - Official Forensic Aftermath & Government Seal\n1:50 - Next Case File Preview (Part 29)\n\n👉 New Declassified Real Indian Horror Tapes release every Wednesday & Sunday at 9:00 PM IST!\nSubscribe to @IndianHorrorTapes for 100+ Real Indian Paranormal Dossiers.\n\n---\n#Shorts #IndianHorrorTapes #BhootKiKahani #HindiHorrorStories #RealHorrorStories #HauntedIndia #Khauf #Darr #ParanormalInvestigation #ScaryShorts #TrendingHorror #surat\n",
+  "pinned_comment": "अगर रात 3 बजे सूरत के इस सुनसान रास्ते पर आपकी गाड़ी के सामने कोई लिफ़्ट मांगे... तो आप क्या करेंगे? 1. गाड़ी रोकेंगे या 2. रफ़्तार बढ़ाकर सीधे निकल जाएंगे? कमेंट्स में सच बताएं 👇",
+  "thumbnail_concept": "YouTube Shorts horror thumbnail, rule of thirds composition: towering architectural silhouette of Dumas Road bungalows in Surat, Gujarat framed against deep midnight cyan ground fog and blood-moon sky, single high-contrast glowing crimson focal point in the upper third, zero clutter, photorealistic cinematic dread, 35mm film grain, 8k resolution, portrait 9:16",
+  "tags": [
+    "dumas road bungalows horror story",
+    "dumas road bungalows real story",
+    "dumas road bungalows haunted",
+    "dumas road bungalows ghost",
+    "dumas road bungalows mystery in hindi",
+    "dumas road bungalows incident",
+    "dumas road bungalows ka sach",
+    "Dumas मार्ग bungalows की असली कहानी",
+    "Dumas मार्ग bungalows का भूत",
+    "Dumas मार्ग bungalows का रहस्य",
+    "surat, gujarat horror stories",
+    "haunted places in surat, gujarat",
+    "surat haunted",
+    "indian horror tapes",
+    "bhoot ki kahani",
+    "real horror stories in hindi",
+    "haunted places in india",
+    "ghost stories hindi",
+    "paranormal investigation india",
+    "horror shorts hindi",
+    "chudail ki kahani",
+    "sacchi ghatna horror",
+    "khauf",
+    "darr",
+    "bhoot pret",
+    "scary horror stories",
+    "khooni raaz",
+    "unsolved mysteries hindi",
+    "trending horror shorts",
+    "viral horror shorts",
+    "shorts"
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "channel_id": "UCNRr8A9gVZQZJi1eMKiXIJw",
   "channel_name": "IndianHorrorTapes",
-  "current_story_number": 77,
+  "current_story_number": 93,
   "total_stories": 103,
-  "last_run": "2026-10-12T15:21:50.054273",
-  "last_uploaded_video_id": "IhRixoeX__4",
+  "last_run": "2026-10-23T13:01:18.033074",
+  "last_uploaded_video_id": "kcX86X0jJE0",
   "history": [
     {
       "story_number": 8,
@@ -299,6 +299,186 @@
       "video_id": "IhRixoeX__4",
       "publish_at": "2026-10-14T15:30:00Z",
       "uploaded_at": "2026-10-12T15:21:50.054273"
+    },
+    {
+      "story_number": 77,
+      "video_id": "lDqxjNNA8jo",
+      "publish_at": "2026-10-14T15:30:00Z",
+      "uploaded_at": "2026-10-12T16:45:55.262536"
+    },
+    {
+      "story_number": 78,
+      "video_id": "SmHfE3FgOGQ",
+      "publish_at": "2026-10-14T15:30:00Z",
+      "uploaded_at": "2026-10-12T17:48:33.552047"
+    },
+    {
+      "story_number": 79,
+      "video_id": "f5WK_TOZWDc",
+      "publish_at": "2026-10-18T15:30:00Z",
+      "uploaded_at": "2026-10-18T13:11:34.697013"
+    },
+    {
+      "story_number": 82,
+      "video_id": "mIIZsDShPLc",
+      "publish_at": "2026-10-18T15:30:00Z",
+      "uploaded_at": "2026-10-18T14:19:19.946855"
+    },
+    {
+      "story_number": 83,
+      "video_id": "ehYcqBHno-0",
+      "publish_at": "2026-10-18T15:30:00Z",
+      "uploaded_at": "2026-10-18T15:25:31.424272"
+    },
+    {
+      "story_number": 84,
+      "video_id": "8K3_yyoyhaU",
+      "publish_at": "2026-10-18T15:30:00Z",
+      "uploaded_at": "2026-10-18T16:34:05.069257"
+    },
+    {
+      "story_number": 85,
+      "video_id": "_fch1iU0elg",
+      "publish_at": "2026-10-18T15:30:00Z",
+      "uploaded_at": "2026-10-18T17:39:07.176692"
+    },
+    {
+      "story_number": 86,
+      "video_id": "KDGYZqf5Dlw",
+      "publish_at": "2026-10-18T15:30:00Z",
+      "uploaded_at": "2026-10-18T18:45:19.557616"
+    },
+    {
+      "story_number": 87,
+      "video_id": "Xu6itFBlC-4",
+      "publish_at": "2026-10-18T15:30:00Z",
+      "uploaded_at": "2026-10-18T19:54:04.022096"
+    },
+    {
+      "story_number": 88,
+      "video_id": "LgJFIBVJjxM",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T15:19:20.294576"
+    },
+    {
+      "story_number": 89,
+      "video_id": "Q2B1x0JECUw",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T16:25:57.935703"
+    },
+    {
+      "story_number": 90,
+      "video_id": "pKfK8SD9t1w",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T17:30:32.305011"
+    },
+    {
+      "story_number": 91,
+      "video_id": "xp5T7xGS1WY",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T18:36:23.610160"
+    },
+    {
+      "story_number": 92,
+      "video_id": "HVS1ugGEfnI",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T19:42:39.897805"
+    },
+    {
+      "story_number": 94,
+      "video_id": "ipa2ZUJM6xY",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T20:52:48.145521"
+    },
+    {
+      "story_number": 95,
+      "video_id": "uEnAs02wqF0",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T21:56:11.407315"
+    },
+    {
+      "story_number": 97,
+      "video_id": "4S3Dfqsw61Q",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-22T23:09:13.552361"
+    },
+    {
+      "story_number": 98,
+      "video_id": "Nn7AlA0is_w",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T00:13:47.572941"
+    },
+    {
+      "story_number": 99,
+      "video_id": "yrVJA_jV4io",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T01:23:10.248645"
+    },
+    {
+      "story_number": 101,
+      "video_id": "q1VdX89x9D4",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T02:28:14.819555"
+    },
+    {
+      "story_number": 102,
+      "video_id": "UXN0pDVPJCM",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T03:32:58.000944"
+    },
+    {
+      "story_number": 48,
+      "video_id": "BPRgPux48pA",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T04:36:08.524614"
+    },
+    {
+      "story_number": 49,
+      "video_id": "wV683ejxy8E",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T05:41:19.175616"
+    },
+    {
+      "story_number": 50,
+      "video_id": "R6DB4YS_ams",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T06:43:27.367561"
+    },
+    {
+      "story_number": 51,
+      "video_id": "yFrv7zzpraI",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T07:45:46.666118"
+    },
+    {
+      "story_number": 52,
+      "video_id": "5SWBwprcrhg",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T08:49:41.431737"
+    },
+    {
+      "story_number": 53,
+      "video_id": "ciralHr7254",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T09:51:36.391717"
+    },
+    {
+      "story_number": 54,
+      "video_id": "zUDP9H8s6-c",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T10:56:38.471890"
+    },
+    {
+      "story_number": 55,
+      "video_id": "QhI-9E21EPI",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T11:58:55.169339"
+    },
+    {
+      "story_number": 56,
+      "video_id": "kcX86X0jJE0",
+      "publish_at": "2026-10-25T15:30:00Z",
+      "uploaded_at": "2026-10-23T13:01:18.033074"
     }
   ],
   "playlists": {

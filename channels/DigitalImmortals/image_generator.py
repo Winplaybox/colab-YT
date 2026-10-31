@@ -11,6 +11,7 @@ import os
 import sys
 import json
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps, ImageDraw, ImageFont
+Image.MAX_IMAGE_PIXELS = None
 
 if sys.platform == "win32":
     try:
@@ -21,6 +22,22 @@ if sys.platform == "win32":
 script_dir = os.path.dirname(os.path.abspath(__file__))
 episodes_dir = os.path.join(script_dir, "episodes")
 brain_dir = os.path.abspath(os.path.join(script_dir, "..", "..", "..", ".gemini", "antigravity-ide", "brain", "e1e3a393-5c06-41cb-a159-f895fa0649aa"))
+
+def load_anchor_safe(path):
+    """Safely loads and pre-scales massive high-res museum artworks."""
+    if not os.path.exists(path):
+        return None
+    try:
+        im = Image.open(path).convert("RGB")
+        w, h = im.size
+        if w > 3840 or h > 3840:
+            scale = min(3840 / w, 3840 / h)
+            nw, nh = max(1, int(w * scale)), max(1, int(h * scale))
+            im = im.resize((nw, nh), Image.Resampling.LANCZOS)
+        return im
+    except Exception as e:
+        print(f"[WARN] Error loading {path}: {e}")
+        return None
 
 def get_master_anchors(episode_num=1):
     """Loads master artworks from local anchors folder for the given episode."""
@@ -141,13 +158,27 @@ def get_master_anchors(episode_num=1):
         if os.path.exists(y_path):
             anchors["siddhashrama"] = Image.open(y_path).convert("RGB")
 
+    elif episode_num == 8:
+        sd = load_anchor_safe(os.path.join(anchors_dir, "shiva_dhanush_broken.jpg"))
+        if sd: anchors["shiva_dhanush_broken"] = sd
+        sr = load_anchor_safe(os.path.join(anchors_dir, "sita_ram_vivah.jpg"))
+        if sr: anchors["sita_ram_vivah"] = sr
+        fb = load_anchor_safe(os.path.join(anchors_dir, "four_brothers_wedding.jpg"))
+        if fb: anchors["four_brothers_wedding"] = fb
+        pc = load_anchor_safe(os.path.join(anchors_dir, "parashurama_confrontation.jpg"))
+        if pc: anchors["parashurama_confrontation"] = pc
+        pch = load_anchor_safe(os.path.join(anchors_dir, "parashurama_challenge.jpg"))
+        if pch: anchors["parashurama_challenge"] = pch
+        mithila_ep7 = load_anchor_safe(os.path.join(script_dir, "episodes", "episode_07", "assets", "anchors", "mithila_janaka.jpg"))
+        if mithila_ep7: anchors["mithila_janaka"] = mithila_ep7
+
     else:
         # Load any anchors present in current or previous episodes
         if os.path.exists(anchors_dir):
             for f in os.listdir(anchors_dir):
                 if f.lower().endswith((".jpg", ".png", ".webp")):
                     k = os.path.splitext(f)[0]
-                    anchors[k] = Image.open(os.path.join(anchors_dir, f)).convert("RGB")
+                    anchors[k] = load_anchor_safe(os.path.join(anchors_dir, f))
         if not anchors:
             for past_ep in range(episode_num - 1, 0, -1):
                 past_dir = os.path.join(script_dir, "episodes", f"episode_{past_ep:02d}", "assets", "anchors")
@@ -155,7 +186,7 @@ def get_master_anchors(episode_num=1):
                     for f in os.listdir(past_dir):
                         if f.lower().endswith((".jpg", ".png", ".webp")):
                             k = os.path.splitext(f)[0]
-                            anchors[k] = Image.open(os.path.join(past_dir, f)).convert("RGB")
+                            anchors[k] = load_anchor_safe(os.path.join(past_dir, f))
                     if anchors:
                         break
 
@@ -163,7 +194,7 @@ def get_master_anchors(episode_num=1):
     all_imgs = [v for v in anchors.values() if v is not None]
     if all_imgs:
         fallback = all_imgs[0]
-        for k in ["ahalya_uddhar", "gautama_curse", "mithila_janaka", "shiva_ganga", "bhagiratha", "kapila", "siddhashrama", "vishwamitra", "birth_rama", "birth_princes", "dasharatha_celebrating", "purusha", "rishyasringa", "queens", "ayodhya", "brahmaloka", "narada", "valmiki_tree", "ashram", "dasharatha"]:
+        for k in ["shiva_dhanush_broken", "sita_ram_vivah", "four_brothers_wedding", "parashurama_confrontation", "parashurama_challenge", "ahalya_uddhar", "gautama_curse", "mithila_janaka", "shiva_ganga", "bhagiratha", "kapila", "siddhashrama", "vishwamitra", "birth_rama", "birth_princes", "dasharatha_celebrating", "purusha", "rishyasringa", "queens", "ayodhya", "brahmaloka", "narada", "valmiki_tree", "ashram", "dasharatha"]:
             if k not in anchors:
                 anchors[k] = fallback
 
@@ -1090,6 +1121,194 @@ def generate_scene_asset_ep7(scene, anchors, output_path, target_w=1920, target_
     print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
     return True
 
+def generate_scene_asset_ep8(scene, anchors, output_path, target_w=1920, target_h=1080):
+    """Creates a distinct 1920x1080 16:9 cinematic shot for Episode 8 scenes."""
+    sc_id = scene["scene_id"]
+    act = scene.get("act", 1)
+
+    shiva_dhanush_img = anchors.get("shiva_dhanush_broken")
+    sita_vivah_img = anchors.get("sita_ram_vivah")
+    four_wedding_img = anchors.get("four_brothers_wedding")
+    parashu_confront_img = anchors.get("parashurama_confrontation")
+    parashu_chal_img = anchors.get("parashurama_challenge")
+    mithila_img = anchors.get("mithila_janaka") or shiva_dhanush_img
+
+    if act == 1: # History of Pinaka & Janaka's Oath (scenes 1-3)
+        if sc_id == 1: # Hook: Dramatic close-up of broken Shiva Dhanush
+            base = shiva_dhanush_img
+            w, h = base.size
+            crop_box = (int(w * 0.1), int(h * 0.1), int(w * 0.9), int(h * 0.75))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(1.25)
+        elif sc_id == 2: # Janaka narrating Pinaka history
+            base = mithila_img
+            w, h = base.size
+            crop_box = (0, 0, int(w * 0.75), int(h * 0.85))
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 200, 100))
+            img = Image.blend(img, overlay, 0.05)
+        else: # Scene 3: Proud kings failing
+            base = mithila_img
+            w, h = base.size
+            crop_box = (int(w * 0.2), 0, w, h)
+            img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+
+    elif act == 2: # Arrival of Iron Chest & Vishwamitra's command (scenes 4-6)
+        base = shiva_dhanush_img
+        w, h = base.size
+        if sc_id == 4: # 5,000 men wheeling iron chest
+            crop_box = (0, int(h * 0.3), w, h)
+        elif sc_id == 5: # Chest opened, blazing divine aura
+            crop_box = (int(w * 0.15), int(h * 0.2), int(w * 0.85), int(h * 0.8))
+        else: # 6: Vishwamitra commands 'Vatsa Rama! Dhanuh pashya'
+            crop_box = (int(w * 0.35), 0, w, int(h * 0.75))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        if sc_id == 5:
+            enhancer = ImageEnhance.Brightness(img)
+            img = enhancer.enhance(1.15)
+            overlay = Image.new("RGB", (target_w, target_h), (255, 220, 120))
+            img = Image.blend(img, overlay, 0.08)
+
+    elif act == 3: # Rama Lifts, Draws & Breaks Bow (scenes 7-10)
+        base = shiva_dhanush_img
+        w, h = base.size
+        if sc_id == 7: # Rama approaching like lion-cub
+            crop_box = (int(w * 0.2), 0, int(w * 0.8), int(h * 0.8))
+        elif sc_id == 8: # Effortless lift with one hand
+            crop_box = (int(w * 0.1), int(h * 0.1), int(w * 0.75), int(h * 0.85))
+        elif sc_id == 9: # Drawing bow to ear
+            crop_box = (int(w * 0.15), 0, int(w * 0.85), int(h * 0.7))
+        else: # 10: Bow snaps in two with thunderous crack
+            crop_box = (int(w * 0.05), int(h * 0.05), int(w * 0.95), int(h * 0.9))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.20)
+        if sc_id == 10:
+            enhancer = ImageEnhance.Color(img)
+            img = enhancer.enhance(1.2)
+
+    elif act == 4: # Joy in Mithila & Proposal sent to Ayodhya (scenes 11-13)
+        if sc_id == 11: # Janaka's tears of joy
+            base = mithila_img
+            w, h = base.size
+            crop_box = (0, 0, int(w * 0.65), int(h * 0.85))
+        elif sc_id == 12: # Envoys galloping to Ayodhya
+            base = four_wedding_img
+            w, h = base.size
+            crop_box = (0, int(h * 0.1), w, h)
+        else: # 13: Dasharatha receiving letter in Ayodhya
+            base = mithila_img
+            w, h = base.size
+            crop_box = (int(w * 0.25), 0, w, int(h * 0.9))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 210, 140))
+        img = Image.blend(img, overlay, 0.06)
+
+    elif act == 5: # Dasharatha's March & Proposal of 4 Marriages (scenes 14-16)
+        if sc_id == 14: # Royal army march
+            base = four_wedding_img
+            w, h = base.size
+            crop_box = (0, 0, int(w * 0.7), h)
+        elif sc_id == 15: # Kings embracing
+            base = mithila_img
+            w, h = base.size
+            crop_box = (int(w * 0.1), 0, int(w * 0.85), int(h * 0.8))
+        else: # 16: Kushadhwaja arriving & 4 brides proposed
+            base = four_wedding_img
+            w, h = base.size
+            crop_box = (int(w * 0.2), 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+
+    elif act == 6: # Four Divine Marriages (scenes 17-20)
+        if sc_id == 17: # Sacred Vedi & Vedic fire
+            base = sita_vivah_img
+            w, h = base.size
+            crop_box = (int(w * 0.2), int(h * 0.2), int(w * 0.8), h)
+        elif sc_id == 18: # Janaka's Kanyadaan 'Iyam Sita...'
+            base = sita_vivah_img
+            w, h = base.size
+            crop_box = (int(w * 0.1), int(h * 0.05), int(w * 0.75), int(h * 0.85))
+        elif sc_id == 19: # Four couples pradakshina
+            base = four_wedding_img
+            w, h = base.size
+            crop_box = (0, 0, w, h)
+        else: # 20: Parijata rain from heavens
+            base = sita_vivah_img
+            w, h = base.size
+            crop_box = (0, 0, w, int(h * 0.9))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (255, 230, 150))
+        img = Image.blend(img, overlay, 0.07)
+        enhancer = ImageEnhance.Brightness(img)
+        img = enhancer.enhance(1.08)
+
+    elif act == 7: # Departure & Cosmic Portents (scenes 21-23)
+        base = parashu_confront_img
+        w, h = base.size
+        if sc_id == 21: # Farewell and journey starts
+            crop_box = (0, 0, int(w * 0.6), h)
+        elif sc_id == 22: # Sun darkened, dust storm, tree uprooted
+            crop_box = (int(w * 0.2), 0, int(w * 0.85), int(h * 0.8))
+        else: # 23: Howling jackals and vultures
+            crop_box = (int(w * 0.35), int(h * 0.1), w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (80, 50, 40))
+        img = Image.blend(img, overlay, 0.12)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.25)
+
+    elif act == 8: # Parashurama's Terrifying Arrival (scenes 24-26)
+        if sc_id in [24, 25]: # Blazing axe & Dasharatha on knees
+            base = parashu_confront_img
+            w, h = base.size
+            crop_box = (int(w * 0.1), 0, int(w * 0.9), h) if sc_id == 24 else (0, int(h * 0.2), int(w * 0.7), h)
+        else: # 26: Parashurama holding Vishnu bow
+            base = parashu_chal_img
+            w, h = base.size
+            crop_box = (0, 0, int(w * 0.75), h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.2)
+
+    elif act == 9: # Rama Strings Vishnu Bow & Absorbs Radiance (scenes 27-28)
+        base = parashu_chal_img
+        w, h = base.size
+        if sc_id == 27: # Rama stringing bow
+            crop_box = (int(w * 0.2), 0, int(w * 0.85), int(h * 0.9))
+        else: # 28: Parashurama's tejas absorbed
+            crop_box = (int(w * 0.1), int(h * 0.1), int(w * 0.9), int(h * 0.85))
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        overlay = Image.new("RGB", (target_w, target_h), (100, 180, 255))
+        img = Image.blend(img, overlay, 0.10)
+        enhancer = ImageEnhance.Brightness(img)
+        img = enhancer.enhance(1.15)
+
+    else: # Act 10: Parashurama Departure & Ayodhya Entrance (scenes 29-30)
+        if sc_id == 29: # Parashurama departing to Mahendra
+            base = parashu_chal_img
+            w, h = base.size
+            crop_box = (int(w * 0.4), 0, w, h)
+        else: # 30: Ayodhya entrance & Ayodhya Kanda cliffhanger
+            base = four_wedding_img
+            w, h = base.size
+            crop_box = (0, 0, w, h)
+        img = base.crop(crop_box).resize((target_w, target_h), Image.Resampling.LANCZOS)
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.15)
+
+    # Subtle cinematic vignette
+    vignette = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
+    v_draw = ImageDraw.Draw(vignette)
+    for i in range(15):
+        alpha = int(4 * (15 - i))
+        v_draw.rectangle([i * 4, i * 4, target_w - i * 4, target_h - i * 4], outline=(0, 0, 0, alpha))
+    img = Image.alpha_composite(img.convert("RGBA"), vignette).convert("RGB")
+
+    img.save(output_path, "JPEG", quality=95)
+    print(f"  [SCENE {sc_id:02d}] Generated 16:9 Landscape ({target_w}x{target_h}) -> {os.path.basename(output_path)}")
+    return True
+
 def generate_episode_images(episode_num=1):
     json_path = os.path.join(episodes_dir, f"episode_{episode_num:02d}.json")
     if not os.path.exists(json_path):
@@ -1120,6 +1339,8 @@ def generate_episode_images(episode_num=1):
             generate_scene_asset_ep6(sc, anchors, out_file)
         elif episode_num == 7:
             generate_scene_asset_ep7(sc, anchors, out_file)
+        elif episode_num == 8:
+            generate_scene_asset_ep8(sc, anchors, out_file)
         else:
             generate_scene_asset(sc, anchors, out_file)
 

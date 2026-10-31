@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 24,
+  "story_id": "train_24_trans_siberian_9289km",
+  "story_hash": "d1813b2896e35162",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "Duniya Ka Sabse Lamba Train Route: 9,289 KM! 🇷🇺",
+  "youtube_title": "Duniya Ka Sabse Lamba Train Route: 9,289 KM! 🇷🇺",
+  "title_variations": [
+    "Duniya Ka Sabse Lamba Train Route: 9,289 KM! 🇷🇺",
+    "Trans-Siberian 9,289 km across 8 time zones 🚂",
+    "Duniya Ka Sabse Lamba Train Route: 9,289 KM! 🇷🇺 #Shorts",
+    "The Real Story: Trans-Siberian 9,289 km across 8 time zones"
+  ],
+  "tagline": "Trans-Siberian 9,289 km across 8 time zones",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Trans-Siberian_Railway",
+    "https://www.rzd.ru"
+  ],
+  "verified_fact": "Trans-Siberian Railway connects Moscow to Vladivostok, spanning 9,289 km across Europe and Asia through 8 time zones, taking ~7 continuous days on a single train.",
+  "voiceover_script": "Duniya ka sabse lamba continuous train route: 9,289 kilometer! Russia ki Trans-Siberian Railway Moscow se shuru hokar Pacific Ocean ke Vladivostok tak jaati hai. Is akele safar mein pure 7 din aur 7 raatein lagti hain, aur train 8 alag-alag time zones se hokar guzarti hai! Khidki se duniya ki sabse gehri jheel Lake Baikal aur barfeeli Siberian taiga ka nazara dikhta hai. Kya aap bina utre 7 din train mein bitane ka challenge le sakte hain?",
+  "debate_question": "Kya aap bina train se utre 7 din tak safar kar sakte hain?",
+  "pinned_comment": "🇷🇺 9,289 KM, 8 Time Zones aur 7 Din continuous safar! Lake Baikal ka nazara. Kya aap ye kar paoge?",
+  "description": "Duniya Ka Sabse Lamba Train Route: 9,289 KM! 🇷🇺\n\n🚂 Trans-Siberian 9,289 km across 8 time zones\n\nTrans-Siberian Railway connects Moscow to Vladivostok, spanning 9,289 km across Europe and Asia through 8 time zones, taking ~7 continuous days on a single train.\n\n👉 Kya aap bina train se utre 7 din tak safar kar sakte hain?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#TransSiberian #LongestTrainRoute #Russia #Siberia #TrainTravel #Shorts",
+  "tags": [
+    "TransSiberian",
+    "LongestTrainRoute",
+    "Russia",
+    "Siberia",
+    "TrainTravel",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Duniya ka sabse lamba train route: 9,289 KM!",
+      "sound_cue": "blizzard_wind",
+      "prompt": "Trans-Siberian passenger train traveling through endless snowy Siberian birch forest under twilight sky, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Moscow se Pacific Ocean ke Vladivostok tak!",
+      "sound_cue": "map_pulse",
+      "prompt": "Graphic illustration map of Eurasian continent showing glowing red line extending from Moscow across Urals to Vladivostok, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Pure 7 din lagte hain aur 8 time zones badalte hain!",
+      "sound_cue": "clock_spin",
+      "prompt": "Warm cozy wooden train compartment with hot black tea in traditional Russian glass holder on table, frosted window, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Lake Baikal ka jamahua paani khidki ke samne!",
+      "sound_cue": "ice_crackle",
+      "prompt": "Train running right along the shore of giant frozen Lake Baikal with transparent blue ice sheets and snow mountains, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "7 din continuous safar: kya aap ye challenge loge?",
+      "sound_cue": "heavy_horn",
+      "prompt": "Passenger train arriving at snow-covered coastal terminus platform at dusk with harbor lights in distance, 9:16 vertical portrait"
+    }
+  ]
+}

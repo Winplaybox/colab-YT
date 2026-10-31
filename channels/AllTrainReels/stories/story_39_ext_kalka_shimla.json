@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 39,
+  "story_id": "train_ext_kalka_shimla",
+  "story_hash": "acabd8e87d9486f8",
+  "format": "Mountain Railway",
+  "title": "103 Surangein Aur 800 Pul! 🏔️",
+  "youtube_title": "103 Surangein Aur 800 Pul! 🏔️",
+  "title_variations": [
+    "103 Surangein Aur 800 Pul! 🏔️",
+    "Kalka Shimla Railway 103 tunnels 800 bridges UNESCO 🚂",
+    "103 Surangein Aur 800 Pul! 🏔️ #Shorts",
+    "The Real Story: Kalka Shimla Railway 103 tunnels 800 bridges UNESCO"
+  ],
+  "tagline": "Kalka Shimla Railway 103 tunnels 800 bridges UNESCO",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Kalka%E2%80%93Shimla_railway"
+  ],
+  "verified_fact": "Kalka-Shimla narrow-gauge railway, built 1903, features 103 tunnels and 800+ bridges in just 96 km, rising 1,420 m into the Himalayas. UNESCO World Heritage.",
+  "voiceover_script": "Sirf 96 kilometer mein 103 surangein aur 800 se zyada pul! Kalka se Shimla tak ki ye toy train 1903 se Himalaya ki pahaadiyon ko cheerte hue chadh rahi hai. 1,420 meter ki unchaai par pahunchna, barfili vaadiyon se guzarna, devdaar ke junglon ke beech se nikalana — ye hai Bharat ki sabse khoobsurat rail journey. UNESCO World Heritage!",
+  "debate_question": "Kalka-Shimla toy train mein safar karna chahenge?",
+  "pinned_comment": "🏔️ 96 km mein 103 tunnels! Shimla toy train ka safar kaun karega?",
+  "description": "103 Surangein Aur 800 Pul! 🏔️\n\n🚂 Kalka Shimla Railway 103 tunnels 800 bridges UNESCO\n\nKalka-Shimla narrow-gauge railway, built 1903, features 103 tunnels and 800+ bridges in just 96 km, rising 1,420 m into the Himalayas. UNESCO World Heritage.\n\n👉 Kalka-Shimla toy train mein safar karna chahenge?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#KalkaShimla #ToyTrain #UNESCO #IndianRailways #MountainRailway #Himalayas #Shorts",
+  "tags": [
+    "KalkaShimla",
+    "ToyTrain",
+    "UNESCO",
+    "IndianRailways",
+    "MountainRailway",
+    "Himalayas",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "96 km, 103 surangein, 800 pul!",
+      "prompt": "Red toy train emerging from stone arch tunnel misty Himalayan valley 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "1903 se chal rahi UNESCO heritage train!",
+      "prompt": "Narrow gauge train curving steep hillside tall pine trees 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "1,420 meter ki unchaai chadhti hai!",
+      "prompt": "Multi-arch stone viaduct railway bridge mountain Kalka Shimla 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Barfili vaadiyon ke beech!",
+      "prompt": "Snow covered railway tracks Shimla mountain ridge morning 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Devdaar ke jungle ke andar se!",
+      "prompt": "Toy train windows showing dense Himalayan forest either side 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Bharat ki sabse scenic rail journey!",
+      "prompt": "Shimla colonial station platform wooden architecture flowers 9:16"
+    }
+  ]
+}

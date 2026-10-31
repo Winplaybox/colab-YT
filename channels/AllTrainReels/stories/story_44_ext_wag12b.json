@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 44,
+  "story_id": "train_ext_wag12b",
+  "story_hash": "6f537d48cb30c6b0",
+  "format": "World Railways",
+  "title": "India Ka 12,000 HP Monster Loco! 🇮🇳",
+  "youtube_title": "India Ka 12,000 HP Monster Loco! 🇮🇳",
+  "title_variations": [
+    "India Ka 12,000 HP Monster Loco! 🇮🇳",
+    "Indian Railways WAG-12B Alstom 12000 HP electric locomotive 🚂",
+    "India Ka 12,000 HP Monster Loco! 🇮🇳 #Shorts",
+    "The Real Story: Indian Railways WAG-12B Alstom 12000 HP electric locomotive"
+  ],
+  "tagline": "Indian Railways WAG-12B Alstom 12000 HP electric locomotive",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Indian_locomotive_class_WAG-12"
+  ],
+  "verified_fact": "WAG-12B is India's most powerful electric loco at 12,000 HP (9,000 kW), built by Alstom at Madhepura, hauling 6,000 tonnes at 120 km/h on DFCs.",
+  "voiceover_script": "12,000 horsepower — ye hai Indian Railways ka sabse shaktishali engine! WAG-12B, Alstom ka Make in India monster, Madhepura factory mein bana, 6,000 ton freight 120 km/h par kheenchta hai. Dedicated Freight Corridor par ye India ki logistics revolution ka symbol hai. Do sections, ek unit — aur raw power jo pehle kabhi nahi dekhi thi.",
+  "debate_question": "WAG-12B se freight time kaise India ke GDP ko badhayega?",
+  "pinned_comment": "💪 12,000 HP Make in India! WAG-12B — India ka sabse powerful electric locomotive!",
+  "description": "India Ka 12,000 HP Monster Loco! 🇮🇳\n\n🚂 Indian Railways WAG-12B Alstom 12000 HP electric locomotive\n\nWAG-12B is India's most powerful electric loco at 12,000 HP (9,000 kW), built by Alstom at Madhepura, hauling 6,000 tonnes at 120 km/h on DFCs.\n\n👉 WAG-12B se freight time kaise India ke GDP ko badhayega?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#WAG12B #IndianRailways #MakeInIndia #Alstom #FreightTrain #DFCCIL #Shorts",
+  "tags": [
+    "WAG12B",
+    "IndianRailways",
+    "MakeInIndia",
+    "Alstom",
+    "FreightTrain",
+    "DFCCIL",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "12,000 HP — India ka sabse powerful loco!",
+      "prompt": "WAG-12B twin section blue electric locomotive leading container freight DFC 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "6,000 ton freight 120 km/h!",
+      "prompt": "Double-stack container train on Dedicated Freight Corridor India 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Madhepura factory — Make in India!",
+      "prompt": "Alstom Madhepura factory assembling WAG-12B locomotive interior 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Do sections, ek giant unit!",
+      "prompt": "WAG-12B twin locomotive articulation joint close up 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "DFC par logistics revolution!",
+      "prompt": "Freight corridor map India Eastern Western DFC routes 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "India ki rail power — naya chapter!",
+      "prompt": "WAG-12B locomotive at sunset industrial yard India 9:16"
+    }
+  ]
+}

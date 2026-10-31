@@ -82,7 +82,9 @@ def get_or_create_playlist(youtube, playlist_key):
     desc = meta["description"]
 
     cached = load_cached_playlists()
-    if playlist_key in cached:
+    # Real playlist IDs are ~34 chars ("PL" + 32). Old state.json had truncated
+    # 13-char IDs, which broke playlist sync and description links -> re-resolve.
+    if playlist_key in cached and len(str(cached[playlist_key])) >= 24:
         return cached[playlist_key]
 
     # Query channel playlists

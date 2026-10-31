@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 37,
+  "story_id": "train_ext_channel_tunnel",
+  "story_hash": "a3277c77dc996698",
+  "format": "Engineering Marvel",
+  "title": "Samundar Ke Neeche England-France! 🌊",
+  "youtube_title": "Samundar Ke Neeche England-France! 🌊",
+  "title_variations": [
+    "Samundar Ke Neeche England-France! 🌊",
+    "Channel Tunnel Eurotunnel 50 km undersea rail link 🚂",
+    "Samundar Ke Neeche England-France! 🌊 #Shorts",
+    "The Real Story: Channel Tunnel Eurotunnel 50 km undersea rail link"
+  ],
+  "tagline": "Channel Tunnel Eurotunnel 50 km undersea rail link",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Channel_Tunnel"
+  ],
+  "verified_fact": "The Channel Tunnel, opened in 1994, runs 50.45 km (38 km undersea) beneath the English Channel connecting England and France at 45 m below the seabed.",
+  "voiceover_script": "England aur France ke beech English Channel ke neeche se train guzarti hai! 50 kilometer lambi surang mein se 38 kilometer samundar ke neeche hai. Eurostar train yahan 160 kilometer per hour ki speed se chalta hai, 45 meter samundar ki tali ke neeche. Ye tunnel 1994 mein khuli thi aur aaj bhi engineering ka sabse bada kamaal hai.",
+  "debate_question": "Mumbai se Surat undersea tunnel — possible hai?",
+  "pinned_comment": "🌊 Samundar ke 45m neeche train! England se France 35 minute mein!",
+  "description": "Samundar Ke Neeche England-France! 🌊\n\n🚂 Channel Tunnel Eurotunnel 50 km undersea rail link\n\nThe Channel Tunnel, opened in 1994, runs 50.45 km (38 km undersea) beneath the English Channel connecting England and France at 45 m below the seabed.\n\n👉 Mumbai se Surat undersea tunnel — possible hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#ChannelTunnel #Eurotunnel #Eurostar #UnderseaTunnel #EngineeringMarvel #UK #Shorts",
+  "tags": [
+    "ChannelTunnel",
+    "Eurotunnel",
+    "Eurostar",
+    "UnderseaTunnel",
+    "EngineeringMarvel",
+    "UK",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Samundar ke neeche England se France!",
+      "prompt": "English Channel rough sea surface above with tunnel diagram below 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "50 km surang, 38 km samundar ke neeche!",
+      "prompt": "Eurostar high speed train rushing through illuminated Channel Tunnel 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "160 km/h, 45 meter samundar ki tali ke neeche!",
+      "prompt": "Tunnel boring machine cross section undersea rock 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "1994 mein khuli — 7 saal ki khudaai!",
+      "prompt": "Workers celebrating breakthrough of Channel Tunnel 1994 historical 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "England-France 35 minute mein!",
+      "prompt": "Eurostar train pulling out of London St Pancras station sleek 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "15 billion Pound ki mega project!",
+      "prompt": "Eurostar arriving at Paris Gare du Nord station 9:16"
+    }
+  ]
+}

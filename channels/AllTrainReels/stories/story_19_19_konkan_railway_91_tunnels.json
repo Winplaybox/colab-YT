@@ -1,0 +1,86 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 19,
+  "story_id": "train_19_konkan_railway_91_tunnels",
+  "story_hash": "e34fc8f4f2011f43",
+  "format": "Indian Railways Specials",
+  "title": "Konkan Railway: 91 Tunnels Ka Chamatkar! 🛤️",
+  "youtube_title": "Konkan Railway: 91 Tunnels Ka Chamatkar! 🛤️",
+  "title_variations": [
+    "Konkan Railway: 91 Tunnels Ka Chamatkar! 🛤️",
+    "741 km Western Ghats engineering marvel 🚂",
+    "Konkan Railway: 91 Tunnels Ka Chamatkar! 🛤️ #Shorts",
+    "The Real Story: 741 km Western Ghats engineering marvel"
+  ],
+  "tagline": "741 km Western Ghats engineering marvel",
+  "visual_theme": "CABIN_POV_RADAR",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Konkan_Railway",
+    "https://konkanrailway.com"
+  ],
+  "verified_fact": "Konkan Railway spans 741 km through the challenging Western Ghats, featuring 91 tunnels (totaling 84 km) and over 2,000 bridges, including the 6.5 km Karbude tunnel.",
+  "voiceover_script": "Western Ghats ke pahadon ko cheer kar banaya gaya Konkan Railway route! 741 kilometer lambe is route ko banana ek waqt par lagbhag asambhav maana jaata tha, kyunki yahan dhasne wale pahad aur gehri ghaatiyan theen. Lekin Indian engineers ne is route par 91 tunnels aur 2000 se zyada bridges banaye! Karbude tunnel akela 6.5 kilometer lamba hai. Monsoon ke dauran ghani hariyali aur jharno ke beech se guzarti ye train ek jannat jaisa safar ban jaati hai.",
+  "debate_question": "Kya aapne monsoon mein Konkan Railway par safar kiya hai?",
+  "pinned_comment": "🛤️ 741 KM, 91 Tunnels aur 2,000 Bridges! Western Ghats ka sabse khubsurat rail route. Kaisa laga ye safar?",
+  "description": "Konkan Railway: 91 Tunnels Ka Chamatkar! 🛤️\n\n🚂 741 km Western Ghats engineering marvel\n\nKonkan Railway spans 741 km through the challenging Western Ghats, featuring 91 tunnels (totaling 84 km) and over 2,000 bridges, including the 6.5 km Karbude tunnel.\n\n👉 Kya aapne monsoon mein Konkan Railway par safar kiya hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#KonkanRailway #WesternGhats #IndianRailways #ScenicTrain #Shorts",
+  "tags": [
+    "KonkanRailway",
+    "WesternGhats",
+    "IndianRailways",
+    "ScenicTrain",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Pahadon ko cheer kar bana Konkan Railway!",
+      "sound_cue": "mountain_rain",
+      "prompt": "Lush green Western Ghats mountain range covered in soft monsoon clouds, tall railway viaduct bridge spanning valley, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "741 KM lambe route par 91 Tunnels!",
+      "sound_cue": "tunnel_entry",
+      "prompt": "Passenger train entering a solid rock tunnel portal surrounded by dense tropical forest foliage, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "2,000 se zyada bridges banaye gaye the.",
+      "sound_cue": "viaduct_rumble",
+      "prompt": "High concrete railway pier bridge carrying railway line high above green river valley, dramatic perspective, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Karbude tunnel akela 6.5 KM lamba hai!",
+      "sound_cue": "express_whoosh",
+      "prompt": "Express train emerging out of dark tunnel opening into vibrant green mist-covered forest landscape, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Monsoon mein ye safar jannat ban jata hai.",
+      "sound_cue": "melodic_horn",
+      "prompt": "Train rolling along lush green valley with small streams and fresh monsoon vegetation glistening in soft sunlight, 9:16 vertical portrait"
+    }
+  ]
+}

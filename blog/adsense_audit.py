@@ -27,11 +27,12 @@ from config import BLOG_ID, BLOG_NAME, BLOG_URL
 from blogger_publisher import get_blogger_service
 
 MANDATORY_LEGAL_PAGES = [
+    {"slug": "content-policy", "name": "Content Policy", "file": "blog/legal_pages/content_policy.html"},
     {"slug": "privacy-policy", "name": "Privacy Policy", "file": "blog/legal_pages/privacy_policy.html"},
+    {"slug": "terms-of-service", "name": "Terms of Service", "file": "blog/legal_pages/terms_of_service.html"},
+    {"slug": "disclaimer", "name": "Disclaimer", "file": "blog/legal_pages/disclaimer.html"},
     {"slug": "about-us", "name": "About Us", "file": "blog/legal_pages/about_us.html"},
-    {"slug": "contact-us", "name": "Contact Us", "file": "blog/legal_pages/contact_us.html"},
-    {"slug": "terms-and-conditions", "name": "Terms and Conditions", "file": "blog/legal_pages/terms_and_conditions.html"},
-    {"slug": "disclaimer", "name": "Disclaimer", "file": "blog/legal_pages/disclaimer.html"}
+    {"slug": "contact-us", "name": "Contact Us", "file": "blog/legal_pages/contact_us.html"}
 ]
 
 def run_adsense_audit():

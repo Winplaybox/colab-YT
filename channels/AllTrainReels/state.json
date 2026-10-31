@@ -1,10 +1,10 @@
 {
   "channel_id": "UCKfX7By0w94LHI-AWj0a_QQ",
   "channel_name": "All Train Reels",
-  "current_story_number": 14,
+  "current_story_number": 46,
   "total_stories": 3000,
-  "last_run": "2026-10-12T16:46:19.230223",
-  "last_uploaded_video_id": "X_nHw5M3h-A",
+  "last_run": "2026-10-12T18:28:18.524535",
+  "last_uploaded_video_id": "c-paFEpzR4M",
   "history": [
     {
       "episode_number": 1,
@@ -96,9 +96,40 @@
       "video_id": "X_nHw5M3h-A",
       "mode": "scheduled",
       "timestamp": "2026-10-12T16:46:19.230223"
+    },
+    {
+      "episode_number": 14,
+      "title": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥",
+      "video_id": "KFysgZaRvzU",
+      "mode": "scheduled",
+      "timestamp": "2026-10-12T17:27:14.469158"
+    },
+    {
+      "episode_number": 15,
+      "title": "Rajdhani vs Duronto vs Garib Rath: Kaun Best? 🚄",
+      "video_id": "c-paFEpzR4M",
+      "mode": "scheduled",
+      "timestamp": "2026-10-12T18:28:18.524535"
     }
   ],
-  "used_topic_ids": [],
+  "used_topic_ids": [
+    "tgv_v150_574kmh",
+    "scmaglev_l0_603kmh",
+    "bhp_7km_iron_ore_2001",
+    "mauritania_sahara_train",
+    "chenab_bridge_india",
+    "gotthard_base_tunnel",
+    "channel_tunnel_eurotunnel",
+    "pamban_bridge_vertical_lift",
+    "kalka_shimla_103_tunnels",
+    "jungfrau_railway_switzerland",
+    "darjeeling_toy_train",
+    "trans_siberian_railway",
+    "shinkansen_n700s_bullet",
+    "indian_railways_wag12b",
+    "icf_coach_production_record",
+    "peru_andean_railway_highest"
+  ],
   "playlists": {
     "MASTER_SERIES": "PLM24RkzG7bOk",
     "BULLET_TRAINS": "PLasaPnujHgDE",

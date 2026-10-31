@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 30,
+  "story_id": "train_30_last_steam_engines_future",
+  "story_hash": "d5dfe831068af62d",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "Aakhri Steam Trains: Kya Band Ho Jayengi? 💨",
+  "youtube_title": "Aakhri Steam Trains: Kya Band Ho Jayengi? 💨",
+  "title_variations": [
+    "Aakhri Steam Trains: Kya Band Ho Jayengi? 💨",
+    "Living steam heritage preservation 🚂",
+    "Aakhri Steam Trains: Kya Band Ho Jayengi? 💨 #Shorts",
+    "The Real Story: Living steam heritage preservation"
+  ],
+  "tagline": "Living steam heritage preservation",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Rewari_Railway_Heritage_Museum",
+    "https://indianrailways.gov.in"
+  ],
+  "verified_fact": "While commercial mainline steam ended in the 1990s on major world networks, countries like India, UK, and Germany maintain working steam locomotives in specialized heritage sheds like the Rewari Steam Centre for tourist and special runs.",
+  "voiceover_script": "Koyla, aag aur paani... kya steam engines ab hamesha ke liye museum ban chuke hain? 1990s mein electric aur diesel ke aane ke baad commercial runs band ho gaye the. Lekin Indian Railways ne Rewari Heritage Loco Shed mein in aitihasik steam engines ko aaj bhi zinda rakha hai! Inka chuk-chuk sound, rhythmic driving rods aur whistle mechanical era ki pehchan hain. Special occasions aur heritage tours par in lohe ke ghodon ko chalana hamare itihaas ko zinda rakhna hai.",
+  "debate_question": "Kya heritage steam trains ko hamesha zinda rakhna chahiye?",
+  "pinned_comment": "💨 Steam engine ka whistle aur mechanical chuk-chuk sound! Rewari Heritage Shed mein ye dharohar aaj bhi zinda hai.",
+  "description": "Aakhri Steam Trains: Kya Band Ho Jayengi? 💨\n\n🚂 Living steam heritage preservation\n\nWhile commercial mainline steam ended in the 1990s on major world networks, countries like India, UK, and Germany maintain working steam locomotives in specialized heritage sheds like the Rewari Steam Centre for tourist and special runs.\n\n👉 Kya heritage steam trains ko hamesha zinda rakhna chahiye?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#SteamTrain #RewariShed #HeritageRail #TrainHistory #Locomotive #Shorts",
+  "tags": [
+    "SteamTrain",
+    "RewariShed",
+    "HeritageRail",
+    "TrainHistory",
+    "Locomotive",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Koyla, aag aur paani... steam trains ka daur!",
+      "sound_cue": "steam_sigh",
+      "prompt": "Locomotive mechanic cleaning brass fittings on black vintage steam locomotive in heritage railway roundhouse shed, atmospheric, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "1990s ke baad commercial steam runs band huye.",
+      "sound_cue": "steam_exhaust",
+      "prompt": "Historic steam train resting beside modern electric high-speed train on adjacent tracks at sunset, historical transition, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Rewari Heritage Shed mein aaj bhi zinda hain!",
+      "sound_cue": "firebox_roar",
+      "prompt": "Fiery orange glow of burning coals inside open steam locomotive firebox door, driver holding shovel at night, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Chuk-chuk sound aur whistle mechanical era ki shaan!",
+      "sound_cue": "classic_whistle",
+      "prompt": "Restored black steam locomotive crossing a stone bridge at sunset, white steam plume rising over river, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Hamare railway itihaas ki amar dharohar!",
+      "sound_cue": "fade_whistle",
+      "prompt": "Heritage steam locomotive with shiny polished green paint and brass bell gleaming under golden hour light, 9:16 vertical portrait"
+    }
+  ]
+}

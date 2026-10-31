@@ -31,22 +31,22 @@ os.makedirs(thumbs_base, exist_ok=True)
 
 def enhance_pixar_prompt(base_prompt):
     """
-    Enhances base prompt into a hyper-realistic ultra 8K detailed 3D animated visual:
-    - Stylized expressive 3D character (Pixar/Disney emotional depth)
-    - Hyper-realistic 8K physical materials, individual fur strands, and tactile textures
-    - Octane 8K raytracing, subsurface scattering, authentic volumetric lighting
-    - Shot on 35mm master prime lens, f/1.8 shallow depth of field, natural bokeh
-    - Studio-grade production quality
+    MindNest Tales visual style (changed Oct 2026): clean 2D FLAT EXPLAINER animation.
+    Name kept for compatibility with existing callers.
     """
-    style_suffix = (
-        "hyper-realistic 8k resolution, ultra-detailed 3D feature film animation masterpiece, "
-        "octane render 8k, raytracing, subsurface scattering, individual realistic fur strands, "
-        "tactile skin textures, cinematic lighting, volumetric god rays, shot on 35mm master prime lens, "
-        "f/1.8 shallow depth of field, authentic Disney Pixar character design, Unreal Engine 5.4, "
-        "rich cinematic color grading, photorealistic 8k uhd, vertical portrait 9:16"
+    clean = base_prompt
+    for junk in ("portrait 9:16", "3D Pixar-style", "Pixar", "Disney", "3D", "photorealistic",
+                 "hyper-realistic", "8K", "8k", "octane render", "Unreal Engine"):
+        clean = clean.replace(junk, "")
+    clean = " ".join(clean.split()).strip(" ,")
+    style = (
+        "flat 2D vector illustration, children's explainer animation style, simple rounded shapes, "
+        "cute friendly animal characters with big expressive eyes, bold clean colours, soft flat shading, "
+        "no outlines or thin outlines, simple uncluttered background, warm cheerful palette, "
+        "vertical 9:16 composition, main character centred in the upper two-thirds, "
+        "family-friendly, no text, no letters, no watermark"
     )
-    clean = base_prompt.replace("portrait 9:16", "").replace("3D Pixar-style", "").strip()
-    return f"Hyper-realistic 8K photorealistic 3D cinematic animated {clean}, {style_suffix}"
+    return f"{clean}, {style}"
 
 def get_hf_token():
     """Retrieves Hugging Face token from environment or local credentials file."""
@@ -143,6 +143,19 @@ def generate_via_z_image_turbo(prompt, output_path):
         print(f"Z-Image-Turbo generation notice: {e}")
     return False
 
+def _shared_ai_image(prompt, output_path, width, height):
+    """Shared Gemini/OpenAI generator (channels/common/ai_images.py). HF free credits ended 15 Oct 2026."""
+    try:
+        root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common.ai_images import generate
+        return generate(prompt, output_path, width, height)
+    except Exception as e:
+        print(f"Shared AI image notice: {e}")
+        return False
+
+
 def generate_via_huggingface_flux(prompt, output_path, hf_token):
     """Generates Photorealistic 3D image via Hugging Face Serverless FLUX.1."""
     try:
@@ -191,7 +204,11 @@ def generate_scene_image(prompt, output_path):
         os.makedirs(out_dir, exist_ok=True)
     enhanced = enhance_pixar_prompt(prompt)
 
-    # 1. Primary: Lightning-fast Diffusion Transformer (Free, unlimited studio quality)
+    # 0. Shared Gemini/OpenAI provider (reliable, paid per image)
+    if _shared_ai_image(enhanced, output_path, 1080, 1920):
+        return output_path
+
+    # 1. Z-Image-Turbo ZeroGPU Space (free, but quota-limited on CI runners)
     print(f"🎨 Generating via Z-Image-Turbo Studio Engine (9:16 Photorealistic 3D)...")
     if generate_via_z_image_turbo(enhanced, output_path):
         return output_path

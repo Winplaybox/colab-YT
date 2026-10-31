@@ -28,6 +28,20 @@ except ImportError:
     HAS_GOOGLE_CLIENT = False
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+def _yt_brain():
+    """Shared metadata brain (channels/common/yt_brain.py). Returns module or None."""
+    try:
+        root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common import yt_brain
+        return yt_brain
+    except Exception as e:
+        print(f"yt_brain unavailable: {e}")
+        return None
+
 sys.path.insert(0, script_dir)
 
 from story_generator import generate_story_from_bank, get_or_create_story, peek_story
@@ -172,6 +186,9 @@ def upload_short(video_path, story_data, publish_mode="schedule", force=False):
         print("⚡ [FORCE MODE] Live YouTube duplicate check bypassed for upload.")
 
     media = MediaFileUpload(video_path, chunksize=10*1024*1024, resumable=True, mimetype="video/mp4")
+    _b = _yt_brain()
+    if _b:
+        body = _b.before_insert("AllTrainReels", youtube, body, is_short=True)
     request = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
 
     print(f"🚀 Uploading Short to YouTube: '{title}'...")
@@ -183,6 +200,8 @@ def upload_short(video_path, story_data, publish_mode="schedule", force=False):
 
     video_id = response.get("id")
     video_url = f"https://www.youtube.com/shorts/{video_id}"
+    if _b:
+        _b.after_insert("AllTrainReels", youtube, video_id)
     print(f"✅ Video Uploaded! URL: {video_url}")
 
     # Add pinned comment

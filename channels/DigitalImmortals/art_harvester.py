@@ -113,6 +113,40 @@ HISTORICAL_ART_CATALOG = {
             "title": "File:Rama redeems Ahalya from Gautama's curse.jpg",
             "desc": "Lord Rama redeeming Mata Ahalya with his sacred lotus footsteps"
         }
+    ],
+
+    # Episode 08: Shiva Dhanush Breaking, Sita-Rama Vivaha & Parashurama Confrontation
+    8: [
+        {
+            "name": "shiva_dhanush_broken",
+            "title": "File:Ravi Varma-Rama-breaking-bow.jpg",
+            "fallback_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Ravi_Varma-Rama-breaking-bow.jpg",
+            "desc": "Lord Sri Rama breaking the colossal Shiva Dhanush in King Janaka's assembly"
+        },
+        {
+            "name": "sita_ram_vivah",
+            "title": "File:The marriage ceremony of Rama and Sita.jpg",
+            "fallback_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/The_marriage_ceremony_of_Rama_and_Sita.jpg",
+            "desc": "Sacred divine wedding ceremony of Sri Rama and Sita Devi in Mithila"
+        },
+        {
+            "name": "four_brothers_wedding",
+            "title": "File:Ramayana - Marriage of Rama Bharata Lakshmana and Shatrughna.jpg",
+            "fallback_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Ramayana_-_Marriage_of_Rama_Bharata_Lakshmana_and_Shatrughna.jpg",
+            "desc": "Four princes of Ayodhya marrying the four princesses of Mithila and Sankasya"
+        },
+        {
+            "name": "parashurama_confrontation",
+            "title": "File:Meeting of Rama and Parashurama, from the Mewar Ramayana.jpg",
+            "fallback_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Meeting_of_Rama_and_Parashurama%2C_from_the_Mewar_Ramayana.jpg",
+            "desc": "Bhagavan Parashurama challenging Sri Rama on the return journey to Ayodhya"
+        },
+        {
+            "name": "parashurama_challenge",
+            "title": "File:While returning to Ayodhya Parshurama challenges Rama for breaking the bow of lord Shiva.jpg",
+            "fallback_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/While_returning_to_Ayodhya_Parshurama_challenges_Rama_for_breaking_the_bow_of_lord_Shiva.jpg",
+            "desc": "Sri Rama stringing the celestial Vishnu Dhanush as Parashurama surrenders"
+        }
     ]
 }
 

@@ -1,7 +1,7 @@
 """
 Engine for TigerVlogs-2026:
-- 100% Original 16:9 Long-Form Videos in 4K/8K Master Quality with Real Food Images & Hinglish Speech
-- Transformative 9:16 Shorts with Audio Pitch/Speed Shift & 4K Ultra-Vertical Canvas
+- 100% Original 16:9 Long-Form Videos in 1080p with Real Food Images & Hinglish Speech
+- Transformative 9:16 Shorts with Audio Pitch/Speed Shift & 1080x1920 vertical canvas
 - Cross-platform FFmpeg auto-resolution (Windows, Linux, Mac, Cloud, Self-Hosted)
 """
 
@@ -9,7 +9,11 @@ import os
 import subprocess
 import requests
 import json
-import yt_dlp
+try:
+    import yt_dlp  # only used by the legacy remix path (no longer called by scheduler.py)
+except Exception:
+    yt_dlp = None
+import sys
 
 # Auto-configure FFmpeg across all platforms (Windows, Linux, GitHub Runner)
 try:
@@ -17,6 +21,22 @@ try:
     static_ffmpeg.add_paths()
 except Exception:
     pass
+
+def _ai_food_image(subject, output_path, width, height):
+    """Fallback when Wikipedia has no usable photo: shared Gemini/OpenAI generator."""
+    try:
+        root = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common.ai_images import generate
+        prompt = (f"Appetizing close-up food photograph of {subject.replace('_', ' ')}, authentic Indian street food, "
+                  "pure vegetarian, natural light, shallow depth of field, served on a traditional plate")
+        if generate(prompt, output_path, width, height):
+            return output_path
+    except Exception as e:
+        print(f"AI food image notice: {e}")
+    return None
+
 
 def fetch_wiki_food_image(wiki_title, output_path='temp_food.jpg'):
     """Fetches authentic, high-resolution food photography from Wikipedia/Wikimedia Commons."""
@@ -112,39 +132,41 @@ def generate_original_longform_video(
     """
     Renders 100% original 16:9 widescreen video with real food photography and
     natural, charismatic human Hinglish voiceover (Madhur Neural).
-    Outputs in 4K UHD (3840x2160) to unlock YouTube's VP09/AV01 high-bitrate codec.
+    Outputs 1080p (1920x1080).
     """
     os.makedirs(os.path.dirname(output_file) if os.path.dirname(output_file) else '.', exist_ok=True)
     audio_path = os.path.splitext(output_file)[0] + "_voice.mp3"
     img_path = os.path.splitext(output_file)[0] + "_visual.jpg"
 
     fetched_img = fetch_wiki_food_image(wiki_title, img_path)
+    if not fetched_img:
+        fetched_img = _ai_food_image(wiki_title, img_path, 1920, 1080)
 
     synthesize_resilient_speech(hinglish_script, voice, audio_path)
 
     clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
 
     if fetched_img and os.path.exists(fetched_img):
-        opt_img, is_opt = prepare_optimized_single_image(fetched_img, 3840, 2160)
+        opt_img, is_opt = prepare_optimized_single_image(fetched_img, 1920, 1080)
         img_input = ["-loop", "1", "-i", opt_img]
-        scale_op = "" if is_opt else "scale=3840:2160:force_original_aspect_ratio=increase,crop=3840:2160,"
+        scale_op = "" if is_opt else "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,"
         filter_complex = (
             f"[0:v]{scale_op}"
             "unsharp=5:5:0.8:5:5:0.0,"
-            "drawbox=y=0:h=360:color=0x0a0f1d@0.88:t=fill,"
-            "drawbox=y=1760:h=400:color=0x0a0f1d@0.88:t=fill,"
-            "drawtext=text='EPIC BHARAT INVESTIGATION':fontsize=72:fontcolor=0xf59e0b:x=(w-text_w)/2:y=120,"
-            f"drawtext=text='{clean_hook}':fontsize=100:fontcolor=0xffffff:x=(w-text_w)/2:y=1880,"
-            "drawtext=text='@epicbharat.official':fontsize=56:fontcolor=0x94a3b8:x=120:y=2000[v]"
+            "drawbox=y=0:h=180:color=0x0a0f1d@0.88:t=fill,"
+            "drawbox=y=880:h=200:color=0x0a0f1d@0.88:t=fill,"
+            "drawtext=text='EPIC BHARAT INVESTIGATION':fontsize=36:fontcolor=0xf59e0b:x=(w-text_w)/2:y=60,"
+            f"drawtext=text='{clean_hook}':fontsize=50:fontcolor=0xffffff:x=(w-text_w)/2:y=940,"
+            "drawtext=text='@epicbharat.official':fontsize=28:fontcolor=0x94a3b8:x=60:y=1000[v]"
         )
     else:
-        img_input = ["-f", "lavfi", "-i", "color=c=0x0f172a:s=3840x2160:r=30"]
+        img_input = ["-f", "lavfi", "-i", "color=c=0x0f172a:s=1920x1080:r=30"]
         filter_complex = (
-            "[0:v]drawbox=y=0:h=360:color=0x1e293b@0.9:t=fill,"
-            "drawbox=y=1760:h=400:color=0x1e293b@0.9:t=fill,"
-            "drawtext=text='EPIC BHARAT INVESTIGATION':fontsize=72:fontcolor=0xf59e0b:x=(w-text_w)/2:y=120,"
-            f"drawtext=text='{clean_hook}':fontsize=100:fontcolor=0xffffff:x=(w-text_w)/2:y=1880,"
-            "drawtext=text='@epicbharat.official':fontsize=56:fontcolor=0x94a3b8:x=120:y=2000[v]"
+            "[0:v]drawbox=y=0:h=180:color=0x1e293b@0.9:t=fill,"
+            "drawbox=y=880:h=200:color=0x1e293b@0.9:t=fill,"
+            "drawtext=text='EPIC BHARAT INVESTIGATION':fontsize=36:fontcolor=0xf59e0b:x=(w-text_w)/2:y=60,"
+            f"drawtext=text='{clean_hook}':fontsize=50:fontcolor=0xffffff:x=(w-text_w)/2:y=940,"
+            "drawtext=text='@epicbharat.official':fontsize=28:fontcolor=0x94a3b8:x=60:y=1000[v]"
         )
 
     ffmpeg_cmd = [
@@ -176,7 +198,7 @@ def generate_original_short(
     voice="hi-IN-MadhurNeural"
 ):
     """
-    Renders 100% original 4K Ultra-Vertical Short (2160x3840) with real food photography
+    Renders 100% original 4K Ultra-Vertical Short (1080x1920) with real food photography
     and natural Hinglish speech. Guaranteed to bypass any external download requirements.
     """
     os.makedirs(os.path.dirname(output_file) if os.path.dirname(output_file) else '.', exist_ok=True)
@@ -184,28 +206,30 @@ def generate_original_short(
     img_path = os.path.splitext(output_file)[0] + "_visual.jpg"
 
     fetched_img = fetch_wiki_food_image(wiki_title, img_path)
+    if not fetched_img:
+        fetched_img = _ai_food_image(wiki_title, img_path, 1080, 1920)
 
     synthesize_resilient_speech(hinglish_script, voice, audio_path)
 
     clean_hook = hook_headline.replace("'", "").replace(":", "").replace('"', '')
 
     if fetched_img and os.path.exists(fetched_img):
-        opt_img, is_opt = prepare_optimized_single_image(fetched_img, 2160, 3840)
+        opt_img, is_opt = prepare_optimized_single_image(fetched_img, 1080, 1920)
         img_input = ["-loop", "1", "-i", opt_img]
-        scale_op = "" if is_opt else "scale=2160:3840:force_original_aspect_ratio=increase,crop=2160:3840,"
+        scale_op = "" if is_opt else "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
         filter_complex = (
             f"[0:v]{scale_op}"
             "unsharp=3:3:0.8:3:3:0.0,"
-            "drawbox=y=320:h=440:color=0x1e293b@0.95:t=fill,"
-            f"drawtext=text='{clean_hook}':fontsize=104:fontcolor=0xfacc15:x=(w-text_w)/2:y=490,"
-            "drawtext=text='@epicbharat.official':fontsize=76:fontcolor=0x94a3b8:x=(w-text_w)/2:y=3400[v]"
+            "drawbox=y=160:h=220:color=0x1e293b@0.95:t=fill,"
+            f"drawtext=text='{clean_hook}':fontsize=52:fontcolor=0xfacc15:x=(w-text_w)/2:y=245,"
+            "drawtext=text='@epicbharat.official':fontsize=38:fontcolor=0x94a3b8:x=(w-text_w)/2:y=1700[v]"
         )
     else:
-        img_input = ["-f", "lavfi", "-i", "color=c=0x0a0f1d:s=2160x3840:r=30"]
+        img_input = ["-f", "lavfi", "-i", "color=c=0x0a0f1d:s=1080x1920:r=30"]
         filter_complex = (
-            "[0:v]drawbox=y=320:h=440:color=0x1e293b@0.95:t=fill,"
-            f"drawtext=text='{clean_hook}':fontsize=104:fontcolor=0xfacc15:x=(w-text_w)/2:y=490,"
-            "drawtext=text='@epicbharat.official':fontsize=76:fontcolor=0x94a3b8:x=(w-text_w)/2:y=3400[v]"
+            "[0:v]drawbox=y=160:h=220:color=0x1e293b@0.95:t=fill,"
+            f"drawtext=text='{clean_hook}':fontsize=52:fontcolor=0xfacc15:x=(w-text_w)/2:y=245,"
+            "drawtext=text='@epicbharat.official':fontsize=38:fontcolor=0x94a3b8:x=(w-text_w)/2:y=1700[v]"
         )
 
     ffmpeg_cmd = [
@@ -236,7 +260,7 @@ def remix_street_food_short(
     duration=30
 ):
     """
-    Transforms raw street food video into a high-retention 4K Ultra-Vertical (2160x3840) Short.
+    Transforms raw street food video into a high-retention 4K Ultra-Vertical (1080x1920) Short.
     Applies speed shift (1.05x), color grading (+20% saturation), and branded canvas.
     """
     os.makedirs(os.path.dirname(output_file) if os.path.dirname(output_file) else '.', exist_ok=True)
@@ -244,12 +268,12 @@ def remix_street_food_short(
 
     filter_graph = (
         "[0:v]setpts=0.95238*PTS,eq=saturation=1.2:contrast=1.08,"
-        "scale=2160:2160:force_original_aspect_ratio=decrease,"
-        "pad=2160:3840:(ow-iw)/2:(oh-ih)/2:color=0x0a0f1d,"
+        "scale=1080:1080:force_original_aspect_ratio=decrease,"
+        "pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x0a0f1d,"
         "unsharp=3:3:0.8:3:3:0.0,"
-        "drawbox=y=320:h=440:color=0x1e293b@0.95:t=fill,"
-        f"drawtext=text='{clean_banner}':fontsize=104:fontcolor=0xfacc15:x=(w-text_w)/2:y=490,"
-        "drawtext=text='@epicbharat.official':fontsize=76:fontcolor=0x94a3b8:x=(w-text_w)/2:y=3400[vout];"
+        "drawbox=y=160:h=220:color=0x1e293b@0.95:t=fill,"
+        f"drawtext=text='{clean_banner}':fontsize=52:fontcolor=0xfacc15:x=(w-text_w)/2:y=245,"
+        "drawtext=text='@epicbharat.official':fontsize=38:fontcolor=0x94a3b8:x=(w-text_w)/2:y=1700[vout];"
         "[0:a]atempo=1.05[aout]"
     )
 

@@ -239,6 +239,19 @@ def get_hf_token():
                 pass
     return None
 
+def _shared_ai_image(prompt, output_path, width, height):
+    """Shared Gemini/OpenAI generator (channels/common/ai_images.py). HF free credits ended 15 Oct 2026."""
+    try:
+        root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common.ai_images import generate
+        return generate(prompt, output_path, width, height)
+    except Exception as e:
+        print(f"Shared AI image notice: {e}")
+        return False
+
+
 def generate_via_huggingface_flux(prompt, output_path, hf_token):
     """Generates visual via Hugging Face Serverless FLUX.1-schnell in 9:16 portrait."""
     try:
@@ -357,7 +370,8 @@ def generate_story_assets(story_input):
         # Fallback to AI generation if real photo not available or download failed
         if not success:
             prompt = shot.get("prompt", title)
-            hf_token = get_hf_token()
+            success = _shared_ai_image(prompt, shot_path, 1080, 1920)
+            hf_token = get_hf_token() if not success else None
             if hf_token:
                 success = generate_via_huggingface_flux(prompt, shot_path, hf_token)
                 if success:

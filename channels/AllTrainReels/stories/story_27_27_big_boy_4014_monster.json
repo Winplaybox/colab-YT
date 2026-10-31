@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 27,
+  "story_id": "train_27_big_boy_4014_monster",
+  "story_hash": "84d914168fb8a693",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "Duniya Ka Monster Steam Engine: Big Boy! 🦖",
+  "youtube_title": "Duniya Ka Monster Steam Engine: Big Boy! 🦖",
+  "title_variations": [
+    "Duniya Ka Monster Steam Engine: Big Boy! 🦖",
+    "Union Pacific Big Boy 4014 articulated monster 🚂",
+    "Duniya Ka Monster Steam Engine: Big Boy! 🦖 #Shorts",
+    "The Real Story: Union Pacific Big Boy 4014 articulated monster"
+  ],
+  "tagline": "Union Pacific Big Boy 4014 articulated monster",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Union_Pacific_Big_Boy",
+    "https://www.up.com/heritage/steam/4014/"
+  ],
+  "verified_fact": "Union Pacific Big Boy 4014 is 40.4 m (133 ft) long, weighs ~540 tonnes in working order, and produces over 6,000 drawbar horsepower with a 4-8-8-4 articulated wheel arrangement built to cross steep Rocky Mountain grades.",
+  "voiceover_script": "Patriyon par daudne wala lohe ka daityaa: Union Pacific ka 'Big Boy 4014'! Engine aur tender milakar ye 40 meter lamba hai—ek ten-story building se bhi lamba! Iska kul wazan lagbhag 540 ton tha, aur ye 6000 horsepower se zyada generate karta tha. Isme four-eight-eight-four articulated wheels the, taaki itna bada engine turns par asani se mud sake. Rocky Mountains ke teekhe pahadon par bhari freight gaadiyan kheenchna iska kaam tha!",
+  "debate_question": "40 meter lamba aur 540 ton ka steam engine: dekh kar kaisa lagega?",
+  "pinned_comment": "🦖 40.4 Meter lamba aur 540 Ton wazan! Big Boy 4014 patriyon ka monster engine tha. Kaisa laga ye beast?",
+  "description": "Duniya Ka Monster Steam Engine: Big Boy! 🦖\n\n🚂 Union Pacific Big Boy 4014 articulated monster\n\nUnion Pacific Big Boy 4014 is 40.4 m (133 ft) long, weighs ~540 tonnes in working order, and produces over 6,000 drawbar horsepower with a 4-8-8-4 articulated wheel arrangement built to cross steep Rocky Mountain grades.\n\n👉 40 meter lamba aur 540 ton ka steam engine: dekh kar kaisa lagega?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#BigBoy4014 #UnionPacific #SteamLocomotive #MonsterTrain #Railways #Shorts",
+  "tags": [
+    "BigBoy4014",
+    "UnionPacific",
+    "SteamLocomotive",
+    "MonsterTrain",
+    "Railways",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Patriyon par chalne wala monster: Big Boy!",
+      "sound_cue": "earth_rumble",
+      "prompt": "Massive black articulated Union Pacific Big Boy 4014 steam locomotive charging forward, colossal cowcatcher, headlight blazing, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "40 meter lamba—ek 10-manzila building jaisa!",
+      "sound_cue": "steam_blasts",
+      "prompt": "Side perspective showing the incredible 40-meter length of Big Boy engine and tender coupled together, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "540 Ton wazan aur 6,000+ Horsepower!",
+      "sound_cue": "heavy_metal",
+      "prompt": "Low-angle shot of sixteen massive steel driving wheels and heavy connecting rods pounding down rails, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Rocky Mountains ke chadhao par freight trains kheenchta tha.",
+      "sound_cue": "deep_whistle",
+      "prompt": "Big Boy hauling a long freight train through steep Wyoming mountain pass, billowing white smoke against blue sky, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Articulated wheel system se turns par mudta tha!",
+      "sound_cue": "whistle_outro",
+      "prompt": "Restored Big Boy 4014 rumbles past crowd of railway spectators at a station event in bright sunlight, 9:16 vertical portrait"
+    }
+  ]
+}

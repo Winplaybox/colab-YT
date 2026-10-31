@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 46,
+  "story_id": "train_ext_peru_andes",
+  "story_hash": "d1cc703bad62695b",
+  "format": "Mountain Railway",
+  "title": "4,829m Pe Train! Duniya Ka Highest! 🏔️",
+  "youtube_title": "4,829m Pe Train! Duniya Ka Highest! 🏔️",
+  "title_variations": [
+    "4,829m Pe Train! Duniya Ka Highest! 🏔️",
+    "Peru Central Railway 4829m world highest standard gauge 🚂",
+    "4,829m Pe Train! Duniya Ka Highest! 🏔️ #Shorts",
+    "The Real Story: Peru Central Railway 4829m world highest standard gauge"
+  ],
+  "tagline": "Peru Central Railway 4829m world highest standard gauge",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Peru_Central_Railway"
+  ],
+  "verified_fact": "Peru's Central Railway reaches 4,829 m at Galera tunnel — the world's highest point reached by any standard-gauge railway.",
+  "voiceover_script": "Samundar ki satha se 4,829 meter upar — ye hai duniya ki sabse unchi standard gauge railway! Peru ka Central Railway Andes ke pahaadon ko phaad kar jaati hai. Is unchaai par oxygen itni kam hai ki gadiyon mein oxygen cylinders rakhe jaate the passengers ke liye. Ye line 19 century mein American engineer Henry Meiggs ne banai thi — har kilometer par ek miracle hai!",
+  "debate_question": "4,829m par oxygen cylinder zaroorat ke saath train travel — karoge?",
+  "pinned_comment": "🏔️ 4,829m — oxygen cylinder chahiye! Duniya ki highest standard gauge railway!",
+  "description": "4,829m Pe Train! Duniya Ka Highest! 🏔️\n\n🚂 Peru Central Railway 4829m world highest standard gauge\n\nPeru's Central Railway reaches 4,829 m at Galera tunnel — the world's highest point reached by any standard-gauge railway.\n\n👉 4,829m par oxygen cylinder zaroorat ke saath train travel — karoge?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Peru #AndesRailway #HighestRailway #MountainTrain #SouthAmerica #WorldRecord #Shorts",
+  "tags": [
+    "Peru",
+    "AndesRailway",
+    "HighestRailway",
+    "MountainTrain",
+    "SouthAmerica",
+    "WorldRecord",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "4,829m — oxygen level gir jaata hai!",
+      "prompt": "Train on extreme altitude Andean railway Peru snow mountains 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Duniya ki sabse unchi standard gauge!",
+      "prompt": "Central Peru Railway zigzag switchback mountain route 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Oxygen cylinders passengers ke liye!",
+      "prompt": "Andes mountain railway passengers oxygen supplemental equipment 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Henry Meiggs ne banaya 19th century mein!",
+      "prompt": "Historic Andean railway viaduct stone arch Peruvian mountains 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Har kilometer par ek engineering miracle!",
+      "prompt": "Train crossing Andes gorge valley extreme altitude Peru 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Clouds ke neeche se nikalti hai train!",
+      "prompt": "Mountain railway train above cloud level Andes Peru panorama 9:16"
+    }
+  ]
+}

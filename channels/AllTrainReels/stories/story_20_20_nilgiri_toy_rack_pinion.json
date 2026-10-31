@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 20,
+  "story_id": "train_20_nilgiri_toy_train_rack_pinion",
+  "story_hash": "ea9176236970f77f",
+  "format": "Indian Railways Specials",
+  "title": "Nilgiri Toy Train Pahad Kaise Chadhti Hai? 🚂",
+  "youtube_title": "Nilgiri Toy Train Pahad Kaise Chadhti Hai? 🚂",
+  "title_variations": [
+    "Nilgiri Toy Train Pahad Kaise Chadhti Hai? 🚂",
+    "UNESCO Nilgiri Mountain Railway rack and pinion 🚂",
+    "Nilgiri Toy Train Pahad Kaise Chadhti Hai? 🚂 #Shorts",
+    "The Real Story: UNESCO Nilgiri Mountain Railway rack and pinion"
+  ],
+  "tagline": "UNESCO Nilgiri Mountain Railway rack and pinion",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Nilgiri_Mountain_Railway",
+    "https://whc.unesco.org/en/list/944"
+  ],
+  "verified_fact": "Nilgiri Mountain Railway (NMR) is a UNESCO World Heritage site built in 1908; it is India's only rack railway, using the Swiss Abt rack system with toothed center rails to climb steep 1:12.5 gradients.",
+  "voiceover_script": "Itne dhalan wale pahad par ye chhoti train phisle bina kaise chadhti hai? Ye hai UNESCO World Heritage Nilgiri Mountain Railway! Is route par dhalan itni teekhi hai ki sadharan patriyon par pahiye phisal jayenge. Isliye dono patriyon ke theek beech mein ek daante-dar 'Rack Rail' lagi hoti hai. Locomotive ke neeche laga toothed gear is daante mein lock hokar train ko pahad par upar kheenchta hai. 100 saal purani Swiss engineering ka ye behtareen udaharan hai!",
+  "debate_question": "Kya aap Ooty ki Nilgiri Toy Train mein safar kar chuke hain?",
+  "pinned_comment": "🚂 Patri ke beech toothed 'Rack Rail' se chadhti hai ye train! UNESCO World Heritage NMR. Kaisi lagi ye technique?",
+  "description": "Nilgiri Toy Train Pahad Kaise Chadhti Hai? 🚂\n\n🚂 UNESCO Nilgiri Mountain Railway rack and pinion\n\nNilgiri Mountain Railway (NMR) is a UNESCO World Heritage site built in 1908; it is India's only rack railway, using the Swiss Abt rack system with toothed center rails to climb steep 1:12.5 gradients.\n\n👉 Kya aap Ooty ki Nilgiri Toy Train mein safar kar chuke hain?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#NilgiriToyTrain #Ooty #UNESCO #SteamTrain #IndianRailways #Shorts",
+  "tags": [
+    "NilgiriToyTrain",
+    "Ooty",
+    "UNESCO",
+    "SteamTrain",
+    "IndianRailways",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Itne dhalan wale pahad par train kaise chadhti hai?",
+      "sound_cue": "steam_pant",
+      "prompt": "Blue and cream vintage Nilgiri steam locomotive climbing a steep curved mountain gradient flanked by eucalyptus trees and tea gardens, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "UNESCO World Heritage Nilgiri Mountain Railway!",
+      "sound_cue": "gear_clink",
+      "prompt": "Close-up macro shot of the central toothed steel Abt rack rail running down the center of the railway track, oily steel detail, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Patri ke theek beech mein daante-dar Rack Rail!",
+      "sound_cue": "gear_mesh",
+      "prompt": "Technical mechanical illustration of locomotive pinion gear teeth interlocking with the central toothed rail, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Engine piche se train ko dhakka dekar chadhata hai.",
+      "sound_cue": "steam_whistle",
+      "prompt": "Vintage steam locomotive pushing passenger coaches from behind up misty mountain curve, white steam curls, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "100 saal purani behtareen engineering!",
+      "sound_cue": "toy_whistle",
+      "prompt": "Toy train crossing a picturesque stone arch viaduct above lush green tea estates in Nilgiri hills, morning sun, 9:16 vertical portrait"
+    }
+  ]
+}

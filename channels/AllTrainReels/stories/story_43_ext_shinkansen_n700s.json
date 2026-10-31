@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 43,
+  "story_id": "train_ext_shinkansen_n700s",
+  "story_hash": "431d561f87eed4a4",
+  "format": "World Railways",
+  "title": "Japan Ki Bullet Train: Zero Delay! 🚅",
+  "youtube_title": "Japan Ki Bullet Train: Zero Delay! 🚅",
+  "title_variations": [
+    "Japan Ki Bullet Train: Zero Delay! 🚅",
+    "Shinkansen N700S punctuality 0.6 seconds average delay 🚂",
+    "Japan Ki Bullet Train: Zero Delay! 🚅 #Shorts",
+    "The Real Story: Shinkansen N700S punctuality 0.6 seconds average delay"
+  ],
+  "tagline": "Shinkansen N700S punctuality 0.6 seconds average delay",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Shinkansen"
+  ],
+  "verified_fact": "Japan's Shinkansen has an average delay of just 0.6 minutes (36 seconds) per year across all services. The N700S runs at 320 km/h and has carried 10 billion passengers since 1964.",
+  "voiceover_script": "Japan ki Shinkansen bullet train ka average delay sirf 0.6 minute — matlab 36 second — poore saal mein! 1964 mein shuru hui ye train aaj 320 kilometer per hour daoudti hai. 10 billion passengers carry kar chuki hai aaj tak. Aur is pure time mein zero derailment fatality! Japan ne punctuality ka definition hi badal diya.",
+  "debate_question": "Indian Railways ka average delay 50 min se 5 min kab tak?",
+  "pinned_comment": "🚅 36 second average delay! 60 saal, zero fatality derailment. Japan!",
+  "description": "Japan Ki Bullet Train: Zero Delay! 🚅\n\n🚂 Shinkansen N700S punctuality 0.6 seconds average delay\n\nJapan's Shinkansen has an average delay of just 0.6 minutes (36 seconds) per year across all services. The N700S runs at 320 km/h and has carried 10 billion passengers since 1964.\n\n👉 Indian Railways ka average delay 50 min se 5 min kab tak?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Shinkansen #BulletTrain #Japan #N700S #HighSpeedRail #Punctuality #Shorts",
+  "tags": [
+    "Shinkansen",
+    "BulletTrain",
+    "Japan",
+    "N700S",
+    "HighSpeedRail",
+    "Punctuality",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Sirf 36 second average delay — poore saal!",
+      "prompt": "Japan Shinkansen N700S white bullet train on raised viaduct Mount Fuji 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "320 km/h, zero derailment fatality!",
+      "prompt": "Shinkansen nose aerodynamic duck-bill white speed blur 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "1964 se 10 billion passengers!",
+      "prompt": "Shinkansen platform with multiple bullet trains precise alignment 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Platform pe 4 minute cleaning crew!",
+      "prompt": "Shinkansen cleaning crew in red uniform cleaning train precisely timed 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Earthquake sensor se automatic braking!",
+      "prompt": "Shinkansen seismic detector earthquake auto-stop system diagram 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Japan ne punctuality define kar diya!",
+      "prompt": "Bullet train departing station exactly on time digital clock 9:16"
+    }
+  ]
+}

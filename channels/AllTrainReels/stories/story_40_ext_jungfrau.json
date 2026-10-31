@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 40,
+  "story_id": "train_ext_jungfrau",
+  "story_hash": "89c71f723ddfe156",
+  "format": "Mountain Railway",
+  "title": "Europe Ki Sabse Unchi Train Station! ⛰️",
+  "youtube_title": "Europe Ki Sabse Unchi Train Station! ⛰️",
+  "title_variations": [
+    "Europe Ki Sabse Unchi Train Station! ⛰️",
+    "Jungfraujoch railway Europe highest station 3454m 🚂",
+    "Europe Ki Sabse Unchi Train Station! ⛰️ #Shorts",
+    "The Real Story: Jungfraujoch railway Europe highest station 3454m"
+  ],
+  "tagline": "Jungfraujoch railway Europe highest station 3454m",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Jungfrau_railway"
+  ],
+  "verified_fact": "Jungfraujoch station in Switzerland at 3,454 m is the highest railway station in Europe. The electric rack railway opened in 1912 runs entirely through a tunnel inside the mountain.",
+  "voiceover_script": "Europe ka sabse uncha railway station — 3,454 meter! Switzerland mein Jungfrau Railway ek pahad ke andar se guzar kar samundar se 3,454 meter ki unchaai par station tak jaati hai. Ye electric rack railway 1912 se chal rahi hai, almost poori mountain tunnel ke andar se. Upar pahunch kar nazar aate hain Alps ke glacier — permanent barfish duniya!",
+  "debate_question": "3,454 meter pe pahad ke andar railway station — ek baar zaroor jaana chahiye?",
+  "pinned_comment": "⛰️ 3,454m — Europe ka sabse uncha station! Pahad ke andar se train!",
+  "description": "Europe Ki Sabse Unchi Train Station! ⛰️\n\n🚂 Jungfraujoch railway Europe highest station 3454m\n\nJungfraujoch station in Switzerland at 3,454 m is the highest railway station in Europe. The electric rack railway opened in 1912 runs entirely through a tunnel inside the mountain.\n\n👉 3,454 meter pe pahad ke andar railway station — ek baar zaroor jaana chahiye?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Jungfrau #Switzerland #MountainRailway #HighestStation #Alps #EuropeTrains #Shorts",
+  "tags": [
+    "Jungfrau",
+    "Switzerland",
+    "MountainRailway",
+    "HighestStation",
+    "Alps",
+    "EuropeTrains",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "3,454m — Europe ka sabse uncha station!",
+      "prompt": "Jungfraujoch station snow alpine peaks Switzerland 3454m 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Pahad ke andar se guzarti hai train!",
+      "prompt": "Electric rack railway inside mountain tunnel Jungfrau 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "1912 se chal rahi hai ye alpine train!",
+      "prompt": "Historic rack railway red train on steep mountain track alpine 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Aletsch glacier — permanent barfili duniya!",
+      "prompt": "Jungfraujoch glacier view from station snow covered alpine panorama 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "100 saal se zyada ki engineering!",
+      "prompt": "Cog rail mechanism close up steep grade mountain railway 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Europe ki most spectacular train journey!",
+      "prompt": "Swiss mountain railway panoramic window view snow peaks clouds 9:16"
+    }
+  ]
+}

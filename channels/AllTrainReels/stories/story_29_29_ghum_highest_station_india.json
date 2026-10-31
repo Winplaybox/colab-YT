@@ -1,0 +1,86 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 29,
+  "story_id": "train_29_ghum_highest_station_india",
+  "story_hash": "f0b88a4c97abcd12",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "India Ka Sabse Ooncha Station: Ghum (2,258 m) 🏔️",
+  "youtube_title": "India Ka Sabse Ooncha Station: Ghum (2,258 m) 🏔️",
+  "title_variations": [
+    "India Ka Sabse Ooncha Station: Ghum (2,258 m) 🏔️",
+    "Darjeeling Himalayan Railway Ghum Station 🚂",
+    "India Ka Sabse Ooncha Station: Ghum (2,258 m) 🏔️ #Shorts",
+    "The Real Story: Darjeeling Himalayan Railway Ghum Station"
+  ],
+  "tagline": "Darjeeling Himalayan Railway Ghum Station",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Ghum_railway_station",
+    "https://whc.unesco.org/en/list/944"
+  ],
+  "verified_fact": "Ghum railway station on the Darjeeling Himalayan Railway sits at an altitude of 2,258 meters (7,407 ft), making it the highest railway station in India and a UNESCO World Heritage site.",
+  "voiceover_script": "India ka sabse ooncha railway station pahadon aur baadalon ke beech basa hai! Darjeeling Himalayan Railway ka 'Ghum Station' samundar tal se 2,258 meter yani 7,407 feet ki oonchai par sthit hai. 1881 mein shuru hui is UNESCO World Heritage toy train se jab aap Ghum pahunchte hain, toh Batasia Loop par train 360-degree ghoomti hai aur dur Kanchenjunga ke barafile pahad dikhte hain. Thandi hawa aur garam chai ke saath ye safar hamesha yaad rehta hai!",
+  "debate_question": "Darjeeling Toy Train se Ghum station ka safar kisne kiya hai?",
+  "pinned_comment": "🏔️ 7,407 Feet ki oonchai par Ghum Station! Batasia Loop aur Kanchenjunga ka nazara. Darjeeling ka safar kaisa laga?",
+  "description": "India Ka Sabse Ooncha Station: Ghum (2,258 m) 🏔️\n\n🚂 Darjeeling Himalayan Railway Ghum Station\n\nGhum railway station on the Darjeeling Himalayan Railway sits at an altitude of 2,258 meters (7,407 ft), making it the highest railway station in India and a UNESCO World Heritage site.\n\n👉 Darjeeling Toy Train se Ghum station ka safar kisne kiya hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#GhumStation #DarjeelingToyTrain #HighestRailwayStation #IndianRailways #Shorts",
+  "tags": [
+    "GhumStation",
+    "DarjeelingToyTrain",
+    "HighestRailwayStation",
+    "IndianRailways",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "India ka sabse ooncha railway station: 7,407 Feet!",
+      "sound_cue": "cold_breeze",
+      "prompt": "Historic wooden Ghum railway station building with painted altitude sign reading Ghum 2258 M, mountain mist swirling, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "UNESCO World Heritage Darjeeling Toy Train!",
+      "sound_cue": "toy_whistle",
+      "prompt": "Blue vintage B-Class steam locomotive puffing white steam around the famous Batasia Loop memorial curve, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "1881 se chal raha ye anokha hill rail route.",
+      "sound_cue": "steam_hiss",
+      "prompt": "Small narrow gauge steam locomotive resting on track with morning fog filtering golden sunlight through pine trees, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Batasia Loop par train 360-degree ghoomti hai!",
+      "sound_cue": "chai_pour",
+      "prompt": "Clay cup of steaming Darjeeling tea held by open train carriage window with snow-capped mountain peaks on horizon, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Kanchenjunga ke nazare aur thandi hava!",
+      "sound_cue": "gentle_whistle",
+      "prompt": "Toy train passing peacefully through scenic Darjeeling hill market street as locals wave, warm morning, 9:16 vertical portrait"
+    }
+  ]
+}

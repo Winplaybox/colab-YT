@@ -33,12 +33,19 @@ VIRAL_HOOK_PATTERNS = [
 def clean_subject_line(title):
     """Extracts the core entity or subject from a raw press release or news title."""
     cleaned = title
-    # Remove press release boilerplate
+    # Remove press release boilerplate and financial solicitation phrases
     cleaned = re.sub(r"(has informed the exchange regarding|intimation of|outcome of|proceedings of|notice of|circular regarding)", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"(annual general meeting|board meeting|extraordinary general meeting)", "Key Meeting", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"(should you buy\??|check target prices?|what brokers say|target price|stock recommendation)", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"(\|.*|\-.*|\:.*)$", "", cleaned) # strip trailing source attribution
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
-    return cleaned[:70]
+    if len(cleaned) > 65:
+        truncated = cleaned[:65]
+        if " " in truncated:
+            cleaned = truncated.rsplit(" ", 1)[0].rstrip(" ,.-:")
+        else:
+            cleaned = truncated
+    return cleaned
 
 def craft_viral_title(item):
     """
@@ -53,48 +60,48 @@ def craft_viral_title(item):
     if len(core) < 15:
         core = raw_title[:65]
 
-    # 1. Technology & AI (strict word boundaries to avoid false positives on words like 'gaining', 'remains')
+    # 1. Technology & AI
     if re.search(r"\b(ai|artificial intelligence|chatgpt|openai|nvidia|gemini|deepseek|robot|robotics|quantum|llm)\b", combined):
-        return f"AI Shockwave: {core} — The Game-Changing Breakthrough That Changes Everything! 🤖⚡"
+        return f"AI Breakthrough: {core} — Technical Architecture & Key Capabilities Explained 🤖⚡"
 
     # 2. Viral Content & Internet Sensations
     if any(k in combined for k in ["viral", "crazy", "unbelievable", "shocking", "internet", "social media", "storm"]):
-        return f"The Internet Goes Wild: {core} — Why Everyone Is Talking About This! 🌪️🔥"
+        return f"Trending Spotlight: {core} — Key Facts & Public Reaction Breakdown 🌪️🔥"
 
     # 3. Entertainment & Pop Culture
     if any(k in combined for k in ["movie", "cinema", "actor", "celebrity", "hollywood", "bollywood", "trailer", "box office"]):
-        return f"Blockbuster Buzz: {core} — Big Revelations That Have Fans Stunned! 🎬✨"
+        return f"Entertainment Dispatch: {core} — Key Highlights & Public Reception 🎬✨"
 
     # 4. Sports & Athletic Milestones
     if any(k in combined for k in ["cricket", "match", "tournament", "ipl", "world cup", "champion", "sports"]):
-        return f"Historic Milestone: {core} — The Masterclass That Left Fans Speechless! 🏆⚡"
+        return f"Sports Milestone: {core} — Key Highlights & Strategic Match Analysis 🏆⚡"
 
-    # 5. Financial Multibaggers & Rallies
+    # 5. Financial Movements & Rallies
     if "multibagger" in combined or "400%" in combined or "surge" in combined:
-        return f"Multibagger Explosion: {core} — Is The Massive Rally Sustainable? 🚀"
+        return f"Market Momentum: {core} Rallies On Volume Surge — Critical Valuation Analysis 📈🚀"
     
     # 6. Corporate Mega Deals & Shakeups
     if "reliance" in combined or "ambani" in combined or "tata" in combined or "deal" in combined:
-        return f"Mega Shakeup: {core} — Key Details & Massive Impact Revealed! 💥"
+        return f"Strategic Move: {core} Announces Corporate Milestone — Deal Breakdown 💼"
     
-    # 7. Market Volatility & Warnings
+    # 7. Market Volatility & Sector Shifts
     if "crash" in combined or "bleed" in combined or "falls" in combined or "plunge" in combined:
-        return f"Market Alert: Dalal Street Shudders As Key Support Cracks — 4 Warning Signs To Watch! ⚠️📉"
+        return f"Market Pulse: {core} Navigates Volatility — Support Levels & Sector Analysis 📊📉"
 
     # 8. AGMs & Corporate Expansion
     if "agm" in combined or "expansion" in combined or "proceedings" in combined:
-        return f"Big Expansion Ahead? {core} Reveals Strategic Masterplan! 💼"
+        return f"Corporate Expansion: {core} Outlines Long-Term Growth Roadmap & Capital Plan 💼"
 
     # 9. Regulatory & Exchange Directives
     if "circular" in combined or "limits" in combined or "sebi" in combined or "rbi" in combined:
-        return f"Regulatory Bombshell: New Directives That Will Reshape The Rules! ⚡"
+        return f"Official Regulatory Directive: {core} — Key Policy Rules & Trader Impact 📜⚡"
 
     # 10. IPOs & New Listings
     if "ipo" in combined or "listing" in combined:
-        return f"IPO Frenzy: {core} Makes Waves — Key Allotment & Listing Breakdown! 🎯"
+        return f"IPO Analysis: {core} Listing Breakdown & Financial Fundamentals 🎯"
 
-    # Default High-CTR Viral Hook
-    return f"{core}: What You Need To Know Right Now Before It Goes Viral! 🔥"
+    # Default Factual High-CTR Hook
+    return f"Market Dispatch: {core} — Verified Disclosures & Analysis Breakdown ⚡"
 
 def craft_meta_description(viral_title, item):
     """Produces a punchy 140-160 character snippet engineered for high click-through rates."""
@@ -270,7 +277,7 @@ def build_rich_html_content(viral_title, item, image_url, meta_desc, tags):
 
   <!-- Author Byline -->
   <div style="font-size: 14px; color: #475569; margin-bottom: 20px;">
-    By <strong>BuzzStormNow Research Desk & Senior Editorial Team</strong> | Reported via <em>{source}</em>
+    By <strong>BuzzStormNow Research Desk & Senior Editorial Team</strong> | Verified via <em>{source}</em> | <a href="/p/content-policy.html" style="color: #2563eb; text-decoration: none; font-weight: 600;">Editorial Guidelines</a>
   </div>
 
   <!-- 60-Second Executive Summary Callout Box -->
@@ -432,9 +439,19 @@ def build_rich_html_content(viral_title, item, image_url, meta_desc, tags):
     </div>
   </div>
 
-  <!-- Statutory Disclaimer -->
-  <div style="background: #f1f5f9; border-radius: 8px; padding: 16px 20px; margin-top: 32px; font-size: 12px; color: #64748b; line-height: 1.6;">
-    <strong>Statutory Notice:</strong> {EDITORIAL_SETTINGS['disclaimer']}
+  <!-- Statutory Compliance & Policy Box -->
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #ff4500; border-radius: 8px; padding: 18px 20px; margin-top: 32px; font-size: 13px; color: #475569; line-height: 1.6;">
+    <div style="font-weight: 700; color: #0f172a; margin-bottom: 6px;">
+      ⚖️ Editorial Standards &amp; Statutory Compliance:
+    </div>
+    <p style="margin: 0 0 10px 0;">{EDITORIAL_SETTINGS['disclaimer']}</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 8px;">
+      <a href="/p/content-policy.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Content Policy</a> •
+      <a href="/p/privacy-policy.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Privacy Policy</a> •
+      <a href="/p/terms-of-service.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Terms of Service</a> •
+      <a href="/p/disclaimer.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Disclaimer</a> •
+      <a href="https://www.blogger.com/go/report-abuse" target="_blank" rel="noopener nofollow" style="color: #ef4444; font-weight: 600; text-decoration: none;">Report Policy Violation</a>
+    </div>
   </div>
 
   <!-- Schema.org Microdata -->

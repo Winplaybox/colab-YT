@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 25,
+  "story_id": "train_25_fairy_queen_oldest_steam",
+  "story_hash": "7c2bd994daf82183",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "Duniya Ka Sabse Purana Steam Engine: 1855! 🚂",
+  "youtube_title": "Duniya Ka Sabse Purana Steam Engine: 1855! 🚂",
+  "title_variations": [
+    "Duniya Ka Sabse Purana Steam Engine: 1855! 🚂",
+    "Fairy Queen EIR-21 operational record 🚂",
+    "Duniya Ka Sabse Purana Steam Engine: 1855! 🚂 #Shorts",
+    "The Real Story: Fairy Queen EIR-21 operational record"
+  ],
+  "tagline": "Fairy Queen EIR-21 operational record",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Fairy_Queen_(locomotive)",
+    "https://www.guinnessworldrecords.com"
+  ],
+  "verified_fact": "Fairy Queen (EIR-21), built in 1855 in Leeds, England, is certified by Guinness World Records as the world's oldest steam locomotive in regular working order, maintained by Indian Railways.",
+  "voiceover_script": "Ye steam engine 1855 mein bana tha... aur 170 saal baad bhi operational hai! Ye hai Indian Railways ki dharohar: Fairy Queen, locomotive number EIR-21. Guinness World Records ne ise duniya ka sabse purana chalta hua steam engine certify kiya hai. Is engine ne Bharat ke azaadi ke sangharsh se lekar modern high-speed daur tak sab dekha hai. Rewari Heritage Shed mein preserved ye locomotive aaj bhi special heritage runs par chalti hai.",
+  "debate_question": "170 saal purana steam engine aaj bhi chal raha hai: kaisa laga ye heritage fact?",
+  "pinned_comment": "🚂 1855 se aaj tak! Fairy Queen duniya ka oldest operational steam engine hai. Indian Railways ki dharohar.",
+  "description": "Duniya Ka Sabse Purana Steam Engine: 1855! 🚂\n\n🚂 Fairy Queen EIR-21 operational record\n\nFairy Queen (EIR-21), built in 1855 in Leeds, England, is certified by Guinness World Records as the world's oldest steam locomotive in regular working order, maintained by Indian Railways.\n\n👉 170 saal purana steam engine aaj bhi chal raha hai: kaisa laga ye heritage fact?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#FairyQueen #OldestTrain #SteamLocomotive #IndianRailways #Heritage #Shorts",
+  "tags": [
+    "FairyQueen",
+    "OldestTrain",
+    "SteamLocomotive",
+    "IndianRailways",
+    "Heritage",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "1855 mein bana tha... aur aaj bhi chalta hai!",
+      "sound_cue": "antique_whistle",
+      "prompt": "Gleaming vintage green and polished brass 1855 Fairy Queen steam locomotive on display with white steam puffing from chimney, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Indian Railways ki dharohar: Fairy Queen EIR-21!",
+      "sound_cue": "camera_click",
+      "prompt": "Polished brass nameplate reading FAIRY QUEEN EIR 21 on locomotive boiler flank, warm morning sunlight, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Guinness World Record certified oldest working engine!",
+      "sound_cue": "vintage_chug",
+      "prompt": "Fairy Queen pulling heritage wooden passenger coaches through open green countryside at moderate speed, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "1857 se lekar 2026 tak ka itihaas dekha hai!",
+      "sound_cue": "sepia_transition",
+      "prompt": "Vintage steam locomotive engine wheels and driving rods in oiled motion, clean preservation, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Special heritage runs par aaj bhi daudti hai!",
+      "sound_cue": "heritage_whistle",
+      "prompt": "Restored heritage locomotive resting gracefully on platform with railway enthusiasts admiring, evening glow, 9:16 vertical portrait"
+    }
+  ]
+}

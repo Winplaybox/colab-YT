@@ -1,0 +1,129 @@
+name: Weekly Channel Insights
+
+on:
+  schedule:
+    # Runs Mondays at 09:10 IST (03:40 UTC)
+    - cron: '40 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Channel to audit (all, DigitalImmortals, EpicBharatSaga, IndianHorrorTapes, AllTrainReels, MindNestTales, TigerVlogs)'
+        required: false
+        default: 'all'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: channel-insights
+  cancel-in-progress: false
+
+jobs:
+  audit-channels:
+    name: "Run Multi-Channel Analytics & Claude Insights"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install google-api-python-client google-auth-oauthlib google-auth-httplib2 anthropic
+          fi
+
+      - name: Execute Channel Insights Audit
+        env:
+          TARGET_CHANNEL: ${{ github.event.inputs.channel || 'all' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DIGITALIMMORTALS_TOKEN_JSON: ${{ secrets.DIGITALIMMORTALS_TOKEN_JSON }}
+          EPICBHARATSAGA_TOKEN_JSON: ${{ secrets.EPICBHARATSAGA_TOKEN_JSON }}
+          INDIANHORRORTAPES_TOKEN_JSON: ${{ secrets.INDIANHORRORTAPES_TOKEN_JSON }}
+          ALLTRAINREELS_TOKEN_JSON: ${{ secrets.ALLTRAINREELS_TOKEN_JSON }}
+          TIGERVLOGS_TOKEN_JSON: ${{ secrets.TIGERVLOGS_TOKEN_JSON }}
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+          MINDNEST_TOKEN_HI_JSON: ${{ secrets.MINDNEST_TOKEN_HI_JSON }}
+          MINDNEST_TOKEN_EN_JSON: ${{ secrets.MINDNEST_TOKEN_EN_JSON }}
+          MINDNEST_TOKEN_ES_JSON: ${{ secrets.MINDNEST_TOKEN_ES_JSON }}
+          MINDNEST_TOKEN_PT_JSON: ${{ secrets.MINDNEST_TOKEN_PT_JSON }}
+          MINDNEST_TOKEN_FR_JSON: ${{ secrets.MINDNEST_TOKEN_FR_JSON }}
+          MINDNEST_TOKEN_DE_JSON: ${{ secrets.MINDNEST_TOKEN_DE_JSON }}
+          MINDNEST_TOKEN_AR_JSON: ${{ secrets.MINDNEST_TOKEN_AR_JSON }}
+          MINDNEST_TOKEN_JA_JSON: ${{ secrets.MINDNEST_TOKEN_JA_JSON }}
+          MINDNEST_TOKEN_KO_JSON: ${{ secrets.MINDNEST_TOKEN_KO_JSON }}
+          MINDNEST_TOKEN_VI_JSON: ${{ secrets.MINDNEST_TOKEN_VI_JSON }}
+          MINDNEST_TOKEN_FIL_JSON: ${{ secrets.MINDNEST_TOKEN_FIL_JSON }}
+        run: |
+          python -c "
+          import os, subprocess, sys
+
+          channels = [
+              ('DigitalImmortals', os.environ.get('DIGITALIMMORTALS_TOKEN_JSON', '')),
+              ('EpicBharatSaga', os.environ.get('EPICBHARATSAGA_TOKEN_JSON', '')),
+              ('IndianHorrorTapes', os.environ.get('INDIANHORRORTAPES_TOKEN_JSON', '')),
+              ('AllTrainReels', os.environ.get('ALLTRAINREELS_TOKEN_JSON', '')),
+              ('TigerVlogs', os.environ.get('TIGERVLOGS_TOKEN_JSON', '') or os.environ.get('YOUTUBE_TOKEN_JSON', '')),
+              ('MindNestTales', '|||'.join(filter(None, [
+                  os.environ.get('MINDNEST_TOKEN_HI_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_EN_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_ES_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_PT_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_FR_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_DE_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_AR_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_JA_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_KO_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_VI_JSON', ''),
+                  os.environ.get('MINDNEST_TOKEN_FIL_JSON', ''),
+              ])))
+          ]
+
+          target = os.environ.get('TARGET_CHANNEL', 'all').strip()
+          for name, token in channels:
+              if target != 'all' and target.lower() != name.lower():
+                  continue
+              if not token:
+                  print(f'Skipping {name}: token not set')
+                  continue
+              print(f'\n=== Running Insights for {name} ===')
+              env = os.environ.copy()
+              env['YT_TOKEN_JSON'] = token
+              ret = subprocess.run([sys.executable, 'channels/common/channel_insights.py', name], env=env)
+              if ret.returncode != 0:
+                  print(f'Warning: Insights for {name} returned exit code {ret.returncode}')
+          "
+
+      - name: Commit Insights Data
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "YouTube Channel Insights Bot"
+          git add channels/*/insights.json || true
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(insights): weekly channel audit & winning patterns [skip ci]"
+            pushed=0
+            for i in 1 2 3 4 5; do
+              echo "Push attempt $i..."
+              git pull --rebase origin main && git push && pushed=1 && break
+              sleep $((i * 3))
+            done
+            if [ "$pushed" -ne 1 ]; then
+              echo "::error::Failed to push insights after 5 attempts!"
+              exit 1
+            fi
+          else
+            echo "No changes to insights.json files."
+          fi

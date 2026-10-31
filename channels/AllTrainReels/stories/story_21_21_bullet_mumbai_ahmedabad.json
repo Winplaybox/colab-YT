@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 21,
+  "story_id": "train_21_bullet_train_mumbai_ahmedabad",
+  "story_hash": "5b6aca27079a9e32",
+  "format": "Indian Railways Specials",
+  "title": "Bullet Train India: Kahan Tak Kaam Hua? 🚄",
+  "youtube_title": "Bullet Train India: Kahan Tak Kaam Hua? 🚄",
+  "title_variations": [
+    "Bullet Train India: Kahan Tak Kaam Hua? 🚄",
+    "MAHSR 508 km corridor progress 🚂",
+    "Bullet Train India: Kahan Tak Kaam Hua? 🚄 #Shorts",
+    "The Real Story: MAHSR 508 km corridor progress"
+  ],
+  "tagline": "MAHSR 508 km corridor progress",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Mumbai%E2%80%93Ahmedabad_high-speed_rail_corridor",
+    "https://nhsrcl.in"
+  ],
+  "verified_fact": "The 508 km Mumbai-Ahmedabad High Speed Rail (MAHSR) uses Japanese Shinkansen E5 technology designed for 320 km/h; it includes a 21 km underground tunnel with a ~7 km undersea section under Thane Creek.",
+  "voiceover_script": "India ki pehli bullet train ka construction kahan tak pahuncha? Mumbai se Ahmedabad tak 508 kilometer ka high-speed rail corridor 320 km/h ki operational speed ke liye banaya ja raha hai. Gujarat mein hundreds of kilometers viaduct pillars aur girder launchings ka kaam poora ho chuka hai. Aur Mumbai ke kareeb 21 kilometer lamba underground tunnel ban raha hai, jisme lagbhag 7 kilometer hissa Thane Creek ke samundar ke neeche hoga! Poora hone ke baad safar sirf 2 ghante 7 minute ka reh jayega.",
+  "debate_question": "Mumbai se Ahmedabad sirf 2 ghante mein: kitne log pehle week safar karenge?",
+  "pinned_comment": "🚄 508 KM corridor aur 21 KM tunnel jisme ~7 KM undersea hai! 320 km/h bullet train. Kaisa laga status?",
+  "description": "Bullet Train India: Kahan Tak Kaam Hua? 🚄\n\n🚂 MAHSR 508 km corridor progress\n\nThe 508 km Mumbai-Ahmedabad High Speed Rail (MAHSR) uses Japanese Shinkansen E5 technology designed for 320 km/h; it includes a 21 km underground tunnel with a ~7 km undersea section under Thane Creek.\n\n👉 Mumbai se Ahmedabad sirf 2 ghante mein: kitne log pehle week safar karenge?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#BulletTrainIndia #MAHSR #Shinkansen #IndianRailways #HighSpeedRail #Shorts",
+  "tags": [
+    "BulletTrainIndia",
+    "MAHSR",
+    "Shinkansen",
+    "IndianRailways",
+    "HighSpeedRail",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "India ki pehli Bullet Train ka kaam kahan tak hua?",
+      "sound_cue": "modern_whoosh",
+      "prompt": "Aerodynamic high-speed bullet train on elevated concrete viaduct track, bright morning sun, photorealistic rendering, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "508 KM corridor par 320 km/h ki speed!",
+      "sound_cue": "construction_ambience",
+      "prompt": "Massive elevated concrete viaduct pillars extending across Indian plains under construction with modern launch gantries, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "21 KM tunnel, jisme ~7 KM undersea hai!",
+      "sound_cue": "tunnel_boring",
+      "prompt": "Large circular tunnel boring machine (TBM) cutterhead inside deep underground tunnel shaft, work lights, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Mumbai se Ahmedabad sirf 2 ghante 7 minute!",
+      "sound_cue": "clock_tick",
+      "prompt": "Graphic map illustration showing Mumbai to Ahmedabad rail alignment path with glowing route line, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "India ke transportation ka naya daur!",
+      "sound_cue": "arrival_chime",
+      "prompt": "Futuristic high-speed railway terminal station platform with sleek bullet train ready for departure, 9:16 vertical portrait"
+    }
+  ]
+}

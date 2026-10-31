@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 34,
+  "story_id": "train_ext_mauritania_sahara",
+  "story_hash": "6a6e22bfb504a217",
+  "format": "Monster Train",
+  "title": "Sahara Mein 2.5 KM Lambi Train! 🏜️",
+  "youtube_title": "Sahara Mein 2.5 KM Lambi Train! 🏜️",
+  "title_variations": [
+    "Sahara Mein 2.5 KM Lambi Train! 🏜️",
+    "Mauritania Sahara iron ore desert train 2.5 km 🚂",
+    "Sahara Mein 2.5 KM Lambi Train! 🏜️ #Shorts",
+    "The Real Story: Mauritania Sahara iron ore desert train 2.5 km"
+  ],
+  "tagline": "Mauritania Sahara iron ore desert train 2.5 km",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Mauritania_Railway"
+  ],
+  "verified_fact": "Mauritania Railway runs 704 km through the Sahara with trains up to 2.5 km long, 3-4 diesel locos and 200-210 wagons hauling 17,000 tonnes of iron ore.",
+  "voiceover_script": "Duniya ke sabse bade registan mein chalti hai 2.5 kilometer lambi train! Mauritania mein lohe ki ore uthane wali ye train 700 kilometer ka safar 50 degree ke tal mein aur rait ke andhere tufaanon mein karti hai. Sabse khaas baat? Log is train ke khule wagons par baith kar free mein safar karte hain — rait ke thappad khate hue!",
+  "debate_question": "Kya aap 50 degree heat mein open wagon mein safar karenge?",
+  "pinned_comment": "🏜️ Sahara desert, 2.5 km train, 50 degree garmi! Ye hai asli adventure!",
+  "description": "Sahara Mein 2.5 KM Lambi Train! 🏜️\n\n🚂 Mauritania Sahara iron ore desert train 2.5 km\n\nMauritania Railway runs 704 km through the Sahara with trains up to 2.5 km long, 3-4 diesel locos and 200-210 wagons hauling 17,000 tonnes of iron ore.\n\n👉 Kya aap 50 degree heat mein open wagon mein safar karenge?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Mauritania #SaharaTrain #DesertRailway #MonsterTrain #Africa #ExtremeRail #Shorts",
+  "tags": [
+    "Mauritania",
+    "SaharaTrain",
+    "DesertRailway",
+    "MonsterTrain",
+    "Africa",
+    "ExtremeRail",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Sahara desert ki 2.5 km lambi train!",
+      "prompt": "Massive desert freight train snaking through yellow sand dunes Mauritania aerial 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "50 degree garmi, rait ke tufaan!",
+      "prompt": "Heavy diesel locomotive plowing through blowing desert sand storm heat haze 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "200 se zyada bhare iron ore wagons!",
+      "prompt": "Long line of open iron ore rail cars stretching to Sahara horizon 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Log free mein baith kar karte hain safar!",
+      "prompt": "Local desert travelers sitting atop iron ore in rail car scarves wrapped 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "704 km ka registan cross karta hai!",
+      "prompt": "Map of Mauritania railway route from Zouerate to Nouadhibou desert 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Duniya ki sabse extreme railway!",
+      "prompt": "Desert freight train silhouette against fiery orange Sahara sunset 9:16"
+    }
+  ]
+}

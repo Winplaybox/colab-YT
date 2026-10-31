@@ -1,0 +1,86 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 18,
+  "story_id": "train_18_pamban_bridge_sea_lift",
+  "story_hash": "5d3790e0edd5217b",
+  "format": "Indian Railways Specials",
+  "title": "Samundar Pe Khulne Wala Pamban Rail Bridge! 🌊",
+  "youtube_title": "Samundar Pe Khulne Wala Pamban Rail Bridge! 🌊",
+  "title_variations": [
+    "Samundar Pe Khulne Wala Pamban Rail Bridge! 🌊",
+    "Pamban bridge vertical lift span 🚂",
+    "Samundar Pe Khulne Wala Pamban Rail Bridge! 🌊 #Shorts",
+    "The Real Story: Pamban bridge vertical lift span"
+  ],
+  "tagline": "Pamban bridge vertical lift span",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pamban_Bridge",
+    "https://pib.gov.in"
+  ],
+  "verified_fact": "Pamban Rail Bridge (first opened in 1914) spans 2.06 km across Palk Strait to Rameswaram island. The new dual-track vertical-lift sea bridge elevates 17 meters for ship passage.",
+  "voiceover_script": "Dono taraf neela samundar aur beech mein train ki patri! Tamil Nadu ka historic Pamban Bridge Rameswaram island ko mainland India se jodta hai. 1914 mein bana ye 2 kilometer lamba bridge 100 saal se zyada samundari namkeen hawaon aur toofano ko jhel chuka hai. Aur ab yahan naya vertical-lift bridge banaya gaya hai, jiska central span hawa mein 17 meter upar uth jata hai taaki neeche se marine ships guzar sakein. Khidki se neela paani dekhna kitna adbhut lagta hai!",
+  "debate_question": "Samundar ke beech train ki khidki se paani dekhna kaisa lagega?",
+  "pinned_comment": "🌊 Dono taraf khula samundar aur beech mein 2 KM ka rail bridge! Naya vertical lift span 17 meter uth jata hai.",
+  "description": "Samundar Pe Khulne Wala Pamban Rail Bridge! 🌊\n\n🚂 Pamban bridge vertical lift span\n\nPamban Rail Bridge (first opened in 1914) spans 2.06 km across Palk Strait to Rameswaram island. The new dual-track vertical-lift sea bridge elevates 17 meters for ship passage.\n\n👉 Samundar ke beech train ki khidki se paani dekhna kaisa lagega?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#PambanBridge #Rameswaram #SeaBridge #IndianRailways #Shorts",
+  "tags": [
+    "PambanBridge",
+    "Rameswaram",
+    "SeaBridge",
+    "IndianRailways",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Dono taraf samundar aur beech mein patri!",
+      "sound_cue": "ocean_waves",
+      "prompt": "Aerial view of narrow concrete and steel rail bridge crossing turquoise sea waters between mainland and island, sunny day, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "1914 mein bana tha aitihasik Pamban Bridge.",
+      "sound_cue": "sea_breeze",
+      "prompt": "Historic Scherzer rolling lift span of old Pamban bridge over blue Palk Strait waters, vintage engineering, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Naya bridge hawa mein 17 meter upar uthta hai!",
+      "sound_cue": "hydraulic_lift",
+      "prompt": "Modern vertical lift rail bridge span elevated high above water as a ship passes underneath, blue ocean sky, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Namkeen paani aur toofano ko 100 saal jhela.",
+      "sound_cue": "water_splash",
+      "prompt": "Ocean waves gently lapping against sturdy concrete bridge piers in clear bright tropical sea, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Rameswaram ka safar sach mein anokha hai!",
+      "sound_cue": "diesel_horn",
+      "prompt": "Passenger train moving slowly along the sea bridge with gentle evening sunlight reflecting on water surface, 9:16 vertical portrait"
+    }
+  ]
+}

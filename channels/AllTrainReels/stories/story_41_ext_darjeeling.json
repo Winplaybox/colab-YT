@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 41,
+  "story_id": "train_ext_darjeeling",
+  "story_hash": "1dee658bb1829f14",
+  "format": "Mountain Railway",
+  "title": "Darjeeling Toy Train: 146 Saal Puraani! 🍵",
+  "youtube_title": "Darjeeling Toy Train: 146 Saal Puraani! 🍵",
+  "title_variations": [
+    "Darjeeling Toy Train: 146 Saal Puraani! 🍵",
+    "Darjeeling Himalayan Railway UNESCO 1881 steam toy train 🚂",
+    "Darjeeling Toy Train: 146 Saal Puraani! 🍵 #Shorts",
+    "The Real Story: Darjeeling Himalayan Railway UNESCO 1881 steam toy train"
+  ],
+  "tagline": "Darjeeling Himalayan Railway UNESCO 1881 steam toy train",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Darjeeling_Himalayan_Railway"
+  ],
+  "verified_fact": "Darjeeling Himalayan Railway, built 1881, is the oldest mountain railway still using steam locomotives, running 78 km up to 2,257 m. UNESCO World Heritage since 1999.",
+  "voiceover_script": "146 saal puraani, steam engine, UNESCO World Heritage — ye hai Darjeeling Toy Train! 1881 mein banai gayi ye narrow gauge train aaj bhi steam locomotive ke saath Himalaya ki chadhai karti hai. Char loop aur ek spiral track se guzarti hai ye train. Chai ke baagaan ke beech se, mist ke parde phaad kar — ye safar ek baar zaroor karna chahiye!",
+  "debate_question": "Steam engine wali darjeeling toy train par safar karna chahte hain?",
+  "pinned_comment": "🍵 1881 se steam engine! 146 saal old UNESCO train. Darjeeling!",
+  "description": "Darjeeling Toy Train: 146 Saal Puraani! 🍵\n\n🚂 Darjeeling Himalayan Railway UNESCO 1881 steam toy train\n\nDarjeeling Himalayan Railway, built 1881, is the oldest mountain railway still using steam locomotives, running 78 km up to 2,257 m. UNESCO World Heritage since 1999.\n\n👉 Steam engine wali darjeeling toy train par safar karna chahte hain?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#DarjeelingTrain #ToyTrain #SteamEngine #UNESCO #IndianRailways #Himalayas #Shorts",
+  "tags": [
+    "DarjeelingTrain",
+    "ToyTrain",
+    "SteamEngine",
+    "UNESCO",
+    "IndianRailways",
+    "Himalayas",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "146 saal puraani steam toy train!",
+      "prompt": "Darjeeling Himalayan Railway steam locomotive puffing smoke tea gardens 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "1881 se chal rahi UNESCO heritage!",
+      "prompt": "Vintage narrow gauge steam train curving hillside Himalayan forest mist 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "4 loops aur 1 spiral track!",
+      "prompt": "Toy train making tight loop spiral turn on Darjeeling mountainside 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Chai ke baagaan ke beech se!",
+      "prompt": "Steam train running through green tea plantation Darjeeling morning fog 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Mist ke parde ko phaad kar!",
+      "prompt": "Steam engine whistle blowing mist Himalayan mountain station Ghum 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Ek baar zaroor karna chahiye safar!",
+      "prompt": "Darjeeling station platform steam locomotive waiting passengers 9:16"
+    }
+  ]
+}

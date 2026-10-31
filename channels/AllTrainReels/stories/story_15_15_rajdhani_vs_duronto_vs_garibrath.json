@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 15,
+  "story_id": "train_15_rajdhani_vs_duronto_vs_garibrath",
+  "story_hash": "65f4bf781953bbc7",
+  "format": "Vs / Comparison",
+  "title": "Rajdhani vs Duronto vs Garib Rath: Kaun Best? 🚄",
+  "youtube_title": "Rajdhani vs Duronto vs Garib Rath: Kaun Best? 🚄",
+  "title_variations": [
+    "Rajdhani vs Duronto vs Garib Rath: Kaun Best? 🚄",
+    "Indian Railways premier trains comparison 🚂",
+    "Rajdhani vs Duronto vs Garib Rath: Kaun Best? 🚄 #Shorts",
+    "The Real Story: Indian Railways premier trains comparison"
+  ],
+  "tagline": "Indian Railways premier trains comparison",
+  "visual_theme": "SPLIT_VS_ARENA",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Rajdhani_Express",
+    "https://en.wikipedia.org/wiki/Duronto_Express",
+    "https://en.wikipedia.org/wiki/Garib_Rath_Express"
+  ],
+  "verified_fact": "Rajdhani connects state capitals to New Delhi with highest track priority and meals; Duronto was launched for point-to-point speed with fewer commercial stops; Garib Rath provides budget fully-AC travel with 3E layout.",
+  "voiceover_script": "Rajdhani, Duronto, ya Garib Rath: kisme kya farak hai? Agar VIP track priority aur complete catering comfort chahiye, toh Rajdhani hamesha top choice rahi hai. Duronto ko point-to-point long distance safar ke liye banaya gaya tha, jisme commercial halts bahut kam hote hain. Aur Garib Rath ne aam nagrikon ke liye 3-Tier AC safar ko lagbhag aadhi keemat par accessible banaya. Aapne inme se kis train mein sabse zyada safar kiya hai?",
+  "debate_question": "Rajdhani ka royal comfort ya Garib Rath ka budget AC: aapki pehli choice kaunsi hai?",
+  "pinned_comment": "🚄 Rajdhani = VIP Priority | Duronto = Point-to-Point Speed | Garib Rath = Budget AC! Aapka favorite route kaunsa hai?",
+  "description": "Rajdhani vs Duronto vs Garib Rath: Kaun Best? 🚄\n\n🚂 Indian Railways premier trains comparison\n\nRajdhani connects state capitals to New Delhi with highest track priority and meals; Duronto was launched for point-to-point speed with fewer commercial stops; Garib Rath provides budget fully-AC travel with 3E layout.\n\n👉 Rajdhani ka royal comfort ya Garib Rath ka budget AC: aapki pehli choice kaunsi hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#RajdhaniExpress #DurontoExpress #GaribRath #IndianRailways #TrainTravel #Shorts",
+  "tags": [
+    "RajdhaniExpress",
+    "DurontoExpress",
+    "GaribRath",
+    "IndianRailways",
+    "TrainTravel",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "Rajdhani, Duronto, ya Garib Rath: Kya farak hai?",
+      "sound_cue": "express_pass",
+      "prompt": "Three Indian express trains standing on adjacent platform tracks: Red Rajdhani, green-yellow Duronto, and Garib Rath, morning light, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Rajdhani: Track priority aur onboard catering!",
+      "sound_cue": "tea_clink",
+      "prompt": "Passenger relaxing inside comfortable AC compartment of Rajdhani Express with tea tray on table, window showing countryside, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Duronto: Point-to-point long distance run!",
+      "sound_cue": "duronto_horn",
+      "prompt": "Green and yellow painted Duronto Express speeding past a rural station without halting, motion blur, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Garib Rath: Affordable fully-AC travel!",
+      "sound_cue": "ac_ambience",
+      "prompt": "Passengers seated comfortably in an air conditioned train carriage, warm travel atmosphere, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Aapne kis train mein sabse zyada safar kiya hai?",
+      "sound_cue": "gentle_horn",
+      "prompt": "Rajdhani Express crossing a scenic viaduct at dusk with locomotive headlights blazing ahead, 9:16 vertical portrait"
+    }
+  ]
+}

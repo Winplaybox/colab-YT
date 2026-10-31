@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 45,
+  "story_id": "train_ext_icf_production",
+  "story_hash": "d32219a9739f89aa",
+  "format": "World Railways",
+  "title": "Har Saal 4,000 Train Coaches! India Record 🏆",
+  "youtube_title": "Har Saal 4,000 Train Coaches! India Record 🏆",
+  "title_variations": [
+    "Har Saal 4,000 Train Coaches! India Record 🏆",
+    "ICF Chennai world largest rail coach factory production 🚂",
+    "Har Saal 4,000 Train Coaches! India Record 🏆 #Shorts",
+    "The Real Story: ICF Chennai world largest rail coach factory production"
+  ],
+  "tagline": "ICF Chennai world largest rail coach factory production",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Integral_Coach_Factory"
+  ],
+  "verified_fact": "Integral Coach Factory (ICF) in Chennai is the world's largest railway coach manufacturing plant, producing over 4,000 coaches per year.",
+  "voiceover_script": "Duniya ki sabse badi railway coach factory India mein hai! Chennai ka Integral Coach Factory har saal 4,000 se zyada train coaches banata hai. 1955 mein khula ye factory Vande Bharat, Rajdhani, Duronto — sabke coaches banata hai. Germany ki technology se shuru hokar aaj ye duniya mein number one production facility ban gayi hai!",
+  "debate_question": "Vande Bharat ka future track record kaisa hoga?",
+  "pinned_comment": "🏆 Duniya ki sabse badi train coach factory India mein! 4,000+ coaches per year!",
+  "description": "Har Saal 4,000 Train Coaches! India Record 🏆\n\n🚂 ICF Chennai world largest rail coach factory production\n\nIntegral Coach Factory (ICF) in Chennai is the world's largest railway coach manufacturing plant, producing over 4,000 coaches per year.\n\n👉 Vande Bharat ka future track record kaisa hoga?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#ICF #Chennai #IndianRailways #MakeInIndia #VandeBharat #Manufacturing #Shorts",
+  "tags": [
+    "ICF",
+    "Chennai",
+    "IndianRailways",
+    "MakeInIndia",
+    "VandeBharat",
+    "Manufacturing",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Duniya ki largest train coach factory!",
+      "prompt": "ICF Chennai railway coach manufacturing factory assembly line 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Har saal 4,000+ coaches!",
+      "prompt": "Rows of train coaches being assembled ICF factory Chennai 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Vande Bharat bhi yahan banta hai!",
+      "prompt": "Vande Bharat Express train coaches modern interior manufacturing 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "1955 mein Germany tech se shuru!",
+      "prompt": "ICF Chennai heritage factory exterior historical 1955 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Rajdhani, Duronto, Shatabdi — sab yahan!",
+      "prompt": "Multiple Indian express train types in factory yard ICF 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "India ka global manufacturing pride!",
+      "prompt": "Completed Vande Bharat train rolling out of ICF factory 9:16"
+    }
+  ]
+}

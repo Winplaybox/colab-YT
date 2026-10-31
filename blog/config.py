@@ -144,19 +144,21 @@ FEEDS = [
 # Editorial Tone & Branding Settings (Aligned with BuzzStormNow Mission)
 EDITORIAL_SETTINGS = {
     "site_title": "BuzzStormNow",
-    "site_tagline": "AI-Powered Viral Stories, Breaking News & What's Buzzing 24/7",
+    "site_tagline": "Fact-Checked News Intelligence, Market Analysis & Trending Updates 24/7",
     "mission": (
-        "BuzzStormNow is your premier destination for viral stories, trending news, and breaking updates "
-        "from around the world. We leverage cutting-edge AI technology to bring you the most engaging "
-        "and relevant content, curated and delivered 24/7."
+        "BuzzStormNow is your premier destination for verified news, market analysis, technology breakthroughs, "
+        "and global trends. We leverage modern data intelligence tools under strict human editorial oversight "
+        "to deliver accurate, timely, and high-value journalism 24/7."
     ),
     "brand_color": "#ff4500",
     "secondary_color": "#0f172a",
     "accent_gold": "#f59e0b",
-    "default_tags": ["BuzzStormNow", "Viral News", "Trending", "Breaking News"],
+    "default_tags": ["BuzzStormNow", "Verified News", "Trending", "Market Analysis"],
     "disclaimer": (
-        "Disclaimer: This article is curated and published by the BuzzStormNow Editorial Team for "
-        "informational and educational purposes. Where financial or market matters are discussed, "
-        "it does not constitute financial or investment advice. Always verify with official sources."
+        "Statutory & Compliance Notice: This article is published by BuzzStormNow for informational and educational "
+        "purposes in strict adherence to our Content Policy. BuzzStormNow utilizes AI-assisted research tools under human "
+        "editorial review. Where equities, corporate filings, or markets are discussed, this content is strictly non-advisory "
+        "and does not constitute financial, investment, or legal advice. Always conduct independent due diligence and verify "
+        "with primary regulatory archives (NSE/BSE/SEC)."
     )
 }

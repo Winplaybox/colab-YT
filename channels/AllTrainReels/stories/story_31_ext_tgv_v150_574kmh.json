@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 31,
+  "story_id": "train_ext_tgv_v150_574kmh",
+  "story_hash": "cabdaedc3dc9a09b",
+  "format": "Speed Record",
+  "title": "574 km/h! Patri Par World Record 🤯",
+  "youtube_title": "574 km/h! Patri Par World Record 🤯",
+  "title_variations": [
+    "574 km/h! Patri Par World Record 🤯",
+    "TGV V150 574.8 km/h world steel-rail speed record 🚂",
+    "574 km/h! Patri Par World Record 🤯 #Shorts",
+    "The Real Story: TGV V150 574.8 km/h world steel-rail speed record"
+  ],
+  "tagline": "TGV V150 574.8 km/h world steel-rail speed record",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/TGV_world_train_speed_record"
+  ],
+  "verified_fact": "On April 3, 2007, French TGV V150 hit 574.8 km/h on LGV Est — the fastest ever on conventional steel rails.",
+  "voiceover_script": "Lohe ke pahiye, lohe ki patri — aur speed 574 kilometer per hour! 3 April 2007 ko France ki modified TGV V150 ne conventional steel rail par duniya ka sabse tez record banaya. Catenary voltage 31,000 volt tak badhaaya gaya tha. Maglev nahi, hawa mein nahi — seedhi patri par. Kya ye record koi toda hai aaj tak?",
+  "debate_question": "Kya conventional steel rail par 600 km/h possible hai?",
+  "pinned_comment": "⚡ 574.8 km/h steel par! Aaj tak ka unbeatable record. Aapka kya sochna hai?",
+  "description": "574 km/h! Patri Par World Record 🤯\n\n🚂 TGV V150 574.8 km/h world steel-rail speed record\n\nOn April 3, 2007, French TGV V150 hit 574.8 km/h on LGV Est — the fastest ever on conventional steel rails.\n\n👉 Kya conventional steel rail par 600 km/h possible hai?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#TGV #FastestTrain #WorldRecord #HighSpeedRail #France #Railways #Shorts",
+  "tags": [
+    "TGV",
+    "FastestTrain",
+    "WorldRecord",
+    "HighSpeedRail",
+    "France",
+    "Railways",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "574 km/h — steel rail par world record!",
+      "prompt": "TGV V150 bullet train extreme speed motion blur French countryside 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "31,000 Volt catenary power!",
+      "prompt": "Electric catenary sparks overhead wire high speed train night 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Maglev nahi — lohe ke pahiye par!",
+      "prompt": "Steel railway wheels close up spinning extreme speed 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "LGV Est: fastest straight track in Europe",
+      "prompt": "TGV high-speed line straight through French farmland aerial 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Aaj tak ka unbroken world record!",
+      "prompt": "Speed test train with aerodynamic nose cutting through air sunrise 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Kya ye record toot sakta hai?",
+      "prompt": "Modern high-speed train disappearing into tunnel at sunset 9:16"
+    }
+  ]
+}

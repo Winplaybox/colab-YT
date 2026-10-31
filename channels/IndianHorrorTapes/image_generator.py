@@ -82,6 +82,19 @@ def strip_image_watermarks(image_path):
     except Exception as e:
         print(f"Watermark strip notice: {e}")
 
+def _shared_ai_image(prompt, output_path, width, height):
+    """Shared Gemini/OpenAI generator (channels/common/ai_images.py). HF free credits ended 15 Oct 2026."""
+    try:
+        root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common.ai_images import generate
+        return generate(prompt, output_path, width, height)
+    except Exception as e:
+        print(f"Shared AI image notice: {e}")
+        return False
+
+
 def generate_via_huggingface_flux(prompt, output_path, hf_token):
     """Generates 8K horror visual via Hugging Face Serverless FLUX.1-schnell in 9:16 portrait."""
     try:
@@ -150,13 +163,21 @@ def fetch_wiki_horror_image(query, output_path):
     return False
 
 def generate_scene_image(prompt, output_path, wiki_fallback_query=None):
-    """Multi-tiered generator: HF Flux (9:16) -> Pollinations Flux (9:16) -> Wikimedia -> Local."""
+    """Wikimedia (real place) -> Gemini/OpenAI -> HF (paid) -> Pollinations -> Local."""
     out_dir = os.path.dirname(output_path)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
     enhanced = enhance_horror_prompt(prompt)
 
-    # 1. Hugging Face Free Tier (if active credits exist)
+    # 0. Real location photo first (Wikimedia Commons), then shared Gemini/OpenAI
+    if wiki_fallback_query and os.environ.get("ARCHIVE_FIRST", "true") == "true":
+        print(f"🏛️ Archive-first: searching Wikimedia for '{wiki_fallback_query}'...")
+        if fetch_wiki_horror_image(wiki_fallback_query, output_path):
+            return output_path
+    if _shared_ai_image(enhanced, output_path, 1080, 1920):
+        return output_path
+
+    # 1. Hugging Face (only works with paid credits since 15 Oct 2026)
     hf_token = get_hf_token()
     if hf_token:
         if generate_via_huggingface_flux(enhanced, output_path, hf_token):

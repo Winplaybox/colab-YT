@@ -90,6 +90,19 @@ def get_next_optimal_publish_time():
 
 from googleapiclient.http import MediaFileUpload
 
+def _playlist_link_lines():
+    """Only real (full-length) playlist IDs from state.json; old truncated IDs are skipped."""
+    try:
+        with open(state_file, "r", encoding="utf-8") as f:
+            pl = json.load(f).get("playlists", {})
+    except Exception:
+        pl = {}
+    lines = []
+    master = pl.get("MASTER_SERIES", "")
+    if len(master) >= 24:
+        lines.append(f"🔗 Master Ramayana Series: https://www.youtube.com/playlist?list={master}")
+    return lines or ["🔗 Channel: https://www.youtube.com/@DigitalImmortals/playlists"]
+
 def build_episode_description(episode_num, scenes, scene_durations, ep_data=None):
     """Dynamically builds high-retention 22-minute description with exact chapter timestamps."""
     hook = ep_data.get("description_hook", "") if ep_data else ""
@@ -122,8 +135,7 @@ def build_episode_description(episode_num, scenes, scene_durations, ep_data=None
         "🎧 सर्वोत्तम अनुभव के लिए हेडफ़ोन (Headphones) का उपयोग करें।",
         "",
         "इस पावन शृंखला के सभी 54 प्रामाणिक एपिसोड्स देखने के लिए हमारे आधिकारिक प्लेलिस्ट को सेव करें:",
-        "🔗 Master Ramayana Series: https://www.youtube.com/playlist?list=PLbWfS48ZCfwU",
-        "🔗 Bala Kanda Playlist: https://www.youtube.com/playlist?list=PLO21MMTdx3vc",
+        *_playlist_link_lines(),
         "",
         "#ValmikiRamayan #Ramayana #DigitalImmortals #BalaKanda #ShriRam #Ayodhya #SanatanDharma #HinduMythology #EpicStories"
     ])

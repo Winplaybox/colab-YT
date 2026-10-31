@@ -28,6 +28,20 @@ except ImportError:
     HAS_GOOGLE_CLIENT = False
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+def _yt_brain():
+    """Shared metadata brain (channels/common/yt_brain.py). Returns module or None."""
+    try:
+        root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common import yt_brain
+        return yt_brain
+    except Exception as e:
+        print(f"yt_brain unavailable: {e}")
+        return None
+
 sys.path.insert(0, script_dir)
 
 from story_generator import generate_story_from_bank, peek_story
@@ -179,6 +193,9 @@ def upload_short(video_path, story, publish_mode="scheduled", force=False):
         print(f"⚡ [FORCE MODE] Live YouTube duplicate check bypassed for upload.")
 
     media = MediaFileUpload(video_path, mimetype="video/mp4", resumable=True, chunksize=256 * 1024)
+    _b = _yt_brain()
+    if _b:
+        request_body = _b.before_insert("EpicBharatSaga", youtube, request_body, is_short=True)
     insert = youtube.videos().insert(part="snippet,status", body=request_body, media_body=media)
 
     video_id = None
@@ -195,6 +212,8 @@ def upload_short(video_path, story, publish_mode="scheduled", force=False):
 
     video_id = response.get("id")
     video_url = f"https://www.youtube.com/watch?v={video_id}"
+    if _b:
+        _b.after_insert("EpicBharatSaga", youtube, video_id)
     print(f"✅ Uploaded! Video ID: {video_id}")
     print(f"   URL: {video_url}")
     if publish_at:

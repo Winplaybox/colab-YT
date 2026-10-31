@@ -3,7 +3,7 @@ name: IndianHorrorTapes Autonomous Scheduler
 on:
   schedule:
     # Runs Wednesday and Sunday at 14:00 UTC (7:30 PM IST)
-    # Renders 4K/8K 9:16 portrait horror video and auto-schedules to go live at 9:00 PM IST (15:30 UTC)!
+    # Renders 1080p/4K 9:16 portrait horror video and auto-schedules to go live at 9:00 PM IST (15:30 UTC)!
     - cron: '0 14 * * 0,3'
   workflow_dispatch:
     inputs:
@@ -12,9 +12,9 @@ on:
         required: false
         default: ''
       quality:
-        description: 'Output quality: 4k (2160x3840), 8k (4320x7680), or 1080p'
+        description: 'Output quality: 1080p (fast & efficient), 4k (2160x3840), or 8k (4320x7680)'
         required: false
-        default: '4k'
+        default: '1080p'
       immediate:
         description: 'Publish immediately as Public? (true / false)'
         required: false
@@ -22,6 +22,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: indian-horror-tapes
+  cancel-in-progress: false
 
 jobs:
   # =========================================================================
@@ -50,11 +54,14 @@ jobs:
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
-            pip install edge-tts requests huggingface_hub pillow static-ffmpeg
+            pip install edge-tts requests huggingface_hub pillow static-ffmpeg google-genai openai anthropic
           fi
 
-      - name: Generate Story Assets, Voiceover & 8K Thumbnails
+      - name: Generate Story Assets, Voiceover & Thumbnails
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
         run: |
@@ -92,10 +99,10 @@ jobs:
           retention-days: 1
 
   # =========================================================================
-  # STAGE 2: 4K/8K Video Rendering & YouTube Scheduling (High Compute)
+  # STAGE 2: Video Rendering & YouTube Scheduling
   # =========================================================================
   render-and-schedule:
-    name: "Stage 2: 4K/8K Composite & YouTube Upload"
+    name: "Stage 2: Video Composite & YouTube Upload"
     needs: prepare-assets
     runs-on: ubuntu-latest
     timeout-minutes: 75
@@ -110,7 +117,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install System Dependencies (FFmpeg & Global Fonts)
         run: |
@@ -123,7 +129,7 @@ jobs:
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
-            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 requests static-ffmpeg huggingface_hub pillow
+            pip install yt-dlp edge-tts google-api-python-client google-auth-oauthlib google-auth-httplib2 requests static-ffmpeg huggingface_hub pillow google-genai openai anthropic
           fi
 
       - name: Download Prepared Assets from Stage 1
@@ -152,15 +158,19 @@ jobs:
             echo "Installed YouTube client secret."
           fi
 
-      - name: Execute 4K/8K Video Rendering & Scheduling
+      - name: Execute Video Rendering & Scheduling
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          YT_BRAIN: ${{ vars.YT_BRAIN || 'on' }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
           INDIANHORRORTAPES_TOKEN_JSON: ${{ secrets.INDIANHORRORTAPES_TOKEN_JSON }}
           INDIANHORRORTAPES_CLIENT_SECRET_JSON: ${{ secrets.INDIANHORRORTAPES_CLIENT_SECRET_JSON }}
         run: |
           STORY_NUM="${{ github.event.inputs.story_number }}"
-          QUALITY="${{ github.event.inputs.quality || '4k' }}"
+          QUALITY="${{ github.event.inputs.quality || '1080p' }}"
           IMMEDIATE="${{ github.event.inputs.immediate }}"
 
           IMM_FLAG=""
@@ -188,11 +198,23 @@ jobs:
           retention-days: 7
 
       - name: Commit State / Logs
-        if: always()
+        if: success()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "IndianHorrorTapes Autonomous Bot"
           git add channels/IndianHorrorTapes/state.json channels/IndianHorrorTapes/stories/ || true
-          git diff --staged --quiet || git commit -m "chore(IndianHorrorTapes): automated episode release [skip ci]"
-          git pull --rebase origin main || true
-          git push || echo "Push skipped or no new commits to push."
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(IndianHorrorTapes): automated episode release [skip ci]"
+            pushed=0
+            for i in 1 2 3 4 5; do
+              echo "Push attempt $i..."
+              git pull --rebase origin main && git push && pushed=1 && break
+              sleep $((i * 3))
+            done
+            if [ "$pushed" -ne 1 ]; then
+              echo "::error::Failed to push IndianHorrorTapes state after 5 attempts!"
+              exit 1
+            fi
+          else
+            echo "No changes to state."
+          fi

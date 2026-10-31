@@ -1,0 +1,89 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 33,
+  "story_id": "train_ext_bhp_7km",
+  "story_hash": "9a44a3fb8d3f17fe",
+  "format": "Monster Train",
+  "title": "7 KM Lambi Train! Binoculars Se Dekho 😳",
+  "youtube_title": "7 KM Lambi Train! Binoculars Se Dekho 😳",
+  "title_variations": [
+    "7 KM Lambi Train! Binoculars Se Dekho 😳",
+    "BHP Iron Ore 7.3 km world longest train 2001 🚂",
+    "7 KM Lambi Train! Binoculars Se Dekho 😳 #Shorts",
+    "The Real Story: BHP Iron Ore 7.3 km world longest train 2001"
+  ],
+  "tagline": "BHP Iron Ore 7.3 km world longest train 2001",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://www.guinnessworldrecords.com/world-records/longest-train",
+    "https://en.wikipedia.org/wiki/BHP_Iron_Ore"
+  ],
+  "verified_fact": "On June 21, 2001, BHP ran a 7.353 km iron ore train in Western Australia with 682 wagons, 8 GE AC6000CW locos, weighing 99,734 tonnes.",
+  "voiceover_script": "Imagine karo ek train jis ki aakhri bogie dekhne ke liye binoculars chahiye! 21 June 2001 ko Australia ke Pilbara mein BHP Billiton ne 7.3 kilometer lambi, 682 dabbe wali, 1 lakh ton bhaari train chalai. Aath giant GE diesel engines alag-alag jagah par jode gaye the, radio signals se synchronized. Poori train ko crossing paar karne mein 6 se 7 minute lage. Aaj tak ka guinness world record.",
+  "debate_question": "India ke DFC par aisi monster train kab chalegi?",
+  "pinned_comment": "🚂 7.3 KM! 682 dabbe! Aakhri dabbe se engine seedha nazar nahi aata. Record!",
+  "description": "7 KM Lambi Train! Binoculars Se Dekho 😳\n\n🚂 BHP Iron Ore 7.3 km world longest train 2001\n\nOn June 21, 2001, BHP ran a 7.353 km iron ore train in Western Australia with 682 wagons, 8 GE AC6000CW locos, weighing 99,734 tonnes.\n\n👉 India ke DFC par aisi monster train kab chalegi?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#LongestTrain #MonsterTrain #Australia #BHP #FreightTrain #WorldRecord #Shorts",
+  "tags": [
+    "LongestTrain",
+    "MonsterTrain",
+    "Australia",
+    "BHP",
+    "FreightTrain",
+    "WorldRecord",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "7.3 km lambi duniya ki sabse lambi train!",
+      "prompt": "Endless BHP iron ore freight train snaking across Pilbara red desert Australia aerial 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "682 dabbe — engine nahi dikhta aakhri se!",
+      "prompt": "Infinite perspective of iron ore rail cars stretching to desert horizon red dust 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "8 giant GE diesel engines distributed!",
+      "prompt": "GE AC6000CW blue diesel locomotive BHP leading massive freight train dust 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Radio sync se braking — ek bhi jhatka nahi!",
+      "prompt": "Train driver cab telemetry control screens showing synchronized braking system 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "82,000 ton iron ore ek baar mein!",
+      "prompt": "Red iron ore loaded wagons close up in Pilbara outback Australia sunshine 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Guinness record: 2001 se aaj tak unbroken!",
+      "prompt": "Heavy freight train disappearing into Australian outback golden sunset silhouette 9:16"
+    }
+  ]
+}

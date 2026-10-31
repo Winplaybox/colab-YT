@@ -221,7 +221,8 @@ def check_existing_upload(youtube, candidate_title=None, story_number=None, epis
                     f"अध्याय {target_num:02d}", f"अध्याय {target_num}"
                 ]
                 for p in patterns:
-                    if p in v_title.lower():
+                    # word-boundary match: "ep 1" must not match "ep 12", "#1" must not match "#18"
+                    if re.search(re.escape(p) + r"(?!\d)", v_title.lower()):
                         return {
                             "exists": True,
                             "video_id": v_id,
@@ -290,7 +291,8 @@ def check_existing_upload(youtube, candidate_title=None, story_number=None, epis
                     f"#{target_num:02d}", f"#{target_num}"
                 ]
                 for p in patterns:
-                    if p in v_title.lower():
+                    # word-boundary match: "ep 1" must not match "ep 12", "#1" must not match "#18"
+                    if re.search(re.escape(p) + r"(?!\d)", v_title.lower()):
                         return {
                             "exists": True,
                             "video_id": v_id,

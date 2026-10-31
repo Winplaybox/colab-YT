@@ -1,0 +1,86 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 16,
+  "story_id": "train_16_first_train_india_1853",
+  "story_hash": "909a71fa3c5fa3ca",
+  "format": "Indian Railways Specials",
+  "title": "India Ki Pehli Train: 16 April 1853 📜",
+  "youtube_title": "India Ki Pehli Train: 16 April 1853 📜",
+  "title_variations": [
+    "India Ki Pehli Train: 16 April 1853 📜",
+    "First passenger train Bori Bunder to Thane 🚂",
+    "India Ki Pehli Train: 16 April 1853 📜 #Shorts",
+    "The Real Story: First passenger train Bori Bunder to Thane"
+  ],
+  "tagline": "First passenger train Bori Bunder to Thane",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/History_of_rail_transport_in_India",
+    "https://indianrailways.gov.in"
+  ],
+  "verified_fact": "On April 16, 1853, India's first passenger train ran 34 km from Bori Bunder to Thane hauled by three steam locomotives: Sindh, Sultan, and Sahib, carrying 400 passengers. Today Indian Railways is the 4th largest network in the world.",
+  "voiceover_script": "16 April 1853 ko dopahar 3:35 baje Bharat ki pehli passenger train ne whistle bajai! Bori Bunder se Thane tak 34 kilometer ka safar tha, jise teen steam engines ne kheencha tha—jinke naam the Sindh, Sultan aur Sahib. Isme 400 passengers baithe the aur safar tay karne mein kareeb 57 minute lage the. Wahin se shuru hui wo journey jisse aaj Indian Railways duniya ka chautha sabse bada railway network ban chuka hai!",
+  "debate_question": "1853 se lekar aaj tak: Indian Railways ka ye safar kaisa laga?",
+  "pinned_comment": "📜 16 April 1853: Sindh, Sultan aur Sahib! 34 KM se shuru hokar aaj duniya ka 4th largest rail network ban gaya!",
+  "description": "India Ki Pehli Train: 16 April 1853 📜\n\n🚂 First passenger train Bori Bunder to Thane\n\nOn April 16, 1853, India's first passenger train ran 34 km from Bori Bunder to Thane hauled by three steam locomotives: Sindh, Sultan, and Sahib, carrying 400 passengers. Today Indian Railways is the 4th largest network in the world.\n\n👉 1853 se lekar aaj tak: Indian Railways ka ye safar kaisa laga?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#FirstTrainIndia #IndianRailwaysHistory #1853Train #HeritageTrain #Shorts",
+  "tags": [
+    "FirstTrainIndia",
+    "IndianRailwaysHistory",
+    "1853Train",
+    "HeritageTrain",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "16 April 1853: Pehli passenger train ki shuruat!",
+      "sound_cue": "vintage_whistle",
+      "prompt": "Historic vintage recreation of India's first 1853 passenger train at Bori Bunder station, crowd gathered in 19th-century attire, sepia warm tones, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "Teen engines the: Sindh, Sultan aur Sahib!",
+      "sound_cue": "steam_slow",
+      "prompt": "Vintage 1850s small steam locomotive with polished brass boiler and tall chimney, historic detail, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Bori Bunder se Thane: 34 KM ka safar!",
+      "sound_cue": "cannon_boom",
+      "prompt": "Early wooden passenger carriages rolling across coastal terrain near Thane marshland under bright afternoon sun, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "400 yatriyon ne kiya tha aitihasik safar.",
+      "sound_cue": "cheers",
+      "prompt": "Passengers in historic attire looking out from open wooden carriage windows with wonder and excitement, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Aaj ye duniya ka 4th largest rail network hai!",
+      "sound_cue": "modern_transition",
+      "prompt": "Visual transition showing historic steam train alongside modern Vande Bharat train on parallel tracks at sunset, 9:16 vertical portrait"
+    }
+  ]
+}

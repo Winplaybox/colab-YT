@@ -1,0 +1,87 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 26,
+  "story_id": "train_26_mallard_steam_record_203kmh",
+  "story_hash": "27f01dff825100ba",
+  "format": "Scenic / Nostalgia / Mystery",
+  "title": "Steam Engine Ka World Record: 203 km/h! ⚡",
+  "youtube_title": "Steam Engine Ka World Record: 203 km/h! ⚡",
+  "title_variations": [
+    "Steam Engine Ka World Record: 203 km/h! ⚡",
+    "LNER Class A4 4468 Mallard (1938) 🚂",
+    "Steam Engine Ka World Record: 203 km/h! ⚡ #Shorts",
+    "The Real Story: LNER Class A4 4468 Mallard (1938)"
+  ],
+  "tagline": "LNER Class A4 4468 Mallard (1938)",
+  "visual_theme": "VINTAGE_STEAM_GAUGE",
+  "target_duration_seconds": 25,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/LNER_Class_A4_4468_Mallard",
+    "https://www.railwaymuseum.org.uk"
+  ],
+  "verified_fact": "On July 3, 1938, the streamlined British steam locomotive LNER Class A4 4468 'Mallard' set the unbroken world speed record for steam locomotives at 126 mph (202.8 km/h).",
+  "voiceover_script": "1938 mein is steam engine ne 202.8 km/h ki speed chhoo kar world record banaya tha! Britain ki LNER Class A-Four locomotive 'Mallard' ne ye record banaya, aur pichhle 88 saal mein koi bhi steam engine is record ko tod nahi paaya! Iska streamlined aerodynamic blue body design hawa ko cheerne ke liye banaya gaya tha. Record run ke doran friction se iska middle driving bearing itna garam ho gaya tha ki run ke baad use inspect karna pada. Steam era ka ye record aaj bhi amar hai!",
+  "debate_question": "Kya aapko lagta hai future mein koi steam engine Mallard ka 202.8 km/h record tod payega?",
+  "pinned_comment": "⚡ 1938 se aaj tak 88 saal ho gaye! Mallard ka 202.8 km/h (126 mph) record aaj bhi undefeated hai.",
+  "description": "Steam Engine Ka World Record: 203 km/h! ⚡\n\n🚂 LNER Class A4 4468 Mallard (1938)\n\nOn July 3, 1938, the streamlined British steam locomotive LNER Class A4 4468 'Mallard' set the unbroken world speed record for steam locomotives at 126 mph (202.8 km/h).\n\n👉 Kya aapko lagta hai future mein koi steam engine Mallard ka 202.8 km/h record tod payega?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Mallard #SpeedRecord #SteamEngine #TrainHistory #LNER #Shorts",
+  "tags": [
+    "Mallard",
+    "SpeedRecord",
+    "SteamEngine",
+    "TrainHistory",
+    "LNER",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "1938 mein steam engine chali 202.8 km/h!",
+      "sound_cue": "steam_rush",
+      "prompt": "Streamlined garter blue Art Deco steam locomotive Mallard 4468 rushing down English rail track with white steam trailing behind, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 2,
+      "duration": 5,
+      "subtitle": "88 saal baad bhi koi steam engine ye record nahi tod saka!",
+      "sound_cue": "gauge_needle",
+      "prompt": "Mechanical driver cabin view showing brass steam pressure gauges and glowing firebox doors, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 3,
+      "duration": 5,
+      "subtitle": "Aerodynamic streamlined body ne hawa ko cheera!",
+      "sound_cue": "wind_rush",
+      "prompt": "Sleek wedge-shaped aerodynamic nose of blue steam locomotive Mallard viewed from front three-quarter angle, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 4,
+      "duration": 5,
+      "subtitle": "Record run ke dauran bearing extreme garam ho gaya tha.",
+      "sound_cue": "metal_friction",
+      "prompt": "Close-up of massive polished steel driving wheels and crankpins on historic steam locomotive, 9:16 vertical portrait"
+    },
+    {
+      "shot_index": 5,
+      "duration": 5,
+      "subtitle": "Steam era ka sabse iconic speed milestone!",
+      "sound_cue": "british_whistle",
+      "prompt": "Mallard resting in pristine museum exhibition lighting with polished blue casing, 9:16 vertical portrait"
+    }
+  ]
+}

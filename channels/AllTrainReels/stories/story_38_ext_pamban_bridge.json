@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 38,
+  "story_id": "train_ext_pamban_bridge",
+  "story_hash": "b57beb43393a20de",
+  "format": "Engineering Marvel",
+  "title": "Samundar Mein Uthne Wala Rail Bridge! 🌊",
+  "youtube_title": "Samundar Mein Uthne Wala Rail Bridge! 🌊",
+  "title_variations": [
+    "Samundar Mein Uthne Wala Rail Bridge! 🌊",
+    "New Pamban vertical lift sea railway bridge India 🚂",
+    "Samundar Mein Uthne Wala Rail Bridge! 🌊 #Shorts",
+    "The Real Story: New Pamban vertical lift sea railway bridge India"
+  ],
+  "tagline": "New Pamban vertical lift sea railway bridge India",
+  "visual_theme": "SPEEDOMETER_HUD",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pamban_Bridge"
+  ],
+  "verified_fact": "India's New Pamban Bridge is the country's first vertical lift sea railway bridge — its 72.5 m central span lifts 17 m for ships to pass through.",
+  "voiceover_script": "Train chal rahi hai, samundar ke beech... aur achaanak poora rail track 17 meter upar uth jaata hai! Ye hai Rameshwaram ka naya Pamban Bridge. Bharat ka pehla vertical lift sea railway bridge. Jahaaz aate hi 72.5 meter ka section upar uthta hai, jahaaz guzarta hai, aur track wapas set ho jaata hai. Ye sirf India mein possible tha!",
+  "debate_question": "Pamban Bridge par train mein safar karna chahenge?",
+  "pinned_comment": "🌊 Track hawa mein uth jaata hai jahaaz ke liye! Amazing Indian engineering!",
+  "description": "Samundar Mein Uthne Wala Rail Bridge! 🌊\n\n🚂 New Pamban vertical lift sea railway bridge India\n\nIndia's New Pamban Bridge is the country's first vertical lift sea railway bridge — its 72.5 m central span lifts 17 m for ships to pass through.\n\n👉 Pamban Bridge par train mein safar karna chahenge?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#PambanBridge #Rameshwaram #IndianRailways #VerticalLift #SeaBridge #EngineeringMarvel #Shorts",
+  "tags": [
+    "PambanBridge",
+    "Rameshwaram",
+    "IndianRailways",
+    "VerticalLift",
+    "SeaBridge",
+    "EngineeringMarvel",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Samundar ke beech uthne wala rail bridge!",
+      "prompt": "New Pamban vertical lift railway bridge turquoise sea Rameshwaram 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "72.5 meter ka span 17 meter upar uthta hai!",
+      "prompt": "Central steel truss span of sea bridge lifting vertically for ship 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Jahaaz guzarta hai — track neeche aata hai!",
+      "prompt": "Ship passing under lifted railway bridge span open sea 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Bharat ka pehla vertical lift sea bridge!",
+      "prompt": "Train crossing long sea viaduct open ocean both sides Rameshwaram 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Namak hawa aur tufaan ko jhelne wala design!",
+      "prompt": "Sea spray crashing against stainless steel bridge pillars 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Rameshwaram ka safar ab aur shaandar!",
+      "prompt": "Sunrise over Pamban Bridge train crossing golden sea 9:16"
+    }
+  ]
+}
