@@ -1,0 +1,52 @@
+{
+  "channel": "MindNestTales",
+  "updated": "2026-10-31",
+  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
+  "median_views": 4,
+  "subscribers": 15,
+  "top_titles": [
+    {
+      "title": "La Crinière Rebelle de Léo ! (French)",
+      "views": 411
+    },
+    {
+      "title": "Leos Verrückter Mähnentag! (German)",
+      "views": 333
+    },
+    {
+      "title": "Gajjus Große Benimm-Lektion! (German)",
+      "views": 217
+    },
+    {
+      "title": "La Grande Course de Zebra's ! (French)",
+      "views": 167
+    }
+  ],
+  "winning_patterns": [
+    "French and German channels get real views; same stories get ~0 in English/Hindi",
+    "Named recurring characters (Léo, Gajju) in the title"
+  ],
+  "avoid": [
+    "Broken template titles ('Rhino's's', 'Giraffe's's', 'Slowest's', English animal names inside French titles)",
+    "Same story re-uploaded per animal ('Big Race Against Time' x6) - looks mass-produced",
+    "Duplicate uploads of the same story on one channel"
+  ],
+  "title_examples": [
+    "Léo et le Lion qui Avait Peur du Noir",
+    "Gajju Apprend à Dire Merci",
+    "Leo und die Verlorene Krone",
+    "Gajju und der Laute Nachbar",
+    "Zara la Zèbre Court Contre le Temps"
+  ],
+  "topic_ideas": [
+    "Sharing toys",
+    "Telling the truth",
+    "Being brave at night",
+    "Helping a new friend",
+    "Patience",
+    "Saying sorry",
+    "Trying new food",
+    "Listening to parents"
+  ],
+  "one_fix": "Put the effort into French and German first; fix the title template and stop one-story-many-animals uploads."
+}

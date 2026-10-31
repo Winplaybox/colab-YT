@@ -1,0 +1,46 @@
+{
+  "channel": "TigerVlogs",
+  "updated": "2026-10-31",
+  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
+  "median_views": 26,
+  "subscribers": 0,
+  "top_titles": [
+    {
+      "title": "Ajmer's Craziest Dry Fruit Sheermal! (re-upload, removed)",
+      "views": 1000
+    },
+    {
+      "title": "India's Craziest Bread Chaat Wala!",
+      "views": 142
+    },
+    {
+      "title": "Only ₹20 For The Crispiest Dosa in Mumbai?!",
+      "views": 33
+    }
+  ],
+  "winning_patterns": [
+    "A real vendor/dish with a price or place ('₹20 dosa in Mumbai', 'Bread Chaat Wala')"
+  ],
+  "avoid": [
+    "Same title uploaded again and again (Sheermal ~24 times, Samosa Oil ~14, Fire Pani Puri ~12) - spam/reused-content risk",
+    "Health-scare claims without sources"
+  ],
+  "title_examples": [
+    "Delhi Ke Sabse Famous Chole Bhature Kahan Milte Hain?",
+    "Indore Ki Raat Wali Sarafa Khau Gali",
+    "Banaras Ki Malaiyo Sirf Sardi Mein Kyun?",
+    "Kolkata Ka Asli Jhalmuri Kaise Banta Hai",
+    "Ahmedabad Manek Chowk Ki Chocolate Sandwich"
+  ],
+  "topic_ideas": [
+    "Sarafa Bazaar Indore",
+    "Banaras malaiyo",
+    "Delhi chole bhature",
+    "Kolkata jhalmuri",
+    "Manek Chowk sandwich",
+    "Mumbai vada pav origin",
+    "Amritsari kulcha",
+    "Rajasthani dal baati"
+  ],
+  "one_fix": "Make all old duplicate uploads private first; then one unique dish/city per day."
+}

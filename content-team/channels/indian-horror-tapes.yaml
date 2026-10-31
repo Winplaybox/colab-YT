@@ -1,0 +1,62 @@
+channel: indian-horror-tapes
+display_name: Indian Horror Tapes
+format: short            # short = 9:16 <60s, long = 16:9
+
+script:
+  # IndicF5 Devanagari padhta hai. Roman Hinglish dene pe uchcharan bigadta hai.
+  # Isliye voiceover script DEVANAGARI mein — English shabd bhi Devanagari mein (हाईवे, मोबाइल).
+  min_words: 110
+  max_words: 150         # ~50-58 sec
+  hook_max_words: 12     # pehli line
+  max_line_chars: 160
+  end_with_question: true
+  style: |
+    First-person, jaise koi sach mein apni kahani suna raha ho.
+    Pehli line = seedha darr ya ajeeb detail. Koi intro nahi.
+    Chhote vaakya. Har 2-3 line mein ek naya detail jo tension badhaye.
+    Jagah real Indian ho (gaon, highway dhaba, purani haveli, Mumbai chawl, local train).
+    Ending twist ya open; aakhri line comment-bait sawaal.
+    Gore / violence ka detail nahi. Real logon ya real jagah ke naam nahi.
+  banned:
+    - "नमस्ते दोस्तों"
+    - "लाइक"
+    - "सब्सक्राइब"
+    - "इस वीडियो में"
+    - "आज हम"
+
+voice:
+  ref_wav: channels/indian-horror-tapes/ref.wav
+  ref_txt: channels/indian-horror-tapes/ref.txt
+  gap_ms: 250
+
+subs:
+  words_per_cue: 4
+
+video:
+  width: 1080
+  height: 1920
+  fps: 30
+  bg_dir: channels/indian-horror-tapes/bg        # .mp4/.mov/.jpg/.png — episode id se ek pick hota hai
+  music: channels/indian-horror-tapes/music.mp3  # optional, na ho toh skip
+  music_db: -22
+  bg_brightness: -0.08                           # thoda andhera, horror ke liye
+  sub_style: "FontName=Noto Sans Devanagari,FontSize=14,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=2,Alignment=2,MarginV=110"
+
+metadata:
+  language: Hinglish (Roman script)   # title/description Roman mein — search ke liye better
+  title_max_chars: 70
+
+publish:
+  mode: schedule          # schedule = private + publishAt (aap beech mein rok sakte ho) | private_only
+  slots_ist: ["19:30"]
+  min_lead_hours: 3       # itne ghante se pehle ka slot nahi lega (review ka time)
+  category_id: "24"       # Entertainment
+  synthetic_media: true   # AI voice → YouTube pe disclose
+  made_for_kids: false
+  hashtags: ["#horrorstories", "#hindihorror", "#shorts"]
+  default_tags: ["horror story hindi", "real horror story", "bhoot ki kahani", "indian horror"]
+
+ideas:
+  refill_below: 5
+  batch_size: 20
+  themes: ["highway", "gaon", "haveli", "hospital", "chawl", "local train", "school", "jungle", "hostel", "shamshan"]

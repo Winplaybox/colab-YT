@@ -1,7 +1,7 @@
 {
   "channel_id": "UCO_AVV1aoIjGEgbj50HTJLw",
   "channel_name": "Digital Immortals",
-  "current_episode": 8,
+  "current_episode": 9,
   "total_episodes": 54,
   "history": [
     {
@@ -52,6 +52,13 @@
       "title": "पत्थर बनी अहल्या का उद्धार! 🪨✨ मिथिला में शिव धनुष का रहस्य (Ep 07)",
       "uploaded_at": "2026-10-12T15:48:19.537210",
       "publish_at": "2026-10-25T03:00:00Z"
+    },
+    {
+      "episode_number": 8,
+      "video_id": "SAxjF_T0kAM",
+      "title": "शिव धनुष भंग! 🏹💥 सीता स्वयंवर और परशुराम का महाक्रोध (Ep 08)",
+      "uploaded_at": "2026-10-31T17:14:49.652316",
+      "publish_at": "2026-11-01T03:00:00Z"
     }
   ],
   "playlists": {
@@ -66,11 +73,11 @@
   "last_audit": {
     "episode_number": 7,
     "video_id": "ned8gKC0zfE",
-    "views": 0,
-    "likes": 0,
+    "views": 4,
+    "likes": 1,
     "comments": 0,
-    "like_ratio": 0,
-    "audited_at": "2026-10-22T14:58:06.488224",
-    "sentiment": "⚠️ LOW ENGAGEMENT: Increase emotional stakes and refine thumbnail hook."
+    "like_ratio": 25.0,
+    "audited_at": "2026-10-31T16:59:36.792808",
+    "sentiment": "🔥 EXCEPTIONAL: High community resonance! Pacing and narrative voice are winning."
   }
 }

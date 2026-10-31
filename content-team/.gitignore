@@ -1,0 +1,11 @@
+credentials/*
+!credentials/.gitkeep
+episodes/*
+!episodes/.gitkeep
+.tts_cache/
+__pycache__/
+*.wav
+*.mp4
+*.mp3
+!channels/**/music.mp3
+!channels/**/ref.wav

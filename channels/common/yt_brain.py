@@ -51,7 +51,10 @@ def improve(channel, title, description, tags, is_short=True):
     """Pure function: returns dict(title, description, tags, playlist) or None to keep original."""
     prof = channel_profiles.get(channel)
     ins = load_insights(channel)
-    learn = {k: ins.get(k) for k in ("winning_patterns", "avoid", "title_examples", "top_titles") if ins.get(k)}
+    learn = {k: ins.get(k) for k in ("winning_patterns", "avoid", "title_examples", "top_titles", "hook_rules") if ins.get(k)}
+    if ins.get("niche_outliers"):   # /yt-viral: what beats other channels in this niche
+        learn["niche_outliers"] = [{"title": o["title"], "multiple": o["multiple"], "formula": o.get("formula")}
+                                   for o in ins["niche_outliers"][:5]]
     if "top_titles" in learn:
         learn["top_titles"] = learn["top_titles"][:6]
     playlists = prof.get("playlists") or []
@@ -74,12 +77,26 @@ Rewrite for maximum click-through AND accuracy:
 - description: line 1 = hook sentence; line 2 = one question inviting comments; then 2-4 short lines about the video
   with natural search keywords; then a subscribe line. Do NOT invent facts beyond the original.
 - tags: 10-15 search phrases (mix of the channel language and English/Hinglish), most specific first.
+- target_queries (/yt-seo): the 3 real searches this video should win; use the first one naturally in the title or
+  first description line, and all three in the tags.
+- the subject must survive the ~40-character mobile cut (front-load the name/place/number).
 - playlist: choose exactly one from {json.dumps(playlists, ensure_ascii=False)} or "" if the list is empty.
-Return ONLY JSON: {{"title": "...", "description": "...", "tags": ["..."], "playlist": "..."}}"""
+Return ONLY JSON: {{"title": "...", "description": "...", "tags": ["..."], "target_queries": ["...", "...", "..."], "playlist": "..."}}"""
     out = _ask_claude(prompt)
     new_title = (out.get("title") or "").strip()
     if not new_title or len(new_title) > 95 or not _caps_ok(new_title):
         new_title = title
+    # /yt-package lint (vendored title.py + Hindi layer): reject repeats of existing titles and worse titles
+    try:
+        from . import skills
+        recent = ins.get("recent_titles") or [t["title"] for t in ins.get("top_titles", []) + ins.get("bottom_titles", [])]
+        new_l = skills.lint_title(new_title, recent_titles=recent)
+        old_l = skills.lint_title(title)
+        if any(i[0] == "repeat" for i in new_l["issues"]) or new_l["score"] + 10 < old_l["score"]:
+            print(f"[yt_brain] lint rejected '{new_title}' ({[i[0] for i in new_l['issues']]}); keeping original title")
+            new_title = title
+    except Exception as e:
+        print(f"[yt_brain] lint notice: {e}")
     # keep episode marker so duplicate checkers keep working
     m = _EP_MARKER.search(title)
     if m and not _EP_MARKER.search(new_title):
@@ -99,7 +116,7 @@ Return ONLY JSON: {{"title": "...", "description": "...", "tags": ["..."], "play
         new_desc += " #Shorts"
 
     new_tags, total = [], 0
-    for t in list(dict.fromkeys([*(out.get("tags") or []), *(tags or [])])):
+    for t in list(dict.fromkeys([*(out.get("target_queries") or []), *(out.get("tags") or []), *(tags or [])])):
         t = str(t).strip().lstrip("#")
         if t and total + len(t) + 1 <= 480:
             new_tags.append(t)

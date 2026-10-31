@@ -1,0 +1,55 @@
+{
+  "channel": "AllTrainReels",
+  "updated": "2026-10-31",
+  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
+  "median_views": 88,
+  "subscribers": 2,
+  "top_titles": [
+    {
+      "title": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss!",
+      "views": 926
+    },
+    {
+      "title": "Vande Bharat vs Shatabdi: Asli Farak!",
+      "views": 243
+    },
+    {
+      "title": "42 Saal Band Raha Ye Station: Begunkodor",
+      "views": 199
+    },
+    {
+      "title": "Steam vs Diesel vs Electric: Kaun Powerful?",
+      "views": 180
+    },
+    {
+      "title": "Duniya Ka Sabse Lamba Platform: 1,507 M!",
+      "views": 169
+    }
+  ],
+  "winning_patterns": [
+    "Comparison with an Indian train the viewer has ridden (Mumbai Local, Vande Bharat)",
+    "Indian railway records and ghost/history stories (Begunkodor, longest platform)"
+  ],
+  "avoid": [
+    "Foreign-only comparisons with no Indian anchor (Shinkansen vs TGV vs Fuxing: 23)",
+    "Trivia without stakes (coach number code: 20, 7 km train: 20)"
+  ],
+  "title_examples": [
+    "Rajdhani vs Vande Bharat: Kaun Pehle Pahunchegi?",
+    "Mumbai Local Mein 1 Din Mein Kitne Log?",
+    "Indian Railways Ka Sabse Lamba Route: 4,189 KM?",
+    "Bullet Train vs Vande Bharat: Asli Speed Test",
+    "Kalka Shimla Toy Train Ke 102 Tunnel!"
+  ],
+  "topic_ideas": [
+    "Vande Bharat sleeper vs Rajdhani",
+    "Mumbai local vs Delhi Metro",
+    "Vivek Express longest route",
+    "Chenab bridge vs Eiffel Tower height",
+    "Kalka-Shimla tunnels",
+    "Konkan railway monsoon",
+    "Pamban new bridge lift",
+    "Howrah station platforms"
+  ],
+  "one_fix": "Make every second Short an 'India vs X' or 'Indian train vs Indian train' comparison."
+}

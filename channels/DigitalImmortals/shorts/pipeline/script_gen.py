@@ -107,6 +107,11 @@ def generate(history: list, today: dt.date | None = None) -> dict:
     used = ", ".join(h["topic"] for h in history[-150:]) or "none yet"
     prompt = USER_TMPL.format(date=today.isoformat(), fmt_name=fmt, fmt_desc=FORMATS[fmt], used=used,
                               insights=_channel_insights())
+    common = _common()
+    planned = common["plan"]("DigitalImmortals") if common else None
+    if planned and planned.get("topic") and planned["topic"] not in used:   # /yt-plan from the weekly loop
+        prompt += (f"\n\nTODAY'S PLANNED VIDEO (from the weekly growth plan; use it unless it repeats a used topic): "
+                   f"{json.dumps(planned, ensure_ascii=False)}")
 
     client = anthropic.Anthropic()
     last_err = None
@@ -119,7 +124,42 @@ def generate(history: list, today: dt.date | None = None) -> dict:
         )
         text = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
         try:
-            return validate(_extract_json(text))
+            meta = validate(_extract_json(text))
         except Exception as e:  # retry on malformed output
             last_err = e
+            continue
+        return _rehook(meta, common)
     raise RuntimeError(f"Script generation failed: {last_err}")
+
+
+def _common():
+    """channels/common (hooks + plan). None if unavailable."""
+    import sys
+    try:
+        root = str(config.CHANNEL_DIR.parent.parent)
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from channels.common import growth_weekly, hooks
+        return {"plan": growth_weekly.todays_plan, "best_hook": hooks.best_hook}
+    except Exception as e:
+        print(f"[script] channels.common unavailable: {e}")
+        return None
+
+
+def _rehook(meta, common):
+    """/yt-script: 5 hooks against the 21 formulas, scored by hookscore (+Hindi layer); best one opens the video."""
+    if not common:
+        return meta
+    try:
+        first = meta["scenes"][0]["narration"]
+        ins = json.loads(_channel_insights() or "{}")
+        res = common["best_hook"](meta.get("topic", meta["title"]), first, "Hindi (Devanagari)", ins, True)
+        meta["hook_candidates"] = [{"hook": c["hook"], "score": c["verdict"], "formula": c["formula"]}
+                                   for c in res.get("candidates", [])]
+        best = res.get("best")
+        if best and best["hook"] != first and len(best["hook"].split()) <= 22:
+            print(f"[script] hook {best['verdict']} ({best['formula']}) replaces scene 1: {best['hook']}")
+            meta["scenes"][0]["narration"] = best["hook"]
+    except Exception as e:
+        print(f"[script] hook step notice: {e}")
+    return meta

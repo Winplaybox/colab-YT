@@ -777,8 +777,18 @@ def generate_investigative_script(story_info, next_story_info=None):
     # -------------------------------------------------------------
     # ELITE YOUTUBE SEO & CONTENT ENGINEERING BLUEPRINT
     # -------------------------------------------------------------
-    name_hi_short = name_hi[:20] if len(name_hi) > 20 else name_hi
-    name_short = name[:20] if len(name) > 20 else name
+    def _word_cut(n, lim=22):
+        # cut at a word boundary (old [:20] produced broken titles like "Kanheri गुफ़ाs fores")
+        if len(n) <= lim:
+            return n
+        out = ""
+        for w in n.split():
+            if len((out + " " + w).strip()) > lim:
+                break
+            out = (out + " " + w).strip()
+        return out or n.split()[0]
+    name_hi_short = _word_cut(name_hi)
+    name_short = _word_cut(name)
 
     # PILLAR 1: PSYCHOLOGICAL TITLES (Strictly Under 60 Chars for Mobile Optimization)
     t1_fear = f"रात को यहाँ मत रुकना ⚠️ #Shorts"

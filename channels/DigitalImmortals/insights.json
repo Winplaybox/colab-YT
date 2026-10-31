@@ -1,0 +1,65 @@
+{
+  "channel": "DigitalImmortals",
+  "updated": "2026-10-31",
+  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
+  "median_views": 65,
+  "subscribers": 2130,
+  "top_titles": [
+    {
+      "title": "सातरस्त्याची माऊली तिच्या एका रुपात कोटी जन्मांची पुण्याई",
+      "views": 1500
+    },
+    {
+      "title": "Day-wise Darshan of 9 Ambe Maa Forms",
+      "views": 1400
+    },
+    {
+      "title": "Kya Ye Asli Krishna Hain? Divya Chamatkar Dekho!",
+      "views": 1100
+    },
+    {
+      "title": "12,000 फीट पर तुंगनाथ मंदिर का रहस्य",
+      "views": 760
+    },
+    {
+      "title": "Ek BACHCHA itna bhookha tha ki usne SURAJ nigal liya!",
+      "views": 746
+    },
+    {
+      "title": "विष्णु जी ने क्यों निकाली अपनी आँख? सुदर्शन चक्र का रहस्य",
+      "views": 711
+    },
+    {
+      "title": "बिना सहारे हवा में लटका खंभा? लेपाक्षी मंदिर का रहस्य!",
+      "views": 574
+    }
+  ],
+  "winning_patterns": [
+    "Real temple or place with a physical mystery (Tungnath, Lepakshi) in the title",
+    "Festival-timed darshan (Navratri) uploaded before/during the festival",
+    "Famous story told with the deity's name hidden in the hook ('Ek BACHCHA ne SURAJ nigal liya')",
+    "Divine-visual Shorts of Krishna/Devi forms"
+  ],
+  "avoid": [
+    "'[Famous katha]: ___ ka सच?' format (median ~27 views)",
+    "Very well-known stories with the name revealed up front (Eklavya, Samudra Manthan, Narasimha)"
+  ],
+  "title_examples": [
+    "एक ही पत्थर से काटा गया पूरा मंदिर? | कैलाश एलोरा",
+    "कोणार्क का पहिया आज भी सही समय बताता है?",
+    "बृहदेश्वर मंदिर की परछाईं ज़मीन पर क्यों नहीं गिरती?",
+    "समुद्र में डूबा मंदिर दिन में दो बार गायब होता है",
+    "एक राजा ने भगवान से भीख माँगी… और भगवान पहरेदार बन गए"
+  ],
+  "topic_ideas": [
+    "Kailasa temple Ellora",
+    "Konark Sun Temple wheel",
+    "Brihadeeswara shadow",
+    "Stambheshwar temple",
+    "Bijli Mahadev",
+    "Kamakhya temple",
+    "Dev Deepawali Kashi",
+    "Maha Shivratri darshan"
+  ],
+  "one_fix": "Only make real-temple mysteries and hidden-name story hooks; stop the 'X ka सच?' format."
+}

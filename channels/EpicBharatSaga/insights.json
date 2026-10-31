@@ -1,0 +1,65 @@
+{
+  "channel": "EpicBharatSaga",
+  "updated": "2026-10-31",
+  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
+  "median_views": 54,
+  "subscribers": 21,
+  "top_titles": [
+    {
+      "title": "Sanjeevani Ke Liye Pura Pahad Utha Laaye!",
+      "views": 380
+    },
+    {
+      "title": "Uncovering the Secret Pact Between Duryodhana and Ulupi",
+      "views": 258
+    },
+    {
+      "title": "Barbareek: ... Most Mysterious Warrior",
+      "views": 215
+    },
+    {
+      "title": "Indra Dev ka ahankaar — baar baar hara!",
+      "views": 213
+    },
+    {
+      "title": "Mahadev Ne Yama Se Chheen Li Markandey Ki Zindagi!",
+      "views": 176
+    },
+    {
+      "title": "Mahishasura Ko Durga Ne 9 Din Mein Khatam Kiya!",
+      "views": 145
+    },
+    {
+      "title": "महाभारत का वो योद्धा जिसने 1 मिनट में युद्ध खत्म कर दिया होता!",
+      "views": 132
+    }
+  ],
+  "winning_patterns": [
+    "A dramatic ACTION in the title (lifted a mountain, snatched a life, finished a war in 1 minute)",
+    "Lesser-known Mahabharata characters and secrets (Barbareek, Ulupi, Yuyutsu)",
+    "Deity ego/defeat stories (Indra's ahankaar)"
+  ],
+  "avoid": [
+    "Descriptive relation titles like 'X — Y ke pita! 🔱' (Surya 1 view, Nandi 8, Vayu 14)",
+    "Mixing Marathi/Gujarati/English full episodes on the same Hindi channel",
+    "Off-niche uploads (the 'Trending Effects' clouds video got views but brings the wrong audience)"
+  ],
+  "title_examples": [
+    "Barbareek 1 teer se poora yuddh khatam kar sakta tha!",
+    "Duryodhana ki wo raat jab Bhishma ne 5 teer diye",
+    "Karna ne Indra ko kavach kyun de diya?",
+    "Hanuman ne Bhima ka ghamand ek poonch se toda!",
+    "Ashwatthama aaj bhi zinda hai?"
+  ],
+  "topic_ideas": [
+    "Barbareek's head watching the war",
+    "Bhima vs Hanuman tail",
+    "Ghatotkacha's last night",
+    "Shikhandi's rebirth",
+    "Arjuna vs Shiva (Kirata)",
+    "Ravana lifting Kailash",
+    "Ganesha writing Mahabharata",
+    "Abhimanyu in the womb"
+  ],
+  "one_fix": "Put a dramatic action and a lesser-known character in every title; keep the channel Hindi-only."
+}

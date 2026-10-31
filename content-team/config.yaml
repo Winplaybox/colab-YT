@@ -1,0 +1,17 @@
+# Global pipeline config
+
+# local    = isi machine pe GPU hai, IndicF5 yahin chalega
+# external = voice Colab/Kaggle pe banao, voice.mp3 + voice_segments.json episode folder mein daalo
+voice_mode: local
+
+# Script likhne ke liye BEST model wala alag, stateless Hermes call.
+# {prompt} code bharta hai. Agar aapke Hermes version ke flags alag hain toh sirf yahan badlo.
+writer_cmd: 'hermes chat -p ct-writer -s ct-script-writer -q "{prompt}"'
+
+# validator fail hone pe writer kitni baar fix karega, phir pipeline ruk ke aapko batayegi
+max_fix_attempts: 2
+
+python: python
+
+# Saare channels ke liye ek hi TTS cache (same line dobara generate nahi hogi)
+tts_cache: .tts_cache

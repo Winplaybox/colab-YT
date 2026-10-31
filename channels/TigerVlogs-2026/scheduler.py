@@ -174,6 +174,15 @@ def save_used_topics(used):
         json.dump(used, f, ensure_ascii=False, indent=1)
 
 
+def _planned_today():
+    try:
+        b = _yt_brain()   # makes channels.common importable
+        from channels.common.growth_weekly import todays_plan
+        return json.dumps(todays_plan("TigerVlogs") or {}, ensure_ascii=False)
+    except Exception:
+        return "{}"
+
+
 def topic_from_claude(used_titles):
     """Fresh topic each day via Claude (needs ANTHROPIC_API_KEY). Returns dict or None."""
     if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -186,6 +195,7 @@ def topic_from_claude(used_titles):
             "or a regional variety. Only well-established facts. NO health/medical claims, NO adulteration or "
             "safety tests, NO numbers you are not sure of.\n"
             f"Already used titles (do not repeat): {used_titles[-120:]}\n"
+            f"Weekly growth plan for today (prefer it if it fits the rules): {_planned_today()}\n"
             'Return ONLY JSON: {"hook": "max 6 words, caps ok", "title": "max 60 chars English", '
             '"script": "70-90 words Hinglish (Roman script), friendly, ends with a question for comments", '
             '"wiki": "exact English Wikipedia article title for the dish", "tags": ["8 tags"]}'

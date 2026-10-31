@@ -1,0 +1,59 @@
+channel: epicbharatsaga
+display_name: Epic Bharat Saga
+format: short            # short = 9:16 <60s portrait Shorts
+
+script:
+  min_words: 110
+  max_words: 150         # ~50-58 sec
+  hook_max_words: 12     # pehli line
+  max_line_chars: 160
+  end_with_question: true
+  style: |
+    Narrative: Epic Indian history, Sanatan heritage, temple architecture miracles, warrior chronicles, and sacred legends.
+    Pehli line = bold historical curiosity or breathtaking temple engineering fact.
+    Tone: Proud, energetic, deeply researched, inspiring.
+    Chhote vaakya, clear narrative progression.
+    Aakhri line audience se connection/opinion maangne wala sawaal.
+  banned:
+    - "नमस्ते दोस्तों"
+    - "लाइक"
+    - "सब्सक्राइब"
+    - "इस वीडियो में"
+    - "आज हम"
+
+voice:
+  ref_wav: channels/epicbharatsaga/ref.wav
+  ref_txt: channels/epicbharatsaga/ref.txt
+  gap_ms: 250
+
+subs:
+  words_per_cue: 4
+
+video:
+  width: 1080
+  height: 1920
+  fps: 30
+  bg_dir: channels/epicbharatsaga/bg
+  music: channels/epicbharatsaga/music.mp3
+  music_db: -20
+  bg_brightness: -0.05
+  sub_style: "FontName=Noto Sans Devanagari,FontSize=14,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=2,Alignment=2,MarginV=110"
+
+metadata:
+  language: Hinglish (Roman script)
+  title_max_chars: 70
+
+publish:
+  mode: schedule
+  slots_ist: ["07:30", "19:00"]
+  min_lead_hours: 3
+  category_id: "24"
+  synthetic_media: true
+  made_for_kids: false
+  hashtags: ["#epicbharatsaga", "#bharatitihas", "#ancientindia", "#shorts"]
+  default_tags: ["epic bharat", "indian history", "temple mystery", "sanatan legends", "ancient bharat"]
+
+ideas:
+  refill_below: 5
+  batch_size: 20
+  themes: ["temple architecture", "chola dynasty", "maharana pratap", "shivaji maharaj", "ellora caves", "konark sun temple", "ancient universities", "vedic astronomy", "lost cities", "hampi ruins"]

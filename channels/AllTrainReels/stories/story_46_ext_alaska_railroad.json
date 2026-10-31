@@ -1,0 +1,88 @@
+{
+  "channel": "AllTrainReels",
+  "handle": "@AllTrainReels",
+  "episode_number": 46,
+  "story_id": "train_ext_alaska_railroad",
+  "story_hash": "041b3b82688797ca",
+  "format": "World Railways",
+  "title": "Denali Ka Glacier Dekhte Hue Train! ❄️",
+  "youtube_title": "Denali Ka Glacier Dekhte Hue Train! ❄️",
+  "title_variations": [
+    "Denali Ka Glacier Dekhte Hue Train! ❄️",
+    "Alaska Railroad Hurricane Turn wilderness request stop 🚂",
+    "Denali Ka Glacier Dekhte Hue Train! ❄️ #Shorts",
+    "The Real Story: Alaska Railroad Hurricane Turn wilderness request stop"
+  ],
+  "tagline": "Alaska Railroad Hurricane Turn wilderness request stop",
+  "visual_theme": "CABIN_POV_RADAR",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Alaska_Railroad"
+  ],
+  "verified_fact": "Alaska Railroad's Hurricane Turn is the last true 'flag stop' train in the US — passengers can flag the train to stop anywhere along its remote wilderness route.",
+  "voiceover_script": "America mein ek aisi train hai jise aap jungle mein haath hilake rok sakte hain! Alaska Railroad ka Hurricane Turn duniya ka last true flag-stop train hai. Koi station nahi, koi schedule nahi — bas haath uthao, train rukti hai. Denali National Park ke glaciers, brown bears, aur moose dekhte hue ye safar America ke sabse wild adventure mein se ek hai.",
+  "debate_question": "Wild jungle mein haath hilake train rokna — dare karte ho?",
+  "pinned_comment": "❄️ Jungle mein haath hilao, train rukti hai! Alaska ka last flag-stop train!",
+  "description": "Denali Ka Glacier Dekhte Hue Train! ❄️\n\n🚂 Alaska Railroad Hurricane Turn wilderness request stop\n\nAlaska Railroad's Hurricane Turn is the last true 'flag stop' train in the US — passengers can flag the train to stop anywhere along its remote wilderness route.\n\n👉 Wild jungle mein haath hilake train rokna — dare karte ho?\n\nSubscribe to @AllTrainReels for daily world records, monster locomotives, high-speed bullet trains, and extreme railway marvels from around the globe!\n\n#Alaska #WildernessRailway #Denali #FlagStop #NatureTrains #USA #Shorts",
+  "tags": [
+    "Alaska",
+    "WildernessRailway",
+    "Denali",
+    "FlagStop",
+    "NatureTrains",
+    "USA",
+    "Shorts"
+  ],
+  "seo_keywords": [
+    "World Railways",
+    "Monster Trains",
+    "Bullet Train",
+    "Locomotive",
+    "High Speed Rail",
+    "Shorts",
+    "Viral Trains",
+    "Train Spotting",
+    "Fastest Train",
+    "Railway Engineering",
+    "Extreme Railways"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Jungle mein haath hilao, train rukti hai!",
+      "prompt": "Alaska Railroad train stopping remote wilderness forest no station 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Denali glaciers dekhte hue safar!",
+      "prompt": "Alaska Railroad train with Denali National Park mountain glacier 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "America ka last flag-stop train!",
+      "prompt": "Passenger flagging Alaska Railroad train from remote wilderness 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Brown bears, moose — wild Alaska!",
+      "prompt": "Brown bear crossing Alaska railroad tracks wilderness 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Koi station nahi — nature hi station hai!",
+      "prompt": "Alaska Railroad train alongside frozen river Denali winter 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "America ka most wild train adventure!",
+      "prompt": "Observation dome car Alaska Railroad Northern Lights aurora 9:16"
+    }
+  ]
+}

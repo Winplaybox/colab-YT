@@ -1,0 +1,60 @@
+{
+  "channel": "IndianHorrorTapes",
+  "updated": "2026-10-31",
+  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
+  "median_views": 3,
+  "subscribers": 6,
+  "top_titles": [
+    {
+      "title": "Rakh Bagh haveli का खौफ़नाक सच",
+      "views": 94
+    },
+    {
+      "title": "Champaner-Pavagadh का खौफ़नाक सच",
+      "views": 57
+    },
+    {
+      "title": "Rakshasa Tangadi का खौफ़नाक सच",
+      "views": 53
+    },
+    {
+      "title": "The Night the Dam Broke",
+      "views": 41
+    },
+    {
+      "title": "Nahargarh किला का खौफ़नाक सच",
+      "views": 40
+    },
+    {
+      "title": "Vashi Creek का खौफ़नाक सच",
+      "views": 30
+    }
+  ],
+  "winning_patterns": [
+    "A specific, nameable place (fort, haveli, creek) people can search",
+    "A story/event angle ('The Night the Dam Broke') beats a label"
+  ],
+  "avoid": [
+    "Only 2 title templates ('X का खौफ़नाक सच 💀' / 'X: रात को मत जाना ⚠️') repeated on 48 Shorts - looks mass-produced",
+    "Truncated names ('Kanheri गुफ़ाs fores', 'Auto-rickshaw extra') - fixed in story_generator.py",
+    "Generic labels without a place ('इस वीरान जगह कभी मत जाना')"
+  ],
+  "title_examples": [
+    "नाहरगढ़ किले में रात को कौन घूमता है?",
+    "वाशी क्रीक पर 2 बजे क्या दिखा मछुआरों को?",
+    "राख बाग हवेली का दरवाज़ा अंदर से बंद क्यों रहता है?",
+    "भानगढ़ में सूरज ढलते ही ताला क्यों?",
+    "डुमस बीच की रेत काली क्यों है?"
+  ],
+  "topic_ideas": [
+    "Bhangarh Fort sunset rule",
+    "Dumas Beach black sand",
+    "Shaniwar Wada full moon",
+    "Dow Hill Kurseong",
+    "Malcha Mahal",
+    "Agrasen ki Baoli",
+    "Brij Raj Bhawan Kota",
+    "Lambi Dehar mines"
+  ],
+  "one_fix": "Every title must be a different question or event about a real, full place name; drop the two repeating templates."
+}

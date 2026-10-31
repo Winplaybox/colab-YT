@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 36,
-  "current_season": 4,
+  "current_episode": 37,
+  "current_season": 1,
   "current_deity": "Lord Shiva",
-  "last_run": "2026-10-12T10:00:00.000000",
-  "last_uploaded_video_id": "LvhqNuPKBoU",
+  "last_run": "2026-10-31T17:21:32.270427",
+  "last_uploaded_video_id": "2_1w8i0KpPI",
   "used_story_ids": [
     "shiva_01_neelkanth_origin",
     "shiva_02_tandava_nataraja",
@@ -32,7 +32,8 @@
     "hanuman_01_sun_fruit",
     "hanuman_02_sanjeevani",
     "ganesha_01_elephant_head_origin",
-    "ganesha_02_race_around_world"
+    "ganesha_02_race_around_world",
+    "shiva_ext_shiv_panchakshara"
   ],
   "history": [
     {
@@ -349,6 +350,15 @@
       "video_id": "LvhqNuPKBoU",
       "mode": "scheduled",
       "timestamp": "2026-10-11T13:30:00Z"
+    },
+    {
+      "episode_number": 36,
+      "deity": "Lord Shiva",
+      "season": 1,
+      "title": "Om Namah Shivaya: 5 Akshar Mein Poori Srishti! 🕉️",
+      "video_id": "2_1w8i0KpPI",
+      "mode": "scheduled",
+      "timestamp": "2026-10-31T17:21:32.270427"
     }
   ]
 }

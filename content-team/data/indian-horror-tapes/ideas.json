@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ind-0001",
+    "title": "Highway 48 Ka Band Dhaba",
+    "premise": "Raat 2 baje highway par ek dhaba khula mila jahan light nahi sirf peeli mombatti jal rahi thi. Chai pilane wale buddha har customer ke peechhe khade hokar kuch phusphusa raha tha. Car mein baithte hi rearview mirror mein dekha toh dhaba gayab tha aur seat par geeli mitti padi thi.",
+    "theme": "highway",
+    "twist": "Mobile par check kiya toh pata chala wo dhaba pandrah saal pehle road widening mein toot chuka tha.",
+    "used": "20261031-01"
+  },
+  {
+    "id": "ind-0002",
+    "title": "Midnight Bus Ki Aakhri Sawari",
+    "premise": "Rajasthan ke sunsan bypass par maine aakhri bus pakdi jismein sirf teen sawariyan thin. Sabke sar aage jhuke the aur koi palke tak nahi jhapka raha tha. Conductor ne ticket kaat-te waqt mere haath par jo sikka diya wo azaadi ke pehle ka tha.",
+    "theme": "highway",
+    "twist": "Jab achanak bus ruki toh aage koi driver hi nahi tha aur speedometer zero par atka tha.",
+    "used": "20261031-02"
+  },
+  {
+    "id": "ind-0003",
+    "title": "Gaon Ka Purana Kuan",
+    "premise": "Dadi ke gaon ke khet mein ek sookha kuan tha jisse dopahar ko bhi rone ki aawazein aati thin. Ek din maine kuye ke andar jhaanka toh neeche paani nahi balki ek aurat meri taraf dekh kar muskurayi. Uske haath mein meri hi bachpan ki photo thi.",
+    "theme": "gaon",
+    "twist": "Photo ke peeche likhi date aane wale kal ki thi.",
+    "used": null
+  },
+  {
+    "id": "ind-0004",
+    "title": "Khet Ki Beparwah Rakhwali",
+    "premise": "Sarson ke khet ke beech laga putla (scarecrow) har subah alag disha mein muda milta tha. Ek raat torch lekar gaya toh dekha putle ke pair zameen par nahi the wo zameen se ek baalashth upar tair raha tha. Aur uske kurte se taaze khoon ki boo aa rahi thi.",
+    "theme": "gaon",
+    "twist": "Jab kapda hataya toh pata chala gaon ka lapata chowkidar usi putle ke andar bandha tha.",
+    "used": null
+  },
+  {
+    "id": "ind-0005",
+    "title": "Haveli Ka Band Kamra",
+    "premise": "Kolkata ki ek do sau saal purani haveli mein stay ke dauran aadhi raat ko teesri manzil se ghunghroo ki aawaz aayi. Sidhiyan chadh kar dekha toh ek kamre par chaar bhari taale lage the par andar se parde hil rahe the. Chabi ke chhed se andar dekha toh wahan se do laal aankhein seedha meri aankh mein jhaank rahi thin.",
+    "theme": "haveli",
+    "twist": "Subah caretaker ne bataya us kamre ke andar koi khidki ya darwaza pichhle sau saal se khula hi nahi.",
+    "used": null
+  },
+  {
+    "id": "ind-0006",
+    "title": "Aayine Ka Pehla Aks",
+    "premise": "Haveli ke drawing room mein lage belgium kaanch ke aayine mein jab main apna baal bana raha tha, tab aayine ke andar mere peechhe khadi safed saari wali aurat dikhi. Maine ghoom kar dekha toh peechhe koi nahi tha. Par aayine mein wo aurat mere gale par haath rakh chuki thi.",
+    "theme": "haveli",
+    "twist": "Aayine ke andar ka aks mere ghoomne ke baad bhi wahi khada raha aur akele muskura raha tha.",
+    "used": null
+  },
+  {
+    "id": "ind-0007",
+    "title": "Ward Number Tera Ki Ghanti",
+    "premise": "Civil hospital ke ICU night shift mein band pade ward number 13 se continuous call-bell bajne lagi. Guard ke sath jaakar dekha toh bed par chaadar bilkul saaf thi par saline stand par rassi ka phanda jhul raha tha. Tabhi speaker se kisi ke saans lene ki aawaz aane lagi.",
+    "theme": "hospital",
+    "twist": "Subah register dekha toh pata chala pichhle saal usi taareekh ko ek nurse ne usi pankhe se jaan di thi.",
+    "used": null
+  },
+  {
+    "id": "ind-0008",
+    "title": "Basement Morgue Ka Lift",
+    "premise": "Hospital ki lift raat 3 baje apne aap basement mortuary floor par jakar ruk gayi. Darwaza khula toh poore floor par barf jaisi thand aur phaili hui formal-dehyde ki badbu thi. Lift band karne ka button dabaya par darwaza band hone se pehle ek thanda geela haath darwaze ke beech fas gaya.",
+    "theme": "hospital",
+    "twist": "Lift ke screen par floor number ki jagah 'YOU ARE NEXT' flash hone laga.",
+    "used": null
+  },
+  {
+    "id": "ind-0009",
+    "title": "Chawl Ki Teesra Maala",
+    "premise": "Girgaon chawl ki aam balcony par raat dedh baje kisi aurat ke soop se anaaj saaf karne ki aawaz roz aati thi. Sab kehte the wahan koi nahi rehta. Ek din maine darwaze ki jheeri se dekha toh aurat anaaj nahi kankal ke chote tukde chhaan rahi thi.",
+    "theme": "chawl",
+    "twist": "Uss aurat ne achanak garden ghumayi toh uska chehra theek meri chawl ki padosan jaisa tha jo kal subah guzar chuki thi.",
+    "used": null
+  },
+  {
+    "id": "ind-0010",
+    "title": "Kholik Number 42 Ka Kirayedar",
+    "premise": "Chawl ke aakhri kamre se roz raat bartan girne aur ladne ki aawazein aati thin. Landlord ne taala tod kar check kiya toh kamra barso se khali aur jaalo se bhara tha. Par deewar par geeli kaali syaahi se roz ek naya din ka countdown likha ja raha tha.",
+    "theme": "chawl",
+    "twist": "Aakhri taareekh aane wale shanivaar ki thi jis din chawl mein short-circuit se aag lagi.",
+    "used": null
+  },
+  {
+    "id": "ind-0011",
+    "title": "Virar Fast Ka Last Dabba",
+    "premise": "Churchgate se nikli aakhri train ke luggage compartment mein main akele baitha tha. Mahim station cross karte hi upar overhead rack par kisi ke ghaseetne ki aawaz hui. Upar torch mari toh wahan ek purana leather bag tha jo apne aap dharak raha tha jaise koi zinda dil ho.",
+    "theme": "local train",
+    "twist": "Bag par lage tag par mera apna naam aur mera ghar ka pata likha hua tha.",
+    "used": null
+  },
+  {
+    "id": "ind-0012",
+    "title": "Platform Number Zero",
+    "premise": "Train raat ko kisi aise chote station par ruki jahan koi board nahi tha sirf peela bulb jal raha tha. Maine paani lene ke liye pair utara par platform par pair rakhte hi piche se train bina kisi horn ke gayab ho gayi. Chaaro taraf sirf railway tracks the jo aage jakar daldal mein khatam ho rahe the.",
+    "theme": "local train",
+    "twist": "Mere phone par station master ka automatic alert aaya: 'You have exited the mortal line'.",
+    "used": null
+  },
+  {
+    "id": "ind-0013",
+    "title": "Boarding School Ka Science Lab",
+    "premise": "Shimla ke purane boarding school lab mein human skeleton rakha tha jiske baare mein kehte the wo ek purane student ka hai. Night prep ke dauran lab ka bulb bhuja toh skeleton ke daant aapas mein bajne lage. Subah dekha toh skeleton ki ungli chalk se blackboard par kuch likh rahi thi.",
+    "theme": "school",
+    "twist": "Board par likha tha mera roll number aur aage likha tha 'Run'.",
+    "used": null
+  },
+  {
+    "id": "ind-0014",
+    "title": "Library Ki Banned Shelf",
+    "premise": "School library ke sabse andhere kone mein ek red-bound register tha jisme sabhi purane bacho ke naam the. Galti se panna palta toh dekha ki jin bacho ke naam ke aage laal cross tha wo sab kisi na kisi haadse mein lapata huye the. Aakhri panne par taazi syaahi se mera naam likha ja raha tha.",
+    "theme": "school",
+    "twist": "Register band karke bhaaga toh library ka darwaza bahar se band tha aur light chali gayi.",
+    "used": null
+  },
+  {
+    "id": "ind-0015",
+    "title": "Dandeli Jungle Ka Pathar",
+    "premise": "Trek ke dauran rasta bhatak kar ek aisi jagah pahuche jahan pedo par ghadiyan tangi hui thin aur sabhi 3 baje par ruki thin. Guide ne bataya ye jagah map par nahi hai. Achanak peeche se kisi ne mera naam lekar pukara aawaz bilkul meri mummy jaisi thi.",
+    "theme": "jungle",
+    "twist": "Meri mummy ko guzre hue saat saal ho chuke the aur aawaz ghaas ke neeche se aa rahi thi.",
+    "used": null
+  },
+  {
+    "id": "ind-0016",
+    "title": "Raat Ka Bhediya Naad",
+    "premise": "Jungle safari camp ke tent ke bahar se kisi bhari janwar ke chalne ki aawaz aayi. Zip khol kar dekha toh do pairon par khada ek lamba saya tha jiska shareer insaan ka aur chehra bina chamdi ka tha. Usne jhuk kar tent ke upar soongha aur dheere se bola 'Bahir aao na'.",
+    "theme": "jungle",
+    "twist": "Subah tent ke bahar mitti par bhediye ke nahi balki ulti disha mein bane nange insani pairo ke nishan the.",
+    "used": null
+  },
+  {
+    "id": "ind-0017",
+    "title": "Hostel Room Number 108",
+    "premise": "Engineering hostel ke is room mein pichle saal ek student ne suicide kiya tha. Mujhe jab wo room mila toh raat ko fan par bandhi rassi apne aap gol gol ghumne lagti thi. Ek raat neend khuli toh fan ke neeche hawa mein latki hui do taangein jhul rahi thin.",
+    "theme": "hostel",
+    "twist": "Taango par wahi joote the jo maine sone se pehle room ke bahar utare the.",
+    "used": null
+  },
+  {
+    "id": "ind-0018",
+    "title": "Common Bathroom Ka Aakhri Nal",
+    "premise": "Hostel ke floor par subah 4 baje aakhri cubicle se nal chalne ki aawaz aati thi. Ek din maine neeche se dekha toh wahan pair nahi sirf do kaale baal ke guchhe zameen par pade the. Jab paani band karne andar gaya toh nal se paani nahi balki badbudaar mitti nikal rahi thi.",
+    "theme": "hostel",
+    "twist": "Darwaza apne aap band ho gaya aur deewar par kile se khurachne ki aawaz aane lagi.",
+    "used": null
+  },
+  {
+    "id": "ind-0019",
+    "title": "Shamshan Ka Aakhri Angara",
+    "premise": "Dost ke antim sanskar ke baad main late night shamshan ke bahar motorcycle start kar raha tha. Tabhi aakhri chita ke paas se ek aadmi chalta hua aaya aur beedi jalane ke liye maachis maangi. Torch ki roshni mein dekha toh uske gale mein wahi taaveez tha jo do ghante pehle humne jalaya tha.",
+    "theme": "shamshan",
+    "twist": "Usne beedi muh mein lagayi toh bina aag ke uske hothon se dhuwa nikalne laga.",
+    "used": null
+  },
+  {
+    "id": "ind-0020",
+    "title": "Kabristan Ki Mitti Ka Karz",
+    "premise": "Naye highway project ke liye shamshan ki boundary todi gayi thi. Us raat excavator driver ne dekha ki mitti ke dher apne aap kabar ka aakar le rahe the. Driver ne roshni daali toh kabar ke andar se hazaro safed haath upar uth rahe the.",
+    "theme": "shamshan",
+    "twist": "Excavator ka engine band ho gaya aur steering wheel par jale huye haatho ke nishan chhap gaye.",
+    "used": null
+  }
+]

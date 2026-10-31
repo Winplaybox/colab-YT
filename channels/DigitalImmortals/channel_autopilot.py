@@ -147,6 +147,13 @@ def produce_and_schedule_episode(episode_num, dry_run=False):
         return True
 
     video_id, video_url = scheduler.upload_and_schedule_episode(episode_num, master_video, thumb_path)
+
+    # /yt-shorts: cut 3 Shorts from this episode (uploaded PRIVATE; publish them after the episode goes live)
+    try:
+        import longform_to_shorts
+        longform_to_shorts.run(episode_num)
+    except Exception as se:
+        print(f"Notice: long-form -> Shorts step skipped: {se}")
     
     print("\n" + "=" * 78)
     print(f"🎉 [AUTOPILOT SUCCESS] EPISODE {episode_num:02d} FULLY PRODUCED & SCHEDULED!")

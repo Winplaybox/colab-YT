@@ -118,17 +118,27 @@ def build_episode_description(episode_num, scenes, scene_durations, ep_data=None
     ]
 
     current_sec = 0.0
+    chapters = []
     for sc in scenes:
         sc_id = sc["scene_id"]
-        title = sc["title"]
         dur = scene_durations.get(sc_id, 35.0)
-
         # Add timestamps for major milestones / key scenes
         if sc_id in [1, 2, 4, 6, 8, 11, 13, 15, 17, 21, 24, 26, 29, 30]:
-            mins = int(current_sec // 60)
-            secs = int(current_sec % 60)
-            desc_lines.append(f"{mins:02d}:{secs:02d} - {title}")
+            chapters.append((int(current_sec), sc["title"]))
         current_sec += dur
+    # /yt-chapters rules: first at 00:00, 3+, each >= 10 s, ascending (otherwise YouTube shows none)
+    try:
+        sys.path.insert(0, os.path.abspath(os.path.join(script_dir, "..", "..")))
+        from channels.common.skills import fix_chapters, validate_chapters, mmss
+        chapters = fix_chapters(chapters, int(current_sec))
+        ok, problems = validate_chapters(chapters, int(current_sec))
+        if not ok:
+            print(f"[chapters] still invalid after fix: {problems}")
+    except Exception as ce:
+        print(f"[chapters] validator notice: {ce}")
+        mmss = lambda t: f"{int(t) // 60:02d}:{int(t) % 60:02d}"
+    for t, title in chapters:
+        desc_lines.append(f"{mmss(t)} - {title}")
 
     desc_lines.extend([
         "",

@@ -1,0 +1,59 @@
+channel: all-train-reels
+display_name: All Train Reels
+format: short            # short = 9:16 <60s portrait Shorts
+
+script:
+  min_words: 110
+  max_words: 150         # ~50-58 sec
+  hook_max_words: 12     # pehli line
+  max_line_chars: 160
+  end_with_question: true
+  style: |
+    Narrative: Indian Railways & Global high-speed railway engineering, locomotive records, scenic routes, unique train facts.
+    Pehli line = high energy rail record or unbelievable train trivia.
+    Tone: Energetic, curious, informative (Chhukku locomotive style).
+    Chhote aur dynamic vaakya.
+    Aakhri line audience se favorite journey ya opinion maangne wala sawaal.
+  banned:
+    - "नमस्ते दोस्तों"
+    - "लाइक"
+    - "सब्सक्राइब"
+    - "इस वीडियो में"
+    - "आज हम"
+
+voice:
+  ref_wav: channels/all-train-reels/ref.wav
+  ref_txt: channels/all-train-reels/ref.txt
+  gap_ms: 250
+
+subs:
+  words_per_cue: 4
+
+video:
+  width: 1080
+  height: 1920
+  fps: 30
+  bg_dir: channels/all-train-reels/bg
+  music: channels/all-train-reels/music.mp3
+  music_db: -20
+  bg_brightness: -0.05
+  sub_style: "FontName=Noto Sans Devanagari,FontSize=14,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=2,Alignment=2,MarginV=110"
+
+metadata:
+  language: Hinglish (Roman script)
+  title_max_chars: 70
+
+publish:
+  mode: schedule
+  slots_ist: ["08:00", "17:30"]
+  min_lead_hours: 3
+  category_id: "24"
+  synthetic_media: true
+  made_for_kids: false
+  hashtags: ["#alltrainreels", "#indianrailways", "#trainfacts", "#shorts"]
+  default_tags: ["indian railways", "train journey", "vande bharat", "fastest train", "railway facts"]
+
+ideas:
+  refill_below: 5
+  batch_size: 20
+  themes: ["vande bharat", "chenab bridge", "bullet train", "steam engine", "longest train", "scenic routes", "ghost stations", "train records", "metro rail", "luxury trains"]
