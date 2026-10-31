@@ -97,6 +97,71 @@ except Exception:
     pass
 
 
+# Monkeypatch torchaudio.load for Windows DLL compatibility
+try:
+    import torchaudio
+    def soundfile_audio_load(path, **kwargs):
+        data, sr = sf.read(str(path), dtype="float32")
+        t = torch.from_numpy(data)
+        return (t.unsqueeze(0) if t.ndim == 1 else t.t()), sr
+    torchaudio.load = soundfile_audio_load
+except Exception:
+    pass
+
+
+class IndicF5NativeWrapper:
+    def __init__(self, device="cuda"):
+        from huggingface_hub import hf_hub_download
+        from safetensors.torch import load_file
+        from f5_tts.infer.utils_infer import load_vocoder, get_tokenizer
+        from f5_tts.model import DiT, CFM
+
+        self.device = device
+        print(f"Loading Vocos Vocoder on {self.device}...", flush=True)
+        self.vocoder = load_vocoder(vocoder_name="vocos", is_local=False, device=self.device)
+
+        vocab_path = hf_hub_download("ai4bharat/IndicF5", filename="checkpoints/vocab.txt")
+        vocab_char_map, vocab_size = get_tokenizer(vocab_path, "custom")
+
+        self.model = CFM(
+            transformer=DiT(dim=1024, depth=22, heads=16, ff_mult=2, text_dim=512, conv_layers=4,
+                            text_num_embeds=vocab_size, mel_dim=100),
+            mel_spec_kwargs=dict(n_fft=1024, hop_length=256, win_length=1024, n_mel_channels=100,
+                                target_sample_rate=24000, mel_spec_type="vocos"),
+            odeint_kwargs=dict(method="euler"),
+            vocab_char_map=vocab_char_map,
+        ).to(self.device)
+
+        model_path = hf_hub_download("ai4bharat/IndicF5", filename="model.safetensors")
+        raw_sd = load_file(model_path, device=self.device)
+        clean_sd = {}
+        for k, v in raw_sd.items():
+            if k in ["initted", "step"]: continue
+            clean_k = k
+            if clean_k.startswith("ema_model."): clean_k = clean_k[len("ema_model."):]
+            if clean_k.startswith("_orig_mod."): clean_k = clean_k[len("_orig_mod."):]
+            clean_sd[clean_k] = v
+        for bad in ["mel_spec.mel_stft.mel_scale.fb", "mel_spec.mel_stft.spectrogram.window"]:
+            clean_sd.pop(bad, None)
+        self.model.load_state_dict(clean_sd, strict=False)
+        print("✅ IndicF5 weights successfully loaded into GPU memory!", flush=True)
+
+    def __call__(self, text: str, ref_audio_path: str, ref_text: str):
+        from f5_tts.infer.utils_infer import infer_process
+        audio, sr, _ = infer_process(
+            ref_audio_path,
+            ref_text,
+            text,
+            self.model,
+            self.vocoder,
+            mel_spec_type="vocos",
+            speed=1.0,
+            nfe_step=16,
+            device=self.device
+        )
+        return audio
+
+
 def load_model():
     token = os.environ.get("HF_TOKEN")
     try:
@@ -104,11 +169,11 @@ def load_model():
         if token:
             from huggingface_hub import login
             login(token=token, add_to_git_credential=False)
-        from transformers import AutoModel
-        print(f"Loading {MODEL_ID} ...", flush=True)
-        return AutoModel.from_pretrained(MODEL_ID, trust_remote_code=True)
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"Initializing IndicF5 on {device} ({torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'})...", flush=True)
+        return IndicF5NativeWrapper(device=device)
     except Exception as e:
-        print(f"ℹ️ [IndicF5 Notice] IndicF5 / PyTorch not available ({e}). Using Edge-TTS neural fallback...", flush=True)
+        print(f"ℹ️ [IndicF5 Notice] Native IndicF5 GPU unavailable ({e}). Using Edge-TTS fallback...", flush=True)
         return None
 
 
