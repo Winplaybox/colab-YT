@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 37,
-  "current_season": 1,
-  "current_deity": "Lord Shiva",
-  "last_run": "2026-10-31T17:21:32.270427",
-  "last_uploaded_video_id": "2_1w8i0KpPI",
+  "current_episode": 38,
+  "current_season": 2,
+  "current_deity": "Lord Vishnu",
+  "last_run": "2026-11-01T18:31:12.486656",
+  "last_uploaded_video_id": "fTwWlC-6e9Y",
   "used_story_ids": [
     "shiva_01_neelkanth_origin",
     "shiva_02_tandava_nataraja",
@@ -33,7 +33,8 @@
     "hanuman_02_sanjeevani",
     "ganesha_01_elephant_head_origin",
     "ganesha_02_race_around_world",
-    "shiva_ext_shiv_panchakshara"
+    "shiva_ext_shiv_panchakshara",
+    "vishnu_ext_garuda"
   ],
   "history": [
     {
@@ -359,6 +360,15 @@
       "video_id": "2_1w8i0KpPI",
       "mode": "scheduled",
       "timestamp": "2026-10-31T17:21:32.270427"
+    },
+    {
+      "episode_number": 37,
+      "deity": "Lord Vishnu",
+      "season": 2,
+      "title": "Garuda: Vishnu Ka Giant Eagle Vahana! 🦅",
+      "video_id": "fTwWlC-6e9Y",
+      "mode": "scheduled",
+      "timestamp": "2026-11-01T18:31:12.486656"
     }
   ]
 }

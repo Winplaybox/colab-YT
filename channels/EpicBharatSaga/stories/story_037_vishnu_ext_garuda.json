@@ -1,0 +1,71 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 37,
+  "season": 2,
+  "deity": "Lord Vishnu",
+  "story_id": "vishnu_ext_garuda",
+  "story_hash": "bd99908976ceb3f2",
+  "format": "Divine Companion",
+  "title": "Garuda: Vishnu Ka Giant Eagle Vahana! 🦅",
+  "youtube_title": "Garuda: Vishnu Ka Giant Eagle Vahana! 🦅",
+  "tagline": "Garuda eagle king Vishnu mount born from sage Kashyapa",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Lord_Vishnu"
+  ],
+  "verified_fact": "Garuda, king of birds and vehicle of Vishnu, was born to sage Kashyapa and Vinata. He freed his mother from slavery by defeating the gods and securing the celestial nectar (Amrita).",
+  "voiceover_script": "Bhagwan Vishnu ka divya vahana — Pakshiraj Garuda! Mata Vinata ko dasatva se mukt karane ke liye Garuda ne devataon se akele yuddh kiya aur Amrit kalash le aaye. Unki nishtha aur maa ke prati prem dekhkar Vishnu ji ne unhe apna vahana banaya. Matru seva hi sarvopari dharm hai!",
+  "debate_question": "Maa ke prati aisi samarpan bhavna — aapko kaisa prerna deti hai?",
+  "pinned_comment": "🦅 Pakshiraj Garuda — matru bhakti ka adbhut prateek! Jai Shri Vishnu!",
+  "description": "Garuda: Vishnu Ka Giant Eagle Vahana! 🦅\n\n🔱 Garuda eagle king Vishnu mount born from sage Kashyapa\n\nGaruda, king of birds and vehicle of Vishnu, was born to sage Kashyapa and Vinata. He freed his mother from slavery by defeating the gods and securing the celestial nectar (Amrita).\n\n👉 Maa ke prati aisi samarpan bhavna — aapko kaisa prerna deti hai?\n\nSeason 2 — Lord Vishnu\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Garuda #Vishnu #Pakshiraj #Eagle #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Garuda",
+    "Vishnu",
+    "Pakshiraj",
+    "Eagle",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Garuda — Vishnu ka alaukik vahana!",
+      "prompt": "Majestic golden feathered giant eagle Garuda flying in heavens 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Mata Vinata ki dasatva mukti ki pratigya!",
+      "prompt": "Young powerful Garuda promising freedom to his mother 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Devataon se akele kiya yuddh!",
+      "prompt": "Epic sky battle Garuda against Deva army lightning 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Amrit kalash le aaye veerta se!",
+      "prompt": "Garuda carrying glowing golden Amrita pot through clouds 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Vishnu ne diya anant var aur aadar!",
+      "prompt": "Lord Vishnu blessing kneeling Garuda with divine aura 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Pakshiraj Garuda — amar bhakt!",
+      "prompt": "Lord Vishnu and Lakshmi riding golden Garuda across cosmos 9:16"
+    }
+  ]
+}
