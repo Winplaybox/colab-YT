@@ -178,7 +178,8 @@
     "https://www.livemint.com/market/stock-market-news/sun-pharma-shares-gain-despite-q2-profit-slips-36-yoy-should-you-buy-sell-or-hold-what-brokerage-says-target-price-11793533331740.html",
     "https://economictimes.indiatimes.com/markets/stocks/earnings/varun-beverages-q3-net-profit-rises-13-yoy-but-margins-fall/articleshow/135387006.cms",
     "https://economictimes.indiatimes.com/markets/stocks/news/missed-reliance-industries-historic-8-one-day-rally-heres-what-technical-analysts-are-saying/articleshow/135451322.cms",
-    "https://www.livemint.com/market/stock-market-news/multibagger-engineers-india-shares-jump-15-to-2-week-high-after-q2-results-stock-gains-44-in-2026-11793622662037.html"
+    "https://www.livemint.com/market/stock-market-news/multibagger-engineers-india-shares-jump-15-to-2-week-high-after-q2-results-stock-gains-44-in-2026-11793622662037.html",
+    "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/anthropic-revenue-jumps-1100-ahead-of-ipo-as-ai-spending-commitments-near-900-billion/articleshow/135472235.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -204,7 +205,8 @@
     "Sun Pharma shares gain despite Q2 profit slips 36% YoY | Should you buy, sell or hold? What brokerage says, target price",
     "Varun Beverages Q3 net profit rises 13% YoY, but margins fall",
     "Missed Reliance Industries’ historic 8% one-day rally? Here’s what technical analysts are saying",
-    "Multibagger Engineers India shares jump 15% to 2-week high after Q2 results; stock gains 44% in 2026"
+    "Multibagger Engineers India shares jump 15% to 2-week high after Q2 results; stock gains 44% in 2026",
+    "Anthropic revenue jumps 1,100% ahead of IPO as AI spending commitments near $900 billion"
   ],
   "articles": [
     {
@@ -494,6 +496,18 @@
       "status": "PUBLISHED",
       "slot": "closing_wrap",
       "published_at": "2026-11-02T17:20:15.535585+00:00"
+    },
+    {
+      "viral_title": "AI Breakthrough: Anthropic revenue jumps 1,100% ahead of IPO as AI spending — Technical Architecture & Key Capabilities Explained 🤖⚡",
+      "original_title": "Anthropic revenue jumps 1,100% ahead of IPO as AI spending commitments near $900 billion",
+      "original_link": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/anthropic-revenue-jumps-1100-ahead-of-ipo-as-ai-spending-commitments-near-900-billion/articleshow/135472235.cms",
+      "source": "Economic Times Markets",
+      "category": "Market Analysis",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/ai-breakthrough-anthropic-revenue-jumps.html",
+      "blogger_post_id": "441904051870284203",
+      "status": "PUBLISHED",
+      "slot": "morning_bell",
+      "published_at": "2026-11-02T21:38:56.385282+00:00"
     }
   ]
 }
