@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 38,
-  "current_season": 2,
-  "current_deity": "Lord Vishnu",
-  "last_run": "2026-11-01T18:31:12.486656",
-  "last_uploaded_video_id": "fTwWlC-6e9Y",
+  "current_episode": 39,
+  "current_season": 6,
+  "current_deity": "Lord Krishna",
+  "last_run": "2026-11-02T22:27:12.738256",
+  "last_uploaded_video_id": "-m9EBkTjIpc",
   "used_story_ids": [
     "shiva_01_neelkanth_origin",
     "shiva_02_tandava_nataraja",
@@ -34,7 +34,8 @@
     "ganesha_01_elephant_head_origin",
     "ganesha_02_race_around_world",
     "shiva_ext_shiv_panchakshara",
-    "vishnu_ext_garuda"
+    "vishnu_ext_garuda",
+    "krishna_ext_kaliya"
   ],
   "history": [
     {
@@ -369,6 +370,15 @@
       "video_id": "fTwWlC-6e9Y",
       "mode": "scheduled",
       "timestamp": "2026-11-01T18:31:12.486656"
+    },
+    {
+      "episode_number": 38,
+      "deity": "Lord Krishna",
+      "season": 6,
+      "title": "Krishna Ne Zaharile Saanp Ko Nachaya! 🐍",
+      "video_id": "-m9EBkTjIpc",
+      "mode": "scheduled",
+      "timestamp": "2026-11-02T22:27:12.738256"
     }
   ]
 }
