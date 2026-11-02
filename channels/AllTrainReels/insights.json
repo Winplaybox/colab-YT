@@ -1,55 +1,57 @@
 {
   "channel": "AllTrainReels",
-  "updated": "2026-10-31",
-  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
-  "median_views": 88,
+  "updated": "2026-11-02",
+  "youtube_channels": [
+    "All Train Reels"
+  ],
   "subscribers": 2,
+  "enough_data": true,
+  "count": 15,
+  "median_views": 88,
+  "median_views_shorts": 88,
+  "median_views_long": null,
   "top_titles": [
     {
-      "title": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss!",
+      "title": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥",
+      "multiple": 10.52,
       "views": 926
     },
     {
-      "title": "Vande Bharat vs Shatabdi: Asli Farak!",
+      "title": "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳",
+      "multiple": 2.76,
       "views": 243
     },
     {
-      "title": "42 Saal Band Raha Ye Station: Begunkodor",
+      "title": "42 Saal Band Raha Ye Station: Begunkodor 👻",
+      "multiple": 2.26,
       "views": 199
     },
     {
-      "title": "Steam vs Diesel vs Electric: Kaun Powerful?",
+      "title": "Steam vs Diesel vs Electric: Kaun Powerful? 🚂",
+      "multiple": 2.05,
       "views": 180
     },
     {
-      "title": "Duniya Ka Sabse Lamba Platform: 1,507 M!",
+      "title": "Duniya Ka Sabse Lamba Platform: 1,507 M! 🏃‍♂️",
+      "multiple": 1.92,
       "views": 169
     }
   ],
-  "winning_patterns": [
-    "Comparison with an Indian train the viewer has ridden (Mumbai Local, Vande Bharat)",
-    "Indian railway records and ghost/history stories (Begunkodor, longest platform)"
-  ],
-  "avoid": [
-    "Foreign-only comparisons with no Indian anchor (Shinkansen vs TGV vs Fuxing: 23)",
-    "Trivia without stakes (coach number code: 20, 7 km train: 20)"
-  ],
-  "title_examples": [
-    "Rajdhani vs Vande Bharat: Kaun Pehle Pahunchegi?",
-    "Mumbai Local Mein 1 Din Mein Kitne Log?",
-    "Indian Railways Ka Sabse Lamba Route: 4,189 KM?",
-    "Bullet Train vs Vande Bharat: Asli Speed Test",
-    "Kalka Shimla Toy Train Ke 102 Tunnel!"
-  ],
-  "topic_ideas": [
-    "Vande Bharat sleeper vs Rajdhani",
-    "Mumbai local vs Delhi Metro",
-    "Vivek Express longest route",
-    "Chenab bridge vs Eiffel Tower height",
-    "Kalka-Shimla tunnels",
-    "Konkan railway monsoon",
-    "Pamban new bridge lift",
-    "Howrah station platforms"
-  ],
-  "one_fix": "Make every second Short an 'India vs X' or 'Indian train vs Indian train' comparison."
+  "bottom_titles": [
+    {
+      "title": "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡",
+      "multiple": 0.27,
+      "views": 24
+    },
+    {
+      "title": "Train Coach Number Ka Secret Code! 🔢",
+      "multiple": 0.23,
+      "views": 20
+    },
+    {
+      "title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
+      "multiple": 0.23,
+      "views": 20
+    }
+  ]
 }

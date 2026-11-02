@@ -1,65 +1,117 @@
 {
   "channel": "DigitalImmortals",
-  "updated": "2026-10-31",
-  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
-  "median_views": 65,
+  "updated": "2026-11-02",
+  "youtube_channels": [
+    "Digital Immortals"
+  ],
   "subscribers": 2130,
+  "enough_data": true,
+  "count": 91,
+  "median_views": 29,
+  "median_views_shorts": 48,
+  "median_views_long": 7.5,
   "top_titles": [
     {
-      "title": "सातरस्त्याची माऊली तिच्या एका रुपात कोटी जन्मांची पुण्याई",
-      "views": 1500
+      "title": "रघु कुल रीत सदा चाली आई, प्राण जाई पर वचन न जाई",
+      "multiple": 86.03,
+      "views": 2495
     },
     {
-      "title": "Day-wise Darshan of 9 Ambe Maa Forms",
-      "views": 1400
+      "title": "सातरस्त्याची माऊली  तिच्या एका रुपात कोटी जन्मांची पुण्याई #mumbai #durga #navratrispecial #navratri",
+      "multiple": 52.83,
+      "views": 1532
     },
     {
-      "title": "Kya Ye Asli Krishna Hain? Divya Chamatkar Dekho!",
-      "views": 1100
+      "title": "Day-wise Darshan of 9 Ambe Maa Forms | 9 Devi Roop Every Day",
+      "multiple": 50.79,
+      "views": 1473
     },
     {
-      "title": "12,000 फीट पर तुंगनाथ मंदिर का रहस्य",
+      "title": "क्या देवराज इंद्र ने सच में किया था अपनी पत्नी का वस्त्रहरण? 😱 | Unknown Mythological Secret",
+      "multiple": 42.28,
+      "views": 1226
+    },
+    {
+      "title": "😱 Kya Ye Asli Krishna Hain? Divya Chamatkar Dekho! 🙏 #shorts",
+      "multiple": 39.97,
+      "views": 1159
+    },
+    {
+      "title": "1 करोड़ देवी-देवता एक ही रात में पत्थर बन गए! कहा जाता है कि महादेव ने सभी को सूर्योदय से पहले जागने",
+      "multiple": 38.38,
+      "views": 1113
+    },
+    {
+      "title": "हर हर महादेव! महादेव की असीम कृपा और शक्ति का अनुभव। 🔱❤️",
+      "multiple": 35.93,
+      "views": 1042
+    },
+    {
+      "title": "12,000 फीट पर तुंगनाथ मंदिर का रहस्य: हिमालय की प्राचीन इंजीनियरिंग का चमत्कार! 😱 #तुंगनाथ #हिमालय",
+      "multiple": 26.21,
       "views": 760
     },
     {
       "title": "Ek BACHCHA itna bhookha tha ki usne SURAJ nigal liya!",
+      "multiple": 25.72,
       "views": 746
     },
     {
       "title": "विष्णु जी ने क्यों निकाली अपनी आँख? सुदर्शन चक्र का रहस्य",
+      "multiple": 24.52,
       "views": 711
-    },
-    {
-      "title": "बिना सहारे हवा में लटका खंभा? लेपाक्षी मंदिर का रहस्य!",
-      "views": 574
     }
   ],
-  "winning_patterns": [
-    "Real temple or place with a physical mystery (Tungnath, Lepakshi) in the title",
-    "Festival-timed darshan (Navratri) uploaded before/during the festival",
-    "Famous story told with the deity's name hidden in the hook ('Ek BACHCHA ne SURAJ nigal liya')",
-    "Divine-visual Shorts of Krishna/Devi forms"
-  ],
-  "avoid": [
-    "'[Famous katha]: ___ ka सच?' format (median ~27 views)",
-    "Very well-known stories with the name revealed up front (Eklavya, Samudra Manthan, Narasimha)"
-  ],
-  "title_examples": [
-    "एक ही पत्थर से काटा गया पूरा मंदिर? | कैलाश एलोरा",
-    "कोणार्क का पहिया आज भी सही समय बताता है?",
-    "बृहदेश्वर मंदिर की परछाईं ज़मीन पर क्यों नहीं गिरती?",
-    "समुद्र में डूबा मंदिर दिन में दो बार गायब होता है",
-    "एक राजा ने भगवान से भीख माँगी… और भगवान पहरेदार बन गए"
-  ],
-  "topic_ideas": [
-    "Kailasa temple Ellora",
-    "Konark Sun Temple wheel",
-    "Brihadeeswara shadow",
-    "Stambheshwar temple",
-    "Bijli Mahadev",
-    "Kamakhya temple",
-    "Dev Deepawali Kashi",
-    "Maha Shivratri darshan"
-  ],
-  "one_fix": "Only make real-temple mysteries and hidden-name story hooks; stop the 'X ka सच?' format."
+  "bottom_titles": [
+    {
+      "title": "बिना हाथ-पैर के क्यों हैं भगवान जगन्नाथ? | The Divine Secret of Lord Jagannath’s Incomplete Form 🔱",
+      "multiple": 0.38,
+      "views": 11
+    },
+    {
+      "title": "यज्ञ की अग्नि से वो कौन प्रकट हुआ? 🔥 (Ep 02)",
+      "multiple": 0.34,
+      "views": 10
+    },
+    {
+      "title": "सृष्टि को खत्म करने वाला विष… किसने एक घूँट में पी लिया?",
+      "multiple": 0.34,
+      "views": 10
+    },
+    {
+      "title": "How Vishnu Defeated The Demons Who Stole The Vedas | Madhu Kaitabha Story",
+      "multiple": 0.34,
+      "views": 10
+    },
+    {
+      "title": "एक बच्चे ने यमराज से 3 वर माँगे… तीसरे पर यम रुक गए",
+      "multiple": 0.31,
+      "views": 9
+    },
+    {
+      "title": "कैलाश पर्वत का वो खौफनाक सच, जिसे वैज्ञानिक भी नहीं सुलझा पाए!",
+      "multiple": 0.31,
+      "views": 9
+    },
+    {
+      "title": "गणेश जी ने कैसे तोड़ा कुबेर का घमंड? | बाल गणेश और कुबेर की अद्भुत कथा",
+      "multiple": 0.28,
+      "views": 8
+    },
+    {
+      "title": "Om Namo Bhagavate Hanumate Namaha | Powerful Hanuman Mantra | 108 Times",
+      "multiple": 0.28,
+      "views": 8
+    },
+    {
+      "title": "स्वर्ग से धरती पर कैसे उतरीं मां गंगा? 🌊 भगीरथ की अमर तपस्या (Ep 06)",
+      "multiple": 0.24,
+      "views": 7
+    },
+    {
+      "title": "यज्ञ के बाद जब 12 बजे प्रभु राम जन्मे! 👑 (Ep 03)",
+      "multiple": 0.24,
+      "views": 7
+    }
+  ]
 }

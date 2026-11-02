@@ -1,60 +1,117 @@
 {
   "channel": "IndianHorrorTapes",
-  "updated": "2026-10-31",
-  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
-  "median_views": 3,
+  "updated": "2026-11-02",
+  "youtube_channels": [
+    "Indian Horror Tapes"
+  ],
   "subscribers": 6,
+  "enough_data": true,
+  "count": 91,
+  "median_views": 5,
+  "median_views_shorts": 5,
+  "median_views_long": null,
   "top_titles": [
     {
-      "title": "Rakh Bagh haveli का खौफ़नाक सच",
-      "views": 94
+      "title": "Shaniwar Wada | Real Indian Horror Stories | Episode 3",
+      "multiple": 73.8,
+      "views": 369
     },
     {
-      "title": "Champaner-Pavagadh का खौफ़नाक सच",
-      "views": 57
+      "title": "Aleya Ghost Lights का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 68.4,
+      "views": 342
     },
     {
-      "title": "Rakshasa Tangadi का खौफ़नाक सच",
-      "views": 53
+      "title": "जातिंगा घाटी: रात को मत जाना ⚠️ #Shorts",
+      "multiple": 64.4,
+      "views": 322
     },
     {
-      "title": "The Night the Dam Broke",
-      "views": 41
+      "title": "Daulatabad किला का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 60.0,
+      "views": 300
     },
     {
-      "title": "Nahargarh किला का खौफ़नाक सच",
-      "views": 40
+      "title": "Writers' Building का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 56.6,
+      "views": 283
     },
     {
-      "title": "Vashi Creek का खौफ़नाक सच",
-      "views": 30
+      "title": "Police FIR #2802: खौफ़नाक सच 💀 #Shorts",
+      "multiple": 54.6,
+      "views": 273
+    },
+    {
+      "title": "Chittorgarh किला का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 54.4,
+      "views": 272
+    },
+    {
+      "title": "South Park Street Ce का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 35.0,
+      "views": 175
+    },
+    {
+      "title": "Vrindavan Society का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 33.0,
+      "views": 165
+    },
+    {
+      "title": "Kangra किला का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 31.2,
+      "views": 156
     }
   ],
-  "winning_patterns": [
-    "A specific, nameable place (fort, haveli, creek) people can search",
-    "A story/event angle ('The Night the Dam Broke') beats a label"
-  ],
-  "avoid": [
-    "Only 2 title templates ('X का खौफ़नाक सच 💀' / 'X: रात को मत जाना ⚠️') repeated on 48 Shorts - looks mass-produced",
-    "Truncated names ('Kanheri गुफ़ाs fores', 'Auto-rickshaw extra') - fixed in story_generator.py",
-    "Generic labels without a place ('इस वीरान जगह कभी मत जाना')"
-  ],
-  "title_examples": [
-    "नाहरगढ़ किले में रात को कौन घूमता है?",
-    "वाशी क्रीक पर 2 बजे क्या दिखा मछुआरों को?",
-    "राख बाग हवेली का दरवाज़ा अंदर से बंद क्यों रहता है?",
-    "भानगढ़ में सूरज ढलते ही ताला क्यों?",
-    "डुमस बीच की रेत काली क्यों है?"
-  ],
-  "topic_ideas": [
-    "Bhangarh Fort sunset rule",
-    "Dumas Beach black sand",
-    "Shaniwar Wada full moon",
-    "Dow Hill Kurseong",
-    "Malcha Mahal",
-    "Agrasen ki Baoli",
-    "Brij Raj Bhawan Kota",
-    "Lambi Dehar mines"
-  ],
-  "one_fix": "Every title must be a different question or event about a real, full place name; drop the two repeating templates."
+  "bottom_titles": [
+    {
+      "title": "Sanjay Van forest: रात को मत जाना ⚠️ #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "One Tree पहाड़ी Ceme: रात को मत जाना ⚠️ #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "जातिंगा घाटी: रात को मत जाना ⚠️ #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "रात 3 बजे यहाँ लिफ़्ट मत देना ⚠️ #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "Neelkanth forest are: रात को मत जाना ⚠️ #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "Kanheri गुफ़ाs fores: रात को मत जाना ⚠️ #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "Chor Minar folklore का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "Aravalli forest belt: रात को मत जाना ⚠️ #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "Ramoji Film City का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    },
+    {
+      "title": "Khameda & Kuldhara c का खौफ़नाक सच 💀 #Shorts",
+      "multiple": 0.0,
+      "views": 0
+    }
+  ]
 }

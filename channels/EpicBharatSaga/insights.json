@@ -1,65 +1,117 @@
 {
   "channel": "EpicBharatSaga",
-  "updated": "2026-10-31",
-  "source": "manual audit from public view counts (31 Oct 2026); weekly workflow will overwrite",
-  "median_views": 54,
+  "updated": "2026-11-02",
+  "youtube_channels": [
+    "Epic Bharat"
+  ],
   "subscribers": 21,
+  "enough_data": true,
+  "count": 92,
+  "median_views": 42.5,
+  "median_views_shorts": 43,
+  "median_views_long": 3,
   "top_titles": [
     {
-      "title": "Sanjeevani Ke Liye Pura Pahad Utha Laaye!",
+      "title": "Trending Effects 🌩️ #viralreels #trendingreels #nature #vfx #clouds",
+      "multiple": 48.16,
+      "views": 2047
+    },
+    {
+      "title": "Ashwatthama's Sin: Dark Psychology of the Mahabharata",
+      "multiple": 20.16,
+      "views": 857
+    },
+    {
+      "title": "Draupadi's Wedding: Uncovering the Dark Politics of Mahabharata",
+      "multiple": 10.33,
+      "views": 439
+    },
+    {
+      "title": "Sanjeevani Ke Liye Pura Pahad Utha Laaye! 🌿",
+      "multiple": 8.94,
       "views": 380
     },
     {
+      "title": "Dhritarashtra's Ascension: The Dark Psychology of Power",
+      "multiple": 6.28,
+      "views": 267
+    },
+    {
       "title": "Uncovering the Secret Pact Between Duryodhana and Ulupi",
+      "multiple": 6.07,
       "views": 258
     },
     {
-      "title": "Barbareek: ... Most Mysterious Warrior",
+      "title": "Beyond Arjuna's Glory: Dark Psychology of the Mahabharata War",
+      "multiple": 5.86,
+      "views": 249
+    },
+    {
+      "title": "Dark Psychology in Mahabharat: The Unheard Plea of Sudeshna",
+      "multiple": 5.76,
+      "views": 245
+    },
+    {
+      "title": "Barbareek: Unveiling the Dark Psychology Behind the Mahabharata's Most Mysterious Warrior",
+      "multiple": 5.06,
       "views": 215
     },
     {
-      "title": "Indra Dev ka ahankaar — baar baar hara!",
+      "title": "Indra Dev ka ahankaar — baar baar hara! 🔱",
+      "multiple": 5.01,
       "views": 213
-    },
-    {
-      "title": "Mahadev Ne Yama Se Chheen Li Markandey Ki Zindagi!",
-      "views": 176
-    },
-    {
-      "title": "Mahishasura Ko Durga Ne 9 Din Mein Khatam Kiya!",
-      "views": 145
-    },
-    {
-      "title": "महाभारत का वो योद्धा जिसने 1 मिनट में युद्ध खत्म कर दिया होता!",
-      "views": 132
     }
   ],
-  "winning_patterns": [
-    "A dramatic ACTION in the title (lifted a mountain, snatched a life, finished a war in 1 minute)",
-    "Lesser-known Mahabharata characters and secrets (Barbareek, Ulupi, Yuyutsu)",
-    "Deity ego/defeat stories (Indra's ahankaar)"
-  ],
-  "avoid": [
-    "Descriptive relation titles like 'X — Y ke pita! 🔱' (Surya 1 view, Nandi 8, Vayu 14)",
-    "Mixing Marathi/Gujarati/English full episodes on the same Hindi channel",
-    "Off-niche uploads (the 'Trending Effects' clouds video got views but brings the wrong audience)"
-  ],
-  "title_examples": [
-    "Barbareek 1 teer se poora yuddh khatam kar sakta tha!",
-    "Duryodhana ki wo raat jab Bhishma ne 5 teer diye",
-    "Karna ne Indra ko kavach kyun de diya?",
-    "Hanuman ne Bhima ka ghamand ek poonch se toda!",
-    "Ashwatthama aaj bhi zinda hai?"
-  ],
-  "topic_ideas": [
-    "Barbareek's head watching the war",
-    "Bhima vs Hanuman tail",
-    "Ghatotkacha's last night",
-    "Shikhandi's rebirth",
-    "Arjuna vs Shiva (Kirata)",
-    "Ravana lifting Kailash",
-    "Ganesha writing Mahabharata",
-    "Abhimanyu in the womb"
-  ],
-  "one_fix": "Put a dramatic action and a lesser-known character in every title; keep the channel Hindi-only."
+  "bottom_titles": [
+    {
+      "title": "The Curse of Garuda: Dark Psychology and Destiny",
+      "multiple": 0.26,
+      "views": 11
+    },
+    {
+      "title": "Teen Nagar Ek Teer Se — Tripurantaka! 🏹",
+      "multiple": 0.24,
+      "views": 10
+    },
+    {
+      "title": "Madri: The Unheard Story of Pandu's Second Wife and Dark Psychology",
+      "multiple": 0.24,
+      "views": 10
+    },
+    {
+      "title": "Dark Psychology Behind Durvasa's Curse and the Pandavas' Downfall",
+      "multiple": 0.21,
+      "views": 9
+    },
+    {
+      "title": "Nandi — Shiv ka sabse bada bhakt! 🔱",
+      "multiple": 0.19,
+      "views": 8
+    },
+    {
+      "title": "Jagannath Rath Yatra ka divya rahasya! 🔱",
+      "multiple": 0.19,
+      "views": 8
+    },
+    {
+      "title": "Dark Psychology of Hastinapur: The Curse of Shantanu's Deal",
+      "multiple": 0.19,
+      "views": 8
+    },
+    {
+      "title": "Ganesha Ne Muush Par Baap Ko Haraaya! 🏆",
+      "multiple": 0.16,
+      "views": 7
+    },
+    {
+      "title": "The Unseen Fury of Bhima: Dark Psychology and Karma",
+      "multiple": 0.16,
+      "views": 7
+    },
+    {
+      "title": "कैलाश मंदिर: दुनिया का सबसे बड़ा अजूबा! 🚩",
+      "multiple": 0.14,
+      "views": 6
+    }
+  ]
 }
