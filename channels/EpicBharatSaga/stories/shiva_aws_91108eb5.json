@@ -1,0 +1,68 @@
+{
+  "title": "Mahadev Ka Trishul Rahasya 🔱✨",
+  "youtube_title": "शक्ति का रहस्य! महादेव का त्रिशूल की कहानी | @EpicBharatSaga #Shiva #HinduMythology",
+  "hook": "क्या आप जानते हैं महादेव का त्रिशूल क्यों इतना शक्तिशाली है?",
+  "voiceover_script": "Namaste dosto! Aaj hum janenge Mahadev ka Trishul Rahasya. 🌟 हर एक हिंदू के लिए, महादेव का त्रिशूल सिर्फ एक हथियार नहीं, बल्कि एक शक्ति का प्रतीक है। यह त्रिशूल न सिर्फ असुरों का नाश करता है, बल्कि हमारे बुरे कर्मों को भी नष्ट करता है। क्या आपको पता है कि यह त्रिशूल असल में कैलाश से आया था? इसे धारण करने से न सिर्फ असुरों का अंत हुआ, बल्कि हमारे जीवन में भी सकारात्मकता आई। आखिरी सवाल, क्या आप इस शक्ति को पहचानते हैं? Har Har Mahadev comment karke zaroor bataye aur channel ko subscribe karke dhyan dein! 🙏",
+  "pinned_comment": "आपका मानना है कि त्रिशूल असल में कैसा है?",
+  "description": "इस वायरल शॉर्ट में जानिए महादेव का त्रिशूल का रहस्य! #Shorts #Mahadev #Shiva #HinduMythology",
+  "tags": [
+    "Shiva",
+    "Mahadev",
+    "Kailash",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 5,
+      "subtitle": "First line of hook",
+      "prompt": "Cinematic visual of Lord Shiva with his trident, symbolizing power and destruction of evil"
+    },
+    {
+      "shot_index": 2,
+      "duration": 6,
+      "subtitle": "Second scene subtitle",
+      "prompt": "Divine visuals of Kailash and the trident falling from the sky"
+    },
+    {
+      "shot_index": 3,
+      "duration": 7,
+      "subtitle": "Third scene subtitle",
+      "prompt": "Imagery of Lord Shiva using the trident to defeat the demons"
+    },
+    {
+      "shot_index": 4,
+      "duration": 7,
+      "subtitle": "Fourth scene subtitle",
+      "prompt": "Visuals showing the positive impact of the trident on human life"
+    },
+    {
+      "shot_index": 5,
+      "duration": 7,
+      "subtitle": "Fifth scene subtitle",
+      "prompt": "Historical and mythological scenes of the trident's significance"
+    },
+    {
+      "shot_index": 6,
+      "duration": 8,
+      "subtitle": "Climax scene subtitle",
+      "prompt": "Powerful visual of the trident's divine energy and its impact on the universe"
+    },
+    {
+      "shot_index": 7,
+      "duration": 8,
+      "subtitle": "Conclusion & subscribe CTA",
+      "prompt": "Divine Lord Shiva blessing viewers and a call to subscribe with a serene background"
+    }
+  ],
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "deity": "Lord Shiva",
+  "story_id": "shiva_aws_91108eb5",
+  "format": "Mythological Mystery",
+  "target_duration_seconds": 58,
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "voiceover_path": "c:\\Users\\sagar\\Desktop\\Project\\Colab\\colab-YT\\channels\\EpicBharatSaga\\stories\\assets\\shiva_aws_91108eb5\\voiceover.mp3"
+}
