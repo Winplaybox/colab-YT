@@ -1,5 +1,5 @@
 ﻿"""
-Generate and Save an EpicBharatSaga Story using AWS Bedrock & Studio Hindi TTS
+Generate and Save an EpicBharatSaga Story using AWS Bedrock & Polly Generative Voice
 """
 import os
 import sys
@@ -9,7 +9,7 @@ import hashlib
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from engine_adapter import smart_generate_story, smart_synthesize_voice
 
-def create_epic_bharat_story(topic="Kailash Parvat Ka Rahasya", deity="भगवान शिव", prefer_aws=True, voice="hi-IN-MadhurNeural"):
+def create_epic_bharat_story(topic="Kailash Parvat Ka Rahasya", deity="भगवान शिव", prefer_aws=True):
     print(f"\n[PIPELINE] Starting 100% Pure Hindi Story Generation for {deity}: '{topic}'...")
     
     # 1. Pure Hindi AI Script Generation via Bedrock
@@ -22,7 +22,7 @@ def create_epic_bharat_story(topic="Kailash Parvat Ka Rahasya", deity="भगव
     story["story_id"] = story_id
     story["language"] = "Hindi"
     story["format"] = "Mythological Mystery"
-    story["target_duration_seconds"] = 52
+    story["target_duration_seconds"] = 48
     story["visual_theme"] = "DIVINE_MYTHOLOGY"
     
     # 2. Output directories
@@ -35,16 +35,16 @@ def create_epic_bharat_story(topic="Kailash Parvat Ka Rahasya", deity="भगव
     story_json_path = os.path.join(stories_dir, f"{story_id}.json")
     audio_path = os.path.join(assets_dir, "voiceover.mp3")
     
-    # 3. 100% Human Hindi Voiceover Synthesis
-    print(f"[PIPELINE] Synthesizing Studio Human Hindi Voiceover ({voice})...")
-    smart_synthesize_voice(story["voiceover_script"], audio_path, voice=voice)
+    # 3. AWS Polly Generative (Arjun) Voiceover Synthesis
+    print(f"[PIPELINE] Synthesizing Voiceover with AWS Polly Generative (Voice: Arjun)...")
+    smart_synthesize_voice(story["voiceover_script"], audio_path, prefer_aws=prefer_aws)
     story["voiceover_path"] = audio_path
     
     # 4. Save Story JSON
     with open(story_json_path, "w", encoding="utf-8") as f:
         json.dump(story, f, ensure_ascii=False, indent=2)
     
-    print(f"\n[SUCCESS] 100% Pure Hindi Story Created!")
+    print(f"\n[SUCCESS] 100% Pure Hindi Story Created with AWS Polly Generative Voice!")
     print(f"  • JSON: {story_json_path}")
     print(f"  • Title: {story.get('title')}")
     print(f"  • Audio: {audio_path}")
