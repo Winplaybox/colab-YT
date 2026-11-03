@@ -1,15 +1,16 @@
 ﻿"""
-AWS Shorts Engine Adapter
-=========================
-Dual-Engine with Zero-Downtime Fallback:
-- Primary: AWS Bedrock (Nova Micro) + AWS Polly (Generative 'Arjun'/'Kajal')
-- Fallback: Free Local Story Bank + Microsoft Edge-TTS (hi-IN-MadhurNeural)
+AWS Shorts Engine Adapter - Pure Hindi Cinematic Storytelling
+============================================================
+- Generates 100% authentic, emotional, pure Hindi scripts via AWS Bedrock (Nova Micro).
+- Zero English or Hinglish slang (No "episode", "channel", "subscribe").
+- Cinematic Voiceover: Natural human tone with deep, resonant storytelling cadence.
 """
 
 import os
 import sys
 import json
 import asyncio
+import edge_tts
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -17,47 +18,53 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 AWS_REGION = "ap-southeast-2"
-DEFAULT_MODE = "aws"  # Options: 'aws', 'free'
 
-def get_boto3_clients():
+def get_bedrock_client():
     try:
         import boto3
-        bedrock = boto3.client("bedrock-runtime", region_name=AWS_REGION)
-        polly = boto3.client("polly", region_name=AWS_REGION)
-        return bedrock, polly
+        return boto3.client("bedrock-runtime", region_name=AWS_REGION)
     except Exception as e:
-        print(f"[AWS INIT] Boto3 client init notice: {e}")
-        return None, None
+        print(f"[AWS BEDROCK INIT] Boto3 client init notice: {e}")
+        return None
 
-def generate_script_with_bedrock(topic="Kailash Parvat Ka Rahasya", deity="Lord Shiva"):
-    """Generates viral 50-55 second Hinglish Shorts script using Amazon Bedrock."""
-    bedrock, _ = get_boto3_clients()
+def generate_pure_hindi_script(topic="Mahadev Ka Trishul Rahasya", deity="भगवान शिव"):
+    """
+    Generates a 100% pure Hindi script with high emotional engagement,
+    intense curiosity hook, and natural storytelling cadence.
+    """
+    bedrock = get_bedrock_client()
     if not bedrock:
         raise RuntimeError("AWS Bedrock not available")
 
     prompt = f"""
-You are an expert YouTube Shorts creator for '@EpicBharatSaga' (Indian Mythology & Sanatan Dharma).
-Write a high-retention 50-second YouTube Short about: '{topic}' focusing on {deity}.
+आप 'EpicBharatSaga' के लिए एक अत्यंत अनुभवी और सम्मोहक (compelling) हिंदू पौराणिक कथाकार (mythological storyteller) हैं।
+विषय: '{topic}' ({deity}) पर 50 सेकंड का अत्यंत रहस्यमयी और रोमांचक YouTube Short स्क्रिप्ट लिखें।
 
-Language: Natural, conversational Hindi in Roman script (Hinglish), engaging and emotionally resonant.
+कड़े नियम (Strict Rules):
+1. भाषा: 100% शुद्ध, सरल और भावनात्मक हिंदी (देवनागरी लिपि में)।
+2. एक भी अंग्रेजी या हिंग्लिश शब्द का प्रयोग न करें (no "episode", "channel", "video", "subscribe", "comment", "like")।
+3. पहले 3 सेकंड में ऐसा रहस्यमयी प्रश्न (Hook) पूछें जिससे रोंगटे खड़े हो जाएं।
+4. कहानी में सस्पेंस, दिव्यता और गति होनी चाहिए।
+5. अंत में भावनात्मक समापन: "कमेंट में 'हर हर महादेव' लिखकर सनातन धर्म की इस अमर शक्ति को नमन करें।"
+6. कुल शब्द: लगभग 105 से 120 शब्द (50-52 सेकंड बोलने का समय)।
 
-Return ONLY a valid JSON object with these exact keys:
+केवल और केवल वैध JSON आउटपुट दें:
 {{
-  "title": "Short title with emoji (max 60 chars)",
-  "youtube_title": "Viral click-worthy YouTube title with tags (max 80 chars)",
-  "hook": "Electrifying 3-second opening hook",
-  "voiceover_script": "Full continuous voiceover script in Hinglish, roughly 110-130 words (approx 50 seconds speaking time). Ends with an engaging question asking viewers to comment 'Har Har Mahadev' and subscribe.",
-  "pinned_comment": "Engaging question for viewers to comment",
-  "description": "SEO description with hashtags #Shorts #Mahadev #Shiva #HinduMythology",
-  "tags": ["Shiva", "Mahadev", "Kailash", "HinduMythology", "SanatanDharma", "Shorts"],
+  "title": "हिंदी शीर्षक (इमोजी के साथ)",
+  "youtube_title": "वायरल हिंदी शीर्षक #Shorts #Mahadev #SanatanDharma",
+  "hook": "शुरुआती 3 सेकंड का शक्तिशाली हुक",
+  "voiceover_script": "पूरी 100% शुद्ध हिंदी कथा (लगभग 110 शब्द)।",
+  "pinned_comment": "दर्शकों के लिए भक्तिमय प्रश्न",
+  "description": "विस्तृत विवरण और हैशटैग #Shorts #SanatanDharma #Mahadev",
+  "tags": ["महादेव", "शिव", "त्रिशूल", "सनातन_धर्म", "Shorts"],
   "shots": [
-    {{"shot_index": 1, "duration": 5, "subtitle": "First line of hook", "prompt": "Cinematic visual description 9:16 portrait"}},
-    {{"shot_index": 2, "duration": 6, "subtitle": "Second scene subtitle", "prompt": "Cinematic visual description 9:16 portrait"}},
-    {{"shot_index": 3, "duration": 7, "subtitle": "Third scene subtitle", "prompt": "Cinematic visual description 9:16 portrait"}},
-    {{"shot_index": 4, "duration": 7, "subtitle": "Fourth scene subtitle", "prompt": "Cinematic visual description 9:16 portrait"}},
-    {{"shot_index": 5, "duration": 7, "subtitle": "Fifth scene subtitle", "prompt": "Cinematic visual description 9:16 portrait"}},
-    {{"shot_index": 6, "duration": 8, "subtitle": "Climax scene subtitle", "prompt": "Cinematic visual description 9:16 portrait"}},
-    {{"shot_index": 7, "duration": 8, "subtitle": "Conclusion & subscribe CTA", "prompt": "Divine Lord Shiva blessing visual 9:16 portrait"}}
+    {{"shot_index": 1, "duration": 6, "subtitle": "हुक पंक्ति", "prompt": "Lord Shiva divine cosmic weapon 9:16 portrait"}},
+    {{"shot_index": 2, "duration": 7, "subtitle": "रहस्य का खुलासा", "prompt": "Ancient Himalayan mountains glowing with cosmic energy 9:16"}},
+    {{"shot_index": 3, "duration": 8, "subtitle": "कथा का विस्तार", "prompt": "Lord Shiva meditating in intense divine flames 9:16"}},
+    {{"shot_index": 4, "duration": 8, "subtitle": "दिव्य शक्ति का प्रदर्शन", "prompt": "Trishul emitting golden lightning across universe 9:16"}},
+    {{"shot_index": 5, "duration": 8, "subtitle": "गहन रहस्य", "prompt": "Cosmic balance of creation preservation and destruction 9:16"}},
+    {{"shot_index": 6, "duration": 8, "subtitle": "अंतिम संदेश", "prompt": "Lord Shiva benevolent blessing darshan 9:16"}},
+    {{"shot_index": 7, "duration": 6, "subtitle": "हर हर महादेव नमन", "prompt": "Sacred Om and Trishul glowing in golden light 9:16"}}
   ]
 }}
 """
@@ -69,76 +76,58 @@ Return ONLY a valid JSON object with these exact keys:
     )
     content = response["output"]["message"]["content"][0]["text"].strip()
     
-    # Strip markdown fences if present
     if content.startswith("```"):
         content = content.split("```")[1]
         if content.startswith("json"):
             content = content[4:].strip()
     return json.loads(content)
 
-def synthesize_with_polly(text, output_file, voice="Arjun", engine="generative"):
-    """Synthesizes natural voiceover using AWS Polly."""
-    _, polly = get_boto3_clients()
-    if not polly:
-        raise RuntimeError("AWS Polly not available")
-
-    # AWS Polly generative engine produces hyper-realistic studio speech
-    response = polly.synthesize_speech(
-        Engine=engine,
-        VoiceId=voice,
-        OutputFormat="mp3",
-        Text=text
-    )
-    with open(output_file, "wb") as f:
-        f.write(response["AudioStream"].read())
-    return output_file
-
-async def synthesize_with_edgetts(text, output_file, voice="hi-IN-MadhurNeural"):
-    """Free fallback using Microsoft Edge-TTS."""
-    import edge_tts
-    communicate = edge_tts.Communicate(text, voice, rate="+6%", pitch="+1Hz")
+async def synthesize_human_hindi_voice(text, output_file, voice="hi-IN-MadhurNeural"):
+    """
+    Synthesizes authentic, 100% human-like Hindi voiceover.
+    MadhurNeural is Microsoft's state-of-the-art Hindi narrator voice:
+    - Pitch: -1Hz (Gives deep, authoritative cinematic documentary resonance)
+    - Rate: +2% (Natural conversational storytelling pace)
+    """
+    # Clean text to ensure smooth pronunciation
+    clean_text = text.replace("#", "").replace("•", "").replace("---", "").strip()
+    communicate = edge_tts.Communicate(clean_text, voice, rate="+2%", pitch="-1Hz")
     await communicate.save(output_file)
     return output_file
 
-def smart_synthesize_voice(text, output_file, prefer_aws=True, voice="Arjun"):
-    """Dual-Mode voice synthesis: Tries AWS Polly first, falls back to Edge-TTS."""
-    if prefer_aws:
-        try:
-            print(f"[TTS] Synthesizing with AWS Polly (Voice: {voice}, Engine: Generative)...")
-            synthesize_with_polly(text, output_file, voice=voice, engine="generative")
-            print(f"[TTS] AWS Polly voiceover saved: {output_file}")
-            return output_file
-        except Exception as e:
-            print(f"[TTS FALLBACK] AWS Polly encountered notice ({e}). Switching to Free Edge-TTS...")
-
-    # Free Fallback
-    print("[TTS] Synthesizing with Free Edge-TTS (hi-IN-MadhurNeural)...")
-    asyncio.run(synthesize_with_edgetts(text, output_file))
-    print(f"[TTS] Free Edge-TTS voiceover saved: {output_file}")
+def smart_synthesize_voice(text, output_file, prefer_aws=False, voice="hi-IN-MadhurNeural"):
+    """
+    Synthesizes voiceover. Uses high-fidelity native Hindi narrator voice
+    for 100% human realism and audience retention.
+    """
+    print(f"[VOICE] Synthesizing 100% Human Hindi Voiceover ({voice})...")
+    asyncio.run(synthesize_human_hindi_voice(text, output_file, voice=voice))
+    print(f"[VOICE] Studio audio rendered successfully: {output_file}")
     return output_file
 
-def smart_generate_story(topic="Kailash Parvat Ka Rahasya", deity="Lord Shiva", prefer_aws=True):
-    """Dual-Mode story generator: Tries AWS Bedrock first, falls back to Local Story Bank."""
+def smart_generate_story(topic="Mahadev Ka Trishul Rahasya", deity="भगवान शिव", prefer_aws=True):
+    """
+    Generates story script using AWS Bedrock in 100% pure Hindi.
+    """
     if prefer_aws:
         try:
-            print(f"[AI] Generating story script with AWS Bedrock (Model: Nova Micro)...")
-            story = generate_script_with_bedrock(topic=topic, deity=deity)
-            print(f"[AI] AWS Bedrock generated: '{story.get('title')}'")
+            print(f"[AI] Generating 100% Pure Hindi Script with AWS Bedrock (Nova Micro)...")
+            story = generate_pure_hindi_script(topic=topic, deity=deity)
+            print(f"[AI] Bedrock generated title: '{story.get('title')}'")
             return story
         except Exception as e:
-            print(f"[AI FALLBACK] AWS Bedrock encountered notice ({e}). Switching to Local Story Bank...")
+            print(f"[AI NOTICE] Bedrock fallback: {e}")
 
-    # Free Fallback Story
-    print("[AI] Using Local EpicBharatSaga Story Bank...")
+    # Fallback Pure Hindi Script
     return {
-        "title": f"{deity}: {topic} ðŸ”±",
-        "youtube_title": f"{deity} Ka Adbhut Chamatkar: {topic} #Mahadev #Shorts",
-        "hook": f"Kya aap jaante hain {topic} ke peeche ka asali rahasya?",
-        "voiceover_script": f"Sanatan parampara mein {deity} ko srishti ka aadi aur anant mana gaya hai. Jab bhi srishti par sankat aaya, Mahadev ne aage aakar sabko bachaya. Kailash parvat unka nivas sthal hai jahan shanti aur anant shakti ka vaas hai. Comment mein Har Har Mahadev likhein aur aisi pavitra gaathaon ke liye subscribe karein.",
-        "pinned_comment": "ðŸ”± Har Har Mahadev! Mahadev ki kripa aap sabhi par bani rahe.",
-        "description": f"{deity} {topic}\n\n#Shiva #Mahadev #EpicBharatSaga #SanatanDharma #Shorts",
-        "tags": ["Shiva", "Mahadev", "Kailash", "HinduMythology", "Shorts"],
+        "title": f"महादेव के त्रिशूल का दिव्य रहस्य 🔱",
+        "youtube_title": f"महादेव के त्रिशूल का रहस्य जो कोई नहीं जानता #Shorts #SanatanDharma",
+        "hook": "क्या आप जानते हैं महादेव के त्रिशूल का सबसे बड़ा रहस्य?",
+        "voiceover_script": "क्या आप जानते हैं महादेव के त्रिशूल का सबसे बड़ा रहस्य? सनातन धर्म में भगवान शिव का त्रिशूल केवल एक अस्त्र नहीं है, बल्कि संपूर्ण ब्रह्मांड के संतुलन का प्रतीक है। इसके तीन शूल सत्य, रज और तम—प्रकृति के तीनों गुणों को दर्शाते हैं। जब भी अधर्म ने सृष्टि की मर्यादा को तोड़ा, महादेव ने इसी त्रिशूल से उसका संहार कर पुनः धर्म की स्थापना की। यह त्रिशूल हमें सिखाता है कि मन, वाणी और कर्म पर नियंत्रण ही सच्ची साधना है। कमेंट बॉक्स में 'हर हर महादेव' लिखकर सनातन धर्म की इस अमर शक्ति को नमन करें।",
+        "pinned_comment": "🔱 हर हर महादेव! महादेव की कृपा आप सब पर बनी रहे।",
+        "description": "महादेव के त्रिशूल का रहस्य\n\n#Shorts #SanatanDharma #Mahadev #Shiva",
+        "tags": ["महादेव", "शिव", "त्रिशूल", "सनातन_धर्म", "Shorts"],
         "shots": [
-            {"shot_index": 1, "duration": 7, "subtitle": f"{topic} ka adbhut rahasya!", "prompt": "Divine Lord Shiva meditating on Mount Kailash cosmic energy 9:16"}
+            {"shot_index": 1, "duration": 7, "subtitle": "महादेव के त्रिशूल का दिव्य रहस्य!", "prompt": "Lord Shiva Trishul divine cosmic golden light 9:16"}
         ]
     }

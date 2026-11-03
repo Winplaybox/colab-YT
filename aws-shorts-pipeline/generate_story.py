@@ -1,5 +1,5 @@
 ﻿"""
-Generate and Save an EpicBharatSaga Story using AWS Bedrock & Polly
+Generate and Save an EpicBharatSaga Story using AWS Bedrock & Studio Hindi TTS
 """
 import os
 import sys
@@ -9,19 +9,20 @@ import hashlib
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from engine_adapter import smart_generate_story, smart_synthesize_voice
 
-def create_epic_bharat_story(topic="Kailash Parvat Ka Rahasya", deity="Lord Shiva", prefer_aws=True):
-    print(f"\n[PIPELINE] Starting Automated Story Generation for {deity}: '{topic}'...")
+def create_epic_bharat_story(topic="Kailash Parvat Ka Rahasya", deity="भगवान शिव", prefer_aws=True, voice="hi-IN-MadhurNeural"):
+    print(f"\n[PIPELINE] Starting 100% Pure Hindi Story Generation for {deity}: '{topic}'...")
     
-    # 1. AI Script Generation
+    # 1. Pure Hindi AI Script Generation via Bedrock
     story = smart_generate_story(topic=topic, deity=deity, prefer_aws=prefer_aws)
     
-    story_id = f"shiva_aws_{hashlib.md5(topic.encode()).hexdigest()[:8]}"
+    story_id = f"shiva_hindi_{hashlib.md5(topic.encode()).hexdigest()[:8]}"
     story["channel"] = "EpicBharatSaga"
     story["handle"] = "@EpicBharatSaga"
     story["deity"] = deity
     story["story_id"] = story_id
+    story["language"] = "Hindi"
     story["format"] = "Mythological Mystery"
-    story["target_duration_seconds"] = 58
+    story["target_duration_seconds"] = 52
     story["visual_theme"] = "DIVINE_MYTHOLOGY"
     
     # 2. Output directories
@@ -34,16 +35,16 @@ def create_epic_bharat_story(topic="Kailash Parvat Ka Rahasya", deity="Lord Shiv
     story_json_path = os.path.join(stories_dir, f"{story_id}.json")
     audio_path = os.path.join(assets_dir, "voiceover.mp3")
     
-    # 3. Voiceover Synthesis
-    print(f"[PIPELINE] Synthesizing Voiceover...")
-    smart_synthesize_voice(story["voiceover_script"], audio_path, prefer_aws=prefer_aws, voice="Arjun")
+    # 3. 100% Human Hindi Voiceover Synthesis
+    print(f"[PIPELINE] Synthesizing Studio Human Hindi Voiceover ({voice})...")
+    smart_synthesize_voice(story["voiceover_script"], audio_path, voice=voice)
     story["voiceover_path"] = audio_path
     
     # 4. Save Story JSON
     with open(story_json_path, "w", encoding="utf-8") as f:
         json.dump(story, f, ensure_ascii=False, indent=2)
     
-    print(f"\n[SUCCESS] Story Created!")
+    print(f"\n[SUCCESS] 100% Pure Hindi Story Created!")
     print(f"  • JSON: {story_json_path}")
     print(f"  • Title: {story.get('title')}")
     print(f"  • Audio: {audio_path}")
