@@ -181,7 +181,8 @@
     "https://www.livemint.com/market/stock-market-news/multibagger-engineers-india-shares-jump-15-to-2-week-high-after-q2-results-stock-gains-44-in-2026-11793622662037.html",
     "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/anthropic-revenue-jumps-1100-ahead-of-ipo-as-ai-spending-commitments-near-900-billion/articleshow/135472235.cms",
     "https://www.livemint.com/market/stock-market-news/how-itc-shares-are-performing-after-q2-results-should-you-buy-sell-or-hold-brokerages-give-targets-key-levels-11793688619420.html",
-    "https://www.livemint.com/market/stock-market-news/nse-q2-results-profit-rises-23-ebitda-doubles-in-first-post-ipo-earnings-how-has-stock-fared-since-listing-11793711653586.html"
+    "https://www.livemint.com/market/stock-market-news/nse-q2-results-profit-rises-23-ebitda-doubles-in-first-post-ipo-earnings-how-has-stock-fared-since-listing-11793711653586.html",
+    "https://economictimes.indiatimes.com/industry/energy/oil-gas/indian-oil-refiners-expect-healthy-margins-amid-global-supply-disruptions/articleshow/135510706.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -210,7 +211,8 @@
     "Multibagger Engineers India shares jump 15% to 2-week high after Q2 results; stock gains 44% in 2026",
     "Anthropic revenue jumps 1,100% ahead of IPO as AI spending commitments near $900 billion",
     "How ITC shares are performing after Q2 results? Should you buy, sell or hold? Brokerages give targets, key levels",
-    "NSE Q2 results: Profit rises 23%, EBITDA doubles in first post-IPO earnings; how has stock fared since listing?"
+    "NSE Q2 results: Profit rises 23%, EBITDA doubles in first post-IPO earnings; how has stock fared since listing?",
+    "Indian oil refiners expect healthy margins"
   ],
   "articles": [
     {
@@ -536,6 +538,18 @@
       "status": "PUBLISHED",
       "slot": "closing_wrap",
       "published_at": "2026-11-03T15:24:04.258714+00:00"
+    },
+    {
+      "viral_title": "Entertainment Dispatch: Indian oil refiners expect healthy margins — Key Highlights & Public Reception 🎬✨",
+      "original_title": "Indian oil refiners expect healthy margins",
+      "original_link": "https://economictimes.indiatimes.com/industry/energy/oil-gas/indian-oil-refiners-expect-healthy-margins-amid-global-supply-disruptions/articleshow/135510706.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/entertainment-dispatch-indian-oil.html",
+      "blogger_post_id": "1588155989902474217",
+      "status": "PUBLISHED",
+      "slot": "morning_bell",
+      "published_at": "2026-11-03T19:24:18.653527+00:00"
     }
   ]
 }
