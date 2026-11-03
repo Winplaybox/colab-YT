@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 39,
-  "current_season": 6,
-  "current_deity": "Lord Krishna",
-  "last_run": "2026-11-02T22:27:12.738256",
-  "last_uploaded_video_id": "-m9EBkTjIpc",
+  "current_episode": 40,
+  "current_season": 4,
+  "current_deity": "Lord Hanuman",
+  "last_run": "2026-11-03T20:15:18.932924",
+  "last_uploaded_video_id": "pixrWC8BCW8",
   "used_story_ids": [
     "shiva_01_neelkanth_origin",
     "shiva_02_tandava_nataraja",
@@ -35,7 +35,8 @@
     "ganesha_02_race_around_world",
     "shiva_ext_shiv_panchakshara",
     "vishnu_ext_garuda",
-    "krishna_ext_kaliya"
+    "krishna_ext_kaliya",
+    "hanuman_ext_immortal_chiranjivi"
   ],
   "history": [
     {
@@ -379,6 +380,15 @@
       "video_id": "-m9EBkTjIpc",
       "mode": "scheduled",
       "timestamp": "2026-11-02T22:27:12.738256"
+    },
+    {
+      "episode_number": 39,
+      "deity": "Lord Hanuman",
+      "season": 4,
+      "title": "Hanuman Aaj Bhi Zinda Hain — Chiranjivi! ✨",
+      "video_id": "pixrWC8BCW8",
+      "mode": "scheduled",
+      "timestamp": "2026-11-03T20:15:18.932924"
     }
   ]
 }
