@@ -1,0 +1,71 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 40,
+  "season": 6,
+  "deity": "Lord Krishna",
+  "story_id": "krishna_ext_govardhan",
+  "story_hash": "6d30f66f7a2a6414",
+  "format": "Puranic Leela",
+  "title": "Govardhan Parvat: Krishna Ki Chhoti Ungli Ka Kamaal! 🏔️",
+  "youtube_title": "Govardhan Parvat: Krishna Ki Chhoti Ungli Ka Kamaal! 🏔️",
+  "tagline": "Krishna lifted Govardhan mountain on little finger defeating Indra",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Lord_Krishna"
+  ],
+  "verified_fact": "To humble Indra's pride and shield the residents of Braj from catastrophic torrential rains, Lord Krishna lifted the colossal Govardhan hill upon his left little finger for seven consecutive days.",
+  "voiceover_script": "Indra ke krodh se jab Gokul par pralayankari baadh aayi, toh 7 saal ke Kanha ne poore Govardhan parvat ko apni baayin ungli par utha liya! 7 din aur 7 raat Gokulwasi parvat ke neeche surakshit rahe. Devraj Indra ka ahankar mitti mein mil gaya. Prakriti aur dharm ki raksha hi bhagwan ka sankalp hai!",
+  "debate_question": "Govardhan Puja — prakriti aur paryavaran ki raksha ka divya sandesh!",
+  "pinned_comment": "🏔️ Govardhan Giridhari! Chhoti ungli par uthaya parvat! Radhe Krishna!",
+  "description": "Govardhan Parvat: Krishna Ki Chhoti Ungli Ka Kamaal! 🏔️\n\n🔱 Krishna lifted Govardhan mountain on little finger defeating Indra\n\nTo humble Indra's pride and shield the residents of Braj from catastrophic torrential rains, Lord Krishna lifted the colossal Govardhan hill upon his left little finger for seven consecutive days.\n\n👉 Govardhan Puja — prakriti aur paryavaran ki raksha ka divya sandesh!\n\nSeason 6 — Lord Krishna\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Govardhan #Krishna #Giridhari #Gokul #HinduMythology #SanatanDharma #Shorts",
+  "tags": [
+    "Govardhan",
+    "Krishna",
+    "Giridhari",
+    "Gokul",
+    "HinduMythology",
+    "SanatanDharma",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Indra ka krodh aur pralayankari varsha!",
+      "prompt": "Violent celestial storm torrential rain lightning over Gokul village 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "7 saal ke Kanha ne uthaya vishalkay parvat!",
+      "prompt": "Young Krishna lifting colossal Govardhan mountain on left little finger 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Govardhan ke neeche surakshit Brajwasi!",
+      "prompt": "Villagers cows and children sheltered peacefully under lifted mountain 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "7 din aur 7 raat atal rahe Prabhu!",
+      "prompt": "Krishna smiling serenely holding massive mountain effortless divine power 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Devraj Indra ne jhukaya apna sheesh!",
+      "prompt": "Indra bowing on knees before divine young Krishna seeking forgiveness 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Giridhari Krishna ki sadaiv jai!",
+      "prompt": "Golden sunrise over Govardhan hill happy Braj residents celebrating 9:16"
+    }
+  ]
+}

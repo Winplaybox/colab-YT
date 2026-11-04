@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 40,
-  "current_season": 4,
-  "current_deity": "Lord Hanuman",
-  "last_run": "2026-11-03T20:15:18.932924",
-  "last_uploaded_video_id": "pixrWC8BCW8",
+  "current_episode": 41,
+  "current_season": 6,
+  "current_deity": "Lord Krishna",
+  "last_run": "2026-11-04T20:31:57.456178",
+  "last_uploaded_video_id": "h_kv-znsm-s",
   "used_story_ids": [
     "shiva_01_neelkanth_origin",
     "shiva_02_tandava_nataraja",
@@ -36,7 +36,8 @@
     "shiva_ext_shiv_panchakshara",
     "vishnu_ext_garuda",
     "krishna_ext_kaliya",
-    "hanuman_ext_immortal_chiranjivi"
+    "hanuman_ext_immortal_chiranjivi",
+    "krishna_ext_govardhan"
   ],
   "history": [
     {
@@ -389,6 +390,15 @@
       "video_id": "pixrWC8BCW8",
       "mode": "scheduled",
       "timestamp": "2026-11-03T20:15:18.932924"
+    },
+    {
+      "episode_number": 40,
+      "deity": "Lord Krishna",
+      "season": 6,
+      "title": "Govardhan Parvat: Krishna Ki Chhoti Ungli Ka Kamaal! 🏔️",
+      "video_id": "h_kv-znsm-s",
+      "mode": "scheduled",
+      "timestamp": "2026-11-04T20:31:57.456178"
     }
   ]
 }
