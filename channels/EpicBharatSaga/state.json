@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 41,
-  "current_season": 6,
-  "current_deity": "Lord Krishna",
-  "last_run": "2026-11-04T20:31:57.456178",
-  "last_uploaded_video_id": "h_kv-znsm-s",
+  "current_episode": 42,
+  "current_season": 4,
+  "current_deity": "Lord Hanuman",
+  "last_run": "2026-11-05T20:47:24.950959",
+  "last_uploaded_video_id": "Aph7EOC6prQ",
   "used_story_ids": [
     "shiva_01_neelkanth_origin",
     "shiva_02_tandava_nataraja",
@@ -37,7 +37,8 @@
     "vishnu_ext_garuda",
     "krishna_ext_kaliya",
     "hanuman_ext_immortal_chiranjivi",
-    "krishna_ext_govardhan"
+    "krishna_ext_govardhan",
+    "hanuman_ext_panchamukhi"
   ],
   "history": [
     {
@@ -399,6 +400,15 @@
       "video_id": "h_kv-znsm-s",
       "mode": "scheduled",
       "timestamp": "2026-11-04T20:31:57.456178"
+    },
+    {
+      "episode_number": 41,
+      "deity": "Lord Hanuman",
+      "season": 4,
+      "title": "Panchamukhi Hanuman: Paatal Mein Ahiravan Ka Ant! 🐒",
+      "video_id": "Aph7EOC6prQ",
+      "mode": "scheduled",
+      "timestamp": "2026-11-05T20:47:24.950959"
     }
   ]
 }
