@@ -1,0 +1,70 @@
+{
+  "channel": "EpicBharatSaga",
+  "handle": "@EpicBharatSaga",
+  "episode_number": 42,
+  "season": 2,
+  "deity": "Lord Vishnu",
+  "story_id": "vishnu_ext_varaha",
+  "story_hash": "365da31dc8557b00",
+  "format": "Dashavatara",
+  "title": "Varaha Avatar: Samandar Se Dharti Ko Utha Laye! 🐗",
+  "youtube_title": "Varaha Avatar: Samandar Se Dharti Ko Utha Laye! 🐗",
+  "tagline": "Varaha avatar cosmic boar rescued Bhudevi ocean Hiranyaksha",
+  "visual_theme": "DIVINE_MYTHOLOGY",
+  "target_duration_seconds": 95,
+  "review_status": "verified",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Lord_Vishnu"
+  ],
+  "verified_fact": "When demon Hiranyaksha dragged Mother Earth (Bhudevi) into the depths of the cosmic cosmic ocean, Lord Vishnu incarnated as Varaha, slew the demon, and hoisted the Earth upon his tusks.",
+  "voiceover_script": "Jab prachand asur Hiranyaksha ne Dharti Mata ko rasatal mein chhipa diya, tab Bhagwan Vishnu ne apna tishra avatar liya — Varaha roop! Akhand brahmand jitna vishal sharir lekar ve rasatal mein utre, Hiranyaksha ka sanghar kiya, aur apne daanton par samast prithvi ko surakshit sthapit kiya!",
+  "debate_question": "Varaha avatar — sankat mein phansi prithvi ke uddhar ka prateek!",
+  "pinned_comment": "🐗 Varaha Bhagwan ki jai! Dharti Mata ke rakshak! Om Namo Bhagavate Vasudevaya!",
+  "description": "Varaha Avatar: Samandar Se Dharti Ko Utha Laye! 🐗\n\n🔱 Varaha avatar cosmic boar rescued Bhudevi ocean Hiranyaksha\n\nWhen demon Hiranyaksha dragged Mother Earth (Bhudevi) into the depths of the cosmic cosmic ocean, Lord Vishnu incarnated as Varaha, slew the demon, and hoisted the Earth upon his tusks.\n\n👉 Varaha avatar — sankat mein phansi prithvi ke uddhar ka prateek!\n\nSeason 2 — Lord Vishnu\n\nSubscribe to @EpicBharatSaga for daily stories of Sanatan Dharma — gods, avatars, myths, and legends from the timeless Hindu epics!\n\n#Varaha #Dashavatara #Vishnu #Bhudevi #HinduMythology #Shorts",
+  "tags": [
+    "Varaha",
+    "Dashavatara",
+    "Vishnu",
+    "Bhudevi",
+    "HinduMythology",
+    "Shorts"
+  ],
+  "shots": [
+    {
+      "shot_index": 1,
+      "duration": 10,
+      "subtitle": "Hiranyaksha ne Dharti ko rasatal mein dhakela!",
+      "prompt": "Demon Hiranyaksha dragging Mother Earth into deep cosmic ocean abyss 9:16"
+    },
+    {
+      "shot_index": 2,
+      "duration": 10,
+      "subtitle": "Bhagwan Vishnu ka vishalkay Varaha roop!",
+      "prompt": "Colossal glowing divine Varaha boar descending through cosmic waters 9:16"
+    },
+    {
+      "shot_index": 3,
+      "duration": 10,
+      "subtitle": "Rasatal mein bhayankar malkyuddh!",
+      "prompt": "Epic underwater combat Varaha vs golden armored Hiranyaksha 9:16"
+    },
+    {
+      "shot_index": 4,
+      "duration": 10,
+      "subtitle": "Asur ka vadh aur dharm ki sthapana!",
+      "prompt": "Demon defeated with divine celestial mace underwater cosmic rays 9:16"
+    },
+    {
+      "shot_index": 5,
+      "duration": 10,
+      "subtitle": "Apne daanton par prithvi ko uthaya!",
+      "prompt": "Divine Varaha emerging with radiant Mother Earth balanced on his tusk 9:16"
+    },
+    {
+      "shot_index": 6,
+      "duration": 10,
+      "subtitle": "Dharti Mata punah jeevan se muskurai!",
+      "prompt": "Earth restored in cosmic space surrounded by dancing celestial devas 9:16"
+    }
+  ]
+}

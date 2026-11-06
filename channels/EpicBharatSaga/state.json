@@ -1,11 +1,11 @@
 {
   "channel_id": "UCakmjqTBA6KgCF2F30Tnpjg",
   "channel_name": "Epic Bharat",
-  "current_episode": 42,
-  "current_season": 4,
-  "current_deity": "Lord Hanuman",
-  "last_run": "2026-11-05T20:47:24.950959",
-  "last_uploaded_video_id": "Aph7EOC6prQ",
+  "current_episode": 43,
+  "current_season": 2,
+  "current_deity": "Lord Vishnu",
+  "last_run": "2026-11-06T20:03:12.113258",
+  "last_uploaded_video_id": "sSHqBqSrrFQ",
   "used_story_ids": [
     "shiva_01_neelkanth_origin",
     "shiva_02_tandava_nataraja",
@@ -38,7 +38,8 @@
     "krishna_ext_kaliya",
     "hanuman_ext_immortal_chiranjivi",
     "krishna_ext_govardhan",
-    "hanuman_ext_panchamukhi"
+    "hanuman_ext_panchamukhi",
+    "vishnu_ext_varaha"
   ],
   "history": [
     {
@@ -409,6 +410,15 @@
       "video_id": "Aph7EOC6prQ",
       "mode": "scheduled",
       "timestamp": "2026-11-05T20:47:24.950959"
+    },
+    {
+      "episode_number": 42,
+      "deity": "Lord Vishnu",
+      "season": 2,
+      "title": "Varaha Avatar: Samandar Se Dharti Ko Utha Laye! 🐗",
+      "video_id": "sSHqBqSrrFQ",
+      "mode": "scheduled",
+      "timestamp": "2026-11-06T20:03:12.113258"
     }
   ]
 }
