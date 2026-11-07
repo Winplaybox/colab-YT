@@ -1,9 +1,8 @@
 name: EpicBharatSaga Autonomous Scheduler
 
 on:
-  schedule:
-    # Runs Daily at 13:30 UTC (7:00 PM IST)
-    - cron: '30 13 * * *'
+  # Daily schedule removed: EpicBharatSaga now publishes from Winplaybox/Remotion
+  # (publish-channels.yml, 19:00 IST, new paper-diorama format). Manual runs still work.
   workflow_dispatch:
     inputs:
       episode_number:
