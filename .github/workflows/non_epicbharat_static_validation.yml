@@ -1,0 +1,34 @@
+name: Non-EpicBharat Static Validation
+
+on:
+  pull_request:
+    paths:
+      - "blog/**"
+      - "channels/TigerVlogs-2026/**"
+      - "channels/DigitalImmortals/**"
+      - "channels/IndianHorrorTapes/**"
+      - "channels/AllTrainReels/**"
+      - "channels/MindNestTales/**"
+      - ".github/workflows/buzzstorm_blog_scheduler.yml"
+      - ".github/workflows/tigervlogs_2026_scheduler.yml"
+      - ".github/workflows/digital_immortals_shorts_scheduler.yml"
+      - ".github/workflows/indian_horror_tapes_scheduler.yml"
+      - ".github/workflows/all_train_reels_scheduler.yml"
+      - ".github/workflows/mindnest_tales_scheduler.yml"
+      - "scripts/validate_non_epicbharat.py"
+
+permissions:
+  contents: read
+
+jobs:
+  static-validation:
+    name: Validate non-EpicBharat Python and configuration
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Parse allowlisted Python sources and JSON configs
+        run: python scripts/validate_non_epicbharat.py
