@@ -66,5 +66,5 @@ IMAGE_STYLE = (
 
 # --- Upload ---
 UPLOAD = os.getenv("UPLOAD", "true").lower() == "true"
-PRIVACY = os.getenv("PRIVACY", "private")   # private = you review & publish from YouTube app
+PRIVACY = os.getenv("PRIVACY", "public")    # automatic public publishing by approved channel policy
 CATEGORY_ID = "27"                           # Education
