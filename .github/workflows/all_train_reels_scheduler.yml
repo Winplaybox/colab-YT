@@ -159,6 +159,12 @@ jobs:
             echo "Installed AllTrainReels YouTube client secret."
           fi
 
+      - name: Validate AllTrainReels OAuth before rendering
+        run: python scripts/channel_oauth_preflight.py --channel all-train
+
+      - name: Check installed Python dependency consistency
+        run: python -m pip check
+
       - name: Execute AllTrainReels Production & Scheduling
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
