@@ -58,10 +58,10 @@ def upload(path, meta: dict) -> str:
     hashtags = " ".join(dict.fromkeys(["#Shorts", "#DigitalImmortals", *meta.get("hashtags", [])]))
     credit_txt = ""
     if meta.get("credits"):
-        credit_txt = "\\n\\n📷 Image credits:\\n" + "\\n".join(f"• {c}" for c in dict.fromkeys(meta["credits"]))
+        credit_txt = "\n\n📷 Image credits:\n" + "\n".join(f"• {c}" for c in dict.fromkeys(meta["credits"]))
     description = (
-        f"{meta['description']}\\n\\n"
-        f"🔔 ऐसे और रहस्यों के लिए Subscribe करें — {config.CHANNEL_HANDLE}{credit_txt}\\n\\n{hashtags}"
+        f"{meta['description']}\n\n"
+        f"🔔 ऐसे और रहस्यों के लिए Subscribe करें — {config.CHANNEL_HANDLE}{credit_txt}\n\n{hashtags}"
     )
     tags, total = [], 0
     for tag in meta.get("tags", []):
