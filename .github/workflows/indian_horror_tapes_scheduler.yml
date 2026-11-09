@@ -158,6 +158,12 @@ jobs:
             echo "Installed YouTube client secret."
           fi
 
+      - name: Validate IndianHorrorTapes OAuth before rendering
+        run: python scripts/channel_oauth_preflight.py --channel indian-horror
+
+      - name: Check installed Python dependency consistency
+        run: python -m pip check
+
       - name: Execute Video Rendering & Scheduling
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
