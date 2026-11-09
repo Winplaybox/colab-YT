@@ -70,11 +70,21 @@ def run_single_post(slot=None, force_category=None, is_draft=False, dry_run=Fals
 
     # A local HTML fallback, API error, or Blogger draft is not a published post.
     # Fail the Actions job so monitoring catches the missed publication.
-    if status not in {"PUBLISHED", "SCHEDULED"} or not post_id:
+    accepted_statuses = {"PUBLISHED", "SCHEDULED"}
+    if is_draft:
+        accepted_statuses.add("DRAFT")
+    if status not in accepted_statuses or not post_id:
         raise RuntimeError(
-            f"Blogger did not confirm a published/scheduled post "
-            f"(status={status!r}, post_id={post_id!r}); archive was not advanced."
+            f"Blogger did not confirm the requested post state "
+            f"(status={status!r}, post_id={post_id!r}, draft_requested={is_draft}); "
+            "archive was not advanced."
         )
+
+    # Draft mode is a successful draft operation, but drafts must never enter
+    # the published archive or be treated as live posts.
+    if status == "DRAFT":
+        print(f"📝 BLOGGER CONFIRMED DRAFT: {result.get('url')}")
+        return result
 
     archive = load_archive()
     source_url = chosen_item["link"]
