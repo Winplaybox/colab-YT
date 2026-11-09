@@ -397,6 +397,11 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
             expected_channel_id=ch.get("channel_id"),
             expected_name=ch_name
         )
+        if not dry_run and youtube is None:
+            raise RuntimeError(
+                f"MindNest {lang.upper()} has no verified channel OAuth token. "
+                "Refusing to render locally or advance this channel's release state."
+            )
 
         channel_publish_at = publish_at
         if not channel_publish_at and ch.get("publish_time_utc"):
