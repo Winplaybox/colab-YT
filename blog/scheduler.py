@@ -41,7 +41,7 @@ def run_single_post(slot=None, force_category=None, is_draft=False, dry_run=Fals
     if not slot:
         slot = determine_current_slot()
 
-    print("\\n" + "=" * 65)
+    print("\n" + "=" * 65)
     print("⚡ BUZZSTORMNOW LEAD EDITOR EXECUTION")
     print(f"Target Blog: {BLOG_NAME} (ID: {BLOG_ID})")
     print(f"Current Slot: {slot['name']} ({slot['target_time_ist']} IST)")
