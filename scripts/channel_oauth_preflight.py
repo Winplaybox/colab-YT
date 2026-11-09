@@ -81,17 +81,20 @@ def main() -> int:
         if args.channel == "digital-immortals":
             if not os.environ.get("ANTHROPIC_API_KEY", "").strip():
                 raise RuntimeError("ANTHROPIC_API_KEY is missing; script_gen requires Claude API access.")
-            raw = os.environ.get("DIGITALIMMORTALS_TOKEN_JSON", "").strip()
-            if raw:
-                parse_token(raw, "DIGITALIMMORTALS_TOKEN_JSON")
-                source = "DIGITALIMMORTALS_TOKEN_JSON"
-            elif all(os.environ.get(k, "").strip() for k in ("YT_REFRESH_TOKEN", "YT_CLIENT_ID", "YT_CLIENT_SECRET")):
-                source = "YT_REFRESH_TOKEN + OAuth client settings"
+            if os.environ.get("UPLOAD", "true").lower() != "true":
+                source = "upload disabled for this run"
             else:
-                raise RuntimeError(
-                    "Upload is enabled but no complete YouTube OAuth configuration exists. "
-                    "Provide DIGITALIMMORTALS_TOKEN_JSON or YT_REFRESH_TOKEN, YT_CLIENT_ID and YT_CLIENT_SECRET."
-                )
+                raw = os.environ.get("DIGITALIMMORTALS_TOKEN_JSON", "").strip()
+                if raw:
+                    parse_token(raw, "DIGITALIMMORTALS_TOKEN_JSON")
+                    source = "DIGITALIMMORTALS_TOKEN_JSON"
+                elif all(os.environ.get(k, "").strip() for k in ("YT_REFRESH_TOKEN", "YT_CLIENT_ID", "YT_CLIENT_SECRET")):
+                    source = "YT_REFRESH_TOKEN + OAuth client settings"
+                else:
+                    raise RuntimeError(
+                        "Upload is enabled but no complete YouTube OAuth configuration exists. "
+                        "Provide DIGITALIMMORTALS_TOKEN_JSON or YT_REFRESH_TOKEN, YT_CLIENT_ID and YT_CLIENT_SECRET."
+                    )
         elif args.channel == "mindnest":
             if not args.language:
                 raise RuntimeError("--language is required for MindNest preflight")
