@@ -20,10 +20,10 @@ concurrency:
 
 jobs:
   # =========================================================================
-  # STAGE 1: Media Asset Preparation & Audio Synthesizer
+  # STAGE 1: Lightweight Target-Date Validation
   # =========================================================================
   prepare-assets:
-    name: "Stage 1: Generate Food Assets & TTS Speech"
+    name: "Stage 1: Validate Batch Target Date"
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
