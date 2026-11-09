@@ -126,6 +126,12 @@ jobs:
             echo "Successfully restored youtube_client_secret.json"
           fi
 
+      - name: Validate TigerVlogs OAuth before production
+        run: python scripts/channel_oauth_preflight.py --channel tiger
+
+      - name: Check installed Python dependency consistency
+        run: python -m pip check
+
       - name: Execute TigerVlogs-2026 Daily Batch
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
