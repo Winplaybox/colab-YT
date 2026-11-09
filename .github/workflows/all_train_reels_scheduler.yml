@@ -48,14 +48,12 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install Python Dependencies
+      - name: Install minimal asset-stage dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          else
-            pip install edge-tts requests huggingface_hub pillow static-ffmpeg google-genai openai anthropic
-          fi
+          # Stage 1 uses requests + Pillow; render/upload SDKs belong to Stage 2.
+          python -m pip install requests Pillow
+          python -m pip check
 
       - name: Pre-Generate Train Story & Image Assets
         env:
