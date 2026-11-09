@@ -61,6 +61,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          UPLOAD: ${{ github.event.inputs.upload || 'true' }}
         run: python scripts/channel_oauth_preflight.py --channel digital-immortals
 
       - name: Check installed Python dependency consistency
