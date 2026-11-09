@@ -1,10 +1,4 @@
-"""Uploads the finished Short to YouTube (private by default, for your review).
-
-Credentials, first match wins:
-  1. DIGITALIMMORTALS_TOKEN_JSON  - full token.json content (GitHub Secret)
-  2. YT_REFRESH_TOKEN + YT_CLIENT_ID + YT_CLIENT_SECRET
-  3. channels/DigitalImmortals/token.json  (local runs; same file the long-form pipeline uses)
-"""
+"""Uploads the finished Short to YouTube using the configured channel privacy policy."""
 import json
 import os
 
@@ -18,6 +12,10 @@ def _credentials():
     if raw:
         return Credentials.from_authorized_user_info(json.loads(raw))
     if os.environ.get("YT_REFRESH_TOKEN"):
+        required = ("YT_CLIENT_ID", "YT_CLIENT_SECRET")
+        missing = [key for key in required if not os.environ.get(key)]
+        if missing:
+            raise RuntimeError("Missing YouTube OAuth settings: " + ", ".join(missing))
         return Credentials(
             None,
             refresh_token=os.environ["YT_REFRESH_TOKEN"],
@@ -50,6 +48,9 @@ def upload(path, meta: dict) -> str:
     from googleapiclient.discovery import build
     from googleapiclient.http import MediaFileUpload
 
+    if config.PRIVACY not in {"public", "private", "unlisted"}:
+        raise ValueError(f"Unsupported YouTube privacy status: {config.PRIVACY!r}")
+
     creds = _credentials()
     creds.refresh(google.auth.transport.requests.Request())
     yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
@@ -63,11 +64,11 @@ def upload(path, meta: dict) -> str:
         f"🔔 ऐसे और रहस्यों के लिए Subscribe करें — {config.CHANNEL_HANDLE}{credit_txt}\n\n{hashtags}"
     )
     tags, total = [], 0
-    for t in meta.get("tags", []):          # YouTube caps tags at ~500 chars total
-        if total + len(t) + 1 > 480:
+    for tag in meta.get("tags", []):
+        if total + len(tag) + 1 > 480:
             break
-        tags.append(t)
-        total += len(t) + 1
+        tags.append(tag)
+        total += len(tag) + 1
     body = {
         "snippet": {
             "title": meta["title"][:100],
@@ -83,14 +84,17 @@ def upload(path, meta: dict) -> str:
         },
     }
     brain = _brain()
-    if brain:   # insights-aware title/description/tags + playlist (channels/common/yt_brain.py)
+    if brain:
         body = brain.before_insert("DigitalImmortals", yt, body, is_short=True)
     req = yt.videos().insert(
         part="snippet,status", body=body,
         media_body=MediaFileUpload(str(path), mimetype="video/mp4", chunksize=-1, resumable=True))
-    resp = None
-    while resp is None:
-        _, resp = req.next_chunk()
+    response = None
+    while response is None:
+        _, response = req.next_chunk()
+    video_id = response.get("id")
+    if not video_id:
+        raise RuntimeError("YouTube upload completed without returning a video ID.")
     if brain:
-        brain.after_insert("DigitalImmortals", yt, resp["id"])
-    return resp["id"]
+        brain.after_insert("DigitalImmortals", yt, video_id)
+    return video_id

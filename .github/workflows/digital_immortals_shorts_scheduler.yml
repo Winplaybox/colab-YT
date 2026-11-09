@@ -2,7 +2,6 @@ name: DigitalImmortals Daily Shorts Scheduler
 
 on:
   schedule:
-    # 05:00 IST daily (23:30 UTC)
     - cron: '30 23 * * *'
   workflow_dispatch:
     inputs:
@@ -12,10 +11,10 @@ on:
         type: choice
         options: ["true", "false"]
       privacy:
-        description: "Upload privacy (private allows reviewing in YouTube Studio app before publishing)"
-        default: "private"
+        description: "Upload privacy (public publishes automatically)"
+        default: "public"
         type: choice
-        options: ["private", "public", "unlisted"]
+        options: ["public", "private", "unlisted"]
 
 permissions:
   contents: write
@@ -67,9 +66,8 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           IMAGE_PROVIDER: ${{ vars.IMAGE_PROVIDER || 'gemini' }}
           UPLOAD: ${{ github.event.inputs.upload || 'true' }}
-          PRIVACY: ${{ github.event.inputs.privacy || 'private' }}
-        run: |
-          python -m pipeline.main
+          PRIVACY: ${{ github.event.inputs.privacy || 'public' }}
+        run: python -m pipeline.main
 
       - name: Upload Output Video & Script Artifact
         if: always()
