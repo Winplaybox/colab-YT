@@ -307,8 +307,9 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
     v2_title = (topic["title"][:88] + " #Shorts")
     v2_desc = f"{topic['script']}\n\n🌿 100% Pure Vegetarian.\n👉 Subscribe to {config['brand_handle']}{credit}"
     vid_2 = upload_video_to_youtube(youtube, v2_file, v2_title, v2_desc, topic["tags"] + ["shorts"], publish_at=pub_at_2)
-    if vid_2:
-        results.append({"slot": 2, "id": vid_2, "url": f"https://youtu.be/{vid_2}", "time": pub_at_2})
+    if not vid_2:
+        raise RuntimeError("TigerVlogs Short upload was not confirmed; batch is incomplete.")
+    results.append({"slot": 2, "id": vid_2, "url": f"https://youtu.be/{vid_2}", "time": pub_at_2})
     if os.path.exists(v2_file): os.remove(v2_file)
 
     if results:
