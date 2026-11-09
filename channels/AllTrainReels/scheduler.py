@@ -313,6 +313,11 @@ def run_episode(episode_number=None, quality="1080p", publish_mode="scheduled", 
     video_id = None
     if publish_mode != "render_only":
         video_id = upload_short(video_path, story, publish_mode=publish_mode, force=force)
+        if not video_id:
+            raise RuntimeError(
+                "AllTrainReels upload was not confirmed (no YouTube video ID); "
+                "episode state will not advance."
+            )
 
     # Update state.json progression — episodes count up forever (no wrap)
     if publish_mode != "render_only":
