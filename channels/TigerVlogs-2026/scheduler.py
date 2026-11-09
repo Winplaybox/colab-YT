@@ -288,8 +288,9 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
     v1_desc = (f"{topic['title']}\n\n{topic['script']}\n\n🌿 100% Pure Vegetarian.\n"
                f"📩 Business: {config['brand_email']}\n👉 Subscribe to {config['brand_handle']}{credit}")
     vid_1 = upload_video_to_youtube(youtube, v1_file, topic["title"], v1_desc, topic["tags"], publish_at=pub_at_1)
-    if vid_1:
-        results.append({"slot": 1, "id": vid_1, "url": f"https://youtu.be/{vid_1}", "time": pub_at_1})
+    if not vid_1:
+        raise RuntimeError("TigerVlogs long-form upload was not confirmed; refusing to report a completed batch.")
+    results.append({"slot": 1, "id": vid_1, "url": f"https://youtu.be/{vid_1}", "time": pub_at_1})
     if os.path.exists(v1_file): os.remove(v1_file)
 
     # --- SLOT 2: Original 9:16 Short, same topic ---
@@ -306,8 +307,9 @@ def run_daily_batch(target_date_str=None, batch_dir="/tmp/tiger_vlogs_batch"):
     v2_title = (topic["title"][:88] + " #Shorts")
     v2_desc = f"{topic['script']}\n\n🌿 100% Pure Vegetarian.\n👉 Subscribe to {config['brand_handle']}{credit}"
     vid_2 = upload_video_to_youtube(youtube, v2_file, v2_title, v2_desc, topic["tags"] + ["shorts"], publish_at=pub_at_2)
-    if vid_2:
-        results.append({"slot": 2, "id": vid_2, "url": f"https://youtu.be/{vid_2}", "time": pub_at_2})
+    if not vid_2:
+        raise RuntimeError("TigerVlogs Short upload was not confirmed; batch is incomplete.")
+    results.append({"slot": 2, "id": vid_2, "url": f"https://youtu.be/{vid_2}", "time": pub_at_2})
     if os.path.exists(v2_file): os.remove(v2_file)
 
     if results:

@@ -146,9 +146,21 @@ jobs:
             printf "%s" "$SECRET_DATA" > "${CHANNEL_DIR}/youtube_client_secret.json"
           fi
 
+      - name: Validate MindNest language OAuth before rendering
+        if: steps.filter-check.outputs.should_run == 'true'
+        env:
+          MINDNEST_ALL_TOKENS_JSON: ${{ secrets.MINDNEST_ALL_TOKENS_JSON }}
+          MINDNEST_TOKEN_JSON: ${{ secrets.MINDNEST_TOKEN_JSON }}
+        run: python scripts/channel_oauth_preflight.py --channel mindnest --language "${{ matrix.language.code }}"
+
+      - name: Check installed Python dependency consistency
+        if: steps.filter-check.outputs.should_run == 'true'
+        run: python -m pip check
+
       - name: Execute Story Pipeline for ${{ matrix.language.name }}
         if: steps.filter-check.outputs.should_run == 'true'
         env:
+          MINDNEST_ALL_TOKENS_JSON: ${{ secrets.MINDNEST_ALL_TOKENS_JSON }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

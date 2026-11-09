@@ -397,6 +397,11 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
             expected_channel_id=ch.get("channel_id"),
             expected_name=ch_name
         )
+        if not dry_run and youtube is None:
+            raise RuntimeError(
+                f"MindNest {lang.upper()} has no verified channel OAuth token. "
+                "Refusing to render locally or advance this channel's release state."
+            )
 
         channel_publish_at = publish_at
         if not channel_publish_at and ch.get("publish_time_utc"):
@@ -597,7 +602,19 @@ def run_mindnest_release(story_number=None, target_lang=None, quality="1080p", a
             if not dry_run and os.path.exists(video_path):
                 os.remove(video_path)
 
-    # Update state tracker
+    # A failed/local-only result must never be recorded as a completed network release.
+    unsuccessful = [
+        r for r in results
+        if r.get("status") in {"FAILED", "RENDERED_LOCAL"}
+    ]
+    if unsuccessful and not dry_run:
+        langs = ", ".join(r.get("lang", "?") for r in unsuccessful)
+        raise RuntimeError(
+            f"MindNest release did not complete on these language channels: {langs}. "
+            "Network state was not advanced."
+        )
+
+    # Update state tracker only after the requested release work completed.
     today_str = datetime.now().strftime("%Y-%m-%d")
     state["last_run_date"] = today_str
 

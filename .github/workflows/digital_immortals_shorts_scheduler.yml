@@ -54,6 +54,19 @@ jobs:
           fi
           pip install -r channels/DigitalImmortals/shorts/requirements.txt
 
+      - name: Validate DigitalImmortals script and upload credentials
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DIGITALIMMORTALS_TOKEN_JSON: ${{ secrets.DIGITALIMMORTALS_TOKEN_JSON }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          UPLOAD: ${{ github.event.inputs.upload || 'true' }}
+        run: python scripts/channel_oauth_preflight.py --channel digital-immortals
+
+      - name: Check installed Python dependency consistency
+        run: python -m pip check
+
       - name: Produce Today's Mythology Short
         working-directory: channels/DigitalImmortals/shorts
         env:

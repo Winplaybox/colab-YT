@@ -75,6 +75,12 @@ jobs:
             printf "%s" "$SECRET_DATA" > "blog/credentials/client_secret.json"
           fi
 
+      - name: Validate Blogger OAuth before content generation
+        run: python scripts/channel_oauth_preflight.py --channel buzzstorm
+
+      - name: Check installed Python dependency consistency
+        run: python -m pip check
+
       - name: Execute BuzzStormNow Lead Editor & Publisher
         run: |
           MODE="${{ github.event.inputs.execution_mode }}"
