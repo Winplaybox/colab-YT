@@ -466,6 +466,11 @@ def run_schedule(story_number=None, quality="4k", force_immediate=False):
 
     # Pre-render check: inspect live YouTube to skip already uploaded stories
     yt_svc = get_youtube_service()
+    if os.environ.get("GITHUB_ACTIONS") == "true" and yt_svc is None:
+        raise RuntimeError(
+            "IndianHorrorTapes Actions run has no verified YouTube OAuth service; "
+            "aborting before render so the workflow cannot report a local-only run as a release."
+        )
     if yt_svc:
         try:
             try:
