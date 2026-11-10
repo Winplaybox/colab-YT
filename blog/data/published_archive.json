@@ -195,7 +195,8 @@
     "https://economictimes.indiatimes.com/markets/stocks/news/fiis-pump-rs-45960-crore-into-indian-stocks-in-a-week-is-the-tide-finally-turning-for-dalal-street/articleshow/135631663.cms",
     "https://economictimes.indiatimes.com/markets/ipos/fpos/sebi-approves-6-ipos-including-mahanadi-coalfields-veritas-finance-and-sagar-defence-check-details/articleshow/135684603.cms",
     "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-stocks-dow-rockets-1100-points-sp-over-2-as-oil-slide-cools-inflation-worries-nvidia-slumps/articleshow/135693071.cms",
-    "https://www.livemint.com/market/stock-market-news/data-patterns-shares-surge-55-in-2026-should-you-buy-stock-after-q2-results-what-brokerages-say-check-target-price-11794290061612.html"
+    "https://www.livemint.com/market/stock-market-news/data-patterns-shares-surge-55-in-2026-should-you-buy-stock-after-q2-results-what-brokerages-say-check-target-price-11794290061612.html",
+    "https://economictimes.indiatimes.com/markets/us-stocks/news/why-the-trade-desk-stock-surged-15-despite-revenue-decline/slideshow/135701057.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -238,7 +239,8 @@
     "FIIs pump Rs 45,960 crore into Indian stocks in a week; is the tide finally turning for Dalal Street?",
     "Sebi approves 6 IPOs including Mahanadi Coalfields, Veritas Finance and Sagar Defence. Check details",
     "US stocks: Dow rockets 1,100 points, S&P over 2% as oil slide cools inflation worries; Nvidia slumps",
-    "Data Patterns shares surge 55% in 2026: Should you buy stock after Q2 results? What brokerages say: check target price"
+    "Data Patterns shares surge 55% in 2026: Should you buy stock after Q2 results? What brokerages say: check target price",
+    "Why The Trade Desk stock surged 15% despite revenue decline"
   ],
   "articles": [
     {
@@ -732,6 +734,18 @@
       "status": "PUBLISHED",
       "slot": "closing_wrap",
       "published_at": "2026-11-10T10:30:15.206781+00:00"
+    },
+    {
+      "viral_title": "AI Breakthrough: Why The Trade Desk stock surged 15% despite revenue decline — Technical Architecture & Key Capabilities Explained 🤖⚡",
+      "original_title": "Why The Trade Desk stock surged 15% despite revenue decline",
+      "original_link": "https://economictimes.indiatimes.com/markets/us-stocks/news/why-the-trade-desk-stock-surged-15-despite-revenue-decline/slideshow/135701057.cms",
+      "source": "Economic Times Markets",
+      "category": "Market Analysis",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/ai-breakthrough-why-trade-desk-stock.html",
+      "blogger_post_id": "6130434302975898139",
+      "status": "PUBLISHED",
+      "slot": "closing_wrap",
+      "published_at": "2026-11-10T15:43:18.875313+00:00"
     }
   ]
 }
