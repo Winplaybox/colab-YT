@@ -197,7 +197,8 @@
     "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-stocks-dow-rockets-1100-points-sp-over-2-as-oil-slide-cools-inflation-worries-nvidia-slumps/articleshow/135693071.cms",
     "https://www.livemint.com/market/stock-market-news/data-patterns-shares-surge-55-in-2026-should-you-buy-stock-after-q2-results-what-brokerages-say-check-target-price-11794290061612.html",
     "https://economictimes.indiatimes.com/markets/us-stocks/news/why-the-trade-desk-stock-surged-15-despite-revenue-decline/slideshow/135701057.cms",
-    "https://economictimes.indiatimes.com/markets/us-stocks/news/why-rocket-lab-shares-fell-despite-record-revenue-and-booming-neutron-demand/slideshow/135702575.cms"
+    "https://economictimes.indiatimes.com/markets/us-stocks/news/why-rocket-lab-shares-fell-despite-record-revenue-and-booming-neutron-demand/slideshow/135702575.cms",
+    "https://economictimes.indiatimes.com/markets/stocks/news/heg-advanced-materials-shares-gain-5-after-subsidiary-secures-rs-610-crore-incentive-under-ecms/articleshow/135727758.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -242,7 +243,8 @@
     "US stocks: Dow rockets 1,100 points, S&P over 2% as oil slide cools inflation worries; Nvidia slumps",
     "Data Patterns shares surge 55% in 2026: Should you buy stock after Q2 results? What brokerages say: check target price",
     "Why The Trade Desk stock surged 15% despite revenue decline",
-    "Why Rocket Lab shares fell despite record revenue and booming Neutron demand"
+    "Why Rocket Lab shares fell despite record revenue and booming Neutron demand",
+    "HEG Advanced Materials shares gain 5% after subsidiary secures Rs 610 crore incentive under ECMS"
   ],
   "articles": [
     {
@@ -760,6 +762,18 @@
       "status": "PUBLISHED",
       "slot": "morning_bell",
       "published_at": "2026-11-10T19:35:51.320118+00:00"
+    },
+    {
+      "viral_title": "Entertainment Dispatch: HEG Advanced Materials shares gain 5% after subsidiary secures — Key Highlights & Public Reception 🎬✨",
+      "original_title": "HEG Advanced Materials shares gain 5% after subsidiary secures Rs 610 crore incentive under ECMS",
+      "original_link": "https://economictimes.indiatimes.com/markets/stocks/news/heg-advanced-materials-shares-gain-5-after-subsidiary-secures-rs-610-crore-incentive-under-ecms/articleshow/135727758.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/entertainment-dispatch-heg-advanced.html",
+      "blogger_post_id": "1908209047147049890",
+      "status": "PUBLISHED",
+      "slot": "midday_movers",
+      "published_at": "2026-11-11T09:53:15.071767+00:00"
     }
   ]
 }
