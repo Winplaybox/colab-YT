@@ -199,7 +199,8 @@
     "https://economictimes.indiatimes.com/markets/us-stocks/news/why-the-trade-desk-stock-surged-15-despite-revenue-decline/slideshow/135701057.cms",
     "https://economictimes.indiatimes.com/markets/us-stocks/news/why-rocket-lab-shares-fell-despite-record-revenue-and-booming-neutron-demand/slideshow/135702575.cms",
     "https://economictimes.indiatimes.com/markets/stocks/news/heg-advanced-materials-shares-gain-5-after-subsidiary-secures-rs-610-crore-incentive-under-ecms/articleshow/135727758.cms",
-    "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/coreweave-shares-surge-over-20-spark-rally-in-battered-ai-cloud-stocks/articleshow/135744808.cms"
+    "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/coreweave-shares-surge-over-20-spark-rally-in-battered-ai-cloud-stocks/articleshow/135744808.cms",
+    "https://economictimes.indiatimes.com/markets/stocks/news/ola-electric-shares-rally-9-in-two-days-on-centres-ev-push-ahead-of-q2-results/articleshow/135756200.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -246,7 +247,8 @@
     "Why The Trade Desk stock surged 15% despite revenue decline",
     "Why Rocket Lab shares fell despite record revenue and booming Neutron demand",
     "HEG Advanced Materials shares gain 5% after subsidiary secures Rs 610 crore incentive under ECMS",
-    "CoreWeave shares surge over 26%, spark rally in battered AI cloud stocks"
+    "CoreWeave shares surge over 26%, spark rally in battered AI cloud stocks",
+    "Ola Electric shares jump 7% ahead of Q2 results, extends EV-policy rally"
   ],
   "articles": [
     {
@@ -788,6 +790,18 @@
       "status": "PUBLISHED",
       "slot": "morning_bell",
       "published_at": "2026-11-11T19:29:13.324693+00:00"
+    },
+    {
+      "viral_title": "Market Momentum: Ola Electric shares jump 7% ahead of Q2 results, extends EV Rallies On Volume Surge — Critical Valuation Analysis 📈🚀",
+      "original_title": "Ola Electric shares jump 7% ahead of Q2 results, extends EV-policy rally",
+      "original_link": "https://economictimes.indiatimes.com/markets/stocks/news/ola-electric-shares-rally-9-in-two-days-on-centres-ev-push-ahead-of-q2-results/articleshow/135756200.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/market-momentum-ola-electric-shares.html",
+      "blogger_post_id": "7634541465102877758",
+      "status": "PUBLISHED",
+      "slot": "closing_wrap",
+      "published_at": "2026-11-12T10:22:29.903685+00:00"
     }
   ]
 }
