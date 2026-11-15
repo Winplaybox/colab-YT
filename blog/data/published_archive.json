@@ -208,7 +208,8 @@
     "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/cerebras-stock-jumps-23-on-surprise-profit-forecast-hike-easing-ai-spending-worries/articleshow/135808868.cms",
     "https://www.livemint.com/market/stock-market-news/upcoming-dividend-stock-split-buyback-record-date-next-week-16-20-nov-mrf-sci-pfc-power-grid-venus-pipes-more-11794644624084.html",
     "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-chris-wood-sees-fresh-us-iran-tensions-as-biggest-risk-to-india-sees-this-sector-as-the-best-hedge/articleshow/135828570.cms",
-    "https://economictimes.indiatimes.com/markets/stocks/earnings/rhi-magnesita-q2-net-profit-jumps-62-pc-to-over-rs-62-cr/articleshow/135830890.cms"
+    "https://economictimes.indiatimes.com/markets/stocks/earnings/rhi-magnesita-q2-net-profit-jumps-62-pc-to-over-rs-62-cr/articleshow/135830890.cms",
+    "https://economictimes.indiatimes.com/markets/stocks/news/stock-splits-dividends-oil-india-cochin-shipyard-mrf-among-31-companies-turning-ex-record-date-this-week/articleshow/135846835.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -264,7 +265,8 @@
     "Cerebras stock jumps 23% on surprise profit, forecast hike, easing AI spending worries",
     "Upcoming dividend, stock split, buyback record date next week, 16-20 Nov: MRF, SCI, PFC, Power Grid, Venus Pipes, more",
     "Jefferies' Chris Wood sees fresh US-Iran tensions as biggest risk to India, sees this sector as the best hedge",
-    "RHI Magnesita Q2 net profit jumps 62 pc to over Rs 62 cr"
+    "RHI Magnesita Q2 net profit jumps 62 pc to over Rs 62 cr",
+    "Stock splits & dividends: MRF among 31 firms to turn ex-record date"
   ],
   "articles": [
     {
@@ -914,6 +916,18 @@
       "status": "PUBLISHED",
       "slot": "closing_wrap",
       "published_at": "2026-11-14T17:52:52.148101+00:00"
+    },
+    {
+      "viral_title": "Entertainment Dispatch: Stock splits & dividends — Key Highlights & Public Reception 🎬✨",
+      "original_title": "Stock splits & dividends: MRF among 31 firms to turn ex-record date",
+      "original_link": "https://economictimes.indiatimes.com/markets/stocks/news/stock-splits-dividends-oil-india-cochin-shipyard-mrf-among-31-companies-turning-ex-record-date-this-week/articleshow/135846835.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/entertainment-dispatch-stock-splits.html",
+      "blogger_post_id": "3557126862218021141",
+      "status": "PUBLISHED",
+      "slot": "midday_movers",
+      "published_at": "2026-11-15T09:57:52.233021+00:00"
     }
   ]
 }
