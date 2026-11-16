@@ -211,7 +211,8 @@
     "https://economictimes.indiatimes.com/markets/stocks/earnings/rhi-magnesita-q2-net-profit-jumps-62-pc-to-over-rs-62-cr/articleshow/135830890.cms",
     "https://economictimes.indiatimes.com/markets/stocks/news/stock-splits-dividends-oil-india-cochin-shipyard-mrf-among-31-companies-turning-ex-record-date-this-week/articleshow/135846835.cms",
     "https://www.livemint.com/market/stock-market-news/dividend-stock-to-buy-td-power-shares-rally-369-in-3-years-more-upside-ahead-check-target-price-before-record-date-11794648803654.html",
-    "https://economictimes.indiatimes.com/markets/ipos/fpos/carlsberg-said-to-start-road-show-for-600-million-india-ipo/articleshow/135790402.cms"
+    "https://economictimes.indiatimes.com/markets/ipos/fpos/carlsberg-said-to-start-road-show-for-600-million-india-ipo/articleshow/135790402.cms",
+    "https://economictimes.indiatimes.com/markets/stocks/news/inox-wind-shares-tumble-10-as-q2-margins-disappoint-ceo-resigns-why-motilal-oswal-cut-target-price-earnings-estimates/articleshow/135873554.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -270,7 +271,8 @@
     "RHI Magnesita Q2 net profit jumps 62 pc to over Rs 62 cr",
     "Stock splits & dividends: MRF among 31 firms to turn ex-record date",
     "Dividend stock to buy: TD Power shares rally 369% in 3 years, more upside ahead? Check target price before record date",
-    "Carlsberg said to start road show for $600 million India IPO"
+    "Carlsberg said to start road show for $600 million India IPO",
+    "Inox Wind shares tumble 10% as Q2 margins disappoint, CEO resigns. Why Motilal Oswal cut target price, earnings estimates"
   ],
   "articles": [
     {
@@ -956,6 +958,18 @@
       "status": "PUBLISHED",
       "slot": "morning_bell",
       "published_at": "2026-11-15T18:43:20.550532+00:00"
+    },
+    {
+      "viral_title": "Entertainment Dispatch: Inox Wind shares tumble 10% as Q2 margins disappoint, CEO — Key Highlights & Public Reception 🎬✨",
+      "original_title": "Inox Wind shares tumble 10% as Q2 margins disappoint, CEO resigns. Why Motilal Oswal cut target price, earnings estimates",
+      "original_link": "https://economictimes.indiatimes.com/markets/stocks/news/inox-wind-shares-tumble-10-as-q2-margins-disappoint-ceo-resigns-why-motilal-oswal-cut-target-price-earnings-estimates/articleshow/135873554.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/entertainment-dispatch-inox-wind-shares.html",
+      "blogger_post_id": "835784427721335847",
+      "status": "PUBLISHED",
+      "slot": "closing_wrap",
+      "published_at": "2026-11-16T10:12:22.742261+00:00"
     }
   ]
 }
