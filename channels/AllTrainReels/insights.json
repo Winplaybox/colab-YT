@@ -1,56 +1,56 @@
 {
   "channel": "AllTrainReels",
-  "updated": "2026-11-02",
+  "updated": "2026-11-16",
   "youtube_channels": [
     "All Train Reels"
   ],
   "subscribers": 2,
   "enough_data": true,
   "count": 15,
-  "median_views": 88,
-  "median_views_shorts": 88,
+  "median_views": 90,
+  "median_views_shorts": 90,
   "median_views_long": null,
   "top_titles": [
     {
       "title": "Mumbai Local vs Tokyo Metro: Bheed Ka Boss! 👥",
-      "multiple": 10.52,
-      "views": 926
+      "multiple": 10.3,
+      "views": 927
     },
     {
       "title": "Vande Bharat vs Shatabdi: Asli Farak! 🇮🇳",
-      "multiple": 2.76,
+      "multiple": 2.7,
       "views": 243
     },
     {
       "title": "42 Saal Band Raha Ye Station: Begunkodor 👻",
-      "multiple": 2.26,
-      "views": 199
+      "multiple": 2.22,
+      "views": 200
     },
     {
       "title": "Steam vs Diesel vs Electric: Kaun Powerful? 🚂",
-      "multiple": 2.05,
-      "views": 180
+      "multiple": 2.02,
+      "views": 182
     },
     {
       "title": "Duniya Ka Sabse Lamba Platform: 1,507 M! 🏃‍♂️",
-      "multiple": 1.92,
-      "views": 169
+      "multiple": 1.89,
+      "views": 170
     }
   ],
   "bottom_titles": [
     {
       "title": "Shinkansen vs TGV vs Fuxing: Kaun Fastest? ⚡",
-      "multiple": 0.27,
-      "views": 24
+      "multiple": 0.36,
+      "views": 32
     },
     {
       "title": "Train Coach Number Ka Secret Code! 🔢",
-      "multiple": 0.23,
+      "multiple": 0.22,
       "views": 20
     },
     {
       "title": "Duniya Ki Sabse Lambi Train: 7 KM! 😳",
-      "multiple": 0.23,
+      "multiple": 0.22,
       "views": 20
     }
   ]
