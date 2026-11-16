@@ -213,7 +213,8 @@
     "https://www.livemint.com/market/stock-market-news/dividend-stock-to-buy-td-power-shares-rally-369-in-3-years-more-upside-ahead-check-target-price-before-record-date-11794648803654.html",
     "https://economictimes.indiatimes.com/markets/ipos/fpos/carlsberg-said-to-start-road-show-for-600-million-india-ipo/articleshow/135790402.cms",
     "https://economictimes.indiatimes.com/markets/stocks/news/inox-wind-shares-tumble-10-as-q2-margins-disappoint-ceo-resigns-why-motilal-oswal-cut-target-price-earnings-estimates/articleshow/135873554.cms",
-    "https://economictimes.indiatimes.com/markets/stocks/news/indian-equities-ride-global-ai-trade-unwind-is-d-street-back-on-foreign-investors-radar-bnp-paribas-answers/articleshow/135889978.cms"
+    "https://economictimes.indiatimes.com/markets/stocks/news/indian-equities-ride-global-ai-trade-unwind-is-d-street-back-on-foreign-investors-radar-bnp-paribas-answers/articleshow/135889978.cms",
+    "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/dow-sinks-700-pts-nasdaq-over-2-as-huang-exit-fuels-tech-rout-ahead-of-nvidia-q3-earnings/articleshow/135902033.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -274,7 +275,8 @@
     "Dividend stock to buy: TD Power shares rally 369% in 3 years, more upside ahead? Check target price before record date",
     "Carlsberg said to start road show for $600 million India IPO",
     "Inox Wind shares tumble 10% as Q2 margins disappoint, CEO resigns. Why Motilal Oswal cut target price, earnings estimates",
-    "Indian equities ride global AI trade unwind: Is D-Street back on foreign investors' radar? BNP Paribas answers"
+    "Indian equities ride global AI trade unwind: Is D-Street back on foreign investors' radar? BNP Paribas answers",
+    "Dow sinks 700 pts, Nasdaq over 2% as Huang exit fuels tech rout ahead of Nvidia Q3 earnings"
   ],
   "articles": [
     {
@@ -984,6 +986,18 @@
       "status": "PUBLISHED",
       "slot": "closing_wrap",
       "published_at": "2026-11-16T17:16:16.397285+00:00"
+    },
+    {
+      "viral_title": "AI Breakthrough: Dow sinks 700 pts, Nasdaq over 2% as Huang exit fuels tech rout — Technical Architecture & Key Capabilities Explained 🤖⚡",
+      "original_title": "Dow sinks 700 pts, Nasdaq over 2% as Huang exit fuels tech rout ahead of Nvidia Q3 earnings",
+      "original_link": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/dow-sinks-700-pts-nasdaq-over-2-as-huang-exit-fuels-tech-rout-ahead-of-nvidia-q3-earnings/articleshow/135902033.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/ai-breakthrough-dow-sinks-700-pts.html",
+      "blogger_post_id": "1056037161674375132",
+      "status": "PUBLISHED",
+      "slot": "morning_bell",
+      "published_at": "2026-11-16T21:53:19.547405+00:00"
     }
   ]
 }
