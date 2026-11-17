@@ -215,7 +215,8 @@
     "https://economictimes.indiatimes.com/markets/stocks/news/inox-wind-shares-tumble-10-as-q2-margins-disappoint-ceo-resigns-why-motilal-oswal-cut-target-price-earnings-estimates/articleshow/135873554.cms",
     "https://economictimes.indiatimes.com/markets/stocks/news/indian-equities-ride-global-ai-trade-unwind-is-d-street-back-on-foreign-investors-radar-bnp-paribas-answers/articleshow/135889978.cms",
     "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/dow-sinks-700-pts-nasdaq-over-2-as-huang-exit-fuels-tech-rout-ahead-of-nvidia-q3-earnings/articleshow/135902033.cms",
-    "https://economictimes.indiatimes.com/markets/stocks/news/firstcry-shares-rally-13-to-one-month-high-why-jm-financial-sees-55-upside-even-after-cutting-target-price/articleshow/135913152.cms"
+    "https://economictimes.indiatimes.com/markets/stocks/news/firstcry-shares-rally-13-to-one-month-high-why-jm-financial-sees-55-upside-even-after-cutting-target-price/articleshow/135913152.cms",
+    "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/nvidia-shares-crash-24-in-november-so-far-amid-huangs-scandal-why-ubs-is-slamming-draconian-assumptions-sees-54-upside/articleshow/135920398.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -278,7 +279,8 @@
     "Inox Wind shares tumble 10% as Q2 margins disappoint, CEO resigns. Why Motilal Oswal cut target price, earnings estimates",
     "Indian equities ride global AI trade unwind: Is D-Street back on foreign investors' radar? BNP Paribas answers",
     "Dow sinks 700 pts, Nasdaq over 2% as Huang exit fuels tech rout ahead of Nvidia Q3 earnings",
-    "FirstCry shares rally 13% to one-month high. Why JM Financial sees 55% upside even after cutting target price"
+    "FirstCry shares rally 13% to one-month high. Why JM Financial sees 55% upside even after cutting target price",
+    "Nvidia shares crash 24% amid Huang scandal. Why UBS sees 54% upside"
   ],
   "articles": [
     {
@@ -1012,6 +1014,18 @@
       "status": "PUBLISHED",
       "slot": "closing_wrap",
       "published_at": "2026-11-17T11:13:55.072168+00:00"
+    },
+    {
+      "viral_title": "AI Breakthrough: Nvidia shares crash 24% amid Huang scandal. Why UBS sees 54% — Technical Architecture & Key Capabilities Explained 🤖⚡",
+      "original_title": "Nvidia shares crash 24% amid Huang scandal. Why UBS sees 54% upside",
+      "original_link": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/nvidia-shares-crash-24-in-november-so-far-amid-huangs-scandal-why-ubs-is-slamming-draconian-assumptions-sees-54-upside/articleshow/135920398.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/ai-breakthrough-nvidia-shares-crash-24.html",
+      "blogger_post_id": "6383313296463688131",
+      "status": "PUBLISHED",
+      "slot": "closing_wrap",
+      "published_at": "2026-11-17T16:59:52.064230+00:00"
     }
   ]
 }
