@@ -219,7 +219,8 @@
     "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/nvidia-shares-crash-24-in-november-so-far-amid-huangs-scandal-why-ubs-is-slamming-draconian-assumptions-sees-54-upside/articleshow/135920398.cms",
     "https://www.livemint.com/market/stock-market-news/firstcryparent-brainbees-solutions-shares-rally-13-q2-net-loss-narrows-75-revenue-jumps-should-you-buy-11794895128954.html",
     "https://economictimes.indiatimes.com/markets/stocks/news/acme-solar-shares-rally-3-as-subsidiary-signs-150-mw-hybrid-power-project-ppa-with-ntpc/articleshow/135951056.cms",
-    "https://www.livemint.com/market/stock-market-news/nifty-bank-crosses-62-000-jumps-20-from-52-week-low-whats-driving-rally-check-performance-best-bank-stock-to-buy-11794997522430.html"
+    "https://www.livemint.com/market/stock-market-news/nifty-bank-crosses-62-000-jumps-20-from-52-week-low-whats-driving-rally-check-performance-best-bank-stock-to-buy-11794997522430.html",
+    "https://economictimes.indiatimes.com/markets/us-stocks/news/sandisk-stock-selloff-deepens-whats-driving-the-crash/slideshow/135951707.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -286,7 +287,8 @@
     "Nvidia shares crash 24% amid Huang scandal. Why UBS sees 54% upside",
     "FirstCry-parent Brainbees Solutions shares rally 13%: Q2 net loss narrows 75%, revenue jumps - Should you buy?",
     "ACME Solar shares rally 3% as subsidiary signs 150 MW hybrid power project PPA with NTPC",
-    "Nifty Bank crosses 62,000, jumps 20% from 52-week low: What's driving rally? Check performance; best bank stock to buy?"
+    "Nifty Bank crosses 62,000, jumps 20% from 52-week low: What's driving rally? Check performance; best bank stock to buy?",
+    "SanDisk stock selloff deepens: What's driving the crash?"
   ],
   "articles": [
     {
@@ -1068,6 +1070,18 @@
       "status": "PUBLISHED",
       "slot": "closing_wrap",
       "published_at": "2026-11-18T16:44:11.304474+00:00"
+    },
+    {
+      "viral_title": "AI Breakthrough: SanDisk stock selloff deepens — Technical Architecture & Key Capabilities Explained 🤖⚡",
+      "original_title": "SanDisk stock selloff deepens: What's driving the crash?",
+      "original_link": "https://economictimes.indiatimes.com/markets/us-stocks/news/sandisk-stock-selloff-deepens-whats-driving-the-crash/slideshow/135951707.cms",
+      "source": "Economic Times Markets",
+      "category": "Market Analysis",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/ai-breakthrough-sandisk-stock-selloff.html",
+      "blogger_post_id": "6315228857613463530",
+      "status": "PUBLISHED",
+      "slot": "morning_bell",
+      "published_at": "2026-11-18T20:19:28.741463+00:00"
     }
   ]
 }
