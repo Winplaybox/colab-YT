@@ -223,7 +223,8 @@
     "https://economictimes.indiatimes.com/markets/us-stocks/news/sandisk-stock-selloff-deepens-whats-driving-the-crash/slideshow/135951707.cms",
     "https://economictimes.indiatimes.com/markets/stocks/news/red-metal-feels-the-blues-voltas-blue-star-other-ac-stocks-jump-up-to-6-as-copper-prices-hit-7-month-lows/articleshow/135978344.cms",
     "https://economictimes.indiatimes.com/markets/stocks/news/nse-stock-closes-5-higher-amid-renewed-interest-in-large-caps-buy-rating-from-brokerages-should-you-hold-or-sell/articleshow/135991380.cms",
-    "https://www.livemint.com/market/stock-market-news/bl-kashyap-sons-shares-surge-15-set-for-biggest-1-day-gain-since-april-whats-behind-the-investor-optimism-11795071079748.html"
+    "https://www.livemint.com/market/stock-market-news/bl-kashyap-sons-shares-surge-15-set-for-biggest-1-day-gain-since-april-whats-behind-the-investor-optimism-11795071079748.html",
+    "https://economictimes.indiatimes.com/markets/stocks/news/seil-shares-rise-3-as-bse-clears-proposed-restructuring-agreement-with-its-subsidiary/articleshow/136016177.cms"
   ],
   "published_titles": [
     "Axis Bank Q2 profit up 38% on loan growth",
@@ -294,7 +295,8 @@
     "SanDisk stock selloff deepens: What's driving the crash?",
     "Red metal feels the blues! Voltas, Blue Star, other AC stocks jump up to 6% as copper prices hit 7-month lows",
     "NSE stock closes 5% higher amid renewed interest in large caps, 'buy' rating from brokerages; should you hold or sell?",
-    "BL Kashyap & Sons shares surge 15%, set for biggest 1-day gain since April. What's behind the investor optimism?"
+    "BL Kashyap & Sons shares surge 15%, set for biggest 1-day gain since April. What's behind the investor optimism?",
+    "SEIL shares rise 3% as BSE clears proposed restructuring agreement with its subsidiary"
   ],
   "articles": [
     {
@@ -1124,6 +1126,18 @@
       "status": "PUBLISHED",
       "slot": "morning_bell",
       "published_at": "2026-11-19T20:23:58.662787+00:00"
+    },
+    {
+      "viral_title": "Official Regulatory Directive: SEIL shares rise 3% as BSE clears proposed restructuring — Key Policy Rules & Trader Impact 📜⚡",
+      "original_title": "SEIL shares rise 3% as BSE clears proposed restructuring agreement with its subsidiary",
+      "original_link": "https://economictimes.indiatimes.com/markets/stocks/news/seil-shares-rise-3-as-bse-clears-proposed-restructuring-agreement-with-its-subsidiary/articleshow/136016177.cms",
+      "source": "Economic Times Top Stories",
+      "category": "Breaking News",
+      "blogger_url": "https://buzzstormnow.blogspot.com/2026/11/official-regulatory-directive-seil.html",
+      "blogger_post_id": "7688269784389767863",
+      "status": "PUBLISHED",
+      "slot": "closing_wrap",
+      "published_at": "2026-11-20T10:35:04.350639+00:00"
     }
   ]
 }
