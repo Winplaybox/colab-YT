@@ -238,12 +238,30 @@ img { max-width: 100%; height: auto; display: block; }
 button, input, select, textarea { font-family: inherit; font-size: inherit; outline: none; border: none; }
 
 .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+}
+
+.bzn-article-content,
+.bzn-article-content p,
+.bzn-article-content li,
+.bzn-article-content h1,
+.bzn-article-content h2,
+.bzn-article-content h3,
+.bzn-article-content h4 {
+  color: var(--text-primary) !important;
 }
 
 /* Layout Container */
@@ -3788,25 +3806,18 @@ body.bzn-reader-mode-active .bzn-reader-mode-bar {
                 </div>
 
                 <div class='bzn-header-badges'>
-                  <span class='bzn-badge-alert'>REGULATORY ALERT</span>
                   <b:if cond='data:post.labels'>
                     <b:loop values='data:post.labels' var='label'>
                       <span class='bzn-badge-topic'><data:label.name/></span>
                     </b:loop>
-                  <b:else/>
-                    <span class='bzn-badge-topic'>NSE CMPT76704</span>
                   </b:if>
                 </div>
               </div>
 
               <h1 class='bzn-article-title'><data:post.title/></h1>
-              <p class='bzn-article-dek'>
-                <b:if cond='data:post.snippets.short'>
-                  <data:post.snippets.short/>
-                <b:else/>
-                  Breaking the Silence: National Stock Exchange unveils a massive regulatory overhaul reshaping Maximum Weekly Position Limits (MWPL) for qualified institutional desks and retail traders alike.
-                </b:if>
-              </p>
+              <b:if cond='data:post.snippets.short'>
+                <p class='bzn-article-dek'><data:post.snippets.short/></p>
+              </b:if>
 
               <!-- Author Byline & Social Action Toolbar -->
               <div class='bzn-author-row'>
@@ -3887,100 +3898,6 @@ body.bzn-reader-mode-active .bzn-reader-mode-bar {
             <div class='bzn-article-layout'>
               <!-- Left Column: Primary Content -->
               <main class='bzn-article-main'>
-                <!-- Impact Breakdown Card (Screen 02) -->
-                <div class='bzn-impact-breakdown-card'>
-                  <div class='bzn-impact-header'>
-                    <div>
-                      <div class='bzn-impact-kicker'>IMPACT BREAKDOWN</div>
-                      <h3 class='bzn-impact-title'>NSE Circular CMPT76704 Delta</h3>
-                    </div>
-                    <div class='bzn-impact-badge'>
-                      <span class='bzn-dot-active'/>
-                      <span>Effective Oct 2026</span>
-                    </div>
-                  </div>
-
-                  <div class='bzn-delta-grid'>
-                    <div class='bzn-delta-card'>
-                      <div class='bzn-delta-label'>NEW MWPL CAP</div>
-                      <div class='bzn-delta-val'>20% <span class='bzn-delta-sub positive'>+5% shift</span></div>
-                      <div class='bzn-delta-note'>Old cap: 15%</div>
-                    </div>
-                    <div class='bzn-delta-card'>
-                      <div class='bzn-delta-label'>INST. UPGRADE</div>
-                      <div class='bzn-delta-val positive'>+25% <span class='bzn-delta-badge'>Boost</span></div>
-                      <div class='bzn-delta-note'>Tier-1 Participants</div>
-                    </div>
-                    <div class='bzn-delta-card'>
-                      <div class='bzn-delta-label'>RETAIL CAP DELTA</div>
-                      <div class='bzn-delta-val negative'>-5% <span class='bzn-delta-badge negative'>Reduced</span></div>
-                      <div class='bzn-delta-note'>Non-Institutional</div>
-                    </div>
-                    <div class='bzn-delta-card'>
-                      <div class='bzn-delta-label'>SAFETY BUFFER</div>
-                      <div class='bzn-delta-val'>2.0% <span class='bzn-delta-sub'>Mandatory</span></div>
-                      <div class='bzn-delta-note'>Breach threshold</div>
-                    </div>
-                  </div>
-
-                  <div class='bzn-impact-progress-wrap'>
-                    <div class='bzn-progress-labels'>
-                      <span>Pre-Circular Liquidity (15%)</span>
-                      <span>Post-Circular Expansion (20%)</span>
-                    </div>
-                    <div class='bzn-impact-progress-bar'>
-                      <div class='bzn-impact-progress-fill' style='width: 75%;'/>
-                    </div>
-                    <div class='bzn-impact-meta'>
-                      <span class='material-symbols-outlined' style='font-size:15px;color:var(--primary);'>history_toggle_off</span>
-                      <span>Grace Window: 30 Calendar Days</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Executive Brief Bento Box (Screen 02) -->
-                <div class='bzn-executive-brief-card'>
-                  <div class='bzn-brief-header'>
-                    <div class='bzn-brief-title-row'>
-                      <span class='bzn-brief-dot'/>
-                      <span class='bzn-brief-title'>EXECUTIVE BRIEF</span>
-                    </div>
-                    <span class='bzn-brief-timing'>60s Summary</span>
-                  </div>
-
-                  <div class='bzn-brief-lead'>Core Takeaways for Desks:</div>
-
-                  <ul class='bzn-brief-list'>
-                    <li>
-                      <span class='material-symbols-outlined bzn-check-icon'>check_circle</span>
-                      <span>NSE Circular CMPT76704 elevates NATCOPHARM MWPL from 15% to 20%.</span>
-                    </li>
-                    <li>
-                      <span class='material-symbols-outlined bzn-check-icon'>check_circle</span>
-                      <span>Tier-1 institutions get +25% volume room; retail books trimmed by 5%.</span>
-                    </li>
-                    <li>
-                      <span class='material-symbols-outlined bzn-check-icon'>check_circle</span>
-                      <span>Mandatory 2% risk buffer halts sudden catastrophic margin calls.</span>
-                    </li>
-                    <li>
-                      <span class='material-symbols-outlined bzn-check-icon'>check_circle</span>
-                      <span>30-day compliance window in effect; 24-hr algorithmic detection live.</span>
-                    </li>
-                  </ul>
-
-                  <a class='bzn-brief-jump' href='#articleBodyContent'>
-                    <span>Jump to In-Depth Breakdown</span>
-                    <span class='material-symbols-outlined' style='font-size:14px;'>arrow_downward</span>
-                  </a>
-                </div>
-
-                <!-- Section Paradigm Marker -->
-                <div class='bzn-section-paradigm'>
-                  <span class='bzn-paradigm-marker'>SECTION 01 // REGULATORY PARADIGM</span>
-                  <h2 class='bzn-paradigm-title'>Breaking the Silence: NSE Unveils Massive Limit Overhaul</h2>
-                </div>
-
                 <!-- Article Body Content with Drop Cap -->
                 <div class='bzn-article-content' id='articleBodyContent'>
                   <data:post.body/>
@@ -4058,48 +3975,12 @@ body.bzn-reader-mode-active .bzn-reader-mode-bar {
                   </div>
                 </nav>
 
-                <!-- Market Desk Discussion & Comments (Screen 03) -->
+                <!-- Discussion & Comments -->
                 <section class='bzn-discussion-section' id='bznDiscussionSection'>
                   <div class='bzn-discussion-header'>
                     <div class='bzn-discussion-title'>
                       <span class='material-symbols-outlined'>forum</span>
-                      <span>Market Desk Discussion (<b:if cond='data:post.numComments and data:post.numComments &gt; 0'><data:post.numComments/><b:else/>3</b:if>)</span>
-                    </div>
-                    <div class='bzn-discussion-badge'>Live Moderation Active</div>
-                  </div>
-
-                  <!-- Comment Compose Input -->
-                  <div class='bzn-comment-compose-card'>
-                    <div class='bzn-compose-label'>Join the Intelligence Thread</div>
-                    <textarea class='bzn-compose-input' id='bznCommentInput' placeholder='Share your perspective on the 20% MWPL ceiling or post-transition expiry risk...' rows='3'/>
-                    <div class='bzn-compose-footer'>
-                      <span class='bzn-compliance-text'>Comments are verified for compliance</span>
-                      <button class='bzn-btn-primary' onclick='submitDeskComment()' style='padding:8px 18px;font-size:13px;' type='button'>Post Analysis</button>
-                    </div>
-                  </div>
-
-                  <!-- Thread Comments List -->
-                  <div class='bzn-comment-thread-list' id='bznDeskCommentsList'>
-                    <div class='bzn-comment-card'>
-                      <div class='bzn-comment-header'>
-                        <div class='bzn-comment-author-badge'>
-                          <strong>Rajesh V., Dalal Street Prop Desk</strong>
-                          <span class='bzn-badge-inst'>INSTITUTIONAL</span>
-                        </div>
-                        <span class='bzn-comment-time'>18m ago</span>
-                      </div>
-                      <p class='bzn-comment-body'>The 2% mandatory stop buffer will curb sudden liquidity freezes during weekly contract expiries. The previous 15% cap caused false breakouts that trapped smaller traders repeatedly.</p>
-                    </div>
-
-                    <div class='bzn-comment-card'>
-                      <div class='bzn-comment-header'>
-                        <div class='bzn-comment-author-badge'>
-                          <strong>Meera Sen, Quant Trader</strong>
-                          <span class='bzn-badge-comm'>COMMUNITY</span>
-                        </div>
-                        <span class='bzn-comment-time'>42m ago</span>
-                      </div>
-                      <p class='bzn-comment-body'>Keep a close eye on the 30-day grace period timeline. The liquidation pressure near Day 25 is where volatility premiums on out-of-the-money puts are going to get wild.</p>
+                      <span>Discussion (<data:post.numComments/>)</span>
                     </div>
                   </div>
 
@@ -4112,49 +3993,9 @@ body.bzn-reader-mode-active .bzn-reader-mode-bar {
                 </section>
               </main>
 
-              <!-- Right Sticky Rail: Realtime Market, Trending Stories, Topic Radar, Newsroom, Ads -->
+              <!-- Right Sticky Rail: Trending Stories, Topic Radar, Newsroom, Ads -->
               <aside class='bzn-article-sidebar'>
-                <!-- 1. Real-Time Live Market Report Chart Card (Screen 02) -->
-                <div class='bzn-market-card' id='bznLiveMarketCard'>
-                  <div class='bzn-market-header'>
-                    <div class='bzn-market-title'>
-                      <span class='bzn-live-pulse-dot'/>
-                      <span id='bznMarketSymbol'>NSE: NATCOPHARM</span>
-                    </div>
-                    <span class='bzn-badge-realtime'>REALTIME</span>
-                  </div>
-
-                  <div class='bzn-market-price-row'>
-                    <div class='bzn-market-price' id='bznLivePrice'>&#8377;1,342.50</div>
-                    <div class='bzn-market-change positive' id='bznLiveChange'>+3.42% &#8593;</div>
-                  </div>
-
-                  <div class='bzn-market-range' id='bznLiveRange'>Day High: &#8377;1,368.00 &#8226; Low: &#8377;1,299.10</div>
-
-                  <div class='bzn-market-stat-block'>
-                    <div class='bzn-market-stat-head'>
-                      <span>MWPL Utilization</span>
-                      <strong id='bznMwplPct'>88.4% of 20% Cap</strong>
-                    </div>
-                    <div class='bzn-progress-bar'>
-                      <div class='bzn-progress-fill' id='bznMwplFill' style='width: 88.4%;'/>
-                    </div>
-                    <div class='bzn-market-stat-sub'>Safety Margin to 2% Buffer: <span id='bznBufferMargin'>9.6%</span></div>
-                  </div>
-
-                  <div class='bzn-market-metrics-grid'>
-                    <div class='bzn-metric-cell'>
-                      <span class='bzn-metric-label'>Volume</span>
-                      <strong class='bzn-metric-val' id='bznLiveVolume'>2.41M Shares</strong>
-                    </div>
-                    <div class='bzn-metric-cell'>
-                      <span class='bzn-metric-label'>Put/Call Ratio</span>
-                      <strong class='bzn-metric-val' id='bznLivePcr'>0.84 (Bullish)</strong>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 2. Trending Stories (REAL-TIME PULSE, Screen 02) -->
+                <!-- Trending Stories (REAL-TIME PULSE, Screen 02) -->
                 <div class='bzn-sidebar-box'>
                   <div class='bzn-sidebar-title-row'>
                     <div class='bzn-sidebar-title'>
