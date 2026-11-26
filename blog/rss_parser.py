@@ -4,15 +4,17 @@ BuzzStormNow - RSS Feed Ingestion & Parsing Engine
 Fetches, cleans, and deduplicates news articles from NSE, Economic Times, and Livemint.
 """
 
-import os
-import sys
-import re
-import json
 import html
-import requests
+import json
+import os
+import re
+import sys
+import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
+from difflib import SequenceMatcher
 from email.utils import parsedate_to_datetime
+import requests
 
 # Ensure UTF-8 output across Windows and Linux
 if hasattr(sys.stdout, "reconfigure"):
@@ -192,14 +194,47 @@ def fetch_feed_items(feed_config):
 
     return items
 
+def _canonical_url(url: str) -> str:
+    """Strip tracking query params/fragments for URL deduplication."""
+    try:
+        p = urllib.parse.urlsplit(url.strip())
+        return urllib.parse.urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path.rstrip("/"), "", ""))
+    except Exception:
+        return url.strip()
+
+
+def _normalize_title(title: str) -> str:
+    """Strip trailing source attributions and non-alphanumeric chars for fuzzy title matching."""
+    t = re.sub(r"\s*[\|\-–—]\s*[^|\-–—]{2,40}$", "", title.strip())
+    return re.sub(r"[^a-z0-9\s]", "", t.lower()).strip()
+
+
+def _is_similar_title(norm_title: str, existing_norms: list[str], threshold: float = 0.72) -> bool:
+    if not norm_title:
+        return False
+    for prev in existing_norms:
+        if not prev:
+            continue
+        if norm_title == prev or (len(norm_title) > 20 and (norm_title in prev or prev in norm_title)):
+            return True
+        if SequenceMatcher(None, norm_title, prev).ratio() >= threshold:
+            return True
+    return False
+
+
 def get_fresh_news_candidates(max_candidates=15, preferred_category=None):
     """
     Ingests all feeds, filters against already published items,
     and returns top candidates ranked by BuzzScore and recency.
     """
     archive = load_archive()
-    published_links = set(archive.get("published_urls", []))
-    published_titles = set(t.lower().strip() for t in archive.get("published_titles", []))
+    published_links = {_canonical_url(u) for u in archive.get("published_urls", [])}
+    published_raw_links = set(archive.get("published_urls", []))
+    published_titles = {_normalize_title(t) for t in archive.get("published_titles", [])}
+    recent_norms = [
+        _normalize_title(a.get("original_title", ""))
+        for a in archive.get("articles", [])[-200:]
+    ] + [t for t in list(published_titles)[-200:]]
 
     all_items = []
     for f in FEEDS:
@@ -208,23 +243,21 @@ def get_fresh_news_candidates(max_candidates=15, preferred_category=None):
 
     fresh_items = []
     seen_links = set()
+    seen_norms: list[str] = []
 
     for item in all_items:
         lnk = item["link"]
-        tit = item["title"].lower().strip()
+        canon = _canonical_url(lnk)
+        norm_tit = _normalize_title(item["title"])
 
-        # Deduplication checks
-        if not lnk or lnk in published_links or lnk in seen_links:
+        # Deduplication checks (exact URL, canonical URL, normalized & fuzzy title)
+        if not lnk or lnk in published_raw_links or canon in published_links or canon in seen_links:
             continue
-        if tit in published_titles:
-            continue
-
-        # Soft title matching (ignore punctuation differences)
-        norm_tit = re.sub(r"[^a-zA-Z0-9]", "", tit)
-        if any(norm_tit == re.sub(r"[^a-zA-Z0-9]", "", pt) for pt in published_titles):
+        if norm_tit in published_titles or _is_similar_title(norm_tit, recent_norms) or _is_similar_title(norm_tit, seen_norms):
             continue
 
-        seen_links.add(lnk)
+        seen_links.add(canon)
+        seen_norms.append(norm_tit)
 
         # Bonus score if category matches the target schedule slot
         if preferred_category and preferred_category.lower() in item["category"].lower():

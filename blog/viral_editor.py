@@ -49,59 +49,45 @@ def clean_subject_line(title):
 
 def craft_viral_title(item):
     """
-    Constructs an irresistible, high-CTR headline optimized for Google Discover & social buzz.
-    Supports Markets, Tech & AI, Viral Trends, Entertainment, Sports, and Breaking News.
+    Constructs a clean, accurate, high-CTR editorial headline without mismatched boilerplate.
+    Respects the item's feed category and uses word-boundary matching.
     """
-    raw_title = item.get("title", "")
-    category = item.get("category", "Trending")
+    raw_title = item.get("title", "").strip()
+    category = item.get("category", "Trending").lower()
     desc = item.get("description", "")
+    title_l = raw_title.lower()
     combined = f"{raw_title} {desc}".lower()
     core = clean_subject_line(raw_title)
     if len(core) < 15:
-        core = raw_title[:65]
+        core = raw_title[:75]
 
-    # 1. Technology & AI
-    if re.search(r"\b(ai|artificial intelligence|chatgpt|openai|nvidia|gemini|deepseek|robot|robotics|quantum|llm)\b", combined):
-        return f"AI Breakthrough: {core} — Technical Architecture & Key Capabilities Explained 🤖⚡"
+    is_market_feed = any(k in category for k in ("market", "circular", "board", "announcement"))
 
-    # 2. Viral Content & Internet Sensations
-    if any(k in combined for k in ["viral", "crazy", "unbelievable", "shocking", "internet", "social media", "storm"]):
-        return f"Trending Spotlight: {core} — Key Facts & Public Reaction Breakdown 🌪️🔥"
+    # 1. Technology & AI (only when not a pure market/exchange feed)
+    if not is_market_feed and re.search(r"\b(ai|artificial intelligence|chatgpt|openai|nvidia|gemini|deepseek|robotics|quantum|llm)\b", title_l):
+        return f"Tech & AI: {core}"
 
-    # 3. Entertainment & Pop Culture
-    if any(k in combined for k in ["movie", "cinema", "actor", "celebrity", "hollywood", "bollywood", "trailer", "box office"]):
-        return f"Entertainment Dispatch: {core} — Key Highlights & Public Reception 🎬✨"
+    # 2. Entertainment & Pop Culture (word boundaries prevent 'factor'/'manufacturer' matching 'actor')
+    if not is_market_feed and re.search(r"\b(movie|movies|cinema|actor|actress|celebrity|hollywood|bollywood|trailer|box office|ott|netflix)\b", combined):
+        return f"Entertainment: {core}"
 
-    # 4. Sports & Athletic Milestones
-    if any(k in combined for k in ["cricket", "match", "tournament", "ipl", "world cup", "champion", "sports"]):
-        return f"Sports Milestone: {core} — Key Highlights & Strategic Match Analysis 🏆⚡"
+    # 3. Sports
+    if not is_market_feed and re.search(r"\b(cricket|ipl|world cup|match|tournament|champion|bcci|fifa|olympics)\b", combined):
+        return f"Sports: {core}"
 
-    # 5. Financial Movements & Rallies
-    if "multibagger" in combined or "400%" in combined or "surge" in combined:
-        return f"Market Momentum: {core} Rallies On Volume Surge — Critical Valuation Analysis 📈🚀"
-    
-    # 6. Corporate Mega Deals & Shakeups
-    if "reliance" in combined or "ambani" in combined or "tata" in combined or "deal" in combined:
-        return f"Strategic Move: {core} Announces Corporate Milestone — Deal Breakdown 💼"
-    
-    # 7. Market Volatility & Sector Shifts
-    if "crash" in combined or "bleed" in combined or "falls" in combined or "plunge" in combined:
-        return f"Market Pulse: {core} Navigates Volatility — Support Levels & Sector Analysis 📊📉"
+    # 4. IPOs & Listings
+    if re.search(r"\b(ipo|listing|gmp|allotment)\b", title_l):
+        return f"IPO Watch: {core}"
 
-    # 8. AGMs & Corporate Expansion
-    if "agm" in combined or "expansion" in combined or "proceedings" in combined:
-        return f"Corporate Expansion: {core} Outlines Long-Term Growth Roadmap & Capital Plan 💼"
+    # 5. Regulatory & Exchange Directives
+    if re.search(r"\b(circular|sebi|rbi|regulator|policy)\b", title_l):
+        return f"Policy & Regulation: {core}"
 
-    # 9. Regulatory & Exchange Directives
-    if "circular" in combined or "limits" in combined or "sebi" in combined or "rbi" in combined:
-        return f"Official Regulatory Directive: {core} — Key Policy Rules & Trader Impact 📜⚡"
+    # 6. Market / Corporate / Breaking News
+    if is_market_feed or re.search(r"\b(nifty|sensex|stock|stocks|shares|market|rally|crash|profit|q[1-4]|crore|lakh)\b", title_l):
+        return f"Markets: {core}"
 
-    # 10. IPOs & New Listings
-    if "ipo" in combined or "listing" in combined:
-        return f"IPO Analysis: {core} Listing Breakdown & Financial Fundamentals 🎯"
-
-    # Default Factual High-CTR Hook
-    return f"Market Dispatch: {core} — Verified Disclosures & Analysis Breakdown ⚡"
+    return core
 
 def craft_meta_description(viral_title, item):
     """Produces a punchy 140-160 character snippet engineered for high click-through rates."""
