@@ -23,6 +23,7 @@ if script_dir not in sys.path:
 
 from config import BLOG_ID, BLOG_NAME, BLOG_URL, DAILY_POSTING_SLOTS
 from rss_parser import get_fresh_news_candidates, load_archive, save_archive
+from telegram_broadcaster import broadcast_post
 from viral_editor import transform_news_into_viral_article
 from blogger_publisher import publish_article_to_blogger
 
@@ -111,6 +112,15 @@ def run_single_post(slot=None, force_category=None, is_draft=False, dry_run=Fals
         save_archive(archive)
 
     print(f"🎉 BLOGGER CONFIRMED: {status} | {result.get('url')}")
+    if status == "PUBLISHED" and result.get("url"):
+        sent = broadcast_post(
+            title=article["viral_title"],
+            url=result["url"],
+            summary=article.get("meta_description") or chosen_item.get("description", ""),
+            image_url=article.get("image_url") or chosen_item.get("raw_image_url", ""),
+            category=chosen_item.get("category", ""),
+        )
+        print("📣 Telegram broadcast sent to channel." if sent else "ℹ️ Telegram broadcast skipped (not configured or failed).")
     return result
 
 
